@@ -57,6 +57,7 @@ Use the same study revision and evaluation guidance for matched judgments.
 The launcher retains the scientific prompt and optional reference guidance with their hashes, independently of the submitted object.
 Judges use the coordinator's frozen assessor and runtime outside the target; the target need not contain assessment tools.
 A separate host profile makes the frozen judging skills discoverable without adding files to the assessed checkout.
+The judge works in a separate [output repository](JUDGE_WORKSPACE.md), where normal preservation commits capture its real Entire session; the assessed target remains unchanged.
 The clone retains the result commit and its annex metadata, without other trial branches.
 They inspect and replay the object's declared environment without repairing it first.
 Keep duplicate judgments independently and use neutral result identifiers where practical.
