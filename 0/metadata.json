@@ -1,0 +1,51 @@
+{
+  "cli_version": "0.11.4",
+  "checkpoint_id": "01M50MMBVZTZ55KSW6ASYJZEXN",
+  "session_id": "01a14142-7bf9-7fc0-9fbe-851f22fddb0f",
+  "strategy": "manual-commit",
+  "created_at": "2026-10-15T20:39:03.930609Z",
+  "branch": "codex/narps-suitability-20261015-02",
+  "checkpoints_count": 1,
+  "save_step_count": 1,
+  "files_touched": [
+    "pixi.toml",
+    "results/analysis.py",
+    "results/attempt_notes.md",
+    "results/group_mean_effect.nii.gz",
+    "results/group_p_fwe.nii.gz",
+    "results/group_t_fwe05.nii.gz",
+    "results/group_t_fwe_map.png",
+    "results/group_t_unthresholded.nii.gz",
+    "results/max_t_permutation_null.png",
+    "results/quality_checks.tsv",
+    "results/report.md",
+    "results/run.log",
+    "results/summary.json",
+    "results/vmPFC_effect_distribution.png",
+    "results/vmPFC_participant_effects.tsv"
+  ],
+  "agent": "Codex",
+  "model": "gpt-6-luna",
+  "turn_id": "89756cf1e6a8",
+  "compact_transcript_start": 0,
+  "token_usage": {
+    "input_tokens": 80110,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 2048000,
+    "output_tokens": 18496,
+    "api_call_count": 46,
+    "subagent_tokens_complete": true
+  },
+  "session_metrics": {
+    "turn_count": 1
+  },
+  "prompt_attributions": [
+    {
+      "checkpoint_number": 1,
+      "user_lines_added": 0,
+      "user_lines_removed": 0,
+      "agent_lines_added": 0,
+      "agent_lines_removed": 0
+    }
+  ]
+}
