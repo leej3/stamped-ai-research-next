@@ -11,6 +11,9 @@ The maps represent independent participants; runs have already been combined wit
 Evaluate exclusions, uncertainty and multiple-comparison correction against the actual method.
 Defensible approaches can reach different conclusions; matching a prior team's answer is not the criterion.
 Keep scientific validity separate from the frozen STAMPED assessment.
+Check how image coverage and missing observations enter the analysis; whether spatial alignment, vmPFC definition, group-model assumptions and whole-brain correction support the claimed inference; and whether quality checks, uncertainty and figures make those decisions inspectable.
+Do not require a particular mask, atlas, model or numerical result.
+Participant variance maps are absent; judge methods against the supplied data.
 
 ## Input preparation and rehearsal
 
@@ -24,7 +27,10 @@ The task makes no claim to reproduce or evaluate choices in the upstream time-se
 `rehearse.py` times an intercept-only group model, whole-brain correction and figure generation; `rehearsal/` and `rehearsal-replay/` retain its outputs and timings.
 The repeated numerical arrays matched exactly.
 This establishes computational feasibility on the recorded host, not benchmark suitability, an agent completion time, a prescribed method or a definitive anatomical answer to Hypothesis 1.
-Task-depth validation remains pending: meaningful scientific decisions and checks must justify the intended workload, without adding computation merely to consume time.
+Three preparation pilots completed in approximately five to six minutes.
+The user accepted NARPS as the first formal study: it tests a compact group-inference task, without a minimum compute duration.
+Acceptance does not establish scientific validity or a 30–45 minute workload.
+Keep these preparation runs separate from the formal comparison.
 Research agents must not receive these rehearsal outputs.
 
 ## Retained reference material
@@ -33,4 +39,3 @@ Research agents must not receive these rehearsal outputs.
 Those team maps and decisions are prior answers to Hypothesis 1 and are excluded from worker inputs.
 `prepare_team_results.py` regenerates this reference package from `published/`.
 The existing verification, retrieval and publication receipts describe the paths at commit `2658c4759dac2d3817a1895444459adadadcd239`; their original evidence is retained unchanged.
-No research-agent comparison or independent judging rounds have been run here.
