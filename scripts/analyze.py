@@ -71,8 +71,9 @@ def save_json(obj, path: Path):
 
 
 def vmPFC_atlas_mask(reference):
-    atlas = datasets.fetch_atlas_harvard_oxford("cort-maxprob-thr25-2mm")
-    atlas_img = nib.load(atlas.maps)
+    atlas = datasets.fetch_atlas_harvard_oxford(
+        "cort-maxprob-thr25-2mm", data_dir=str(OUT / "atlas-cache"))
+    atlas_img = atlas.maps if hasattr(atlas.maps, "get_fdata") else nib.load(atlas.maps)
     labels = list(atlas.labels)
     wanted = {"Frontal Medial Cortex", "Subcallosal Cortex"}
     absent = wanted.difference(labels)
@@ -133,10 +134,13 @@ def main():
     participants, sources, paths, imgs, arrays, file_qc = read_maps()
     mask = np.isfinite(arrays).all(axis=0) & np.all(arrays != 0, axis=0)
     if args.pilot:
+        roi_mask, roi_labels, _, atlas_path = vmPFC_atlas_mask(imgs[0])
         pilot = {"n_participants": len(participants), "participants": participants.participant_id.tolist(),
                  "shape": list(arrays.shape[1:]), "affine": imgs[0].affine.tolist(),
                  "common_nonzero_mask_voxels": int(mask.sum()),
                  "common_mask_volume_mm3": float(mask.sum() * abs(np.linalg.det(imgs[0].affine[:3, :3]))),
+                 "vmPFC_atlas_labels": roi_labels, "vmPFC_atlas_intersection_voxels": int((roi_mask & mask).sum()),
+                 "vmPFC_atlas_sha256": sha256(atlas_path),
                  "map_qc": file_qc}
         save_json(pilot, OUT / "pilot-qc.json")
         print(json.dumps({k: v for k, v in pilot.items() if k != "map_qc"}, indent=2))
