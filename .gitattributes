@@ -12,3 +12,4 @@
 **/.git* annex.largefiles=nothing
 coordinator-guidance/team-results/data/** -whitespace
 coordinator-guidance/participant-preparation/neurovault-participant-metadata.json annex.largefiles=anything
+pixi.lock annex.largefiles=nothing
