@@ -152,7 +152,7 @@ def make_seed(repo, base, study, checkout, branch, condition, provenance):
     source_manifest = blob(repo, base, "pixi.toml")
     (checkout / "pixi.toml").write_bytes(worker_manifest(source_manifest))
     (checkout / ".gitignore").write_text(".pixi/\npixi.lock\n__pycache__/\n*.pyc\n.codex/\n.entire/\n.local/\n")
-    (checkout / ".gitattributes").write_text("* annex.backend=SHA256E\n* annex.largefiles=(largerthan=100kb)\n*.md annex.largefiles=nothing\n*.toml annex.largefiles=nothing\n")
+    (checkout / ".gitattributes").write_text("* annex.backend=SHA256E\n* annex.largefiles=(largerthan=100kb)\n*.md annex.largefiles=nothing\n*.toml annex.largefiles=nothing\npixi.lock annex.largefiles=nothing\n")
     inventory = export_inputs(study, ref, checkout)
     receipt = {"version": 1, "coordinator_commit": base, "study_path": study_path,
                "study_commit": ref, "study_input_tree": git(study, "rev-parse", ref + ":input"),

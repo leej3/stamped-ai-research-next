@@ -688,3 +688,25 @@ def test_pinned_unready_study_stops_before_worker_creation(tmp_path, source_repo
     with pytest.raises(SystemExit, match="Participant inputs are missing"):
         seed.make_seed(coordinator, base, study, checkout, "codex/blocked", "baseline", resolver)
     assert not checkout.exists()
+
+
+def test_worker_snapshot_retains_large_ignored_lock_as_regular_git(tmp_path, source_repositories):
+    worker, _ = make_worker(tmp_path, source_repositories)
+    git(worker, "config", "remote.origin.annex-ignore", "true")
+    git(worker, "annex", "init", "snapshot-fixture")
+    task_commit = git(worker, "rev-parse", "HEAD")
+    lock = b"# Exact synthetic environment snapshot\n" * 6000
+    (worker / "pixi.lock").write_bytes(lock)
+    assert git(worker, "check-ignore", "pixi.lock") == "pixi.lock"
+    git(worker, "add", "--all")
+    assert not git(worker, "diff", "--cached", "--name-only")
+    git(worker, "switch", "-c", "codex/env-fixture")
+    git(worker, "add", "-f", "pixi.lock")
+    git(worker, "commit", "-m", "test: retain exact environment snapshot")
+    snapshot = git(worker, "rev-parse", "HEAD")
+    assert git(worker, "rev-parse", snapshot + "^") == task_commit
+    assert subprocess.check_output(["git", "-C", str(worker), "show", snapshot + ":pixi.lock"]) == lock
+    assert git(worker, "ls-tree", snapshot, "pixi.lock").startswith("100644 blob ")
+    assert not git(worker, "ls-tree", task_commit, "pixi.lock")
+    assert subprocess.run(["git", "-C", str(worker), "annex", "lookupkey", "pixi.lock"],
+                          capture_output=True).returncode != 0
