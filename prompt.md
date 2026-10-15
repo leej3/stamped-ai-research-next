@@ -12,7 +12,8 @@ The whole workshop must itself become a STAMPED research object.
    Keep reference answers and evaluation guidance in `coordinator-guidance/`, outside worker inputs.
    Use three iterations with three independent workers per condition per study unless the user specifies otherwise.
    Use Luna with high reasoning effort and record its exact identifier.
-   Aim for a task that fits about 45 minutes; review progress around 90 minutes and allow productive work to finish.
+   Select tasks requiring substantial scientific work that fits about 45 minutes; fast computation is fine.
+   Review progress around 90 minutes and allow productive work to finish.
 
 2. For each selected study, launch fresh agents on the same task with and without the current skill revision, varying launch order.
    Both conditions receive the same committed input package and common resources; treatment agents additionally receive the selected skills.
