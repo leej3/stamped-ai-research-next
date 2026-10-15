@@ -1,0 +1,584 @@
+{
+  "verified_at": "2026-10-15T20:07:22.475038+00:00",
+  "elapsed_seconds": 14.907914124894887,
+  "versions": {
+    "python": "3.13.16",
+    "nibabel": "5.4.2",
+    "numpy": "2.5.4",
+    "pandas": "3.0.6"
+  },
+  "input_manifest_sha256": "919be9b4278c31f7e39ae3d02fcf159eb4ae222a2fb96c90df7c3a92e5fb19cd",
+  "all_hashes_match": true,
+  "cohort_matches": true,
+  "all_maps_finite": true,
+  "common_geometry": true,
+  "affine": [
+    [
+      2.0,
+      0.0,
+      0.0,
+      -96.0
+    ],
+    [
+      0.0,
+      2.0,
+      0.0,
+      -132.0
+    ],
+    [
+      0.0,
+      0.0,
+      2.4000000953674316,
+      -78.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "maps": [
+    {
+      "path": "data/sub-001_hypo1_cope.nii.gz",
+      "shape": [
+        97,
+        115,
+        81
+      ],
+      "nonzero_voxels": 225441,
+      "finite": true
+    },
+    {
+      "path": "data/sub-003_hypo1_cope.nii.gz",
+      "shape": [
+        97,
+        115,
+        81
+      ],
+      "nonzero_voxels": 221352,
+      "finite": true
+    },
+    {
+      "path": "data/sub-005_hypo1_cope.nii.gz",
+      "shape": [
+        97,
+        115,
+        81
+      ],
+      "nonzero_voxels": 232390,
+      "finite": true
+    },
+    {
+      "path": "data/sub-009_hypo1_cope.nii.gz",
+      "shape": [
+        97,
+        115,
+        81
+      ],
+      "nonzero_voxels": 218048,
+      "finite": true
+    },
+    {
+      "path": "data/sub-011_hypo1_cope.nii.gz",
+      "shape": [
+        97,
+        115,
+        81
+      ],
+      "nonzero_voxels": 229790,
+      "finite": true
+    },
+    {
+      "path": "data/sub-013_hypo1_cope.nii.gz",
+      "shape": [
+        97,
+        115,
+        81
+      ],
+      "nonzero_voxels": 221025,
+      "finite": true
+    },
+    {
+      "path": "data/sub-015_hypo1_cope.nii.gz",
+      "shape": [
+        97,
+        115,
+        81
+      ],
+      "nonzero_voxels": 226823,
+      "finite": true
+    },
+    {
+      "path": "data/sub-017_hypo1_cope.nii.gz",
+      "shape": [
+        97,
+        115,
+        81
+      ],
+      "nonzero_voxels": 225122,
+      "finite": true
+    },
+    {
+      "path": "data/sub-019_hypo1_cope.nii.gz",
+      "shape": [
+        97,
+        115,
+        81
+      ],
+      "nonzero_voxels": 224562,
+      "finite": true
+    },
+    {
+      "path": "data/sub-021_hypo1_cope.nii.gz",
+      "shape": [
+        97,
+        115,
+        81
+      ],
+      "nonzero_voxels": 229096,
+      "finite": true
+    },
+    {
+      "path": "data/sub-025_hypo1_cope.nii.gz",
+      "shape": [
+        97,
+        115,
+        81
+      ],
+      "nonzero_voxels": 226896,
+      "finite": true
+    },
+    {
+      "path": "data/sub-027_hypo1_cope.nii.gz",
+      "shape": [
+        97,
+        115,
+        81
+      ],
+      "nonzero_voxels": 228009,
+      "finite": true
+    },
+    {
+      "path": "data/sub-029_hypo1_cope.nii.gz",
+      "shape": [
+        97,
+        115,
+        81
+      ],
+      "nonzero_voxels": 225063,
+      "finite": true
+    },
+    {
+      "path": "data/sub-033_hypo1_cope.nii.gz",
+      "shape": [
+        97,
+        115,
+        81
+      ],
+      "nonzero_voxels": 221734,
+      "finite": true
+    },
+    {
+      "path": "data/sub-035_hypo1_cope.nii.gz",
+      "shape": [
+        97,
+        115,
+        81
+      ],
+      "nonzero_voxels": 221985,
+      "finite": true
+    },
+    {
+      "path": "data/sub-037_hypo1_cope.nii.gz",
+      "shape": [
+        97,
+        115,
+        81
+      ],
+      "nonzero_voxels": 227148,
+      "finite": true
+    },
+    {
+      "path": "data/sub-039_hypo1_cope.nii.gz",
+      "shape": [
+        97,
+        115,
+        81
+      ],
+      "nonzero_voxels": 222992,
+      "finite": true
+    },
+    {
+      "path": "data/sub-041_hypo1_cope.nii.gz",
+      "shape": [
+        97,
+        115,
+        81
+      ],
+      "nonzero_voxels": 226375,
+      "finite": true
+    },
+    {
+      "path": "data/sub-043_hypo1_cope.nii.gz",
+      "shape": [
+        97,
+        115,
+        81
+      ],
+      "nonzero_voxels": 223099,
+      "finite": true
+    },
+    {
+      "path": "data/sub-045_hypo1_cope.nii.gz",
+      "shape": [
+        97,
+        115,
+        81
+      ],
+      "nonzero_voxels": 227897,
+      "finite": true
+    },
+    {
+      "path": "data/sub-047_hypo1_cope.nii.gz",
+      "shape": [
+        97,
+        115,
+        81
+      ],
+      "nonzero_voxels": 221275,
+      "finite": true
+    },
+    {
+      "path": "data/sub-049_hypo1_cope.nii.gz",
+      "shape": [
+        97,
+        115,
+        81
+      ],
+      "nonzero_voxels": 228901,
+      "finite": true
+    },
+    {
+      "path": "data/sub-051_hypo1_cope.nii.gz",
+      "shape": [
+        97,
+        115,
+        81
+      ],
+      "nonzero_voxels": 220605,
+      "finite": true
+    },
+    {
+      "path": "data/sub-053_hypo1_cope.nii.gz",
+      "shape": [
+        97,
+        115,
+        81
+      ],
+      "nonzero_voxels": 221057,
+      "finite": true
+    },
+    {
+      "path": "data/sub-055_hypo1_cope.nii.gz",
+      "shape": [
+        97,
+        115,
+        81
+      ],
+      "nonzero_voxels": 225194,
+      "finite": true
+    },
+    {
+      "path": "data/sub-057_hypo1_cope.nii.gz",
+      "shape": [
+        97,
+        115,
+        81
+      ],
+      "nonzero_voxels": 228370,
+      "finite": true
+    },
+    {
+      "path": "data/sub-059_hypo1_cope.nii.gz",
+      "shape": [
+        97,
+        115,
+        81
+      ],
+      "nonzero_voxels": 224454,
+      "finite": true
+    },
+    {
+      "path": "data/sub-061_hypo1_cope.nii.gz",
+      "shape": [
+        97,
+        115,
+        81
+      ],
+      "nonzero_voxels": 224052,
+      "finite": true
+    },
+    {
+      "path": "data/sub-063_hypo1_cope.nii.gz",
+      "shape": [
+        97,
+        115,
+        81
+      ],
+      "nonzero_voxels": 224365,
+      "finite": true
+    },
+    {
+      "path": "data/sub-067_hypo1_cope.nii.gz",
+      "shape": [
+        97,
+        115,
+        81
+      ],
+      "nonzero_voxels": 222751,
+      "finite": true
+    },
+    {
+      "path": "data/sub-069_hypo1_cope.nii.gz",
+      "shape": [
+        97,
+        115,
+        81
+      ],
+      "nonzero_voxels": 222268,
+      "finite": true
+    },
+    {
+      "path": "data/sub-071_hypo1_cope.nii.gz",
+      "shape": [
+        97,
+        115,
+        81
+      ],
+      "nonzero_voxels": 224937,
+      "finite": true
+    },
+    {
+      "path": "data/sub-073_hypo1_cope.nii.gz",
+      "shape": [
+        97,
+        115,
+        81
+      ],
+      "nonzero_voxels": 224251,
+      "finite": true
+    },
+    {
+      "path": "data/sub-075_hypo1_cope.nii.gz",
+      "shape": [
+        97,
+        115,
+        81
+      ],
+      "nonzero_voxels": 222801,
+      "finite": true
+    },
+    {
+      "path": "data/sub-077_hypo1_cope.nii.gz",
+      "shape": [
+        97,
+        115,
+        81
+      ],
+      "nonzero_voxels": 220288,
+      "finite": true
+    },
+    {
+      "path": "data/sub-079_hypo1_cope.nii.gz",
+      "shape": [
+        97,
+        115,
+        81
+      ],
+      "nonzero_voxels": 222348,
+      "finite": true
+    },
+    {
+      "path": "data/sub-081_hypo1_cope.nii.gz",
+      "shape": [
+        97,
+        115,
+        81
+      ],
+      "nonzero_voxels": 227369,
+      "finite": true
+    },
+    {
+      "path": "data/sub-083_hypo1_cope.nii.gz",
+      "shape": [
+        97,
+        115,
+        81
+      ],
+      "nonzero_voxels": 222305,
+      "finite": true
+    },
+    {
+      "path": "data/sub-085_hypo1_cope.nii.gz",
+      "shape": [
+        97,
+        115,
+        81
+      ],
+      "nonzero_voxels": 217625,
+      "finite": true
+    },
+    {
+      "path": "data/sub-087_hypo1_cope.nii.gz",
+      "shape": [
+        97,
+        115,
+        81
+      ],
+      "nonzero_voxels": 229502,
+      "finite": true
+    },
+    {
+      "path": "data/sub-089_hypo1_cope.nii.gz",
+      "shape": [
+        97,
+        115,
+        81
+      ],
+      "nonzero_voxels": 218802,
+      "finite": true
+    },
+    {
+      "path": "data/sub-093_hypo1_cope.nii.gz",
+      "shape": [
+        97,
+        115,
+        81
+      ],
+      "nonzero_voxels": 224204,
+      "finite": true
+    },
+    {
+      "path": "data/sub-095_hypo1_cope.nii.gz",
+      "shape": [
+        97,
+        115,
+        81
+      ],
+      "nonzero_voxels": 217907,
+      "finite": true
+    },
+    {
+      "path": "data/sub-099_hypo1_cope.nii.gz",
+      "shape": [
+        97,
+        115,
+        81
+      ],
+      "nonzero_voxels": 229550,
+      "finite": true
+    },
+    {
+      "path": "data/sub-103_hypo1_cope.nii.gz",
+      "shape": [
+        97,
+        115,
+        81
+      ],
+      "nonzero_voxels": 227891,
+      "finite": true
+    },
+    {
+      "path": "data/sub-105_hypo1_cope.nii.gz",
+      "shape": [
+        97,
+        115,
+        81
+      ],
+      "nonzero_voxels": 225633,
+      "finite": true
+    },
+    {
+      "path": "data/sub-107_hypo1_cope.nii.gz",
+      "shape": [
+        97,
+        115,
+        81
+      ],
+      "nonzero_voxels": 226602,
+      "finite": true
+    },
+    {
+      "path": "data/sub-109_hypo1_cope.nii.gz",
+      "shape": [
+        97,
+        115,
+        81
+      ],
+      "nonzero_voxels": 224659,
+      "finite": true
+    },
+    {
+      "path": "data/sub-113_hypo1_cope.nii.gz",
+      "shape": [
+        97,
+        115,
+        81
+      ],
+      "nonzero_voxels": 229014,
+      "finite": true
+    },
+    {
+      "path": "data/sub-115_hypo1_cope.nii.gz",
+      "shape": [
+        97,
+        115,
+        81
+      ],
+      "nonzero_voxels": 225894,
+      "finite": true
+    },
+    {
+      "path": "data/sub-117_hypo1_cope.nii.gz",
+      "shape": [
+        97,
+        115,
+        81
+      ],
+      "nonzero_voxels": 218740,
+      "finite": true
+    },
+    {
+      "path": "data/sub-119_hypo1_cope.nii.gz",
+      "shape": [
+        97,
+        115,
+        81
+      ],
+      "nonzero_voxels": 220064,
+      "finite": true
+    },
+    {
+      "path": "data/sub-121_hypo1_cope.nii.gz",
+      "shape": [
+        97,
+        115,
+        81
+      ],
+      "nonzero_voxels": 222043,
+      "finite": true
+    },
+    {
+      "path": "data/sub-123_hypo1_cope.nii.gz",
+      "shape": [
+        97,
+        115,
+        81
+      ],
+      "nonzero_voxels": 219315,
+      "finite": true
+    }
+  ],
+  "scientific_analysis_executed": false
+}

@@ -1,22 +1,36 @@
 {
   "ready": false,
-  "reason": "Participant-level preprocessed fMRI, events, confounds and metadata have not been staged and verified in input/. The retained team-level results cannot substitute for these observations.",
-  "source": {
-    "dataset": "ds001734",
-    "version": "1.0.4",
-    "git_commit": "64ec117560ab58ed0fe1273f3e90887b1768b268",
-    "url": "https://openneuro.org/datasets/ds001734/versions/1.0.4",
-    "group": "equalIndifference",
-    "participants": 54
+  "reason": "Inputs and computational checks are ready. An independent agent trial has not yet established the scientific task depth or measured research and reporting time.",
+  "data_ready": true,
+  "scientific_scope": "Original NARPS Hypothesis 1, conditional on fixed AO86 participant gain-effect estimates: positive potential-gain effect in vmPFC in the equal-indifference group, evaluated with whole-brain correction.",
+  "input": {
+    "participant_maps": 54,
+    "map_bytes": 96387264,
+    "collection": "https://neurovault.org/collections/4932/",
+    "team": "AO86",
+    "input_manifest_sha256": "919be9b4278c31f7e39ae3d02fcf159eb4ae222a2fb96c90df7c3a92e5fb19cd",
+    "upstream_processing_fixed": true
   },
-  "availability_check": {
-    "date": "2026-10-15",
-    "inventory_url": "https://s3.amazonaws.com/openneuro.org?list-type=2&prefix=ds001734%2Fderivatives%2Ffmriprep%2F",
-    "preprocessed_bold_runs": 216,
-    "compressed_bold_bytes": 263550623893,
-    "scope": "Current public S3 object listing; cohort taken from the pinned participant table. Payload identity against that version remains to be verified.",
-    "payloads_downloaded": false,
-    "payloads_verified": false
+  "evidence": {
+    "input_verification": "participant-preparation/verification.json",
+    "annex_publication": "participant-preparation/annex-publication.json",
+    "independent_retrieval": "participant-preparation/independent-retrieval.json",
+    "computational_smoke_test": "rehearsal/report.json",
+    "numerical_repeat": "rehearsal-replay/report.json",
+    "annex_write_check": "participant-preparation/annex-write-check.json"
   },
-  "timing_rehearsal_completed": false
+  "computational_smoke_test": {
+    "passed": true,
+    "first_analysis_seconds": 6.593964708968997,
+    "repeat_process_seconds_including_imports": 8.595743832993321,
+    "four_numerical_outputs_match_exactly": true,
+    "scope": "Prewritten calculation only, not independent scientific work, anatomical interpretation or measured agent completion time."
+  },
+  "benchmark_suitability": {
+    "agent_trial_completed": false,
+    "agent_duration_minutes": null,
+    "minimum_compute_duration_required": false,
+    "intended_work": "Scientific reasoning, quality checks, inference, interpretation, figures and reproducible research outputs."
+  },
+  "environment_snapshot_branch": "codex/env-narps-preparation-20261015"
 }

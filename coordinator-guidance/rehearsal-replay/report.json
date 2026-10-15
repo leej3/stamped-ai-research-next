@@ -1,0 +1,66 @@
+{
+  "completed_at": "2026-10-15T20:00:55.002105+00:00",
+  "command": [
+    "pixi",
+    "run",
+    "rehearse",
+    "--output",
+    "coordinator-guidance/rehearsal-replay",
+    "--compare",
+    "coordinator-guidance/rehearsal"
+  ],
+  "scope": "Computational readiness and repeated numerical execution only; no independent worker or judge trial and no anatomical decision about Hypothesis 1.",
+  "input_manifest_sha256": "919be9b4278c31f7e39ae3d02fcf159eb4ae222a2fb96c90df7c3a92e5fb19cd",
+  "upstream_processing_fixed": true,
+  "participant_maps": 54,
+  "method": "Intercept-only OLS on participant effects, intersection background mask, one-sided voxelwise Bonferroni correction at alpha 0.05.",
+  "method_role": "Rehearsal only; workers choose their own defensible methods.",
+  "mask_voxels": 198276,
+  "corrected_z_threshold": 5.024651522078119,
+  "elapsed_seconds": 6.522157584084198,
+  "stages_seconds": {
+    "verify_input": 0.04027833405416459,
+    "mask": 1.6461401249980554,
+    "group_model_and_correction": 4.54129779106006,
+    "save_and_plot": 0.24516383290756494
+  },
+  "peak_rss_bytes": 1779302400,
+  "cpu_user_seconds": 6.282103,
+  "cpu_system_seconds": 1.587686,
+  "blas_threads": 2,
+  "workers": 1,
+  "host": {
+    "system": "Darwin",
+    "machine": "arm64",
+    "physical_cores": 10
+  },
+  "versions": {
+    "python": "3.13.16",
+    "nilearn": "0.14.1",
+    "nibabel": "5.4.2",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "pandas": "3.0.6",
+    "matplotlib": "3.11.2"
+  },
+  "replay_agreement": {
+    "mask.nii.gz": {
+      "exact_array_match": true,
+      "max_absolute_difference": 0.0
+    },
+    "group-effect.nii.gz": {
+      "exact_array_match": true,
+      "max_absolute_difference": 0.0
+    },
+    "group-z.nii.gz": {
+      "exact_array_match": true,
+      "max_absolute_difference": 0.0
+    },
+    "group-corrected-z.nii.gz": {
+      "exact_array_match": true,
+      "max_absolute_difference": 0.0
+    }
+  },
+  "process_wall_seconds_including_imports": 8.595743832993321,
+  "elapsed_scope": "elapsed_seconds measures the analysis after Python imports; process_wall_seconds_including_imports includes Pixi launch and imports."
+}

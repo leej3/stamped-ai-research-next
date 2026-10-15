@@ -1,0 +1,43 @@
+{
+  "completed_at": "2026-10-15T19:59:48.453024+00:00",
+  "command": [
+    "pixi",
+    "run",
+    "rehearse"
+  ],
+  "scope": "Computational readiness and repeated numerical execution only; no independent worker or judge trial and no anatomical decision about Hypothesis 1.",
+  "input_manifest_sha256": "919be9b4278c31f7e39ae3d02fcf159eb4ae222a2fb96c90df7c3a92e5fb19cd",
+  "upstream_processing_fixed": true,
+  "participant_maps": 54,
+  "method": "Intercept-only OLS on participant effects, intersection background mask, one-sided voxelwise Bonferroni correction at alpha 0.05.",
+  "method_role": "Rehearsal only; workers choose their own defensible methods.",
+  "mask_voxels": 198276,
+  "corrected_z_threshold": 5.024651522078119,
+  "elapsed_seconds": 6.593964708968997,
+  "stages_seconds": {
+    "verify_input": 0.10236399993300438,
+    "mask": 1.5743200409924611,
+    "group_model_and_correction": 4.455798165989108,
+    "save_and_plot": 0.4614362090360373
+  },
+  "peak_rss_bytes": 2218688512,
+  "cpu_user_seconds": 6.338685,
+  "cpu_system_seconds": 1.6985569999999999,
+  "blas_threads": 2,
+  "workers": 1,
+  "host": {
+    "system": "Darwin",
+    "machine": "arm64",
+    "physical_cores": 10
+  },
+  "versions": {
+    "python": "3.13.16",
+    "nilearn": "0.14.1",
+    "nibabel": "5.4.2",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "pandas": "3.0.6",
+    "matplotlib": "3.11.2"
+  },
+  "replay_agreement": null
+}

@@ -1,0 +1,81 @@
+{
+  "first_attempt": {
+    "purpose": "Verify repeated execution preserves existing annexed outputs",
+    "elapsed_process_seconds": 8.32625695806928,
+    "returncode": 1,
+    "stdout": "",
+    "stderr": "\u2728 Pixi task (rehearse): python coordinator-guidance/rehearse.py --output coordinator-guidance/rehearsal-replay --compare coordinator-guidance/rehearsal: (Time a bounded group-analysis rehearsal outside worker inputs)\nTraceback (most recent call last):\n  File \"/Users/johnlee/code/CON/stamped-study-narps-gain-consistency/coordinator-guidance/rehearse.py\", line 123, in <module>\n    main()\n    ~~~~^^\n  File \"/Users/johnlee/code/CON/stamped-study-narps-gain-consistency/coordinator-guidance/rehearse.py\", line 76, in main\n    plot.savefig(buffer, format=\"png\")\n    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/johnlee/code/CON/stamped-study-narps-gain-consistency/.pixi/envs/default/lib/python3.13/site-packages/nilearn/plotting/displays/_slicers.py\", line 1130, in savefig\n    output_file = Path(filename)\n  File \"/Users/johnlee/code/CON/stamped-study-narps-gain-consistency/.pixi/envs/default/lib/python3.13/pathlib/_local.py\", line 503, in __init__\n    super().__init__(*args)\n    ~~~~~~~~~~~~~~~~^^^^^^^\n  File \"/Users/johnlee/code/CON/stamped-study-narps-gain-consistency/.pixi/envs/default/lib/python3.13/pathlib/_local.py\", line 132, in __init__\n    raise TypeError(\n    ...<2 lines>...\n        f\"not {type(path).__name__!r}\")\nTypeError: argument should be a str or an os.PathLike object where __fspath__ returns a str, not 'BytesIO'\n"
+  },
+  "repair": "Use a temporary PNG path, as required by Nilearn savefig, before comparing existing annexed bytes.",
+  "verification": {
+    "purpose": "Verify repeated execution preserves existing annexed outputs",
+    "elapsed_process_seconds": 7.470731416950002,
+    "returncode": 0,
+    "stdout": "54-participant rehearsal: 6.0s, peak RSS 2234 MB; replay=True.\n",
+    "stderr": "\u2728 Pixi task (rehearse): python coordinator-guidance/rehearse.py --output coordinator-guidance/rehearsal-replay --compare coordinator-guidance/rehearsal: (Time a bounded group-analysis rehearsal outside worker inputs)\n",
+    "run_report": {
+      "completed_at": "2026-10-15T20:11:43.406946+00:00",
+      "command": [
+        "pixi",
+        "run",
+        "rehearse",
+        "--output",
+        "coordinator-guidance/rehearsal-replay",
+        "--compare",
+        "coordinator-guidance/rehearsal"
+      ],
+      "scope": "Computational readiness and repeated numerical execution only; no independent worker or judge trial and no anatomical decision about Hypothesis 1.",
+      "input_manifest_sha256": "919be9b4278c31f7e39ae3d02fcf159eb4ae222a2fb96c90df7c3a92e5fb19cd",
+      "upstream_processing_fixed": true,
+      "participant_maps": 54,
+      "method": "Intercept-only OLS on participant effects, intersection background mask, one-sided voxelwise Bonferroni correction at alpha 0.05.",
+      "method_role": "Rehearsal only; workers choose their own defensible methods.",
+      "mask_voxels": 198276,
+      "corrected_z_threshold": 5.024651522078119,
+      "elapsed_seconds": 5.980731374933384,
+      "stages_seconds": {
+        "verify_input": 0.03658899990841746,
+        "mask": 1.5548027920303866,
+        "group_model_and_correction": 4.1663973750546575,
+        "save_and_plot": 0.18811424996238202
+      },
+      "peak_rss_bytes": 2233745408,
+      "cpu_user_seconds": 5.815935,
+      "cpu_system_seconds": 1.410027,
+      "blas_threads": 2,
+      "workers": 1,
+      "host": {
+        "system": "Darwin",
+        "machine": "arm64",
+        "physical_cores": 10
+      },
+      "versions": {
+        "python": "3.13.16",
+        "nilearn": "0.14.1",
+        "nibabel": "5.4.2",
+        "numpy": "2.5.4",
+        "scipy": "1.18.1",
+        "pandas": "3.0.6",
+        "matplotlib": "3.11.2"
+      },
+      "replay_agreement": {
+        "mask.nii.gz": {
+          "exact_array_match": true,
+          "max_absolute_difference": 0.0
+        },
+        "group-effect.nii.gz": {
+          "exact_array_match": true,
+          "max_absolute_difference": 0.0
+        },
+        "group-z.nii.gz": {
+          "exact_array_match": true,
+          "max_absolute_difference": 0.0
+        },
+        "group-corrected-z.nii.gz": {
+          "exact_array_match": true,
+          "max_absolute_difference": 0.0
+        }
+      }
+    }
+  }
+}

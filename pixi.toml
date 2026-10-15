@@ -1,0 +1,27 @@
+[workspace]
+name = "narps-study"
+channels = ["conda-forge"]
+platforms = [{ platform = "osx-arm64", macos = "14.0" }, "linux-64"]
+
+[dependencies]
+python = ">=3.11,<3.14"
+git = "*"
+requests = "*"
+nibabel = "*"
+nilearn = "*"
+numpy = "*"
+pandas = "*"
+openpyxl = "*"
+matplotlib-base = "*"
+psutil = "*"
+threadpoolctl = "*"
+pre-commit = "*"
+
+[pypi-dependencies]
+datalad = "*"
+git-annex = "*"
+
+[tasks]
+prepare-input = { cmd = "python coordinator-guidance/prepare_subject_inputs.py", description = "Retrieve and verify the 54 participant gain-effect maps" }
+verify-input = { cmd = "python coordinator-guidance/prepare_subject_inputs.py --verify-only", description = "Verify the frozen worker inputs without downloading" }
+rehearse = { cmd = "python coordinator-guidance/rehearse.py", description = "Time a bounded group-analysis rehearsal outside worker inputs" }

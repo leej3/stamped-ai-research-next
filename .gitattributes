@@ -2,6 +2,8 @@
 * annex.largefiles=(largerthan=100kb)
 *.nii.gz annex.largefiles=anything
 *.tgz annex.largefiles=anything
+*.png annex.largefiles=anything
+*.xlsx annex.largefiles=anything
 *.md annex.largefiles=nothing
 *.py annex.largefiles=nothing
 *.json annex.largefiles=nothing
@@ -9,3 +11,4 @@
 *.tsv annex.largefiles=(largerthan=100kb)
 **/.git* annex.largefiles=nothing
 coordinator-guidance/team-results/data/** -whitespace
+coordinator-guidance/participant-preparation/neurovault-participant-metadata.json annex.largefiles=anything
