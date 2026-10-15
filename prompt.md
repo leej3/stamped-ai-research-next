@@ -4,6 +4,7 @@ Run this workshop to improve reusable STAMPED research skills through evidence f
 Use the selected study submodules as inputs to the same repeated process; ask which studies to use if none are selected.
 Each iteration tests one pinned skill revision with fresh agents, independently assesses their research objects, and uses the findings to improve the next revision.
 Compare scientific validity, STAMPED evidence, effort and variability.
+Report null, adverse and favorable outcomes using the same criteria.
 The whole workshop must itself become a STAMPED research object.
 
 1. Fix the study set, each scientific question and input package, evaluation criteria, common resources, model/settings, repetitions and total budget before starting.
@@ -44,4 +45,4 @@ Include clear figures of scientific outcomes, checklist attainment, recurring fa
 Keep scientific validity separate from STAMPED evidence, retain `not-checked`, and do not invent an overall assessor score.
 Have a fresh judge assess the complete effort.
 Limit conclusions to the evaluated studies and exploratory sample; further studies can test transfer.
-Poster production follows separately.
+After collecting the evidence, prepare a poster explaining the iterative honing process, linking the complete STAMPED research object and inviting contributed study examples.
