@@ -1,0 +1,17 @@
+{
+  "tool_use_id": "01a1406c-bafd-72e0-9cc7-3a61f482e504",
+  "agent_id": "01a1406c-bafd-72e0-9cc7-3a61f482e504",
+  "subagent_type": "default",
+  "files": [
+    "capture-probes/child.txt"
+  ],
+  "token_usage": {
+    "input_tokens": 7738,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 100096,
+    "output_tokens": 733,
+    "api_call_count": 6
+  },
+  "started_at": "2026-10-15T12:37:11.453899-04:00",
+  "completed_at": "2026-10-15T12:37:57.326094-04:00"
+}
