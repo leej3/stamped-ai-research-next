@@ -16,11 +16,10 @@ The whole workshop must itself become a STAMPED research object.
    Select tasks requiring substantial scientific work that fits about 45 minutes; fast computation is fine.
    Review progress around 90 minutes and allow productive work to finish.
 
-2. For each selected study, launch fresh agents on the same task with and without the current skill revision, varying launch order.
-   Both conditions receive the same committed input package and common resources; treatment agents additionally receive the selected skills.
-   Record exact input, environment and skill revisions for every run.
-   Neither condition receives previous solutions, judgments or coordinator history.
-   Baseline agents also receive no research skill files.
+2. For each selected study, launch fresh agents in four conditions, varying launch order: baseline, general skill discovery, reproducible-science skill discovery, and explicit pinned STAMPED.
+   All receive the same committed input package, model/settings, tool and network access, and common resources. Baseline receives no supplied research skills or discovery instruction; spontaneous discovery remains part of its observed behavior. General discovery asks agents to find, install and use useful skills; reproducible-science discovery asks for skills that improve scientific quality and reproducibility. Explicit STAMPED invokes the supplied pinned workflows. No condition receives previous solutions, judgments or coordinator history. Retain the exact added prompt and assigned condition separately from observed searches, candidates, selection reasons, source revisions, skill contents/hashes, installation outcomes and time, loaded instructions and evidence of use.
+   Keep unsuccessful discovery and installation attempts in their assigned condition.
+   Record exact input and environment revisions for every run.
 
 3. Have fresh, independent judges assess each committed research object for scientific validity and STAMPED evidence separately.
    Freeze the assessor source, runtime, judging prompt, model/settings and replay scope before the first iteration.
@@ -36,6 +35,8 @@ The whole workshop must itself become a STAMPED research object.
    Add new studies as explicitly recorded transfer checks; do not treat a changed study set as a skill effect.
    If an assessment defect invalidates comparison, resolve the comparison design before continuing.
    Finish with an iteration using the final skills without further tuning on its results.
+   Interpret contrasts as effects of assistance strategies, since prompts can change behavior without skill use.
+   Use the explicit pinned condition to test our skill revisions; keep unmatched historical results and preparation pilots separate.
 
 Duct logging is requested for scientific execution.
 Retain every attempt, input, output, assessment, intervention and execution record, including failures and partial results, under their study's `results/`.

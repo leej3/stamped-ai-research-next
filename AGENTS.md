@@ -18,11 +18,14 @@ The unit of iteration is a pinned skill revision; study-specific preparation and
 - Keep working `pixi.lock` files ignored.
   Preserve the exact final validated lock on `codex/env-<task>-<run>`, one commit above the final task commit; publish that snapshot without merging it into main.
 - Launch matched workers from the same coordinator revision and study input package.
+  Use the four conditions in `prompt.md`; retain assigned condition separately from observed discovery, installation and use.
+  Keep tool and network access matched, and do not relabel spontaneous baseline discovery or unsuccessful discovery runs.
   Use `pixi run judge` with an exact result commit and the external frozen assessor; see [launch commands](scripts/README.md).
   Give judges the same scientific evaluation guidance without condition labels or coordinator grades.
   Keep assessment source, runtime, prompt and settings fixed throughout the comparison.
 - During preparation, improve and repin the assessor and runtime as needed, retaining exact version records.
   Regrade development results with a common assessor when comparing them; freeze assessment versions for formal runs.
+  Keep preparation pilots and historical results from other designs separate from formal comparisons.
 - Keep `skills/` pinned to the tested commit on our clearly named `con/skills` development branch; change it only between iterations.
   Improve and compress skills from observed problems and useful practices; keep study answers out of generic guidance.
 - Retain code, inputs, results and execution evidence; annex large artifacts and verify independent retrieval.

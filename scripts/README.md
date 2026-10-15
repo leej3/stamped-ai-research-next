@@ -19,15 +19,21 @@ pixi run launch --study studies/CHOSEN_STUDY \
   --condition baseline
 ```
 
-Use `--condition skills` for the treatment.
+Select `baseline`, `discover-general`, `discover-science` or `stamped-explicit` with `--condition`.
+The legacy `skills` value retains the earlier explicit treatment for existing records.
 Add `--capture-execution` when duct logging is requested, including runs explicitly following the workshop prompt.
 The explicit coordinator revision selects the study and skill gitlinks and common Pixi manifest.
+Its `conditions.json` supplies the exact added instruction, retained with its hash in the worker's input receipt.
 A study marked unavailable in its pinned `coordinator-guidance/readiness.json` stops before worker creation and reports the missing prerequisite.
 The launcher copies only committed study inputs and shared environment declarations into a parentless, independent repository.
 It records source revisions, blob identities and annex keys without importing coordinator or study history.
-Baseline repositories contain no research skill files; treatment repositories install the pinned skills submodule without its optional evaluation fixtures.
+Baseline and discovery repositories start without supplied research skill files; explicit STAMPED repositories install the pinned skills submodule without its optional evaluation fixtures.
 
-Both conditions receive the same scientific prompt and common resources.
+All conditions receive the same scientific prompt and common resources.
+Discovery conditions ask agents to search for and install skills; availability alone is not discovery or evidence of use.
+Retain unsuccessful attempts and distinguish assigned condition from observed behavior, including spontaneous discovery in baseline runs.
+Each launch uses a separate native profile; task-local skill installations must not change another run's catalog.
+Use retained transcripts and installed artifacts to establish searches, choices, source revisions, loading and application; an installed file alone does not establish use.
 Coordinator-only Pixi tasks are removed from the worker manifest.
 Workers can add dependencies and actionable tasks; each experiment retains its own root manifest.
 Keep the evidence directory outside the worker checkout.

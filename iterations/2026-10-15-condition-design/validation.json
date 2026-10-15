@@ -1,0 +1,164 @@
+{
+  "date": "2026-10-15",
+  "code_commit": "a247e1222166bc783776633bbd8927658f156376",
+  "base_commit": "945f6e7972e3ce5ab8e142dfcfe0ac3f91504091",
+  "conditions_config_sha256": "2d41f2690f427f468ddec46c8d40944d28a21f2013315dde8c1e4618b29d79c5",
+  "validation": {
+    "command": "PATH=/Users/johnlee/code/CON/stamped-ai-research-next/.pixi/envs/default/bin:$PATH /Users/johnlee/code/CON/stamped-ai-research-next/.pixi/envs/default/bin/python -m pytest -q tests/test_launch.py",
+    "result": "35 passed in 52.34s",
+    "python": "3.13.16",
+    "pytest": "pytest 9.1.1",
+    "git": "git version 2.55.0"
+  },
+  "native_previews": {
+    "command_template": "CODEX_HOME=<fresh-profile> codex ... -C <temporary-checkout> debug prompt-input <condition-prompt>",
+    "exact_argv_retained": false,
+    "command_note": "Invocation form only; the preview harness did not retain full argv. No commands were rerun to reconstruct it.",
+    "runtime": "codex-cli 0.162.0-alpha.17.2",
+    "source_pin": "496d4702937a1264bcd95d1c7657c0d9f5558079",
+    "common_catalog_identical": true,
+    "conditions": [
+      {
+        "condition": "baseline",
+        "returncode": 0,
+        "input_prompt_sha256": "c6d7c09082e55a2d91a2d05af9f6d862a9e66cc500bf26432bd50c290bd9079b",
+        "additional_prompt": "",
+        "advertised_catalog": [
+          {
+            "name": "imagegen",
+            "sha256": "681ddb4ad6d06a2acc78a3535b583f8d0c1ea800ecda3d56370d3310fd2cd4ba"
+          },
+          {
+            "name": "openai-docs",
+            "sha256": "aa6829e21df2223167c85d2e49b6337a7345c84c1033f1ec10182c7882b36d45"
+          },
+          {
+            "name": "skill-creator",
+            "sha256": "6656e54755638e8efcf275a472b9672eaa8a9a1b9e59dc210e275b03b59e1e66"
+          },
+          {
+            "name": "skill-installer",
+            "sha256": "d68b77e5bbb34dedab89d134da52855f140fc4b4299b80104f534e3b9e98f8ee"
+          }
+        ],
+        "supplied_names": [],
+        "unexpected_count": 0
+      },
+      {
+        "condition": "discover-general",
+        "returncode": 0,
+        "input_prompt_sha256": "23a23606c79071d197ce98a93d1456fac386a5b828e14bfc58d5b41a5cf4d95c",
+        "additional_prompt": "Find and install skills you consider useful for completing this task, and use them where appropriate.",
+        "advertised_catalog": [
+          {
+            "name": "imagegen",
+            "sha256": "681ddb4ad6d06a2acc78a3535b583f8d0c1ea800ecda3d56370d3310fd2cd4ba"
+          },
+          {
+            "name": "openai-docs",
+            "sha256": "aa6829e21df2223167c85d2e49b6337a7345c84c1033f1ec10182c7882b36d45"
+          },
+          {
+            "name": "skill-creator",
+            "sha256": "6656e54755638e8efcf275a472b9672eaa8a9a1b9e59dc210e275b03b59e1e66"
+          },
+          {
+            "name": "skill-installer",
+            "sha256": "d68b77e5bbb34dedab89d134da52855f140fc4b4299b80104f534e3b9e98f8ee"
+          }
+        ],
+        "supplied_names": [],
+        "unexpected_count": 0
+      },
+      {
+        "condition": "discover-science",
+        "returncode": 0,
+        "input_prompt_sha256": "f15e128964ccaffe7e5b6081b1f01a9dbf4034a8fd08cb3345dead26ba8c1cbd",
+        "additional_prompt": "Find and install skills that could improve the scientific quality and reproducibility of this work, and use them where appropriate.",
+        "advertised_catalog": [
+          {
+            "name": "imagegen",
+            "sha256": "681ddb4ad6d06a2acc78a3535b583f8d0c1ea800ecda3d56370d3310fd2cd4ba"
+          },
+          {
+            "name": "openai-docs",
+            "sha256": "aa6829e21df2223167c85d2e49b6337a7345c84c1033f1ec10182c7882b36d45"
+          },
+          {
+            "name": "skill-creator",
+            "sha256": "6656e54755638e8efcf275a472b9672eaa8a9a1b9e59dc210e275b03b59e1e66"
+          },
+          {
+            "name": "skill-installer",
+            "sha256": "d68b77e5bbb34dedab89d134da52855f140fc4b4299b80104f534e3b9e98f8ee"
+          }
+        ],
+        "supplied_names": [],
+        "unexpected_count": 0
+      },
+      {
+        "condition": "stamped-explicit",
+        "returncode": 0,
+        "input_prompt_sha256": "30fc0dcb2ae476987fd8bf09cba60b117daa3ece16f306b289730bc46bcced8e",
+        "additional_prompt": "Use the supplied, pinned STAMPED skills to complete this study: start with do-full-research-loop and apply the related guidance where appropriate.",
+        "advertised_catalog": [
+          {
+            "name": "imagegen",
+            "sha256": "681ddb4ad6d06a2acc78a3535b583f8d0c1ea800ecda3d56370d3310fd2cd4ba"
+          },
+          {
+            "name": "openai-docs",
+            "sha256": "aa6829e21df2223167c85d2e49b6337a7345c84c1033f1ec10182c7882b36d45"
+          },
+          {
+            "name": "skill-creator",
+            "sha256": "6656e54755638e8efcf275a472b9672eaa8a9a1b9e59dc210e275b03b59e1e66"
+          },
+          {
+            "name": "skill-installer",
+            "sha256": "d68b77e5bbb34dedab89d134da52855f140fc4b4299b80104f534e3b9e98f8ee"
+          },
+          {
+            "name": "align-with-stamped-principles",
+            "sha256": "5ae37e683a298677b9613dd07110bae1a1f966a167b99e684adc7005ffa04dbe"
+          },
+          {
+            "name": "create-repronim-stamped-project",
+            "sha256": "1b4d4ad356ff7bf61fb9c6a8739a3b28611b8be7f9739b2ecf0e1c452f764ec8"
+          },
+          {
+            "name": "create-stamped-project",
+            "sha256": "beb06d9beca695c7e7fd0589d021766f90b918060894356ae53b5e90649589fd"
+          },
+          {
+            "name": "do-full-research-loop",
+            "sha256": "13e936db48ff6c5494010c95490a1d75986fd741fc52d1fe3420bcbce59d2c89"
+          },
+          {
+            "name": "pixi-with-stamped",
+            "sha256": "e3459e696ce0c1fea9c2db9c181cdc528bb305cf23c4045829ac0ea9ac3c2f02"
+          },
+          {
+            "name": "stamped-conventions",
+            "sha256": "cfc23e8c24096ec55668d2ccfbda961586fc320081e6ec82e6ed4dbbd555c981"
+          }
+        ],
+        "supplied_names": [
+          "align-with-stamped-principles",
+          "create-repronim-stamped-project",
+          "create-stamped-project",
+          "do-full-research-loop",
+          "pixi-with-stamped",
+          "stamped-conventions"
+        ],
+        "unexpected_count": 0
+      }
+    ]
+  },
+  "limitations": [
+    "Native checks establish advertised availability and entrypoint hashes, not loaded instructions, skill application or scientific performance.",
+    "Discovery queries, candidate selection, installation cost/outcome and application evidence remain unmeasured until real trials and transcript review.",
+    "Per-launch profiles isolate session state and ordinary skill installations; shared host filesystem access, PATH and shell configuration are not an OS security boundary.",
+    "No scientific agents were launched and no existing pilot inputs were modified. Raw native previews remain local; this summary contains no system/developer instruction bodies."
+  ]
+}
