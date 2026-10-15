@@ -2,8 +2,10 @@
 
 - Add experiment files under `experiments/<name>/`; merge useful changes into the project.
   Worktree checkout paths are host infrastructure, not archived experiment directories.
-- Use the root Pixi environment.
+- Each experiment owns its Pixi environment in its worktree and can evolve that checkout's root `pixi.toml` from the default.
   Add missing dependencies with `pixi add`; prefer established scientific libraries and tools over custom implementations.
+  When merging, the coordinator preserves differing requirements as named environments in the root manifest and selects them explicitly in experiment tasks.
+- For reassessment or reproduction, state which data, code, dependency selection and host conditions stay fixed and which change; choose comparison criteria for that question.
 - Keep `pixi.lock` out of task history.
   Preserve the exact final validated lock on `codex/env-<task>-<run>` with one extra commit off the final task commit; publish the snapshot without merging it into main.
 - Give concurrent writers separate prepared worktrees and installed submodules.

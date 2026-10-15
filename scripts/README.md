@@ -24,7 +24,8 @@ pixi run launch --branch codex/my-task \
 ```
 
 The default time bound is 240 seconds; use `--seconds` for the authorized task.
-The worker gets its own locked Pixi environment and initialized annex remote; setup does not download all artifacts.
+The worker gets its own Pixi installation with the initial matched manifest and lock, plus an initialized annex remote; setup does not download all artifacts.
+The experiment may evolve its requirements afterward; the coordinator preserves differences as a named environment on merge.
 `--prepare-only` verifies effective skill exposure and stops before native execution.
 A new clone additionally needs `--kind clone --clone-path ABS`.
 Unknown hook changes or mismatched manifests, locks or remotes stop setup.

@@ -2,8 +2,9 @@ Use this prepared repository for a small series of increasingly demanding analys
 Choose a feasible scientific question; check source meanings, units, missingness and access before freezing the task.
 Preserve source revisions and attribution.
 
-Use established scientific software and the root Pixi manifest.
+Use established scientific software and an experiment-owned Pixi environment, starting from the default in its worktree's root manifest.
 Add missing dependencies as needed; record changes and their cost.
+The coordinator integrates differing requirements as named environments when merging into main.
 Keep working locks ignored.
 Preserve the exact final-validation lock on a snapshot branch one commit above the final task commit; do not re-solve or merge that snapshot into normal history.
 
@@ -14,6 +15,7 @@ Record the treatment revision for each pair and change it only between pairs.
 Use the separately pinned assessment version throughout; distinguish scientific correctness from STAMPED evidence.
 
 Predeclare independent numerical, edge-case, replay and research-object checks.
+For each reassessment or reproduction, state what stays fixed and what changes across data, code, dependency selection and host; compare results accordingly.
 Retain every attempt, failure and intervention; distinguish worker work from later curation.
 Include useful result figures, uncertainty where appropriate, editable sources and a rendered visual check.
 Reserve time for verification and collection.

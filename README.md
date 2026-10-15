@@ -3,7 +3,8 @@
 A prepared repository for comparing research agents with and without STAMPED guidance.
 [prompt.md](prompt.md) defines the study; [AGENTS.md](AGENTS.md) defines the project conventions.
 
-Add experiments under `experiments/` and dependencies to the root `pixi.toml`.
+Add experiments under `experiments/`; each owns its Pixi environment and evolves its worktree's root `pixi.toml` as needed.
+The coordinator preserves requirements that differ from the default as named environments on merge.
 Concurrent agents use prepared external worktrees with installed submodules.
 Git stores source and metadata; git-annex stores larger artifacts and execution records on [CON Hub](https://hub.centerforopenneuroscience.org/leej3/stamped-ai-research-next).
 
@@ -20,4 +21,4 @@ Project-specific environment guidance is in [pixi-with-stamped](skills/skills/pi
 Execution trials and their complete records are retained under `experiments/`.
 They establish the tested execution routes, not scientific or skill efficacy.
 
-Execution evidence: [native DataLad replay](experiments/datalad-native/README.md), [independent workflow trial](experiments/skill-bundle/blind-001/README.md), and [frozen assessment](experiments/assessment-v1/README.md).
+Execution evidence: [DataLad reassessment and replay](experiments/datalad-native/README.md), [independent workflow trial](experiments/skill-bundle/blind-001/README.md), and [frozen assessment](experiments/assessment-v1/README.md).
