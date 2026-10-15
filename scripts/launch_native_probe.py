@@ -4,6 +4,7 @@ import argparse
 import hashlib
 import json
 import os
+import re
 import signal
 import shutil
 import tempfile
@@ -16,21 +17,16 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from study_seed import audit_seed, research_prompt
+from research_conditions import CONDITION_CHOICES, RESEARCH_SKILLS, canonical_condition
 
-STUDY_SKILLS = (
-    "assess-alignment-with-stamped-principles", "align-with-stamped-principles",
-    "stamped-conventions", "create-stamped-project",
-    "create-repronim-stamped-project", "do-full-research-loop", "pixi-with-stamped",
-)
+STUDY_SKILLS = ("assess-alignment-with-stamped-principles",) + RESEARCH_SKILLS
 JUDGE_SKILLS = {"assess-alignment-with-stamped-principles", "stamped-conventions"}
 
 
 def selected_skills(role, condition):
     if role == "judge":
         return JUDGE_SKILLS
-    if condition == "baseline":
-        return set()
-    return set(STUDY_SKILLS) - {"assess-alignment-with-stamped-principles"}
+    return set(RESEARCH_SKILLS) if canonical_condition(condition) == "stamped-explicit" else set()
 
 
 def check_assessment(source, expected_pin):
@@ -48,24 +44,96 @@ def check_assessment(source, expected_pin):
     return pin
 
 
-def judge_profile(prepared_profile, assessment_source):
-    """Discover frozen skills in a per-judge catalog without touching the target.
+def launch_profile(prepared_profile, assessment_source=None):
+    """Isolate each session's installs/history; reuse only host auth and trust.
 
     Keep host authentication links outside retained evidence. The copied public
     config carries existing exact-path hook approvals; no new trust is granted.
     """
-    profile = Path(tempfile.mkdtemp(prefix="stamped-judge-", dir=prepared_profile.parent))
+    role = "judge" if assessment_source else "research"
+    profile = Path(tempfile.mkdtemp(prefix="stamped-" + role + "-", dir=prepared_profile.parent))
     shutil.copyfile(prepared_profile / "config.toml", profile / "config.toml")
     (profile / "config.toml").chmod(0o600)
-    for name in ("auth.json", "models_cache.json"):
-        source = prepared_profile / name
-        if source.exists():
-            (profile / name).symlink_to(source.resolve())
+    auth = prepared_profile / "auth.json"
+    if auth.exists():
+        (profile / "auth.json").symlink_to(auth.resolve())
+    cache = prepared_profile / "models_cache.json"
+    if cache.is_file():
+        shutil.copy2(cache, profile / "models_cache.json")
     skills = profile / "skills"
     skills.mkdir()
-    for name in sorted(JUDGE_SKILLS):
-        (skills / name).symlink_to(assessment_source.resolve() / "skills" / name)
+    if assessment_source:
+        for name in sorted(JUDGE_SKILLS):
+            (skills / name).symlink_to(assessment_source.resolve() / "skills" / name)
     return profile
+
+
+def judge_profile(prepared_profile, assessment_source):
+    return launch_profile(prepared_profile, assessment_source)
+
+
+def skill_catalog(preview):
+    """Read the native developer catalog, expanding its per-block path aliases."""
+    text = preview.decode()
+    try:
+        messages = json.loads(text)
+    except json.JSONDecodeError:
+        blocks = [text]  # Plain-text previews from older runtimes/fixtures.
+    else:
+        if not isinstance(messages, list) or not all(isinstance(message, dict) for message in messages):
+            raise SystemExit("Unsupported native prompt preview format")
+        blocks = []
+        for message in messages:
+            if message.get("role") == "developer":
+                for item in message.get("content", []):
+                    blocks += re.findall(r"<skills_instructions>(.*?)</skills_instructions>",
+                                         item.get("text", ""), re.DOTALL)
+        if not blocks:
+            raise SystemExit("Native preview lacks an inspectable skill catalog")
+    catalog = []
+    for block in blocks:
+        roots = dict(re.findall(r"^- `([^`]+)` = `([^`]+)`\s*$", block, re.MULTILINE))
+        entries = re.findall(r"^- ([\w:-]+): .+ \(file: (.+)\)\s*$", block, re.MULTILINE)
+        declared = [line for line in block.split("### Available skills")[-1].splitlines()
+                    if line.startswith("- ") and not line.startswith("- `")]
+        if len(entries) != len(declared):
+            raise SystemExit("Unparsed advertised skill entry in native preview")
+        for name, raw in entries:
+            path = Path(raw)
+            if not path.is_absolute() and path.parts and path.parts[0] in roots:
+                path = Path(roots[path.parts[0]]).joinpath(*path.parts[1:])
+            if not path.is_absolute():
+                raise SystemExit("Unresolved advertised skill path: " + raw)
+            item = {"name": name, "path": str(path.resolve())}
+            if path.is_file():
+                item["sha256"] = hashlib.sha256(path.read_bytes()).hexdigest()
+            catalog.append(item)
+    return catalog
+
+
+def host_skill_paths(prepared_profile):
+    """Refresh exclusions; an old public profile may predate a host install."""
+    roots = (Path.home() / ".agents/skills", Path.home() / ".codex/skills",
+             Path("/etc/codex/skills"), prepared_profile / "skills")
+    return {path for root in roots for path in root.glob("*/SKILL.md")}
+
+
+def skill_observations(checkout, profile):
+    """Inventory installed entrypoints; installation does not establish use."""
+    files = []
+    for root in (checkout / ".agents/skills", checkout / ".codex/skills", profile / "skills"):
+        # Include normal nested installs plus top-level symlinked skill folders.
+        for path in sorted(set(root.rglob("SKILL.md")) | set(root.glob("*/SKILL.md"))):
+            if path.is_file():
+                files.append({"path": str(path), "sha256": hashlib.sha256(path.read_bytes()).hexdigest()})
+    return {
+        "status": "not-reviewed",
+        "evidence": {"events": "events.jsonl", "initial_catalog": "prompt-preflight.json"},
+        "installed_entrypoints": files,
+        "queries": None, "candidates": None, "selection_rationale": None,
+        "source_revisions": None, "installation_cost_and_outcome": None,
+        "loaded_instructions": None, "application_evidence": None,
+    }
 
 
 def wait_for_worker(process, output, hard_limit, review_after):
@@ -109,7 +177,7 @@ def main():
                         default=Path(__file__).resolve().parents[1] / "assessment-version.json")
     parser.add_argument("--assessment-source", type=Path,
                         default=Path(__file__).resolve().parents[1] / "assessment")
-    parser.add_argument("--condition", choices=["baseline", "skills"], default="baseline")
+    parser.add_argument("--condition", choices=CONDITION_CHOICES, default="baseline")
     parser.add_argument("--preflight-only", action="store_true")
     parser.add_argument("--capture-execution", action="store_true")
     args = parser.parse_args()
@@ -118,19 +186,28 @@ def main():
     pin = check_assessment(args.assessment_source.resolve(), args.assessment_pin) if args.role == "judge" else None
     if args.role == "research":
         seed = audit_seed(args.checkout.resolve())
-        if seed["condition"] != args.condition:
+        if canonical_condition(seed["condition"]) != canonical_condition(args.condition):
             raise SystemExit("Requested condition differs from the worker seed")
+        args.condition = seed["condition"]
         if args.prompt.read_bytes() != research_prompt(args.checkout, args.capture_execution):
             raise SystemExit("Research prompt differs from committed input and common execution guidance")
     output = args.output.resolve()
     output.mkdir(parents=True, exist_ok=False)
     prompt = args.prompt.read_bytes()
     (output / "prompt.txt").write_bytes(prompt)
+    if args.role == "research":
+        assigned = dict(seed.get("assignment", {"condition": seed["condition"],
+                        "additional_prompt": "", "legacy_input_version": seed["version"]}))
+        assigned.update(prompt_sha256=hashlib.sha256(prompt).hexdigest(),
+                        coordinator_commit=seed["coordinator_commit"],
+                        supplied_skills_commit=seed.get("skills_commit"),
+                        capture_execution=args.capture_execution)
+        (output / "condition-assignment.json").write_text(json.dumps(assigned, indent=2) + "\n")
     prepared_profile = Path(os.environ.get("CODEX_HOME", str(Path.home() / ".codex")))
-    profile = (judge_profile(prepared_profile, args.assessment_source)
-               if args.role == "judge" else prepared_profile)
+    profile = launch_profile(prepared_profile, args.assessment_source if args.role == "judge" else None)
     config = tomllib.loads((profile / "config.toml").read_text())
-    overrides = list(config.get("skills", {}).get("config", []))
+    overrides = {item["path"]: item["enabled"] for item in config.get("skills", {}).get("config", [])}
+    overrides.update({str(path): False for path in host_skill_paths(prepared_profile)})
     study_skills = ([profile / "skills" / name / "SKILL.md"
                      for name in sorted(JUDGE_SKILLS)] if args.role == "judge" else
                     [args.checkout.resolve() / ".agents/skills" / name / "SKILL.md"
@@ -138,16 +215,18 @@ def main():
     selected = selected_skills(args.role, args.condition)
     if any(not path.is_file() for path in study_skills if path.parent.name in selected):
         raise SystemExit("Selected role requires installed skill entrypoints")
-    overrides += [{"path": str(path), "enabled": path.parent.name in selected} for path in study_skills]
+    # Do not disable nonexistent local skill paths in discovery/baseline arms:
+    # a worker may spontaneously discover and install them after launch.
+    overrides.update({str(path): path.parent.name in selected for path in study_skills if path.is_file()})
     project_skills = set(study_skills)
     if args.role == "judge":
         for directory in (".agents/skills", ".codex/skills"):
             project_skills.update((args.checkout.resolve() / directory).glob("*/SKILL.md"))
         frozen_entries = {p for p in study_skills if p.parent.name in JUDGE_SKILLS}
-        overrides += [{"path": str(path), "enabled": False}
-                      for path in sorted(project_skills - frozen_entries)]
+        overrides.update({str(path): False for path in project_skills - frozen_entries})
     skill_config = "skills.config=[" + ",".join("{path=" + json.dumps(s["path"]) +
-                    ",enabled=" + str(s["enabled"]).lower() + "}" for s in overrides) + "]"
+                    ",enabled=" + str(s["enabled"]).lower() + "}" for s in
+                    ({"path": path, "enabled": enabled} for path, enabled in sorted(overrides.items()))) + "]"
     command = [str(args.cli), "--no-daemon", "-a", "never", "-s", "danger-full-access",
                "-m", args.model, "-c", 'model_reasoning_effort="' + args.effort + '"',
                "-c", skill_config, "-c", "project_doc_max_bytes=0",
@@ -166,6 +245,10 @@ def main():
         environment["STAMPED_ASSESSMENT_PIN"] = str(args.assessment_pin.resolve())
     removed = [key for key in ("CODEX_THREAD_ID", "CODEX_PARENT_THREAD_ID", "CODEX_SESSION_ID")
                if environment.pop(key, None) is not None]
+    pixi_removed = [key for key in ("PIXI_PROJECT_MANIFEST", "PIXI_IN_SHELL", "PIXI_PROJECT_ROOT",
+                    "PIXI_PROJECT_NAME", "PIXI_PROJECT_VERSION", "PIXI_ENVIRONMENT_NAME",
+                    "PIXI_ENVIRONMENT_PLATFORMS", "PIXI_PROMPT")
+                    if environment.pop(key, None) is not None]
     preview_command = command[:command.index("exec")] + ["-C", str(args.checkout.resolve()),
                       "debug", "prompt-input", prompt.decode()]
     preview = subprocess.run(preview_command, cwd=args.checkout, env=environment,
@@ -174,15 +257,21 @@ def main():
                 b"Hub token file", b"- private-workshop-memory:", b"- workshop-feedback:")
                  if marker in preview.stdout]
     project_instructions = b"# AGENTS.md instructions" in preview.stdout
-    visible = sorted({p.parent.name for p in project_skills
-                      if ("- " + p.parent.name + ":").encode() in preview.stdout})
+    catalog = skill_catalog(preview.stdout)
+    visible = sorted({item["name"] for item in catalog if item["name"] in STUDY_SKILLS})
+    allowed_paths = {str(path.resolve()) for path in study_skills if path.parent.name in selected}
+    unexpected = [item for item in catalog if item["path"] not in allowed_paths and
+                  not Path(item["path"]).is_relative_to((profile / "skills/.system").resolve())]
     preflight = {"effective_prompt_sha256": hashlib.sha256(preview.stdout).hexdigest(),
                  "private_marker_count": len(forbidden), "condition": args.condition,
                  "role": args.role, "codex_home": str(profile),
                  "project_instructions_present": project_instructions,
-                 "visible_study_skills": visible}
+                 "visible_study_skills": visible, "advertised_skill_catalog": catalog,
+                 "unexpected_skill_catalog": unexpected,
+                 "profile_config_sha256": hashlib.sha256((profile / "config.toml").read_bytes()).hexdigest(),
+                 "inherited_pixi_variables_removed": pixi_removed}
     (output / "prompt-preflight.json").write_text(json.dumps(preflight, indent=2) + "\n")
-    if forbidden or project_instructions or set(visible) != selected:
+    if forbidden or project_instructions or unexpected or set(visible) != selected:
         raise SystemExit("Effective prompt failed instruction or study-skill visibility preflight")
     if args.preflight_only:
         print(json.dumps(preflight))
@@ -190,6 +279,7 @@ def main():
     record = {"command": command, "cwd": str(args.checkout.resolve()),
               "prompt_sha256": hashlib.sha256(prompt).hexdigest(),
               "inherited_session_variables_removed": removed,
+              "inherited_pixi_variables_removed": pixi_removed,
               "started_at": datetime.now(timezone.utc).isoformat(), "timeout_seconds": args.seconds,
               "review_seconds": args.review_seconds, "role": args.role,
               "assessment_pin": pin}
@@ -257,6 +347,9 @@ def main():
             sessions.append(item.get("thread_id"))
     record["native_session_ids"] = sessions
     (output / "result.json").write_text(json.dumps(record, indent=2) + "\n")
+    if args.role == "research":
+        (output / "skill-observations.json").write_text(json.dumps(
+            skill_observations(args.checkout.resolve(), profile), indent=2) + "\n")
     raise SystemExit(124 if timed_out else process.returncode)
 
 

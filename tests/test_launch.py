@@ -15,6 +15,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 import launch_native_probe as launch
 import prepare_launch as prepare
 import study_seed as seed
+import research_conditions as conditions
 
 
 def git(path, *args):
@@ -46,6 +47,7 @@ def source_repositories(tmp_path, monkeypatch):
     monkeypatch.setenv("GIT_COMMITTER_NAME", "Launcher fixture")
     monkeypatch.setenv("GIT_COMMITTER_EMAIL", "fixture@example.invalid")
     coordinator = init(tmp_path / "coordinator")
+    (coordinator / "conditions.json").write_bytes((ROOT / "conditions.json").read_bytes())
     (coordinator / "pixi.toml").write_text('''[workspace]
 name = "fixture"
 channels = ["conda-forge"]
@@ -103,6 +105,7 @@ assessment = "python private-coordinator.py"
     (coordinator / ".gitmodules").write_text(
         '[submodule "studies/example"]\n\tpath = studies/example\n\turl = ' + str(study) +
         '\n[submodule "skills"]\n\tpath = skills\n\turl = ' + str(skills) + '\n')
+    (coordinator / "skills").mkdir()
     git(coordinator, "add", "--all")
     git(coordinator, "update-index", "--add", "--cacheinfo", f"160000,{skill_ref},skills")
     git(coordinator, "commit", "-m", "test: pin study and skills")
@@ -127,7 +130,7 @@ def make_worker(tmp_path, sources, condition="baseline"):
     return checkout, receipt
 
 
-@pytest.mark.parametrize("condition", ["baseline", "skills"])
+@pytest.mark.parametrize("condition", conditions.CONDITION_CHOICES)
 def test_input_boundary_excludes_tree_history_objects_and_unassigned_skills(tmp_path, source_repositories, condition):
     worker, receipt = make_worker(tmp_path, source_repositories, condition)
     coordinator, study, base, resolver, key, forbidden, _ = source_repositories
@@ -144,7 +147,7 @@ def test_input_boundary_excludes_tree_history_objects_and_unassigned_skills(tmp_
                               capture_output=True).returncode != 0
     reachable = git(worker, "rev-list", "--objects", "--all")
     assert not any(oid in reachable for oid in forbidden)
-    if condition == "baseline":
+    if conditions.canonical_condition(condition) != "stamped-explicit":
         assert not (worker / "skills").exists()
         assert not (worker / ".agents").exists()
     else:
@@ -191,6 +194,61 @@ def test_execution_logging_requires_explicit_request(tmp_path):
     assert "`results/`" in ordinary
 
 
+def test_condition_is_pinned_and_observations_are_not_invented(tmp_path, source_repositories):
+    coordinator = source_repositories[0]
+    original = (coordinator / "conditions.json").read_bytes()
+    (coordinator / "conditions.json").write_text("Uncommitted replacement")
+    worker, receipt = make_worker(tmp_path, source_repositories, "discover-general")
+    assigned = receipt["assignment"]
+    assert receipt["version"] == 2
+    assert assigned["config_sha256"] == seed.hashlib.sha256(original).hexdigest()
+    assert assigned["additional_prompt"] == (
+        "Find and install skills you consider useful for completing this task, "
+        "and use them where appropriate.")
+    assert seed.research_prompt(worker).decode().endswith(assigned["additional_prompt"] + "\n")
+    profile = tmp_path / "unused-profile"
+    observed = launch.skill_observations(worker, profile)
+    assert observed["status"] == "not-reviewed"
+    assert observed["queries"] is None
+    assert observed["loaded_instructions"] is None
+    assert observed["application_evidence"] is None
+    assert observed["installed_entrypoints"] == []
+
+
+@pytest.mark.parametrize("condition", ["baseline", "skills"])
+def test_legacy_snapshots_keep_their_prompt(tmp_path, source_repositories, condition):
+    coordinator, study, _, resolver, *_ = source_repositories
+    (coordinator / "conditions.json").unlink()
+    base = commit(coordinator, "test: emulate pre-condition coordinator")
+    worker = tmp_path / "legacy-worker"
+    receipt = seed.make_seed(coordinator, base, study, worker, "codex/legacy", condition, resolver)
+    assert receipt["version"] == 1
+    assert receipt["condition"] == condition
+    assert "assignment" not in receipt
+    prompt = seed.research_prompt(worker).decode()
+    assert prompt == (worker / "input/study-task.md").read_text() + (
+        "\nCommon execution resources\n\n"
+        "Use the root Pixi environment; add dependencies as needed. "
+        "Keep analysis outputs under `results/` in this experiment repository. "
+        "Retain failed attempts and annex large outputs/logs.\n")
+    with pytest.raises(SystemExit, match="predates the four-condition"):
+        seed.make_seed(coordinator, base, study, tmp_path / "bad-new-condition",
+                       "codex/new", "discover-science", resolver)
+
+
+def test_baseline_has_no_discovery_addition_and_explicit_has_named_invocation():
+    content = (ROOT / "conditions.json").read_bytes()
+    baseline = conditions.assignment(content, "baseline")
+    assert baseline["additional_prompt"] == ""
+    assert baseline["supplied_skills"] == []
+    for name in ("discover-general", "discover-science"):
+        assert conditions.assignment(content, name)["supplied_skills"] == []
+    explicit = conditions.assignment(content, "stamped-explicit")
+    assert "do-full-research-loop" in explicit["additional_prompt"]
+    assert explicit["supplied_skills"] == list(seed.RESEARCH_SKILLS)
+    assert conditions.assignment(content, "skills")["condition"] == "stamped-explicit"
+
+
 def test_input_boundary_rejects_links_to_coordinator_material(tmp_path, source_repositories):
     coordinator, study, base, resolver, *_ = source_repositories
     (study / "input/answer-link").symlink_to("../coordinator-guidance/answer.txt")
@@ -220,6 +278,8 @@ def test_judge_receives_original_brief_and_separate_optional_reference(tmp_path)
 
 def test_roles_do_not_leak_stamped_guidance():
     assert launch.selected_skills("research", "baseline") == set()
+    assert launch.selected_skills("research", "discover-general") == set()
+    assert launch.selected_skills("research", "discover-science") == set()
     assert "assess-alignment-with-stamped-principles" not in launch.selected_skills("research", "skills")
     assert launch.selected_skills("judge", "baseline") == {
         "assess-alignment-with-stamped-principles", "stamped-conventions"}
@@ -274,6 +334,8 @@ def fake_cli(tmp_path):
 import json, os, pathlib, sys, tomllib
 args = sys.argv[1:]
 assert "CODEX_THREAD_ID" not in os.environ
+assert "PIXI_PROJECT_MANIFEST" not in os.environ
+assert "PIXI_IN_SHELL" not in os.environ
 assert "project_doc_max_bytes=0" in args
 if "debug" in args:
     config = next(x for x in args if x.startswith("skills.config="))
@@ -281,7 +343,9 @@ if "debug" in args:
     for item in entries:
         if item["enabled"]:
             assert pathlib.Path(item["path"]).is_file()
-            print("- " + pathlib.Path(item["path"]).parent.name + ": fixture skill")
+            print("- " + pathlib.Path(item["path"]).parent.name + ": fixture skill (file: " + item["path"] + ")")
+    if os.environ.get("FAKE_UNEXPECTED_SKILL"):
+        print("- unrelated-skill: Host guidance (file: /unexpected/SKILL.md)")
 else:
     if "STAMPED_ASSESSMENT_SOURCE" in os.environ:
         source = pathlib.Path(os.environ["STAMPED_ASSESSMENT_SOURCE"])
@@ -302,6 +366,8 @@ else:
 
 @pytest.mark.parametrize("role,condition,capture_execution", [
     ("research", "baseline", False), ("research", "skills", False),
+    ("research", "discover-general", False), ("research", "discover-science", False),
+    ("research", "stamped-explicit", True),
     ("research", "baseline", True), ("judge", "baseline", False),
 ])
 def test_fixture_launch_retains_evidence_and_judges_without_worker_assessor(
@@ -314,7 +380,8 @@ def test_fixture_launch_retains_evidence_and_judges_without_worker_assessor(
     assessor = source_repositories[-1]
     pin = tmp_path / "pin.json"
     pin.write_text(json.dumps({"source_commit": git(assessor, "rev-parse", "HEAD")}))
-    environment = dict(os.environ, CODEX_HOME=str(profile), CODEX_THREAD_ID="must-be-removed")
+    environment = dict(os.environ, CODEX_HOME=str(profile), CODEX_THREAD_ID="must-be-removed",
+                       PIXI_PROJECT_MANIFEST="/wrong/coordinator/pixi.toml", PIXI_IN_SHELL="1")
     result = subprocess.run([
         sys.executable, str(ROOT / "scripts/launch_native_probe.py"),
         "--checkout", str(worker), "--prompt", str(prompt), "--output", str(output),
@@ -334,6 +401,20 @@ def test_fixture_launch_retains_evidence_and_judges_without_worker_assessor(
     assert (output / "prompt.txt").read_bytes() == prompt.read_bytes()
     assert not (worker / "assessment").exists()
     assert not (worker / "assessment-version.json").exists()
+    assert Path(record["codex_home"]) != profile
+    assert not Path(record["codex_home"]).is_relative_to(worker)
+    assert not Path(record["codex_home"]).is_relative_to(output)
+    assert {"PIXI_PROJECT_MANIFEST", "PIXI_IN_SHELL"}.issubset(record["inherited_pixi_variables_removed"])
+    if role == "research":
+        assigned = json.loads((output / "condition-assignment.json").read_text())
+        assert assigned["condition"] == conditions.canonical_condition(condition)
+        assert assigned["prompt_sha256"] == record["prompt_sha256"]
+        observed = json.loads((output / "skill-observations.json").read_text())
+        assert observed["loaded_instructions"] is None
+        assert observed["application_evidence"] is None
+        if condition in ("baseline", "discover-general", "discover-science"):
+            config_argument = next(arg for arg in record["command"] if arg.startswith("skills.config="))
+            assert str(worker / ".agents/skills") not in config_argument
     if role == "judge":
         assert record["condition"] is None
         assert record["assessment_pin"]["source_commit"]
@@ -442,6 +523,78 @@ def test_judge_catalog_preserves_existing_trust_and_links_host_auth_outside_targ
     assert all((isolated / "skills" / name).resolve() == assessor / "skills" / name
                for name in launch.JUDGE_SKILLS)
     assert not (profile / "skills").exists()
+
+
+def test_research_profiles_do_not_share_installs_history_or_model_cache(tmp_path):
+    prepared = tmp_path / "prepared"
+    prepared.mkdir()
+    config = '[hooks.state."/exact/.codex/hooks.json:stop:0:0"]\ntrusted_hash = "sha256:fixture"\n'
+    (prepared / "config.toml").write_text(config)
+    (prepared / "auth.json").write_text('{"synthetic": "not a credential"}')
+    (prepared / "models_cache.json").write_text('{"models": []}')
+    (prepared / "sessions").mkdir()
+    (prepared / "sessions/old.jsonl").write_text("Prior research")
+    (prepared / "skills").mkdir()
+    (prepared / "skills/leaked.md").write_text("Prior install")
+    first = launch.launch_profile(prepared)
+    (first / "skills/new-skill").mkdir()
+    (first / "skills/new-skill/SKILL.md").write_text("A discovered skill")
+    (first / "models_cache.json").write_text("Changed locally")
+    second = launch.launch_profile(prepared)
+    for profile in (first, second):
+        assert (profile / "config.toml").read_text() == config
+        assert (profile / "auth.json").resolve() == prepared / "auth.json"
+        assert not (profile / "sessions").exists()
+        assert not (profile / "skills/leaked.md").exists()
+    assert not (second / "skills/new-skill").exists()
+    assert not (prepared / "skills/new-skill").exists()
+    assert (second / "models_cache.json").read_bytes() == (prepared / "models_cache.json").read_bytes()
+
+
+def test_catalog_preserves_non_stamped_skill_identity():
+    preview = b"- unrelated-skill: Useful guidance (file: /host/SKILL.md)\n"
+    assert launch.skill_catalog(preview) == [{"name": "unrelated-skill", "path": "/host/SKILL.md"}]
+
+
+def test_preflight_rejects_unexpected_host_skill_before_execution(tmp_path, fake_cli, source_repositories):
+    cli, profile = fake_cli
+    worker, _ = make_worker(tmp_path, source_repositories)
+    prompt = tmp_path / "prompt.md"
+    prompt.write_bytes(seed.research_prompt(worker))
+    output = tmp_path / "unexpected-catalog"
+    completed = subprocess.run([
+        sys.executable, str(ROOT / "scripts/launch_native_probe.py"),
+        "--checkout", str(worker), "--prompt", str(prompt), "--output", str(output),
+        "--cli", str(cli), "--preflight-only",
+    ], env=dict(os.environ, CODEX_HOME=str(profile), FAKE_UNEXPECTED_SKILL="1"),
+        capture_output=True, text=True)
+    assert completed.returncode != 0
+    assert "skill visibility preflight" in completed.stderr
+    receipt = json.loads((output / "prompt-preflight.json").read_text())
+    assert receipt["unexpected_skill_catalog"] == [
+        {"name": "unrelated-skill", "path": "/unexpected/SKILL.md"}]
+    assert not (output / "launch.json").exists()
+
+
+def test_native_json_catalog_expands_aliases_and_ignores_user_quoted_skills(tmp_path):
+    root = tmp_path / "system"
+    (root / "fixture").mkdir(parents=True)
+    (root / "fixture/SKILL.md").write_text("Installed instruction bytes")
+    block = ("<skills_instructions>\n### Skill roots\n- `r0` = `" + str(root) + "`\n"
+             "### Available skills\n- fixture: Description. (file: r0/fixture/SKILL.md)\n"
+             "</skills_instructions>")
+    preview = json.dumps([
+        {"role": "developer", "content": [{"type": "input_text", "text": block}]},
+        {"role": "user", "content": [{"type": "input_text", "text": block.replace("fixture:", "quoted:")}]},
+    ]).encode()
+    assert launch.skill_catalog(preview) == [{
+        "name": "fixture", "path": str(root / "fixture/SKILL.md"),
+        "sha256": seed.hashlib.sha256(b"Installed instruction bytes").hexdigest(),
+    }]
+    with pytest.raises(SystemExit, match="Unresolved advertised"):
+        launch.skill_catalog(b"- fixture: Description. (file: missing/fixture/SKILL.md)\n")
+    with pytest.raises(SystemExit, match="Unparsed advertised"):
+        launch.skill_catalog(b"### Available skills\n- fixture: Missing the source path\n")
 
 
 def test_pinned_unready_study_stops_before_worker_creation(tmp_path, source_repositories):

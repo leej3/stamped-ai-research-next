@@ -13,6 +13,7 @@ import sys
 from pathlib import Path
 
 from study_seed import audit_seed, blob, make_seed, research_prompt, worker_manifest
+from research_conditions import CONDITION_CHOICES
 
 
 def run(argv, cwd, capture=False):
@@ -115,7 +116,7 @@ def main():
     parser.add_argument("--prepare-only", action="store_true")
     parser.add_argument("--capture-execution", action="store_true",
                         help="Request duct execution records in the worker; use only when authorized")
-    parser.add_argument("--condition", choices=["baseline", "skills"], default="baseline")
+    parser.add_argument("--condition", choices=CONDITION_CHOICES, default="baseline")
     # Paths/resources are host choices; the coordinator is this checkout, not
     # an old absolute repository path retained in a host configuration.
     parser.set_defaults(**{key: value for key, value in defaults.items() if key != "repo"})
@@ -152,6 +153,7 @@ def main():
     if args.role == "research":
         seed = make_seed(repo, base_commit, args.study, checkout, args.branch,
                          args.condition, args.resolver)
+        args.condition = seed["condition"]
         args.prompt = evidence / "research-prompt.md"
         args.prompt.write_bytes(research_prompt(checkout, args.capture_execution))
         (evidence / "input-boundary.json").write_text(json.dumps(seed, indent=2) + "\n")

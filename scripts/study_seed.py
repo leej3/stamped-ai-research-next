@@ -7,10 +7,7 @@ from pathlib import Path, PurePosixPath
 
 import tomlkit
 
-RESEARCH_SKILLS = (
-    "align-with-stamped-principles", "stamped-conventions", "create-stamped-project",
-    "create-repronim-stamped-project", "do-full-research-loop", "pixi-with-stamped",
-)
+from research_conditions import RESEARCH_SKILLS, assignment, supplied_skills
 
 
 def git(repo, *args, text=True):
@@ -110,6 +107,12 @@ def export_inputs(study, ref, checkout):
 def make_seed(repo, base, study, checkout, branch, condition, provenance):
     """Copy only selected blobs; never fetch the coordinator or study history."""
     study_path, ref = study_pin(repo, base, study)
+    selected = None
+    if list(entries(repo, base, "conditions.json")):
+        selected = assignment(blob(repo, base, "conditions.json"), condition)
+        condition = selected["condition"]
+    elif condition not in ("baseline", "skills"):
+        raise SystemExit("Selected coordinator revision predates the four-condition design")
     if checkout.exists():
         raise SystemExit("Worker destination already exists; preserve it and choose another")
     checkout.parent.mkdir(parents=True, exist_ok=True)
@@ -126,7 +129,10 @@ def make_seed(repo, base, study, checkout, branch, condition, provenance):
                "source_manifest_sha256": hashlib.sha256(source_manifest).hexdigest(),
                "condition": condition, "run": branch.removeprefix("codex/").replace("/", "-"),
                "inputs": inventory}
-    if condition == "skills":
+    if selected:
+        receipt.update(version=2, assignment=selected)
+    assigned_skills = supplied_skills(receipt)
+    if assigned_skills:
         skills = list(entries(repo, base, "skills"))
         if len(skills) != 1 or skills[0][0] != "160000":
             raise SystemExit("Treatment requires a pinned skills submodule")
@@ -138,7 +144,7 @@ def make_seed(repo, base, study, checkout, branch, condition, provenance):
         scratch.write_text(original)
         url = git(checkout, "config", "-f", scratch, "--get", "submodule.skills.url")
         modules.write_text('[submodule "skills"]\n\tpath = skills\n\turl = ' + url + '\n')
-        for name in RESEARCH_SKILLS:
+        for name in assigned_skills:
             path = checkout / ".agents/skills" / name
             path.parent.mkdir(parents=True, exist_ok=True)
             path.symlink_to("../../skills/skills/" + name)
@@ -146,7 +152,7 @@ def make_seed(repo, base, study, checkout, branch, condition, provenance):
         receipt["skills_url"] = url
     (checkout / "worker-input.json").write_text(json.dumps(receipt, indent=2) + "\n")
     git(checkout, "add", "--all")
-    if condition == "skills":
+    if assigned_skills:
         git(checkout, "update-index", "--add", "--cacheinfo", "160000," + skill_ref + ",skills")
     # Resolve at creation time; never copy attribution from a previous run.
     trailers = subprocess.check_output([str(provenance)], text=True).strip()
@@ -157,7 +163,7 @@ def make_seed(repo, base, study, checkout, branch, condition, provenance):
     git(checkout, "remote", "add", "origin", remote)
     # Never fetch other experiment branches through a default wildcard refspec.
     git(checkout, "config", "remote.origin.fetch", f"+refs/heads/{branch}:refs/remotes/origin/{branch}")
-    if condition == "skills":
+    if assigned_skills:
         git(checkout, "submodule", "update", "--init", "--depth", "1", "--", "skills")
     audit_seed(checkout)
     return receipt
@@ -171,16 +177,17 @@ def audit_seed(checkout):
         raise SystemExit("Research must start at a parentless input snapshot")
     allowed = {row["path"] for row in receipt["inputs"]} | {
         "pixi.toml", ".gitignore", ".gitattributes", "worker-input.json"}
-    if receipt["condition"] == "skills":
+    assigned_skills = supplied_skills(receipt)
+    if assigned_skills:
         allowed |= {".gitmodules", "skills"}
-        allowed |= {".agents/skills/" + name for name in RESEARCH_SKILLS}
+        allowed |= {".agents/skills/" + name for name in assigned_skills}
     actual = {row[3] for row in entries(checkout, "HEAD", ".")}
     if actual != allowed:
         raise SystemExit("Worker tree differs from the input/resource/skill allowlist")
     if (checkout / ".git/objects/info/alternates").exists():
         raise SystemExit("Worker must have an independent Git object store")
-    if receipt["condition"] == "baseline" and any((checkout / p).exists() for p in ("skills", "assessment", ".agents/skills", ".codex/skills")):
-        raise SystemExit("Baseline has readable study skills")
+    if not assigned_skills and any((checkout / p).exists() for p in ("skills", "assessment", ".agents/skills", ".codex/skills")):
+        raise SystemExit("Worker has unassigned readable study skills before launch")
     if subprocess.run(["git", "-C", str(checkout), "diff", "--quiet", "HEAD", "--"], check=False).returncode:
         raise SystemExit("Worker inputs/resources changed after the committed seed")
     if git(checkout, "ls-files", "--others", "--exclude-standard"):
@@ -189,15 +196,26 @@ def audit_seed(checkout):
 
 
 def research_prompt(checkout, capture_execution=False):
-    """Scientific input plus the same concise execution resources for both arms."""
+    """Render retained assignment; legacy snapshots keep their original prompt."""
+    receipt_path = checkout / "worker-input.json"
+    receipt = json.loads(receipt_path.read_text()) if receipt_path.exists() else {}
+    selected = receipt.get("assignment")
     capture = (
         "For substantive analyses, capture complete command metadata, stdout/stderr, "
         "resource usage and run summaries with duct under `logs/`. "
         if capture_execution else ""
     )
-    return (checkout / "input/study-task.md").read_bytes() + (
+    common = (
         "\nCommon execution resources\n\n"
         "Use the root Pixi environment; add dependencies as needed. "
         "Keep analysis outputs under `results/` in this experiment repository. "
         + capture +
         "Retain failed attempts and annex large outputs/logs.\n").encode()
+    if selected:
+        common += (
+            "Keep task-specific installations local to this experiment repository; "
+            "do not change shared user configuration.\n"
+        ).encode()
+    addition = selected["additional_prompt"] if selected else ""
+    return ((checkout / "input/study-task.md").read_bytes() + common +
+            (("\n" + addition + "\n").encode() if addition else b""))
