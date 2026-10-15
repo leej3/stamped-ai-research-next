@@ -22,6 +22,32 @@ def run(argv, cwd, capture=False):
     return result.stdout.strip() if capture else None
 
 
+
+def retrieve_inputs(git_command, checkout, inventory, remote):
+    """Retrieve selected keys without importing source annex location history."""
+    for item in inventory:
+        if "annex_key" not in item or (checkout / item["path"]).exists():
+            continue
+        # get --from silently skips keys with no location record. transferkey
+        # contacts the configured mirror directly and retains the original key.
+        result = subprocess.run(git_command + ["annex", "transferkey", item["annex_key"],
+                                "--from", remote], cwd=checkout,
+                                capture_output=True, text=True)
+        if result.returncode:
+            if not item.get("urls"):
+                sys.stderr.write(result.stdout + result.stderr)
+                result.check_returncode()
+            run(git_command + ["annex", "get", "--", item["path"]], checkout)
+        else:
+            # transferkey records the local copy, not the remote location.
+            # Record the mirror that just supplied these bytes for later clones.
+            uuid = run(git_command + ["config", "--get", "remote." + remote + ".annex-uuid"],
+                       checkout, True)
+            run(git_command + ["annex", "setpresentkey", item["annex_key"], uuid, "1"], checkout)
+        if not (checkout / item["path"]).is_file():
+            raise SystemExit("Input content was not retrieved: " + item["path"])
+
+
 def render_judge_prompt(template, study, target_commit, evidence, reference=None):
     """Retain the coordinator's scientific brief independently of the target."""
     content = study.read_bytes()
@@ -135,6 +161,16 @@ def main():
         run(["git", "init", "-b", args.branch, checkout], repo)
         run(["git", "fetch", "--no-tags", repo, base_commit], checkout)
         run(["git", "reset", "--hard", "FETCH_HEAD"], checkout)
+        # Annex location/URL records belong to the submitted research object.
+        # Retain just that metadata branch, without fetching other trial refs.
+        annex_ref = subprocess.run(["git", "rev-parse", "--verify", "git-annex^{commit}"],
+                                   cwd=repo, capture_output=True, text=True)
+        if annex_ref.returncode == 0:
+            annex_commit = annex_ref.stdout.strip()
+            run(["git", "fetch", "--no-tags", repo, annex_commit + ":refs/heads/git-annex"], checkout)
+            (evidence / "annex-source.json").write_text(json.dumps({
+                "repository": str(repo), "commit": annex_commit,
+            }, indent=2) + "\n")
         roots = run(["git", "rev-list", "--max-parents=0", "HEAD"], checkout, True).splitlines()
         if len(roots) != 1 or subprocess.run(
                 ["git", "cat-file", "-e", roots[0] + ":worker-input.json"],
@@ -201,7 +237,7 @@ def main():
         for item in seed["inputs"]:
             for url in item.get("urls", []):
                 run(git + ["annex", "registerurl", item["annex_key"], url], checkout)
-        run(git + ["annex", "get", "--", "input"], checkout)
+        retrieve_inputs(git, checkout, seed["inputs"], args.annex_remote)
         audit_seed(checkout)
 
     (evidence / "environment.json").write_text(json.dumps({"source_manifest": str(args.env_manifest.resolve()),

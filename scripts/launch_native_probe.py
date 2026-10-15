@@ -5,6 +5,8 @@ import hashlib
 import json
 import os
 import signal
+import shutil
+import tempfile
 import subprocess
 import sys
 import threading
@@ -44,6 +46,26 @@ def check_assessment(source, expected_pin):
     if any(not (source / "skills" / name / "SKILL.md").is_file() for name in JUDGE_SKILLS):
         raise SystemExit("Frozen assessment skill entrypoint is missing")
     return pin
+
+
+def judge_profile(prepared_profile, assessment_source):
+    """Discover frozen skills in a per-judge catalog without touching the target.
+
+    Keep host authentication links outside retained evidence. The copied public
+    config carries existing exact-path hook approvals; no new trust is granted.
+    """
+    profile = Path(tempfile.mkdtemp(prefix="stamped-judge-", dir=prepared_profile.parent))
+    shutil.copyfile(prepared_profile / "config.toml", profile / "config.toml")
+    (profile / "config.toml").chmod(0o600)
+    for name in ("auth.json", "models_cache.json"):
+        source = prepared_profile / name
+        if source.exists():
+            (profile / name).symlink_to(source.resolve())
+    skills = profile / "skills"
+    skills.mkdir()
+    for name in sorted(JUDGE_SKILLS):
+        (skills / name).symlink_to(assessment_source.resolve() / "skills" / name)
+    return profile
 
 
 def wait_for_worker(process, output, hard_limit, review_after):
@@ -103,10 +125,12 @@ def main():
     output.mkdir(parents=True, exist_ok=False)
     prompt = args.prompt.read_bytes()
     (output / "prompt.txt").write_bytes(prompt)
-    profile = Path(os.environ.get("CODEX_HOME", str(Path.home() / ".codex")))
+    prepared_profile = Path(os.environ.get("CODEX_HOME", str(Path.home() / ".codex")))
+    profile = (judge_profile(prepared_profile, args.assessment_source)
+               if args.role == "judge" else prepared_profile)
     config = tomllib.loads((profile / "config.toml").read_text())
     overrides = list(config.get("skills", {}).get("config", []))
-    study_skills = ([args.assessment_source.resolve() / "skills" / name / "SKILL.md"
+    study_skills = ([profile / "skills" / name / "SKILL.md"
                      for name in sorted(JUDGE_SKILLS)] if args.role == "judge" else
                     [args.checkout.resolve() / ".agents/skills" / name / "SKILL.md"
                      for name in STUDY_SKILLS])
@@ -129,6 +153,7 @@ def main():
                "exec", "--json", "--color", "never", "-C", str(args.checkout.resolve()),
                "-o", str(output / "final.txt"), "-"]
     environment = os.environ.copy()
+    environment["CODEX_HOME"] = str(profile)
     if args.role == "judge":
         report_dir = output / "judgment"
         report_dir.mkdir()
@@ -152,7 +177,7 @@ def main():
                       if ("- " + p.parent.name + ":").encode() in preview.stdout})
     preflight = {"effective_prompt_sha256": hashlib.sha256(preview.stdout).hexdigest(),
                  "private_marker_count": len(forbidden), "condition": args.condition,
-                 "role": args.role,
+                 "role": args.role, "codex_home": str(profile),
                  "project_instructions_present": project_instructions,
                  "visible_study_skills": visible}
     (output / "prompt-preflight.json").write_text(json.dumps(preflight, indent=2) + "\n")

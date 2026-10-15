@@ -1,7 +1,10 @@
 # Coordinator instructions
 
-Follow `prompt.md` using the study submodule selected by the user.
+Follow `prompt.md` to iterate on reusable skills using the study submodules selected by the user.
+The unit of iteration is a pinned skill revision; study-specific preparation and findings stay in their submodules.
 
+- Record each iteration under `iterations/<iteration>/`: skill revision, exact study/input revisions, linked worker branches and judgments, comparisons, and the rationale and outcome of skill changes.
+  Keep these coordinator records outside worker inputs.
 - Give research workers only the study's committed `input/`, common resources and their assigned skills.
   Use `pixi run launch` to create independent repositories without coordinator history, references or prior results; separate worktrees alone share Git objects.
   Keep coding tasks in their own worktrees.

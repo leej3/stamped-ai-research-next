@@ -311,7 +311,11 @@ def test_fixture_launch_retains_evidence_and_judges_without_worker_assessor(
         assert record["condition"] is None
         assert record["assessment_pin"]["source_commit"]
         assert (output / "judgment").is_dir()
-        assert all(str(assessor) in p for p in record["study_skill_paths"])
+        assert all(Path(p).resolve().is_relative_to(assessor) for p in record["study_skill_paths"])
+        assert Path(record["codex_home"]).parent == profile.parent
+        assert Path(record["codex_home"]) != profile
+        assert not Path(record["codex_home"]).is_relative_to(worker)
+        assert not Path(record["codex_home"]).is_relative_to(output)
 
 
 def test_public_annex_urls_survive_export_and_retrieve_without_source_history(tmp_path, source_repositories):
@@ -354,3 +358,60 @@ def test_boundary_rejects_changes_after_seed(tmp_path, source_repositories, chan
         message = "extra untracked files"
     with pytest.raises(SystemExit, match=message):
         seed.audit_seed(worker)
+
+
+def test_input_helper_retrieves_annex_key_without_importing_location_history(tmp_path, source_repositories):
+    worker, receipt = make_worker(tmp_path, source_repositories)
+    study = source_repositories[1]
+    key = source_repositories[4]
+    git(worker, "config", "remote.origin.annex-ignore", "true")
+    git(worker, "annex", "init", "no-location-history-fixture")
+    git(worker, "remote", "add", "payload-store", study)
+    location_check = subprocess.run([
+        "git", "-C", str(worker), "annex", "whereis", "--json", "--key", key,
+    ], capture_output=True, text=True)
+    locations = json.loads(location_check.stdout)
+    assert locations["whereis"] == []
+    assert not (worker / "input/data/annexed.bin").exists()
+    assert not any(item.get("urls") for item in receipt["inputs"])
+    assert git(worker, "for-each-ref", "refs/remotes") == ""
+
+    prepare.retrieve_inputs(["git", "-C", str(worker)], worker,
+                            receipt["inputs"], "payload-store")
+
+    assert (worker / "input/data/annexed.bin").is_file()
+    assert (worker / "input/data/annexed.bin").read_bytes() == (study / "input/data/annexed.bin").read_bytes()
+    assert git(worker, "annex", "lookupkey", "input/data/annexed.bin") == key
+    assert git(worker, "for-each-ref", "refs/remotes") == ""
+    for oid in source_repositories[5]:
+        assert subprocess.run(["git", "-C", str(worker), "cat-file", "-e", oid],
+                              capture_output=True).returncode != 0
+    assert not git(worker, "status", "--porcelain")
+    # The ordinary annex get used by a later judge/replay must also work;
+    # transferkey alone records only the local copy, not the supplying remote.
+    recipient = tmp_path / "recipient"
+    git(tmp_path, "clone", "--no-local", worker, recipient)
+    git(recipient, "annex", "init", "recipient-fixture")
+    git(recipient, "remote", "add", "payload-store", study)
+    git(recipient, "annex", "get", "--from", "payload-store", "--", "input/data/annexed.bin")
+    assert (recipient / "input/data/annexed.bin").read_bytes() == (study / "input/data/annexed.bin").read_bytes()
+
+
+def test_judge_catalog_preserves_existing_trust_and_links_host_auth_outside_target(tmp_path, source_repositories):
+    profile = tmp_path / "prepared-profile"
+    profile.mkdir()
+    config = '[hooks.state."/exact/target/.codex/hooks.json:stop:0:0"]\ntrusted_hash = "sha256:fixture"\n'
+    (profile / "config.toml").write_text(config)
+    (profile / "auth.json").write_text('{"synthetic": "fixture, not a credential"}\n')
+    assessor = source_repositories[-1]
+    isolated = launch.judge_profile(profile, assessor)
+    assert (isolated / "config.toml").read_bytes() == (profile / "config.toml").read_bytes()
+    assert not (isolated / "config.toml").is_symlink()
+    assert (isolated / "auth.json").is_symlink()
+    assert (isolated / "auth.json").resolve() == (profile / "auth.json").resolve()
+    assert isolated.stat().st_mode & 0o777 == 0o700
+    assert (isolated / "config.toml").stat().st_mode & 0o777 == 0o600
+    assert {p.name for p in (isolated / "skills").iterdir()} == launch.JUDGE_SKILLS
+    assert all((isolated / "skills" / name).resolve() == assessor / "skills" / name
+               for name in launch.JUDGE_SKILLS)
+    assert not (profile / "skills").exists()
