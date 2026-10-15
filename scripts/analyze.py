@@ -12,6 +12,7 @@ import numpy as np
 import pandas as pd
 from nilearn import datasets, plotting, image
 from scipy import stats
+from scipy import ndimage
 
 ROOT = Path(__file__).resolve().parents[1]
 INPUT = ROOT / "input"
@@ -176,6 +177,16 @@ def main():
     boot_ci = np.quantile(boot_means, [0.025, 0.975]).tolist()
     brain_sig = (pmap <= 0.05) & mask & (tmap > 0)
     roi_sig = brain_sig & roi_mask
+    np.savetxt(OUT / "permutation-max-t.tsv", max_null, fmt="%.9g", header="maximum_positive_t")
+    components, n_components = ndimage.label(brain_sig, structure=np.ones((3, 3, 3), dtype=np.uint8))
+    clusters = []
+    for component_id in range(1, n_components + 1):
+        ijk = np.argwhere(components == component_id)
+        peak_idx = tuple(ijk[np.argmax(tmap[components == component_id])])
+        clusters.append({"voxels": int(len(ijk)), "volume_mm3": float(len(ijk) * voxel_volume),
+                         "peak_mni_mm": [float(v) for v in nib.affines.apply_affine(affine, peak_idx)],
+                         "peak_t": float(tmap[peak_idx]), "peak_fwe_p": float(pmap[peak_idx])})
+    clusters.sort(key=lambda item: (-item["voxels"], -item["peak_t"]))
     affine = imgs[0].affine
     def save_map(data, name):
         nib.save(nib.Nifti1Image(data, affine, imgs[0].header), str(OUT / name))
@@ -215,6 +226,7 @@ def main():
         "vmPFC_peak": {"ijk": list(roi_idx), "mni_mm": nib.affines.apply_affine(affine, roi_idx).tolist(),
                        "t": float(tmap[roi_idx]), "fwe_p": float(pmap[roi_idx])},
         "n_whole_brain_fwe_voxels": int(brain_sig.sum()),
+        "positive_fwe_clusters_26_neighbor_descriptive": clusters,
         "n_vmPFC_fwe_voxels": int(roi_sig.sum()), "global_positive_peak": peak,
         "max_null_t_95pct": float(np.quantile(max_null, .95)),
         "max_null_t_99pct": float(np.quantile(max_null, .99)),
