@@ -1,3 +1,0 @@
-{"argv": ["git", "rev-parse", "HEAD"], "returncode": 0, "stdout": "12479b3c40e8a34c9a5a16fd192de33bc79e285d\n", "stderr": ""}
-{"argv": ["git", "rev-parse", "--git-path", "hooks/prepare-commit-msg"], "returncode": 0, "stdout": ".git/hooks/prepare-commit-msg\n", "stderr": ""}
-{"status": "prepared", "receipt": "/Users/johnlee/.local/share/wt-utils/worktrees/5291/stamped-ai-research-next/experiments/datalad-native/receipts/native-001/replay-2-prepared.json", "native_probe_required": true}

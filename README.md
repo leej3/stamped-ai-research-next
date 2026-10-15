@@ -16,8 +16,3 @@ The core STAMPED workflows are tool-neutral.
 Project-specific environment guidance is in [pixi-with-stamped](skills/skills/pixi-with-stamped/SKILL.md).
 [assessment-version.json](assessment-version.json) pins the assessor and its environment independently.
 `pixi run assessment-check` verifies both; `assessment-probes` collects a draft and `assessment-validate` checks the completed response.
-
-Execution trials and their complete records are retained under `experiments/`.
-They establish the tested execution routes, not scientific or skill efficacy.
-
-Execution evidence: [native DataLad replay](experiments/datalad-native/README.md), [independent workflow trial](experiments/skill-bundle/blind-001/README.md), and [frozen assessment](experiments/assessment-v1/README.md).

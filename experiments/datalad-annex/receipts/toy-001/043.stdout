@@ -1,3 +1,0 @@
-{"argv": ["git", "rev-parse", "HEAD"], "returncode": 0, "stdout": "20f26057b439c61153a85dcfcb63628bb1b360d5\n", "stderr": ""}
-{"argv": ["git", "rev-parse", "--git-path", "hooks/prepare-commit-msg"], "returncode": 0, "stdout": ".git/hooks/prepare-commit-msg\n", "stderr": ""}
-{"status": "prepared", "receipt": "/Users/johnlee/.local/share/wt-utils/worktrees/29f5/stamped-ai-research-next/experiments/datalad-annex/receipts/toy-001/receiver-prepared.json", "native_probe_required": true}

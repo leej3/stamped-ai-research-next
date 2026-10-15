@@ -1,3 +1,0 @@
-outputs/statistics.tsv annex.largefiles=anything
-receipts/** -filter annex.largefiles=nothing
-logs/** -whitespace

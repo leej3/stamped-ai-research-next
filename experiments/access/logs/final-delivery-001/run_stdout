@@ -1,46 +1,0 @@
-copy experiments/access/annex-probe.bin ok
-copy experiments/access/logs/annex-delivery-002/run_usage.jsonl (to con-hub...) 
-100%  1.52 KiB          2 MiB/s 0s                                  ok
-copy experiments/access/logs/annex-recipient-001/run_usage.jsonl (to con-hub...) 
-100%  4.35 KiB          3 MiB/s 0s                                  ok
-copy experiments/access/logs/annex-upload-001/run_usage.jsonl ok
-copy experiments/access/logs/cluster-environment-001/run_usage.jsonl ok
-copy experiments/cluster/logs/ssh-startup-repair-001/run_usage.jsonl (to con-hub...) 
-100%  1.13 KiB          2 MiB/s 0s                                  ok
-copy experiments/cluster/logs/toy-001/run_usage.jsonl (to con-hub...) 
-100%  12.58 KiB         9 MiB/s 0s                                  ok
-copy experiments/cluster/receipts/toy-001/remote/experiments/cluster/logs/toy-001/run_usage.jsonl (to con-hub...) 
-100%  943 B           988 KiB/s 0s                                  ok
-copy experiments/cluster/receipts/toy-001/remote/experiments/datalad-annex/outputs/figure.png ok
-copy experiments/datalad-annex/logs/absence-command-001/run_usage.jsonl (to con-hub...) 
-100%  639 B           435 KiB/s 0s                                  ok
-copy experiments/datalad-annex/logs/adapter-check-001/run_usage.jsonl ok
-copy experiments/datalad-annex/logs/install-001/run_usage.jsonl ok
-copy experiments/datalad-annex/logs/noop-command-001/run_usage.jsonl ok
-copy experiments/datalad-annex/logs/skill-check-001/run_usage.jsonl ok
-copy experiments/datalad-annex/logs/toy-001/run_usage.jsonl ok
-copy experiments/datalad-annex/logs/verify-command-001/run_usage.jsonl (to con-hub...) 
-100%  612 B           565 KiB/s 0s                                  ok
-copy experiments/datalad-annex/outputs/figure.png ok
-copy experiments/datalad-annex/outputs/statistics.tsv ok
-copy experiments/entire-capture-proof/logs/child-separate-01/run_usage.jsonl ok
-copy experiments/entire-capture-proof/logs/clean-branch-01/run_usage.jsonl ok
-copy experiments/entire-capture-proof/logs/clean-child-01/run_usage.jsonl ok
-copy experiments/entire-capture-proof/logs/clean-clone-01/run_usage.jsonl ok
-copy experiments/entire-capture-proof/logs/clean-worktree-01/run_usage.jsonl ok
-copy experiments/entire-capture-proof/logs/create-branch-checkout-02/run_usage.jsonl ok
-copy experiments/entire-capture-proof/logs/prepare-branch-01/run_usage.jsonl ok
-copy experiments/entire-capture-proof/logs/prepare-branch-02/run_usage.jsonl ok
-copy experiments/entire-capture-proof/logs/prepare-child-separate-01/run_usage.jsonl ok
-copy experiments/entire-capture-proof/logs/prepare-coordinator-01/run_usage.jsonl ok
-copy experiments/entire-capture-proof/logs/prepare-datalad-provenance-01/run_usage.jsonl ok
-copy experiments/entire-capture-proof/trials/child-separate-01/native/events.jsonl ok
-copy experiments/entire-capture-proof/trials/clean-branch-01/native/events.jsonl ok
-copy experiments/entire-capture-proof/trials/clean-child-01/native/events.jsonl ok
-copy experiments/entire-capture-proof/trials/clean-clone-01/native/events.jsonl ok
-copy experiments/entire-capture-proof/trials/clean-worktree-01/native/events.jsonl ok
-copy experiments/recipient-cold-001/logs/cold-001/run_usage.jsonl (to con-hub...) 
-100%  8.5 KiB          13 MiB/s 0s                                  ok
-copy experiments/recipient-cold-002/logs/cold-002/run_usage.jsonl (to con-hub...) 
-100%  15.23 KiB        29 MiB/s 0s                                  ok
-(recording state in git...)

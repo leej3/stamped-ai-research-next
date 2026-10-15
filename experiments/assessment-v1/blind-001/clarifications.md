@@ -1,1 +1,0 @@
-Use the host provenance resolver /Users/johnlee/.agents/skills/commit-provenance/scripts/resolve.sh to identify your own active model and effort. It is an approved host identity tool, not a skill-authoring checkout or answer source. Do not borrow my model identity. Retain this clarification in your friction record.
