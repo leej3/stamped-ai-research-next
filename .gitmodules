@@ -1,7 +1,7 @@
 [submodule "skills"]
 	path = skills
 	url = https://github.com/con/skills.git
-	branch = codex/pr26-harmonized
+	branch = codex/pr26-dependency-inclusion
 [submodule "assessment"]
 	path = assessment
 	url = https://github.com/con/skills.git
