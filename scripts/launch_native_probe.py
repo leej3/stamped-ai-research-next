@@ -13,6 +13,8 @@ import tomllib
 from datetime import datetime, timezone
 from pathlib import Path
 
+from study_seed import audit_seed, research_prompt
+
 STUDY_SKILLS = (
     "assess-alignment-with-stamped-principles", "align-with-stamped-principles",
     "stamped-conventions", "create-stamped-project",
@@ -29,12 +31,9 @@ def selected_skills(role, condition):
     return set(STUDY_SKILLS) - {"assess-alignment-with-stamped-principles"}
 
 
-def check_assessment(checkout, expected_pin):
-    """Check the judge's sources against the coordinator's independent pin."""
+def check_assessment(source, expected_pin):
+    """Check external coordinator sources, never a worker-supplied assessor."""
     pin = json.loads(expected_pin.read_text())
-    if json.loads((checkout / "assessment-version.json").read_text()) != pin:
-        raise SystemExit("Target assessment pin differs from the fixed judge configuration")
-    source = checkout / "assessment"
     head = subprocess.check_output(["git", "-C", str(source), "rev-parse", "HEAD"], text=True).strip()
     dirty = subprocess.check_output(["git", "-C", str(source), "status", "--porcelain"])
     if head != pin["source_commit"] or dirty:
@@ -42,11 +41,8 @@ def check_assessment(checkout, expected_pin):
     modules = subprocess.check_output(["git", "-C", str(source), "submodule", "status", "--recursive"])
     if any(line[:1] != b" " for line in modules.splitlines()):
         raise SystemExit("Judge assessment dependencies differ from their recorded revisions")
-    for name in JUDGE_SKILLS:
-        actual = (checkout / ".agents/skills" / name / "SKILL.md").resolve()
-        expected = (source / "skills" / name / "SKILL.md").resolve()
-        if actual != expected or not actual.is_file():
-            raise SystemExit("Judge entrypoint does not resolve to the frozen assessment")
+    if any(not (source / "skills" / name / "SKILL.md").is_file() for name in JUDGE_SKILLS):
+        raise SystemExit("Frozen assessment skill entrypoint is missing")
     return pin
 
 
@@ -89,12 +85,20 @@ def main():
     parser.add_argument("--role", choices=["research", "judge"], default="research")
     parser.add_argument("--assessment-pin", type=Path,
                         default=Path(__file__).resolve().parents[1] / "assessment-version.json")
+    parser.add_argument("--assessment-source", type=Path,
+                        default=Path(__file__).resolve().parents[1] / "assessment")
     parser.add_argument("--condition", choices=["baseline", "skills"], default="baseline")
     parser.add_argument("--preflight-only", action="store_true")
     args = parser.parse_args()
     if args.seconds < 0 or args.review_seconds < 0:
         parser.error("Time settings must be nonnegative")
-    pin = check_assessment(args.checkout.resolve(), args.assessment_pin) if args.role == "judge" else None
+    pin = check_assessment(args.assessment_source.resolve(), args.assessment_pin) if args.role == "judge" else None
+    if args.role == "research":
+        seed = audit_seed(args.checkout.resolve())
+        if seed["condition"] != args.condition:
+            raise SystemExit("Requested condition differs from the worker seed")
+        if args.prompt.read_bytes() != research_prompt(args.checkout):
+            raise SystemExit("Research prompt differs from committed input and common execution guidance")
     output = args.output.resolve()
     output.mkdir(parents=True, exist_ok=False)
     prompt = args.prompt.read_bytes()
@@ -102,8 +106,10 @@ def main():
     profile = Path(os.environ.get("CODEX_HOME", str(Path.home() / ".codex")))
     config = tomllib.loads((profile / "config.toml").read_text())
     overrides = list(config.get("skills", {}).get("config", []))
-    study_skills = [args.checkout.resolve() / ".agents/skills" / name / "SKILL.md"
-                    for name in STUDY_SKILLS]
+    study_skills = ([args.assessment_source.resolve() / "skills" / name / "SKILL.md"
+                     for name in sorted(JUDGE_SKILLS)] if args.role == "judge" else
+                    [args.checkout.resolve() / ".agents/skills" / name / "SKILL.md"
+                     for name in STUDY_SKILLS])
     selected = selected_skills(args.role, args.condition)
     if any(not path.is_file() for path in study_skills if path.parent.name in selected):
         raise SystemExit("Selected role requires installed skill entrypoints")
@@ -130,6 +136,8 @@ def main():
         environment["STAMPED_JUDGE_TARGET"] = str(args.checkout.resolve())
         environment["STAMPED_ASSESSMENT_RUNNER"] = str(Path(__file__).resolve().with_name("assessment.py"))
         environment["STAMPED_ASSESSMENT_PYTHON"] = sys.executable
+        environment["STAMPED_ASSESSMENT_SOURCE"] = str(args.assessment_source.resolve())
+        environment["STAMPED_ASSESSMENT_PIN"] = str(args.assessment_pin.resolve())
     removed = [key for key in ("CODEX_THREAD_ID", "CODEX_PARENT_THREAD_ID", "CODEX_SESSION_ID")
                if environment.pop(key, None) is not None]
     preview_command = command[:command.index("exec")] + ["-C", str(args.checkout.resolve()),

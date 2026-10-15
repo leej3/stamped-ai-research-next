@@ -3,6 +3,7 @@
 import argparse
 import hashlib
 import json
+import os
 import subprocess
 from pathlib import Path
 
@@ -19,8 +20,9 @@ def main():
     parser.add_argument("arguments", nargs=argparse.REMAINDER)
     args = parser.parse_args()
     remaining = args.arguments
-    pin = json.loads((ROOT / "assessment-version.json").read_text())
-    source = ROOT / "assessment"
+    pin_path = Path(os.environ.get("STAMPED_ASSESSMENT_PIN", ROOT / "assessment-version.json"))
+    pin = json.loads(pin_path.read_text())
+    source = Path(os.environ.get("STAMPED_ASSESSMENT_SOURCE", ROOT / "assessment"))
     if git("rev-parse", "HEAD", cwd=source).decode().strip() != pin["source_commit"]:
         raise SystemExit("Assessment checkout differs from the frozen version")
     if git("status", "--porcelain", cwd=source).strip():

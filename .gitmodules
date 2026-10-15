@@ -6,3 +6,7 @@
 	path = assessment
 	url = https://github.com/con/skills.git
 	branch = codex/assessor-freeze-v1
+[submodule "studies/narps-gain-consistency"]
+	path = studies/narps-gain-consistency
+	url = https://github.com/leej3/stamped-ai-research-next.git
+	branch = codex/study-narps-gain-consistency

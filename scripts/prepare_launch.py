@@ -2,7 +2,7 @@
 """Create, prepare and launch a fresh native session using existing host tools.
 
 Run once under the requested outer duct capture. Never pushes. All generated
-evidence belongs in an experiment directory outside the new worker checkout.
+evidence belongs outside the new worker checkout.
 """
 import argparse
 import hashlib
@@ -13,6 +13,8 @@ import subprocess
 import sys
 from pathlib import Path
 
+from study_seed import audit_seed, blob, make_seed, research_prompt, worker_manifest
+
 
 def run(argv, cwd, capture=False):
     result = subprocess.run([str(x) for x in argv], cwd=cwd, check=True,
@@ -20,7 +22,7 @@ def run(argv, cwd, capture=False):
     return result.stdout.strip() if capture else None
 
 
-def render_judge_prompt(template, study, target_commit, evidence):
+def render_judge_prompt(template, study, target_commit, evidence, reference=None):
     """Retain the coordinator's scientific brief independently of the target."""
     content = study.read_bytes()
     digest = hashlib.sha256(content).hexdigest()
@@ -31,8 +33,19 @@ def render_judge_prompt(template, study, target_commit, evidence):
     prompt = template.read_text().replace("$TARGET_COMMIT", target_commit)
     prompt += ("\nScientific task supplied by the coordinator (SHA-256 " + digest + ").\n"
                "Use this retained brief, not a worker-edited replacement.\n"
-               "Relative source links resolve from " + str(study.resolve().parent) + ".\n\n"
+               "Relative source links refer to input/ in the assessed object.\n\n"
                + content.decode())
+    if reference:
+        material = reference.read_bytes()
+        (evidence / "reference.md").write_bytes(material)
+        (evidence / "reference.json").write_text(json.dumps({
+            "source": str(reference.resolve()),
+            "sha256": hashlib.sha256(material).hexdigest(),
+        }, indent=2) + "\n")
+        prompt += ("\nOptional coordinator evaluation guidance, separate from the scientific task.\n"
+                   "Alternative scientifically defensible methods are allowed.\n"
+                   "Relative links resolve from " + str(reference.resolve().parent) + ".\n\n"
+                   + material.decode())
     destination = evidence / "judge-prompt.md"
     destination.write_text(prompt)
     return destination
@@ -46,11 +59,11 @@ def main():
     defaults = json.loads(preliminary.host_config.read_text()) if preliminary.host_config.is_file() else {}
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--host-config", type=Path, default=preliminary.host_config)
-    parser.add_argument("--repo", type=Path)
+    parser.add_argument("--repo", type=Path, default=Path(__file__).resolve().parents[1])
     parser.add_argument("--branch", required=True)
     parser.add_argument("--base", required=True,
-                        help="Clean starting ref for research, exact result ref for judging")
-    parser.add_argument("--kind", choices=["worktree", "clone"], default="worktree")
+                        help="Coordinator revision pinning study/resources/skills; result revision for judges")
+    parser.add_argument("--kind", choices=["worktree", "clone"], default="clone")
     parser.add_argument("--clone-path", type=Path)
     parser.add_argument("--evidence", type=Path, required=True)
     parser.add_argument("--env-manifest", type=Path)
@@ -61,9 +74,10 @@ def main():
     parser.add_argument("--annex-remote", default="con-hub")
     parser.add_argument("--annex-git-url")
     parser.add_argument("--annex-url")
-    parser.add_argument("--prompt", type=Path)
     parser.add_argument("--study", type=Path,
-                        help="Coordinator's frozen scientific brief; required for judging")
+                        help="Installed study submodule; workers receive only its committed input/ tree")
+    parser.add_argument("--reference", type=Path,
+                        help="Optional coordinator evaluation guidance file, judges only")
     parser.add_argument("--cli", type=Path)
     parser.add_argument("--seconds", type=int, default=0,
                         help="Explicit hard limit; 0 waits for completion")
@@ -75,16 +89,20 @@ def main():
                         help="Prepared isolated public profile, without private global instructions")
     parser.add_argument("--prepare-only", action="store_true")
     parser.add_argument("--condition", choices=["baseline", "skills"], default="baseline")
-    parser.set_defaults(**defaults)
+    # Paths/resources are host choices; the coordinator is this checkout, not
+    # an old absolute repository path retained in a host configuration.
+    parser.set_defaults(**{key: value for key, value in defaults.items() if key != "repo"})
     args = parser.parse_args()
     if args.seconds < 0 or args.review_seconds < 0:
         parser.error("Time settings must be nonnegative")
-    if args.role == "research" and not args.prompt:
-        parser.error("Research workers require --prompt")
-    if args.role == "judge" and (args.prompt or args.condition != "baseline"):
-        parser.error("Judges use the fixed template; omit --prompt and --condition")
-    if args.role == "judge" and (not args.study or not args.study.is_file()):
-        parser.error("Judges require --study pointing to the frozen scientific brief")
+    if not args.study or not args.study.is_dir():
+        parser.error("--study requires an installed study submodule")
+    if args.kind != "clone":
+        parser.error("Launch requires --kind clone for an independent Git object store")
+    if args.role == "research" and args.reference:
+        parser.error("Reference guidance is for judges only")
+    if args.role == "judge" and args.condition != "baseline":
+        parser.error("Judges use the fixed template; omit --condition")
     for name in ("repo", "env_manifest", "approved_hooks", "trust_sync", "resolver", "cli", "codex_home"):
         value = getattr(args, name)
         if not value:
@@ -94,53 +112,71 @@ def main():
         parser.error("Missing --checkpoint-repo; configure host defaults once")
     if not args.annex_git_url or not args.annex_url:
         parser.error("Missing annex remote URLs; configure host defaults once")
-    os.environ["CODEX_HOME"] = str(args.codex_home.resolve())
     repo = args.repo.resolve()
     base_commit = run(["git", "rev-parse", "--verify", args.base + "^{commit}"], repo, True)
     evidence = args.evidence.resolve()
     evidence.mkdir(parents=True, exist_ok=False)
     if not args.branch.startswith("codex/"):
         parser.error("Use a codex/ branch")
-    if args.role == "judge":
-        template = Path(__file__).resolve().parents[1] / "judge-prompt.md"
-        args.prompt = render_judge_prompt(template, args.study, base_commit, evidence)
-    if args.kind == "worktree":
-        checkout = repo.parent / (repo.name + "-worktrees") / args.branch
-        run(["git", "worktree", "add", "-b", args.branch, checkout, base_commit], repo)
+    checkout = (args.clone_path.resolve() if args.clone_path else
+                repo.parent / (repo.name + "-workers") / args.branch)
+    if checkout.exists():
+        parser.error("Worker destination exists; choose a fresh --branch or --clone-path")
+    if args.role == "research":
+        seed = make_seed(repo, base_commit, args.study, checkout, args.branch,
+                         args.condition, args.resolver)
+        args.prompt = evidence / "research-prompt.md"
+        args.prompt.write_bytes(research_prompt(checkout))
+        (evidence / "input-boundary.json").write_text(json.dumps(seed, indent=2) + "\n")
     else:
-        if not args.clone_path or args.clone_path.exists():
-            parser.error("Clone requires an absent --clone-path")
-        checkout = args.clone_path.resolve()
+        # Fetch only the exact research-object revision. It must itself descend
+        # from an input-only seed, not the coordinator repository's history.
         checkout.parent.mkdir(parents=True, exist_ok=True)
-        run(["git", "clone", "--no-hardlinks", "--no-checkout",
-             repo, checkout], repo)
+        run(["git", "init", "-b", args.branch, checkout], repo)
+        run(["git", "fetch", "--no-tags", repo, base_commit], checkout)
+        run(["git", "reset", "--hard", "FETCH_HEAD"], checkout)
+        roots = run(["git", "rev-list", "--max-parents=0", "HEAD"], checkout, True).splitlines()
+        if len(roots) != 1 or subprocess.run(
+                ["git", "cat-file", "-e", roots[0] + ":worker-input.json"],
+                cwd=checkout, capture_output=True).returncode:
+            raise SystemExit("Judge target must descend from a research input seed")
         remote = run(["git", "remote", "get-url", "--push", "origin"], repo, True)
-        if not remote.startswith("git@github.com:"):
-            raise SystemExit("Source repository must have its configured SSH push remote")
-        run(["git", "remote", "set-url", "origin", remote], checkout)
-        run(["git", "checkout", "--detach", base_commit], checkout)
-        run(["git", "switch", "-c", args.branch], checkout)
-    if run(["git", "rev-parse", "HEAD"], checkout, True) != base_commit:
-        raise SystemExit("Existing worker checkout does not match the requested starting commit")
-    if run(["git", "status", "--porcelain"], checkout, True):
-        raise SystemExit("Worker checkout has existing changes; use a fresh branch")
+        run(["git", "remote", "add", "origin", remote], checkout)
+        run(["git", "config", "remote.origin.fetch",
+             f"+refs/heads/{args.branch}:refs/remotes/origin/{args.branch}"], checkout)
+        origin_seed = json.loads(blob(checkout, roots[0], "worker-input.json"))
+        study_commit = origin_seed["study_commit"]
+        original_brief = blob(args.study, study_commit, "input/prompt.md")
+        if original_brief != blob(checkout, roots[0], "input/prompt.md"):
+            raise SystemExit("Selected study does not match the worker's original scientific brief")
+        (evidence / "study-source.json").write_text(json.dumps({
+            "path": str(args.study.resolve()), "commit": study_commit,
+            "input_tree": run(["git", "rev-parse", study_commit + ":input"], args.study, True),
+        }, indent=2) + "\n")
+        template = Path(__file__).resolve().parents[1] / "judge-prompt.md"
+        # Recover the exact brief from the worker's immutable starting commit;
+        # later worker edits do not redefine the task.
+        study = evidence / "original-study-prompt.md"
+        study.write_bytes(blob(checkout, roots[0], "input/prompt.md"))
+        args.prompt = render_judge_prompt(template, study, base_commit, evidence, args.reference)
     (evidence / "checkout.json").write_text(json.dumps({"checkout": str(checkout),
-        "kind": args.kind, "branch": args.branch, "base": args.base,
-        "base_commit": base_commit, "role": args.role}, indent=2) + "\n")
-    run(["git", "submodule", "update", "--init", "--recursive"], checkout)
+        "kind": "independent-repository", "branch": args.branch, "base": args.base,
+        "base_commit": base_commit, "worker_commit": run(["git", "rev-parse", "HEAD"], checkout, True),
+        "role": args.role}, indent=2) + "\n")
     lock = args.env_manifest.resolve().with_name("pixi.lock")
     # Judges use prepared operational tools; the target's environment is tested
     # only by the separately authorized replay, never repaired during judging.
-    worker_manifest = args.env_manifest if args.role == "judge" else checkout / "pixi.toml"
+    manifest_path = args.env_manifest if args.role == "judge" else checkout / "pixi.toml"
     worker_lock = lock if args.role == "judge" else checkout / "pixi.lock"
-    if args.role != "judge" and worker_manifest.read_bytes() != args.env_manifest.read_bytes():
+    if args.role != "judge" and manifest_path.read_bytes() != worker_manifest(args.env_manifest.read_bytes()):
         raise SystemExit("Worker manifest differs from the supplied lock's source manifest")
     if worker_lock.exists() and worker_lock.read_bytes() != lock.read_bytes():
         raise SystemExit("Existing worker lock differs; preserve and review")
     if lock != worker_lock:
         shutil.copy2(lock, worker_lock)
-    run(["pixi", "install", "--locked", "--manifest-path", worker_manifest], checkout)
-    git = ["pixi", "run", "--manifest-path", worker_manifest, "git", "-C", checkout]
+    run(["pixi", "install", "--locked", "--manifest-path", manifest_path], checkout)
+    git = ["pixi", "run", "--manifest-path", manifest_path, "git", "-C", checkout]
+    run(["git", "config", "remote.origin.annex-ignore", "true"], checkout)
     run(git + ["annex", "init"], checkout)
     remotes = run(["git", "remote"], checkout, True).splitlines()
     if args.annex_remote in remotes:
@@ -149,6 +185,9 @@ def main():
             raise SystemExit("Existing annex Git URL differs; preserve and review")
     else:
         run(["git", "remote", "add", args.annex_remote, args.annex_git_url], checkout)
+    run(["git", "config", "remote." + args.annex_remote + ".fetch",
+         f"+refs/heads/{args.branch}:refs/remotes/{args.annex_remote}/{args.branch}"], checkout)
+    run(["git", "config", "remote." + args.annex_remote + ".skipFetchAll", "true"], checkout)
     key = "remote." + args.annex_remote + ".annexurl"
     actual_annex = subprocess.run(["git", "config", "--get", key], cwd=checkout,
                                   capture_output=True, text=True)
@@ -158,11 +197,19 @@ def main():
     run(["git", "config", key, args.annex_url], checkout)
     annex_info = run(git + ["annex", "info", args.annex_remote, "--json"], checkout, True)
     (evidence / "annex-remote.json").write_text(annex_info + "\n")
+    if args.role == "research":
+        for item in seed["inputs"]:
+            for url in item.get("urls", []):
+                run(git + ["annex", "registerurl", item["annex_key"], url], checkout)
+        run(git + ["annex", "get", "--", "input"], checkout)
+        audit_seed(checkout)
+
     (evidence / "environment.json").write_text(json.dumps({"source_manifest": str(args.env_manifest.resolve()),
-        "worker_manifest": str(worker_manifest), "worker_lock": str(worker_lock),
+        "worker_manifest": str(manifest_path), "worker_lock": str(worker_lock),
         "worker_environment_installed": True,
         "manifest_sha256": hashlib.sha256(args.env_manifest.read_bytes()).hexdigest(),
         "lock_sha256": hashlib.sha256(lock.read_bytes()).hexdigest()}, indent=2) + "\n")
+    os.environ["CODEX_HOME"] = str(args.codex_home.resolve())
     scripts = Path(__file__).resolve().parent
     run([sys.executable, scripts / "prepare_checkout.py", "--checkout", checkout,
          "--approved-hooks", args.approved_hooks, "--trust-sync", args.trust_sync,
@@ -173,6 +220,7 @@ def main():
          "--cli", args.cli, "--seconds", str(args.seconds), "--condition", args.condition,
          "--review-seconds", str(args.review_seconds), "--role", args.role,
          "--assessment-pin", scripts.parent / "assessment-version.json",
+         "--assessment-source", scripts.parent / "assessment",
          "--model", args.model, "--effort", args.effort] +
          (["--preflight-only"] if args.prepare_only else []), repo)
 
