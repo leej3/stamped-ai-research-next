@@ -1,0 +1,48 @@
+# AGENTS.md instructions for /Users/johnlee/.local/share/wt-utils/worktrees/8d54/stamped-ai-research-next
+
+<INSTRUCTIONS>
+# Working rules
+
+- Add experiment files under `experiments/<name>/`; merge useful changes into the project.
+  Worktree checkout paths are host infrastructure, not archived experiment directories.
+- Use the root Pixi environment.
+  Add missing dependencies with `pixi add`; prefer established scientific libraries and tools over custom implementations.
+- Keep `pixi.lock` out of task history.
+  Preserve the exact final validated lock on `codex/env-<task>-<run>` with one extra commit off the final task commit; publish the snapshot without merging it into main.
+- Give concurrent writers separate prepared worktrees and installed submodules.
+  Read selected skills from this checkout, not mutable external copies.
+- Duct logging is requested for substantive runs in this study.
+  Keep complete command, stream, resource and summary records beside the experiment outputs; retain failures.
+  Use annex for large artifacts; verify payload retrieval.
+  MechaBABS keeps its native records.
+- Keep Workshop controls inactive.
+  Credentials stay in host providers.
+  Ordinary research logs are intended output; never publish credentials or restricted human data.
+  Existing pilot captures remain under their prior publication hold.
+- Use Conventional Commits and freshly resolved commit-provenance trailers.
+  Run Snapper on prose; preserve DataLad and native capture records.
+- Adapt reusable skills when a recurring tool problem is demonstrated.
+  Keep skill entrypoints concise, route substantial conditional detail to references, and verify behavior after compression.
+
+Scientific trials use the prepared capture and delivery setup.
+Check its receipts before launching agents; repair a concrete failure without rebuilding the project.
+
+</INSTRUCTIONS>
+
+---
+
+<environment_context>
+  <cwd>/Users/johnlee/.local/share/wt-utils/worktrees/8d54/stamped-ai-research-next</cwd>
+  <shell>bash</shell>
+  <current_date>2026-10-15</current_date>
+  <timezone>America/New_York</timezone>
+  <filesystem><workspace_roots><root>/Users/johnlee/.local/share/wt-utils/worktrees/8d54/stamped-ai-research-next</root></workspace_roots><permission_profile type="disabled"><file_system type="unrestricted" /></permission_profile></filesystem>
+</environment_context>
+
+---
+
+This is only a synthetic native Entire capture proof. You and your one spawned child must own separate prepared worktrees. Do not analyze science, inspect prior sessions, run Workshop, modify hooks/configuration/credentials, or push. The outer process captures duct; do not nest wrappers. Only current-turn metadata for fresh commit provenance may be inspected.
+
+Use the native spawn_agent tool exactly once. Delegate this task: Work ONLY in /Users/johnlee/.local/share/wt-utils/worktrees/e815/stamped-ai-research-next, your prepared separate worktree on codex/capture-child-target. Use native apply_patch with the absolute target /Users/johnlee/.local/share/wt-utils/worktrees/e815/stamped-ai-research-next/capture-probes/separate-child.txt to write exactly `Native capture proof in the child-owned worktree.` plus final newline. Read /Users/johnlee/.agents/skills/commit-provenance/SKILL.md. Stage ONLY that file and commit in YOUR worktree with `chore: verify child-owned worktree capture`; the prepared hook runs fresh provenance. All shell commands must explicitly use your worktree cwd. Do not edit the parent checkout or spawn others. Return exact commit ID, session ID, and target path. Do not claim session_meta.cwd changed.
+
+Wait for the child to finish. If it fails, report the exact failure; no substitute or retry. If successful, in YOUR own initial checkout use native apply_patch to add capture-probes/separate-parent.txt containing exactly `Native capture proof after the separate worktree child completed.` plus final newline. Read the same provenance skill, stage only your file and commit `chore: verify parent after separate child`. Report both native IDs, both commits, and both checkout paths. Never modify the child's worktree yourself.
