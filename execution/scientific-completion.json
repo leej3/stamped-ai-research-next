@@ -1,0 +1,99 @@
+{
+  "worker_returncode": 0,
+  "native_session_ids": [
+    "01a14142-7c06-7a81-bb22-93c1ef9a4db7"
+  ],
+  "worker_finished_at": "2026-10-15T20:35:38.398707+00:00",
+  "worker_head_at_completion": "50d459cdffca785c50f2250a116e2dd204933818",
+  "working_status_at_completion": " M pixi.toml\nA  results/figures/roi_participants.png\nA  results/figures/whole_brain_fwe.png\nA  results/figures/whole_brain_t.png\nA  results/logs/failed_attempts.md\nA  results/logs/group_analysis.log\nA  results/map_quality.tsv\nA  results/maps/group_mean_gain_effect.nii.gz\nA  results/maps/group_p_fwe_bonferroni.nii.gz\nA  results/maps/group_p_positive.nii.gz\nA  results/maps/group_t_fwe05.nii.gz\nA  results/maps/group_t_positive.nii.gz\nA  results/participant_roi_estimates.tsv\nA  results/report.md\nA  results/results.json\nA  results/significant_voxels.tsv\n?? scripts/\n",
+  "artifact_inventory": [
+    {
+      "path": "results/figures/roi_participants.png",
+      "bytes": 57911,
+      "sha256": "a0864e9a0906b27fe36c3d80504e701f1fa65704a6cb1394687bbacf9efaf821"
+    },
+    {
+      "path": "results/figures/whole_brain_fwe.png",
+      "bytes": 89408,
+      "sha256": "1af0119e3ddc0f260649d59d5490106da506496cec5d4f551e7089cc399b2c04"
+    },
+    {
+      "path": "results/figures/whole_brain_t.png",
+      "bytes": 104301,
+      "sha256": "2f0b401991e18bf5ad68650fc4d82a7e9ce1e8eb2b00a814c80869129380aaee"
+    },
+    {
+      "path": "results/logs/failed_attempts.md",
+      "bytes": 768,
+      "sha256": "8b9b41463cf602c3118463b06bd96c1c5d2e065c313f014c46a6ce7f4ae52f15"
+    },
+    {
+      "path": "results/logs/group_analysis.log",
+      "bytes": 2398,
+      "sha256": "2cd1507757131364ce9e13842f720b88319421837cf503e5ed97d24b37976630"
+    },
+    {
+      "path": "results/map_quality.tsv",
+      "bytes": 6915,
+      "sha256": "94892edbfebcddb936f3a80aa0432f9649edab218d9b46f109e74c2ba7a127fc"
+    },
+    {
+      "path": "results/maps/group_mean_gain_effect.nii.gz",
+      "bytes": 773793,
+      "sha256": "ef53366bbdbf4ea0f1f40f799b5f5a2b07d619499540ceeb450a7c6815ec82c1"
+    },
+    {
+      "path": "results/maps/group_p_fwe_bonferroni.nii.gz",
+      "bytes": 44181,
+      "sha256": "db5e8531bdead8bb86437a1d11745ebd28e8f86e0c4bd4f5ee09e1679e483ca3"
+    },
+    {
+      "path": "results/maps/group_p_positive.nii.gz",
+      "bytes": 747801,
+      "sha256": "bfee644e6692986fe810f994d5525237bb66ac72b95927372f136850ab68ebbe"
+    },
+    {
+      "path": "results/maps/group_t_fwe05.nii.gz",
+      "bytes": 16032,
+      "sha256": "c996cba2b695143056da7dddef73e5feb14bd65af36da71d86bc7b1c9632d1bf"
+    },
+    {
+      "path": "results/maps/group_t_positive.nii.gz",
+      "bytes": 772805,
+      "sha256": "c78c9741676cb40ee854c898bb81d590d058c5b8bd16359e3696695a5f1b4fb7"
+    },
+    {
+      "path": "results/participant_roi_estimates.tsv",
+      "bytes": 1831,
+      "sha256": "ba62bcdbea0fa4be1a927dd7733f109298cbb2639bdcff5848967395408d9ba4"
+    },
+    {
+      "path": "results/report.md",
+      "bytes": 6787,
+      "sha256": "a9bc65813e83564f25b6b1722bd9da7791e7e88e69dbd9fd816ca3a52a91dc0c"
+    },
+    {
+      "path": "results/results.json",
+      "bytes": 2063,
+      "sha256": "7066fdfd1937b4f63dee1a217f2bdd4c13e57d756c3dabdeff6b7eb3d0e197f0"
+    },
+    {
+      "path": "results/significant_voxels.tsv",
+      "bytes": 1012,
+      "sha256": "ed50b64debe0e3da0ca32450a791b79e48f5e01f61eb3088c58dd9085a810c5b"
+    },
+    {
+      "path": "scripts/group_analysis.py",
+      "bytes": 9893,
+      "sha256": "c6870fde4a93cbb304665904496229b519cf1de0f4db4d4edc7e4c33a7b62387"
+    },
+    {
+      "path": "pixi.toml",
+      "bytes": 516,
+      "sha256": "0d435f1d4ff9fb9177b6816df0ac64a229f8f3437a22d0ad4df27028c11ed802"
+    }
+  ],
+  "final_working_lock_sha256": "5884bb53a343659adce7759c1b48477e2cdffb71b4838e49d14810e75dc75f21",
+  "note": "Coordinator preserves these scientific output bytes without repair; the worker left the research artifacts uncommitted.",
+  "scientific_result_commit": "510a685426804385a8c80f6347002ee47ce606e9"
+}
