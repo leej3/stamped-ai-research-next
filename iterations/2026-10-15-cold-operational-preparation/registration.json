@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "comparison_id": "preparation-cold-operational-20261015",
+  "purpose": "Preparation operational trial of a fresh coordinator using sealed formal checks; excluded from formal scientific comparisons.",
+  "formal_result_eligible": false,
+  "status": "registered-before-launch",
+  "source_commit": "37aae006a140fec3b50363501be3cfdc1b08259f",
+  "procedure_sha256": "6fe3722172fa6a35a45b00bae1871f7b16e0b9e52d7ea54b079e27405a93f529",
+  "study": {
+    "commit": "a58e822761acfe35724d3557404fc55a297e1a19",
+    "guidance_dependencies": [],
+    "guidance_files": {
+      "coordinator-guidance/judging.md": "5215114f8c2c4d099e2ef069fc31e9a9c586ff30c826096de52535f9db3b10b3"
+    },
+    "guidance_objects": {
+      "coordinator-guidance/judging.md": {
+        "git_blob": "e22af444c11f86b8494a4c2a7aadf5ee1e06cdfa",
+        "mode": "100644",
+        "sha256": "5215114f8c2c4d099e2ef069fc31e9a9c586ff30c826096de52535f9db3b10b3",
+        "size": 3601
+      }
+    },
+    "input_tree": "a484f41db2095ef116f08d359f9b95ad41981698",
+    "path": "studies/narps",
+    "reference": null,
+    "rubric": "coordinator-guidance/judging.md",
+    "task_sha256": "e92bf2e0c0db4cc49688cce9f9dfff8a236fc4ec151c09961719f49f31310cc8"
+  },
+  "starting_environment": {
+    "commit": "986333ad17125dff5b22c5321b18a476e84560e2",
+    "sha256": {
+      "pixi.lock": "f8fff1394fbeaa2ab1c4993fceb0dd6463fe0c08c81fcda397f3e752a72c4249",
+      "pixi.toml": "4d22a0c3e3c47289f62bfe1710a287a0271162767040d03f5dd1880f6cddb48a"
+    }
+  },
+  "budgets": {
+    "workers": 1,
+    "judges": 1,
+    "worker_condition": "baseline",
+    "model": "gpt-6-luna",
+    "reasoning_effort": "high",
+    "hard_limit_seconds": 0,
+    "review_seconds": 5400,
+    "scientific_execution_capture": "duct"
+  },
+  "readiness": {
+    "requirements_sha256": "93aed9fb12d4af0ae19bf0e5dc686625076ac021c3dc47e7f7484779a73a558f",
+    "readiness_result": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/readiness-01/result.json",
+    "readiness_result_sha256": "90bcf01edf3bb864bbdb5cce0b11f916239d458660ee35993f1ec815f43035e6",
+    "ready": true,
+    "checks": [
+      {
+        "id": "native-capture",
+        "status": "passed"
+      },
+      {
+        "id": "annex-round-trip",
+        "status": "passed"
+      },
+      {
+        "id": "hpc-round-trip",
+        "status": "passed"
+      }
+    ]
+  },
+  "worker_branch": "codex/preparation-cold-worker-20261015",
+  "judge_branch": "codex/preparation-cold-judge-20261015",
+  "evidence_directory": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-operational-evidence",
+  "coordinator_context_caveat": "Documented study readiness.json read along with allowed judging.md; it contained prior pilot durations and rehearsal-path metadata. No paths followed and no prior scientific artifacts or judgments read.",
+  "scientific_content_policy": "Workers receive committed inputs only; coordinator preserves artifacts without scientific editing; judge receives only frozen guidance plus original worker-stop receipt."
+}
