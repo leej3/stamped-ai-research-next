@@ -1,0 +1,11 @@
+✨ Pixi task (analysis): python scripts/analyze.py
+/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-worker/scripts/analyze.py:220: UserWarning: empty mask
+  display = plotting.plot_stat_map(sig_img, bg_img=None, display_mode="z",
+Traceback (most recent call last):
+  File "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-worker/scripts/analyze.py", line 242, in <module>
+    main()
+    ~~~~^^
+  File "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-worker/scripts/analyze.py", line 225, in main
+    plotting.close()
+    ^^^^^^^^^^^^^^
+AttributeError: module 'nilearn.plotting' has no attribute 'close'

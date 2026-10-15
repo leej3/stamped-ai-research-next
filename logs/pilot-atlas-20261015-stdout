@@ -1,0 +1,109 @@
+[fetch_atlas_harvard_oxford] Added README.md to /Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-worker/results/atlas-cache
+[fetch_atlas_harvard_oxford] Dataset created in /Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-worker/results/atlas-cache/fsl
+[fetch_atlas_harvard_oxford] Downloading data from https://www.nitrc.org/frs/download.php/9902/HarvardOxford.tgz ...
+[fetch_atlas_harvard_oxford] Downloaded 20635648 of 25716861 bytes (80.2%%, 00 HR 00 MIN 00 SEC remaining)
+[fetch_atlas_harvard_oxford] Downloaded 25272320 of 25716861 bytes (98.3%%, 00 HR 00 MIN 00 SEC remaining)
+[fetch_atlas_harvard_oxford] Downloaded 25632768 of 25716861 bytes (99.7%%, 00 HR 00 MIN 00 SEC remaining)
+[fetch_atlas_harvard_oxford]  ...done. (4 seconds, 0 min)
+
+[fetch_atlas_harvard_oxford] Extracting data from /Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-worker/results/atlas-cache/fsl/6932472d2796019d1a5432f4c5215f42/HarvardOxford.tgz...
+[fetch_atlas_harvard_oxford] .. done.
+
+{
+  "n_participants": 54,
+  "participants": [
+    "sub-001",
+    "sub-003",
+    "sub-005",
+    "sub-009",
+    "sub-011",
+    "sub-013",
+    "sub-015",
+    "sub-017",
+    "sub-019",
+    "sub-021",
+    "sub-025",
+    "sub-027",
+    "sub-029",
+    "sub-033",
+    "sub-035",
+    "sub-037",
+    "sub-039",
+    "sub-041",
+    "sub-043",
+    "sub-045",
+    "sub-047",
+    "sub-049",
+    "sub-051",
+    "sub-053",
+    "sub-055",
+    "sub-057",
+    "sub-059",
+    "sub-061",
+    "sub-063",
+    "sub-067",
+    "sub-069",
+    "sub-071",
+    "sub-073",
+    "sub-075",
+    "sub-077",
+    "sub-079",
+    "sub-081",
+    "sub-083",
+    "sub-085",
+    "sub-087",
+    "sub-089",
+    "sub-093",
+    "sub-095",
+    "sub-099",
+    "sub-103",
+    "sub-105",
+    "sub-107",
+    "sub-109",
+    "sub-113",
+    "sub-115",
+    "sub-117",
+    "sub-119",
+    "sub-121",
+    "sub-123"
+  ],
+  "shape": [
+    97,
+    115,
+    81
+  ],
+  "affine": [
+    [
+      2.0,
+      0.0,
+      0.0,
+      -96.0
+    ],
+    [
+      0.0,
+      2.0,
+      0.0,
+      -132.0
+    ],
+    [
+      0.0,
+      0.0,
+      2.4000000953674316,
+      -78.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "common_nonzero_mask_voxels": 198029,
+  "common_mask_volume_mm3": 1901078.475542068,
+  "vmPFC_atlas_labels": [
+    "Frontal Medial Cortex",
+    "Subcallosal Cortex"
+  ],
+  "vmPFC_atlas_intersection_voxels": 1422,
+  "vmPFC_atlas_sha256": "73941b4e7680abae9887e12f9670159708b739c00a18733179f9cd489bf8af31"
+}

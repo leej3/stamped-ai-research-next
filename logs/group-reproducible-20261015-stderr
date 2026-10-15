@@ -1,0 +1,9 @@
+✨ Pixi task (analysis): python scripts/analyze.py
+Traceback (most recent call last):
+  File "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-worker/scripts/analyze.py", line 276, in <module>
+    main()
+    ~~~~^^
+  File "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-worker/scripts/analyze.py", line 187, in main
+    "peak_mni_mm": [float(v) for v in nib.affines.apply_affine(affine, peak_idx)],
+                                                               ^^^^^^
+UnboundLocalError: cannot access local variable 'affine' where it is not associated with a value

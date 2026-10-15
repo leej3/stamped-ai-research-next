@@ -1,0 +1,18 @@
+{
+  "independent_checks": "passed",
+  "checks": {
+    "global_positive_peak": {
+      "scipy_t": 6.617173671722412,
+      "maxT_fwe_p": 0.0007,
+      "stored_fwe_p": 0.000699999975040555
+    },
+    "vmPFC_peak": {
+      "scipy_t": 4.191847801208496,
+      "maxT_fwe_p": 0.782,
+      "stored_fwe_p": 0.7820000052452087
+    },
+    "vmPFC_mean": 0.0026563459541648626,
+    "fwe_voxel_count": 24,
+    "vmPFC_fwe_voxel_count": 0
+  }
+}

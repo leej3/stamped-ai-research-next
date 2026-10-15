@@ -32,4 +32,6 @@ No corrected vmPFC finding means this analysis did not meet the prespecified evi
 
 ## Reproduction and artifacts
 
-From the repository root, run `pixi run analysis` to regenerate statistical maps, summaries and figures, or `pixi run validate` for independent checks against SciPy and the saved max-statistic null distribution. The root Pixi lockfile and committed analysis code define the computational environment and method. The final analysis run was captured by duct under `logs/group-clusters-20261015-*`; the independent validation is under `logs/validation-20261015-*`. Earlier failed attempts are retained in `logs/` with their error output. The max-*t* null distribution is `permutation-max-t.tsv`.
+From the repository root, run `pixi run analysis` to regenerate statistical maps, summaries and figures, or `pixi run validate` for independent checks against SciPy and the saved max-statistic null distribution. The final figures and statistics were produced by duct under `logs/group-report-20261015-*`; independent checks are under `logs/validation-final-20261015-*`. Earlier failed attempts are retained in `logs/` with their error output. The max-*t* null distribution is `permutation-max-t.tsv`.
+
+The analysis ran with Python 3.13.16, nibabel 5.4.2, nilearn 0.14.1, NumPy 2.5.4 and SciPy 1.18.1. Its code revision was `8025de4`; the locked environment was `pixi.lock` SHA-256 `5884bb53a343659adce7759c1b48477e2cdffb71b4838e49d14810e75dc75f21`.

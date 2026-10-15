@@ -1,0 +1,19 @@
+✨ Pixi task (analysis): python scripts/analyze.py
+Traceback (most recent call last):
+  File "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-worker/scripts/analyze.py", line 257, in <module>
+    main()
+    ~~~~^^
+  File "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-worker/scripts/analyze.py", line 253, in main
+    print(json.dumps({k: v for k, v in summary.items() if k not in {"map_qc", "vmPFC_participant_values"}}, indent=2))
+          ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-worker/.pixi/envs/default/lib/python3.13/json/__init__.py", line 242, in dumps
+    **kw).encode(obj)
+          ~~~~~~^^^^^
+  File "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-worker/.pixi/envs/default/lib/python3.13/json/encoder.py", line 202, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-worker/.pixi/envs/default/lib/python3.13/json/encoder.py", line 263, in iterencode
+    return _iterencode(o, 0)
+  File "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-worker/.pixi/envs/default/lib/python3.13/json/encoder.py", line 182, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+                    f'is not JSON serializable')
+TypeError: Object of type int64 is not JSON serializable

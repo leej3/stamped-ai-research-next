@@ -1,0 +1,73 @@
+{
+  "analysis": "one-sample positive t; participant sign-flips; max-t whole-brain FWE",
+  "n_participants": 54,
+  "n_excluded": 0,
+  "permutations": 9999,
+  "seed": 20261015,
+  "alpha": 0.05,
+  "one_sided": true,
+  "shape": [
+    97,
+    115,
+    81
+  ],
+  "voxel_volume_mm3": 9.600000381469725,
+  "whole_brain_mask_voxels": 198029,
+  "whole_brain_mask_volume_mm3": 1901078.475542068,
+  "vmPFC_definition": "Harvard-Oxford cortical max-probability atlas threshold 25%; union of Frontal Medial Cortex and Subcallosal Cortex",
+  "vmPFC_atlas_labels": [
+    "Frontal Medial Cortex",
+    "Subcallosal Cortex"
+  ],
+  "vmPFC_atlas_sha256": "73941b4e7680abae9887e12f9670159708b739c00a18733179f9cd489bf8af31",
+  "display_template": "Nilearn MNI152 2-mm template; used for visualization only",
+  "display_template_sha256": "0d8b8f9574a88657bad490d7f64d804cb11ab77a339882990e8a3786e141c9f3",
+  "vmPFC_intersection_voxels": 1422,
+  "vmPFC_mean_across_voxels": 0.0026563459541648626,
+  "vmPFC_mean_t_CI95": [
+    -0.021659984978589363,
+    0.026972676886919088
+  ],
+  "vmPFC_participant_bootstrap_CI95": [
+    -0.020024102972820403,
+    0.026134775532409525
+  ],
+  "vmPFC_peak": {
+    "ijk": [
+      47,
+      78,
+      25
+    ],
+    "mni_mm": [
+      -2.0,
+      24.0,
+      -17.99999761581421
+    ],
+    "t": 4.191847801208496,
+    "fwe_p": 0.7820000052452087
+  },
+  "n_whole_brain_fwe_voxels": 24,
+  "n_vmPFC_fwe_voxels": 0,
+  "global_positive_peak": {
+    "ijk": [
+      35,
+      15,
+      31
+    ],
+    "mni_mm": [
+      -26.0,
+      -102.0,
+      -3.599997043609619
+    ],
+    "t": 6.617173194885254,
+    "fwe_p": 0.000699999975040555,
+    "in_predefined_vmPFC": false
+  },
+  "max_null_t_95pct": 5.3622527428540785,
+  "max_null_t_99pct": 5.853649822106147,
+  "notes": [
+    "Effect estimates are not currency-unit slopes or standardized test statistics.",
+    "No participant-level variance maps are supplied; equal-weight cope model used.",
+    "Common nonzero support defines the whole-brain family."
+  ]
+}

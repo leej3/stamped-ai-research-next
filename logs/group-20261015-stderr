@@ -1,0 +1,23 @@
+✨ Pixi task (analysis): python scripts/analyze.py
+Traceback (most recent call last):
+  File "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-worker/scripts/analyze.py", line 237, in <module>
+    main()
+    ~~~~^^
+  File "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-worker/scripts/analyze.py", line 145, in main
+    roi_mask, roi_labels, atlas_labels, atlas_path = vmPFC_atlas_mask(imgs[0])
+                                                     ~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-worker/scripts/analyze.py", line 75, in vmPFC_atlas_mask
+    atlas_img = nib.load(atlas.maps)
+  File "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-worker/.pixi/envs/default/lib/python3.13/site-packages/nibabel/loadsave.py", line 100, in load
+    filename = _stringify_path(filename)
+  File "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-worker/.pixi/envs/default/lib/python3.13/site-packages/nibabel/filename_parser.py", line 42, in _stringify_path
+    return pathlib.Path(filepath_or_buffer).expanduser().as_posix()
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-worker/.pixi/envs/default/lib/python3.13/pathlib/_local.py", line 503, in __init__
+    super().__init__(*args)
+    ~~~~~~~~~~~~~~~~^^^^^^^
+  File "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-worker/.pixi/envs/default/lib/python3.13/pathlib/_local.py", line 132, in __init__
+    raise TypeError(
+    ...<2 lines>...
+        f"not {type(path).__name__!r}")
+TypeError: argument should be a str or an os.PathLike object where __fspath__ returns a str, not 'Nifti1Image'
