@@ -314,8 +314,8 @@
   "assessment_scope": "Initial independent Luna/high judgments preserved; reviewed derivatives correct factual/mapping errors and identify their coordinator author. No scientific replay. Later preservation/publication/locks are excluded from worker credit.",
   "entire_scope": "Verified original945 fresh native independent research repositories with prepared shared profile; not a universal claim for arbitrary worktrees or future profiles.",
   "publication_receipts": [
-    "/Users/johnlee/.local/state/stamped-ai-research-next/pilots/narps-suitability-20261015-01/final-publication.json",
-    "/Users/johnlee/.local/state/stamped-ai-research-next/pilots/narps-suitability-20261015-02/final-publication.json",
-    "/Users/johnlee/.local/state/stamped-ai-research-next/pilots/narps-suitability-20261015-03/final-publication.json"
+    "publication/narps-suitability-20261015-01/final-publication.json",
+    "publication/narps-suitability-20261015-02/final-publication.json",
+    "publication/narps-suitability-20261015-03/final-publication.json"
   ]
 }

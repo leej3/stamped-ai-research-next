@@ -1,0 +1,51 @@
+{
+  "coordinator_commit": "856be5f5fc3f016b5bacfe0423711bed80a54be9",
+  "clone_command": "git clone --depth 1 --single-branch --branch codex/experiment-environments --no-recurse-submodules https://github.com/leej3/stamped-ai-research-next.git <fresh-directory>",
+  "initial_submodule_status": [
+    "-d867c1d04bbb58b3b0f64122ebd5f76bd8e5a7ca assessment",
+    "-496d4702937a1264bcd95d1c7657c0d9f5558079 skills",
+    "-af60b4cf3d28319a0a676eb19270ea9c7dcbb3e7 studies/narps"
+  ],
+  "selected_update_command": "git submodule update --init --depth 1 -- studies/narps",
+  "selected_submodule_status": [
+    "-d867c1d04bbb58b3b0f64122ebd5f76bd8e5a7ca assessment",
+    "-496d4702937a1264bcd95d1c7657c0d9f5558079 skills",
+    " af60b4cf3d28319a0a676eb19270ea9c7dcbb3e7 studies/narps (af60b4c)"
+  ],
+  "experiment_submodule_status": [
+    "-699deea221a88c49543288d7e6533fee9a929f4a results/narps-suitability-20261015-01",
+    "-46f2e86cd228bb05118c37c57560495d41cde114 results/narps-suitability-20261015-02",
+    "-f20351ddd4c0af7c1166c3ef93d693af9eeda723 results/narps-suitability-20261015-03"
+  ],
+  "study_commit": "af60b4cf3d28319a0a676eb19270ea9c7dcbb3e7",
+  "experiment_directories_empty": true,
+  "unselected_skills_and_assessment_uninitialized": true,
+  "passed": true,
+  "annex_publication_logs": {
+    "remote": "con-hub",
+    "retrieved_from": "annex+https://hub.centerforopenneuroscience.org:443/git-annex-p2phttp",
+    "byte_identical_to_source": true,
+    "files": [
+      {
+        "path": "publication/narps-suitability-20261015-01/finalization-recovery.jsonl",
+        "bytes": 22443,
+        "sha256": "fd7256a8eaaf073e47cded399db04e0ef8056458a7e098efdf825ef5ed12cc88"
+      },
+      {
+        "path": "publication/narps-suitability-20261015-01/finalization.jsonl",
+        "bytes": 17270,
+        "sha256": "312d16d1f47e2164d830989dbfb2457afeed89f357ee71cf3da52b2487de80c5"
+      },
+      {
+        "path": "publication/narps-suitability-20261015-02/finalization.jsonl",
+        "bytes": 29532,
+        "sha256": "39a0ccca2b70aac3674fa9606c88a2aa2c9ddaf044c3760b48cce13664e299c5"
+      },
+      {
+        "path": "publication/narps-suitability-20261015-03/finalization.jsonl",
+        "bytes": 29738,
+        "sha256": "038a75d4ea2232f3f05374890fe108098584ebb536acca61f1ae41afb06436fe"
+      }
+    ]
+  }
+}

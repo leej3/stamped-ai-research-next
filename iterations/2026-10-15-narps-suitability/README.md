@@ -57,5 +57,6 @@ Later coordinator packaging and lock snapshots do not earn credit for the origin
 
 Each run is retained as an experiment submodule under the study's `results/`, uninitialized until selected.
 Its exact scientific commit remains distinct from later evidence packaging and its final environment snapshot.
+A [fresh shallow-clone check](lazy-submodule-check.json) confirmed that selecting the study leaves all three experiments, skills and assessment uninitialized.
 Independent GitHub/CON Hub retrieval verified the published artifacts and final locks; hosted Entire checks matched all three intended worker sessions. Exact checkpoint IDs, verification commands and receipt links are in [comparison.json](comparison.json); final publication receipts are retained under [publication/](publication/).
 Recreate the timing figure with `pixi run python iterations/2026-10-15-narps-suitability/plot.py`.
