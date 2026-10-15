@@ -1,6 +1,7 @@
 """Check response dispatch without installing environments or accessing remotes."""
 import hashlib
 import json
+import os
 from pathlib import Path
 import subprocess
 import sys
@@ -86,3 +87,43 @@ def test_validate_shortcut_remains_compatible(frozen_runner, monkeypatch):
         source / "skills/stamped-conventions/scripts/encode_response.py",
         "validate", "response with spaces.json",
     ]
+
+
+@pytest.mark.parametrize("repository", [None, "git@github.com:example/recorded-runtime.git"])
+def test_missing_runtime_is_fetched_from_declared_repository_or_legacy_origin(
+        frozen_runner, monkeypatch, repository):
+    calls, source, runtime = frozen_runner
+    pin_path = Path(os.environ["STAMPED_ASSESSMENT_PIN"])
+    pin = json.loads(pin_path.read_text())
+    if repository is not None:
+        pin["environment_repository"] = repository
+        pin_path.write_text(json.dumps(pin))
+    original_run = assessment.subprocess.run
+
+    def missing_runtime(command, **kwargs):
+        if command[:2] == ["git", "cat-file"]:
+            calls.append((command, kwargs))
+            return subprocess.CompletedProcess(command, 1)
+        if command[:2] == ["git", "fetch"]:
+            calls.append((command, kwargs))
+            return subprocess.CompletedProcess(command, 0)
+        return original_run(command, **kwargs)
+
+    monkeypatch.setattr(assessment.subprocess, "run", missing_runtime)
+    monkeypatch.setattr(sys, "argv", ["assessment.py", "check"])
+    assessment.main()
+    assert calls[1] == (["git", "fetch", "--no-tags", "--depth", "1",
+                         repository or "origin", pin["environment_commit"]],
+                        {"cwd": assessment.ROOT, "check": True})
+    assert (runtime / "pixi.lock").read_text() == "fixture lock\n"
+
+
+def test_available_runtime_does_not_contact_declared_repository(frozen_runner, monkeypatch):
+    calls, source, runtime = frozen_runner
+    pin_path = Path(os.environ["STAMPED_ASSESSMENT_PIN"])
+    pin = json.loads(pin_path.read_text())
+    pin["environment_repository"] = "git@github.com:example/recorded-runtime.git"
+    pin_path.write_text(json.dumps(pin))
+    monkeypatch.setattr(sys, "argv", ["assessment.py", "check"])
+    assessment.main()
+    assert not any(command[:2] == ["git", "fetch"] for command, kwargs in calls)

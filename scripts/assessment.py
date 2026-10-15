@@ -39,8 +39,12 @@ def main():
     if not procedure.assessment_modules_match(git("submodule", "status", "--recursive", cwd=source)):
         raise SystemExit("Assessment submodules are not at their recorded revisions")
     revision = pin["environment_commit"]
+    repository = pin.get("environment_repository", "origin")
+    if not isinstance(repository, str) or not repository.strip():
+        raise SystemExit("Assessment environment_repository must name a Git repository or remote")
     if subprocess.run(["git", "cat-file", "-e", revision], cwd=ROOT, capture_output=True).returncode:
-        subprocess.run(["git", "fetch", "origin", revision], cwd=ROOT, check=True)
+        subprocess.run(["git", "fetch", "--no-tags", "--depth", "1", repository, revision],
+                       cwd=ROOT, check=True)
     runtime = ROOT / ".pixi" / "assessment-runtime" / revision
     runtime.mkdir(parents=True, exist_ok=True)
     for name in ("pixi.toml", "pixi.lock"):

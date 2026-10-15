@@ -1,9 +1,12 @@
 # Launch research workers and judges
 
-The native launcher uses host settings from `~/.config/stamped-ai-research-next/launch.json`; `--host-config` selects another file.
+The native launcher defaults to `~/.config/<coordinator-directory-name>/launch.json`; use `--host-config` to select an explicit host file.
+For a checkout named `stamped-in-practice`, the default is `~/.config/stamped-in-practice/launch.json`; existing `stamped-ai-research-next` checkouts retain their earlier default.
 These identify the CLI, source environment, approved hooks, provenance resolver and annex remote.
 Credentials stay with host providers.
 Use [resource readiness checks](READINESS.md) for the requirements supplied by this user; retain their result before launching research.
+Launches default to development mode and retain `development-unsealed` status.
+The examples below are development launches; use the formal procedure for comparisons.
 
 ## Research workers
 
@@ -57,6 +60,95 @@ A separate host profile makes the frozen judging skills discoverable without add
 The clone retains the result commit and its annex metadata, without other trial branches.
 They inspect and replay the object's declared environment without repairing it first.
 Keep duplicate judgments independently and use neutral result identifiers where practical.
+
+## Formal procedure
+
+Commit the scientific inputs, rubric, selected reference dependencies, public resource requirements and `comparison-plan.md` before sealing.
+Keep the assessor source/runtime pin fixed; initialize `assessment` without recursively installing its optional development `evals` submodule. Run `pixi run assessment-check` to verify the assessor and prepare its recorded runtime. If the runtime commit belongs to another repository, `assessment-version.json` can declare `environment_repository`, for example `git@github.com:leej3/stamped-ai-research-next.git`. The runner fetches only the missing pinned commit with depth one, then verifies its manifest and lock hashes; older pins without this field use `origin`. This transport field does not change the source/runtime commits or their hashes.
+
+When scientific execution logging is requested, including by this workshop prompt, add `--capture-execution` to both sealing and research launches; omit it for judges.
+
+The common starting environment needs an immutable commit containing the exact coordinator `pixi.toml` and validated `pixi.lock`.
+Use its commit as `STARTING_ENV_COMMIT`; a mutable working lock is not a version record.
+Workers may subsequently evolve their own environments, and judges replay those recorded environments.
+
+Run the committed public requirements against separately prepared host checks:
+
+```sh
+pixi run readiness \
+  --requirements iterations/COMPARISON/requirements.json \
+  --host-config /private/path/resource-checks.json \
+  --evidence /path/to/run-evidence/COMPARISON/readiness
+```
+
+The readiness command configuration and launch configuration are separate host files.
+Host paths and credentials stay outside the portable procedure.
+Seal using the selected coordinator revision and the same prepared launch resources:
+
+```sh
+pixi run assessment-procedure seal \
+  --host-config /private/path/launch.json \
+  --base COORDINATOR_COMMIT --study studies/CHOSEN_STUDY \
+  --comparison-id COMPARISON \
+  --resources iterations/COMPARISON/requirements.json \
+  --rubric coordinator-guidance/rubric.md \
+  --reference coordinator-guidance/reference.md \
+  --guidance-dependency coordinator-guidance/needed-reference.pdf \
+  --environment-commit STARTING_ENV_COMMIT \
+  --output iterations/COMPARISON/procedure.json
+```
+
+Omit `--reference` and `--guidance-dependency` when unnecessary; repeat the latter for each needed local dependency.
+Rubric/reference paths are study-relative UTF-8 text files; dependencies may include other file types. Only explicitly selected files enter the judge's retained guidance directory. The launcher does not follow links into old judgments or expand historical preparation payloads. Selected SHA256/SHA256E annex files are pinned by Git blob and content key; obtain their payloads before launch so they can be verified and retained.
+
+Retain the printed `procedure_sha256` as `PROCEDURE_SHA256` in the comparison registration and commit the manifest before formal launches.
+The digest identifies the reviewed procedure; regenerating it defines a new procedure, not a repair to an existing comparison.
+Check it before each round:
+
+```sh
+pixi run assessment-procedure check \
+  --host-config /private/path/launch.json \
+  --base ROUND_COORDINATOR_COMMIT --study studies/CHOSEN_STUDY \
+  --procedure iterations/COMPARISON/procedure.json \
+  --procedure-sha256 PROCEDURE_SHA256
+```
+
+Skill gitlinks and the working-skills branch hint may change between rounds.
+Scientific inputs, selected guidance, assessment, control instructions, source URLs, starting environment and shared settings must still match the seal.
+Model-cache refresh timestamps and display metadata are ignored; changes to the selected model's recorded instructions, tools or capabilities fail verification.
+
+Launch every research condition with the same procedure and successful readiness receipt:
+
+```sh
+pixi run launch --host-config /private/path/launch.json \
+  --run-mode formal --study studies/CHOSEN_STUDY \
+  --base ROUND_COORDINATOR_COMMIT --branch codex/run-001 \
+  --condition baseline \
+  --procedure iterations/COMPARISON/procedure.json \
+  --procedure-sha256 PROCEDURE_SHA256 \
+  --resource-readiness /path/to/run-evidence/COMPARISON/readiness/result.json \
+  --evidence /path/to/run-evidence/run-001/launch
+```
+
+At worker exit, retain `launch/native/worker-end-state.json` outside its checkout.
+If coordinator retention is needed, preserve the recorded artifacts unchanged in a clean `RESULT_COMMIT` descended from the worker's final commit.
+Keep launch/judgment receipts outside that commit until judging is complete. The judge validates the retained artifact inventory and grades worker versioning/publication practices at worker stop; later coordinator retention receives separate attribution.
+
+```sh
+pixi run judge --host-config /private/path/launch.json \
+  --run-mode formal --repo /absolute/path/to/worker-repository \
+  --base RESULT_COMMIT --branch codex/judge-001 \
+  --study studies/CHOSEN_STUDY \
+  --procedure iterations/COMPARISON/procedure.json \
+  --procedure-sha256 PROCEDURE_SHA256 \
+  --resource-readiness /path/to/run-evidence/COMPARISON/readiness/result.json \
+  --worker-end-state /path/to/run-evidence/run-001/launch/native/worker-end-state.json \
+  --evidence /path/to/run-evidence/run-001/judgment-01
+```
+
+Formal judges use the sealed rubric/reference; do not pass a separate `--reference` override.
+The fixed replay allowance is one attempt in a fresh clone of the exact result commit, including an unsuccessful attempt.
+Formal launches refuse missing or changed procedure inputs and retain `formal-verified` status; development pilots remain separate.
 
 ## Retaining experiments
 
