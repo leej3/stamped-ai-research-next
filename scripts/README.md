@@ -14,18 +14,18 @@ No tokens or credential contents belong in this file or project.
 Create an isolated profile once with `create_public_profile.py --profile ABS --source-home ABS --approved-hooks ABS --receipt ABS`.
 It references the existing host auth file through a symlink without reading it, copies only already approved source-hook records, and excludes discovered host skills.
 The launcher additionally audits effective prompt visibility before executing.
-Both study conditions share this profile; only the five STAMPED entrypoints differ.
+Both study conditions share this profile; only the declared STAMPED entrypoints differ.
 Common project resource skills remain available.
 
 ```sh
-python3 scripts/prepare_launch.py --branch codex/my-task \
+pixi run launch --branch codex/my-task \
   --prompt /absolute/task.txt --evidence experiments/my-task/launch \
   --condition baseline
 ```
 
 The default time bound is 240 seconds; use `--seconds` for the authorized task.
 The worker gets its own locked Pixi environment and initialized annex remote; setup does not download all artifacts.
-`--prepare-only` stops before native launch.
+`--prepare-only` verifies effective skill exposure and stops before native execution.
 A new clone additionally needs `--kind clone --clone-path ABS`.
 Unknown hook changes or mismatched manifests, locks or remotes stop setup.
 

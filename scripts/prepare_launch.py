@@ -86,7 +86,7 @@ def main():
         run(["git", "switch", "-c", args.branch], checkout)
     (evidence / "checkout.json").write_text(json.dumps({"checkout": str(checkout),
         "kind": args.kind, "branch": args.branch, "base": args.base}, indent=2) + "\n")
-    run(["git", "submodule", "update", "--init"], checkout)
+    run(["git", "submodule", "update", "--init", "--recursive"], checkout)
     lock = args.env_manifest.resolve().with_name("pixi.lock")
     worker_manifest = checkout / "pixi.toml"
     worker_lock = checkout / "pixi.lock"
@@ -124,11 +124,11 @@ def main():
          "--approved-hooks", args.approved_hooks, "--trust-sync", args.trust_sync,
          "--resolver", args.resolver, "--checkpoint-repo", args.checkpoint_repo,
          "--receipt", evidence / "preparation.json"], repo)
-    if not args.prepare_only:
-        run([sys.executable, scripts / "launch_native_probe.py", "--checkout", checkout,
-             "--prompt", args.prompt.resolve(), "--output", evidence / "native",
-             "--cli", args.cli, "--seconds", str(args.seconds), "--condition", args.condition,
-             "--model", args.model, "--effort", args.effort], repo)
+    run([sys.executable, scripts / "launch_native_probe.py", "--checkout", checkout,
+         "--prompt", args.prompt.resolve(), "--output", evidence / "native",
+         "--cli", args.cli, "--seconds", str(args.seconds), "--condition", args.condition,
+         "--model", args.model, "--effort", args.effort] +
+         (["--preflight-only"] if args.prepare_only else []), repo)
 
 
 if __name__ == "__main__":

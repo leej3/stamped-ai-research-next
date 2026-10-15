@@ -11,8 +11,9 @@ Run `pixi task list` for available commands.
 `pixi run launch --help` describes worker launches; [host configuration](scripts/README.md) supplies the existing machine-specific paths.
 Working locks stay ignored; preserve the exact validated lock on a separate snapshot commit above the final task commit.
 
+`skills/` blends [PR26](https://github.com/con/skills/pull/26) with lessons from the first trial on [our own branch](https://github.com/con/skills/tree/codex/pr26-stamped-next).
 The core STAMPED workflows are tool-neutral.
-Project-specific environment guidance belongs in `pixi-with-stamped`.
+Project-specific environment guidance is in [pixi-with-stamped](skills/skills/pixi-with-stamped/SKILL.md).
 Pin assessment separately from the workflows being improved.
 
 Execution trials and their complete records are retained under `experiments/`.

@@ -24,6 +24,7 @@ def main():
     parser.add_argument("--model", default="gpt-6-astra")
     parser.add_argument("--effort", default="ultra")
     parser.add_argument("--condition", choices=["baseline", "skills"], default="baseline")
+    parser.add_argument("--preflight-only", action="store_true")
     args = parser.parse_args()
     output = args.output.resolve()
     output.mkdir(parents=True, exist_ok=False)
@@ -32,10 +33,11 @@ def main():
     config = tomllib.loads((profile / "config.toml").read_text())
     overrides = list(config.get("skills", {}).get("config", []))
     study_skills = [args.checkout.resolve() / ".agents/skills" / name / "SKILL.md" for name in
-                    ("assess-stamped", "align-stamped", "create-stamped-project",
+                    ("assess-alignment-with-stamped-principles", "align-with-stamped-principles",
+                     "stamped-conventions", "create-stamped-project",
                      "create-repronim-stamped-project", "do-full-research-loop")]
     if args.condition == "skills" and not all(path.is_file() for path in study_skills):
-        raise SystemExit("Skills condition requires all five pinned project skill entrypoints")
+        raise SystemExit("Skills condition requires all pinned project study skill entrypoints")
     overrides += [{"path": str(path), "enabled": args.condition == "skills"} for path in study_skills]
     skill_config = "skills.config=[" + ",".join("{path=" + json.dumps(s["path"]) +
                     ",enabled=" + str(s["enabled"]).lower() + "}" for s in overrides) + "]"
@@ -60,8 +62,11 @@ def main():
                  "private_marker_count": len(forbidden), "condition": args.condition,
                  "visible_study_skills": visible}
     (output / "prompt-preflight.json").write_text(json.dumps(preflight, indent=2) + "\n")
-    if forbidden or (args.condition == "baseline" and visible) or (args.condition == "skills" and len(visible) != 5):
+    if forbidden or (args.condition == "baseline" and visible) or (args.condition == "skills" and len(visible) != len(study_skills)):
         raise SystemExit("Effective prompt failed privacy or study-skill visibility preflight")
+    if args.preflight_only:
+        print(json.dumps(preflight))
+        return
     record = {"command": command, "cwd": str(args.checkout.resolve()),
               "prompt_sha256": hashlib.sha256(prompt).hexdigest(),
               "inherited_session_variables_removed": removed,

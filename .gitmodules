@@ -1,4 +1,4 @@
 [submodule "skills"]
 	path = skills
 	url = https://github.com/con/skills.git
-	branch = codex/pr23-stamped-rerun
+	branch = codex/pr26-stamped-next
