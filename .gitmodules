@@ -1,0 +1,12 @@
+[submodule "results/narps-suitability-20261015-01"]
+	path = results/narps-suitability-20261015-01
+	url = https://github.com/leej3/stamped-ai-research-next.git
+	branch = codex/narps-suitability-20261015-01
+[submodule "results/narps-suitability-20261015-02"]
+	path = results/narps-suitability-20261015-02
+	url = https://github.com/leej3/stamped-ai-research-next.git
+	branch = codex/narps-suitability-20261015-02
+[submodule "results/narps-suitability-20261015-03"]
+	path = results/narps-suitability-20261015-03
+	url = https://github.com/leej3/stamped-ai-research-next.git
+	branch = codex/narps-suitability-20261015-03

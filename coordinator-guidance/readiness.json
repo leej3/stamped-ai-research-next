@@ -1,6 +1,6 @@
 {
   "ready": true,
-  "reason": "Verified inputs and computational checks permit an independent research trial. Scientific task depth and agent research and reporting time remain unmeasured.",
+  "reason": "Verified inputs supported three independent baseline pilots. Each completed in about five to six minutes; this is a compact research task, not a demonstrated 30\u201345 minute workload.",
   "data_ready": true,
   "scientific_scope": "Original NARPS Hypothesis 1, conditional on fixed AO86 participant gain-effect estimates: positive potential-gain effect in vmPFC in the equal-indifference group, evaluated with whole-brain correction.",
   "input": {
@@ -27,10 +27,20 @@
     "scope": "Prewritten calculation only, not independent scientific work, anatomical interpretation or measured agent completion time."
   },
   "benchmark_suitability": {
-    "agent_trial_completed": false,
-    "agent_duration_minutes": null,
+    "agent_trial_completed": true,
+    "agent_duration_minutes": [
+      4.99734122568431,
+      5.835265870149791,
+      5.01439197708387
+    ],
     "minimum_compute_duration_required": false,
-    "intended_work": "Scientific reasoning, quality checks, inference, interpretation, figures and reproducible research outputs."
+    "intended_work": "Scientific reasoning, quality checks, inference, interpretation, figures and reproducible research outputs.",
+    "native_pilot_run_ids": [
+      "narps-suitability-20261015-01",
+      "narps-suitability-20261015-02",
+      "narps-suitability-20261015-03"
+    ],
+    "independent_scientific_validation": false
   },
   "environment_snapshot_branch": "codex/env-narps-preparation-20261015"
 }
