@@ -53,8 +53,12 @@ def read_maps():
             raise ValueError(f"Nonfinite voxel values in {pid}")
         if not np.any(x != 0):
             raise ValueError(f"All-zero image for {pid}")
+        actual_sha = sha256(path)
+        expected_meta = sources["files"][f"data/{path.name}"]
+        if path.stat().st_size != expected_meta["bytes"] or actual_sha != expected_meta["sha256"]:
+            raise ValueError(f"Source checksum/size mismatch for {pid}")
         arrays.append(x)
-        file_qc.append({"participant_id": pid, "sha256": sha256(path),
+        file_qc.append({"participant_id": pid, "sha256": actual_sha,
                         "shape": list(shape), "finite_voxels": int(finite.sum()),
                         "nonzero_voxels": int(np.count_nonzero(x)),
                         "mean_nonzero": float(x[x != 0].mean()),
