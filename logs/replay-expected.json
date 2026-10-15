@@ -1,0 +1,65 @@
+{
+  "files": {
+    "group-fwe-p-positive.nii.gz": {
+      "bytes": 43223,
+      "sha256": "0dc53b373881373896818ff62dc3199b6ba06e544ca9c54d6c8941444e415fa2"
+    },
+    "group-mean.nii.gz": {
+      "bytes": 1012185,
+      "sha256": "efae119d23c1aa9338c965ecf23658584cb3c7b37a379bc956ba3512e575b723"
+    },
+    "group-t.nii.gz": {
+      "bytes": 1013790,
+      "sha256": "818262bf4481df4ae3d73d41033953eb844772f9df8291ca7ebcc5a4bd088d1e"
+    },
+    "harvard_oxford_cort_maxprob_thr25_2mm.nii.gz": {
+      "bytes": 50061,
+      "sha256": "73941b4e7680abae9887e12f9670159708b739c00a18733179f9cd489bf8af31"
+    },
+    "harvard_oxford_cort_maxprob_thr25_2mm_labels.json": {
+      "bytes": 1721,
+      "sha256": "e98549f3ea94820302bb53a82fe2e582f1dab760081d956be6906cbc953f46a4"
+    },
+    "mni152_template_2mm.nii.gz": {
+      "bytes": 230063,
+      "sha256": "0d8b8f9574a88657bad490d7f64d804cb11ab77a339882990e8a3786e141c9f3"
+    },
+    "permutation-max-t.tsv": {
+      "bytes": 108880,
+      "sha256": "30aa30f802c46ae062550aa8a1faa472f6a66c05c638e440124f197f3726c45a"
+    },
+    "pilot-qc.json": {
+      "bytes": 19875,
+      "sha256": "fe85ba8695225258834342ba76e0c8ed9121644448c126972c321d819edc7172"
+    },
+    "results.json": {
+      "bytes": 25960,
+      "sha256": "375a4ffef437f8851254b1acf3d18f8d737999b0feacf7c1d4684f3bfcbe70b8"
+    },
+    "vmPFC-atlas-mask.nii.gz": {
+      "bytes": 33546,
+      "sha256": "8dd8de51837004c13ef0a63ecbe07fcf9d1d7fa486dd4af11a999974beb7e6b8"
+    },
+    "vmPFC-participant-distribution.png": {
+      "bytes": 46602,
+      "sha256": "a72d819af60fdb01a40460545c43cf6312f4d48cbfcd50d9bdbf26aa9cc50df5"
+    },
+    "vmPFC-participant-values.tsv": {
+      "bytes": 1117,
+      "sha256": "56cc99a6f187714bdebfa91036dfdcee8dd70523a208b24414b2d9c193486d3d"
+    },
+    "vmPFC-unthresholded-slices.png": {
+      "bytes": 63828,
+      "sha256": "444edc1be496088c364fcdcb41c33dbf3d549f09fbd0b368a6314787f7f8035d"
+    },
+    "whole-brain-fwe-slices.png": {
+      "bytes": 57632,
+      "sha256": "111080f4c7e1789b15ce111646a5e54fdb2b0bf10581c92d0a4b76e84f44de54"
+    },
+    "whole-brain-mask.nii.gz": {
+      "bytes": 65417,
+      "sha256": "0de1b9e5607e91c3dc7bdcf084ec4c305aa9cb6b29a0eb23f59d23b174e72f36"
+    }
+  },
+  "source_commit": "7405a7b5f9368337060ba597a71a4ca857ce0c11"
+}
