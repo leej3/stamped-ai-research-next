@@ -14,6 +14,7 @@ The unit of iteration is a pinned skill revision; study-specific preparation and
 - Register each published experiment repository as a submodule at the selected study's `results/<run>/`; retain complete worker branches and failed attempts.
   Keep study and experiment submodules uninitialized by default; initialize only selected paths and required dependencies.
   Keep launch and judging receipts outside workers while they run, then retain them in a later experiment commit without changing the recorded scientific result commit that was judged.
+  Use the coordinator environment for inspection and preservation; retain the worker's final lock before running commands that could resolve its environment.
   Keep generic guidance in `skills/` and evaluation references outside worker inputs.
 - Each experiment owns its Pixi environment and may evolve its repository's root `pixi.toml`.
   Add missing dependencies with `pixi add`; reuse established scientific software.

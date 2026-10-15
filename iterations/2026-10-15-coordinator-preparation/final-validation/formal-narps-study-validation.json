@@ -1,0 +1,50 @@
+{
+  "input_contract_checks": {
+    "lazy_metadata": true,
+    "missing_payload_refused": true,
+    "unknown_input_refused": true,
+    "changed_metadata_refused": true,
+    "changed_annex_key_refused": true
+  },
+  "scientific_analysis_executed": false,
+  "checked_at": "2026-10-15T22:39:25.505371+00:00",
+  "study_commit": "c7a135f92f92df15c379f7c2d9231f13981d76e4",
+  "source_commit": "a58e822761acfe35724d3557404fc55a297e1a19",
+  "input_tree": "a484f41db2095ef116f08d359f9b95ad41981698",
+  "datalad_id": "764c7776-4e7c-4bd6-ab59-72407876fbef",
+  "parent_commits": 0,
+  "working_tree_clean": true,
+  "source_commit_history_absent": true,
+  "lazy_payload_count": 54,
+  "representative_retrieval": {
+    "installation": "Normal git submodule add produced .git file; native git annex init converted it to a directory symlink.",
+    "input_path": "input/data/sub-001_hypo1_cope.nii.gz",
+    "annex_key": "MD5E-s1794522--2a6f64556ba73c42049c33979409bb66.nii.gz",
+    "bytes": 1794522,
+    "sha256": "baf3440fbc7f5f59dea28d231e9c5eb9cf00a15b6924342f4b79e7faf56a929a",
+    "matches_frozen_source": true,
+    "remote_uuid": "6215ce45-8f0f-4062-9bc0-d04781b4cd11",
+    "submodule_working_tree_clean": true,
+    "input_tree_unchanged": true
+  },
+  "runtime": {
+    "git": "git version 2.56.0",
+    "annex": "git-annex version: 10.20260901-g29d2c4f5723a6bc5dc380b5fd75b4e60aad6e4e1"
+  },
+  "submodule_tested_commit": "0da6b27dcef95a132cdbf6cd2cbebcc81f33951d",
+  "subsequent_change": "Moved readiness declaration to coordinator-guidance/readiness.json and declared ready=true for the frozen input package; input/helper/judging bytes unchanged.",
+  "readiness_contract": {
+    "schema_version": 1,
+    "status": "input-package-prepared",
+    "input_tree": "a484f41db2095ef116f08d359f9b95ad41981698",
+    "input_maps": 54,
+    "input_payload_bytes": 96387264,
+    "payloads_copied": false,
+    "scientific_analysis_executed": false,
+    "host_readiness": "Coordinator must perform required retrieval, runtime and resource checks before a formal launch.",
+    "source_provenance": "source-version.json",
+    "retrieval_contract": "retrieval.json",
+    "ready": true,
+    "scope": "Prepared frozen input package only; coordinator host readiness is checked separately."
+  }
+}
