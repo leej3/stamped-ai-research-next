@@ -88,5 +88,5 @@ The launcher retains prompts, source identities, hook preparation and native ses
 Automatic `AGENTS.md` loading is disabled for workers and judges; effective-prompt checks reject injected project instructions.
 See [Codex project instruction discovery](https://learn.chatgpt.com/docs/config-file/config-advanced#project-instructions-discovery).
 
-`pixi run launcher-tests` checks input isolation, role separation, judging inputs and timing with fixtures.
+`pixi run launcher-tests` checks input isolation, role separation, judging inputs, timing and response-helper forwarding with fixtures.
 These checks do not establish scientific validity, workload timing or live judge performance.
