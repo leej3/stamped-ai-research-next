@@ -1,0 +1,25 @@
+{
+  "status": "verified",
+  "requirements_sha256": "93aed9fb12d4af0ae19bf0e5dc686625076ac021c3dc47e7f7484779a73a558f",
+  "receipt_sha256": "90bcf01edf3bb864bbdb5cce0b11f916239d458660ee35993f1ec815f43035e6",
+  "checked_files": [
+    "native-capture/stdout.txt",
+    "native-capture/stderr.txt",
+    "native-capture/artifacts/verification.json",
+    "native-capture/artifacts/commands.json",
+    "native-capture/artifacts/probe.py",
+    "annex-round-trip/stdout.txt",
+    "annex-round-trip/stderr.txt",
+    "annex-round-trip/artifacts/verification.json",
+    "annex-round-trip/artifacts/commands.json",
+    "annex-round-trip/artifacts/probe.py",
+    "annex-round-trip/artifacts/payload.json",
+    "hpc-round-trip/stdout.txt",
+    "hpc-round-trip/stderr.txt",
+    "hpc-round-trip/artifacts/verification.json",
+    "hpc-round-trip/artifacts/commands.json",
+    "hpc-round-trip/artifacts/probe.py"
+  ],
+  "readiness_rerun": false,
+  "new_hpc_job": false
+}

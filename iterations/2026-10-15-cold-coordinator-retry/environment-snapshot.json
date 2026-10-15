@@ -1,0 +1,12 @@
+{
+  "environment_commit": "2c2e5fe3c95ac9153da6e51d73bddeaadb52eefc",
+  "environment_branch": "codex/env-preparation-cold-retry-worker-01",
+  "parent_final_experiment_commit": "b4158b16ac431a27ecf2516d693b45bf9eb61c65",
+  "regular_lock_blob": "9c25eceb42680bd540f34532910b1a1b4a943097",
+  "lock_sha256": "5884bb53a343659adce7759c1b48477e2cdffb71b4838e49d14810e75dc75f21",
+  "lock_bytes": 175639,
+  "validation": "failed: preserved original stop lock, not repaired",
+  "prior_annex_pointer_attempt_commit": "eda20a3a0e007b731d26942637857155278a926b",
+  "prior_attempt_branch": "codex/env-preparation-cold-retry-worker-01-annex-attempt",
+  "construction": "Raw Git blob/tree preserves lock bytes without invoking annex clean filter; provenance resolved immediately before commit-tree"
+}
