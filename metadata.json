@@ -1,0 +1,26 @@
+{
+  "cli_version": "0.11.4",
+  "checkpoint_id": "01M50YT7ECSYN8A9BQJ1F2YX2F",
+  "strategy": "manual-commit",
+  "branch": "codex/preparation-stamped-worker-20261015",
+  "checkpoints_count": 1,
+  "files_touched": [
+    "scripts/write_run_record.py"
+  ],
+  "sessions": [
+    {
+      "metadata": "/0/metadata.json",
+      "transcript": "/0/full.jsonl",
+      "compact_transcript": "/0/transcript.jsonl",
+      "content_hash": "/0/content_hash.txt",
+      "prompt": ""
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 1930,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 418304,
+    "output_tokens": 1497,
+    "api_call_count": 2
+  }
+}
