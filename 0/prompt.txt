@@ -1,0 +1,26 @@
+This is a bounded synthetic native Entire capture proof. Perform only these steps.
+Do not analyze scientific data, run Workshop, read prior conversations, modify
+hooks/configuration/credentials, or push. This process already has one outer duct
+capture; do not nest duct. Current-turn metadata needed by commit-provenance is
+the only allowed conversation-history access.
+
+Read /Users/johnlee/.agents/skills/commit-provenance/SKILL.md. Use the native
+apply_patch tool to create capture-probes/branch-a.txt containing exactly:
+Native capture proof before branch switch.
+
+The file ends in one newline. Stage only that file. Make a normal local commit
+with subject `chore: verify capture before branch switch`. The prepared
+prepare-commit-msg hook invokes the required fresh provenance resolver during
+every commit; do not disable or replace it. Verify the commit has its fresh
+Codex provenance and Entire checkpoint trailers.
+
+Within this SAME native session and checkout, run:
+git switch -c codex/capture-clean-branch-b
+Then use native apply_patch to create capture-probes/branch-b.txt containing:
+Native capture proof after branch switch.
+
+Commit only that file with subject `chore: verify capture after branch switch`,
+again with the existing fresh-provenance hook. Report both commit IDs, both
+checkpoint IDs, your native session ID if available, and the checkout path.
+If an operation fails, retain its evidence and stop; no retries or repairs.
+Stop after these two commits. Do not stage other files, push, or broaden scope.
