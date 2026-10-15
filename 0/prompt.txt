@@ -1,0 +1,26 @@
+This is only a synthetic native Entire spawned-child capture proof in this
+prepared checkout. Do not analyze data, inspect other checkouts or prior
+conversations, run Workshop, modify hooks/configuration/credentials, or push.
+The outer process already captures duct logs; do not nest wrappers. Only
+current-turn metadata for fresh commit provenance may be inspected.
+
+Use the native spawn_agent tool exactly once to delegate this narrow task to
+one child in this SAME prepared checkout, inheriting the current model/effort:
+Read /Users/johnlee/.agents/skills/commit-provenance/SKILL.md. Use native
+apply_patch to create capture-probes/child.txt with exactly the line
+`Native capture proof written by the spawned child.` and a final newline.
+Stage only that file and make one normal local commit with subject
+`chore: verify native spawned child capture`. The prepared prepare-commit-msg
+hook invokes the required fresh resolver during the commit; preserve it.
+Do not run Workshop, spawn further agents, inspect other sessions, push, or
+change anything else. Return the commit ID and your native session ID.
+
+Wait for the child to finish. If it fails, report that exact failure and stop;
+do not substitute your own edit or retry. If successful, use native apply_patch
+yourself to create capture-probes/parent.txt with exactly the line
+`Native capture proof after the spawned child completed.` and a final newline.
+Read the same commit-provenance skill; stage only your file and commit normally
+with subject `chore: verify parent capture after child completion`, preserving
+the hook and fresh resolution. Report parent/child native identities and both
+commits. Do not broaden scope or push. If spawn_agent is unavailable, report
+the missing native capability and stop; never simulate a child.

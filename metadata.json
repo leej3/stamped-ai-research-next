@@ -1,0 +1,27 @@
+{
+  "cli_version": "0.11.4",
+  "checkpoint_id": "01M506T57G0HJ53K1PQ8VJN4M2",
+  "strategy": "manual-commit",
+  "branch": "codex/capture-clean-child",
+  "checkpoints_count": 1,
+  "files_touched": [
+    "capture-probes/child.txt"
+  ],
+  "sessions": [
+    {
+      "metadata": "/0/metadata.json",
+      "transcript": "/0/full.jsonl",
+      "compact_transcript": "/0/transcript.jsonl",
+      "content_hash": "/0/content_hash.txt",
+      "prompt": "/0/prompt.txt"
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 7951,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 46208,
+    "output_tokens": 547,
+    "api_call_count": 3,
+    "subagent_tokens_complete": false
+  }
+}
