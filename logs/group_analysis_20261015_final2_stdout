@@ -1,0 +1,248 @@
+{
+  "qc": {
+    "n_participants_expected": 54,
+    "n_participants_included": 54,
+    "excluded": [],
+    "map_files": [
+      "input/data/sub-001_hypo1_cope.nii.gz",
+      "input/data/sub-003_hypo1_cope.nii.gz",
+      "input/data/sub-005_hypo1_cope.nii.gz",
+      "input/data/sub-009_hypo1_cope.nii.gz",
+      "input/data/sub-011_hypo1_cope.nii.gz",
+      "input/data/sub-013_hypo1_cope.nii.gz",
+      "input/data/sub-015_hypo1_cope.nii.gz",
+      "input/data/sub-017_hypo1_cope.nii.gz",
+      "input/data/sub-019_hypo1_cope.nii.gz",
+      "input/data/sub-021_hypo1_cope.nii.gz",
+      "input/data/sub-025_hypo1_cope.nii.gz",
+      "input/data/sub-027_hypo1_cope.nii.gz",
+      "input/data/sub-029_hypo1_cope.nii.gz",
+      "input/data/sub-033_hypo1_cope.nii.gz",
+      "input/data/sub-035_hypo1_cope.nii.gz",
+      "input/data/sub-037_hypo1_cope.nii.gz",
+      "input/data/sub-039_hypo1_cope.nii.gz",
+      "input/data/sub-041_hypo1_cope.nii.gz",
+      "input/data/sub-043_hypo1_cope.nii.gz",
+      "input/data/sub-045_hypo1_cope.nii.gz",
+      "input/data/sub-047_hypo1_cope.nii.gz",
+      "input/data/sub-049_hypo1_cope.nii.gz",
+      "input/data/sub-051_hypo1_cope.nii.gz",
+      "input/data/sub-053_hypo1_cope.nii.gz",
+      "input/data/sub-055_hypo1_cope.nii.gz",
+      "input/data/sub-057_hypo1_cope.nii.gz",
+      "input/data/sub-059_hypo1_cope.nii.gz",
+      "input/data/sub-061_hypo1_cope.nii.gz",
+      "input/data/sub-063_hypo1_cope.nii.gz",
+      "input/data/sub-067_hypo1_cope.nii.gz",
+      "input/data/sub-069_hypo1_cope.nii.gz",
+      "input/data/sub-071_hypo1_cope.nii.gz",
+      "input/data/sub-073_hypo1_cope.nii.gz",
+      "input/data/sub-075_hypo1_cope.nii.gz",
+      "input/data/sub-077_hypo1_cope.nii.gz",
+      "input/data/sub-079_hypo1_cope.nii.gz",
+      "input/data/sub-081_hypo1_cope.nii.gz",
+      "input/data/sub-083_hypo1_cope.nii.gz",
+      "input/data/sub-085_hypo1_cope.nii.gz",
+      "input/data/sub-087_hypo1_cope.nii.gz",
+      "input/data/sub-089_hypo1_cope.nii.gz",
+      "input/data/sub-093_hypo1_cope.nii.gz",
+      "input/data/sub-095_hypo1_cope.nii.gz",
+      "input/data/sub-099_hypo1_cope.nii.gz",
+      "input/data/sub-103_hypo1_cope.nii.gz",
+      "input/data/sub-105_hypo1_cope.nii.gz",
+      "input/data/sub-107_hypo1_cope.nii.gz",
+      "input/data/sub-109_hypo1_cope.nii.gz",
+      "input/data/sub-113_hypo1_cope.nii.gz",
+      "input/data/sub-115_hypo1_cope.nii.gz",
+      "input/data/sub-117_hypo1_cope.nii.gz",
+      "input/data/sub-119_hypo1_cope.nii.gz",
+      "input/data/sub-121_hypo1_cope.nii.gz",
+      "input/data/sub-123_hypo1_cope.nii.gz"
+    ],
+    "map_sha256_match_sources": {
+      "sub-001_hypo1_cope.nii.gz": true,
+      "sub-003_hypo1_cope.nii.gz": true,
+      "sub-005_hypo1_cope.nii.gz": true,
+      "sub-009_hypo1_cope.nii.gz": true,
+      "sub-011_hypo1_cope.nii.gz": true,
+      "sub-013_hypo1_cope.nii.gz": true,
+      "sub-015_hypo1_cope.nii.gz": true,
+      "sub-017_hypo1_cope.nii.gz": true,
+      "sub-019_hypo1_cope.nii.gz": true,
+      "sub-021_hypo1_cope.nii.gz": true,
+      "sub-025_hypo1_cope.nii.gz": true,
+      "sub-027_hypo1_cope.nii.gz": true,
+      "sub-029_hypo1_cope.nii.gz": true,
+      "sub-033_hypo1_cope.nii.gz": true,
+      "sub-035_hypo1_cope.nii.gz": true,
+      "sub-037_hypo1_cope.nii.gz": true,
+      "sub-039_hypo1_cope.nii.gz": true,
+      "sub-041_hypo1_cope.nii.gz": true,
+      "sub-043_hypo1_cope.nii.gz": true,
+      "sub-045_hypo1_cope.nii.gz": true,
+      "sub-047_hypo1_cope.nii.gz": true,
+      "sub-049_hypo1_cope.nii.gz": true,
+      "sub-051_hypo1_cope.nii.gz": true,
+      "sub-053_hypo1_cope.nii.gz": true,
+      "sub-055_hypo1_cope.nii.gz": true,
+      "sub-057_hypo1_cope.nii.gz": true,
+      "sub-059_hypo1_cope.nii.gz": true,
+      "sub-061_hypo1_cope.nii.gz": true,
+      "sub-063_hypo1_cope.nii.gz": true,
+      "sub-067_hypo1_cope.nii.gz": true,
+      "sub-069_hypo1_cope.nii.gz": true,
+      "sub-071_hypo1_cope.nii.gz": true,
+      "sub-073_hypo1_cope.nii.gz": true,
+      "sub-075_hypo1_cope.nii.gz": true,
+      "sub-077_hypo1_cope.nii.gz": true,
+      "sub-079_hypo1_cope.nii.gz": true,
+      "sub-081_hypo1_cope.nii.gz": true,
+      "sub-083_hypo1_cope.nii.gz": true,
+      "sub-085_hypo1_cope.nii.gz": true,
+      "sub-087_hypo1_cope.nii.gz": true,
+      "sub-089_hypo1_cope.nii.gz": true,
+      "sub-093_hypo1_cope.nii.gz": true,
+      "sub-095_hypo1_cope.nii.gz": true,
+      "sub-099_hypo1_cope.nii.gz": true,
+      "sub-103_hypo1_cope.nii.gz": true,
+      "sub-105_hypo1_cope.nii.gz": true,
+      "sub-107_hypo1_cope.nii.gz": true,
+      "sub-109_hypo1_cope.nii.gz": true,
+      "sub-113_hypo1_cope.nii.gz": true,
+      "sub-115_hypo1_cope.nii.gz": true,
+      "sub-117_hypo1_cope.nii.gz": true,
+      "sub-119_hypo1_cope.nii.gz": true,
+      "sub-121_hypo1_cope.nii.gz": true,
+      "sub-123_hypo1_cope.nii.gz": true
+    },
+    "all_source_checksums_match": true,
+    "shape": [
+      97,
+      115,
+      81
+    ],
+    "voxel_size_mm": [
+      2.0,
+      2.0,
+      2.4000000953674316
+    ],
+    "analysis_mask_voxels": 251063,
+    "vmPFC_sphere_voxels_in_mask": 434,
+    "nonfinite_values": 0,
+    "zero_variance_analysis_voxels": 0,
+    "random_sign_flips": 9999,
+    "permutation_distribution_including_observed": 10000,
+    "seed": 20261015,
+    "max_t_null_quantiles_50_95_99": [
+      3.91061052547818,
+      4.408548963823035,
+      4.682759950264347
+    ],
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "nibabel": "5.4.2",
+    "python": "3.13.16",
+    "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+    "elapsed_seconds": 9.52
+  },
+  "results": {
+    "n": 54,
+    "whole_brain_mask_voxels": 251063,
+    "random_sign_flips": 9999,
+    "roi_definition_mni_mm": {
+      "center": [
+        0,
+        45,
+        -6
+      ],
+      "radius": 10
+    },
+    "roi_voxels": 434,
+    "roi_mean_effect": -0.010239657945930958,
+    "roi_sd_subject_means": 0.10495372116565704,
+    "roi_mean_95ci_t": [
+      -0.03888650933500665,
+      0.018407193443144735
+    ],
+    "roi_peak_mni_mm": [
+      -2.0,
+      36.0,
+      -8.399997234344482
+    ],
+    "roi_peak_t": 1.33095801116855,
+    "roi_peak_p_fwe_whole_brain": 0.9998999834060669,
+    "roi_any_voxel_p_fwe_le_0.05": false,
+    "whole_brain_significant_voxels_positive": 160,
+    "whole_brain_max_t": 6.617173246302241,
+    "whole_brain_max_p_fwe": 0.0001,
+    "whole_brain_peak_mni_mm": [
+      -26.0,
+      -102.0,
+      -3.599997043609619
+    ],
+    "positive_fwe_cluster_count_26_connected": 6,
+    "largest_positive_fwe_clusters": [
+      {
+        "voxels_26_connected": 89,
+        "peak_mni_mm": [
+          30.0,
+          -94.0,
+          -8.399997234344482
+        ],
+        "peak_t": 6.193402982181888,
+        "peak_p_fwe": 9.999999747378752e-05
+      },
+      {
+        "voxels_26_connected": 64,
+        "peak_mni_mm": [
+          -26.0,
+          -102.0,
+          -3.599997043609619
+        ],
+        "peak_t": 6.617173246302241,
+        "peak_p_fwe": 9.999999747378752e-05
+      },
+      {
+        "voxels_26_connected": 4,
+        "peak_mni_mm": [
+          -26.0,
+          -98.0,
+          -13.199997425079346
+        ],
+        "peak_t": 4.969874086896461,
+        "peak_p_fwe": 0.0010999999940395355
+      },
+      {
+        "voxels_26_connected": 1,
+        "peak_mni_mm": [
+          -50.0,
+          -56.0,
+          -10.799997329711914
+        ],
+        "peak_t": 4.608095763441026,
+        "peak_p_fwe": 0.015399999916553497
+      },
+      {
+        "voxels_26_connected": 1,
+        "peak_mni_mm": [
+          -28.0,
+          -30.0,
+          -27.599997997283936
+        ],
+        "peak_t": 4.46972346281649,
+        "peak_p_fwe": 0.03460000082850456
+      },
+      {
+        "voxels_26_connected": 1,
+        "peak_mni_mm": [
+          32.0,
+          -38.0,
+          27.600004196166992
+        ],
+        "peak_t": 4.656092385867298,
+        "peak_p_fwe": 0.011699999682605267
+      }
+    ],
+    "interpretation": "Effect is the upstream normalized gain-modulator contrast estimate; not BOLD change per currency unit."
+  }
+}

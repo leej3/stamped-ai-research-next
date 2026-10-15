@@ -1,0 +1,100 @@
+{
+  "n": 54,
+  "whole_brain_mask_voxels": 251063,
+  "random_sign_flips": 9999,
+  "roi_definition_mni_mm": {
+    "center": [
+      0,
+      45,
+      -6
+    ],
+    "radius": 10
+  },
+  "roi_voxels": 434,
+  "roi_mean_effect": -0.010239657945930958,
+  "roi_sd_subject_means": 0.10495372116565704,
+  "roi_mean_95ci_t": [
+    -0.03888650933500665,
+    0.018407193443144735
+  ],
+  "roi_peak_mni_mm": [
+    -2.0,
+    36.0,
+    -8.399997234344482
+  ],
+  "roi_peak_t": 1.33095801116855,
+  "roi_peak_p_fwe_whole_brain": 0.9998999834060669,
+  "roi_any_voxel_p_fwe_le_0.05": false,
+  "whole_brain_significant_voxels_positive": 160,
+  "whole_brain_max_t": 6.617173246302241,
+  "whole_brain_max_p_fwe": 0.0001,
+  "whole_brain_peak_mni_mm": [
+    -26.0,
+    -102.0,
+    -3.599997043609619
+  ],
+  "positive_fwe_cluster_count_26_connected": 6,
+  "largest_positive_fwe_clusters": [
+    {
+      "voxels_26_connected": 89,
+      "peak_mni_mm": [
+        30.0,
+        -94.0,
+        -8.399997234344482
+      ],
+      "peak_t": 6.193402982181888,
+      "peak_p_fwe": 9.999999747378752e-05
+    },
+    {
+      "voxels_26_connected": 64,
+      "peak_mni_mm": [
+        -26.0,
+        -102.0,
+        -3.599997043609619
+      ],
+      "peak_t": 6.617173246302241,
+      "peak_p_fwe": 9.999999747378752e-05
+    },
+    {
+      "voxels_26_connected": 4,
+      "peak_mni_mm": [
+        -26.0,
+        -98.0,
+        -13.199997425079346
+      ],
+      "peak_t": 4.969874086896461,
+      "peak_p_fwe": 0.0010999999940395355
+    },
+    {
+      "voxels_26_connected": 1,
+      "peak_mni_mm": [
+        -50.0,
+        -56.0,
+        -10.799997329711914
+      ],
+      "peak_t": 4.608095763441026,
+      "peak_p_fwe": 0.015399999916553497
+    },
+    {
+      "voxels_26_connected": 1,
+      "peak_mni_mm": [
+        -28.0,
+        -30.0,
+        -27.599997997283936
+      ],
+      "peak_t": 4.46972346281649,
+      "peak_p_fwe": 0.03460000082850456
+    },
+    {
+      "voxels_26_connected": 1,
+      "peak_mni_mm": [
+        32.0,
+        -38.0,
+        27.600004196166992
+      ],
+      "peak_t": 4.656092385867298,
+      "peak_p_fwe": 0.011699999682605267
+    }
+  ],
+  "interpretation": "Effect is the upstream normalized gain-modulator contrast estimate; not BOLD change per currency unit."
+}

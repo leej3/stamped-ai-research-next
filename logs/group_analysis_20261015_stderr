@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-retry-worker-01/results/analyze.py", line 182, in <module>
+    main()
+    ~~~~^^
+  File "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-retry-worker-01/results/analyze.py", line 128, in main
+    "map_sha256_match_sources": {p.name: sha256(p) == meta["files"][str(p.relative_to(ROOT))]["sha256"] for p in paths},
+                                                      ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'input/data/sub-001_hypo1_cope.nii.gz'
