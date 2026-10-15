@@ -1,7 +1,7 @@
 [submodule "skills"]
 	path = skills
 	url = https://github.com/con/skills.git
-	branch = codex/pr26-stamped-next
+	branch = codex/pr26-harmonized
 [submodule "assessment"]
 	path = assessment
 	url = https://github.com/con/skills.git

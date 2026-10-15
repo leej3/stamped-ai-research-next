@@ -1,0 +1,140 @@
+{
+  "kind": "upstream-integration",
+  "date": "2026-10-15",
+  "checked_at": "2026-10-15T19:55:32.887743+00:00",
+  "upstream": {
+    "pull_request": "https://github.com/con/skills/pull/26",
+    "skills": "4fe5d7be82ed6c297747e8b838031aec88e75903",
+    "evals": "497f32b623dc4b4ad006ac4d802cd8da344b7c3a"
+  },
+  "contributions_before": {
+    "skills": "86f27d7e04125e4168f4f76ff0bf290b28e4e174",
+    "evals": "3a84598b57c5fd68b847343f80a99a4e2d383863"
+  },
+  "integrated": {
+    "skills": "496d4702937a1264bcd95d1c7657c0d9f5558079",
+    "skills_branch": "codex/pr26-harmonized",
+    "evals": "20511bd2a9086b80f57776a15422aedfd8a5eb72",
+    "evals_branch": "codex/pr26-harmonized-evals"
+  },
+  "parent_base": "fa2611f257aa3464b4043a0ce3c8d9610fa51baf",
+  "frozen_assessment": {
+    "version": 1,
+    "source_commit": "d867c1d04bbb58b3b0f64122ebd5f76bd8e5a7ca",
+    "environment_commit": "3552d5003a2485b6405805236d5c54e7ed42f097",
+    "sha256": {
+      "pixi.toml": "131fc78549d9fe54a3e6c055e59ef753b1794df77507777b21c9529a611e7b89",
+      "pixi.lock": "f8fff1394fbeaa2ab1c4993fceb0dd6463fe0c08c81fcda397f3e752a72c4249"
+    }
+  },
+  "commit_mapping": {
+    "skills": [
+      {
+        "old": "5615172c71e66f7517b4560f12f1841422efab7a",
+        "rebased": "9589a9db2cc87bad8b8d37a7cbe6a7de6963a806"
+      },
+      {
+        "old": "9df06a353b92b556f8bc4a062411a43c5da48f1d",
+        "rebased": "ce8580cfda8404c4844e01964f24771667132a59"
+      },
+      {
+        "old": "d867c1d04bbb58b3b0f64122ebd5f76bd8e5a7ca",
+        "rebased": "205f600a17c852d5186413fb5e02e1a4fc7496c3"
+      },
+      {
+        "old": "e07f2c6703ba70da81dcbd6b7d0f976a7deb8b36",
+        "rebased": "27bfaab4345deec54420ebc523e5a06b49e64e05"
+      },
+      {
+        "old": "b8e4c88b922a7eaa083c3d7235a6dcb0b1cb86ca",
+        "rebased": "fa4f18e948e4e37e575d585ea842842e4920e8ec"
+      },
+      {
+        "old": "86f27d7e04125e4168f4f76ff0bf290b28e4e174",
+        "rebased": "c8b776a582f3e0ffa986437ed5beb672858ea635"
+      }
+    ],
+    "evals": [
+      {
+        "old": "4ac303c5a90a6ee49b6ff9f3f049193b16068192",
+        "rebased": "2a9302c9d240f8e340059cd9796ce75b32756282"
+      },
+      {
+        "old": "26ec40a2d8e22c9975ccadb0b54f98ecb495e162",
+        "rebased": "6c556cb2ab15f28b62e23df75d76ced95ecbb74e"
+      },
+      {
+        "old": "3a84598b57c5fd68b847343f80a99a4e2d383863",
+        "rebased": "20511bd2a9086b80f57776a15422aedfd8a5eb72"
+      }
+    ],
+    "merge_resolution": {
+      "original_merge": "bb51a5af8e2b65981427db7b84c9b5562c146fed",
+      "retained_by": "496d4702937a1264bcd95d1c7657c0d9f5558079",
+      "note": "Rebase flattens the original merge; its evidence link and full evals pointer are explicitly restored."
+    }
+  },
+  "validation": {
+    "commands": [
+      "pixi install --locked",
+      "pixi run python -m tox -c skills/tox.ini -e validate,stamped-evals",
+      "pixi run env PATH=/usr/bin:/bin skills/.tox/stamped-evals/bin/python -m pytest skills/evals/stamped/tests/test_probes.py -q -k \"without_datalad or absent_tool\"",
+      "pixi run launcher-tests",
+      "pixi run assessment-check"
+    ],
+    "skills_checked": 27,
+    "structural_errors": 0,
+    "preexisting_warnings": 10,
+    "ordinary_tests_passed": 117,
+    "ordinary_tests_skipped": 28,
+    "eval_cases_passed": 26,
+    "targeted_no_datalad_tests_passed": 2,
+    "mutants_detected": 18,
+    "mutants_total": 18,
+    "clean_fixture_false_unmet_or_partial": 0,
+    "launcher_tests_passed": 19,
+    "frozen_source_and_environment_check": "passed",
+    "blind_snapshot_matches_integrated_skills": true,
+    "blind_review_scope": "planning-only followability; no scientific execution, publication or live judgment"
+  },
+  "observations": [
+    {
+      "stage": "initial",
+      "upstream_skills": "4fe5d7b",
+      "own_skills": "86f27d7",
+      "root_pr3": "9476c68"
+    },
+    {
+      "stage": "pre-publication",
+      "upstream_skills": "4fe5d7b",
+      "upstream_evals": "497f32b",
+      "own_skills": "86f27d7",
+      "own_evals": "3a84598",
+      "root_pr3": "dcbbad7",
+      "result": "Upstream source pins unchanged; adopted concurrent root PR3 update as parent base."
+    },
+    {
+      "stage": "root-handoff",
+      "root_pr3": "fa2611f257aa3464b4043a0ce3c8d9610fa51baf",
+      "result": "Adopted latest coordinator documentation and verified John's instruction that poster production is outside repository scope. No study data decision belongs to this integration."
+    }
+  ],
+  "open_boundaries": [
+    {
+      "topic": "annex publication probe",
+      "disposition": "Retain upstream code in working skills; location logs and unavailable checks require manual evidence review. Resolve before any new assessor freeze."
+    },
+    {
+      "topic": "NARPS feasibility",
+      "owner": "Follow prompt.md instructions",
+      "disposition": "Outside this integration; no data staging, cohort decision or study launch."
+    }
+  ],
+  "scientific_trials_run": 0,
+  "live_judges_run": 0,
+  "environment": {
+    "manifest_sha256": "e3a9b2d5c92ad5d4388c59c3883e881b78aae950eea7161e2f3603f565c616cf",
+    "lock_sha256": "f8fff1394fbeaa2ab1c4993fceb0dd6463fe0c08c81fcda397f3e752a72c4249",
+    "snapshot_branch": "codex/env-pr26-alignment-20261015"
+  }
+}

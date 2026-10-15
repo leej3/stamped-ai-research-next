@@ -1,0 +1,45 @@
+{
+  "evaluated_skill_commit": "496d4702937a1264bcd95d1c7657c0d9f5558079",
+  "prompt": "blind-prompt.txt",
+  "response": "blind-result.md",
+  "snapshot": "blind-snapshot-sha256.json",
+  "findings": [
+    {
+      "id": 1,
+      "class": "scope",
+      "resolution": "Explicit planning-only request correctly controls creation imperatives; no execution was attempted."
+    },
+    {
+      "id": 2,
+      "class": "caller-interface",
+      "resolution": "Frozen assessor override followed correctly; workshop supplies its pinned path/runtime through separate judge launch. Do not substitute moving sibling assessor."
+    },
+    {
+      "id": 3,
+      "class": "task-specific adaptation",
+      "resolution": "Shared-remote recipe uses explicit actual source/destination refs; reviewer adapted master placeholder and concurrent metadata updates correctly."
+    },
+    {
+      "id": 4,
+      "class": "wording",
+      "resolution": "Reviewer reconciled child-before-parent publication and complete history/content delivery; keep this as followability friction rather than add another universal procedure."
+    },
+    {
+      "id": 5,
+      "class": "tool-selection",
+      "resolution": "Native DataLad required for a DataLad project; plain-Git fallback remains valid only in its applicable stack. Reviewer made that distinction."
+    },
+    {
+      "id": 6,
+      "class": "evidence-boundary",
+      "resolution": "Manifest detection does not establish exact solved environment; existing snapshot identity guidance was followed."
+    },
+    {
+      "id": 7,
+      "class": "task-specific missing information",
+      "resolution": "Scientific method and numeric tolerances intentionally unspecified for planning; no method or values invented."
+    }
+  ],
+  "changes_from_review": [],
+  "limit": "Planning followability is not execution, scientific validity or efficacy evidence."
+}
