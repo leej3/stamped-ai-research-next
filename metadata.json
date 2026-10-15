@@ -1,0 +1,43 @@
+{
+  "cli_version": "0.11.4",
+  "checkpoint_id": "01M50MJGFQBZ2TT3WHYK3FMTRD",
+  "strategy": "manual-commit",
+  "branch": "codex/narps-suitability-20261015-01",
+  "checkpoints_count": 1,
+  "files_touched": [
+    "pixi.toml",
+    "results/figures/roi_participants.png",
+    "results/figures/whole_brain_fwe.png",
+    "results/figures/whole_brain_t.png",
+    "results/logs/failed_attempts.md",
+    "results/logs/group_analysis.log",
+    "results/map_quality.tsv",
+    "results/maps/group_mean_gain_effect.nii.gz",
+    "results/maps/group_p_fwe_bonferroni.nii.gz",
+    "results/maps/group_p_positive.nii.gz",
+    "results/maps/group_t_fwe05.nii.gz",
+    "results/maps/group_t_positive.nii.gz",
+    "results/participant_roi_estimates.tsv",
+    "results/report.md",
+    "results/results.json",
+    "results/significant_voxels.tsv",
+    "scripts/group_analysis.py"
+  ],
+  "sessions": [
+    {
+      "metadata": "/0/metadata.json",
+      "transcript": "/0/full.jsonl",
+      "compact_transcript": "/0/transcript.jsonl",
+      "content_hash": "/0/content_hash.txt",
+      "prompt": "/0/prompt.txt"
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 108857,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 3193472,
+    "output_tokens": 20473,
+    "api_call_count": 61,
+    "subagent_tokens_complete": true
+  }
+}
