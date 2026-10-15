@@ -1,0 +1,178 @@
+{
+  "reviewed_at": "2026-10-15T21:00:59.245535+00:00",
+  "kind": "coordinator-reviewed revision, not an independent repeat",
+  "original_response_sha256": "6c6f990b2c502ba3e57678d5e0226b96a0cfcd232c7c32e5f5ae572cd97ddc63",
+  "original_judge": {
+    "model": "gpt-6-luna",
+    "effort": "high",
+    "runtime": "codex-cli 0.162.0-alpha.17.2",
+    "evidence": "../native/launch.json and native-session/session metadata"
+  },
+  "assessor_source_commit": "d867c1d04bbb58b3b0f64122ebd5f76bd8e5a7ca",
+  "assessor_environment_commit": "3552d5003a2485b6405805236d5c54e7ed42f097",
+  "changes": {
+    "stamped-checklist:must/001": {
+      "before": {
+        "status": "met",
+        "reason": "All committed files sit beneath the study root; inputs, code and results are root-relative.",
+        "source": "judgement",
+        "evidence": [
+          {
+            "uri": "git ls-tree",
+            "description": "78 committed paths all under the repository root",
+            "sha256": null
+          },
+          {
+            "uri": "input/sources.json",
+            "description": "inputs and source references recorded beneath input/",
+            "sha256": null
+          }
+        ]
+      },
+      "after": {
+        "status": "partial",
+        "reason": "Inputs, code and results are rooted here, but the Harvard\u2013Oxford atlas needed for the ROI lives only in an external Nilearn cache.",
+        "source": "judgement",
+        "evidence": [
+          {
+            "uri": "scripts/group_analysis.py",
+            "description": "fetch_atlas_harvard_oxford is called without data_dir; coordinator-retained native output identifies ~/nilearn_data/fsl.",
+            "sha256": null
+          }
+        ],
+        "flags": [
+          "coordinator-reviewed",
+          "probe-overridden"
+        ]
+      }
+    },
+    "stamped-checklist:must/002": {
+      "before": {
+        "status": "met",
+        "reason": "The 54 maps and cohort metadata are inside input/; sources.json links back to their retrievable origins.",
+        "source": "judgement",
+        "evidence": [
+          {
+            "uri": "input/data",
+            "description": "54 supplied participant maps within the root",
+            "sha256": null
+          },
+          {
+            "uri": "input/sources.json",
+            "description": "source URLs and checksums for maps",
+            "sha256": null
+          }
+        ]
+      },
+      "after": {
+        "status": "partial",
+        "reason": "The 54 participant maps are under input/, but the task-used Harvard\u2013Oxford atlas and labels are absent from the scientific snapshot.",
+        "source": "judgement",
+        "evidence": [
+          {
+            "uri": "scripts/group_analysis.py",
+            "description": "The ROI depends on fetched atlas.maps and atlas.labels; later coordinator atlas retention is excluded from worker credit.",
+            "sha256": null
+          }
+        ],
+        "flags": [
+          "coordinator-reviewed",
+          "probe-overridden"
+        ]
+      }
+    },
+    "stamped-checklist:must/010": {
+      "before": {
+        "status": "partial",
+        "reason": "pixi.toml declares dependencies, but wildcard versions and the ignored, absent pixi.lock do not fix them.",
+        "source": "probe:env-spec-tracked+judgement",
+        "evidence": [
+          {
+            "uri": "probe:env-spec-tracked",
+            "description": "pixi.toml exists but versions are not locked",
+            "sha256": null
+          }
+        ]
+      },
+      "after": {
+        "status": "met",
+        "reason": "pixi.toml includes the analysis imports and Git/annex tooling. Exact version locking is a separate question from dependency inclusion.",
+        "source": "judgement",
+        "evidence": [
+          {
+            "uri": "pixi.toml",
+            "description": "All third-party analysis imports are declared; the former probe judged locking instead of this item\u2019s dependency-inclusion requirement.",
+            "sha256": null
+          }
+        ],
+        "flags": [
+          "coordinator-reviewed",
+          "mapping-questioned",
+          "probe-overridden"
+        ]
+      }
+    },
+    "stamped-checklist:must/011": {
+      "before": {
+        "status": "met",
+        "reason": "Pixi declares supported platforms; the report documents Pixi execution and network-fetched atlas/template inputs.",
+        "source": "judgement",
+        "evidence": [
+          {
+            "uri": "pixi.toml#L1-L4",
+            "description": "declares macOS and Linux targets",
+            "sha256": null
+          },
+          {
+            "uri": "results/report.md#Reproducibility",
+            "description": "documents Pixi command and atlas/template downloads",
+            "sha256": null
+          },
+          {
+            "uri": "probe:platform-assumptions",
+            "description": "command scan found no special platform commands",
+            "sha256": null
+          }
+        ]
+      },
+      "after": {
+        "status": "met",
+        "reason": "Pixi declares supported platforms; the report identifies Pixi execution and the downloaded Harvard\u2013Oxford atlas. The MNI display template is bundled with Nilearn.",
+        "source": "judgement",
+        "evidence": [
+          {
+            "uri": "results/report.md",
+            "description": "The external atlas route is documented; load_mni152_template loads a package asset, not a network download.",
+            "sha256": null
+          }
+        ],
+        "flags": [
+          "coordinator-reviewed",
+          "probe-overridden"
+        ]
+      }
+    }
+  },
+  "counts": {
+    "must": {
+      "partial": 4,
+      "met": 10,
+      "unmet": 3
+    },
+    "should": {
+      "met": 2,
+      "unmet": 5,
+      "not-applicable": 1,
+      "not-checked": 1
+    },
+    "may": {
+      "unmet": 1,
+      "met": 3,
+      "partial": 1
+    }
+  },
+  "validated": true,
+  "url_roundtrip_values_and_reasons": true,
+  "no_scientific_rerun": true,
+  "public_availability_scope": "Exact commit retrieval now succeeds for all three after coordinator publication. Original worker did not commit or publish its research result; this is not worker credit."
+}

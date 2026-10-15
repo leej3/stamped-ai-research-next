@@ -1,0 +1,8 @@
+{
+  "status": "not-checked",
+  "assessed_commit": "510a685426804385a8c80f6347002ee47ce606e9",
+  "target": "/Users/johnlee/.local/share/stamped-ai-research-next/judges/narps-suitability-20261015-01",
+  "action": "fresh-rerun",
+  "reason": "The coordinator-supplied fresh-rerun action clones the object, removes shipped outputs, and executes the entry point. The user explicitly excluded a scientific rerun from this checklist scope, so the action was not run.",
+  "what_would_settle_it": "Authorization for a fresh scientific replay in an isolated clone."
+}

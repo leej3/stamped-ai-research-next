@@ -1,0 +1,64 @@
+{
+  "checkpoint_id": "01M50MJGFQBZ2TT3WHYK3FMTRD",
+  "strategy": "manual-commit",
+  "branch": "codex/narps-suitability-20261015-01",
+  "checkpoints_count": 1,
+  "files_touched": [
+    "pixi.toml",
+    "results/figures/roi_participants.png",
+    "results/figures/whole_brain_fwe.png",
+    "results/figures/whole_brain_t.png",
+    "results/logs/failed_attempts.md",
+    "results/logs/group_analysis.log",
+    "results/map_quality.tsv",
+    "results/maps/group_mean_gain_effect.nii.gz",
+    "results/maps/group_p_fwe_bonferroni.nii.gz",
+    "results/maps/group_p_positive.nii.gz",
+    "results/maps/group_t_fwe05.nii.gz",
+    "results/maps/group_t_positive.nii.gz",
+    "results/participant_roi_estimates.tsv",
+    "results/report.md",
+    "results/results.json",
+    "results/significant_voxels.tsv",
+    "scripts/group_analysis.py"
+  ],
+  "session_count": 1,
+  "sessions": [
+    {
+      "index": 0,
+      "session_id": "01a14142-7c06-7a81-bb22-93c1ef9a4db7",
+      "agent": "Codex",
+      "model": "gpt-6-luna",
+      "created_at": "2026-10-15T20:38:03.363928Z",
+      "turn_id": "3c47d40620ae",
+      "files_touched": [
+        "pixi.toml",
+        "results/figures/roi_participants.png",
+        "results/figures/whole_brain_fwe.png",
+        "results/figures/whole_brain_t.png",
+        "results/logs/failed_attempts.md",
+        "results/logs/group_analysis.log",
+        "results/map_quality.tsv",
+        "results/maps/group_mean_gain_effect.nii.gz",
+        "results/maps/group_p_fwe_bonferroni.nii.gz",
+        "results/maps/group_p_positive.nii.gz",
+        "results/maps/group_t_fwe05.nii.gz",
+        "results/maps/group_t_positive.nii.gz",
+        "results/participant_roi_estimates.tsv",
+        "results/report.md",
+        "results/results.json",
+        "results/significant_voxels.tsv",
+        "scripts/group_analysis.py"
+      ],
+      "token_usage": {
+        "input_tokens": 108857,
+        "cache_creation_tokens": 0,
+        "cache_read_tokens": 3193472,
+        "output_tokens": 20473,
+        "api_call_count": 61,
+        "subagent_tokens_complete": true
+      }
+    }
+  ],
+  "tasks": []
+}

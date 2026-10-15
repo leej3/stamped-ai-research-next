@@ -1,0 +1,15 @@
+{
+  "source_basename": "rollout-2026-10-15T16-46-14-01a14150-c536-7c70-b099-e7df67476aa6.jsonl",
+  "source_sha256": "97278a32b4b234fe35e1395ac4f33a0ed2c3394c36531ebf78f5b5fdf0f5fdb4",
+  "raw_source_retained_locally": "/Users/johnlee/.local/state/stamped-ai-research-next/pilots/narps-suitability-20261015-01/assessment/native-session-local/rollout-2026-10-15T16-46-14-01a14150-c536-7c70-b099-e7df67476aa6.jsonl",
+  "export_sha256": "53765f73b16578bf4b2735a935c7a977ebb4ac70a8f06babe9d229f80ac324a4",
+  "exported_records": 100,
+  "omitted_record_counts": {
+    "response_item:message": 9,
+    "world_state:None": 1,
+    "event_msg:item_completed": 169,
+    "response_item:reasoning": 77,
+    "event_msg:token_count": 32
+  },
+  "scope": "Public messages, tool calls/outputs, timestamps, identity and usage. Internal reasoning, base instructions and redundant bookkeeping excluded. Original raw native rollout retained locally; native CLI events retained unchanged."
+}

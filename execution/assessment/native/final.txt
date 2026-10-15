@@ -1,0 +1,14 @@
+Assessed the verified commit `510a685426804385a8c80f6347002ee47ce606e9`. The source tree remains clean.
+
+**Scientific finding:** The group analysis is defensible for the supplied maps. It found no whole-brain-corrected positive voxel in its Harvard–Oxford medial frontal proxy for vmPFC. The proxy mean was −0.009 upstream units (95% interval −0.040 to 0.022); 11 corrected voxels occurred posteriorly, outside the proxy. This does not establish a zero effect. No scientific replay was run.
+
+**STAMPED counts:** MUST: 11 met / 3 partial / 3 unmet. SHOULD: 2 met / 5 unmet / 1 not-checked / 1 not-applicable. MAY: 3 met / 1 partial / 1 unmet. No overall score assigned.
+
+- [Assessment report](/Users/johnlee/.local/state/stamped-ai-research-next/pilots/narps-suitability-20261015-01/assessment/native/judgment/2026-10-15-assessment.md)
+- [Validated response JSON](/Users/johnlee/.local/state/stamped-ai-research-next/pilots/narps-suitability-20261015-01/assessment/native/judgment/2026-10-15-response.json)
+- [Checklist URL](/Users/johnlee/.local/state/stamped-ai-research-next/pilots/narps-suitability-20261015-01/assessment/native/judgment/2026-10-15-url.txt) — encode/decode roundtrip matched
+- [Probe results](/Users/johnlee/.local/state/stamped-ai-research-next/pilots/narps-suitability-20261015-01/assessment/native/judgment/2026-10-15-probes.json)
+- [Replay record](/Users/johnlee/.local/state/stamped-ai-research-next/pilots/narps-suitability-20261015-01/assessment/native/judgment/2026-10-15-replay-record.json) — not-checked as required
+- [Remote checks](/Users/johnlee/.local/state/stamped-ai-research-next/pilots/narps-suitability-20261015-01/assessment/native/judgment/2026-10-15-remote-check.json) — current availability only; no claim about what the worker published
+
+The supplied runner validated all 31 answers against checklist 0.3.1.

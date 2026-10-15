@@ -13,5 +13,10 @@ These CPU and maximum-process RSS values cover setup, the CLI and its descendant
 All three pilots ran concurrently on the same Apple M4 host.
 `summary.json` separates native-agent elapsed time from preparation and launcher overhead; isolated analysis-only resource values were not captured.
 
-No experimental research skills or frozen judging round were used.
+No experimental research skills were exposed to the research workers.
+A later frozen judging round assessed the exact science commits; `assessment/` preserves original independent judgments and explicitly coordinator-reviewed revisions.
+These later additions do not earn original-worker credit.
 This is a descriptive preparation sample, not evidence of skill efficacy or a stable estimate of natural variability.
+
+`publication/` retains SSH/annex publication and independent retrieval receipts, including failed coordinator command attempts and corrected retries.
+Hosted Entire checks verify the exact native research session linked to each scientific commit; this evidence applies to these prepared fresh repositories.

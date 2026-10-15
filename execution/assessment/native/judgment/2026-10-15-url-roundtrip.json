@@ -1,0 +1,227 @@
+{
+  "checklist_version": "0.3.1",
+  "responses": {
+    "stamped-checklist:must/001": {
+      "value": "yes",
+      "reason": "All committed files sit beneath the study root; inputs, code and results are root-relative.",
+      "status": "met",
+      "evidence": [],
+      "source": "human:web-app"
+    },
+    "stamped-checklist:must/002": {
+      "value": "yes",
+      "reason": "The 54 maps and cohort metadata are inside input/; sources.json links back to their retrievable origins.",
+      "status": "met",
+      "evidence": [],
+      "source": "human:web-app"
+    },
+    "stamped-checklist:must/003": {
+      "value": "yes",
+      "reason": "Python packages imported by the group script are declared in the tracked Pixi environment.",
+      "status": "met",
+      "evidence": [],
+      "source": "human:web-app"
+    },
+    "stamped-checklist:must/004": {
+      "value": "yes",
+      "reason": "Git tracks code, text and configuration; the requested commit has a clean working tree.",
+      "status": "met",
+      "evidence": [],
+      "source": "human:web-app"
+    },
+    "stamped-checklist:must/005": {
+      "value": "yes",
+      "reason": "Git-annex carries the binary content; the probe found 55 annex pointers and no oversized Git binary.",
+      "status": "met",
+      "evidence": [],
+      "source": "human:web-app"
+    },
+    "stamped-checklist:must/006": {
+      "value": "no",
+      "reason": "Derived results have no run record or tracked workflow linking them to the exact environment used.",
+      "status": "unmet",
+      "evidence": [],
+      "source": "human:web-app"
+    },
+    "stamped-checklist:must/007": {
+      "value": "no",
+      "reason": "The commit has no README with install/use instructions or Makefile; the report is not either required entry document.",
+      "status": "unmet",
+      "evidence": [],
+      "source": "human:web-app"
+    },
+    "stamped-checklist:must/008": {
+      "value": "yes",
+      "reason": "The report gives a runnable Pixi command for scripts/group_analysis.py, a clear analysis starting point.",
+      "status": "met",
+      "evidence": [],
+      "source": "human:web-app"
+    },
+    "stamped-checklist:must/009": {
+      "value": "yes",
+      "reason": "The probe found no host-specific absolute paths in tracked text files.",
+      "status": "met",
+      "evidence": [],
+      "source": "human:web-app"
+    },
+    "stamped-checklist:must/010": {
+      "value": "no",
+      "reason": "pixi.toml declares dependencies, but wildcard versions and the ignored, absent pixi.lock do not fix them.",
+      "status": "unmet",
+      "evidence": [],
+      "source": "human:web-app"
+    },
+    "stamped-checklist:must/011": {
+      "value": "yes",
+      "reason": "Pixi declares supported platforms; the report documents Pixi execution and network-fetched atlas/template inputs.",
+      "status": "met",
+      "evidence": [],
+      "source": "human:web-app"
+    },
+    "stamped-checklist:must/012": {
+      "value": "yes",
+      "reason": "The Pixi specification lists platform targets and the analysis package dependencies needed by the script.",
+      "status": "met",
+      "evidence": [],
+      "source": "human:web-app"
+    },
+    "stamped-checklist:must/013": {
+      "value": "yes",
+      "reason": "pixi.toml is committed alongside the analysis script and supplied data.",
+      "status": "met",
+      "evidence": [],
+      "source": "human:web-app"
+    },
+    "stamped-checklist:must/014": {
+      "value": "no",
+      "reason": "No dependency update or lock regeneration process is documented; pixi.lock is ignored and absent.",
+      "status": "unmet",
+      "evidence": [],
+      "source": "human:web-app"
+    },
+    "stamped-checklist:must/015": {
+      "value": "no",
+      "reason": "A Pixi dependency spec exists, but absent lock pins prevent exact environment reconstruction; no run record identifies the used environment.",
+      "status": "unmet",
+      "evidence": [],
+      "source": "human:web-app"
+    },
+    "stamped-checklist:must/016": {
+      "value": "yes",
+      "reason": "The current GitHub remote retrieves the assessed commit and its tracked environment spec; this shows current access, not worker-era publication.",
+      "status": "met",
+      "evidence": [],
+      "source": "human:web-app"
+    },
+    "stamped-checklist:must/017": {
+      "value": "no",
+      "reason": "The report gives the Pixi run command and package versions, but does not explain how to install Pixi or obtain a pinned environment.",
+      "status": "unmet",
+      "evidence": [],
+      "source": "human:web-app"
+    },
+    "stamped-checklist:should/001": {
+      "value": "yes",
+      "reason": "Code, metadata and annexed binary inputs share Git versioning; git-annex stores large content.",
+      "status": "met",
+      "evidence": [],
+      "source": "human:web-app"
+    },
+    "stamped-checklist:should/002": {
+      "value": "no",
+      "reason": "No CI or test workflow is tracked; a single analysis log does not show regular testing of the instructions.",
+      "status": "unmet",
+      "evidence": [],
+      "source": "human:web-app"
+    },
+    "stamped-checklist:should/003": {
+      "value": "yes",
+      "reason": "Inputs, analysis code, results and environment are separated into distinct directories/files.",
+      "status": "met",
+      "evidence": [],
+      "source": "human:web-app"
+    },
+    "stamped-checklist:should/009": {
+      "value": null,
+      "reason": "N/A: supplied maps are publicly retrievable and the object identifies no access-restricted data or software.",
+      "status": "not-checked",
+      "evidence": [],
+      "source": "human:web-app"
+    },
+    "stamped-checklist:should/004": {
+      "value": null,
+      "reason": "Fresh-environment replay was outside scope; a permitted replay would establish whether the pipeline works in a clean environment.",
+      "status": "not-checked",
+      "evidence": [],
+      "source": "human:web-app"
+    },
+    "stamped-checklist:should/005": {
+      "value": "no",
+      "reason": "The documented Pixi command reuses a project environment; no per-run container, batch job or clean-VM workflow is defined.",
+      "status": "unmet",
+      "evidence": [],
+      "source": "human:web-app"
+    },
+    "stamped-checklist:should/006": {
+      "value": "no",
+      "reason": "No locked environment or recurring reconstitution check is present; CI absence alone is not decisive, but no alternative test is recorded.",
+      "status": "unmet",
+      "evidence": [],
+      "source": "human:web-app"
+    },
+    "stamped-checklist:should/007": {
+      "value": "no",
+      "reason": "Only a dependency declaration is archived; no lock snapshot, container image or packaged environment is present.",
+      "status": "unmet",
+      "evidence": [],
+      "source": "human:web-app"
+    },
+    "stamped-checklist:should/008": {
+      "value": "no",
+      "reason": "No dependency update/regeneration process is documented or tracked.",
+      "status": "unmet",
+      "evidence": [],
+      "source": "human:web-app"
+    },
+    "stamped-checklist:may/001": {
+      "value": "no",
+      "reason": "External source maps and software are not linked as submodules; maps are included in the root and packages use Pixi.",
+      "status": "unmet",
+      "evidence": [],
+      "source": "human:web-app"
+    },
+    "stamped-checklist:may/002": {
+      "value": "yes",
+      "reason": "The report explains the input/code/result relationship and links the key files and output groups.",
+      "status": "met",
+      "evidence": [],
+      "source": "human:web-app"
+    },
+    "stamped-checklist:may/003": {
+      "value": "no",
+      "reason": "Folders separate components, but no independently pinned module interfaces protect updates; the script couples manifest, paths and output layout.",
+      "status": "unmet",
+      "evidence": [],
+      "source": "human:web-app"
+    },
+    "stamped-checklist:may/004": {
+      "value": "yes",
+      "reason": "The documented Pixi command composes the environment, input maps and group script into results.",
+      "status": "met",
+      "evidence": [],
+      "source": "human:web-app"
+    },
+    "stamped-checklist:may/005": {
+      "value": "yes",
+      "reason": "The report provides relative links to provenance, methods, script and key result files for navigation.",
+      "status": "met",
+      "evidence": [],
+      "source": "human:web-app"
+    }
+  },
+  "assessor": {
+    "skill": "human",
+    "harness": "checklist web app",
+    "format": 3
+  }
+}

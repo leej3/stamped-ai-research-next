@@ -1,0 +1,21 @@
+{
+  "added_by": "coordinator after worker completion; excluded from worker assessment credit",
+  "source_url": "https://www.nitrc.org/frs/download.php/9902/HarvardOxford.tgz",
+  "source_evidence": "execution/launch/native/events.jsonl, completed fetch_atlas_harvard_oxford command",
+  "worker_usage": "scripts/group_analysis.py loads cort-maxprob-thr25-2mm and Frontal Medial Cortex labels",
+  "files": [
+    {
+      "original_path": "/Users/johnlee/nilearn_data/fsl/data/atlases/HarvardOxford/HarvardOxford-cort-maxprob-thr25-2mm.nii.gz",
+      "retained_path": "execution/external-resources/nilearn_data/fsl/data/atlases/HarvardOxford/HarvardOxford-cort-maxprob-thr25-2mm.nii.gz",
+      "bytes": 29113,
+      "sha256": "586d76a7defd278fcea4d83d301994d7e096aa8272d26e3c7539b4f8ebd588c1"
+    },
+    {
+      "original_path": "/Users/johnlee/nilearn_data/fsl/data/atlases/HarvardOxford-Cortical.xml",
+      "retained_path": "execution/external-resources/nilearn_data/fsl/data/atlases/HarvardOxford-Cortical.xml",
+      "bytes": 4335,
+      "sha256": "b8eb5ba5e787a4d3b442f75041f533f31b278a83e467bd2ab22438c1cff36581"
+    }
+  ],
+  "limits": "Only the task-used atlas map and label XML were copied. The download archive was removed by Nilearn extraction and was not present in cache. MNI display templates are packaged within the final Nilearn environment."
+}

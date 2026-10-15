@@ -1,0 +1,19 @@
+{
+  "assessed_commit": "510a685426804385a8c80f6347002ee47ce606e9",
+  "checked_at_utc_date": "2026-10-15",
+  "checks": [
+    {
+      "resource": "54 NeuroVault image URLs recorded in input/sources.json",
+      "method": "HTTP HEAD, no image body downloaded",
+      "first_pass": "53 endpoints returned success; one timed out",
+      "retry": "the timed-out sub-103 endpoint returned HTTP 200",
+      "result": "54 of 54 source endpoints were reachable during these checks"
+    },
+    {
+      "resource": "origin GitHub repository",
+      "method": "GIT_TERMINAL_PROMPT=0 git fetch --dry-run origin 510a685426804385a8c80f6347002ee47ce606e9",
+      "result": "the exact assessed commit was fetchable from the current remote"
+    }
+  ],
+  "attribution_limit": "These checks establish current remote availability only; they do not establish what the worker supplied or published at an earlier time."
+}

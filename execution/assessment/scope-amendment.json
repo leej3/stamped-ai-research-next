@@ -1,0 +1,9 @@
+{
+  "base_coordinator_commit": "945f6e7972e3ce5ab8e142dfcfe0ac3f91504091",
+  "study_commit": "a36fb101295b111bb2d98259d7c14de7e28d8c59",
+  "preparation_preview_scope": "pre-amendment; prepare-only, no live session",
+  "original_prompt_sha256": "f2d0f8f1170fd5642a4cee113cb0ac6a286e7bd61f7be6d1103160ad32d87def",
+  "final_prompt_sha256": "a18c8a32d11995c650ac2718b40ed5cabea995d0ec30adcadd724668a889021d",
+  "common_amendment_sha256": "fe6646ff5108757a74547479ba72aa72e5b8295fec3471ff186c011df63b1e7a",
+  "scope": "31-item frozen STAMPED assessment with remote retrieval checks, no scientific rerun; worker contribution separated from coordinator packaging and publication"
+}
