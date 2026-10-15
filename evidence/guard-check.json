@@ -1,0 +1,26 @@
+[
+  {
+    "case": "no marker allowed",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "case": "live external run rejected",
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "refusing to commit: a recorded run is in flight (.git/datalad-run-in-flight exists).\n\nA commit on this branch now lands inside that run and can destroy its\ncompleted outputs. Options:\n  * wait for the run to finish (it commits its own result);\n  * write to a gitignored scratch directory instead;\n  * if you are certain no run is active, remove .git/datalad-run-in-flight.\n\nIf that marker is stale, the wrapper was killed in a way that skipped its\ncleanup trap (SIGKILL, or a crash): removing it by hand is correct.\n"
+  },
+  {
+    "case": "native run child allowed",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "case": "stale marker cleaned",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "note: .git/datalad-run-in-flight names pid 99999999, which is gone; removing a stale marker and\nallowing this commit. The run that set it was killed before its cleanup.\n"
+  }
+]
