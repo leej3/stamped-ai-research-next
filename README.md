@@ -23,6 +23,8 @@ pixi run validate
 
 `recorded-analysis` runs the group analysis through duct, then writes a run record linking the code revision, `pixi.toml`, `pixi.lock`, input hashes, output hashes and duct summary. Statistical maps, the max-statistic null, summary tables and figures are written under `results/`; command metadata, stdout/stderr, resource samples, summaries and run records are retained under `logs/`. `pixi run validate` independently checks peak statistics and corrected p values with SciPy.
 
+The tasks call `scripts/analyze.py`, `scripts/validate_results.py` and `scripts/run_recorded_analysis.sh`.
+
 ## Update the environment
 
 Add or remove dependencies with `pixi add <package>` or `pixi remove <package>` (see the [Pixi dependency commands](https://pixi.prefix.dev/latest/reference/cli/pixi/add/)). Review and commit `pixi.toml` and `pixi.lock` together. Restore the committed environment with `pixi install --locked` before running analyses.

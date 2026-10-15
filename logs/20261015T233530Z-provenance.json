@@ -1,0 +1,573 @@
+{
+  "code_revision": "2ea9577c5bd52dedf5678a250d7e56bb3dc10cfb",
+  "command": "pixi run duct ... pixi run analysis",
+  "completed_at_utc": "2026-10-15T23:35:46.415351+00:00",
+  "duct_info": "logs/20261015T233530Z-analysis-info.json",
+  "duct_summary": {
+    "average_pcpu": 239.16666666666666,
+    "average_pmem": 2.94,
+    "average_rss": 1022552746.6666666,
+    "average_vsz": 943896483157.3334,
+    "command": "pixi run analysis",
+    "end_time": 1792107346.013042,
+    "exit_code": 0,
+    "logs_prefix": "logs/20261015T233530Z-analysis-",
+    "num_reports": 2,
+    "num_samples": 15,
+    "peak_pcpu": 355.2,
+    "peak_pmem": 6.1,
+    "peak_rss": 2092187648,
+    "peak_vsz": 979486556160,
+    "start_time": 1792107330.755064,
+    "wall_clock_time": 15.257977962493896,
+    "working_directory": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-worker"
+  },
+  "environment": {
+    "packages": {
+      "nibabel": "5.4.2",
+      "nilearn": "0.14.1",
+      "numpy": "2.5.4",
+      "pandas": "3.0.6",
+      "scipy": "1.18.1"
+    },
+    "pixi_lock_sha256": "5884bb53a343659adce7759c1b48477e2cdffb71b4838e49d14810e75dc75f21",
+    "pixi_manifest_sha256": "1579e88b47d121f679d95c87d3afb683e99b14fda68487bdb0bb1dd889cb4b66",
+    "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+    "python": "3.13.16"
+  },
+  "inputs": {
+    "participant_maps": {
+      "data/sub-001_hypo1_cope.nii.gz": {
+        "bytes": 1794522,
+        "image_id": 118651,
+        "participant_id": "sub-001",
+        "sha256": "baf3440fbc7f5f59dea28d231e9c5eb9cf00a15b6924342f4b79e7faf56a929a",
+        "transformation": "none",
+        "url": "https://neurovault.org/media/images/4932/sub-001_hypo1_cope.nii.gz"
+      },
+      "data/sub-003_hypo1_cope.nii.gz": {
+        "bytes": 1762018,
+        "image_id": 118661,
+        "participant_id": "sub-003",
+        "sha256": "a8c9b6276d1597bc43695516c9ac5b2893a8d8408cd053161ceaddbd42dafb20",
+        "transformation": "none",
+        "url": "https://neurovault.org/media/images/4932/sub-003_hypo1_cope.nii.gz"
+      },
+      "data/sub-005_hypo1_cope.nii.gz": {
+        "bytes": 1847315,
+        "image_id": 118671,
+        "participant_id": "sub-005",
+        "sha256": "415383874c65fd9e10bb03bf2aa59bfcd1d10650bc5d0560a249e85d52b7b205",
+        "transformation": "none",
+        "url": "https://neurovault.org/media/images/4932/sub-005_hypo1_cope.nii.gz"
+      },
+      "data/sub-009_hypo1_cope.nii.gz": {
+        "bytes": 1737182,
+        "image_id": 118686,
+        "participant_id": "sub-009",
+        "sha256": "33af129d8ba13cd4b6175089706c531471be1e0bd7ccd43ece10751c8cc3254c",
+        "transformation": "none",
+        "url": "https://neurovault.org/media/images/4932/sub-009_hypo1_cope.nii.gz"
+      },
+      "data/sub-011_hypo1_cope.nii.gz": {
+        "bytes": 1828116,
+        "image_id": 118696,
+        "participant_id": "sub-011",
+        "sha256": "6f74dd449eefa6eff40ec00eb046ec7e8bb13c0b7c2ac1874155a9c166692352",
+        "transformation": "none",
+        "url": "https://neurovault.org/media/images/4932/sub-011_hypo1_cope.nii.gz"
+      },
+      "data/sub-013_hypo1_cope.nii.gz": {
+        "bytes": 1760573,
+        "image_id": 118701,
+        "participant_id": "sub-013",
+        "sha256": "bfa79b82f931d81d6387e82b8413f1f889a06f36275ba510554669c84a3c026f",
+        "transformation": "none",
+        "url": "https://neurovault.org/media/images/4932/sub-013_hypo1_cope.nii.gz"
+      },
+      "data/sub-015_hypo1_cope.nii.gz": {
+        "bytes": 1805181,
+        "image_id": 118711,
+        "participant_id": "sub-015",
+        "sha256": "5d98f6d74823516768659967f95ef43728584eab024c58af30987783515d7694",
+        "transformation": "none",
+        "url": "https://neurovault.org/media/images/4932/sub-015_hypo1_cope.nii.gz"
+      },
+      "data/sub-017_hypo1_cope.nii.gz": {
+        "bytes": 1791857,
+        "image_id": 118721,
+        "participant_id": "sub-017",
+        "sha256": "dca9eac4d6f0ef4e2a3e631b2d10f89c5362863698cec4a7c7b9b14128ae96d9",
+        "transformation": "none",
+        "url": "https://neurovault.org/media/images/4932/sub-017_hypo1_cope.nii.gz"
+      },
+      "data/sub-019_hypo1_cope.nii.gz": {
+        "bytes": 1788203,
+        "image_id": 118731,
+        "participant_id": "sub-019",
+        "sha256": "f9df911028e0ee06d230b097d8c7011b3c09f34df436e8854cd959145777533d",
+        "transformation": "none",
+        "url": "https://neurovault.org/media/images/4932/sub-019_hypo1_cope.nii.gz"
+      },
+      "data/sub-021_hypo1_cope.nii.gz": {
+        "bytes": 1821886,
+        "image_id": 118741,
+        "participant_id": "sub-021",
+        "sha256": "7dd60d722e243f429633f1c63c9a810afd73d1ffd0e0e68fcdd2bf3790d78db1",
+        "transformation": "none",
+        "url": "https://neurovault.org/media/images/4932/sub-021_hypo1_cope.nii.gz"
+      },
+      "data/sub-025_hypo1_cope.nii.gz": {
+        "bytes": 1805994,
+        "image_id": 118757,
+        "participant_id": "sub-025",
+        "sha256": "545945b0a5f7e51d65e2828e76e776fffcbb33b1635bb7272bc0948bfbc6b7b4",
+        "transformation": "none",
+        "url": "https://neurovault.org/media/images/4932/sub-025_hypo1_cope.nii.gz"
+      },
+      "data/sub-027_hypo1_cope.nii.gz": {
+        "bytes": 1814109,
+        "image_id": 118767,
+        "participant_id": "sub-027",
+        "sha256": "dffa472f8cfe30b9c2025470924fceb23d30fb881db6b893d436faa8d8dcef2f",
+        "transformation": "none",
+        "url": "https://neurovault.org/media/images/4932/sub-027_hypo1_cope.nii.gz"
+      },
+      "data/sub-029_hypo1_cope.nii.gz": {
+        "bytes": 1792367,
+        "image_id": 118772,
+        "participant_id": "sub-029",
+        "sha256": "0ed1be0ce40d1becaec5cf18487670822b8cb5fcbc5ad0ec2cb34d9a3ed7071b",
+        "transformation": "none",
+        "url": "https://neurovault.org/media/images/4932/sub-029_hypo1_cope.nii.gz"
+      },
+      "data/sub-033_hypo1_cope.nii.gz": {
+        "bytes": 1765631,
+        "image_id": 118787,
+        "participant_id": "sub-033",
+        "sha256": "04778467af0a6c93d531d30f73c5492384be59044ebd7be3e95862700e2e9117",
+        "transformation": "none",
+        "url": "https://neurovault.org/media/images/4932/sub-033_hypo1_cope.nii.gz"
+      },
+      "data/sub-035_hypo1_cope.nii.gz": {
+        "bytes": 1768719,
+        "image_id": 118792,
+        "participant_id": "sub-035",
+        "sha256": "211fd859f33d69891531ad3e5dd66fe0c0891b20c58e6ef8aa21b4d49ff030c9",
+        "transformation": "none",
+        "url": "https://neurovault.org/media/images/4932/sub-035_hypo1_cope.nii.gz"
+      },
+      "data/sub-037_hypo1_cope.nii.gz": {
+        "bytes": 1807410,
+        "image_id": 118802,
+        "participant_id": "sub-037",
+        "sha256": "a4d76561e8ba1848572a474afce754310f4ee101cfd99276eb3105289cc0934b",
+        "transformation": "none",
+        "url": "https://neurovault.org/media/images/4932/sub-037_hypo1_cope.nii.gz"
+      },
+      "data/sub-039_hypo1_cope.nii.gz": {
+        "bytes": 1775163,
+        "image_id": 118812,
+        "participant_id": "sub-039",
+        "sha256": "744df860cfb8410aae16bcb1742e7390c51306c66959bb19da9f5b57206bba7b",
+        "transformation": "none",
+        "url": "https://neurovault.org/media/images/4932/sub-039_hypo1_cope.nii.gz"
+      },
+      "data/sub-041_hypo1_cope.nii.gz": {
+        "bytes": 1801691,
+        "image_id": 118822,
+        "participant_id": "sub-041",
+        "sha256": "f93eeadcd3f57239e4c32c5df2ca2c4013bf424978701bd5beec535ace24669f",
+        "transformation": "none",
+        "url": "https://neurovault.org/media/images/4932/sub-041_hypo1_cope.nii.gz"
+      },
+      "data/sub-043_hypo1_cope.nii.gz": {
+        "bytes": 1776243,
+        "image_id": 118827,
+        "participant_id": "sub-043",
+        "sha256": "520f19805c6c4358bc56e9bba290b9b79a80c14385bc7be90e4bd81b3e37e771",
+        "transformation": "none",
+        "url": "https://neurovault.org/media/images/4932/sub-043_hypo1_cope.nii.gz"
+      },
+      "data/sub-045_hypo1_cope.nii.gz": {
+        "bytes": 1812100,
+        "image_id": 118837,
+        "participant_id": "sub-045",
+        "sha256": "3826c6daf5a7be7b03ae552847c4a8709a1b86c2498735e6ce80768cd5d0b88e",
+        "transformation": "none",
+        "url": "https://neurovault.org/media/images/4932/sub-045_hypo1_cope.nii.gz"
+      },
+      "data/sub-047_hypo1_cope.nii.gz": {
+        "bytes": 1762249,
+        "image_id": 118933,
+        "participant_id": "sub-047",
+        "sha256": "8585e8be8eebe84dd316eeb1f86090a8123f88a8b5d275bc2c39049a3bf4bf34",
+        "transformation": "none",
+        "url": "https://neurovault.org/media/images/4932/sub-047_hypo1_cope.nii.gz"
+      },
+      "data/sub-049_hypo1_cope.nii.gz": {
+        "bytes": 1821174,
+        "image_id": 118938,
+        "participant_id": "sub-049",
+        "sha256": "e01dacebea8fa444b7696e90a53e9ab0b3543b0da780ba430875b3fde117e084",
+        "transformation": "none",
+        "url": "https://neurovault.org/media/images/4932/sub-049_hypo1_cope.nii.gz"
+      },
+      "data/sub-051_hypo1_cope.nii.gz": {
+        "bytes": 1755787,
+        "image_id": 118948,
+        "participant_id": "sub-051",
+        "sha256": "74e2887ed9eb4252357cdce98eb53b5b8ab2620ee5ee57aee1bc677c0099b2ca",
+        "transformation": "none",
+        "url": "https://neurovault.org/media/images/4932/sub-051_hypo1_cope.nii.gz"
+      },
+      "data/sub-053_hypo1_cope.nii.gz": {
+        "bytes": 1760465,
+        "image_id": 118958,
+        "participant_id": "sub-053",
+        "sha256": "a3b3509a0240c5b12a9c63f94f2913e69eeb7fab4fbe92ac1adc62eb45bdd0ba",
+        "transformation": "none",
+        "url": "https://neurovault.org/media/images/4932/sub-053_hypo1_cope.nii.gz"
+      },
+      "data/sub-055_hypo1_cope.nii.gz": {
+        "bytes": 1790638,
+        "image_id": 118968,
+        "participant_id": "sub-055",
+        "sha256": "136983cd89668779e26eba6847653f1d765452f8a2d5675fce037f751edb0ea8",
+        "transformation": "none",
+        "url": "https://neurovault.org/media/images/4932/sub-055_hypo1_cope.nii.gz"
+      },
+      "data/sub-057_hypo1_cope.nii.gz": {
+        "bytes": 1815775,
+        "image_id": 118978,
+        "participant_id": "sub-057",
+        "sha256": "aafa1a371d72e690f737d2507c9d7bbd20c620377cd294d44555c856a0566496",
+        "transformation": "none",
+        "url": "https://neurovault.org/media/images/4932/sub-057_hypo1_cope.nii.gz"
+      },
+      "data/sub-059_hypo1_cope.nii.gz": {
+        "bytes": 1785421,
+        "image_id": 118988,
+        "participant_id": "sub-059",
+        "sha256": "0fa3da37a11640705014665f546ba86735472a8a2b7fdf1b37177a55abd0a65a",
+        "transformation": "none",
+        "url": "https://neurovault.org/media/images/4932/sub-059_hypo1_cope.nii.gz"
+      },
+      "data/sub-061_hypo1_cope.nii.gz": {
+        "bytes": 1783701,
+        "image_id": 118998,
+        "participant_id": "sub-061",
+        "sha256": "cb8bc3bf4264fe156348d3c171335b84978eb8d32b0fd331db9f4661dad2bdff",
+        "transformation": "none",
+        "url": "https://neurovault.org/media/images/4932/sub-061_hypo1_cope.nii.gz"
+      },
+      "data/sub-063_hypo1_cope.nii.gz": {
+        "bytes": 1786231,
+        "image_id": 119008,
+        "participant_id": "sub-063",
+        "sha256": "2a5458eb314441b01dacfa1bcea9e9a95f983d2994aa6b853ebe1a20b017a467",
+        "transformation": "none",
+        "url": "https://neurovault.org/media/images/4932/sub-063_hypo1_cope.nii.gz"
+      },
+      "data/sub-067_hypo1_cope.nii.gz": {
+        "bytes": 1774136,
+        "image_id": 119023,
+        "participant_id": "sub-067",
+        "sha256": "9977321f1f775f04dab881d740ea5cc491dadda07405f2380c61c50e5c3a01fc",
+        "transformation": "none",
+        "url": "https://neurovault.org/media/images/4932/sub-067_hypo1_cope.nii.gz"
+      },
+      "data/sub-069_hypo1_cope.nii.gz": {
+        "bytes": 1769792,
+        "image_id": 119033,
+        "participant_id": "sub-069",
+        "sha256": "bd22905ebe789319f082b0fdb6ba7cd5aaf6590fd8424d6c396cd54c0602a318",
+        "transformation": "none",
+        "url": "https://neurovault.org/media/images/4932/sub-069_hypo1_cope.nii.gz"
+      },
+      "data/sub-071_hypo1_cope.nii.gz": {
+        "bytes": 1790405,
+        "image_id": 119043,
+        "participant_id": "sub-071",
+        "sha256": "7286639323904bfe851588ce06c68396d535fad2f7ac5de0de1b73c4c17494f4",
+        "transformation": "none",
+        "url": "https://neurovault.org/media/images/4932/sub-071_hypo1_cope.nii.gz"
+      },
+      "data/sub-073_hypo1_cope.nii.gz": {
+        "bytes": 1786224,
+        "image_id": 119053,
+        "participant_id": "sub-073",
+        "sha256": "67086bf1f48b14bc095999f6535656649d01da82d1327715c5b3ab89ea6c5f7b",
+        "transformation": "none",
+        "url": "https://neurovault.org/media/images/4932/sub-073_hypo1_cope.nii.gz"
+      },
+      "data/sub-075_hypo1_cope.nii.gz": {
+        "bytes": 1774130,
+        "image_id": 119063,
+        "participant_id": "sub-075",
+        "sha256": "b9151e72e3a8a609a23ac73dbd3d6ba8423f271ddd72149cf27c04e25bf9f980",
+        "transformation": "none",
+        "url": "https://neurovault.org/media/images/4932/sub-075_hypo1_cope.nii.gz"
+      },
+      "data/sub-077_hypo1_cope.nii.gz": {
+        "bytes": 1754444,
+        "image_id": 119073,
+        "participant_id": "sub-077",
+        "sha256": "79aaf5add3d475590cb7fd82a7fbd32517dbde2cb859824864a2b10d6fafb9ed",
+        "transformation": "none",
+        "url": "https://neurovault.org/media/images/4932/sub-077_hypo1_cope.nii.gz"
+      },
+      "data/sub-079_hypo1_cope.nii.gz": {
+        "bytes": 1770837,
+        "image_id": 119078,
+        "participant_id": "sub-079",
+        "sha256": "d505691fdcfa43ad709fca3803c954069afe4e2f2dc865edb5b0812562d1eb8c",
+        "transformation": "none",
+        "url": "https://neurovault.org/media/images/4932/sub-079_hypo1_cope.nii.gz"
+      },
+      "data/sub-081_hypo1_cope.nii.gz": {
+        "bytes": 1809179,
+        "image_id": 119088,
+        "participant_id": "sub-081",
+        "sha256": "a8a342b5e333dbff9776b5a4847929737144dc8029830036636eb86c566f4f76",
+        "transformation": "none",
+        "url": "https://neurovault.org/media/images/4932/sub-081_hypo1_cope.nii.gz"
+      },
+      "data/sub-083_hypo1_cope.nii.gz": {
+        "bytes": 1770805,
+        "image_id": 119098,
+        "participant_id": "sub-083",
+        "sha256": "76a526c303c406342487da0e5deee5a6ca6b345e9b6ccb052149c4c32f0833ae",
+        "transformation": "none",
+        "url": "https://neurovault.org/media/images/4932/sub-083_hypo1_cope.nii.gz"
+      },
+      "data/sub-085_hypo1_cope.nii.gz": {
+        "bytes": 1733793,
+        "image_id": 119108,
+        "participant_id": "sub-085",
+        "sha256": "74b1af4e4b667a70c79b54a10294be744da5538b814057186eae48710520b65a",
+        "transformation": "none",
+        "url": "https://neurovault.org/media/images/4932/sub-085_hypo1_cope.nii.gz"
+      },
+      "data/sub-087_hypo1_cope.nii.gz": {
+        "bytes": 1826169,
+        "image_id": 119113,
+        "participant_id": "sub-087",
+        "sha256": "7ecb372d1249cd5368121b1e7b7f7ee33ef5430575097431dcd3f27dcdad7b04",
+        "transformation": "none",
+        "url": "https://neurovault.org/media/images/4932/sub-087_hypo1_cope.nii.gz"
+      },
+      "data/sub-089_hypo1_cope.nii.gz": {
+        "bytes": 1742479,
+        "image_id": 119123,
+        "participant_id": "sub-089",
+        "sha256": "3b380ae44cdbf0171d9ec12ff9ecdb47227496cda5ccd5b5cfb09164c5d91846",
+        "transformation": "none",
+        "url": "https://neurovault.org/media/images/4932/sub-089_hypo1_cope.nii.gz"
+      },
+      "data/sub-093_hypo1_cope.nii.gz": {
+        "bytes": 1784075,
+        "image_id": 119138,
+        "participant_id": "sub-093",
+        "sha256": "7802aea70713a4be7683921188b92a563d86f221f191a8bac4ee9c4decb33a1c",
+        "transformation": "none",
+        "url": "https://neurovault.org/media/images/4932/sub-093_hypo1_cope.nii.gz"
+      },
+      "data/sub-095_hypo1_cope.nii.gz": {
+        "bytes": 1735309,
+        "image_id": 119148,
+        "participant_id": "sub-095",
+        "sha256": "291760d6479e336093a651e33df20deab99e434cba5afbf31fc019c8d1fe816e",
+        "transformation": "none",
+        "url": "https://neurovault.org/media/images/4932/sub-095_hypo1_cope.nii.gz"
+      },
+      "data/sub-099_hypo1_cope.nii.gz": {
+        "bytes": 1823271,
+        "image_id": 119163,
+        "participant_id": "sub-099",
+        "sha256": "30b063515e6b538183fe37c561e87e47681756876a8f6a8a607839d8d3de0e42",
+        "transformation": "none",
+        "url": "https://neurovault.org/media/images/4932/sub-099_hypo1_cope.nii.gz"
+      },
+      "data/sub-103_hypo1_cope.nii.gz": {
+        "bytes": 1814013,
+        "image_id": 119214,
+        "participant_id": "sub-103",
+        "sha256": "a088633f18ac3e35fc2512e9dc21ec3d92efd06749d4027338ccb448a635919c",
+        "transformation": "none",
+        "url": "https://neurovault.org/media/images/4932/sub-103_hypo1_cope.nii.gz"
+      },
+      "data/sub-105_hypo1_cope.nii.gz": {
+        "bytes": 1795447,
+        "image_id": 119224,
+        "participant_id": "sub-105",
+        "sha256": "12a1b50eaa5be6983990c5e77f985f9750340204eaa3fff7e70829f07707e6a2",
+        "transformation": "none",
+        "url": "https://neurovault.org/media/images/4932/sub-105_hypo1_cope.nii.gz"
+      },
+      "data/sub-107_hypo1_cope.nii.gz": {
+        "bytes": 1804121,
+        "image_id": 119234,
+        "participant_id": "sub-107",
+        "sha256": "4580aade93323d0d14f9a3a1932a428004a2f657980b5669f9274102bb370802",
+        "transformation": "none",
+        "url": "https://neurovault.org/media/images/4932/sub-107_hypo1_cope.nii.gz"
+      },
+      "data/sub-109_hypo1_cope.nii.gz": {
+        "bytes": 1788268,
+        "image_id": 119244,
+        "participant_id": "sub-109",
+        "sha256": "931ba1128720bbaa99e7fce8f036a331581d6d07e00212a1f402eae7959299cb",
+        "transformation": "none",
+        "url": "https://neurovault.org/media/images/4932/sub-109_hypo1_cope.nii.gz"
+      },
+      "data/sub-113_hypo1_cope.nii.gz": {
+        "bytes": 1819506,
+        "image_id": 119259,
+        "participant_id": "sub-113",
+        "sha256": "e5f81435ddc2d5703fa4ea37d6597601e71b50f8c53fb6047fb0067c17282c65",
+        "transformation": "none",
+        "url": "https://neurovault.org/media/images/4932/sub-113_hypo1_cope.nii.gz"
+      },
+      "data/sub-115_hypo1_cope.nii.gz": {
+        "bytes": 1797041,
+        "image_id": 119269,
+        "participant_id": "sub-115",
+        "sha256": "5046f7c2fa1c5d1be6237d38f631beca13df8a3a8ded11121082838a533a44bf",
+        "transformation": "none",
+        "url": "https://neurovault.org/media/images/4932/sub-115_hypo1_cope.nii.gz"
+      },
+      "data/sub-117_hypo1_cope.nii.gz": {
+        "bytes": 1741472,
+        "image_id": 119279,
+        "participant_id": "sub-117",
+        "sha256": "711159acfa23c45ab82903f658cafe0fa539f39e077e451f6b0728fdb359445f",
+        "transformation": "none",
+        "url": "https://neurovault.org/media/images/4932/sub-117_hypo1_cope.nii.gz"
+      },
+      "data/sub-119_hypo1_cope.nii.gz": {
+        "bytes": 1752220,
+        "image_id": 119289,
+        "participant_id": "sub-119",
+        "sha256": "01738a10e34e46c5ea1a4a192b9484595ee352d62375095b76726347455aabd7",
+        "transformation": "none",
+        "url": "https://neurovault.org/media/images/4932/sub-119_hypo1_cope.nii.gz"
+      },
+      "data/sub-121_hypo1_cope.nii.gz": {
+        "bytes": 1766758,
+        "image_id": 119299,
+        "participant_id": "sub-121",
+        "sha256": "94357665b89cfa1b9157e71aab10f78b49585a790a4a01d9e4693698e185d892",
+        "transformation": "none",
+        "url": "https://neurovault.org/media/images/4932/sub-121_hypo1_cope.nii.gz"
+      },
+      "data/sub-123_hypo1_cope.nii.gz": {
+        "bytes": 1745649,
+        "image_id": 119304,
+        "participant_id": "sub-123",
+        "sha256": "1219377e08c306753c1e382d431b1e7a55c7143cdc5f800fb65e92fa7e72f888",
+        "transformation": "none",
+        "url": "https://neurovault.org/media/images/4932/sub-123_hypo1_cope.nii.gz"
+      },
+      "participants.tsv": {
+        "bytes": 1706,
+        "sha256": "faca815bcb042144bdb8dcff915f45de0d27650f60416ed76a5a72557341abbf"
+      },
+      "study-task.md": {
+        "bytes": 1483,
+        "sha256": "e92bf2e0c0db4cc49688cce9f9dfff8a236fc4ec151c09961719f49f31310cc8"
+      },
+      "upstream-methods.md": {
+        "bytes": 1342,
+        "sha256": "508d832c8787ed8303c3de101c2c76f40a3aa5dec53e6993dc2a49c4b7bcf90b"
+      }
+    },
+    "participants_tsv": {
+      "path": "input/participants.tsv",
+      "sha256": "faca815bcb042144bdb8dcff915f45de0d27650f60416ed76a5a72557341abbf"
+    },
+    "sources_manifest": {
+      "path": "input/sources.json",
+      "sha256": "919be9b4278c31f7e39ae3d02fcf159eb4ae222a2fb96c90df7c3a92e5fb19cd"
+    }
+  },
+  "outputs": [
+    {
+      "bytes": 43223,
+      "path": "results/group-fwe-p-positive.nii.gz",
+      "sha256": "0dc53b373881373896818ff62dc3199b6ba06e544ca9c54d6c8941444e415fa2"
+    },
+    {
+      "bytes": 1012185,
+      "path": "results/group-mean.nii.gz",
+      "sha256": "efae119d23c1aa9338c965ecf23658584cb3c7b37a379bc956ba3512e575b723"
+    },
+    {
+      "bytes": 1013790,
+      "path": "results/group-t.nii.gz",
+      "sha256": "818262bf4481df4ae3d73d41033953eb844772f9df8291ca7ebcc5a4bd088d1e"
+    },
+    {
+      "bytes": 50061,
+      "path": "results/harvard_oxford_cort_maxprob_thr25_2mm.nii.gz",
+      "sha256": "73941b4e7680abae9887e12f9670159708b739c00a18733179f9cd489bf8af31"
+    },
+    {
+      "bytes": 1721,
+      "path": "results/harvard_oxford_cort_maxprob_thr25_2mm_labels.json",
+      "sha256": "e98549f3ea94820302bb53a82fe2e582f1dab760081d956be6906cbc953f46a4"
+    },
+    {
+      "bytes": 230063,
+      "path": "results/mni152_template_2mm.nii.gz",
+      "sha256": "0d8b8f9574a88657bad490d7f64d804cb11ab77a339882990e8a3786e141c9f3"
+    },
+    {
+      "bytes": 108880,
+      "path": "results/permutation-max-t.tsv",
+      "sha256": "30aa30f802c46ae062550aa8a1faa472f6a66c05c638e440124f197f3726c45a"
+    },
+    {
+      "bytes": 19875,
+      "path": "results/pilot-qc.json",
+      "sha256": "fe85ba8695225258834342ba76e0c8ed9121644448c126972c321d819edc7172"
+    },
+    {
+      "bytes": 25960,
+      "path": "results/results.json",
+      "sha256": "375a4ffef437f8851254b1acf3d18f8d737999b0feacf7c1d4684f3bfcbe70b8"
+    },
+    {
+      "bytes": 33546,
+      "path": "results/vmPFC-atlas-mask.nii.gz",
+      "sha256": "8dd8de51837004c13ef0a63ecbe07fcf9d1d7fa486dd4af11a999974beb7e6b8"
+    },
+    {
+      "bytes": 46602,
+      "path": "results/vmPFC-participant-distribution.png",
+      "sha256": "a72d819af60fdb01a40460545c43cf6312f4d48cbfcd50d9bdbf26aa9cc50df5"
+    },
+    {
+      "bytes": 1117,
+      "path": "results/vmPFC-participant-values.tsv",
+      "sha256": "56cc99a6f187714bdebfa91036dfdcee8dd70523a208b24414b2d9c193486d3d"
+    },
+    {
+      "bytes": 63828,
+      "path": "results/vmPFC-unthresholded-slices.png",
+      "sha256": "444edc1be496088c364fcdcb41c33dbf3d549f09fbd0b368a6314787f7f8035d"
+    },
+    {
+      "bytes": 57632,
+      "path": "results/whole-brain-fwe-slices.png",
+      "sha256": "111080f4c7e1789b15ce111646a5e54fdb2b0bf10581c92d0a4b76e84f44de54"
+    },
+    {
+      "bytes": 65417,
+      "path": "results/whole-brain-mask.nii.gz",
+      "sha256": "0de1b9e5607e91c3dc7bdcf084ec4c305aa9cb6b29a0eb23f59d23b174e72f36"
+    }
+  ],
+  "run_id": "20261015T233530Z",
+  "working_tree_before_run": "clean"
+}
