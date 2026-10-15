@@ -41,7 +41,7 @@ To start a coordinator, give it this repository and a request such as:
 | `studies/<study>/input/` | The scientific prompt and verified data supplied to research workers |
 | `studies/<study>/coordinator-guidance/` | Evaluation guidance and reference material for the coordinator and judges |
 | `studies/<study>/results/<run>/` | An experiment submodule containing the worker's research object, assessments and execution records |
-| `skills/` | Evolving `con/skills`, pinned to [our development branch](https://github.com/con/skills/tree/codex/pr26-assessment-evidence) |
+| `skills/` | Evolving `con/skills`, pinned to [our development branch](https://github.com/con/skills/tree/codex/pr26-annex-initialization) |
 | `assessment/` | The selected assessor version, identified by `assessment-version.json` |
 
 Keep study and experiment submodules uninitialized until needed.
@@ -50,3 +50,7 @@ Open selected paths and retrieve their required annex content; the coordinator t
 The intended result is transferable guidance: an independent agent can use these skills with a researcher's own data and hypothesis to produce scientifically useful, rigorous and convenient research.
 The products are improved shareable skills, evidence about their impact, and a STAMPED research object documenting the whole workshop.
 Figures summarize scientific outcomes, reproducibility, effort and variability.
+
+Preparation evidence is retained in the [coordinator trials](iterations/2026-10-15-coordinator-preparation/README.md) and [cold-start trial](iterations/2026-10-15-cold-operational-preparation/outcome.json).
+These include verified Entire, annex and cluster access, independently retrieved inputs, and setup failures found before scientific work.
+They are excluded from the formal comparison.
