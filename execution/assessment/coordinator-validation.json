@@ -1,0 +1,26 @@
+{
+  "valid": true,
+  "helper_sha256": "10533d443b75dc1456bc4e080b03a8fd3822782e785a08eab9ef0db8006e3d27",
+  "response_sha256": "85bdad715ac44c10b25d431630d235354ec65677073dd09308a1d7161ea1e074",
+  "answers": 31,
+  "roundtrip_values_and_reasons": true,
+  "full_statuses_preserved_in_response_json": true,
+  "app_roundtrip_limit": "App values collapse partial/unmet and not-checked/not-applicable; retain original response JSON.",
+  "counts": {
+    "must": {
+      "met": 10,
+      "unmet": 6,
+      "partial": 1
+    },
+    "should": {
+      "met": 2,
+      "unmet": 5,
+      "not-applicable": 1,
+      "not-checked": 1
+    },
+    "may": {
+      "unmet": 1,
+      "met": 4
+    }
+  }
+}

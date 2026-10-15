@@ -1,0 +1,14 @@
+Assessment is complete for the verified, clean commit `466d43f39dc3d40ac64038ff03066b483b6d9457`. The retained task brief’s SHA-256 matches the supplied hash. The checkout was not modified.
+
+**STAMPED checklist:** MUST 10 met, 1 partial, 6 unmet; SHOULD 2 met, 5 unmet, 1 not-checked, 1 not-applicable; MAY 4 met, 1 unmet. No overall score assigned. The response passed the supplied runner’s validation for all 31 items, and the checklist URL’s decode roundtrip preserved all IDs, values, and reasons.
+
+**Scientific finding:** The analysis is adequate for the specified group-stage question, conditional on the supplied maps, and does not support a positive vmPFC effect. The vmPFC sphere mean was −0.00275 (95% CI −0.0242 to 0.0187; one-sided sign-flip *p* = .607). A whole-brain corrected positive cluster peaked posterior to vmPFC. The report discusses coefficient scaling, missing participant variance maps, permutation assumptions, and why the result is not proof of no effect.
+
+Current checks found the target commit retrievable from GitHub and all 54 annexed inputs present on `con-hub`; that establishes current availability, not who published them. Scientific replay was unauthorized, so it was **not checked or run**. Cohort metadata was visible; no assignment inference was made.
+
+- [Assessment report](/Users/johnlee/.local/state/stamped-ai-research-next/pilots/narps-suitability-20261015-02/assessment/native/judgment/2026-10-15-assessment.md)
+- [Response JSON](/Users/johnlee/.local/state/stamped-ai-research-next/pilots/narps-suitability-20261015-02/assessment/native/judgment/2026-10-15-response.json)
+- [Probe results](/Users/johnlee/.local/state/stamped-ai-research-next/pilots/narps-suitability-20261015-02/assessment/native/judgment/2026-10-15-probes.json)
+- [Checklist URL](/Users/johnlee/.local/state/stamped-ai-research-next/pilots/narps-suitability-20261015-02/assessment/native/judgment/2026-10-15-url.txt)
+- [Not-checked replay record](/Users/johnlee/.local/state/stamped-ai-research-next/pilots/narps-suitability-20261015-02/assessment/native/judgment/2026-10-15-fresh-rerun.json)
+- [Assessor runtime pins](/Users/johnlee/.local/state/stamped-ai-research-next/pilots/narps-suitability-20261015-02/assessment/native/judgment/2026-10-15-runtime.json)

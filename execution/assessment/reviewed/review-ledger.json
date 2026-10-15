@@ -1,0 +1,106 @@
+{
+  "reviewed_at": "2026-10-15T21:00:59.706273+00:00",
+  "kind": "coordinator-reviewed revision, not an independent repeat",
+  "original_response_sha256": "85bdad715ac44c10b25d431630d235354ec65677073dd09308a1d7161ea1e074",
+  "original_judge": {
+    "model": "gpt-6-luna",
+    "effort": "high",
+    "runtime": "codex-cli 0.162.0-alpha.17.2",
+    "evidence": "../native/launch.json and native-session/session metadata"
+  },
+  "assessor_source_commit": "d867c1d04bbb58b3b0f64122ebd5f76bd8e5a7ca",
+  "assessor_environment_commit": "3552d5003a2485b6405805236d5c54e7ed42f097",
+  "changes": {
+    "stamped-checklist:must/011": {
+      "before": {
+        "status": "partial",
+        "reason": "Pixi platforms are specified, but Pixi installation and network or cache needs for the nilearn template are undocumented.",
+        "source": "judgement",
+        "evidence": [
+          {
+            "uri": "pixi.toml",
+            "description": "lists osx-arm64 and linux-64 platforms",
+            "sha256": null
+          },
+          {
+            "uri": "results/analysis.py",
+            "description": "loads MNI template through nilearn",
+            "sha256": null
+          }
+        ]
+      },
+      "after": {
+        "status": "partial",
+        "reason": "Platforms and packages are declared, but obtaining the Pixi host tool is undocumented. The Nilearn MNI display template is bundled, not a network/cache requirement.",
+        "source": "judgement",
+        "evidence": [
+          {
+            "uri": "pixi.toml",
+            "description": "Platform requirements are declared; results/report.md invokes Pixi without installation instructions.",
+            "sha256": null
+          }
+        ],
+        "flags": [
+          "coordinator-reviewed",
+          "probe-overridden"
+        ]
+      }
+    },
+    "stamped-checklist:must/012": {
+      "before": {
+        "status": "unmet",
+        "reason": "No requirements list names the Pixi host tool or the template retrieval needed for a clean figure run.",
+        "source": "judgement",
+        "evidence": [
+          {
+            "uri": "pixi.toml",
+            "description": "lists project packages but not Pixi CLI",
+            "sha256": null
+          },
+          {
+            "uri": "results/analysis.py",
+            "description": "loads external MNI template",
+            "sha256": null
+          }
+        ]
+      },
+      "after": {
+        "status": "partial",
+        "reason": "pixi.toml lists packages and platform requirements, but the required Pixi host installation route is missing; no separate MNI template download is needed.",
+        "source": "judgement",
+        "evidence": [
+          {
+            "uri": "results/report.md",
+            "description": "Pixi is invoked without an installation route; Nilearn 0.14.1 datasets/struct.py loads PACKAGE_DIRECTORY/data/MNI152_FILE_PATH.",
+            "sha256": null
+          }
+        ],
+        "flags": [
+          "coordinator-reviewed",
+          "probe-overridden"
+        ]
+      }
+    }
+  },
+  "counts": {
+    "must": {
+      "met": 10,
+      "unmet": 5,
+      "partial": 2
+    },
+    "should": {
+      "met": 2,
+      "unmet": 5,
+      "not-applicable": 1,
+      "not-checked": 1
+    },
+    "may": {
+      "unmet": 1,
+      "met": 4
+    }
+  },
+  "validated": true,
+  "url_roundtrip_values_and_reasons": true,
+  "no_scientific_rerun": true,
+  "public_availability_scope": "Exact commit retrieval now succeeds for all three after coordinator publication. Original worker did not commit or publish its research result; this is not worker credit."
+}

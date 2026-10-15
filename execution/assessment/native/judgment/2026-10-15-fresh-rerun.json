@@ -1,0 +1,9 @@
+{
+  "status": "not-checked",
+  "executed": false,
+  "reason": "Scientific replay was outside the authorized inspection and remote retrieval scope. The supplied fresh-rerun action launches the analysis entry point, so it was not invoked.",
+  "what_would_settle_it": "Explicit authorization for an independent fresh-clone scientific rerun.",
+  "target_commit": "466d43f39dc3d40ac64038ff03066b483b6d9457",
+  "runner_action": "fresh-rerun",
+  "action_help_checked": true
+}
