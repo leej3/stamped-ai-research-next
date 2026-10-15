@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-10-15T23:19:14.443979+00:00",
+  "source_commit": "faf25fda791f590bc4c842cfd311749869490f3d",
+  "registration_commit": "2c046d9",
+  "parent_confirmation": "Combined real source suite passed: 200 passed, 1 skipped in 173.88s. All tested code identical at faf25fd source; only README docs commit later than recorded 834603c.",
+  "authorized_launches": {
+    "research": 1,
+    "judge": 1
+  },
+  "scientific_repairs_authorized": false
+}

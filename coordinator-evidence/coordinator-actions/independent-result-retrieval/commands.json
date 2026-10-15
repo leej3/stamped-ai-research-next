@@ -1,0 +1,767 @@
+[
+  {
+    "number": 1,
+    "argv": [
+      "git",
+      "init"
+    ],
+    "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-independent-result",
+    "started_at": "2026-10-15T23:45:54.299448+00:00",
+    "returncode": 0,
+    "elapsed_seconds": 0.010276708053424954,
+    "stdout": {
+      "path": "01-stdout.txt",
+      "bytes": 148,
+      "sha256": "c2638a57ce5fd7424cd3b92ae8f8748f32002d22fa18acbd3d99e117ee6989f9"
+    },
+    "stderr": {
+      "path": "01-stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  {
+    "number": 2,
+    "argv": [
+      "git",
+      "config",
+      "core.hooksPath",
+      "/dev/null"
+    ],
+    "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-independent-result",
+    "started_at": "2026-10-15T23:45:54.310149+00:00",
+    "returncode": 0,
+    "elapsed_seconds": 0.005090542021207511,
+    "stdout": {
+      "path": "02-stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stderr": {
+      "path": "02-stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  {
+    "number": 3,
+    "argv": [
+      "git",
+      "remote",
+      "add",
+      "origin",
+      "git@github.com:leej3/stamped-ai-research-next.git"
+    ],
+    "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-independent-result",
+    "started_at": "2026-10-15T23:45:54.315555+00:00",
+    "returncode": 0,
+    "elapsed_seconds": 0.005623874953016639,
+    "stdout": {
+      "path": "03-stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stderr": {
+      "path": "03-stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  {
+    "number": 4,
+    "argv": [
+      "git",
+      "config",
+      "--unset-all",
+      "remote.origin.fetch"
+    ],
+    "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-independent-result",
+    "started_at": "2026-10-15T23:45:54.321504+00:00",
+    "returncode": 0,
+    "elapsed_seconds": 0.0056432910496369,
+    "stdout": {
+      "path": "04-stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stderr": {
+      "path": "04-stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  {
+    "number": 5,
+    "argv": [
+      "git",
+      "config",
+      "--add",
+      "remote.origin.fetch",
+      "refs/heads/codex/preparation-stamped-result-20261015:refs/remotes/origin/result"
+    ],
+    "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-independent-result",
+    "started_at": "2026-10-15T23:45:54.327483+00:00",
+    "returncode": 0,
+    "elapsed_seconds": 0.004985874984413385,
+    "stdout": {
+      "path": "05-stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stderr": {
+      "path": "05-stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  {
+    "number": 6,
+    "argv": [
+      "git",
+      "config",
+      "--add",
+      "remote.origin.fetch",
+      "refs/heads/codex/preparation-stamped-annex-result-20261015:refs/heads/git-annex"
+    ],
+    "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-independent-result",
+    "started_at": "2026-10-15T23:45:54.332824+00:00",
+    "returncode": 0,
+    "elapsed_seconds": 0.0055246250703930855,
+    "stdout": {
+      "path": "06-stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stderr": {
+      "path": "06-stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  {
+    "number": 7,
+    "argv": [
+      "git",
+      "config",
+      "remote.origin.annex-ignore",
+      "true"
+    ],
+    "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-independent-result",
+    "started_at": "2026-10-15T23:45:54.338716+00:00",
+    "returncode": 0,
+    "elapsed_seconds": 0.005535708041861653,
+    "stdout": {
+      "path": "07-stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stderr": {
+      "path": "07-stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  {
+    "number": 8,
+    "argv": [
+      "git",
+      "config",
+      "remote.origin.tagOpt",
+      "--no-tags"
+    ],
+    "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-independent-result",
+    "started_at": "2026-10-15T23:45:54.344601+00:00",
+    "returncode": 0,
+    "elapsed_seconds": 0.0046594999730587006,
+    "stdout": {
+      "path": "08-stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stderr": {
+      "path": "08-stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  {
+    "number": 9,
+    "argv": [
+      "git",
+      "fetch",
+      "--no-tags",
+      "--no-recurse-submodules",
+      "--depth=1",
+      "origin",
+      "refs/heads/codex/preparation-stamped-result-20261015:refs/remotes/origin/result",
+      "refs/heads/codex/preparation-stamped-annex-result-20261015:refs/heads/git-annex"
+    ],
+    "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-independent-result",
+    "started_at": "2026-10-15T23:45:54.349582+00:00",
+    "returncode": 0,
+    "elapsed_seconds": 1.1456743750022724,
+    "stdout": {
+      "path": "09-stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stderr": {
+      "path": "09-stderr.txt",
+      "bytes": 209,
+      "sha256": "3f3e09798a127c3ea4401ec5abe3bbaf232abdd7fde356bb77efd96f57b50713"
+    }
+  },
+  {
+    "number": 10,
+    "argv": [
+      "git",
+      "rev-parse",
+      "refs/remotes/origin/result"
+    ],
+    "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-independent-result",
+    "started_at": "2026-10-15T23:45:55.495646+00:00",
+    "returncode": 0,
+    "elapsed_seconds": 0.0046718750381842256,
+    "stdout": {
+      "path": "10-stdout.txt",
+      "bytes": 41,
+      "sha256": "c63d5594bbe1b278ba7bad2e42e44349582661cc8dbbf3d67699aea5e3f0f565"
+    },
+    "stderr": {
+      "path": "10-stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  {
+    "number": 11,
+    "argv": [
+      "git",
+      "rev-parse",
+      "refs/heads/git-annex"
+    ],
+    "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-independent-result",
+    "started_at": "2026-10-15T23:45:55.500647+00:00",
+    "returncode": 0,
+    "elapsed_seconds": 0.004969874978996813,
+    "stdout": {
+      "path": "11-stdout.txt",
+      "bytes": 41,
+      "sha256": "d4ac4de9623ca4ada3ad2af852d8b4abab1b08ac65e3db3d9b19930ac0b7731e"
+    },
+    "stderr": {
+      "path": "11-stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  {
+    "number": 12,
+    "argv": [
+      "git",
+      "checkout",
+      "--detach",
+      "8b5bcdaa999289a47f066ba829511d450301c573"
+    ],
+    "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-independent-result",
+    "started_at": "2026-10-15T23:45:55.505950+00:00",
+    "returncode": 0,
+    "elapsed_seconds": 0.020840332959778607,
+    "stdout": {
+      "path": "12-stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stderr": {
+      "path": "12-stderr.txt",
+      "bytes": 75,
+      "sha256": "6e68b57699a0ab75f71b2b1f86799dbb60717202f0dd1eb73cc474e6062ab4f5"
+    }
+  },
+  {
+    "number": 13,
+    "argv": [
+      "git",
+      "ls-files",
+      "--stage",
+      "-z"
+    ],
+    "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-independent-result",
+    "started_at": "2026-10-15T23:45:55.527202+00:00",
+    "returncode": 0,
+    "elapsed_seconds": 0.0048578339628875256,
+    "stdout": {
+      "path": "13-stdout.txt",
+      "bytes": 15073,
+      "sha256": "30d5e83711300dd9222fce3ceab16b7d9999be01c8dbdc7e8e0d76d55ad2e270"
+    },
+    "stderr": {
+      "path": "13-stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  {
+    "number": 14,
+    "argv": [
+      "pixi",
+      "run",
+      "--frozen",
+      "--manifest-path",
+      "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-coordinator/pixi.toml",
+      "git",
+      "-C",
+      "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-independent-result",
+      "annex",
+      "version"
+    ],
+    "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-independent-result",
+    "started_at": "2026-10-15T23:45:55.533291+00:00",
+    "returncode": 0,
+    "elapsed_seconds": 0.06917262496426702,
+    "stdout": {
+      "path": "14-stdout.txt",
+      "bytes": 1161,
+      "sha256": "d21528cfc354f44b029bc4b3848c4ce22f7e8b5d66891cf43d841d632a4ac47d"
+    },
+    "stderr": {
+      "path": "14-stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  {
+    "number": 15,
+    "argv": [
+      "pixi",
+      "run",
+      "--frozen",
+      "--manifest-path",
+      "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-coordinator/pixi.toml",
+      "git",
+      "-C",
+      "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-independent-result",
+      "annex",
+      "init",
+      "cold-stamped-independent-result-20261015"
+    ],
+    "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-independent-result",
+    "started_at": "2026-10-15T23:45:55.602894+00:00",
+    "returncode": 0,
+    "elapsed_seconds": 0.1862912499345839,
+    "stdout": {
+      "path": "15-stdout.txt",
+      "bytes": 77,
+      "sha256": "14e5ef5db9f862fb56991aed5ea5ef7279c9913d055251ba38ef6b015ad2bfec"
+    },
+    "stderr": {
+      "path": "15-stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  {
+    "number": 16,
+    "argv": [
+      "git",
+      "remote",
+      "add",
+      "con-hub",
+      "https://hub.centerforopenneuroscience.org/leej3/stamped-ai-research-next.git"
+    ],
+    "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-independent-result",
+    "started_at": "2026-10-15T23:45:55.789674+00:00",
+    "returncode": 0,
+    "elapsed_seconds": 0.005719125038012862,
+    "stdout": {
+      "path": "16-stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stderr": {
+      "path": "16-stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  {
+    "number": 17,
+    "argv": [
+      "git",
+      "config",
+      "remote.con-hub.skipFetchAll",
+      "true"
+    ],
+    "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-independent-result",
+    "started_at": "2026-10-15T23:45:55.795765+00:00",
+    "returncode": 0,
+    "elapsed_seconds": 0.005078666959889233,
+    "stdout": {
+      "path": "17-stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stderr": {
+      "path": "17-stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  {
+    "number": 18,
+    "argv": [
+      "git",
+      "config",
+      "remote.con-hub.annexurl",
+      "annex+https://hub.centerforopenneuroscience.org:443/git-annex-p2phttp"
+    ],
+    "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-independent-result",
+    "started_at": "2026-10-15T23:45:55.801244+00:00",
+    "returncode": 0,
+    "elapsed_seconds": 0.0049464169424027205,
+    "stdout": {
+      "path": "18-stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stderr": {
+      "path": "18-stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  {
+    "number": 19,
+    "argv": [
+      "pixi",
+      "run",
+      "--frozen",
+      "--manifest-path",
+      "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-coordinator/pixi.toml",
+      "git",
+      "-C",
+      "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-independent-result",
+      "annex",
+      "info",
+      "con-hub",
+      "--json"
+    ],
+    "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-independent-result",
+    "started_at": "2026-10-15T23:45:55.806577+00:00",
+    "returncode": 0,
+    "elapsed_seconds": 0.38754649995826185,
+    "stdout": {
+      "path": "19-stdout.txt",
+      "bytes": 442,
+      "sha256": "8d0c1b3accdab0ca28a8cd2e2135837c9b02fe6f33bfaddf0844d09679f3db9c"
+    },
+    "stderr": {
+      "path": "19-stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  {
+    "number": 20,
+    "argv": [
+      "pixi",
+      "run",
+      "--frozen",
+      "--manifest-path",
+      "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-coordinator/pixi.toml",
+      "git",
+      "-C",
+      "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-independent-result",
+      "annex",
+      "find",
+      "--anything",
+      "--json"
+    ],
+    "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-independent-result",
+    "started_at": "2026-10-15T23:45:56.194636+00:00",
+    "returncode": 0,
+    "elapsed_seconds": 0.07809050008654594,
+    "stdout": {
+      "path": "20-stdout.txt",
+      "bytes": 18274,
+      "sha256": "8f0f2576cbb86fde74f259a71441734b05cef315ba3ff6ec95ee6056fbdaae6e"
+    },
+    "stderr": {
+      "path": "20-stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  {
+    "number": 21,
+    "argv": [
+      "git",
+      "rev-parse",
+      "HEAD"
+    ],
+    "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-independent-result",
+    "started_at": "2026-10-15T23:47:14.136079+00:00",
+    "returncode": 0,
+    "elapsed_seconds": 0.005089333979412913,
+    "stdout": {
+      "path": "21-stdout.txt",
+      "bytes": 41,
+      "sha256": "c63d5594bbe1b278ba7bad2e42e44349582661cc8dbbf3d67699aea5e3f0f565"
+    },
+    "stderr": {
+      "path": "21-stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  {
+    "number": 22,
+    "argv": [
+      "pixi",
+      "run",
+      "--frozen",
+      "--manifest-path",
+      "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-coordinator/pixi.toml",
+      "git",
+      "-C",
+      "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-independent-result",
+      "annex",
+      "find",
+      "--anything",
+      "--json"
+    ],
+    "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-independent-result",
+    "started_at": "2026-10-15T23:47:14.141700+00:00",
+    "returncode": 0,
+    "elapsed_seconds": 0.07525870902463794,
+    "stdout": {
+      "path": "22-stdout.txt",
+      "bytes": 18274,
+      "sha256": "8f0f2576cbb86fde74f259a71441734b05cef315ba3ff6ec95ee6056fbdaae6e"
+    },
+    "stderr": {
+      "path": "22-stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  {
+    "number": 23,
+    "argv": [
+      "pixi",
+      "run",
+      "--frozen",
+      "--manifest-path",
+      "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-coordinator/pixi.toml",
+      "git",
+      "-C",
+      "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-independent-result",
+      "annex",
+      "find",
+      "--in=here",
+      "--json"
+    ],
+    "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-independent-result",
+    "started_at": "2026-10-15T23:47:14.217562+00:00",
+    "returncode": 0,
+    "elapsed_seconds": 0.0888159159803763,
+    "stdout": {
+      "path": "23-stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stderr": {
+      "path": "23-stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  {
+    "number": 24,
+    "argv": [
+      "pixi",
+      "run",
+      "--frozen",
+      "--manifest-path",
+      "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-coordinator/pixi.toml",
+      "git",
+      "-C",
+      "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-independent-result",
+      "annex",
+      "get",
+      "--from=con-hub",
+      "--json",
+      "--",
+      "input/data/sub-001_hypo1_cope.nii.gz",
+      "input/data/sub-003_hypo1_cope.nii.gz",
+      "input/data/sub-005_hypo1_cope.nii.gz",
+      "input/data/sub-009_hypo1_cope.nii.gz",
+      "input/data/sub-011_hypo1_cope.nii.gz",
+      "input/data/sub-013_hypo1_cope.nii.gz",
+      "input/data/sub-015_hypo1_cope.nii.gz",
+      "input/data/sub-017_hypo1_cope.nii.gz",
+      "input/data/sub-019_hypo1_cope.nii.gz",
+      "input/data/sub-021_hypo1_cope.nii.gz",
+      "input/data/sub-025_hypo1_cope.nii.gz",
+      "input/data/sub-027_hypo1_cope.nii.gz",
+      "input/data/sub-029_hypo1_cope.nii.gz",
+      "input/data/sub-033_hypo1_cope.nii.gz",
+      "input/data/sub-035_hypo1_cope.nii.gz",
+      "input/data/sub-037_hypo1_cope.nii.gz",
+      "input/data/sub-039_hypo1_cope.nii.gz",
+      "input/data/sub-041_hypo1_cope.nii.gz",
+      "input/data/sub-043_hypo1_cope.nii.gz",
+      "input/data/sub-045_hypo1_cope.nii.gz",
+      "input/data/sub-047_hypo1_cope.nii.gz",
+      "input/data/sub-049_hypo1_cope.nii.gz",
+      "input/data/sub-051_hypo1_cope.nii.gz",
+      "input/data/sub-053_hypo1_cope.nii.gz",
+      "input/data/sub-055_hypo1_cope.nii.gz",
+      "input/data/sub-057_hypo1_cope.nii.gz",
+      "input/data/sub-059_hypo1_cope.nii.gz",
+      "input/data/sub-061_hypo1_cope.nii.gz",
+      "input/data/sub-063_hypo1_cope.nii.gz",
+      "input/data/sub-067_hypo1_cope.nii.gz",
+      "input/data/sub-069_hypo1_cope.nii.gz",
+      "input/data/sub-071_hypo1_cope.nii.gz",
+      "input/data/sub-073_hypo1_cope.nii.gz",
+      "input/data/sub-075_hypo1_cope.nii.gz",
+      "input/data/sub-077_hypo1_cope.nii.gz",
+      "input/data/sub-079_hypo1_cope.nii.gz",
+      "input/data/sub-081_hypo1_cope.nii.gz",
+      "input/data/sub-083_hypo1_cope.nii.gz",
+      "input/data/sub-085_hypo1_cope.nii.gz",
+      "input/data/sub-087_hypo1_cope.nii.gz",
+      "input/data/sub-089_hypo1_cope.nii.gz",
+      "input/data/sub-093_hypo1_cope.nii.gz",
+      "input/data/sub-095_hypo1_cope.nii.gz",
+      "input/data/sub-099_hypo1_cope.nii.gz",
+      "input/data/sub-103_hypo1_cope.nii.gz",
+      "input/data/sub-105_hypo1_cope.nii.gz",
+      "input/data/sub-107_hypo1_cope.nii.gz",
+      "input/data/sub-109_hypo1_cope.nii.gz",
+      "input/data/sub-113_hypo1_cope.nii.gz",
+      "input/data/sub-115_hypo1_cope.nii.gz",
+      "input/data/sub-117_hypo1_cope.nii.gz",
+      "input/data/sub-119_hypo1_cope.nii.gz",
+      "input/data/sub-121_hypo1_cope.nii.gz",
+      "input/data/sub-123_hypo1_cope.nii.gz",
+      "results/group-mean.nii.gz",
+      "results/group-t.nii.gz",
+      "results/mni152_template_2mm.nii.gz",
+      "results/permutation-max-t.tsv"
+    ],
+    "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-independent-result",
+    "started_at": "2026-10-15T23:47:14.307135+00:00",
+    "returncode": 0,
+    "elapsed_seconds": 8.388390582986176,
+    "stdout": {
+      "path": "24-stdout.txt",
+      "bytes": 13755,
+      "sha256": "e56dd0ca0a6b81019085deadfc54f7ab2e8f329686b29fd2f180b937f353959d"
+    },
+    "stderr": {
+      "path": "24-stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  {
+    "number": 25,
+    "argv": [
+      "git",
+      "rev-parse",
+      "HEAD"
+    ],
+    "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-independent-result",
+    "started_at": "2026-10-15T23:47:22.769988+00:00",
+    "returncode": 0,
+    "elapsed_seconds": 0.005570500041358173,
+    "stdout": {
+      "path": "25-stdout.txt",
+      "bytes": 41,
+      "sha256": "c63d5594bbe1b278ba7bad2e42e44349582661cc8dbbf3d67699aea5e3f0f565"
+    },
+    "stderr": {
+      "path": "25-stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  {
+    "number": 26,
+    "argv": [
+      "git",
+      "status",
+      "--porcelain=v1",
+      "--untracked-files=all"
+    ],
+    "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-independent-result",
+    "started_at": "2026-10-15T23:47:22.775977+00:00",
+    "returncode": 0,
+    "elapsed_seconds": 0.05853908299468458,
+    "stdout": {
+      "path": "26-stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stderr": {
+      "path": "26-stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  {
+    "number": 27,
+    "argv": [
+      "git",
+      "for-each-ref",
+      "--format=%(refname) %(objectname)"
+    ],
+    "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-independent-result",
+    "started_at": "2026-10-15T23:47:22.834937+00:00",
+    "returncode": 0,
+    "elapsed_seconds": 0.00559283304028213,
+    "stdout": {
+      "path": "27-stdout.txt",
+      "bytes": 193,
+      "sha256": "573526ab6f5baa03bc0a0e5f87a21c368173bce258006f368c104c3ba3db018a"
+    },
+    "stderr": {
+      "path": "27-stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  {
+    "number": 28,
+    "argv": [
+      "pixi",
+      "run",
+      "--frozen",
+      "--manifest-path",
+      "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-coordinator/pixi.toml",
+      "git",
+      "-C",
+      "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-independent-result",
+      "annex",
+      "find",
+      "--in=here",
+      "--json"
+    ],
+    "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-independent-result",
+    "started_at": "2026-10-15T23:47:22.840921+00:00",
+    "returncode": 0,
+    "elapsed_seconds": 0.08959816698916256,
+    "stdout": {
+      "path": "28-stdout.txt",
+      "bytes": 18274,
+      "sha256": "8f0f2576cbb86fde74f259a71441734b05cef315ba3ff6ec95ee6056fbdaae6e"
+    },
+    "stderr": {
+      "path": "28-stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  }
+]

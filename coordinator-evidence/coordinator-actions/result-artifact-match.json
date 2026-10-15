@@ -1,0 +1,8 @@
+{
+  "worker_head_commit": "8b5bcdaa999289a47f066ba829511d450301c573",
+  "result_commit": "8b5bcdaa999289a47f066ba829511d450301c573",
+  "artifacts_match": true,
+  "submodule_identity_without_checkout": [
+    "skills/evals"
+  ]
+}

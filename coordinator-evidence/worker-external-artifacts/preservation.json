@@ -1,0 +1,23 @@
+{
+  "preserved_at": "2026-10-15T23:43:59.796658+00:00",
+  "coordinator_retention": true,
+  "included_in_judged_result": false,
+  "sources": [
+    {
+      "source": "/tmp/narps-stamped-assessment-20261015",
+      "archive": "narps-stamped-assessment-20261015.tar.gz",
+      "sha256": "6bbe9501153f5a266d55071abec26dac8e6f95cf8e756e590290aa3c6d1b4490",
+      "bytes": 15349,
+      "omitted_reconstructible_caches": []
+    },
+    {
+      "source": "/tmp/narps-h1-replay-7405a7b",
+      "archive": "narps-h1-replay-7405a7b.tar.gz",
+      "sha256": "7f4b5bcbbcebe93989353d46fd558e5b2edcd5636e3d759d425d20520e4687d5",
+      "bytes": 123828826,
+      "omitted_reconstructible_caches": [
+        "narps-h1-replay-7405a7b/.pixi"
+      ]
+    }
+  ]
+}

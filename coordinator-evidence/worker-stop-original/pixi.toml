@@ -1,0 +1,35 @@
+[workspace]
+name = "stamped-ai-research-next"
+channels = ["conda-forge"]
+platforms = [{ platform = "osx-arm64", macos = "14.0" }, "linux-64"]
+
+[dependencies]
+python = ">=3.11,<3.14"
+git = "*"
+numpy = "*"
+scipy = "*"
+nibabel = ">=5.4.2,<6"
+nilearn = ">=0.14.1,<0.15"
+pandas = "*"
+matplotlib-base = "*"
+pyyaml = "*"
+jsonschema = "*"
+pre-commit = "*"
+tomlkit = "*"
+pytest = "*"
+rfc3339-validator = "*"
+
+[tasks]
+analysis = "python scripts/analyze.py"
+pilot = "python scripts/analyze.py --pilot"
+validate = "python scripts/validate_results.py"
+recorded-analysis = "bash scripts/run_recorded_analysis.sh"
+
+[pypi-dependencies]
+datalad = "*"
+git-annex = "*"
+con-duct = "*"
+tiktoken = "*"
+pytest-evals = "==0.3.4"
+tox = "*"
+

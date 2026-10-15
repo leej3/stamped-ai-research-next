@@ -1,0 +1,3 @@
+refs/annex/last-index 1b3f0c3df3544a14a98762bb5c9ab83aa696f3a6
+refs/heads/git-annex 89445b5f802fa75351a4667129c57a513ffc8bfa
+refs/remotes/origin/result 8b5bcdaa999289a47f066ba829511d450301c573

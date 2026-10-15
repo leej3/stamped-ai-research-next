@@ -1,0 +1,11 @@
+{
+  "result_commit": "8b5bcdaa999289a47f066ba829511d450301c573",
+  "metadata_commit": "560603b3241f4d4816787336b809358d090a9b85",
+  "stop_receipt_sha256": "0c381872b334e7a226479f2595c3e169fcf4dcd45b9906e40cc33d1256797e6d",
+  "index_matches": true,
+  "annex_expected_path_count": 54,
+  "annex_payloads_present": [],
+  "git_object_alternates": false,
+  "coordinator_manifest_sha256": "4d22a0c3e3c47289f62bfe1710a287a0271162767040d03f5dd1880f6cddb48a",
+  "coordinator_lock_sha256": "f8fff1394fbeaa2ab1c4993fceb0dd6463fe0c08c81fcda397f3e752a72c4249"
+}

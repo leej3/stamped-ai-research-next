@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "preserved_at": "2026-10-15T23:49:59.497801+00:00",
+  "archive": "failed-target.tar.gz",
+  "sha256": "71cbadab0bb4a7f33beba2f6f35378c4c0b49428287cf6e7e03e52324c7cc694",
+  "bytes": 819154,
+  "native_judge_sessions": 0,
+  "judge_attempts": 1,
+  "judge_output_repository_created": false,
+  "scientific_assessment": "not performed",
+  "replay": "not attempted",
+  "relaunch": false
+}

@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "passed": true,
+  "result_commit": "8b5bcdaa999289a47f066ba829511d450301c573",
+  "published_annex_metadata_commit": "560603b3241f4d4816787336b809358d090a9b85",
+  "destination": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-independent-result",
+  "source_remote": "git@github.com:leej3/stamped-ai-research-next.git",
+  "result_ref": "refs/heads/codex/preparation-stamped-result-20261015",
+  "annex_metadata_ref": "refs/heads/codex/preparation-stamped-annex-result-20261015",
+  "annex_content_source": "con-hub",
+  "annex_required_paths": 58,
+  "annex_retrieved_paths": 58,
+  "annex_unique_keys": 58,
+  "annex_input_paths": 54,
+  "annex_result_paths": 4,
+  "annex_verified_bytes": 98752182,
+  "annex_all_hashes_match_original_stop_receipt": true,
+  "annex_all_required_paths_available_after_get": true,
+  "git_regular_files_verified": 112,
+  "git_symlinks_verified": 6,
+  "git_index_matches_original_stop_receipt": true,
+  "all_git_file_hashes_match_original_stop_receipt": true,
+  "end_head": "8b5bcdaa999289a47f066ba829511d450301c573",
+  "end_status_porcelain": "",
+  "end_refs": [
+    "refs/annex/last-index 1b3f0c3df3544a14a98762bb5c9ab83aa696f3a6",
+    "refs/heads/git-annex 89445b5f802fa75351a4667129c57a513ffc8bfa",
+    "refs/remotes/origin/result 8b5bcdaa999289a47f066ba829511d450301c573"
+  ],
+  "stop_receipt_path": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-evidence/launch/native/worker-end-state.json",
+  "stop_receipt_sha256": "0c381872b334e7a226479f2595c3e169fcf4dcd45b9906e40cc33d1256797e6d",
+  "finished_at": "2026-10-15T23:47:22.931313+00:00",
+  "initial_inventory_guard": "Retained failure.json records the first check recognizing only 54 locked symlinks; continuation uses annex inventory and includes all four unlocked results.",
+  "limitations": [
+    "Independent fresh repository and initially empty annex store on the same host; not a second-host test.",
+    "No scientific replay, worker environment resolution, source changes, source commits, pushes, or worker intervention.",
+    "Skills submodule left uninitialized; exact gitlink is covered by original stop-receipt index comparison.",
+    "Local git-annex initialization and retrieval update local annex bookkeeping only."
+  ]
+}

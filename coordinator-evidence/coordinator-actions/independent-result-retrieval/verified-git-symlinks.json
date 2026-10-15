@@ -1,0 +1,32 @@
+[
+  {
+    "path": ".agents/skills/align-with-stamped-principles",
+    "link_target": "../../skills/skills/align-with-stamped-principles",
+    "matches_stop_receipt": true
+  },
+  {
+    "path": ".agents/skills/create-repronim-stamped-project",
+    "link_target": "../../skills/skills/create-repronim-stamped-project",
+    "matches_stop_receipt": true
+  },
+  {
+    "path": ".agents/skills/create-stamped-project",
+    "link_target": "../../skills/skills/create-stamped-project",
+    "matches_stop_receipt": true
+  },
+  {
+    "path": ".agents/skills/do-full-research-loop",
+    "link_target": "../../skills/skills/do-full-research-loop",
+    "matches_stop_receipt": true
+  },
+  {
+    "path": ".agents/skills/pixi-with-stamped",
+    "link_target": "../../skills/skills/pixi-with-stamped",
+    "matches_stop_receipt": true
+  },
+  {
+    "path": ".agents/skills/stamped-conventions",
+    "link_target": "../../skills/skills/stamped-conventions",
+    "matches_stop_receipt": true
+  }
+]

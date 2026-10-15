@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-10-15T23:44:52.594016+00:00",
+  "result_commit": "8b5bcdaa999289a47f066ba829511d450301c573",
+  "result_tree": "1b3f0c3df3544a14a98762bb5c9ab83aa696f3a6",
+  "result_ref": "refs/heads/codex/preparation-stamped-result-20261015",
+  "annex_metadata_commit": "560603b3241f4d4816787336b809358d090a9b85",
+  "annex_metadata_ref": "refs/heads/codex/preparation-stamped-annex-result-20261015",
+  "worker_credit": "All publication described here was coordinator work after worker stop.",
+  "annex_copy_all_returncode": 0,
+  "environment_snapshot_commit": "51766371ebba9eba67c8bbf943619710768621c2",
+  "environment_snapshot_parent": "8b5bcdaa999289a47f066ba829511d450301c573",
+  "environment_snapshot_tree_matches_result": true,
+  "environment_branch": "codex/preparation-stamped-env-20261015",
+  "lock_sha256": "5884bb53a343659adce7759c1b48477e2cdffb71b4838e49d14810e75dc75f21"
+}

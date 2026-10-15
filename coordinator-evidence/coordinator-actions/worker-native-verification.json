@@ -1,0 +1,74 @@
+{
+  "verified_at": "2026-10-15T23:43:43.393787+00:00",
+  "checkout": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-worker",
+  "commit": "8b5bcdaa999289a47f066ba829511d450301c573",
+  "code_ref": "refs/heads/codex/preparation-stamped-worker-20261015",
+  "checkpoint_id": "01M50YXJW556KH5SFXDQWFAV2T",
+  "code_ref_oid": "8b5bcdaa999289a47f066ba829511d450301c573",
+  "child_task_id": null,
+  "event_checkout": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-worker",
+  "event_commit": null,
+  "checkpoint_ref": "refs/entire/checkpoints/2T/01M50YXJW556KH5SFXDQWFAV2T",
+  "checkpoint_oid": "311ad27cbb133891c300f523d38d439a636012e1",
+  "branch": "codex/preparation-stamped-worker-20261015",
+  "session_id": "01a141db-2f2c-70a3-aaa9-5b6a46c89601",
+  "all_checkpoint_session_ids": [
+    "01a141db-2f2c-70a3-aaa9-5b6a46c89601"
+  ],
+  "native_capture_verified": true,
+  "identities": [
+    {
+      "session_id": "01a141db-2f2c-70a3-aaa9-5b6a46c89601",
+      "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-worker",
+      "source": "exec"
+    }
+  ],
+  "file_events": [
+    {
+      "line": 776,
+      "item_id": "exec-640d288c-ab41-4e73-a5b7-c2fb77b90cb6",
+      "file": "results/report.md",
+      "evidence_kind": "completed-file-change"
+    },
+    {
+      "line": 796,
+      "item_id": "exec-a3db2a67-d8ed-41ec-95a5-4f641163592c",
+      "file": "results/report.md",
+      "evidence_kind": "completed-file-change"
+    },
+    {
+      "line": 868,
+      "item_id": "exec-76956451-8198-48c6-ad06-8e1abf3a14d4",
+      "file": "results/report.md",
+      "evidence_kind": "completed-file-change"
+    },
+    {
+      "line": 1340,
+      "item_id": "exec-99dda6f7-119a-424e-9e9b-3521766db72c",
+      "file": "results/report.md",
+      "evidence_kind": "completed-file-change"
+    },
+    {
+      "line": 1433,
+      "item_id": "exec-e2fc0dca-8147-4a4a-9bbf-948db7b679ab",
+      "file": "results/report.md",
+      "evidence_kind": "completed-file-change"
+    },
+    {
+      "line": 1528,
+      "item_id": "exec-e6940559-2bad-4580-8774-f4d34a9e1a04",
+      "file": "results/report.md",
+      "evidence_kind": "completed-file-change"
+    }
+  ],
+  "committed_file_sha256": "edc5108a1dd1001ed9795f8937a8c58209db0730534b2019dd76b4bb71c5b9ea",
+  "transcript_sha256": "37293db118bd5407232b7992a3bd13772758cba80dae641211f925f285d7ba74",
+  "transcript_bytes": 2347198,
+  "private_guidance_marker_hits": [],
+  "raw_transcript_saved": false,
+  "uploaded_refs_verified": true,
+  "hosted_verified": true,
+  "hosted_session_ids": [
+    "01a141db-2f2c-70a3-aaa9-5b6a46c89601"
+  ]
+}

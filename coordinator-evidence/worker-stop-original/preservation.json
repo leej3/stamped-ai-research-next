@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "preserved_at": "2026-10-15T23:42:36.924198+00:00",
+  "worker_head_commit": "8b5bcdaa999289a47f066ba829511d450301c573",
+  "source_stop_receipt_sha256": "0c381872b334e7a226479f2595c3e169fcf4dcd45b9906e40cc33d1256797e6d",
+  "files": {
+    "pixi.toml": {
+      "sha256": "1579e88b47d121f679d95c87d3afb683e99b14fda68487bdb0bb1dd889cb4b66",
+      "bytes": 716
+    },
+    "artifacts.tar.gz": {
+      "sha256": "d51aa710628e7c4726b96614f38f5bd968cce6cd7502f6febc3385593e47cd6e",
+      "bytes": 98026448
+    },
+    "pixi.lock": {
+      "sha256": "5884bb53a343659adce7759c1b48477e2cdffb71b4838e49d14810e75dc75f21",
+      "bytes": 175639
+    },
+    "worker-end-state.json": {
+      "sha256": "0c381872b334e7a226479f2595c3e169fcf4dcd45b9906e40cc33d1256797e6d",
+      "bytes": 155453
+    }
+  },
+  "omissions": [
+    "Reconstructible .pixi cache and Git object storage; committed submodule identities remain in original stop receipt."
+  ],
+  "coordinator_action": "Preservation only; no worker environment resolution, scientific edits or new execution."
+}

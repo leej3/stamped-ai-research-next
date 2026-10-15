@@ -1,0 +1,20 @@
+{
+  "config_version": 1,
+  "config_sha256": "2d41f2690f427f468ddec46c8d40944d28a21f2013315dde8c1e4618b29d79c5",
+  "requested_condition": "stamped-explicit",
+  "condition": "stamped-explicit",
+  "additional_prompt": "Use the supplied, pinned STAMPED skills to complete this study: start with do-full-research-loop and apply the related guidance where appropriate.",
+  "additional_prompt_sha256": "4693d9573acb89f866e9915ef7406aeb2b89caadf8bf2a3548199a5691fd58ae",
+  "supplied_skills": [
+    "align-with-stamped-principles",
+    "stamped-conventions",
+    "create-stamped-project",
+    "create-repronim-stamped-project",
+    "do-full-research-loop",
+    "pixi-with-stamped"
+  ],
+  "prompt_sha256": "a2ccf38475f9c23b0839f366dcfa0e70c4368aa226e5d0fc383040f1b3b8423f",
+  "coordinator_commit": "2c046d949ab1ef33802f49d7c735c94e9e5df0f9",
+  "supplied_skills_commit": "c90252a7b9072a4828e9c0b1fa6e5f48409a9cfa",
+  "capture_execution": true
+}

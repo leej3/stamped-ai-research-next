@@ -1,0 +1,9 @@
+{
+  "checkout": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-worker",
+  "kind": "independent-repository",
+  "branch": "codex/preparation-stamped-worker-20261015",
+  "base": "2c046d9",
+  "base_commit": "2c046d949ab1ef33802f49d7c735c94e9e5df0f9",
+  "worker_commit": "d4a72568b8465a772761cf44e359685e0d71b404",
+  "role": "research"
+}

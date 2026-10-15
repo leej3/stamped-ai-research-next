@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-10-15T23:49:03.211139+00:00",
+  "phase": "judge target worker-stop validation before annex initialization",
+  "exit_code": 1,
+  "native_judge_started": false,
+  "error": "Worker-stop evidence failed: Result artifacts differ from the worker end-state inventory",
+  "mismatches": [
+    {
+      "path": "results/group-mean.nii.gz",
+      "original_stop": {
+        "path": "results/group-mean.nii.gz",
+        "tracked": true,
+        "kind": "file",
+        "size": 1012185,
+        "executable": false,
+        "sha256": "efae119d23c1aa9338c965ecf23658584cb3c7b37a379bc956ba3512e575b723"
+      },
+      "fresh_checkout": {
+        "path": "results/group-mean.nii.gz",
+        "tracked": true,
+        "kind": "file",
+        "size": 105,
+        "executable": false,
+        "sha256": "4ccb4260b69a7600a3d8f64f29a081c0af0072d55a56f8c8104c22eb18321934"
+      },
+      "fresh_file_utf8": "/annex/objects/SHA256E-s1012185--efae119d23c1aa9338c965ecf23658584cb3c7b37a379bc956ba3512e575b723.nii.gz\n",
+      "committed_blob_bytes": 105
+    },
+    {
+      "path": "results/group-t.nii.gz",
+      "original_stop": {
+        "path": "results/group-t.nii.gz",
+        "tracked": true,
+        "kind": "file",
+        "size": 1013790,
+        "executable": false,
+        "sha256": "818262bf4481df4ae3d73d41033953eb844772f9df8291ca7ebcc5a4bd088d1e"
+      },
+      "fresh_checkout": {
+        "path": "results/group-t.nii.gz",
+        "tracked": true,
+        "kind": "file",
+        "size": 105,
+        "executable": false,
+        "sha256": "6807d19fd8f3e9f055d51b667b28f33e8ed2ecbce6d74975ffc81451c90aa943"
+      },
+      "fresh_file_utf8": "/annex/objects/SHA256E-s1013790--818262bf4481df4ae3d73d41033953eb844772f9df8291ca7ebcc5a4bd088d1e.nii.gz\n",
+      "committed_blob_bytes": 105
+    },
+    {
+      "path": "results/mni152_template_2mm.nii.gz",
+      "original_stop": {
+        "path": "results/mni152_template_2mm.nii.gz",
+        "tracked": true,
+        "kind": "file",
+        "size": 230063,
+        "executable": false,
+        "sha256": "0d8b8f9574a88657bad490d7f64d804cb11ab77a339882990e8a3786e141c9f3"
+      },
+      "fresh_checkout": {
+        "path": "results/mni152_template_2mm.nii.gz",
+        "tracked": true,
+        "kind": "file",
+        "size": 104,
+        "executable": false,
+        "sha256": "e7a938c025226bdca4587efb50854fa2c8dd253ee84be28b9cc7ce0206721361"
+      },
+      "fresh_file_utf8": "/annex/objects/SHA256E-s230063--0d8b8f9574a88657bad490d7f64d804cb11ab77a339882990e8a3786e141c9f3.nii.gz\n",
+      "committed_blob_bytes": 104
+    },
+    {
+      "path": "results/permutation-max-t.tsv",
+      "original_stop": {
+        "path": "results/permutation-max-t.tsv",
+        "tracked": true,
+        "kind": "file",
+        "size": 108880,
+        "executable": false,
+        "sha256": "30aa30f802c46ae062550aa8a1faa472f6a66c05c638e440124f197f3726c45a"
+      },
+      "fresh_checkout": {
+        "path": "results/permutation-max-t.tsv",
+        "tracked": true,
+        "kind": "file",
+        "size": 101,
+        "executable": false,
+        "sha256": "6122473243158898bb2d0e306d48f869db55ef5d006383e5b26b18daba8fde37"
+      },
+      "fresh_file_utf8": "/annex/objects/SHA256E-s108880--30aa30f802c46ae062550aa8a1faa472f6a66c05c638e440124f197f3726c45a.tsv\n",
+      "committed_blob_bytes": 101
+    }
+  ],
+  "source_locations": [
+    "scripts/prepare_launch.py:240",
+    "scripts/worker_end_state.py:69",
+    "scripts/worker_end_state.py:validate_retained_artifacts"
+  ],
+  "interpretation": "Fresh clone has unlocked annex pointer files as regular files before git-annex initialization. Stop receipt captured their materialized content. _annex_content only recognizes symlink annex pointers; validator compares pointer bytes to delivered payload bytes. Independent retrieval succeeded for all four results and 54 inputs.",
+  "action": "Preserve original failure; no source repair or relaunch under this seal."
+}

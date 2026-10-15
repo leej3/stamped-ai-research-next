@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "supplied_context": [
+    "Prepared shallow checkout and selected input/skill/assessment submodules",
+    "Private launch config and successful host readiness receipt",
+    "Exact common starting environment and permitted one-worker/one-judge preparation scope",
+    "Explicit preservation, publication, capture-verification and registration requirements",
+    "Parent regression confirmation: 200 passed, 1 skipped",
+    "Later parent reminder to publish judge output code under distinct preparation judgment ref",
+    "After worker exit, parent identified missing explicit publication authorization and ignored-working-lock policy in current research prompt; instructed current sealed judgment remain unchanged and future common instructions be clarified."
+  ],
+  "scientific_worker_steering": [],
+  "limitation": "This tests a supplied-host, limited preparation handoff; it is not an unaided setup or formal scientific comparison.",
+  "handoff_limitations": [
+    "The current research prompt did not state the coordinator ignored-working-lock policy or explicit Git/annex publication authorization. Tracked worker lock and absent worker publication are therefore not clear violations of its supplied task.",
+    "The environment branch uses the requested preparation prefix; the snapshot is an identical-tree coordinator commit one above the exact result because worker already committed its lock."
+  ]
+}

@@ -1,0 +1,169 @@
+{
+  "scope": "Only delivered duct info records; not complete model or host resource accounting. Worker session elapsed separately.",
+  "records": [
+    {
+      "path": "logs/20261015T233530Z-analysis-info.json",
+      "exit_code": 0,
+      "wall_clock_time": 15.257977962493896,
+      "working_directory": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-worker",
+      "duct_version": "0.23.0",
+      "num_samples": 15
+    },
+    {
+      "path": "logs/20261015T2337-validation-info.json",
+      "exit_code": 0,
+      "wall_clock_time": 1.3629989624023438,
+      "working_directory": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-worker",
+      "duct_version": "0.23.0",
+      "num_samples": 2
+    },
+    {
+      "path": "logs/20261015T233701Z-analysis-info.json",
+      "exit_code": 0,
+      "wall_clock_time": 15.645165920257568,
+      "working_directory": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-worker",
+      "duct_version": "0.23.0",
+      "num_samples": 15
+    },
+    {
+      "path": "logs/20261015T233747Z-analysis-info.json",
+      "exit_code": 0,
+      "wall_clock_time": 16.866342067718506,
+      "working_directory": "/private/tmp/narps-h1-replay-7405a7b",
+      "duct_version": "0.23.0",
+      "num_samples": 17
+    },
+    {
+      "path": "logs/group-20261015-info.json",
+      "exit_code": 1,
+      "wall_clock_time": 2.2729690074920654,
+      "working_directory": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-worker",
+      "duct_version": "0.23.0",
+      "num_samples": 3
+    },
+    {
+      "path": "logs/group-clusters-20261015-info.json",
+      "exit_code": 0,
+      "wall_clock_time": 15.375704050064087,
+      "working_directory": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-worker",
+      "duct_version": "0.23.0",
+      "num_samples": 15
+    },
+    {
+      "path": "logs/group-complete-20261015-info.json",
+      "exit_code": 1,
+      "wall_clock_time": 16.8789119720459,
+      "working_directory": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-worker",
+      "duct_version": "0.23.0",
+      "num_samples": 17
+    },
+    {
+      "path": "logs/group-figures-20261015-info.json",
+      "exit_code": 0,
+      "wall_clock_time": 14.901875019073486,
+      "working_directory": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-worker",
+      "duct_version": "0.23.0",
+      "num_samples": 15
+    },
+    {
+      "path": "logs/group-final-20261015-info.json",
+      "exit_code": 1,
+      "wall_clock_time": 15.88921594619751,
+      "working_directory": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-worker",
+      "duct_version": "0.23.0",
+      "num_samples": 16
+    },
+    {
+      "path": "logs/group-report-20261015-info.json",
+      "exit_code": 0,
+      "wall_clock_time": 14.623332977294922,
+      "working_directory": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-worker",
+      "duct_version": "0.23.0",
+      "num_samples": 14
+    },
+    {
+      "path": "logs/group-reproducible-20261015-info.json",
+      "exit_code": 1,
+      "wall_clock_time": 14.660959005355835,
+      "working_directory": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-worker",
+      "duct_version": "0.23.0",
+      "num_samples": 14
+    },
+    {
+      "path": "logs/group-retry-20261015-info.json",
+      "exit_code": 1,
+      "wall_clock_time": 15.012868165969849,
+      "working_directory": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-worker",
+      "duct_version": "0.23.0",
+      "num_samples": 15
+    },
+    {
+      "path": "logs/group-validated-20261015-info.json",
+      "exit_code": 0,
+      "wall_clock_time": 16.212518215179443,
+      "working_directory": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-worker",
+      "duct_version": "0.23.0",
+      "num_samples": 16
+    },
+    {
+      "path": "logs/pilot-20261015-info.json",
+      "exit_code": 0,
+      "wall_clock_time": 33.16135907173157,
+      "working_directory": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-worker",
+      "duct_version": "0.23.0",
+      "num_samples": 32
+    },
+    {
+      "path": "logs/pilot-atlas-20261015-info.json",
+      "exit_code": 0,
+      "wall_clock_time": 6.005131959915161,
+      "working_directory": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-worker",
+      "duct_version": "0.23.0",
+      "num_samples": 6
+    },
+    {
+      "path": "logs/pilot-verified-20261015-info.json",
+      "exit_code": 0,
+      "wall_clock_time": 2.456076145172119,
+      "working_directory": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-worker",
+      "duct_version": "0.23.0",
+      "num_samples": 3
+    },
+    {
+      "path": "logs/replay-compare-final-20261015-info.json",
+      "exit_code": 0,
+      "wall_clock_time": 0.05840182304382324,
+      "working_directory": "/private/tmp/narps-h1-replay-7405a7b",
+      "duct_version": "0.23.0",
+      "num_samples": 1
+    },
+    {
+      "path": "logs/replay-pilot-final-20261015-info.json",
+      "exit_code": 0,
+      "wall_clock_time": 2.4367523193359375,
+      "working_directory": "/private/tmp/narps-h1-replay-7405a7b",
+      "duct_version": "0.23.0",
+      "num_samples": 3
+    },
+    {
+      "path": "logs/validation-20261015-info.json",
+      "exit_code": 0,
+      "wall_clock_time": 1.5172028541564941,
+      "working_directory": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-worker",
+      "duct_version": "0.23.0",
+      "num_samples": 2
+    },
+    {
+      "path": "logs/validation-final-20261015-info.json",
+      "exit_code": 0,
+      "wall_clock_time": 1.4810900688171387,
+      "working_directory": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-worker",
+      "duct_version": "0.23.0",
+      "num_samples": 2
+    }
+  ],
+  "exit_code_counts": {
+    "0": 15,
+    "1": 5
+  }
+}

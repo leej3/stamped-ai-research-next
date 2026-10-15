@@ -1,0 +1,3 @@
+From github.com:leej3/stamped-ai-research-next
+ * [new branch]      codex/preparation-stamped-result-20261015 -> origin/result
+ * [new branch]      codex/preparation-stamped-annex-result-20261015 -> git-annex
