@@ -250,7 +250,8 @@ def main():
     ax.legend(frameon=False, loc="best")
     fig.savefig(OUT / "vmPFC-participant-distribution.png", dpi=180)
     plt.close(fig)
-    print(json.dumps({k: v for k, v in summary.items() if k not in {"map_qc", "vmPFC_participant_values"}}, indent=2))
+    print(json.dumps({k: v for k, v in summary.items() if k not in {"map_qc", "vmPFC_participant_values"}},
+                     indent=2, default=lambda value: value.item() if isinstance(value, np.generic) else value))
 
 
 if __name__ == "__main__":
