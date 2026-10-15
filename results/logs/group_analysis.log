@@ -1,0 +1,6 @@
+ WARN Using local manifest /Users/johnlee/.local/share/stamped-ai-research-next/workers/narps-suitability-20261015-03/pixi.toml rather than /Users/johnlee/code/CON/stamped-ai-research-next/pixi.toml from environment variable `PIXI_PROJECT_MANIFEST`
+Traceback (most recent call last):
+  File "/Users/johnlee/.local/share/stamped-ai-research-next/workers/narps-suitability-20261015-03/results/code/group_analysis.py", line 161, in <module>
+    plotting.close()
+    ^^^^^^^^^^^^^^
+AttributeError: module 'nilearn.plotting' has no attribute 'close'

@@ -1,0 +1,52 @@
+ WARN Using local manifest /Users/johnlee/.local/share/stamped-ai-research-next/workers/narps-suitability-20261015-03/pixi.toml rather than /Users/johnlee/code/CON/stamped-ai-research-next/pixi.toml from environment variable `PIXI_PROJECT_MANIFEST`
+{
+  "n": 54,
+  "mask_voxels": 198029,
+  "mask_fraction_of_grid": 0.21916651448998678,
+  "df": 53,
+  "permutations": 9999,
+  "seed": 20261015,
+  "mean_cope_brain": -0.00824676655423708,
+  "median_cope_brain": -0.00668044062115735,
+  "positive_fraction_brain": 0.38652924571653646,
+  "max_t_whole_brain": 6.617173246302241,
+  "max_t_xyz_mni_mm": [
+    -26.0,
+    -102.0,
+    -3.599997043609619
+  ],
+  "max_t_p_uncorrected": 9.311564027968496e-09,
+  "max_t_p_fwe_positive": 0.0007,
+  "voxel_count_p_fwe_le_05": 24,
+  "vmPFC_box_mni_mm": {
+    "x": [
+      -15,
+      15
+    ],
+    "y": [
+      25,
+      65
+    ],
+    "z": [
+      -25,
+      5
+    ]
+  },
+  "vmPFC_box_voxels": 3546,
+  "vmPFC_box_mean_of_voxel_means": -0.002867585696162924,
+  "vmPFC_max_t": 3.9164688737757256,
+  "vmPFC_mean_participant_box_average": -0.0028675856961629213,
+  "vmPFC_mean_participant_box_average_ci95": [
+    -0.022518840185214713,
+    0.01678366879288887
+  ],
+  "vmPFC_peak_xyz_mni_mm": [
+    -2.0,
+    26.0,
+    -17.99999761581421
+  ],
+  "vmPFC_peak_p_fwe_positive": 0.937,
+  "vmPFC_fwe_voxels_positive": 0,
+  "vmPFC_hypothesis_supported": false,
+  "whole_brain_any_positive_fwe_voxels": 24
+}
