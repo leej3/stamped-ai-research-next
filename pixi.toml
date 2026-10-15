@@ -1,0 +1,26 @@
+[workspace]
+authors = ["leej3 <johnleenimh@gmail.com>"]
+channels = ["conda-forge"]
+name = "stamped-paired-independent-ZWuYEl"
+platforms = [{ name = "macos14-arm64", platform = "osx-arm64", macos = "14.0" }]
+version = "0.1.0"
+
+[tasks]
+analyze = "sh code/capture.sh"
+validate = "python code/validate.py"
+preflight = "sh code/preflight.sh"
+record = "sh code/run-recorded.sh --explicit -m 'paired-v1: estimate mean paired change and validate' -i data -i protocol -i code -o results -o logs -- pixi run analyze"
+replay = "python code/replay.py"
+
+[dependencies]
+python = "3.12.*"
+numpy = ">=2.5.4,<3"
+scipy = ">=1.18.1,<2"
+matplotlib = ">=3.11.2,<4"
+pandas = ">=3.0.6,<4"
+
+
+[pypi-dependencies]
+datalad = ">=1.7.1, <2"
+git-annex = ">=10.20260901.post1, <11"
+con-duct = ">=0.23.0, <0.24"

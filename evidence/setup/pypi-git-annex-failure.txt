@@ -1,0 +1,6 @@
+Command: pixi add --pypi datalad git-annex con-duct
+Exit: 1
+Error: failed to solve the pypi requirements of environment default for platform osx-arm64
+Because all versions of git-annex have no wheels with a matching platform tag (e.g., macosx_13_0_arm64) and you require git-annex, we can conclude that your requirements are unsatisfiable.
+Wheels are available for git-annex (v10.20260901.post1) on manylinux_2_34_aarch64, manylinux_2_34_x86_64, macosx_14_0_arm64, macosx_15_0_x86_64, win_amd64.
+Intervention: declare macOS >=14.0 for this osx-arm64 project; retry once.

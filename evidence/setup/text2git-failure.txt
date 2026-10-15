@@ -1,0 +1,78 @@
+[INFO] Running procedure cfg_text2git 
+[INFO] == Command start (output follows) ===== 
+[WARNING] Received an exception CommandError(CommandError: 'git -c diff.ignoreSubmodules=none -c core.quotepath=false annex add --json --json-error-messages -c annex.dotfiles=true -- .gitattributes' failed with exitcode 1 under /private/tmp/stamped-paired-independent-ZWuYEl [info keys: stdout_json] [err: 'git-annex: bad annex.largefiles configuration in gitattributes: Parse failure: "mimeencoding" not supported; not built with MagicMime support']). Canceling not-yet running jobs and waiting for completion of running. You can force earlier forceful exit by Ctrl-C. 
+[INFO] Canceled 0 out of 0 jobs. 0 left running. 
+Traceback (most recent call last):
+  File "/private/tmp/stamped-paired-independent-ZWuYEl/.pixi/envs/default/lib/python3.12/site-packages/datalad/support/parallel.py", line 369, in _iter_threads
+    raise _FinalShutdown()
+datalad.support.parallel._FinalShutdown
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/private/tmp/stamped-paired-independent-ZWuYEl/.pixi/envs/default/lib/python3.12/site-packages/datalad/resources/procedures/cfg_text2git.py", line 22, in <module>
+    ds.save(
+  File "/private/tmp/stamped-paired-independent-ZWuYEl/.pixi/envs/default/lib/python3.12/site-packages/datalad/distribution/dataset.py", line 502, in apply_func
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/private/tmp/stamped-paired-independent-ZWuYEl/.pixi/envs/default/lib/python3.12/site-packages/datalad/interface/base.py", line 779, in eval_func
+    return return_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/tmp/stamped-paired-independent-ZWuYEl/.pixi/envs/default/lib/python3.12/site-packages/datalad/interface/base.py", line 769, in return_func
+    results = list(results)
+              ^^^^^^^^^^^^^
+  File "/private/tmp/stamped-paired-independent-ZWuYEl/.pixi/envs/default/lib/python3.12/site-packages/datalad/interface/base.py", line 879, in _execute_command_
+    for r in _process_results(
+             ^^^^^^^^^^^^^^^^^
+  File "/private/tmp/stamped-paired-independent-ZWuYEl/.pixi/envs/default/lib/python3.12/site-packages/datalad/interface/utils.py", line 323, in _process_results
+    for res in results:
+               ^^^^^^^
+  File "/private/tmp/stamped-paired-independent-ZWuYEl/.pixi/envs/default/lib/python3.12/site-packages/datalad/core/local/save.py", line 661, in __call__
+    yield from ProducerConsumerProgressLog(
+  File "/private/tmp/stamped-paired-independent-ZWuYEl/.pixi/envs/default/lib/python3.12/site-packages/datalad/support/parallel.py", line 536, in __iter__
+    for res in super().__iter__():
+               ^^^^^^^^^^^^^^^^^^
+  File "/private/tmp/stamped-paired-independent-ZWuYEl/.pixi/envs/default/lib/python3.12/site-packages/datalad/support/parallel.py", line 266, in __iter__
+    yield from self._iter_threads(self._jobs)
+  File "/private/tmp/stamped-paired-independent-ZWuYEl/.pixi/envs/default/lib/python3.12/site-packages/datalad/support/parallel.py", line 418, in _iter_threads
+    self.shutdown(force=True, exception=self._producer_exception or interrupted_by_exception)
+  File "/private/tmp/stamped-paired-independent-ZWuYEl/.pixi/envs/default/lib/python3.12/site-packages/datalad/support/parallel.py", line 233, in shutdown
+    raise exception
+  File "/private/tmp/stamped-paired-independent-ZWuYEl/.pixi/envs/default/lib/python3.12/site-packages/datalad/support/parallel.py", line 402, in _iter_threads
+    done_useful |= self._pop_done_futures(lgr)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/tmp/stamped-paired-independent-ZWuYEl/.pixi/envs/default/lib/python3.12/site-packages/datalad/support/parallel.py", line 464, in _pop_done_futures
+    raise exception
+  File "/private/tmp/stamped-paired-independent-ZWuYEl/.pixi/envs/default/lib/python3.12/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/tmp/stamped-paired-independent-ZWuYEl/.pixi/envs/default/lib/python3.12/site-packages/datalad/support/parallel.py", line 330, in consumer_worker
+    for r in res:
+             ^^^
+  File "/private/tmp/stamped-paired-independent-ZWuYEl/.pixi/envs/default/lib/python3.12/site-packages/datalad/core/local/save.py", line 566, in save_ds
+    for res in pds_repo.save_(
+               ^^^^^^^^^^^^^^^
+  File "/private/tmp/stamped-paired-independent-ZWuYEl/.pixi/envs/default/lib/python3.12/site-packages/datalad/support/gitrepo.py", line 3618, in save_
+    yield from self._save_add(
+  File "/private/tmp/stamped-paired-independent-ZWuYEl/.pixi/envs/default/lib/python3.12/site-packages/datalad/support/annexrepo.py", line 3564, in _save_add
+    for r in self._call_annex_records(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/tmp/stamped-paired-independent-ZWuYEl/.pixi/envs/default/lib/python3.12/site-packages/datalad/support/annexrepo.py", line 1131, in _call_annex_records
+    raise e
+  File "/private/tmp/stamped-paired-independent-ZWuYEl/.pixi/envs/default/lib/python3.12/site-packages/datalad/support/annexrepo.py", line 1091, in _call_annex_records
+    out = self._call_annex(
+          ^^^^^^^^^^^^^^^^^
+  File "/private/tmp/stamped-paired-independent-ZWuYEl/.pixi/envs/default/lib/python3.12/site-packages/datalad/support/annexrepo.py", line 987, in _call_annex
+    return runner.run_on_filelist_chunks(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/tmp/stamped-paired-independent-ZWuYEl/.pixi/envs/default/lib/python3.12/site-packages/datalad/runner/gitrunner.py", line 255, in run_on_filelist_chunks
+    for res in self._get_chunked_results(cmd=cmd,
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/tmp/stamped-paired-independent-ZWuYEl/.pixi/envs/default/lib/python3.12/site-packages/datalad/runner/gitrunner.py", line 183, in _get_chunked_results
+    yield self.run(
+          ^^^^^^^^^
+  File "/private/tmp/stamped-paired-independent-ZWuYEl/.pixi/envs/default/lib/python3.12/site-packages/datalad/runner/runner.py", line 243, in run
+    raise CommandError(
+datalad.runner.exception.CommandError: CommandError: 'git -c diff.ignoreSubmodules=none -c core.quotepath=false annex add --json --json-error-messages -c annex.dotfiles=true -- .gitattributes' failed with exitcode 1 under /private/tmp/stamped-paired-independent-ZWuYEl [info keys: stdout_json] [err: 'git-annex: bad annex.largefiles configuration in gitattributes: Parse failure: "mimeencoding" not supported; not built with MagicMime support']
+[INFO] == Command exit (modification check follows) ===== 
+run(error): /private/tmp/stamped-paired-independent-ZWuYEl (dataset) [/private/tmp/stamped-paired-independent-...]

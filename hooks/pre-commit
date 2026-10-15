@@ -1,0 +1,8 @@
+#!/bin/sh
+set -eu
+sh code/pre-commit-run-guard
+# Authoring helper only: installed locally, never needed for scientific replay.
+if command -v snapper >/dev/null 2>&1; then
+  git diff --cached --name-only --diff-filter=ACM -z -- '*.md' |
+    xargs -0 -I{} sh -c 'snapper --in-place "$1" && git add -- "$1"' sh '{}'
+fi

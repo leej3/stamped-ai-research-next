@@ -1,0 +1,5 @@
+Command: pixi install --locked
+Exit: 1
+Error: platform entry rejected: You tried to add a virtual package into a special subdir platform; either drop the virtual packages or give the entry a name distinct from its subdir.
+Rejected declaration: platforms = [{ name = "osx-arm64", platform = "osx-arm64", macos = "14.0" }]
+Intervention: use platform name macos14-arm64, retaining platform osx-arm64 and macos 14.0.
