@@ -1,0 +1,89 @@
+{
+  "worker_returncode": 0,
+  "native_session_ids": [
+    "01a14142-7bf9-7fc0-9fbe-851f22fddb0f"
+  ],
+  "worker_finished_at": "2026-10-15T20:36:28.668987+00:00",
+  "worker_head_at_completion": "75a6019cb221205b328cf27a396752b9a987681c",
+  "working_status_at_completion": " M pixi.toml\nA  results/group_mean_effect.nii.gz\nA  results/group_p_fwe.nii.gz\nA  results/group_t_fwe05.nii.gz\nA  results/group_t_unthresholded.nii.gz\n?? results/analysis.py\n?? results/attempt_notes.md\n?? results/group_t_fwe_map.png\n?? results/max_t_permutation_null.png\n?? results/quality_checks.tsv\n?? results/report.md\n?? results/run.log\n?? results/summary.json\n?? results/vmPFC_effect_distribution.png\n?? results/vmPFC_participant_effects.tsv\n",
+  "artifact_inventory": [
+    {
+      "path": "results/analysis.py",
+      "bytes": 9584,
+      "sha256": "57c98bde467623b51f297fddc2a1aeb26df792e066fc548f2e99df47a2fa8ba6"
+    },
+    {
+      "path": "results/attempt_notes.md",
+      "bytes": 777,
+      "sha256": "7e475aeada84759fe9fd9462125563e02e20a7fb333e1347ce6aaa8db755d7ff"
+    },
+    {
+      "path": "results/group_mean_effect.nii.gz",
+      "bytes": 1088335,
+      "sha256": "d3839e2b60af18245040e72a93e1b5605ac95d17e22b57ef78ebb5f7a47e7494"
+    },
+    {
+      "path": "results/group_p_fwe.nii.gz",
+      "bytes": 77190,
+      "sha256": "3a1dd3ade30d4316bfce45d5d4c7dd1aa69639aab0a2bd0bc00a6e2a93761b06"
+    },
+    {
+      "path": "results/group_t_fwe05.nii.gz",
+      "bytes": 38974,
+      "sha256": "5a587f33c0d6cf0a20c6b4e1e2c4f40e8aa3245a659d50492bb0692296cd54f8"
+    },
+    {
+      "path": "results/group_t_fwe_map.png",
+      "bytes": 50504,
+      "sha256": "e3045ccde09c3ecc421bdd99f98f75ca1732aeff29f774077d5bb6c43c09dd3c"
+    },
+    {
+      "path": "results/group_t_unthresholded.nii.gz",
+      "bytes": 1089252,
+      "sha256": "f4bd4683bc04b399c09358f0953856fca34d03819c22edff3214ac81ad3dddde"
+    },
+    {
+      "path": "results/max_t_permutation_null.png",
+      "bytes": 52673,
+      "sha256": "f3b89554b971f00e37ae49310a798658cc9b738af3cfbf4efb7168ef4554d48e"
+    },
+    {
+      "path": "results/quality_checks.tsv",
+      "bytes": 10879,
+      "sha256": "9a72bfe0c3255590eeb2246db045a277dd1f34476c83b4a523c880e071a4ef77"
+    },
+    {
+      "path": "results/report.md",
+      "bytes": 5025,
+      "sha256": "94bb3c21bbf4e7293857a80f874dbc2df6ae38d7730ef08823a68d2b74a67f5d"
+    },
+    {
+      "path": "results/run.log",
+      "bytes": 2548,
+      "sha256": "8fd7710ef7cf0b941fc40cbcb4044515f4449edfc61dd6ace82f3793e73c49d6"
+    },
+    {
+      "path": "results/summary.json",
+      "bytes": 1420,
+      "sha256": "14e13ccf5a25ad9a4c3ec47695f217270cf21157e9a6bb7a6fa33d72051308a2"
+    },
+    {
+      "path": "results/vmPFC_effect_distribution.png",
+      "bytes": 39378,
+      "sha256": "4595ee42de650d98453a6560f49dcf0c7a9b7be67cf5a0951a800ab8bb34d5a0"
+    },
+    {
+      "path": "results/vmPFC_participant_effects.tsv",
+      "bytes": 1590,
+      "sha256": "7d75962b30c54f1c0c41724f0fb94d6a562a7dc9508773938e750a878f392c0e"
+    },
+    {
+      "path": "pixi.toml",
+      "bytes": 518,
+      "sha256": "3b7e798436819094b20525c2d8fd60cf98f4bcfd0fca6d4014cc166ae5d8d819"
+    }
+  ],
+  "final_working_lock_sha256": "9ec8b60dd356b9b80a2697e94974fd4e8c06cb10c665fdbd43dcdc2b5b0d857a",
+  "note": "Coordinator preserves these scientific output bytes without repair; the worker left the research artifacts uncommitted.",
+  "scientific_result_commit": "466d43f39dc3d40ac64038ff03066b483b6d9457"
+}

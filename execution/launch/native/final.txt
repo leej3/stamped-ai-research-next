@@ -1,0 +1,7 @@
+## Conclusion
+
+This analysis does **not** support a positive gain effect in vmPFC. In the prespecified vmPFC sphere, the mean coefficient was −0.0027 (95% CI −0.0242 to 0.0187; one-sided sign-flip *p* = .607). No voxel there survived whole-brain correction.
+
+The whole-brain test found 24 corrected positive voxels, peaking at *t*(53) = 6.62, FWE *p* = .0008 at MNI (−26, −102, −3.6)—outside vmPFC. That finding does not support the vmPFC hypothesis. The NARPS instructions call for whole-brain-corrected hypothesis decisions, which this analysis used ([original instructions](https://www.narps.info/files/narps_instructions_for_analysis_teams.pdf)).
+
+The concise report, figures, analysis code, maps, quality checks, and results are in [results/report.md](/Users/johnlee/.local/share/stamped-ai-research-next/workers/narps-suitability-20261015-02/results/report.md). All 54 maps passed geometry and source-checksum checks; none were excluded. The report explains the ROI definition, model limits, uncertainty, and what this null result does and does not imply.
