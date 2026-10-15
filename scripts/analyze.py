@@ -67,7 +67,8 @@ def read_maps():
 
 
 def save_json(obj, path: Path):
-    path.write_text(json.dumps(obj, indent=2, sort_keys=True) + "\n")
+    path.write_text(json.dumps(obj, indent=2, sort_keys=True,
+                               default=lambda value: value.item() if isinstance(value, np.generic) else value) + "\n")
 
 
 def vmPFC_atlas_mask(reference):
