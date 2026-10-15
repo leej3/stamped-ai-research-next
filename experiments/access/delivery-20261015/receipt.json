@@ -1,0 +1,16 @@
+{
+  "command": [
+    "pixi",
+    "run",
+    "git",
+    "annex",
+    "copy",
+    "--to",
+    "con-hub",
+    "--all",
+    "--json"
+  ],
+  "returncode": 0,
+  "keys_checked": 64,
+  "failed": []
+}

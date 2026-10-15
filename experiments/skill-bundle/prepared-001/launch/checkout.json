@@ -1,0 +1,6 @@
+{
+  "checkout": "/Users/johnlee/.local/share/wt-utils/worktrees/ed98/stamped-ai-research-next",
+  "kind": "worktree",
+  "branch": "codex/proof-prepared-v2",
+  "base": "main"
+}

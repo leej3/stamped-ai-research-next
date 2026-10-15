@@ -19,3 +19,5 @@ Project-specific environment guidance is in [pixi-with-stamped](skills/skills/pi
 
 Execution trials and their complete records are retained under `experiments/`.
 They establish the tested execution routes, not scientific or skill efficacy.
+
+Execution evidence: [native DataLad replay](experiments/datalad-native/README.md), [independent workflow trial](experiments/skill-bundle/blind-001/README.md), and [frozen assessment](experiments/assessment-v1/README.md).

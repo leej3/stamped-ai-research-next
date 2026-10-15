@@ -1,0 +1,8 @@
+{
+  "source_manifest": "/Users/johnlee/code/CON/stamped-ai-research-next/pixi.toml",
+  "worker_manifest": "/Users/johnlee/.local/share/wt-utils/worktrees/ed98/stamped-ai-research-next/pixi.toml",
+  "worker_lock": "/Users/johnlee/.local/share/wt-utils/worktrees/ed98/stamped-ai-research-next/pixi.lock",
+  "worker_environment_installed": true,
+  "manifest_sha256": "548150bd0a0b06e44a98c4f8416a20af873368e4ab92e57eeecdc490861785ce",
+  "lock_sha256": "f8fff1394fbeaa2ab1c4993fceb0dd6463fe0c08c81fcda397f3e752a72c4249"
+}

@@ -1,0 +1,6 @@
+worktree=/Users/johnlee/code/CON/stamped-ai-research-next
+dry_run=True
+source=/Users/johnlee/code/CON/stamped-ai-research-next/.codex/hooks.json
+trust_records_added=0
+project_trust_added=False
+Trust records only: apply through Codex's native controls as needed, then verify capture, GitHub sync, and hosted ingestion separately.
