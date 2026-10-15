@@ -9,7 +9,7 @@ Use the original methods; identify any necessary software changes explicitly.
 
 ## Inputs and analysis
 
-[The source manifest](benchmarks/narps-figure2/sources.json) identifies the archived input data, reference results and exact analysis-code revision used by the publication.
+[The source manifest](narps-figure2/sources.json) identifies the archived input data, reference results and exact analysis-code revision used by the publication.
 Start from the shared team-level statistical images, not an already computed correlation matrix.
 Read the paper and published code to establish team exclusions, contrast directions, statistic conversions, common space and voxel mask.
 Do not reverse a team's sign merely because its results disagree with others.
@@ -28,18 +28,18 @@ Report maximum absolute numerical differences and agreement of cluster partition
 Never treat a visually similar plot as sufficient evidence of numerical reproduction.
 Keep scientific correctness distinct from the quality of the delivered research object.
 
-## Execution boundary
+## Available inputs and scope
 
-This is a reproduction of an MRI map analysis, not a rerun of raw fMRI preprocessing.
-The full source archive is approximately 994 MB; retrieve and verify it before timed worker launches, then provide the identical required inputs to both conditions.
-The original code is available to both conditions as a scientific resource.
-Workers must execute and verify the analysis; copied reference outputs do not establish reproduction.
+The original team maps, archived reference results and historical FSL reference grid/mask are annexed under `studies/narps-figure2/`; the source manifest records their source versions, checksums and verification evidence.
+Provide the same verified inputs to every worker before starting its clock.
+The original analysis code is available to every worker as a scientific resource.
+Reference outputs support comparison; workers must recompute the result from the team maps.
 
-Use a pinned container for the MRI execution step, preferably through ReproNim's container distribution where it supplies the required tools.
-The paper's published execution-environment specification remains the reference for compatibility.
-Record the chosen image digest, commands, input versions and any differences from that reference.
+Choose suitable scientific libraries and tools, including whether to use a container.
+The published software specification is a compatibility reference, not a required execution platform.
+Record the environment actually used and explain any methodological changes.
 
-A complete rehearsal must establish access, numerical agreement and the expected 45-minute workload before scored rounds.
-Freeze the numerical comparison tolerances from that rehearsal before scoring workers.
-Do not reduce the 64-team cohort or change the scientific target to force a time limit.
-If the task proves unsuitable, document the reason and replace it before starting a new series.
+This task covers team-level MRI map analysis, not raw fMRI preprocessing.
+The working target is approximately 45 minutes, allowing longer to finish correctly.
+Its runtime and numerical agreement remain untested; establish both in a rehearsal before scored rounds and fix comparison tolerances then.
+Do not reduce the 64-team cohort or change the scientific target to meet the target time.
