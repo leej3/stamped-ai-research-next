@@ -1,0 +1,18 @@
+{
+  "command": [
+    "pixi",
+    "run",
+    "--locked",
+    "python",
+    "-m",
+    "pytest",
+    "-q",
+    "tests"
+  ],
+  "cwd": "/Users/johnlee/.local/share/wt-utils/worktrees/776c/stamped-ai-research-next",
+  "source_commit": "834603cc80023630c249d2c160b3f968eb0711f0",
+  "started_at": "2026-10-15T23:13:04.275296+00:00",
+  "returncode": 0,
+  "elapsed_seconds": 174.4749017499853,
+  "finished_at": "2026-10-15T23:15:58.745632+00:00"
+}

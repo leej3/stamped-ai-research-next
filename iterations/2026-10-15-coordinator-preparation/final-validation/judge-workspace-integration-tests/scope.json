@@ -1,0 +1,8 @@
+{
+  "tested_commit": "834603cc80023630c249d2c160b3f968eb0711f0",
+  "trial_source_commit": "faf25fda791f590bc4c842cfd311749869490f3d",
+  "changes_after_test_start": [
+    "scripts/README.md"
+  ],
+  "scope": "200 passed, 1 skipped; live capture tested separately."
+}

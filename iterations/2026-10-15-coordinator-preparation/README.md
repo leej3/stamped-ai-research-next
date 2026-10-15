@@ -25,3 +25,7 @@ The formal recipient scope accepts a declared authorized retrieval route, record
 
 [Evidence index](evidence-index.json) records retained file hashes.
 Host-specific probe copies are execution provenance, not reusable project defaults; credentials remain with host providers.
+
+The [completed baseline rehearsal](../2026-10-15-cold-coordinator-retry/README.md) retains its scientific finding, invalid lock, failed replay and verified retrieval.
+Its publication ordering and missing judge checkpoint led to the separate judge workspace and pre-judgment publication fixes.
+The combined [regression suite](final-validation/judge-workspace-integration-tests/command.json) passed 200 tests with one filesystem-dependent skip; fixture results do not establish live capture.
