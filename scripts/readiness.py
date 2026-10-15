@@ -185,7 +185,7 @@ def main():
     parser.add_argument("--requirements", type=Path, required=True,
                         help="Explicit capabilities selected from the user's instructions")
     parser.add_argument("--host-config", type=Path, default=Path.home() /
-                        ".config/stamped-ai-research-next/readiness.json")
+                        ".config" / Path(__file__).resolve().parents[1].name / "readiness.json")
     parser.add_argument("--evidence", type=Path, required=True, help="New directory for this attempt")
     args = parser.parse_args()
     try:

@@ -1,11 +1,11 @@
 [submodule "skills"]
 	path = skills
 	url = https://github.com/con/skills.git
-	branch = codex/pr26-dependency-inclusion
+	branch = codex/pr26-assessment-evidence
 [submodule "assessment"]
 	path = assessment
 	url = https://github.com/con/skills.git
-	branch = codex/assessor-freeze-v1
+	branch = codex/pr26-assessment-evidence
 [submodule "studies/narps"]
 	path = studies/narps
 	url = https://github.com/leej3/stamped-ai-research-next.git

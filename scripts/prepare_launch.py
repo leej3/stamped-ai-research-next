@@ -14,6 +14,7 @@ from pathlib import Path
 
 from study_seed import audit_seed, blob, make_seed, research_prompt, worker_manifest
 from research_conditions import CONDITION_CHOICES
+import assessment_procedure as procedure
 
 
 def run(argv, cwd, capture=False):
@@ -48,7 +49,7 @@ def retrieve_inputs(git_command, checkout, inventory, remote):
             raise SystemExit("Input content was not retrieved: " + item["path"])
 
 
-def render_judge_prompt(template, study, target_commit, evidence, reference=None):
+def render_judge_prompt(template, study, target_commit, evidence, reference=None, rubric=None):
     """Retain the coordinator's scientific brief independently of the target."""
     content = study.read_bytes()
     digest = hashlib.sha256(content).hexdigest()
@@ -61,16 +62,20 @@ def render_judge_prompt(template, study, target_commit, evidence, reference=None
                "Use this retained brief, not a worker-edited replacement.\n"
                "Relative source links refer to input/ in the assessed object.\n\n"
                + content.decode())
-    if reference:
-        material = reference.read_bytes()
-        (evidence / "reference.md").write_bytes(material)
-        (evidence / "reference.json").write_text(json.dumps({
-            "source": str(reference.resolve()),
+    for label, source in (("rubric", rubric), ("reference", reference)):
+        if not source:
+            continue
+        material = source.read_bytes()
+        (evidence / (label + ".md")).write_bytes(material)
+        (evidence / (label + ".json")).write_text(json.dumps({
+            "source": str(source.resolve()),
             "sha256": hashlib.sha256(material).hexdigest(),
         }, indent=2) + "\n")
-        prompt += ("\nOptional coordinator evaluation guidance, separate from the scientific task.\n"
+        heading = ("Coordinator scientific rubric" if label == "rubric" else
+                   "Optional coordinator evaluation guidance")
+        prompt += ("\n" + heading + ", separate from the scientific task.\n"
                    "Alternative scientifically defensible methods are allowed.\n"
-                   "Relative links resolve from " + str(reference.resolve().parent) + ".\n\n"
+                   "Relative links resolve from " + str(source.resolve().parent) + ".\n\n"
                    + material.decode())
     destination = evidence / "judge-prompt.md"
     destination.write_text(prompt)
@@ -79,8 +84,7 @@ def render_judge_prompt(template, study, target_commit, evidence, reference=None
 
 def main():
     defaults_parser = argparse.ArgumentParser(add_help=False)
-    defaults_parser.add_argument("--host-config", type=Path, default=Path.home() /
-        ".config/stamped-ai-research-next/launch.json")
+    defaults_parser.add_argument("--host-config", type=Path, default=procedure.default_host_config())
     preliminary, _ = defaults_parser.parse_known_args()
     defaults = json.loads(preliminary.host_config.read_text()) if preliminary.host_config.is_file() else {}
     parser = argparse.ArgumentParser(description=__doc__)
@@ -117,6 +121,12 @@ def main():
     parser.add_argument("--capture-execution", action="store_true",
                         help="Request duct execution records in the worker; use only when authorized")
     parser.add_argument("--condition", choices=CONDITION_CHOICES, default="baseline")
+    parser.add_argument("--run-mode", choices=("development", "formal"), default="development")
+    parser.add_argument("--procedure", type=Path, help="Sealed comparison procedure, formal runs only")
+    parser.add_argument("--procedure-sha256", help="Registered SHA-256 of the sealed procedure")
+    parser.add_argument("--resource-readiness", type=Path, help="Completed readiness result.json, formal runs only")
+    parser.add_argument("--worker-end-state", type=Path,
+                        help="External worker-stop receipt; required for formal judges")
     # Paths/resources are host choices; the coordinator is this checkout, not
     # an old absolute repository path retained in a host configuration.
     parser.set_defaults(**{key: value for key, value in defaults.items() if key != "repo"})
@@ -129,6 +139,8 @@ def main():
         parser.error("Launch requires --kind clone for an independent Git object store")
     if args.role == "research" and args.reference:
         parser.error("Reference guidance is for judges only")
+    if args.role == "research" and args.worker_end_state:
+        parser.error("--worker-end-state is for judges only")
     if args.role == "judge" and args.condition != "baseline":
         parser.error("Judges use the fixed template; omit --condition")
     for name in ("repo", "env_manifest", "approved_hooks", "trust_sync", "resolver", "cli", "codex_home"):
@@ -142,8 +154,31 @@ def main():
         parser.error("Missing annex remote URLs; configure host defaults once")
     repo = args.repo.resolve()
     base_commit = run(["git", "rev-parse", "--verify", args.base + "^{commit}"], repo, True)
+    coordinator = Path(__file__).resolve().parents[1]
+    frozen = None
+    if args.run_mode == "formal":
+        if not args.procedure or args.reference:
+            parser.error("Formal mode requires --procedure and uses only its frozen rubric/reference")
+        if args.role == "judge" and not args.worker_end_state:
+            parser.error("Formal judges require --worker-end-state from the research launch")
+        frozen = procedure.load_procedure(args.procedure, args.procedure_sha256)
+        procedure.check_sources(frozen, coordinator, args.study,
+                                base_commit if args.role == "research" else None)
+        procedure.check_host(frozen, args)
+        procedure.check_settings(frozen, args)
+        procedure.check_readiness(frozen, args.resource_readiness)
+    elif args.procedure or args.procedure_sha256 or args.resource_readiness:
+        parser.error("Procedure/readiness flags require --run-mode formal")
     evidence = args.evidence.resolve()
     evidence.mkdir(parents=True, exist_ok=False)
+    procedure_receipt = {"version": 1, "status": "development-unsealed"}
+    if frozen:
+        retained = procedure.retain_inputs(frozen, coordinator, args.study, evidence / "frozen-inputs")
+        (evidence / "procedure.json").write_bytes(args.procedure.read_bytes())
+        (evidence / "resource-readiness.json").write_bytes(args.resource_readiness.read_bytes())
+        procedure_receipt.update(status="formal-verified", procedure_sha256=args.procedure_sha256,
+                                 comparison_id=frozen["comparison_id"])
+    (evidence / "procedure-status.json").write_text(json.dumps(procedure_receipt, indent=2) + "\n")
     if not args.branch.startswith("codex/"):
         parser.error("Use a codex/ branch")
     checkout = (args.clone_path.resolve() if args.clone_path else
@@ -153,6 +188,8 @@ def main():
     if args.role == "research":
         seed = make_seed(repo, base_commit, args.study, checkout, args.branch,
                          args.condition, args.resolver)
+        if frozen:
+            procedure.check_seed(frozen, seed)
         args.condition = seed["condition"]
         args.prompt = evidence / "research-prompt.md"
         args.prompt.write_bytes(research_prompt(checkout, args.capture_execution))
@@ -184,10 +221,23 @@ def main():
         run(["git", "config", "remote.origin.fetch",
              f"+refs/heads/{args.branch}:refs/remotes/origin/{args.branch}"], checkout)
         origin_seed = json.loads(blob(checkout, roots[0], "worker-input.json"))
+        if frozen:
+            procedure.check_seed(frozen, origin_seed)
+            procedure.check_sources(frozen, coordinator, args.study, origin_seed["coordinator_commit"])
         study_commit = origin_seed["study_commit"]
         original_brief = blob(args.study, study_commit, "input/study-task.md")
         if original_brief != blob(checkout, roots[0], "input/study-task.md"):
             raise SystemExit("Selected study does not match the worker's original scientific brief")
+        if args.worker_end_state:
+            from worker_end_state import validate_retained_artifacts
+            content = args.worker_end_state.read_bytes()
+            try:
+                retained_state = validate_retained_artifacts(json.loads(content), checkout)
+            except ValueError as error:
+                raise SystemExit("Worker-stop evidence failed: " + str(error))
+            args.worker_end_state = evidence / "worker-end-state.json"
+            args.worker_end_state.write_bytes(content)
+            (evidence / "worker-retention-check.json").write_text(json.dumps(retained_state, indent=2) + "\n")
         (evidence / "study-source.json").write_text(json.dumps({
             "path": str(args.study.resolve()), "commit": study_commit,
             "input_tree": run(["git", "rev-parse", study_commit + ":input"], args.study, True),
@@ -197,7 +247,18 @@ def main():
         # later worker edits do not redefine the task.
         study = evidence / "original-study-prompt.md"
         study.write_bytes(blob(checkout, roots[0], "input/study-task.md"))
-        args.prompt = render_judge_prompt(template, study, base_commit, evidence, args.reference)
+        rubric = None
+        if frozen:
+            template = retained / "judge-prompt.md"
+            rubric = retained / frozen["study"]["rubric"]
+            args.reference = retained / frozen["study"]["reference"] if frozen["study"]["reference"] else None
+        args.prompt = render_judge_prompt(template, study, base_commit, evidence, args.reference, rubric)
+        if frozen:
+            with args.prompt.open("a") as stream:
+                stream.write(procedure.replay_instruction(frozen))
+        if args.worker_end_state:
+            with args.prompt.open("a") as stream:
+                stream.write(procedure.worker_credit_instruction(args.worker_end_state))
     (evidence / "checkout.json").write_text(json.dumps({"checkout": str(checkout),
         "kind": "independent-repository", "branch": args.branch, "base": args.base,
         "base_commit": base_commit, "worker_commit": run(["git", "rev-parse", "HEAD"], checkout, True),
@@ -258,9 +319,13 @@ def main():
          "--prompt", args.prompt.resolve(), "--output", evidence / "native",
          "--cli", args.cli, "--seconds", str(args.seconds), "--condition", args.condition,
          "--review-seconds", str(args.review_seconds), "--role", args.role,
-         "--assessment-pin", scripts.parent / "assessment-version.json",
+         "--assessment-pin", retained / "assessment-version.json" if frozen else scripts.parent / "assessment-version.json",
          "--assessment-source", scripts.parent / "assessment",
          "--model", args.model, "--effort", args.effort] +
+         (["--run-mode", "formal", "--procedure", evidence / "procedure.json",
+           "--procedure-sha256", args.procedure_sha256, "--procedure-study", args.study.resolve(),
+           "--resource-readiness", evidence / "resource-readiness.json"] if frozen else []) +
+         (["--worker-end-state", args.worker_end_state] if args.worker_end_state else []) +
          (["--capture-execution"] if args.capture_execution else []) +
          (["--preflight-only"] if args.prepare_only else []), repo)
 

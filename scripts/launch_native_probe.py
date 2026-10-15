@@ -18,6 +18,8 @@ from pathlib import Path
 
 from study_seed import audit_seed, research_prompt
 from research_conditions import CONDITION_CHOICES, RESEARCH_SKILLS, canonical_condition
+import assessment_procedure as procedure
+from worker_end_state import save_worker_end_state, validate_retained_artifacts
 
 STUDY_SKILLS = ("assess-alignment-with-stamped-principles",) + RESEARCH_SKILLS
 JUDGE_SKILLS = {"assess-alignment-with-stamped-principles", "stamped-conventions"}
@@ -37,7 +39,7 @@ def check_assessment(source, expected_pin):
     if head != pin["source_commit"] or dirty:
         raise SystemExit("Judge assessment source is changed or at the wrong revision")
     modules = subprocess.check_output(["git", "-C", str(source), "submodule", "status", "--recursive"])
-    if any(line[:1] != b" " for line in modules.splitlines()):
+    if not procedure.assessment_modules_match(modules):
         raise SystemExit("Judge assessment dependencies differ from their recorded revisions")
     if any(not (source / "skills" / name / "SKILL.md").is_file() for name in JUDGE_SKILLS):
         raise SystemExit("Frozen assessment skill entrypoint is missing")
@@ -160,6 +162,58 @@ def wait_for_worker(process, output, hard_limit, review_after):
                 return True
 
 
+def terminate_worker_group(process):
+    """Stop a timed-out/interrupted process group before observing its state."""
+    try:
+        os.killpg(process.pid, signal.SIGTERM)
+    except ProcessLookupError:
+        pass
+    time.sleep(5)
+    # The leader may exit before descendants stop writing artifacts.
+    try:
+        os.killpg(process.pid, signal.SIGKILL)
+    except ProcessLookupError:
+        pass
+    process.wait()
+
+
+def wait_and_capture_worker(process, prompt, output, checkout, record, role,
+                            hard_limit, review_after):
+    """Retain research state immediately after stop, even on a failed worker."""
+    started = time.monotonic()
+    timed_out = False
+    reason = "exited"
+    try:
+        try:
+            process.stdin.write(prompt)
+            process.stdin.close()
+        except BrokenPipeError:
+            # A worker can exit before consuming the prompt; still retain it.
+            pass
+        timed_out = wait_for_worker(process, output, hard_limit, review_after)
+        if timed_out:
+            reason = "timeout"
+            terminate_worker_group(process)
+    except BaseException:
+        reason = "launcher-interrupted"
+        if process.poll() is None:
+            terminate_worker_group(process)
+        raise
+    finally:
+        record.update({"finished_at": datetime.now(timezone.utc).isoformat(),
+                       "elapsed_seconds": time.monotonic() - started,
+                       "timed_out": timed_out, "returncode": process.returncode,
+                       "limitation": "Detached descendants outside the process group are not forcibly contained."})
+        if role == "research":
+            worker = {"pid": process.pid, "returncode": process.returncode,
+                      "timed_out": timed_out, "stop_reason": reason,
+                      "stopped_at": record["finished_at"]}
+            record["worker_end_state"] = save_worker_end_state(checkout, output, worker)
+        # Save this before stream joins, session parsing or skill inventory fail.
+        (output / "result.json").write_text(json.dumps(record, indent=2) + "\n")
+    return timed_out
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--checkout", type=Path, required=True)
@@ -180,6 +234,12 @@ def main():
     parser.add_argument("--condition", choices=CONDITION_CHOICES, default="baseline")
     parser.add_argument("--preflight-only", action="store_true")
     parser.add_argument("--capture-execution", action="store_true")
+    parser.add_argument("--run-mode", choices=("development", "formal"), default="development")
+    parser.add_argument("--procedure", type=Path)
+    parser.add_argument("--procedure-sha256")
+    parser.add_argument("--procedure-study", type=Path)
+    parser.add_argument("--resource-readiness", type=Path)
+    parser.add_argument("--worker-end-state", type=Path)
     args = parser.parse_args()
     if args.seconds < 0 or args.review_seconds < 0:
         parser.error("Time settings must be nonnegative")
@@ -191,8 +251,68 @@ def main():
         args.condition = seed["condition"]
         if args.prompt.read_bytes() != research_prompt(args.checkout, args.capture_execution):
             raise SystemExit("Research prompt differs from committed input and common execution guidance")
+    worker_validation = None
+    if args.worker_end_state:
+        if args.role != "judge":
+            parser.error("Worker-stop evidence is for judges only")
+        worker_validation = validate_retained_artifacts(
+            json.loads(args.worker_end_state.read_bytes()), args.checkout.resolve())
+    frozen = None
+    status = {"version": 1, "status": "development-unsealed"}
+    if args.run_mode == "formal":
+        if not args.procedure or not args.procedure_study:
+            parser.error("Formal native launch requires --procedure and --procedure-study")
+        if args.role == "judge" and not args.worker_end_state:
+            parser.error("Formal judges require --worker-end-state")
+        frozen = procedure.load_procedure(args.procedure, args.procedure_sha256)
+        if args.role == "judge":
+            roots = procedure.git(args.checkout, "rev-list", "--max-parents=0", "HEAD").splitlines()
+            if len(roots) != 1:
+                raise SystemExit("Formal judge target must have one input-seed root")
+            seed = json.loads(procedure.blob(args.checkout, roots[0], "worker-input.json"))
+        procedure.check_seed(frozen, seed)
+        procedure.check_sources(frozen, Path(__file__).resolve().parents[1], args.procedure_study,
+                                seed["coordinator_commit"])
+        procedure.check_settings(frozen, args)
+        procedure.check_readiness(frozen, args.resource_readiness)
+        if args.role == "judge":
+            procedure.require_equal(pin, frozen["assessment"], "native assessor pin")
+            # Reconstruct the prompt from immutable blobs. The retained guidance
+            # directory supplies stable relative link locations, not authority.
+            from prepare_launch import render_judge_prompt
+            retained = args.procedure.resolve().parent / "frozen-inputs"
+            for name, digest in frozen["study"]["guidance_files"].items():
+                procedure.require_equal(procedure.sha256((retained / name).read_bytes()), digest,
+                                        "retained guidance " + name)
+            procedure.require_equal(procedure.sha256((retained / "judge-prompt.md").read_bytes()),
+                                    frozen["fixed_files"]["judge-prompt.md"], "retained judge prompt")
+            with tempfile.TemporaryDirectory() as temporary:
+                scratch = Path(temporary)
+                brief = scratch / "original-study-prompt.md"
+                brief.write_bytes(procedure.blob(args.checkout, roots[0], "input/study-task.md"))
+                procedure.require_equal(procedure.sha256(brief.read_bytes()), frozen["study"]["task_sha256"],
+                                        "judge scientific task")
+                reference = frozen["study"]["reference"]
+                expected = render_judge_prompt(retained / "judge-prompt.md", brief,
+                    procedure.git(args.checkout, "rev-parse", "HEAD"), scratch,
+                    retained / reference if reference else None, retained / frozen["study"]["rubric"])
+                procedure.require_equal(args.prompt.read_text(), expected.read_text() +
+                                        procedure.replay_instruction(frozen) +
+                                        procedure.worker_credit_instruction(args.worker_end_state),
+                                        "rendered judge instructions")
+        status.update(status="formal-verified", procedure_sha256=args.procedure_sha256,
+                      comparison_id=frozen["comparison_id"])
+    elif args.procedure or args.procedure_sha256 or args.procedure_study or args.resource_readiness:
+        parser.error("Procedure flags require --run-mode formal")
     output = args.output.resolve()
+    if args.role == "research" and output.is_relative_to(args.checkout.resolve()):
+        parser.error("Research launch evidence must be outside the worker checkout")
     output.mkdir(parents=True, exist_ok=False)
+    if args.worker_end_state:
+        status["worker_end_state_sha256"] = procedure.sha256(args.worker_end_state.read_bytes())
+        (output / "worker-end-state.json").write_bytes(args.worker_end_state.read_bytes())
+        (output / "worker-artifact-validation.json").write_text(json.dumps(worker_validation, indent=2) + "\n")
+    (output / "procedure-status.json").write_text(json.dumps(status, indent=2) + "\n")
     prompt = args.prompt.read_bytes()
     (output / "prompt.txt").write_bytes(prompt)
     if args.role == "research":
@@ -204,6 +324,8 @@ def main():
                         capture_execution=args.capture_execution)
         (output / "condition-assignment.json").write_text(json.dumps(assigned, indent=2) + "\n")
     prepared_profile = Path(os.environ.get("CODEX_HOME", str(Path.home() / ".codex")))
+    if frozen:
+        procedure.check_native(frozen, args.cli, prepared_profile)
     profile = launch_profile(prepared_profile, args.assessment_source if args.role == "judge" else None)
     config = tomllib.loads((profile / "config.toml").read_text())
     overrides = {item["path"]: item["enabled"] for item in config.get("skills", {}).get("config", [])}
@@ -243,6 +365,10 @@ def main():
         environment["STAMPED_ASSESSMENT_PYTHON"] = sys.executable
         environment["STAMPED_ASSESSMENT_SOURCE"] = str(args.assessment_source.resolve())
         environment["STAMPED_ASSESSMENT_PIN"] = str(args.assessment_pin.resolve())
+        if frozen:
+            environment["STAMPED_PROCEDURE"] = str(args.procedure.resolve())
+            environment["STAMPED_PROCEDURE_SHA256"] = args.procedure_sha256
+            environment["STAMPED_JUDGE_COMMIT"] = procedure.git(args.checkout, "rev-parse", "HEAD")
     removed = [key for key in ("CODEX_THREAD_ID", "CODEX_PARENT_THREAD_ID", "CODEX_SESSION_ID")
                if environment.pop(key, None) is not None]
     pixi_removed = [key for key in ("PIXI_PROJECT_MANIFEST", "PIXI_IN_SHELL", "PIXI_PROJECT_ROOT",
@@ -283,6 +409,7 @@ def main():
               "started_at": datetime.now(timezone.utc).isoformat(), "timeout_seconds": args.seconds,
               "review_seconds": args.review_seconds, "role": args.role,
               "assessment_pin": pin}
+    record["procedure"] = status
     record["condition"] = args.condition if args.role == "research" else None
     record["codex_home"] = str(profile)
     record["study_skill_paths"] = [str(p) for p in study_skills]
@@ -292,7 +419,6 @@ def main():
         runner = Path(environment["STAMPED_ASSESSMENT_RUNNER"])
         record["assessment_runner_sha256"] = hashlib.sha256(runner.read_bytes()).hexdigest()
     (output / "launch.json").write_text(json.dumps(record, indent=2) + "\n")
-    started = time.monotonic()
     process = subprocess.Popen(command, cwd=args.checkout, env=environment,
                                stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
                                process_group=0)
@@ -314,29 +440,12 @@ def main():
     error_reader = threading.Thread(target=relay_errors)
     reader.start()
     error_reader.start()
-    process.stdin.write(prompt)
-    process.stdin.close()
-    timed_out = wait_for_worker(process, output, args.seconds, args.review_seconds)
-    if timed_out:
-        try:
-            os.killpg(process.pid, signal.SIGTERM)
-        except ProcessLookupError:
-            pass
-        time.sleep(5)
-        # Always kill the group after the grace period, even if its leader exited.
-        try:
-            os.killpg(process.pid, signal.SIGKILL)
-        except ProcessLookupError:
-            pass
-        process.wait()
+    timed_out = wait_and_capture_worker(process, prompt, output, args.checkout,
+                                        record, args.role, args.seconds, args.review_seconds)
     reader.join(timeout=10)
     error_reader.join(timeout=10)
     if reader.is_alive() or error_reader.is_alive():
         raise SystemExit("A descendant retained the output pipe; inspect retained process logs")
-    record.update({"finished_at": datetime.now(timezone.utc).isoformat(),
-                   "elapsed_seconds": time.monotonic() - started,
-                   "timed_out": timed_out, "returncode": process.returncode,
-                   "limitation": "Detached descendants outside the process group are not forcibly contained."})
     sessions = []
     for line in (output / "events.jsonl").read_text().splitlines():
         try:

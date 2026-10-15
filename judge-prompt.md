@@ -16,6 +16,10 @@ Do not substitute helper scripts from the object being judged.
 Scope is identical for every judgment: inspection, remote retrieval checks, and one authorized replay in a separate fresh clone using the object's documented entrypoint.
 Do not modify or repair the source object, install missing project declarations on its behalf, or reuse existing output files as proof of replay.
 If a necessary prerequisite is absent, report the limitation with evidence.
+For access (must/016), the intended recipient is a researcher using the declared authorized access route; anonymous access is not required.
+Record recipient, route, required artifact coverage and host scope.
+Metadata alone does not establish access; verified access to only part of the required object remains partial.
+A separate clone verifies its recorded retrieval route, not cross-host portability.
 Assess whether the methods and evidence answer the supplied scientific question, separately from STAMPED object quality.
 Coordinator reference material, if supplied, informs checks; matching a published pipeline or answer is not required.
 Accept scientifically defensible alternative analyses and examine uncertainty, assumptions and limitations.

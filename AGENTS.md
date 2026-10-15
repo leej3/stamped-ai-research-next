@@ -26,6 +26,8 @@ The unit of iteration is a pinned skill revision; study-specific preparation and
   Use `pixi run judge` with an exact result commit and the external frozen assessor; see [launch commands](scripts/README.md).
   Give judges the same scientific evaluation guidance without condition labels or coordinator grades.
   Keep assessment source, runtime, prompt and settings fixed throughout the comparison.
+  Seal the procedure before formal launches; use its digest and the readiness receipt with both workers and judges.
+  Pass each worker's original stop receipt to its judges; coordinator preservation must not earn worker credit.
 - During preparation, improve and repin the assessor and runtime as needed, retaining exact version records.
   Regrade development results with a common assessor when comparing them; freeze assessment versions for formal runs.
   Keep preparation pilots and historical results from other designs separate from formal comparisons.

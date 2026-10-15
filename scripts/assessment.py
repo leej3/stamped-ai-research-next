@@ -7,6 +7,8 @@ import os
 import subprocess
 from pathlib import Path
 
+import assessment_procedure as procedure
+
 ROOT = Path(__file__).resolve().parents[1]
 
 
@@ -22,12 +24,19 @@ def main():
     remaining = args.arguments
     pin_path = Path(os.environ.get("STAMPED_ASSESSMENT_PIN", ROOT / "assessment-version.json"))
     pin = json.loads(pin_path.read_text())
+    frozen_path = os.environ.get("STAMPED_PROCEDURE")
+    frozen = None
+    if frozen_path:
+        frozen = procedure.load_procedure(frozen_path, os.environ.get("STAMPED_PROCEDURE_SHA256"))
+        procedure.require_equal(pin, frozen["assessment"], "assessment runner pin")
+        procedure.require_equal(procedure.sha256(Path(__file__).read_bytes()),
+                                frozen["fixed_files"]["scripts/assessment.py"], "assessment runner source")
     source = Path(os.environ.get("STAMPED_ASSESSMENT_SOURCE", ROOT / "assessment"))
     if git("rev-parse", "HEAD", cwd=source).decode().strip() != pin["source_commit"]:
         raise SystemExit("Assessment checkout differs from the frozen version")
     if git("status", "--porcelain", cwd=source).strip():
         raise SystemExit("Assessment checkout has local changes")
-    if any(line[:1] != b" " for line in git("submodule", "status", "--recursive", cwd=source).splitlines()):
+    if not procedure.assessment_modules_match(git("submodule", "status", "--recursive", cwd=source)):
         raise SystemExit("Assessment submodules are not at their recorded revisions")
     revision = pin["environment_commit"]
     if subprocess.run(["git", "cat-file", "-e", revision], cwd=ROOT, capture_output=True).returncode:
@@ -56,6 +65,12 @@ def main():
             remaining.insert(0, "validate")
     else:
         helper = scripts / {"probes": "run_probes.py", "fresh-rerun": "fresh_rerun.py"}[args.action]
+    if frozen and args.action == "fresh-rerun":
+        target = Path(os.environ["STAMPED_JUDGE_TARGET"])
+        procedure.require_equal(procedure.git(target, "rev-parse", "HEAD"),
+                                os.environ["STAMPED_JUDGE_COMMIT"], "replay target commit")
+        remaining = procedure.replay_arguments(frozen, remaining, target,
+                                               Path(os.environ["STAMPED_JUDGE_OUTPUT"]))
     result = subprocess.run(["pixi", "run", "--locked", "--manifest-path", manifest,
                              "python", helper, *remaining], cwd=ROOT)
     raise SystemExit(result.returncode)

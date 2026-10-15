@@ -321,7 +321,7 @@ def test_uninitialized_assessment_dependency_is_rejected(tmp_path, monkeypatch):
     def output(argv, **kwargs):
         if "rev-parse" in argv:
             return "a" * 40 + "\n"
-        return b"-abc evals\n" if "submodule" in argv else b""
+        return b"-abc rules\n" if "submodule" in argv else b""
     monkeypatch.setattr(launch.subprocess, "check_output", output)
     with pytest.raises(SystemExit, match="dependencies differ"):
         launch.check_assessment(tmp_path, pin)

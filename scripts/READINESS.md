@@ -22,7 +22,7 @@ Save the selected requirements in the iteration record, for example `iterations/
 IDs must be unique lowercase letters, numbers, hyphens or underscores, starting with a letter or number, at most 80 characters.
 Use a nonempty list; when no resource checks apply, record that decision instead of claiming checks passed.
 
-Configure how this host demonstrates each requirement in `~/.config/stamped-ai-research-next/readiness.json`:
+Configure how this host demonstrates each requirement in `~/.config/<repository-name>/readiness.json`:
 
 ```json
 {

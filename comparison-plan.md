@@ -11,6 +11,10 @@ Keep preparation pilots separate.
   Show met, partial and unmet counts separately and recurring item failures; no overall certification or invented total score.
   Grade worker practices at the recorded worker end state.
   Coordinator preservation is a separate contribution.
+  For access (must/016), the intended recipient is a researcher using the declared authorized access route; anonymous access is not required.
+  Record the recipient, route, required artifact coverage and host scope.
+  Metadata alone does not prove access; verified access to only part of the required research object remains partial.
+  Retrieval into a separate clone proves access through that route, not cross-host portability.
 - Operational outcomes: record worker completion, independently verified input/output retrieval, replay success, and coordinator intervention.
   Distinguish failure from not attempted or not checked.
   Retain all assigned runs, including unsuccessful discovery and installation.
