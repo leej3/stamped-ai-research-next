@@ -36,7 +36,7 @@ def main():
     info = json.loads(info_path.read_text())
     sources = json.loads((ROOT / "input/sources.json").read_text())
     outputs = sorted(p for p in (ROOT / "results").iterdir()
-                     if p.is_file() and p.name != "report.md")
+                     if p.is_file() and p.name not in {"report.md", "pilot-qc.json"})
     manifest = {
         "run_id": args.run_id,
         "completed_at_utc": datetime.now(timezone.utc).isoformat(),
