@@ -1,0 +1,227 @@
+{
+  "checklist_version": "0.3.1",
+  "responses": {
+    "stamped-checklist:must/001": {
+      "value": "yes",
+      "reason": "The input, code, environment and results are nested under the repository root.",
+      "status": "met",
+      "evidence": [],
+      "source": "human:web-app"
+    },
+    "stamped-checklist:must/002": {
+      "value": "yes",
+      "reason": "The maps are annexed under input/data; cohort and source manifest are inside input/.",
+      "status": "met",
+      "evidence": [],
+      "source": "human:web-app"
+    },
+    "stamped-checklist:must/003": {
+      "value": "yes",
+      "reason": "pixi.toml declares the Python and imported analysis packages inside the project.",
+      "status": "met",
+      "evidence": [],
+      "source": "human:web-app"
+    },
+    "stamped-checklist:must/004": {
+      "value": "no",
+      "reason": "At worker stop, pixi.toml was modified and analysis/results/logs were untracked; coordinator later committed retained artifacts.",
+      "status": "unmet",
+      "evidence": [],
+      "source": "human:web-app"
+    },
+    "stamped-checklist:must/005": {
+      "value": "yes",
+      "reason": "Large participant maps use git-annex pointers; all 54 source maps also retrieved with matching SHA256.",
+      "status": "met",
+      "evidence": [],
+      "source": "human:web-app"
+    },
+    "stamped-checklist:must/006": {
+      "value": "no",
+      "reason": "No run record linking the shipped results to an exact environment is tracked in the assessed commit.",
+      "status": "unmet",
+      "evidence": [],
+      "source": "human:web-app"
+    },
+    "stamped-checklist:must/007": {
+      "value": "no",
+      "reason": "No README.md or Makefile gives installation and use instructions.",
+      "status": "unmet",
+      "evidence": [],
+      "source": "human:web-app"
+    },
+    "stamped-checklist:must/008": {
+      "value": "no",
+      "reason": "results/analyze.py is named as the analysis code, but no documented command or complete reproduction route is provided.",
+      "status": "unmet",
+      "evidence": [],
+      "source": "human:web-app"
+    },
+    "stamped-checklist:must/009": {
+      "value": "yes",
+      "reason": "Tracked scripts use repository-relative paths; the path probe found no host-specific absolute paths.",
+      "status": "met",
+      "evidence": [],
+      "source": "human:web-app"
+    },
+    "stamped-checklist:must/010": {
+      "value": "no",
+      "reason": "pixi.toml lists imported packages, but wildcard versions and no lockfile leave dependency resolution unpinned.",
+      "status": "unmet",
+      "evidence": [],
+      "source": "human:web-app"
+    },
+    "stamped-checklist:must/011": {
+      "value": "no",
+      "reason": "The environment lists OS targets, but installation/runtime host requirements and annex access assumptions are not documented.",
+      "status": "unmet",
+      "evidence": [],
+      "source": "human:web-app"
+    },
+    "stamped-checklist:must/012": {
+      "value": "no",
+      "reason": "pixi.toml lists Python and packages, but does not give a complete system-requirements or setup list.",
+      "status": "unmet",
+      "evidence": [],
+      "source": "human:web-app"
+    },
+    "stamped-checklist:must/013": {
+      "value": "no",
+      "reason": "pixi.toml is tracked in the retained commit, but it was modified and uncommitted at worker stop.",
+      "status": "unmet",
+      "evidence": [],
+      "source": "human:web-app"
+    },
+    "stamped-checklist:must/014": {
+      "value": "no",
+      "reason": "No runnable process for updating dependency specifications is documented.",
+      "status": "unmet",
+      "evidence": [],
+      "source": "human:web-app"
+    },
+    "stamped-checklist:must/015": {
+      "value": "no",
+      "reason": "pixi.toml is present but unpinned; no lockfile or published environment artifact fixes exact package versions.",
+      "status": "unmet",
+      "evidence": [],
+      "source": "human:web-app"
+    },
+    "stamped-checklist:must/016": {
+      "value": "no",
+      "reason": "A researcher can retrieve all 54 inputs from NeuroVault; the exact Git commit and annexed results were not independently retrievable.",
+      "status": "unmet",
+      "evidence": [],
+      "source": "human:web-app"
+    },
+    "stamped-checklist:must/017": {
+      "value": "no",
+      "reason": "The report names a script but does not document how to obtain or use the environment for reproduction.",
+      "status": "unmet",
+      "evidence": [],
+      "source": "human:web-app"
+    },
+    "stamped-checklist:should/001": {
+      "value": "no",
+      "reason": "Git and annex cover inputs, but worker analysis code and results were untracked at stop; coordinator later recorded them.",
+      "status": "unmet",
+      "evidence": [],
+      "source": "human:web-app"
+    },
+    "stamped-checklist:should/002": {
+      "value": "no",
+      "reason": "No CI or other committed recurring check tests the documented workflow.",
+      "status": "unmet",
+      "evidence": [],
+      "source": "human:web-app"
+    },
+    "stamped-checklist:should/003": {
+      "value": "no",
+      "reason": "Inputs, environment and derived results have separate paths, but the analysis code is stored inside results/.",
+      "status": "unmet",
+      "evidence": [],
+      "source": "human:web-app"
+    },
+    "stamped-checklist:should/009": {
+      "value": null,
+      "reason": "N/A: the supplied data and listed dependencies are public; no restricted component is present.",
+      "status": "not-checked",
+      "evidence": [],
+      "source": "human:web-app"
+    },
+    "stamped-checklist:should/004": {
+      "value": null,
+      "reason": "The fresh-clone attempt could not fetch annex payloads, so it never executed the pipeline; an accessible clone is needed.",
+      "status": "not-checked",
+      "evidence": [],
+      "source": "human:web-app"
+    },
+    "stamped-checklist:should/005": {
+      "value": "no",
+      "reason": "The delivered runs used a host Python environment; no container, clean-VM or disposable-environment mechanism is specified.",
+      "status": "unmet",
+      "evidence": [],
+      "source": "human:web-app"
+    },
+    "stamped-checklist:should/006": {
+      "value": "no",
+      "reason": "There is no CI or recorded clean rebuild testing that recreates the exact environment.",
+      "status": "unmet",
+      "evidence": [],
+      "source": "human:web-app"
+    },
+    "stamped-checklist:should/007": {
+      "value": "no",
+      "reason": "pixi.toml is retained, but no lockfile or archived environment artifact is provided.",
+      "status": "unmet",
+      "evidence": [],
+      "source": "human:web-app"
+    },
+    "stamped-checklist:should/008": {
+      "value": "no",
+      "reason": "No process for updating dependency specifications is documented; this duplicates must/014.",
+      "status": "unmet",
+      "evidence": [],
+      "source": "human:web-app"
+    },
+    "stamped-checklist:may/001": {
+      "value": "yes",
+      "reason": "External maps are included through annex pointers and software is declared in pixi.toml.",
+      "status": "met",
+      "evidence": [],
+      "source": "human:web-app"
+    },
+    "stamped-checklist:may/002": {
+      "value": "yes",
+      "reason": "The report describes the inputs, analysis code and outputs and how they relate.",
+      "status": "met",
+      "evidence": [],
+      "source": "human:web-app"
+    },
+    "stamped-checklist:may/003": {
+      "value": "no",
+      "reason": "Input, environment and output paths are separable, but code shares the results directory and no tests protect independent updates.",
+      "status": "unmet",
+      "evidence": [],
+      "source": "human:web-app"
+    },
+    "stamped-checklist:may/004": {
+      "value": "no",
+      "reason": "analyze.py reads input/ and writes results/, but no explicit module-composition or orchestration procedure is documented.",
+      "status": "unmet",
+      "evidence": [],
+      "source": "human:web-app"
+    },
+    "stamped-checklist:may/005": {
+      "value": "yes",
+      "reason": "The report's reproducibility-files section helps readers identify code and key outputs.",
+      "status": "met",
+      "evidence": [],
+      "source": "human:web-app"
+    }
+  },
+  "assessor": {
+    "skill": "human",
+    "harness": "checklist web app",
+    "format": 3
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "recorded_at": "2026-10-15T22:54:00.285466+00:00",
+  "reason": "Undo coordinator Pixi regeneration; preserve worker-stop bytes",
+  "original_sha256": "5884bb53a343659adce7759c1b48477e2cdffb71b4838e49d14810e75dc75f21",
+  "regenerated_sha256": "20e6a8aec591446f6a0e5a8b8b8b288ba01bd37f501e72e3bfac0d43e5f207e4",
+  "restored_path": "pixi.lock",
+  "source": "worker-stop-artifacts/pixi.lock",
+  "not_a_scientific_repair": true
+}

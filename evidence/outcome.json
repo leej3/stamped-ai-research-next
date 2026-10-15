@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "classification": "preparation; excluded from formal scientific comparisons",
+  "source_commit": "ea3fb355542fc9b85d82e51e90f0055103f26333",
+  "registration_commit": "a3d1ac44acf589eef5329fe810a7faaea9669640",
+  "procedure_sha256": "bd50dcef19a43e25888d2ce4f8f9cd8db90e3d274473b6ba9541c04f742f9efa",
+  "result_commit": "1b95e0986da9f298eed2b16f73b48a703fe3b1fd",
+  "worker_head_commit": "b775bd5baba9e59ba5a9167d53215f4925818788",
+  "worker": {
+    "session": "01a141bf-36a9-72e2-bad0-135953ae9187",
+    "elapsed_seconds": 322.3769639589591,
+    "returncode": 0,
+    "stop_capture": "complete",
+    "at_stop": "modified manifest and untracked logs/results; no worker commit"
+  },
+  "judge": {
+    "session": "01a141c6-592b-7553-b8c5-2ace0df2fead",
+    "elapsed_seconds": 347.35592429107055,
+    "returncode": 0,
+    "target_unchanged": true,
+    "response_validated": true,
+    "scientific_adequacy": "qualified",
+    "reported_conclusion": "No whole-brain-corrected positive vmPFC gain effect",
+    "scientific_limitation": "One max-statistic entry is uninitialized in the sign-flip loop; corrected p-values and whole-brain voxel counts need regeneration. Original artifacts retained without repair.",
+    "stamped": {
+      "must": {
+        "met": 5,
+        "partial": 7,
+        "unmet": 5
+      },
+      "should": {
+        "partial": 3,
+        "unmet": 4,
+        "not-checked": 1,
+        "not-applicable": 1
+      },
+      "may": {
+        "met": 3,
+        "partial": 2
+      }
+    },
+    "replay": "Single attempt not-checked: unavailable annex inputs/comparators prevented entrypoint execution",
+    "independent_input_retrieval": {
+      "maps": 54,
+      "sha256_verified": 54,
+      "bytes": 96387264,
+      "route": "NeuroVault source HTTPS URLs",
+      "host_scope": "same assessment host"
+    }
+  },
+  "coordinator_protocol_defects": [
+    {
+      "issue": "Git publication intentionally deferred until after judgment",
+      "effect": "Avoidable access failure during independent replay/publication checks; this is not evidence of intrinsic replay failure alone",
+      "future_correction": "Publish immutable result and annex payloads before judgment with separate coordinator attribution; add receipts afterward",
+      "applied_to_this_attempt": false
+    },
+    {
+      "issue": "Preservation invoked Pixi through worker manifest and regenerated ignored lock",
+      "effect": "Detected by exact stop-lock hash comparison",
+      "resolution": "Regenerated lock retained; original stop-time lock restored byte-identically; later operational commands used coordinator manifest"
+    }
+  ],
+  "environment": {
+    "stop_lock_sha256": "5884bb53a343659adce7759c1b48477e2cdffb71b4838e49d14810e75dc75f21",
+    "stop_manifest_sha256": "4ce505381e79449b8f47d9a33eb1736a46fddf5e3d6fb24a42bb2385cea05149",
+    "locked_install": "failed: lock file not up-to-date with workspace",
+    "repaired": false
+  },
+  "entire": {
+    "worker": {
+      "checkpoint_id": "01M50WA7M7BXX498YBX999D7FQ",
+      "checkpoint_ref": "refs/entire/checkpoints/FQ/01M50WA7M7BXX498YBX999D7FQ",
+      "checkpoint_oid": "9990fa1aecf19f8ef441ecd23d91297db84f6c44",
+      "local_capture": true,
+      "uploaded_refs": true,
+      "hosted_metadata": true,
+      "condensation": "normal coordinator preservation commit; no forced attach or amend"
+    },
+    "judge": {
+      "checkpoint_refs": [],
+      "pending_checkpoints": [],
+      "session_info": "Session not found",
+      "boundary": "External judgment outputs produced no Entire checkpoint in unchanged target checkout",
+      "cli_events_retained": true,
+      "forced_attach_or_amend": false
+    }
+  },
+  "additional_trials": 0,
+  "scientific_artifact_repairs": false,
+  "new_hpc_jobs": false,
+  "recorded_at": "2026-10-15T23:04:31.777236+00:00"
+}
