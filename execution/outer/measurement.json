@@ -1,0 +1,21 @@
+{
+  "run": "narps-suitability-20261015-03",
+  "coordinator_commit": "945f6e7972e3ce5ab8e142dfcfe0ac3f91504091",
+  "study_commit": "a36fb101295b111bb2d98259d7c14de7e28d8c59",
+  "condition": "baseline",
+  "model": "gpt-6-luna",
+  "reasoning_effort": "high",
+  "capture_execution": false,
+  "hard_timeout_seconds": 0,
+  "review_after_seconds": 5400,
+  "concurrent_pilots": 3,
+  "started_at_utc": "2026-10-15T20:29:32Z",
+  "hardware": {
+    "hw.logicalcpu": "10",
+    "hw.memsize": "34359738368",
+    "machdep.cpu.brand_string": "Apple M4"
+  },
+  "os": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+  "aggregate_resource_method": "/usr/bin/time -l around the normal prepare_launch.py command; includes installation, retrieval, hook preparation, native CLI and descendants. Maximum RSS is a process maximum, not the simultaneous total of the tree.",
+  "research_elapsed_method": "launch/native/result.json elapsed_seconds, excluding setup before the native launch; command durations can be reconstructed only where native rollout timestamps permit."
+}

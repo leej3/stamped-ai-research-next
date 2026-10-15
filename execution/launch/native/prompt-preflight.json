@@ -1,0 +1,9 @@
+{
+  "effective_prompt_sha256": "6026dcb91c7bde4132deab5bebc1d1dd89557d74a2ecb12164e4355d2f2302c7",
+  "private_marker_count": 0,
+  "condition": "baseline",
+  "role": "research",
+  "codex_home": "/Users/johnlee/.local/state/stamped-ai-research-next/codex-public-v3-20261015",
+  "project_instructions_present": false,
+  "visible_study_skills": []
+}

@@ -1,0 +1,9 @@
+{
+  "checkout": "/Users/johnlee/.local/share/stamped-ai-research-next/workers/narps-suitability-20261015-03",
+  "kind": "independent-repository",
+  "branch": "codex/narps-suitability-20261015-03",
+  "base": "945f6e7972e3ce5ab8e142dfcfe0ac3f91504091",
+  "base_commit": "945f6e7972e3ce5ab8e142dfcfe0ac3f91504091",
+  "worker_commit": "cd40cb85ef6080b5e4dccdcb1b8cae6602be0a44",
+  "role": "research"
+}

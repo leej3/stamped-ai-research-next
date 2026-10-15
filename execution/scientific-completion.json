@@ -1,0 +1,99 @@
+{
+  "worker_returncode": 0,
+  "native_session_ids": [
+    "01a14142-7b56-7782-8c3b-e9eab291311a"
+  ],
+  "worker_finished_at": "2026-10-15T20:35:39.240796+00:00",
+  "worker_head_at_completion": "cd40cb85ef6080b5e4dccdcb1b8cae6602be0a44",
+  "working_status_at_completion": " M pixi.toml\n?? results/\n",
+  "artifact_inventory": [
+    {
+      "path": "results/.keep",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "results/code/group_analysis.py",
+      "bytes": 8710,
+      "sha256": "ab6f8a0217ad73d29572c5ae22e62c4c49a8419f932b6022e0147c4ee4c97145"
+    },
+    {
+      "path": "results/figures/participant_effects.png",
+      "bytes": 41144,
+      "sha256": "c0d81d64b3baa1e14a2da52c1aaad1164808cc8d97d472337dca50cd01007f0c"
+    },
+    {
+      "path": "results/figures/whole_brain_fwe.png",
+      "bytes": 29130,
+      "sha256": "2b20c161af625c1dbc3a5bc822ba3ce8a48d20a02fa976bb34cefffe34084250"
+    },
+    {
+      "path": "results/figures/whole_brain_unthresholded.png",
+      "bytes": 53042,
+      "sha256": "e01f39b5b53f272c3c9d0531e3622eebfabc33ca471da4c8b9b579e8a9a74d1e"
+    },
+    {
+      "path": "results/logs/group_analysis.log",
+      "bytes": 545,
+      "sha256": "6a9b8353a3636b6a5ae9cd75ee84d458069ac31913404484cfad2d8eff470d0d"
+    },
+    {
+      "path": "results/logs/group_analysis_final.log",
+      "bytes": 1258,
+      "sha256": "9a26258513121cfd5df209e8c07bcda6df2ec33a0af0f31861130b70eff7abb7"
+    },
+    {
+      "path": "results/logs/group_analysis_release.log",
+      "bytes": 1425,
+      "sha256": "c8a4891d1504518695d1b8b3a4a59512081cc3d924b5969d82dc2a0666f429d7"
+    },
+    {
+      "path": "results/logs/group_analysis_rerun.log",
+      "bytes": 1175,
+      "sha256": "d46b69c7aa84c35a6d85b052d8374f8f92a2efda2099616c0999495bba4d3b81"
+    },
+    {
+      "path": "results/maps/group_mean_cope.nii.gz",
+      "bytes": 774697,
+      "sha256": "7cf8639e7be8777ab213cf9cfe43639cf638e78d48b48235e3b4e7755e9d9320"
+    },
+    {
+      "path": "results/maps/group_p_fwe_positive.nii.gz",
+      "bytes": 47789,
+      "sha256": "84f618ae054886523ed4bae37569408eb7cef77c3705b77b5894ebe09eee07ae"
+    },
+    {
+      "path": "results/maps/group_t_fwe05_positive.nii.gz",
+      "bytes": 16112,
+      "sha256": "96977fd08a5179e10510bc79cd80886b041b0de721ccb4a51837d5c3a62cc602"
+    },
+    {
+      "path": "results/maps/group_t_positive.nii.gz",
+      "bytes": 772872,
+      "sha256": "92b81dd579ac9b50a7869f2d7773139b5584067ff33ed6cf593ef0f9f1b9cba5"
+    },
+    {
+      "path": "results/report.md",
+      "bytes": 5157,
+      "sha256": "a3b41d617da010c17c147035209f4f4248810883f1d2c0cfb7a8f19e379533a8"
+    },
+    {
+      "path": "results/tables/group_summary.json",
+      "bytes": 1176,
+      "sha256": "e8e06b6d59890ea1d7f13a05ef72942d97b7cec9aa78e79bd2d2d9579c8d6ace"
+    },
+    {
+      "path": "results/tables/participant_qc.csv",
+      "bytes": 6872,
+      "sha256": "23ce783302a3367cede7949893630d514b0a9f583fd1cc2621dd392c8e754e31"
+    },
+    {
+      "path": "pixi.toml",
+      "bytes": 516,
+      "sha256": "0d435f1d4ff9fb9177b6816df0ac64a229f8f3437a22d0ad4df27028c11ed802"
+    }
+  ],
+  "final_working_lock_sha256": "ca93973a5f20f4561dbfdbd2c36f45c5134027081cad660d074869227f9d1a7c",
+  "note": "Coordinator preserves these scientific output bytes without repair; the worker left the research artifacts uncommitted.",
+  "scientific_result_commit": "f711558b2e29c376410e0e622b2f2a992f77bb41"
+}

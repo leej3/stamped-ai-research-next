@@ -1,0 +1,15 @@
+{
+  "source_basename": "rollout-2026-10-15T16-30-38-01a14142-7b56-7782-8c3b-e9eab291311a.jsonl",
+  "source_sha256": "8e9da759279814b97216a774aa21b1dc7719406529b3c4b2c56de6038ae9b6d3",
+  "raw_source_retained_locally": "/Users/johnlee/.local/state/stamped-ai-research-next/pilots/narps-suitability-20261015-03/native-session/rollout-2026-10-15T16-30-38-01a14142-7b56-7782-8c3b-e9eab291311a.jsonl",
+  "export_sha256": "0146aaf91a6b6eaa31de62a82b9f38f69684e8bcc5a87293d84cff2b7a6a84ea",
+  "exported_records": 142,
+  "omitted_record_counts": {
+    "response_item:message": 10,
+    "world_state:None": 1,
+    "event_msg:item_completed": 98,
+    "response_item:reasoning": 53,
+    "event_msg:token_count": 46
+  },
+  "scope": "Public user/agent messages, tool calls and outputs, timing, session identity and usage. Internal model reasoning, encrypted internals, base instructions and redundant runtime bookkeeping are not part of this execution export. Original native CLI events.jsonl is retained unchanged."
+}

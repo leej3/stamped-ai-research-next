@@ -1,0 +1,15 @@
+## Result
+
+**The analysis does not support a positive gain effect in vmPFC after whole-brain correction.** In the predefined vmPFC localization box, the mean participant effect was −0.0029 cope (95% CI −0.0225 to 0.0168). The box’s peak had *t*(53) = 3.92, but its whole-brain FWE *p* was .937. No voxel in the box survived correction.
+
+A separate posterior/inferior result had 24 corrected positive voxels; its peak was *t*(53) = 6.62, FWE *p* = .0007. That finding is outside vmPFC and does not support the hypothesis. The whole-brain correction follows the [original NARPS instructions](https://www.narps.info/files/narps_instructions_for_analysis_teams.pdf).
+
+The concise report, including methods, uncertainty and limitations, is [report.md](/Users/johnlee/.local/share/stamped-ai-research-next/workers/narps-suitability-20261015-03/results/report.md).
+
+- [Corrected whole-brain figure](</Users/johnlee/.local/share/stamped-ai-research-next/workers/narps-suitability-20261015-03/results/figures/whole_brain_fwe.png>)
+- [vmPFC participant-effect figure](</Users/johnlee/.local/share/stamped-ai-research-next/workers/narps-suitability-20261015-03/results/figures/participant_effects.png>)
+- [Analysis code](</Users/johnlee/.local/share/stamped-ai-research-next/workers/narps-suitability-20261015-03/results/code/group_analysis.py>)
+- [Group summary](</Users/johnlee/.local/share/stamped-ai-research-next/workers/narps-suitability-20261015-03/results/tables/group_summary.json>)
+- [Participant QC](</Users/johnlee/.local/share/stamped-ai-research-next/workers/narps-suitability-20261015-03/results/tables/participant_qc.csv>)
+
+Reproduce from the experiment root with `pixi run python results/code/group_analysis.py`. All 54 maps passed the checks and were retained.
