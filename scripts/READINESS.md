@@ -63,7 +63,7 @@ pixi run readiness \
 ```
 
 Use `--host-config /path/to/readiness.json` to select another host configuration.
-Keep commands, host paths and credentials outside the repository.
+Keep host configuration and credentials outside the repository; retain command evidence and ordinary paths with the iteration.
 Supply credentials through existing host providers, never command arguments, requirements or receipt contents.
 The runner retains argv, stdout, stderr and declared artifacts exactly; configured probes must avoid emitting secrets.
 It does not copy the host configuration or inherited environment.

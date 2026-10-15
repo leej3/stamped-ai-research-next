@@ -50,6 +50,42 @@ def retrieve_inputs(git_command, checkout, inventory, remote):
             raise SystemExit("Input content was not retrieved: " + item["path"])
 
 
+def materialize_retained_files(git_command, checkout, receipt, remote, evidence=None):
+    """Recover annex bytes needed to compare stop-time regular files."""
+    record = {"schema_version": 1, "target": str(checkout.resolve()), "remote": remote,
+              "target_commit": run(["git", "rev-parse", "HEAD"], checkout, True),
+              "paths": [], "commands": [], "commands_succeeded": False,
+              "verification": "requires-worker-retention-check"}
+
+    def retain():
+        if evidence:
+            evidence.write_text(json.dumps(record, indent=2) + "\n")
+
+    def invoke(arguments):
+        command = [str(value) for value in git_command + arguments]
+        result = subprocess.run(command, cwd=checkout, capture_output=True, text=True)
+        record["commands"].append({"argv": command, "returncode": result.returncode,
+                                   "stdout": result.stdout, "stderr": result.stderr})
+        retain()
+        if result.returncode:
+            sys.stderr.write(result.stdout + result.stderr)
+            result.check_returncode()
+        return result.stdout
+
+    regular = {item["path"] for item in receipt.get("worktree", []) if item["kind"] == "file"}
+    inventory = invoke(["annex", "find", "--anything", "--json", "--", "."])
+    paths = sorted({item["file"] for item in map(json.loads, inventory.splitlines())
+                    if item["file"] in regular})
+    record["paths"] = paths
+    if paths:
+        # Unlocked annex pointers are regular existing files in a fresh clone.
+        # Existence does not establish that their payloads are materialized.
+        invoke(["annex", "get", "--from", remote, "--", *paths])
+    record["commands_succeeded"] = True
+    retain()
+    return paths
+
+
 def render_judge_prompt(template, study, target_commit, evidence, reference=None, rubric=None):
     """Retain the coordinator's scientific brief independently of the target."""
     content = study.read_bytes()
@@ -234,15 +270,9 @@ def main():
         if original_brief != blob(checkout, roots[0], "input/study-task.md"):
             raise SystemExit("Selected study does not match the worker's original scientific brief")
         if args.worker_end_state:
-            from worker_end_state import validate_retained_artifacts
             content = args.worker_end_state.read_bytes()
-            try:
-                retained_state = validate_retained_artifacts(json.loads(content), checkout)
-            except ValueError as error:
-                raise SystemExit("Worker-stop evidence failed: " + str(error))
             args.worker_end_state = evidence / "worker-end-state.json"
             args.worker_end_state.write_bytes(content)
-            (evidence / "worker-retention-check.json").write_text(json.dumps(retained_state, indent=2) + "\n")
         (evidence / "study-source.json").write_text(json.dumps({
             "path": str(args.study.resolve()), "commit": study_commit,
             "input_tree": run(["git", "rev-parse", study_commit + ":input"], args.study, True),
@@ -308,6 +338,20 @@ def main():
                 run(git + ["annex", "registerurl", item["annex_key"], url], checkout)
         retrieve_inputs(git, checkout, seed["inputs"], args.annex_remote)
         audit_seed(checkout)
+    elif args.worker_end_state:
+        from worker_end_state import validate_retained_artifacts
+        receipt = json.loads(args.worker_end_state.read_bytes())
+        materialized = materialize_retained_files(git, checkout, receipt, args.annex_remote,
+                                                 evidence / "judge-annex-materialization.json")
+        try:
+            retained_state = validate_retained_artifacts(receipt, checkout)
+        except ValueError as error:
+            (evidence / "worker-retention-check.json").write_text(json.dumps({
+                "artifacts_match": False, "error": str(error),
+                "annex_materialization_paths": materialized}, indent=2) + "\n")
+            raise SystemExit("Worker-stop evidence failed: " + str(error))
+        retained_state["annex_materialization_paths"] = materialized
+        (evidence / "worker-retention-check.json").write_text(json.dumps(retained_state, indent=2) + "\n")
 
     (evidence / "environment.json").write_text(json.dumps({"source_manifest": str(args.env_manifest.resolve()),
         "worker_manifest": str(manifest_path), "worker_lock": str(worker_lock),
