@@ -1,0 +1,9 @@
+{
+  "comparison_id": "preparation-e2e-20261015",
+  "purpose": "Preparation trial of the formal procedure; excluded from formal scientific comparisons.",
+  "procedure_sha256": "4f4a364de60d537b2957758af333e3f64180358521185e9d741e88b8360a4922",
+  "planned_workers": 1,
+  "condition": "baseline",
+  "study": "narps",
+  "assessor_source": "0208f82504f15b82b7582f34143ab889dd52c68d"
+}
