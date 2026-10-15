@@ -6,9 +6,12 @@ Raw transcripts are inspected in memory and hashed, never printed or copied.
 import argparse
 import hashlib
 import json
+import re
+import shlex
 import subprocess
 from datetime import datetime, timezone
 from pathlib import Path
+from urllib.parse import unquote, urlparse
 
 
 def run(argv, cwd):
@@ -16,6 +19,112 @@ def run(argv, cwd):
     if result.returncode:
         raise RuntimeError(f"Read-only command failed: {argv[0]} (exit {result.returncode})")
     return result.stdout
+
+
+def native_path(value):
+    """Native command cwd is sometimes a file URL rather than a path."""
+    if not isinstance(value, str):
+        return None
+    if value.startswith("file:"):
+        parsed = urlparse(value)
+        if parsed.scheme != "file" or parsed.netloc not in ("", "localhost"):
+            return None
+        value = unquote(parsed.path)
+    path = Path(value)
+    return path.resolve() if path.is_absolute() else None
+
+
+def literal_heredoc_write(event, target):
+    """Recognize one literal shell write without interpreting arbitrary code.
+
+    Require a quoted delimiter, literal path and exact cwd/path identity.
+    Allow only the observed optional Snapper/status tail, with captured status
+    output and no error text. Arbitrary compound commands are not proof.
+    """
+    if (event.get("type") not in ("CommandExecution", "command_execution") or
+            event.get("status") != "completed" or event.get("exit_code") != 0):
+        return None
+    argv = event.get("command")
+    if (not isinstance(argv, list) or len(argv) != 3 or
+            not all(isinstance(value, str) for value in argv) or
+            Path(argv[0]).name not in ("bash", "sh", "zsh") or argv[1] not in ("-c", "-lc")):
+        return None
+    cwd = native_path(event.get("cwd"))
+    if cwd is None:
+        return None
+    lines = argv[2].splitlines(keepends=True)
+    if len(lines) < 2:
+        return None
+    header = re.fullmatch(
+        r"cat[ \t]+>[ \t]*(?P<path>[A-Za-z0-9_./-]+)[ \t]+<<[ \t]*"
+        r"(?P<quote>['\"])(?P<delimiter>[A-Za-z_][A-Za-z0-9_]*)(?P=quote)[ \t]*\n",
+        lines[0])
+    if not header or (cwd / header["path"]).resolve() != target.resolve():
+        return None
+    delimiter = header["delimiter"]
+    ends = [index for index, line in enumerate(lines[1:], 1)
+            if line in (delimiter, delimiter + "\n")]
+    if not ends:
+        return None
+    end = ends[0]
+    tail = [line.strip() for line in lines[end + 1:] if line.strip()]
+    status_proof = False
+    if tail:
+        if tail[-1] != "git status --short" or len(tail) > 2:
+            return None
+        if len(tail) == 2:
+            try:
+                formatter = shlex.split(tail[0])
+            except ValueError:
+                return None
+            if (len(formatter) != 3 or Path(formatter[0]).name != "snapper" or
+                    formatter[1] != "--in-place" or formatter[2] != header["path"]):
+                return None
+        output = event.get("aggregated_output", "")
+        allowed_status = {prefix + " " + header["path"] for prefix in ("??", " M", "A ", "AM")}
+        status_lines = output.splitlines() if isinstance(output, str) else []
+        if len(status_lines) != 1 or status_lines[0] not in allowed_status:
+            return None
+        status_proof = True
+    if len(ends) != 1:
+        return None
+    content = "".join(lines[1:end]).encode()
+    return {"evidence_kind": "completed-literal-heredoc-write", "command_cwd": str(cwd),
+            "following_git_status_verified": status_proof,
+            "command_sha256": hashlib.sha256(json.dumps(argv, separators=(",", ":")).encode()).hexdigest(),
+            "written_content_sha256": hashlib.sha256(content).hexdigest(),
+            "written_content_bytes": len(content)}
+
+
+def native_evidence(transcript, identity_id, root, event_root, file):
+    """Extract identity and completed file-write metadata, never reasoning."""
+    identities, events = [], []
+    names = {str(event_root / file)}
+    if event_root == root:
+        names.add(file)
+    for number, raw in enumerate(transcript.splitlines(), 1):
+        try:
+            item = json.loads(raw)
+        except json.JSONDecodeError:
+            continue
+        payload = item.get("payload", {})
+        if item.get("type") == "session_meta" and payload.get("id") == identity_id:
+            identities.append({"session_id": payload["id"], "cwd": payload.get("cwd"),
+                               "source": payload.get("source")})
+        event = payload.get("item", {})
+        if item.get("type") != "event_msg" or payload.get("type") != "item_completed" or not isinstance(event, dict):
+            continue
+        proof = None
+        if event.get("type") in ("FileChange", "file_change") and event.get("status") == "completed":
+            changes = event.get("changes", {})
+            paths = set(changes) if isinstance(changes, dict) else {c.get("path") for c in changes if isinstance(c, dict)}
+            if paths & names:
+                proof = {"evidence_kind": "completed-file-change"}
+        else:
+            proof = literal_heredoc_write(event, event_root / file)
+        if proof:
+            events.append({"line": number, "item_id": event.get("id"), "file": file, **proof})
+    return identities, events
 
 
 def main():
@@ -66,27 +175,9 @@ def main():
                            "--transcript", "--task", args.task]
         identity_id = args.task
     transcript = run(transcript_args, root)
-    identities, events = [], []
-    names = {str(event_root / args.file)}
-    if event_root == root:
-        names.add(args.file)
-    for number, raw in enumerate(transcript.splitlines(), 1):
-        try:
-            item = json.loads(raw)
-        except json.JSONDecodeError:
-            continue
-        payload = item.get("payload", {})
-        if item.get("type") == "session_meta" and payload.get("id") == identity_id:
-            identities.append({"session_id": payload["id"], "cwd": payload.get("cwd"),
-                               "source": payload.get("source")})
-        event = payload.get("item", {})
-        if item.get("type") == "event_msg" and payload.get("type") == "item_completed" and isinstance(event, dict):
-            changes = event.get("changes", {})
-            paths = set(changes) if isinstance(changes, dict) else {c.get("path") for c in changes if isinstance(c, dict)}
-            if event.get("type") in ("FileChange", "file_change") and event.get("status") == "completed" and paths & names:
-                events.append({"line": number, "item_id": event.get("id"), "file": args.file})
-    if not identities or not any(Path(i["cwd"]).resolve() == root for i in identities) or not events:
-        raise SystemExit("Stored native session/cwd/completed FileChange evidence missing")
+    identities, events = native_evidence(transcript, identity_id, root, event_root, args.file)
+    if not identities or not any(native_path(i["cwd"]) == root for i in identities) or not events:
+        raise SystemExit("Stored native session/cwd/completed file-write evidence missing")
     child_commit = None
     if args.event_commit:
         child_commit = run(["git", "rev-parse", args.event_commit], event_root).decode().strip()
@@ -94,6 +185,11 @@ def main():
         child_message = run(["git", "show", "-s", "--format=%B", child_commit], event_root).decode()
         if changed != [args.file] or "Co-Authored-By: Codex Desktop " not in child_message or "unavailable" in child_message:
             raise SystemExit("Child commit changed unexpected paths or lacks exact provenance")
+    event_commit = child_commit or commit
+    changed = run(["git", "diff-tree", "--root", "--no-commit-id", "--name-only", "-z", "-r", event_commit], event_root).split(b"\0")
+    if args.file.encode() not in changed:
+        raise SystemExit("Recorded file-write is absent from the linked commit changes")
+    committed_blob = run(["git", "show", event_commit + ":" + args.file], event_root)
     refrows = run(["git", "for-each-ref", "--format=%(refname) %(objectname)", "refs/entire/checkpoints"], root).decode().splitlines()
     matches = [r.split() for r in refrows if r.split()[0].endswith("/" + metadata["checkpoint_id"])]
     if len(matches) != 1:
@@ -106,6 +202,7 @@ def main():
               "checkpoint_ref": ref, "checkpoint_oid": oid, "branch": metadata.get("branch"),
               "session_id": args.session, "all_checkpoint_session_ids": [s["session_id"] for s in metadata["sessions"]],
               "native_capture_verified": True, "identities": identities, "file_events": events,
+              "committed_file_sha256": hashlib.sha256(committed_blob).hexdigest(),
               "transcript_sha256": hashlib.sha256(transcript).hexdigest(), "transcript_bytes": len(transcript),
               "private_guidance_marker_hits": [s for s in ("memory/transport.json", "sensitive transport configuration",
                  "private overlay", "Hub token file") if s.encode() in transcript],
