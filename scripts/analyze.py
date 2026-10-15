@@ -177,6 +177,7 @@ def main():
     boot_ci = np.quantile(boot_means, [0.025, 0.975]).tolist()
     brain_sig = (pmap <= 0.05) & mask & (tmap > 0)
     roi_sig = brain_sig & roi_mask
+    affine = imgs[0].affine
     np.savetxt(OUT / "permutation-max-t.tsv", max_null, fmt="%.9g", header="maximum_positive_t")
     components, n_components = ndimage.label(brain_sig, structure=np.ones((3, 3, 3), dtype=np.uint8))
     clusters = []
@@ -187,7 +188,6 @@ def main():
                          "peak_mni_mm": [float(v) for v in nib.affines.apply_affine(affine, peak_idx)],
                          "peak_t": float(tmap[peak_idx]), "peak_fwe_p": float(pmap[peak_idx])})
     clusters.sort(key=lambda item: (-item["voxels"], -item["peak_t"]))
-    affine = imgs[0].affine
     def save_map(data, name):
         nib.save(nib.Nifti1Image(data, affine, imgs[0].header), str(OUT / name))
     save_map(mean, "group-mean.nii.gz")
