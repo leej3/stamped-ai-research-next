@@ -4,7 +4,7 @@ Use this process for a formal run from the prepared repository in a fresh clone 
 Run this workshop to improve reusable STAMPED research skills through evidence from scientific work.
 Use the selected study submodules as inputs to the same repeated process; ask which studies to use if none are selected.
 Each iteration tests one pinned skill revision with fresh agents, independently assesses their research objects, and uses the findings to improve the next revision.
-Compare scientific validity, STAMPED evidence, effort and variability.
+Compare scientific validity, STAMPED evidence, effort and variability using the frozen [comparison plan](comparison-plan.md).
 Report null, adverse and favorable outcomes using the same criteria.
 The whole workshop must itself become a STAMPED research object.
 
@@ -13,7 +13,8 @@ The whole workshop must itself become a STAMPED research object.
    Keep reference answers and evaluation guidance in `coordinator-guidance/`, outside worker inputs.
    Use three iterations with three independent workers per condition per study unless the user specifies otherwise.
    Use Luna with high reasoning effort and record its exact identifier.
-   Select tasks requiring substantial scientific work that fits about 45 minutes; fast computation is fine.
+   Use the selected scientific task at its declared scope; fast computation is fine.
+   NARPS is accepted as a compact first formal study; do not add work solely to reach a target duration.
    Review progress around 90 minutes and allow productive work to finish.
 
 2. For each selected study, launch fresh agents in four conditions, varying launch order: baseline, general skill discovery, reproducible-science skill discovery, and explicit pinned STAMPED.
