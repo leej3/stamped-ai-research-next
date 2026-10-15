@@ -29,3 +29,7 @@ tox = "*"
 launch = { cmd = "python scripts/prepare_launch.py", description = "Prepare and launch one isolated research worker" }
 datalad-report = { cmd = "datalad -f json rerun --report", description = "Inspect a native DataLad run record" }
 datalad-replay = { cmd = "datalad rerun", description = "Replay a native DataLad run" }
+assessment-check = { cmd = "python scripts/assessment.py check", description = "Verify the frozen assessor and install its recorded runtime" }
+assessment-probes = { cmd = "python scripts/assessment.py probes", description = "Collect evidence using the frozen assessor" }
+assessment-validate = { cmd = "python scripts/assessment.py validate", description = "Validate a completed assessment response" }
+assessment-rerun = { cmd = "python scripts/assessment.py fresh-rerun", description = "Run an authorized replay with the frozen assessor" }

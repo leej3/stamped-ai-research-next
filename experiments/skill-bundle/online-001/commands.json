@@ -1,0 +1,583 @@
+[
+  {
+    "argv": [
+      "git",
+      "-c",
+      "credential.helper=",
+      "-c",
+      "core.askPass=/usr/bin/false",
+      "-c",
+      "user.name=Anonymous retrieval probe",
+      "-c",
+      "user.email=codex@openai.com",
+      "clone",
+      "--single-branch",
+      "--branch",
+      "codex/proof-skill-followability",
+      "https://github.com/leej3/stamped-ai-research-next.git",
+      "/var/folders/dh/6x04w9891gx_4x1t649nc42w0000gn/T/stamped-online-blind-mh1vb5g0/recipient"
+    ],
+    "cwd": "/var/folders/dh/6x04w9891gx_4x1t649nc42w0000gn/T/stamped-online-blind-mh1vb5g0",
+    "returncode": 0,
+    "started_unix": 1792086765.557266,
+    "elapsed_seconds": 0.5156869888305664
+  },
+  {
+    "argv": [
+      "git",
+      "-c",
+      "credential.helper=",
+      "-c",
+      "core.askPass=/usr/bin/false",
+      "-c",
+      "user.name=Anonymous retrieval probe",
+      "-c",
+      "user.email=codex@openai.com",
+      "rev-parse",
+      "HEAD"
+    ],
+    "cwd": "/var/folders/dh/6x04w9891gx_4x1t649nc42w0000gn/T/stamped-online-blind-mh1vb5g0/recipient",
+    "returncode": 0,
+    "started_unix": 1792086766.0730932,
+    "elapsed_seconds": 0.005822896957397461
+  },
+  {
+    "argv": [
+      "git",
+      "-c",
+      "credential.helper=",
+      "-c",
+      "core.askPass=/usr/bin/false",
+      "-c",
+      "user.name=Anonymous retrieval probe",
+      "-c",
+      "user.email=codex@openai.com",
+      "annex",
+      "init",
+      "independent anonymous online blind-trial recipient"
+    ],
+    "cwd": "/var/folders/dh/6x04w9891gx_4x1t649nc42w0000gn/T/stamped-online-blind-mh1vb5g0/recipient",
+    "returncode": 0,
+    "started_unix": 1792086766.079037,
+    "elapsed_seconds": 0.710914134979248
+  },
+  {
+    "argv": [
+      "git",
+      "-c",
+      "credential.helper=",
+      "-c",
+      "core.askPass=/usr/bin/false",
+      "-c",
+      "user.name=Anonymous retrieval probe",
+      "-c",
+      "user.email=codex@openai.com",
+      "remote",
+      "add",
+      "con-hub",
+      "https://hub.centerforopenneuroscience.org/leej3/stamped-ai-research-next.git"
+    ],
+    "cwd": "/var/folders/dh/6x04w9891gx_4x1t649nc42w0000gn/T/stamped-online-blind-mh1vb5g0/recipient",
+    "returncode": 0,
+    "started_unix": 1792086766.790081,
+    "elapsed_seconds": 0.0063629150390625
+  },
+  {
+    "argv": [
+      "git",
+      "-c",
+      "credential.helper=",
+      "-c",
+      "core.askPass=/usr/bin/false",
+      "-c",
+      "user.name=Anonymous retrieval probe",
+      "-c",
+      "user.email=codex@openai.com",
+      "config",
+      "remote.con-hub.annexurl",
+      "annex+https://hub.centerforopenneuroscience.org:443/git-annex-p2phttp"
+    ],
+    "cwd": "/var/folders/dh/6x04w9891gx_4x1t649nc42w0000gn/T/stamped-online-blind-mh1vb5g0/recipient",
+    "returncode": 0,
+    "started_unix": 1792086766.79659,
+    "elapsed_seconds": 0.006253719329833984
+  },
+  {
+    "argv": [
+      "git",
+      "-c",
+      "credential.helper=",
+      "-c",
+      "core.askPass=/usr/bin/false",
+      "-c",
+      "user.name=Anonymous retrieval probe",
+      "-c",
+      "user.email=codex@openai.com",
+      "fetch",
+      "con-hub",
+      "refs/heads/git-annex:refs/remotes/con-hub/git-annex"
+    ],
+    "cwd": "/var/folders/dh/6x04w9891gx_4x1t649nc42w0000gn/T/stamped-online-blind-mh1vb5g0/recipient",
+    "returncode": 0,
+    "started_unix": 1792086766.8029902,
+    "elapsed_seconds": 0.6850488185882568
+  },
+  {
+    "argv": [
+      "git",
+      "-c",
+      "credential.helper=",
+      "-c",
+      "core.askPass=/usr/bin/false",
+      "-c",
+      "user.name=Anonymous retrieval probe",
+      "-c",
+      "user.email=codex@openai.com",
+      "rev-parse",
+      "refs/remotes/con-hub/git-annex"
+    ],
+    "cwd": "/var/folders/dh/6x04w9891gx_4x1t649nc42w0000gn/T/stamped-online-blind-mh1vb5g0/recipient",
+    "returncode": 0,
+    "started_unix": 1792086767.488197,
+    "elapsed_seconds": 0.005674123764038086
+  },
+  {
+    "argv": [
+      "git",
+      "-c",
+      "credential.helper=",
+      "-c",
+      "core.askPass=/usr/bin/false",
+      "-c",
+      "user.name=Anonymous retrieval probe",
+      "-c",
+      "user.email=codex@openai.com",
+      "annex",
+      "merge"
+    ],
+    "cwd": "/var/folders/dh/6x04w9891gx_4x1t649nc42w0000gn/T/stamped-online-blind-mh1vb5g0/recipient",
+    "returncode": 0,
+    "started_unix": 1792086767.494018,
+    "elapsed_seconds": 0.1106100082397461
+  },
+  {
+    "argv": [
+      "git",
+      "-c",
+      "credential.helper=",
+      "-c",
+      "core.askPass=/usr/bin/false",
+      "-c",
+      "user.name=Anonymous retrieval probe",
+      "-c",
+      "user.email=codex@openai.com",
+      "annex",
+      "lookupkey",
+      "logs/paired/outer-summary.txt"
+    ],
+    "cwd": "/var/folders/dh/6x04w9891gx_4x1t649nc42w0000gn/T/stamped-online-blind-mh1vb5g0/recipient",
+    "returncode": 0,
+    "started_unix": 1792086767.6049862,
+    "elapsed_seconds": 0.051387786865234375
+  },
+  {
+    "argv": [
+      "git",
+      "-c",
+      "credential.helper=",
+      "-c",
+      "core.askPass=/usr/bin/false",
+      "-c",
+      "user.name=Anonymous retrieval probe",
+      "-c",
+      "user.email=codex@openai.com",
+      "annex",
+      "get",
+      "--from",
+      "con-hub",
+      "logs/paired/outer-summary.txt"
+    ],
+    "cwd": "/var/folders/dh/6x04w9891gx_4x1t649nc42w0000gn/T/stamped-online-blind-mh1vb5g0/recipient",
+    "returncode": 0,
+    "started_unix": 1792086767.656575,
+    "elapsed_seconds": 0.5390241146087646
+  },
+  {
+    "argv": [
+      "git",
+      "-c",
+      "credential.helper=",
+      "-c",
+      "core.askPass=/usr/bin/false",
+      "-c",
+      "user.name=Anonymous retrieval probe",
+      "-c",
+      "user.email=codex@openai.com",
+      "annex",
+      "lookupkey",
+      "logs/paired/run_info.json"
+    ],
+    "cwd": "/var/folders/dh/6x04w9891gx_4x1t649nc42w0000gn/T/stamped-online-blind-mh1vb5g0/recipient",
+    "returncode": 0,
+    "started_unix": 1792086768.1959062,
+    "elapsed_seconds": 0.05018901824951172
+  },
+  {
+    "argv": [
+      "git",
+      "-c",
+      "credential.helper=",
+      "-c",
+      "core.askPass=/usr/bin/false",
+      "-c",
+      "user.name=Anonymous retrieval probe",
+      "-c",
+      "user.email=codex@openai.com",
+      "annex",
+      "get",
+      "--from",
+      "con-hub",
+      "logs/paired/run_info.json"
+    ],
+    "cwd": "/var/folders/dh/6x04w9891gx_4x1t649nc42w0000gn/T/stamped-online-blind-mh1vb5g0/recipient",
+    "returncode": 0,
+    "started_unix": 1792086768.2462761,
+    "elapsed_seconds": 0.5799009799957275
+  },
+  {
+    "argv": [
+      "git",
+      "-c",
+      "credential.helper=",
+      "-c",
+      "core.askPass=/usr/bin/false",
+      "-c",
+      "user.name=Anonymous retrieval probe",
+      "-c",
+      "user.email=codex@openai.com",
+      "annex",
+      "lookupkey",
+      "logs/paired/run_stderr"
+    ],
+    "cwd": "/var/folders/dh/6x04w9891gx_4x1t649nc42w0000gn/T/stamped-online-blind-mh1vb5g0/recipient",
+    "returncode": 0,
+    "started_unix": 1792086768.826442,
+    "elapsed_seconds": 0.05317807197570801
+  },
+  {
+    "argv": [
+      "git",
+      "-c",
+      "credential.helper=",
+      "-c",
+      "core.askPass=/usr/bin/false",
+      "-c",
+      "user.name=Anonymous retrieval probe",
+      "-c",
+      "user.email=codex@openai.com",
+      "annex",
+      "get",
+      "--from",
+      "con-hub",
+      "logs/paired/run_stderr"
+    ],
+    "cwd": "/var/folders/dh/6x04w9891gx_4x1t649nc42w0000gn/T/stamped-online-blind-mh1vb5g0/recipient",
+    "returncode": 0,
+    "started_unix": 1792086768.879839,
+    "elapsed_seconds": 0.41248416900634766
+  },
+  {
+    "argv": [
+      "git",
+      "-c",
+      "credential.helper=",
+      "-c",
+      "core.askPass=/usr/bin/false",
+      "-c",
+      "user.name=Anonymous retrieval probe",
+      "-c",
+      "user.email=codex@openai.com",
+      "annex",
+      "lookupkey",
+      "logs/paired/run_stdout"
+    ],
+    "cwd": "/var/folders/dh/6x04w9891gx_4x1t649nc42w0000gn/T/stamped-online-blind-mh1vb5g0/recipient",
+    "returncode": 0,
+    "started_unix": 1792086769.292572,
+    "elapsed_seconds": 0.0510859489440918
+  },
+  {
+    "argv": [
+      "git",
+      "-c",
+      "credential.helper=",
+      "-c",
+      "core.askPass=/usr/bin/false",
+      "-c",
+      "user.name=Anonymous retrieval probe",
+      "-c",
+      "user.email=codex@openai.com",
+      "annex",
+      "get",
+      "--from",
+      "con-hub",
+      "logs/paired/run_stdout"
+    ],
+    "cwd": "/var/folders/dh/6x04w9891gx_4x1t649nc42w0000gn/T/stamped-online-blind-mh1vb5g0/recipient",
+    "returncode": 0,
+    "started_unix": 1792086769.3438468,
+    "elapsed_seconds": 0.4086122512817383
+  },
+  {
+    "argv": [
+      "git",
+      "-c",
+      "credential.helper=",
+      "-c",
+      "core.askPass=/usr/bin/false",
+      "-c",
+      "user.name=Anonymous retrieval probe",
+      "-c",
+      "user.email=codex@openai.com",
+      "annex",
+      "lookupkey",
+      "logs/paired/run_usage.jsonl"
+    ],
+    "cwd": "/var/folders/dh/6x04w9891gx_4x1t649nc42w0000gn/T/stamped-online-blind-mh1vb5g0/recipient",
+    "returncode": 0,
+    "started_unix": 1792086769.752758,
+    "elapsed_seconds": 0.050972938537597656
+  },
+  {
+    "argv": [
+      "git",
+      "-c",
+      "credential.helper=",
+      "-c",
+      "core.askPass=/usr/bin/false",
+      "-c",
+      "user.name=Anonymous retrieval probe",
+      "-c",
+      "user.email=codex@openai.com",
+      "annex",
+      "get",
+      "--from",
+      "con-hub",
+      "logs/paired/run_usage.jsonl"
+    ],
+    "cwd": "/var/folders/dh/6x04w9891gx_4x1t649nc42w0000gn/T/stamped-online-blind-mh1vb5g0/recipient",
+    "returncode": 0,
+    "started_unix": 1792086769.803936,
+    "elapsed_seconds": 0.4502720832824707
+  },
+  {
+    "argv": [
+      "git",
+      "-c",
+      "credential.helper=",
+      "-c",
+      "core.askPass=/usr/bin/false",
+      "-c",
+      "user.name=Anonymous retrieval probe",
+      "-c",
+      "user.email=codex@openai.com",
+      "annex",
+      "lookupkey",
+      "results/changes.csv"
+    ],
+    "cwd": "/var/folders/dh/6x04w9891gx_4x1t649nc42w0000gn/T/stamped-online-blind-mh1vb5g0/recipient",
+    "returncode": 0,
+    "started_unix": 1792086770.2545018,
+    "elapsed_seconds": 0.05009317398071289
+  },
+  {
+    "argv": [
+      "git",
+      "-c",
+      "credential.helper=",
+      "-c",
+      "core.askPass=/usr/bin/false",
+      "-c",
+      "user.name=Anonymous retrieval probe",
+      "-c",
+      "user.email=codex@openai.com",
+      "annex",
+      "get",
+      "--from",
+      "con-hub",
+      "results/changes.csv"
+    ],
+    "cwd": "/var/folders/dh/6x04w9891gx_4x1t649nc42w0000gn/T/stamped-online-blind-mh1vb5g0/recipient",
+    "returncode": 0,
+    "started_unix": 1792086770.304801,
+    "elapsed_seconds": 0.396834135055542
+  },
+  {
+    "argv": [
+      "git",
+      "-c",
+      "credential.helper=",
+      "-c",
+      "core.askPass=/usr/bin/false",
+      "-c",
+      "user.name=Anonymous retrieval probe",
+      "-c",
+      "user.email=codex@openai.com",
+      "annex",
+      "lookupkey",
+      "results/paired-change.png"
+    ],
+    "cwd": "/var/folders/dh/6x04w9891gx_4x1t649nc42w0000gn/T/stamped-online-blind-mh1vb5g0/recipient",
+    "returncode": 0,
+    "started_unix": 1792086770.701907,
+    "elapsed_seconds": 0.050868988037109375
+  },
+  {
+    "argv": [
+      "git",
+      "-c",
+      "credential.helper=",
+      "-c",
+      "core.askPass=/usr/bin/false",
+      "-c",
+      "user.name=Anonymous retrieval probe",
+      "-c",
+      "user.email=codex@openai.com",
+      "annex",
+      "get",
+      "--from",
+      "con-hub",
+      "results/paired-change.png"
+    ],
+    "cwd": "/var/folders/dh/6x04w9891gx_4x1t649nc42w0000gn/T/stamped-online-blind-mh1vb5g0/recipient",
+    "returncode": 0,
+    "started_unix": 1792086770.75299,
+    "elapsed_seconds": 0.4628579616546631
+  },
+  {
+    "argv": [
+      "git",
+      "-c",
+      "credential.helper=",
+      "-c",
+      "core.askPass=/usr/bin/false",
+      "-c",
+      "user.name=Anonymous retrieval probe",
+      "-c",
+      "user.email=codex@openai.com",
+      "annex",
+      "lookupkey",
+      "results/paired-change.svg"
+    ],
+    "cwd": "/var/folders/dh/6x04w9891gx_4x1t649nc42w0000gn/T/stamped-online-blind-mh1vb5g0/recipient",
+    "returncode": 0,
+    "started_unix": 1792086771.216149,
+    "elapsed_seconds": 0.04972481727600098
+  },
+  {
+    "argv": [
+      "git",
+      "-c",
+      "credential.helper=",
+      "-c",
+      "core.askPass=/usr/bin/false",
+      "-c",
+      "user.name=Anonymous retrieval probe",
+      "-c",
+      "user.email=codex@openai.com",
+      "annex",
+      "get",
+      "--from",
+      "con-hub",
+      "results/paired-change.svg"
+    ],
+    "cwd": "/var/folders/dh/6x04w9891gx_4x1t649nc42w0000gn/T/stamped-online-blind-mh1vb5g0/recipient",
+    "returncode": 0,
+    "started_unix": 1792086771.266098,
+    "elapsed_seconds": 0.47321319580078125
+  },
+  {
+    "argv": [
+      "git",
+      "-c",
+      "credential.helper=",
+      "-c",
+      "core.askPass=/usr/bin/false",
+      "-c",
+      "user.name=Anonymous retrieval probe",
+      "-c",
+      "user.email=codex@openai.com",
+      "annex",
+      "lookupkey",
+      "results/summary.json"
+    ],
+    "cwd": "/var/folders/dh/6x04w9891gx_4x1t649nc42w0000gn/T/stamped-online-blind-mh1vb5g0/recipient",
+    "returncode": 0,
+    "started_unix": 1792086771.7396128,
+    "elapsed_seconds": 0.053252220153808594
+  },
+  {
+    "argv": [
+      "git",
+      "-c",
+      "credential.helper=",
+      "-c",
+      "core.askPass=/usr/bin/false",
+      "-c",
+      "user.name=Anonymous retrieval probe",
+      "-c",
+      "user.email=codex@openai.com",
+      "annex",
+      "get",
+      "--from",
+      "con-hub",
+      "results/summary.json"
+    ],
+    "cwd": "/var/folders/dh/6x04w9891gx_4x1t649nc42w0000gn/T/stamped-online-blind-mh1vb5g0/recipient",
+    "returncode": 0,
+    "started_unix": 1792086771.7931252,
+    "elapsed_seconds": 0.47313380241394043
+  },
+  {
+    "argv": [
+      "git",
+      "-c",
+      "credential.helper=",
+      "-c",
+      "core.askPass=/usr/bin/false",
+      "-c",
+      "user.name=Anonymous retrieval probe",
+      "-c",
+      "user.email=codex@openai.com",
+      "annex",
+      "lookupkey",
+      "results/validation.json"
+    ],
+    "cwd": "/var/folders/dh/6x04w9891gx_4x1t649nc42w0000gn/T/stamped-online-blind-mh1vb5g0/recipient",
+    "returncode": 0,
+    "started_unix": 1792086772.2667909,
+    "elapsed_seconds": 0.06521010398864746
+  },
+  {
+    "argv": [
+      "git",
+      "-c",
+      "credential.helper=",
+      "-c",
+      "core.askPass=/usr/bin/false",
+      "-c",
+      "user.name=Anonymous retrieval probe",
+      "-c",
+      "user.email=codex@openai.com",
+      "annex",
+      "get",
+      "--from",
+      "con-hub",
+      "results/validation.json"
+    ],
+    "cwd": "/var/folders/dh/6x04w9891gx_4x1t649nc42w0000gn/T/stamped-online-blind-mh1vb5g0/recipient",
+    "returncode": 0,
+    "started_unix": 1792086772.3322399,
+    "elapsed_seconds": 0.4532170295715332
+  }
+]

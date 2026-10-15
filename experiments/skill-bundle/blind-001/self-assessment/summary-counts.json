@@ -1,0 +1,17 @@
+{
+  "must": {
+    "met": 16,
+    "partial": 1
+  },
+  "should": {
+    "met": 3,
+    "partial": 4,
+    "not-applicable": 1,
+    "unmet": 1
+  },
+  "may": {
+    "not-applicable": 1,
+    "met": 3,
+    "partial": 1
+  }
+}

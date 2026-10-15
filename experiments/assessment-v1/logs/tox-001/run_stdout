@@ -1,0 +1,141 @@
+validate: install_deps> python -I -m pip install 'jsonschema[format-nongpl]' pyyaml
+validate: commands[0]> python3 /Users/johnlee/.local/share/wt-utils/worktrees/3dd6/skills/ci/validate_skills.py
+✅ analyze-duplicates
+
+⚠️  bisect-and-patch-git-annex
+  WARN  W003  /Users/johnlee/.local/share/wt-utils/worktrees/3dd6/skills/bisect-and-patch-git-annex/SKILL.md  file is 629 lines (>600); consider splitting
+✅ code-quality-report-conventions
+✅ credit-contributions
+✅ github-project-status
+
+⚠️  introduce-codespell
+  WARN  W003  /Users/johnlee/.local/share/wt-utils/worktrees/3dd6/skills/introduce-codespell/SKILL.md  file is 1583 lines (>600); consider splitting
+✅ introduce-git-bug
+
+⚠️  introduce-intuit-auto
+  WARN  W003  /Users/johnlee/.local/share/wt-utils/worktrees/3dd6/skills/introduce-intuit-auto/SKILL.md  file is 655 lines (>600); consider splitting
+
+⚠️  introduce-reuse-compliance
+  WARN  W003  /Users/johnlee/.local/share/wt-utils/worktrees/3dd6/skills/introduce-reuse-compliance/SKILL.md  file is 891 lines (>600); consider splitting
+✅ issue-triage
+
+⚠️  make-scriv-changelog
+  WARN  W001  /Users/johnlee/.local/share/wt-utils/worktrees/3dd6/skills/make-scriv-changelog/SKILL.md  frontmatter missing recommended field 'name'
+  WARN  W002  /Users/johnlee/.local/share/wt-utils/worktrees/3dd6/skills/make-scriv-changelog/SKILL.md  frontmatter missing recommended field 'allowed-tools'
+✅ pr-feedback-review
+
+⚠️  pr-review-update
+  WARN  W002  /Users/johnlee/.local/share/wt-utils/worktrees/3dd6/skills/pr-review-update/SKILL.md  frontmatter missing recommended field 'allowed-tools'
+  WARN  W003  /Users/johnlee/.local/share/wt-utils/worktrees/3dd6/skills/pr-review-update/SKILL.md  file is 1461 lines (>600); consider splitting
+✅ review-org-code-quality
+✅ review-repo-code-quality
+
+⚠️  scan-projects
+  WARN  W002  /Users/johnlee/.local/share/wt-utils/worktrees/3dd6/skills/scan-projects/SKILL.md  frontmatter missing recommended field 'allowed-tools'
+✅ setup-chromatic
+✅ align-with-stamped-principles
+✅ assess-alignment-with-stamped-principles
+✅ create-stamped-project
+✅ do-full-research-loop
+✅ stamped-conventions
+
+⚠️  tinuous-analyzer
+  WARN  W002  /Users/johnlee/.local/share/wt-utils/worktrees/3dd6/skills/tinuous-analyzer/SKILL.md  frontmatter missing recommended field 'allowed-tools'
+
+────────────────────────────────────────────────────────────
+Skills checked: 23  Errors: 0  Warnings: 10
+validate: OK ✔ in 4.61 seconds
+stamped-evals: install_deps> python -I -m pip install 'jsonschema[format-nongpl]' pytest pytest-evals==0.3.4 pyyaml
+stamped-evals: commands[0]> python3 -c 'import pathlib, sys; sys.exit(0 if (pathlib.Path(r'"'"'/Users/johnlee/.local/share/wt-utils/worktrees/3dd6/skills'"'"') / '"'"'evals'"'"' / '"'"'stamped'"'"' / '"'"'tests'"'"').is_dir() else '"'"'error: evals/ is not checked out. run: git submodule update --init evals'"'"')'
+stamped-evals: commands[1]> python3 -m pytest /Users/johnlee/.local/share/wt-utils/worktrees/3dd6/skills/evals/stamped/tests -q
+.........................ssssssssssssssssssssssssss..................... [ 50%]
+....................................................FF................   [100%]
+=================================== FAILURES ===================================
+_ test_run_recorded_declares_the_environment_spec[pixi.toml-[workspace]\nname = "test"\nchannels = ["conda-forge"]\n] _
+
+tmp_path = PosixPath('/private/var/folders/dh/6x04w9891gx_4x1t649nc42w0000gn/T/pytest-of-johnlee/pytest-102/test_run_recorded_declares_the1')
+spec = 'pixi.toml'
+contents = '[workspace]\nname = "test"\nchannels = ["conda-forge"]\n'
+
+    @pytest.mark.parametrize("spec,contents", [
+        ("requirements.lock", "pandas==2.2.3\n"),
+        ("pixi.toml", '[workspace]\nname = "test"\nchannels = ["conda-forge"]\n'),
+        ("pyproject.toml", '[project]\nname = "test"\nversion = "0.1.0"\n'),
+    ])
+    def test_run_recorded_declares_the_environment_spec(tmp_path, spec, contents):
+        """must/006 asks that the record name the environment it ran in.
+    
+        Two of three live runs forgot: a `datalad run` with unchanged outputs
+        writes no commit, so declaring the lockfile afterwards records nothing.
+        The wrapper declares it on every run instead.
+        """
+        root = tmp_path / "env-input"
+        env = _guarded_repo(root)
+        (root / spec).write_text(contents)
+        if spec == "pixi.toml":
+            (root / ".gitignore").write_text("pixi.lock\n")
+            (root / "pixi.lock").write_text("ignored resolved environment\n")
+            subprocess.run(["git", "add", ".gitignore"], cwd=root, check=True, env=env)
+        subprocess.run(["git", "add", spec], cwd=root, check=True, env=env)
+        subprocess.run(["git", "commit", "-qm", "pin the environment"], cwd=root, check=True, env=env)
+        log = tmp_path / "calls.log"
+        env = {**env, "PATH": f"{_stub_datalad(tmp_path)}:{env['PATH']}", "DATALAD_STUB_LOG": str(log)}
+    
+        subprocess.run(["sh", "./run-recorded.sh", "-m", "a recorded step", "--", "true"],
+                       cwd=root, capture_output=True, text=True, env=env, check=True)
+>       assert log.read_text().strip() == f"run -i {spec} -m a recorded step -- true"
+E       AssertionError: assert 'run -m a rec... step -- true' == 'run -i pixi.... step -- true'
+E         
+E         - run -i pixi.toml -m a recorded step -- true
+E         ?     -------------
+E         + run -m a recorded step -- true
+
+evals/stamped/tests/test_probes.py:829: AssertionError
+_ test_run_recorded_declares_the_environment_spec[pyproject.toml-[project]\nname = "test"\nversion = "0.1.0"\n] _
+
+tmp_path = PosixPath('/private/var/folders/dh/6x04w9891gx_4x1t649nc42w0000gn/T/pytest-of-johnlee/pytest-102/test_run_recorded_declares_the2')
+spec = 'pyproject.toml'
+contents = '[project]\nname = "test"\nversion = "0.1.0"\n'
+
+    @pytest.mark.parametrize("spec,contents", [
+        ("requirements.lock", "pandas==2.2.3\n"),
+        ("pixi.toml", '[workspace]\nname = "test"\nchannels = ["conda-forge"]\n'),
+        ("pyproject.toml", '[project]\nname = "test"\nversion = "0.1.0"\n'),
+    ])
+    def test_run_recorded_declares_the_environment_spec(tmp_path, spec, contents):
+        """must/006 asks that the record name the environment it ran in.
+    
+        Two of three live runs forgot: a `datalad run` with unchanged outputs
+        writes no commit, so declaring the lockfile afterwards records nothing.
+        The wrapper declares it on every run instead.
+        """
+        root = tmp_path / "env-input"
+        env = _guarded_repo(root)
+        (root / spec).write_text(contents)
+        if spec == "pixi.toml":
+            (root / ".gitignore").write_text("pixi.lock\n")
+            (root / "pixi.lock").write_text("ignored resolved environment\n")
+            subprocess.run(["git", "add", ".gitignore"], cwd=root, check=True, env=env)
+        subprocess.run(["git", "add", spec], cwd=root, check=True, env=env)
+        subprocess.run(["git", "commit", "-qm", "pin the environment"], cwd=root, check=True, env=env)
+        log = tmp_path / "calls.log"
+        env = {**env, "PATH": f"{_stub_datalad(tmp_path)}:{env['PATH']}", "DATALAD_STUB_LOG": str(log)}
+    
+        subprocess.run(["sh", "./run-recorded.sh", "-m", "a recorded step", "--", "true"],
+                       cwd=root, capture_output=True, text=True, env=env, check=True)
+>       assert log.read_text().strip() == f"run -i {spec} -m a recorded step -- true"
+E       AssertionError: assert 'run -m a rec... step -- true' == 'run -i pypro... step -- true'
+E         
+E         - run -i pyproject.toml -m a recorded step -- true
+E         ?     ------------------
+E         + run -m a recorded step -- true
+
+evals/stamped/tests/test_probes.py:829: AssertionError
+=========================== short test summary info ============================
+FAILED evals/stamped/tests/test_probes.py::test_run_recorded_declares_the_environment_spec[pixi.toml-[workspace]\nname = "test"\nchannels = ["conda-forge"]\n]
+FAILED evals/stamped/tests/test_probes.py::test_run_recorded_declares_the_environment_spec[pyproject.toml-[project]\nname = "test"\nversion = "0.1.0"\n]
+2 failed, 114 passed, 26 skipped in 35.92s
+stamped-evals: exit 1 (36.13 seconds) /Users/johnlee/.local/share/wt-utils/worktrees/3dd6/skills> python3 -m pytest /Users/johnlee/.local/share/wt-utils/worktrees/3dd6/skills/evals/stamped/tests -q pid=6452
+  validate: OK (4.61=setup[3.74]+cmd[0.87] seconds)
+  stamped-evals: FAIL code 1 (39.85=setup[3.70]+cmd[0.02,36.13] seconds)
+  evaluation failed :( (44.47 seconds)

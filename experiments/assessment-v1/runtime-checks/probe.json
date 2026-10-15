@@ -1,0 +1,39 @@
+{
+  "object": {
+    "path": "/Users/johnlee/code/CON/stamped-ai-research-next/assessment",
+    "commit": "d867c1d04bbb58b3b0f64122ebd5f76bd8e5a7ca",
+    "is_datalad": false
+  },
+  "checklist_version": "0.3.1",
+  "probes": [
+    {
+      "probe": "tree-clean",
+      "status": "met",
+      "items": [
+        "stamped-checklist:must/004"
+      ],
+      "reason": "git tracks 103 text, code and configuration file(s), and `git status` is empty including submodules: the committed state is the whole state.",
+      "evidence": [
+        {
+          "uri": "git ls-files",
+          "description": "103 tracked text/code/config paths of 106 tracked paths",
+          "sha256": null
+        },
+        {
+          "uri": "git status --porcelain",
+          "description": "no output",
+          "sha256": null
+        }
+      ],
+      "details": {
+        "tracked_text": 103
+      },
+      "item_status": {
+        "stamped-checklist:must/004": "met"
+      },
+      "item_reason": {
+        "stamped-checklist:must/004": "git tracks 103 text, code and configuration file(s), and `git status` is empty including submodules: the committed state is the whole state."
+      }
+    }
+  ]
+}

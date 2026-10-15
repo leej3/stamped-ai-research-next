@@ -1,0 +1,64 @@
+{
+  "passed": 5,
+  "checks": [
+    {
+      "name": "probe-help",
+      "argv": [
+        "pixi",
+        "run",
+        "assessment-probes",
+        "--help"
+      ],
+      "returncode": 0,
+      "expected": 0
+    },
+    {
+      "name": "completed-response",
+      "argv": [
+        "pixi",
+        "run",
+        "assessment-validate",
+        "experiments/assessment-v1/blind-001/out/2026-10-15-response.json"
+      ],
+      "returncode": 0,
+      "expected": 0
+    },
+    {
+      "name": "read-only-probe",
+      "argv": [
+        "pixi",
+        "run",
+        "assessment-probes",
+        "assessment",
+        "--kind",
+        "skill",
+        "--only",
+        "tree-clean",
+        "-o",
+        "/Users/johnlee/code/CON/stamped-ai-research-next/experiments/assessment-v1/runtime-checks/probe.json"
+      ],
+      "returncode": 0,
+      "expected": 0
+    },
+    {
+      "name": "reject-source-drift",
+      "argv": [
+        "pixi",
+        "run",
+        "assessment-check"
+      ],
+      "returncode": 1,
+      "expected": 1
+    },
+    {
+      "name": "restored-pin",
+      "argv": [
+        "pixi",
+        "run",
+        "assessment-check"
+      ],
+      "returncode": 0,
+      "expected": 0
+    }
+  ]
+}

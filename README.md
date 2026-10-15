@@ -14,7 +14,8 @@ Working locks stay ignored; preserve the exact validated lock on a separate snap
 `skills/` blends [PR26](https://github.com/con/skills/pull/26) with lessons from the first trial on [our own branch](https://github.com/con/skills/tree/codex/pr26-stamped-next).
 The core STAMPED workflows are tool-neutral.
 Project-specific environment guidance is in [pixi-with-stamped](skills/skills/pixi-with-stamped/SKILL.md).
-Pin assessment separately from the workflows being improved.
+[assessment-version.json](assessment-version.json) pins the assessor and its environment independently.
+`pixi run assessment-check` verifies both; `assessment-probes` collects a draft and `assessment-validate` checks the completed response.
 
 Execution trials and their complete records are retained under `experiments/`.
 They establish the tested execution routes, not scientific or skill efficacy.

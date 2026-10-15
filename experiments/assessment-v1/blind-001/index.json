@@ -1,0 +1,7 @@
+{
+  "readme-claims-absent-container": {
+    "object": "/private/tmp/stamped-assessment-v1-blind-target",
+    "outdir": "/private/tmp/stamped-assessment-v1-blind/out",
+    "injected": "README names an unregistered neurodesk-freesurfer container; compare with actual tracked registrations."
+  }
+}

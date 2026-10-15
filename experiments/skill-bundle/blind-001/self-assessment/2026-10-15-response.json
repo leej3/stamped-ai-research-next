@@ -1,0 +1,661 @@
+{
+  "checklist_version": "0.3.1",
+  "responses": {
+    "stamped-checklist:must/001": {
+      "status": "met",
+      "reason": "All scientific inputs, code, specifications, results, and logs belong to one Git/DataLad object; exact lock is retained in its snapshot branch.",
+      "source": "judgement",
+      "evidence": [
+        {
+          "uri": "README.md",
+          "description": "Layout and snapshot boundary",
+          "sha256": null
+        },
+        {
+          "uri": "commit:472fbcfdcde21a4120a29ee2e6e3b13d8e72f67c",
+          "description": "Exact lock commit in the same object",
+          "sha256": null
+        }
+      ]
+    },
+    "stamped-checklist:must/002": {
+      "status": "met",
+      "reason": "Original task input is a small Git-tracked CSV under data; no external dataset or external input path is required.",
+      "source": "probe:subdatasets-resolvable+judgement",
+      "evidence": [
+        {
+          "uri": "data/README.md",
+          "description": "Origin and semantics",
+          "sha256": null
+        },
+        {
+          "uri": "data/paired.csv",
+          "description": "Exact original synthetic input",
+          "sha256": null
+        }
+      ],
+      "flags": [
+        "probe-overridden"
+      ]
+    },
+    "stamped-checklist:must/003": {
+      "status": "met",
+      "reason": "NumPy, SciPy, Pandas, Matplotlib, DataLad, git-annex and duct are declared in the root Pixi environment and restored in the recipient.",
+      "source": "judgement",
+      "evidence": [
+        {
+          "uri": "pixi.toml",
+          "description": "Declared runtime dependencies",
+          "sha256": null
+        },
+        {
+          "uri": "/tmp/stamped-paired-independent-ZWuYEl-delivery2/receipt.json",
+          "description": "Recipient locked installation and matching result hashes",
+          "sha256": null
+        }
+      ]
+    },
+    "stamped-checklist:must/004": {
+      "value": "yes",
+      "reason": "git tracks 27 text, code and configuration file(s), and `git status` is empty including submodules: the committed state is the whole state.",
+      "status": "met",
+      "evidence": [
+        {
+          "uri": "git ls-files",
+          "description": "27 tracked text/code/config paths of 37 tracked paths",
+          "sha256": null
+        },
+        {
+          "uri": "git status --porcelain",
+          "description": "no output",
+          "sha256": null
+        }
+      ],
+      "source": "probe:tree-clean",
+      "flags": []
+    },
+    "stamped-checklist:must/005": {
+      "value": "yes",
+      "reason": "git-annex carries the binary content (10 pointer(s) tracked) and no binary blob over 10 MiB is in git.",
+      "status": "met",
+      "evidence": [
+        {
+          "uri": "git ls-tree -r -l HEAD",
+          "description": "no binary blob over 10485760 bytes",
+          "sha256": null
+        },
+        {
+          "uri": ".datalad/config",
+          "description": "git-annex in use for large content",
+          "sha256": null
+        }
+      ],
+      "source": "probe:large-in-annex",
+      "flags": []
+    },
+    "stamped-checklist:must/006": {
+      "status": "met",
+      "reason": "Native run records code, data, protocol, and manifest; the protocol records the exact lock hash, matching the retained snapshot. Raw supplied CSV is an input, not a derived file.",
+      "source": "probe:derived-have-records+probe:run-env-linked+judgement",
+      "evidence": [
+        {
+          "uri": "commit:00103044a25dddb01aabda261fef06754ca5987a",
+          "description": "Native input/output record",
+          "sha256": null
+        },
+        {
+          "uri": "protocol/environment.json",
+          "description": "Exact lock and input digests",
+          "sha256": null
+        },
+        {
+          "uri": "commit:472fbcfdcde21a4120a29ee2e6e3b13d8e72f67c",
+          "description": "Retained exact lock",
+          "sha256": null
+        },
+        {
+          "uri": "data/README.md",
+          "description": "Raw source semantics",
+          "sha256": null
+        }
+      ],
+      "flags": [
+        "probe-overridden"
+      ]
+    },
+    "stamped-checklist:must/007": {
+      "value": "yes",
+      "reason": "README.md has an install/usage/reproduce section.",
+      "status": "met",
+      "evidence": [
+        {
+          "uri": "README.md",
+          "description": "instructions",
+          "sha256": null
+        }
+      ],
+      "source": "probe:entry-point",
+      "flags": []
+    },
+    "stamped-checklist:must/008": {
+      "status": "met",
+      "reason": "README identifies pixi run record and pixi run replay; actual native execution and fresh replay exercise those named tasks.",
+      "source": "probe:entry-point+judgement",
+      "evidence": [
+        {
+          "uri": "README.md",
+          "description": "Executable commands",
+          "sha256": null
+        },
+        {
+          "uri": "pixi.toml",
+          "description": "Named record and replay tasks",
+          "sha256": null
+        },
+        {
+          "uri": "/tmp/stamped-paired-independent-ZWuYEl-delivery2/receipt.json",
+          "description": "Successful replay",
+          "sha256": null
+        }
+      ],
+      "flags": [
+        "probe-overridden"
+      ]
+    },
+    "stamped-checklist:must/009": {
+      "status": "met",
+      "reason": "Runtime data paths are relative. Absolute paths flagged by the probe are retained execution receipts and failure traces, not required host locations.",
+      "source": "probe:no-abs-paths+judgement",
+      "evidence": [
+        {
+          "uri": "code/analyze.py",
+          "description": "Relative input/output paths",
+          "sha256": null
+        },
+        {
+          "uri": "code/replay.py",
+          "description": "Caller-supplied locations",
+          "sha256": null
+        },
+        {
+          "uri": "evidence/run.json",
+          "description": "Historical working-directory field",
+          "sha256": null
+        }
+      ],
+      "flags": [
+        "probe-overridden"
+      ]
+    },
+    "stamped-checklist:must/010": {
+      "status": "met",
+      "reason": "Scientific/tooling packages are declared. Git, Pixi and POSIX shell are documented bootstrap requirements. The alleged missing tool is is ordinary English in a template comment.",
+      "source": "probe:env-spec-tracked+judgement",
+      "evidence": [
+        {
+          "uri": "pixi.toml",
+          "description": "Runtime packages",
+          "sha256": null
+        },
+        {
+          "uri": "README.md",
+          "description": "Bootstrap requirements",
+          "sha256": null
+        },
+        {
+          "uri": "code/run-recorded.sh",
+          "description": "Comment beginning The same zsh rule applies",
+          "sha256": null
+        }
+      ],
+      "flags": [
+        "probe-overridden"
+      ]
+    },
+    "stamped-checklist:must/011": {
+      "status": "met",
+      "reason": "README documents Apple Silicon macOS >=14, POSIX shell, Git/Pixi, install network or caches, and optional authoring hooks; no cluster, GPU or credentials required.",
+      "source": "probe:platform-assumptions+judgement",
+      "evidence": [
+        {
+          "uri": "README.md",
+          "description": "Requirements",
+          "sha256": null
+        },
+        {
+          "uri": "pixi.toml",
+          "description": "macOS virtual-package target",
+          "sha256": null
+        }
+      ]
+    },
+    "stamped-checklist:must/012": {
+      "status": "met",
+      "reason": "README supplies host requirements and the manifest lists scientific and provenance dependencies; one macOS arm64 platform is explicitly claimed.",
+      "source": "probe:platform-assumptions+judgement",
+      "evidence": [
+        {
+          "uri": "README.md",
+          "description": "Requirements",
+          "sha256": null
+        },
+        {
+          "uri": "pixi.toml",
+          "description": "Dependency and platform declarations",
+          "sha256": null
+        }
+      ]
+    },
+    "stamped-checklist:must/013": {
+      "value": "yes",
+      "reason": "Tracked: pixi.toml.",
+      "status": "met",
+      "evidence": [
+        {
+          "uri": "pixi.toml",
+          "description": "spec environment specification",
+          "sha256": null
+        },
+        {
+          "uri": "code/run-recorded.sh#L23",
+          "description": "requires is to be installed on the host already: # The same zsh rule applies to the *command*, which is the half this comment",
+          "sha256": null
+        }
+      ],
+      "source": "probe:env-spec-tracked",
+      "flags": []
+    },
+    "stamped-checklist:must/014": {
+      "status": "partial",
+      "reason": "README gives executable pixi add/update, revalidation, and snapshot procedures; this new study has no post-baseline dependency update in its history.",
+      "source": "judgement",
+      "evidence": [
+        {
+          "uri": "README.md",
+          "description": "Dependency update procedure",
+          "sha256": null
+        },
+        {
+          "uri": "git log -- pixi.toml",
+          "description": "Only baseline manifest introduction",
+          "sha256": null
+        }
+      ],
+      "flags": [
+        "upstream-duplicate"
+      ]
+    },
+    "stamped-checklist:must/015": {
+      "status": "met",
+      "reason": "Exact validated lock is an ordinary Git snapshot one commit above the task; recipient restored it and installed with --locked before both checkout states.",
+      "source": "probe:run-env-linked+judgement",
+      "evidence": [
+        {
+          "uri": "commit:472fbcfdcde21a4120a29ee2e6e3b13d8e72f67c",
+          "description": "Exact lock snapshot",
+          "sha256": null
+        },
+        {
+          "uri": "protocol/environment.json",
+          "description": "Lock digest",
+          "sha256": null
+        },
+        {
+          "uri": "/tmp/stamped-paired-independent-ZWuYEl-delivery2/receipt.json",
+          "description": "Restoration and rerun evidence",
+          "sha256": null
+        }
+      ],
+      "flags": [
+        "probe-overridden"
+      ]
+    },
+    "stamped-checklist:must/016": {
+      "status": "met",
+      "reason": "Within requested local scope, an independent clone fetched the snapshot and installed its exact environment. No persistent public hosting or remote-host access is claimed.",
+      "source": "probe:env-spec-tracked+judgement",
+      "evidence": [
+        {
+          "uri": "/tmp/stamped-paired-independent-ZWuYEl-delivery2/receipt.json",
+          "description": "Local snapshot fetch and locked install",
+          "sha256": null
+        },
+        {
+          "uri": "README.md",
+          "description": "Explicit local delivery scope",
+          "sha256": null
+        }
+      ],
+      "flags": [
+        "probe-overridden"
+      ]
+    },
+    "stamped-checklist:must/017": {
+      "status": "met",
+      "reason": "README documents clone, exact lock extraction, locked installation, annex get, and native replay, with immutable IDs in the delivery receipt.",
+      "source": "judgement",
+      "evidence": [
+        {
+          "uri": "README.md",
+          "description": "Environment/replay route",
+          "sha256": null
+        },
+        {
+          "uri": "/tmp/stamped-paired-independent-ZWuYEl-delivery2/receipt.json",
+          "description": "Full immutable identities and successful execution",
+          "sha256": null
+        }
+      ]
+    },
+    "stamped-checklist:should/001": {
+      "status": "met",
+      "reason": "Git and DataLad/git-annex share one history for source, protocol, environment, results, and task logs.",
+      "source": "judgement",
+      "evidence": [
+        {
+          "uri": ".datalad/config",
+          "description": "Dataset identity",
+          "sha256": null
+        },
+        {
+          "uri": ".gitattributes",
+          "description": "Git/annex division",
+          "sha256": null
+        },
+        {
+          "uri": "git log --all",
+          "description": "Native and authored history",
+          "sha256": null
+        }
+      ]
+    },
+    "stamped-checklist:should/002": {
+      "status": "partial",
+      "reason": "Known-input validation and one fresh replay passed, but the disposable study has no recurring CI or scheduled workflow testing.",
+      "source": "probe:ci-present+judgement",
+      "evidence": [
+        {
+          "uri": "code/validate.py",
+          "description": "Scientific and input-contract tests",
+          "sha256": null
+        },
+        {
+          "uri": "/tmp/stamped-paired-independent-ZWuYEl-delivery2/receipt.json",
+          "description": "One completed replay",
+          "sha256": null
+        },
+        {
+          "uri": "/tmp/stamped-paired-independent-ZWuYEl-assessment/2026-10-15-probes.json",
+          "description": "No CI configuration",
+          "sha256": null
+        }
+      ],
+      "flags": [
+        "probe-overridden"
+      ]
+    },
+    "stamped-checklist:should/003": {
+      "value": "yes",
+      "reason": "4 kinds of component live in distinct places: inputs in data; code in code; derived in results; environment in pixi.toml",
+      "status": "met",
+      "evidence": [
+        {
+          "uri": "data",
+          "description": "inputs module",
+          "sha256": null
+        },
+        {
+          "uri": "code",
+          "description": "code module",
+          "sha256": null
+        },
+        {
+          "uri": "results",
+          "description": "derived module",
+          "sha256": null
+        },
+        {
+          "uri": "pixi.toml",
+          "description": "environment module",
+          "sha256": null
+        }
+      ],
+      "source": "probe:modules-separated",
+      "flags": []
+    },
+    "stamped-checklist:should/009": {
+      "status": "not-applicable",
+      "reason": "N/A: the supplied synthetic input and required software contain no restricted-access component.",
+      "source": "judgement"
+    },
+    "stamped-checklist:should/004": {
+      "status": "met",
+      "reason": "A fresh independent checkout built its own locked Pixi environment and regenerated outputs; this is same-host isolation, not a second OS or machine.",
+      "source": "judgement",
+      "evidence": [
+        {
+          "uri": "/tmp/stamped-paired-independent-ZWuYEl-delivery2/receipt.json",
+          "description": "Fresh checkout, missing outputs, genuine rerun, exact matches",
+          "sha256": null
+        },
+        {
+          "uri": "/tmp/stamped-paired-independent-ZWuYEl-delivery2/commands.json",
+          "description": "Locked installs and native rerun command",
+          "sha256": null
+        }
+      ]
+    },
+    "stamped-checklist:should/005": {
+      "status": "partial",
+      "reason": "Replay creates a disposable checkout and environment; ordinary record/analyze tasks reuse the project's environment rather than create one per invocation.",
+      "source": "judgement",
+      "evidence": [
+        {
+          "uri": "code/replay.py",
+          "description": "Fresh clone and environment",
+          "sha256": null
+        },
+        {
+          "uri": "pixi.toml",
+          "description": "Record/analyze tasks use the existing project environment",
+          "sha256": null
+        }
+      ]
+    },
+    "stamped-checklist:should/006": {
+      "status": "partial",
+      "reason": "The exact saved environment was restored and tested once; no recurring rebuild service or schedule exists for this disposable local study.",
+      "source": "probe:ci-present+judgement",
+      "evidence": [
+        {
+          "uri": "/tmp/stamped-paired-independent-ZWuYEl-delivery2/receipt.json",
+          "description": "One completed exact-lock reconstruction",
+          "sha256": null
+        },
+        {
+          "uri": "/tmp/stamped-paired-independent-ZWuYEl-assessment/2026-10-15-probes.json",
+          "description": "No CI",
+          "sha256": null
+        }
+      ],
+      "flags": [
+        "probe-overridden"
+      ]
+    },
+    "stamped-checklist:should/007": {
+      "status": "unmet",
+      "reason": "The lock archives exact package identities, not executable package artifacts; reinstallation relies on package registries or an existing Pixi cache.",
+      "source": "judgement",
+      "evidence": [
+        {
+          "uri": "commit:472fbcfdcde21a4120a29ee2e6e3b13d8e72f67c",
+          "description": "Lock URLs/hashes without package archives",
+          "sha256": null
+        },
+        {
+          "uri": "README.md",
+          "description": "Network/cache installation requirement",
+          "sha256": null
+        }
+      ]
+    },
+    "stamped-checklist:should/008": {
+      "status": "partial",
+      "reason": "README gives executable pixi add/update, revalidation, and snapshot procedures; this new study has no post-baseline dependency update in its history.",
+      "source": "judgement",
+      "evidence": [
+        {
+          "uri": "README.md",
+          "description": "Dependency update procedure",
+          "sha256": null
+        },
+        {
+          "uri": "git log -- pixi.toml",
+          "description": "Only baseline manifest introduction",
+          "sha256": null
+        }
+      ],
+      "flags": [
+        "upstream-duplicate"
+      ]
+    },
+    "stamped-checklist:may/001": {
+      "status": "not-applicable",
+      "reason": "N/A: no external dataset or source-code module; third-party packages are managed through Pixi rather than Git submodules.",
+      "source": "probe:subdatasets-resolvable+judgement",
+      "flags": [
+        "probe-overridden"
+      ]
+    },
+    "stamped-checklist:may/002": {
+      "status": "met",
+      "reason": "README maps input, code, protocol, output, log, and environment boundaries; raw and derivative artifacts are separately addressable.",
+      "source": "judgement",
+      "evidence": [
+        {
+          "uri": "README.md",
+          "description": "Layout",
+          "sha256": null
+        },
+        {
+          "uri": "code/compute.py",
+          "description": "Analysis/validation composition",
+          "sha256": null
+        }
+      ]
+    },
+    "stamped-checklist:may/003": {
+      "status": "partial",
+      "reason": "Data, computation, validation, and results are separated, but code intentionally fixes the five-row study paths and known-input contract rather than support independently versioned modules.",
+      "source": "judgement",
+      "evidence": [
+        {
+          "uri": "code/analyze.py",
+          "description": "Study-specific paths",
+          "sha256": null
+        },
+        {
+          "uri": "code/validate.py",
+          "description": "Known five-participant fixture",
+          "sha256": null
+        }
+      ]
+    },
+    "stamped-checklist:may/004": {
+      "status": "met",
+      "reason": "The Pixi task graph and compute entry point compose analysis and validation under one native DataLad execution with explicit boundaries.",
+      "source": "judgement",
+      "evidence": [
+        {
+          "uri": "pixi.toml",
+          "description": "Tasks",
+          "sha256": null
+        },
+        {
+          "uri": "code/compute.py",
+          "description": "Analysis then validation",
+          "sha256": null
+        },
+        {
+          "uri": "code/run-recorded.sh",
+          "description": "Native recording wrapper",
+          "sha256": null
+        }
+      ]
+    },
+    "stamped-checklist:may/005": {
+      "status": "met",
+      "reason": "README documents structure, task entry points, environment restoration, and local replay; protocol explains the scientific input/output contract.",
+      "source": "judgement",
+      "evidence": [
+        {
+          "uri": "README.md",
+          "description": "Navigation and commands",
+          "sha256": null
+        },
+        {
+          "uri": "protocol/protocol.md",
+          "description": "Scientific contract",
+          "sha256": null
+        }
+      ]
+    }
+  },
+  "schema_version": "0.2.0",
+  "principles_version": "0.2.0",
+  "checklist_source": {
+    "repo": "https://github.com/stamped-principles/stamped-checklist-schema",
+    "tag": "v0.3.1",
+    "commit": "af259bad237fa57b856417db8dba45a1b283a527"
+  },
+  "extra_items": [
+    {
+      "key": "clone-weight",
+      "status": "met",
+      "reason": "No text blob in git exceeds 10 MiB.",
+      "evidence": [
+        {
+          "uri": "git ls-tree -r -l HEAD",
+          "description": "largest text blob under 10485760 bytes",
+          "sha256": null
+        }
+      ]
+    },
+    {
+      "key": "inputs-untouched",
+      "status": "not-applicable",
+      "reason": "N/A: no linked modules, so there is no recorded input state to compare against.",
+      "evidence": []
+    },
+    {
+      "key": "license-declared",
+      "status": "unmet",
+      "reason": "No LICENSE, LICENSES/, REUSE.toml or BIDS License field: reuse terms are unstated.",
+      "evidence": [
+        {
+          "uri": "probe:license-declared",
+          "description": "no licence file among 37 tracked paths, and no License field in any dataset_description.json",
+          "sha256": null
+        }
+      ]
+    }
+  ],
+  "object": {
+    "url": null,
+    "commit": "9c15dfe23eb8ad03ac6420f381ca645a6c3dddda",
+    "captured_at": "2026-10-15T17:41:34+00:00",
+    "kind": "study"
+  },
+  "assessor": {
+    "skill": "assess-alignment-with-stamped-principles",
+    "version": "0.1.0",
+    "harness": "Codex Desktop 26.1007.71326 / codex-cli 0.162.0-alpha.17.2 (subagent)",
+    "model": "gpt-6-astra",
+    "date": "2026-10-15",
+    "drafted_by": "scripts/run_probes.py",
+    "dependencies": [
+      "stamped-conventions@0.1.0"
+    ]
+  },
+  "scope": "Committed task 9c15dfe23eb8ad03ac6420f381ca645a6c3dddda and lock snapshot 472fbcfdcde21a4120a29ee2e6e3b13d8e72f67c; local annex delivery and fresh native rerun completed; same host, caches reused; no remote publishing, other OS, or regular CI tested."
+}

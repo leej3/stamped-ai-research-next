@@ -1,0 +1,20 @@
+{
+  "task_commit": "9c15dfe23eb8ad03ac6420f381ca645a6c3dddda",
+  "snapshot_commit": "472fbcfdcde21a4120a29ee2e6e3b13d8e72f67c",
+  "snapshot_parent_is_task": true,
+  "snapshot_only_adds": "pixi.lock",
+  "lock_is_plain_git": true,
+  "working_lock_ignored": true,
+  "task_tree_clean": true,
+  "lock_sha256": "e43a68666185ccd60162fda9e0fdb0a06ffe810bec373702a13479a09593a935",
+  "all_main_and_snapshot_commits_have_provenance": [
+    "472fbcfdcde21a4120a29ee2e6e3b13d8e72f67c",
+    "9c15dfe23eb8ad03ac6420f381ca645a6c3dddda",
+    "00103044a25dddb01aabda261fef06754ca5987a",
+    "03f521c9dc8894a6c86da598086530b8e3b6931b",
+    "a0722fc3ef3a087c55b64940f767d95c18451e8b",
+    "fbecae3d3a59db2f5d04c91ce2dd384c73c57fd9"
+  ],
+  "all_ten_retrieved_payload_hashes_match_original_source": true,
+  "native_rerun_has_fresh_provenance_trailers": true
+}

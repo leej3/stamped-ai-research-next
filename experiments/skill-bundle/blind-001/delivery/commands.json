@@ -1,0 +1,170 @@
+[
+  {
+    "command": [
+      "pixi",
+      "run",
+      "datalad",
+      "clone",
+      "/tmp/stamped-paired-independent-ZWuYEl",
+      "/private/tmp/stamped-paired-independent-ZWuYEl-recipient2"
+    ],
+    "cwd": null,
+    "exit_code": 0,
+    "output": "[INFO] Attempting a clone into /private/tmp/stamped-paired-independent-ZWuYEl-recipient2 \n[INFO] Attempting to clone from /tmp/stamped-paired-independent-ZWuYEl to /private/tmp/stamped-paired-independent-ZWuYEl-recipient2 \n[INFO] Completed clone attempts for Dataset(/private/tmp/stamped-paired-independent-ZWuYEl-recipient2) \ninstall(ok): /private/tmp/stamped-paired-independent-ZWuYEl-recipient2 (dataset)\n"
+  },
+  {
+    "command": [
+      "git",
+      "rev-parse",
+      "HEAD"
+    ],
+    "cwd": "/private/tmp/stamped-paired-independent-ZWuYEl-recipient2",
+    "exit_code": 0,
+    "output": "9c15dfe23eb8ad03ac6420f381ca645a6c3dddda\n"
+  },
+  {
+    "command": [
+      "git",
+      "fetch",
+      "origin",
+      "472fbcfdcde21a4120a29ee2e6e3b13d8e72f67c"
+    ],
+    "cwd": "/private/tmp/stamped-paired-independent-ZWuYEl-recipient2",
+    "exit_code": 0,
+    "output": "From /tmp/stamped-paired-independent-ZWuYEl\n * branch            472fbcfdcde21a4120a29ee2e6e3b13d8e72f67c -> FETCH_HEAD\n"
+  },
+  {
+    "command": [
+      "pixi",
+      "install",
+      "--locked"
+    ],
+    "cwd": "/private/tmp/stamped-paired-independent-ZWuYEl-recipient2",
+    "exit_code": 0,
+    "output": " WARN Using local manifest /private/tmp/stamped-paired-independent-ZWuYEl-recipient2/pixi.toml rather than /private/tmp/stamped-paired-independent-ZWuYEl/pixi.toml from environment variable `PIXI_PROJECT_MANIFEST`\n\u2714 The default environment has been installed.\n"
+  },
+  {
+    "command": [
+      "pixi",
+      "run",
+      "git",
+      "annex",
+      "get",
+      "--from=origin",
+      "results",
+      "logs"
+    ],
+    "cwd": "/private/tmp/stamped-paired-independent-ZWuYEl-recipient2",
+    "exit_code": 0,
+    "output": " WARN Using local manifest /private/tmp/stamped-paired-independent-ZWuYEl-recipient2/pixi.toml rather than /private/tmp/stamped-paired-independent-ZWuYEl/pixi.toml from environment variable `PIXI_PROJECT_MANIFEST`\nget results/changes.csv (from origin...) \n\n100%  82 B            271 KiB/s 0s\n                                  \nok\nget results/paired-change.png (from origin...) \n\n82%   31.98 KiB        32 MiB/s 0s\n100%  38.82 KiB        18 MiB/s 0s\n                                  \nok\nget results/paired-change.svg (from origin...) \n\n73%   31.98 KiB        89 MiB/s 0s\n100%  43.9 KiB         47 MiB/s 0s\n                                  \nok\nget results/summary.json (from origin...) \n\n100%  450 B             4 MiB/s 0s\n                                  \nok\nget results/validation.json (from origin...) \n\n100%  737 B             6 MiB/s 0s\n                                  \nok\nget logs/paired/outer-summary.txt (from origin...) \n\n100%  2.01 KiB         11 MiB/s 0s\n                                  \nok\nget logs/paired/run_info.json (from origin...) \n\n100%  1.51 KiB         14 MiB/s 0s\n                                  \nok\nget logs/paired/run_stderr (from origin...) \n\n100%  63 B            570 KiB/s 0s\n                                  \nok\nget logs/paired/run_stdout (from origin...) \n\n100%  1.24 KiB         12 MiB/s 0s\n                                  \nok\nget logs/paired/run_usage.jsonl (from origin...) \n\n100%  17.03 KiB        27 MiB/s 0s\n                                  \nok\n(recording state in git...)\n"
+  },
+  {
+    "command": [
+      "pixi",
+      "run",
+      "git",
+      "annex",
+      "whereis",
+      "--json",
+      "results/summary.json"
+    ],
+    "cwd": "/private/tmp/stamped-paired-independent-ZWuYEl-recipient2",
+    "exit_code": 0,
+    "output": " WARN Using local manifest /private/tmp/stamped-paired-independent-ZWuYEl-recipient2/pixi.toml rather than /private/tmp/stamped-paired-independent-ZWuYEl/pixi.toml from environment variable `PIXI_PROJECT_MANIFEST`\n{\"command\":\"whereis\",\"error-messages\":[],\"file\":\"results/summary.json\",\"input\":[\"results/summary.json\"],\"key\":\"SHA256E-s450--45abadd8be3dcd443bcc14e98a6915330445f7497a9eb2f0d68a33c4fa97cd9d.json\",\"note\":\"2 copies\\n\\t2f8cc8f5-7f8c-4e79-8a3e-dbf98943a141 -- johnlee@vpn-two-factor-general-229-133-11.dartmouth.edu:/private/tmp/stamped-paired-independent-ZWuYEl-recipient2 [here]\\n\\tb18b6dd9-7ae5-4794-8e75-7e46b06643c2 -- johnlee@vpn-two-factor-general-229-133-11.dartmouth.edu:/private/tmp/stamped-paired-independent-ZWuYEl [origin]\\n\",\"success\":true,\"untrusted\":[],\"whereis\":[{\"description\":\"johnlee@vpn-two-factor-general-229-133-11.dartmouth.edu:/private/tmp/stamped-paired-independent-ZWuYEl-recipient2\",\"here\":true,\"urls\":[],\"uuid\":\"2f8cc8f5-7f8c-4e79-8a3e-dbf98943a141\"},{\"description\":\"johnlee@vpn-two-factor-general-229-133-11.dartmouth.edu:/private/tmp/stamped-paired-independent-ZWuYEl [origin]\",\"here\":false,\"urls\":[],\"uuid\":\"b18b6dd9-7ae5-4794-8e75-7e46b06643c2\"}]}\n"
+  },
+  {
+    "command": [
+      "pixi",
+      "run",
+      "datalad",
+      "-f",
+      "json",
+      "rerun",
+      "--report",
+      "00103044a25dddb01aabda261fef06754ca5987a"
+    ],
+    "cwd": "/private/tmp/stamped-paired-independent-ZWuYEl-recipient2",
+    "exit_code": 0,
+    "output": " WARN Using local manifest /private/tmp/stamped-paired-independent-ZWuYEl-recipient2/pixi.toml rather than /private/tmp/stamped-paired-independent-ZWuYEl/pixi.toml from environment variable `PIXI_PROJECT_MANIFEST`\n{\"action\": \"run\", \"author\": \"leej3\", \"commit\": \"00103044a25dddb01aabda261fef06754ca5987a\", \"date\": \"2026-10-15T13:40:21-04:00\", \"diff\": [{\"action\": \"diff\", \"gitshasum\": \"c29937c6d444c0d7928e0a2a944b08ff0fcb61f7\", \"parentds\": \"/private/tmp/stamped-paired-independent-ZWuYEl-recipient2\", \"path\": \"/private/tmp/stamped-paired-independent-ZWuYEl-recipient2/logs/paired/outer-summary.txt\", \"refds\": \"/private/tmp/stamped-paired-independent-ZWuYEl-recipient2\", \"state\": \"added\", \"status\": \"ok\", \"type\": \"symlink\"}, {\"action\": \"diff\", \"gitshasum\": \"8b044460ed25d66c1d7cece09b68351bfb3662c6\", \"parentds\": \"/private/tmp/stamped-paired-independent-ZWuYEl-recipient2\", \"path\": \"/private/tmp/stamped-paired-independent-ZWuYEl-recipient2/logs/paired/run_info.json\", \"refds\": \"/private/tmp/stamped-paired-independent-ZWuYEl-recipient2\", \"state\": \"added\", \"status\": \"ok\", \"type\": \"symlink\"}, {\"action\": \"diff\", \"gitshasum\": \"303cc3eac85a05db552e70ccb837a99c8a409777\", \"parentds\": \"/private/tmp/stamped-paired-independent-ZWuYEl-recipient2\", \"path\": \"/private/tmp/stamped-paired-independent-ZWuYEl-recipient2/logs/paired/run_stderr\", \"refds\": \"/private/tmp/stamped-paired-independent-ZWuYEl-recipient2\", \"state\": \"added\", \"status\": \"ok\", \"type\": \"symlink\"}, {\"action\": \"diff\", \"gitshasum\": \"0dcf75cfa01d34383807abfd27a1250f1d709c21\", \"parentds\": \"/private/tmp/stamped-paired-independent-ZWuYEl-recipient2\", \"path\": \"/private/tmp/stamped-paired-independent-ZWuYEl-recipient2/logs/paired/run_stdout\", \"refds\": \"/private/tmp/stamped-paired-independent-ZWuYEl-recipient2\", \"state\": \"added\", \"status\": \"ok\", \"type\": \"symlink\"}, {\"action\": \"diff\", \"gitshasum\": \"0710c7674242f2c5c06c671f818609544a1239e3\", \"parentds\": \"/private/tmp/stamped-paired-independent-ZWuYEl-recipient2\", \"path\": \"/private/tmp/stamped-paired-independent-ZWuYEl-recipient2/logs/paired/run_usage.jsonl\", \"refds\": \"/private/tmp/stamped-paired-independent-ZWuYEl-recipient2\", \"state\": \"added\", \"status\": \"ok\", \"type\": \"symlink\"}, {\"action\": \"diff\", \"gitshasum\": \"25c4c747f4e0bc6586f487e09802ab267371f067\", \"parentds\": \"/private/tmp/stamped-paired-independent-ZWuYEl-recipient2\", \"path\": \"/private/tmp/stamped-paired-independent-ZWuYEl-recipient2/results/changes.csv\", \"refds\": \"/private/tmp/stamped-paired-independent-ZWuYEl-recipient2\", \"state\": \"added\", \"status\": \"ok\", \"type\": \"symlink\"}, {\"action\": \"diff\", \"gitshasum\": \"5f6ab0892d24ea537afe87df972efe1225c193d8\", \"parentds\": \"/private/tmp/stamped-paired-independent-ZWuYEl-recipient2\", \"path\": \"/private/tmp/stamped-paired-independent-ZWuYEl-recipient2/results/paired-change.png\", \"refds\": \"/private/tmp/stamped-paired-independent-ZWuYEl-recipient2\", \"state\": \"added\", \"status\": \"ok\", \"type\": \"symlink\"}, {\"action\": \"diff\", \"gitshasum\": \"37405c9c671f8bd17f638fdf7254e8da5f6788d1\", \"parentds\": \"/private/tmp/stamped-paired-independent-ZWuYEl-recipient2\", \"path\": \"/private/tmp/stamped-paired-independent-ZWuYEl-recipient2/results/paired-change.svg\", \"refds\": \"/private/tmp/stamped-paired-independent-ZWuYEl-recipient2\", \"state\": \"added\", \"status\": \"ok\", \"type\": \"symlink\"}, {\"action\": \"diff\", \"gitshasum\": \"d35dbb50c8d6f7bd9c43d5941118125afbf7d4d8\", \"parentds\": \"/private/tmp/stamped-paired-independent-ZWuYEl-recipient2\", \"path\": \"/private/tmp/stamped-paired-independent-ZWuYEl-recipient2/results/summary.json\", \"refds\": \"/private/tmp/stamped-paired-independent-ZWuYEl-recipient2\", \"state\": \"added\", \"status\": \"ok\", \"type\": \"symlink\"}, {\"action\": \"diff\", \"gitshasum\": \"38c217cd33634430f31e29f01c1d3c8c0e2760f5\", \"parentds\": \"/private/tmp/stamped-paired-independent-ZWuYEl-recipient2\", \"path\": \"/private/tmp/stamped-paired-independent-ZWuYEl-recipient2/results/validation.json\", \"refds\": \"/private/tmp/stamped-paired-independent-ZWuYEl-recipient2\", \"state\": \"added\", \"status\": \"ok\", \"type\": \"symlink\"}], \"parents\": [\"03f521c9dc8894a6c86da598086530b8e3b6931b\"], \"path\": \"/private/tmp/stamped-paired-independent-ZWuYEl-recipient2\", \"rerun_action\": \"run\", \"rerun_message\": null, \"run_info\": {\"chain\": [], \"cmd\": \"pixi run analyze\", \"dsid\": \"4aa80b4b-b9ef-4f40-a989-edae8d4a21b2\", \"exit\": 0, \"extra_inputs\": [], \"inputs\": [\"pixi.toml\", \"data\", \"protocol\", \"code\"], \"outputs\": [\"results\", \"logs\"], \"pwd\": \".\"}, \"run_message\": \"paired-v1: estimate mean paired change and validate\", \"status\": \"ok\", \"type\": \"dataset\"}\n"
+  },
+  {
+    "command": [
+      "git",
+      "rev-parse",
+      "00103044a25dddb01aabda261fef06754ca5987a^"
+    ],
+    "cwd": "/private/tmp/stamped-paired-independent-ZWuYEl-recipient2",
+    "exit_code": 0,
+    "output": "03f521c9dc8894a6c86da598086530b8e3b6931b\n"
+  },
+  {
+    "command": [
+      "git",
+      "checkout",
+      "--detach",
+      "03f521c9dc8894a6c86da598086530b8e3b6931b"
+    ],
+    "cwd": "/private/tmp/stamped-paired-independent-ZWuYEl-recipient2",
+    "exit_code": 0,
+    "output": "HEAD is now at 03f521c test: verify recorded-run guard acceptance and rejection\n"
+  },
+  {
+    "command": [
+      "pixi",
+      "install",
+      "--locked"
+    ],
+    "cwd": "/private/tmp/stamped-paired-independent-ZWuYEl-recipient2",
+    "exit_code": 0,
+    "output": " WARN Using local manifest /private/tmp/stamped-paired-independent-ZWuYEl-recipient2/pixi.toml rather than /private/tmp/stamped-paired-independent-ZWuYEl/pixi.toml from environment variable `PIXI_PROJECT_MANIFEST`\n\u2714 The default environment has been installed.\n"
+  },
+  {
+    "command": [
+      "git",
+      "submodule",
+      "update",
+      "--init",
+      "--recursive"
+    ],
+    "cwd": "/private/tmp/stamped-paired-independent-ZWuYEl-recipient2",
+    "exit_code": 0,
+    "output": ""
+  },
+  {
+    "command": [
+      "git",
+      "config",
+      "provenance.resolver",
+      "/Users/johnlee/.agents/skills/commit-provenance/scripts/resolve.sh"
+    ],
+    "cwd": "/private/tmp/stamped-paired-independent-ZWuYEl-recipient2",
+    "exit_code": 0,
+    "output": ""
+  },
+  {
+    "command": [
+      "pixi",
+      "run",
+      "datalad",
+      "rerun",
+      "--branch",
+      "verified-rerun",
+      "--onto",
+      "03f521c9dc8894a6c86da598086530b8e3b6931b",
+      "00103044a25dddb01aabda261fef06754ca5987a"
+    ],
+    "cwd": "/private/tmp/stamped-paired-independent-ZWuYEl-recipient2",
+    "exit_code": 0,
+    "output": " WARN Using local manifest /private/tmp/stamped-paired-independent-ZWuYEl-recipient2/pixi.toml rather than /private/tmp/stamped-paired-independent-ZWuYEl/pixi.toml from environment variable `PIXI_PROJECT_MANIFEST`\n[INFO] checkout commit 03f521c; \n[INFO] run commit 0010304; (paired-v1: estima...) \n[INFO] Making sure inputs are available (this may take some time) \n[INFO] == Command start (output follows) ===== \n\u2728 Pixi task (analyze): sh code/capture.sh\n2026-10-15T13:41:51-0400 [INFO    ] con-duct: python-dotenv not installed, skipping .env file loading\n2026-10-15T13:41:51-0400 [INFO    ] con-duct: duct 0.23.0 is executing 'python code/compute.py'...\n2026-10-15T13:41:51-0400 [INFO    ] con-duct: Log files will be written to logs/paired/run_\n{\n  \"ci_lower\": 0.7611493663164324,\n  \"ci_upper\": 2.8388506336835677,\n  \"confidence_level\": 0.95,\n  \"df\": 4,\n  \"estimand\": \"mean within-person change (after minus before)\",\n  \"excluded\": 0,\n  \"input_sha256\": \"2b59e14716137369e17054e4fc5c34085c381743a4f389bdc331a0c5e4319775\",\n  \"mean_change\": 1.8,\n  \"n\": 5,\n  \"sample_sd\": 0.8366600265340756,\n  \"standard_error\": 0.3741657386773941,\n  \"t_critical\": 2.7764451051977934,\n  \"units\": \"arbitrary units\"\n}\nGenerated results with NumPy 2.5.4, SciPy 1.18.1, Pandas 3.0.6, Matplotlib 3.11.2\n{\n  \"actual_input_rows\": 5,\n  \"analytic_oracle\": {\n    \"ci_lower\": 0.7611493663164304,\n    \"ci_upper\": 2.8388506336835695,\n    \"confidence_level\": 0.95,\n    \"df\": 4,\n    \"excluded\": 0,\n    \"mean_change\": 1.8,\n    \"n\": 5,\n    \"sample_sd\": 0.8366600265340756,\n    \"standard_error\": 0.37416573867739417,\n    \"t_critical\": 2.7764451051977987\n  },\n  \"excluded\": 0,\n  \"expected_changes\": [\n    1,\n    1,\n    2,\n    2,\n    3\n  ],\n  \"independent_scipy_paired_ci\": [\n    0.7611493663164324,\n    2.8388506336835677\n  ],\n  \"missing\": 0,\n  \"rejected_cases\": [\n    \"duplicate_id\",\n    \"missing_id\",\n    \"missing_value\",\n    \"nonfinite\",\n    \"nonnumeric\",\n    \"singleton\",\n    \"wrong_schema\"\n  ],\n  \"status\": \"passed\",\n  \"tolerance_absolute\": 1e-12\n}\n2026-10-15T13:42:08-0400 [INFO    ] con-duct: Summary:\nExit Code: 0\nCommand: python code/compute.py\nLog files location: logs/paired/run_\nWall Clock Time: 17.784 sec\nMemory Peak Usage (RSS): 159.4 MB\nMemory Average Usage (RSS): 86.2 MB\nVirtual Memory Peak Usage (VSZ): 476.6 GB\nVirtual Memory Average Usage (VSZ): 476.3 GB\nMemory Peak Percentage: 0.50%\nMemory Average Percentage: 0.26%\nCPU Peak Usage: 26.10%\nAverage CPU Usage: 6.33%\n\n[INFO] == Command exit (modification check follows) ===== \nrun(ok): /private/tmp/stamped-paired-independent-ZWuYEl-recipient2 (dataset) [pixi run analyze]\nadd(ok): logs/paired/outer-summary.txt (file)\nadd(ok): logs/paired/run_info.json (file)\nadd(ok): logs/paired/run_stderr (file)\nadd(ok): logs/paired/run_stdout (file)\nadd(ok): logs/paired/run_usage.jsonl (file)\nadd(ok): results/changes.csv (file)\nadd(ok): results/paired-change.png (file)\nadd(ok): results/paired-change.svg (file)\nadd(ok): results/summary.json (file)\nadd(ok): results/validation.json (file)\nsave(ok): . (dataset)\naction summary:\n  add (ok: 10)\n  get (notneeded: 4)\n  run (ok: 1)\n  save (ok: 1)\n"
+  },
+  {
+    "command": [
+      "git",
+      "rev-parse",
+      "HEAD"
+    ],
+    "cwd": "/private/tmp/stamped-paired-independent-ZWuYEl-recipient2",
+    "exit_code": 0,
+    "output": "4956203d524b814e416e87260ce4d1ae82ac176e\n"
+  }
+]

@@ -1,0 +1,6 @@
+probe                    status          items
+tree-clean               met             must/004
+
+probes cover 1/17 MUST items; inspect statuses for completed verdicts
+
+wrote /Users/johnlee/code/CON/stamped-ai-research-next/experiments/assessment-v1/runtime-checks/probe.json

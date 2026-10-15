@@ -1,0 +1,24 @@
+.......F.................                                                [100%]
+=================================== FAILURES ===================================
+__ test_response_rejects_missing_or_false_stamp[object-captured_at-yesterday] __
+
+section = 'object', field = 'captured_at', value = 'yesterday'
+
+    @pytest.mark.parametrize(("section", "field", "value"), [
+        ("assessor", "model", None), ("assessor", "harness", ""),
+        ("assessor", "dependencies", []), ("assessor", "date", "2026-99-99"),
+        ("object", "kind", "something-else"), ("object", "commit", "main"),
+        ("object", "captured_at", "yesterday"),
+        ("checklist_source", "commit", "b" * 40),
+    ])
+    def test_response_rejects_missing_or_false_stamp(section, field, value):
+        response = completed()
+        response[section][field] = value
+>       assert any(field in p for p in validate(response, Checklist()))
+E       assert False
+E        +  where False = any(<generator object test_response_rejects_missing_or_false_stamp.<locals>.<genexpr> at 0x102557370>)
+
+evals/stamped/tests/test_assessment_freeze.py:54: AssertionError
+=========================== short test summary info ============================
+FAILED evals/stamped/tests/test_assessment_freeze.py::test_response_rejects_missing_or_false_stamp[object-captured_at-yesterday]
+1 failed, 24 passed in 0.23s

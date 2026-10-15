@@ -1,0 +1,212 @@
+{"argv": ["git", "-c", "credential.helper=", "-c", "core.askPass=/usr/bin/false", "-c", "user.name=Anonymous retrieval probe", "-c", "user.email=codex@openai.com", "clone", "--single-branch", "--branch", "codex/proof-skill-followability", "https://github.com/leej3/stamped-ai-research-next.git", "/var/folders/dh/6x04w9891gx_4x1t649nc42w0000gn/T/stamped-online-blind-mh1vb5g0/recipient"], "cwd": "/var/folders/dh/6x04w9891gx_4x1t649nc42w0000gn/T/stamped-online-blind-mh1vb5g0"}
+Cloning into '/var/folders/dh/6x04w9891gx_4x1t649nc42w0000gn/T/stamped-online-blind-mh1vb5g0/recipient'...
+{"argv": ["git", "-c", "credential.helper=", "-c", "core.askPass=/usr/bin/false", "-c", "user.name=Anonymous retrieval probe", "-c", "user.email=codex@openai.com", "rev-parse", "HEAD"], "cwd": "/var/folders/dh/6x04w9891gx_4x1t649nc42w0000gn/T/stamped-online-blind-mh1vb5g0/recipient"}
+9c15dfe23eb8ad03ac6420f381ca645a6c3dddda
+{"argv": ["git", "-c", "credential.helper=", "-c", "core.askPass=/usr/bin/false", "-c", "user.name=Anonymous retrieval probe", "-c", "user.email=codex@openai.com", "annex", "init", "independent anonymous online blind-trial recipient"], "cwd": "/var/folders/dh/6x04w9891gx_4x1t649nc42w0000gn/T/stamped-online-blind-mh1vb5g0/recipient"}
+init independent anonymous online blind-trial recipient 
+
+ok
+(recording state in git...)
+  Remote origin not usable by git-annex; setting annex-ignore
+  https://github.com/leej3/stamped-ai-research-next.git/config download failed: Not Found
+{"argv": ["git", "-c", "credential.helper=", "-c", "core.askPass=/usr/bin/false", "-c", "user.name=Anonymous retrieval probe", "-c", "user.email=codex@openai.com", "remote", "add", "con-hub", "https://hub.centerforopenneuroscience.org/leej3/stamped-ai-research-next.git"], "cwd": "/var/folders/dh/6x04w9891gx_4x1t649nc42w0000gn/T/stamped-online-blind-mh1vb5g0/recipient"}
+{"argv": ["git", "-c", "credential.helper=", "-c", "core.askPass=/usr/bin/false", "-c", "user.name=Anonymous retrieval probe", "-c", "user.email=codex@openai.com", "config", "remote.con-hub.annexurl", "annex+https://hub.centerforopenneuroscience.org:443/git-annex-p2phttp"], "cwd": "/var/folders/dh/6x04w9891gx_4x1t649nc42w0000gn/T/stamped-online-blind-mh1vb5g0/recipient"}
+{"argv": ["git", "-c", "credential.helper=", "-c", "core.askPass=/usr/bin/false", "-c", "user.name=Anonymous retrieval probe", "-c", "user.email=codex@openai.com", "fetch", "con-hub", "refs/heads/git-annex:refs/remotes/con-hub/git-annex"], "cwd": "/var/folders/dh/6x04w9891gx_4x1t649nc42w0000gn/T/stamped-online-blind-mh1vb5g0/recipient"}
+From https://hub.centerforopenneuroscience.org/leej3/stamped-ai-research-next
+ * [new branch]      git-annex  -> con-hub/git-annex
+{"argv": ["git", "-c", "credential.helper=", "-c", "core.askPass=/usr/bin/false", "-c", "user.name=Anonymous retrieval probe", "-c", "user.email=codex@openai.com", "rev-parse", "refs/remotes/con-hub/git-annex"], "cwd": "/var/folders/dh/6x04w9891gx_4x1t649nc42w0000gn/T/stamped-online-blind-mh1vb5g0/recipient"}
+a514d6e55a837c9eeda2484763362279e7e9c169
+{"argv": ["git", "-c", "credential.helper=", "-c", "core.askPass=/usr/bin/false", "-c", "user.name=Anonymous retrieval probe", "-c", "user.email=codex@openai.com", "annex", "merge"], "cwd": "/var/folders/dh/6x04w9891gx_4x1t649nc42w0000gn/T/stamped-online-blind-mh1vb5g0/recipient"}
+merge git-annex (merging con-hub/git-annex into git-annex...)
+(recording state in git...)
+ok
+{"argv": ["git", "-c", "credential.helper=", "-c", "core.askPass=/usr/bin/false", "-c", "user.name=Anonymous retrieval probe", "-c", "user.email=codex@openai.com", "annex", "lookupkey", "logs/paired/outer-summary.txt"], "cwd": "/var/folders/dh/6x04w9891gx_4x1t649nc42w0000gn/T/stamped-online-blind-mh1vb5g0/recipient"}
+SHA256E-s2060--12a487f5f428db4be2153b802edc401e2b11fed8775da95e53daa117ceead340.txt
+{"argv": ["git", "-c", "credential.helper=", "-c", "core.askPass=/usr/bin/false", "-c", "user.name=Anonymous retrieval probe", "-c", "user.email=codex@openai.com", "annex", "get", "--from", "con-hub", "logs/paired/outer-summary.txt"], "cwd": "/var/folders/dh/6x04w9891gx_4x1t649nc42w0000gn/T/stamped-online-blind-mh1vb5g0/recipient"}
+get logs/paired/outer-summary.txt (from con-hub...) 
+
+100%  2.01 KiB         26 KiB/s 0s
+                                  
+ok
+(recording state in git...)
+{"argv": ["git", "-c", "credential.helper=", "-c", "core.askPass=/usr/bin/false", "-c", "user.name=Anonymous retrieval probe", "-c", "user.email=codex@openai.com", "annex", "lookupkey", "logs/paired/run_info.json"], "cwd": "/var/folders/dh/6x04w9891gx_4x1t649nc42w0000gn/T/stamped-online-blind-mh1vb5g0/recipient"}
+SHA256E-s1550--53111d1d510dac89416a9a896bc4835ce82ba3a8382ba74760e63a0803169c66.json
+{"argv": ["git", "-c", "credential.helper=", "-c", "core.askPass=/usr/bin/false", "-c", "user.name=Anonymous retrieval probe", "-c", "user.email=codex@openai.com", "annex", "get", "--from", "con-hub", "logs/paired/run_info.json"], "cwd": "/var/folders/dh/6x04w9891gx_4x1t649nc42w0000gn/T/stamped-online-blind-mh1vb5g0/recipient"}
+get logs/paired/run_info.json (from con-hub...) 
+
+100%  1.51 KiB          3 KiB/s 0s
+                                  
+ok
+(recording state in git...)
+{"argv": ["git", "-c", "credential.helper=", "-c", "core.askPass=/usr/bin/false", "-c", "user.name=Anonymous retrieval probe", "-c", "user.email=codex@openai.com", "annex", "lookupkey", "logs/paired/run_stderr"], "cwd": "/var/folders/dh/6x04w9891gx_4x1t649nc42w0000gn/T/stamped-online-blind-mh1vb5g0/recipient"}
+SHA256E-s63--cace1071573ef725e762e8856427937617c8c67e5d0784c45c0e854e56a803a8
+{"argv": ["git", "-c", "credential.helper=", "-c", "core.askPass=/usr/bin/false", "-c", "user.name=Anonymous retrieval probe", "-c", "user.email=codex@openai.com", "annex", "get", "--from", "con-hub", "logs/paired/run_stderr"], "cwd": "/var/folders/dh/6x04w9891gx_4x1t649nc42w0000gn/T/stamped-online-blind-mh1vb5g0/recipient"}
+get logs/paired/run_stderr (from con-hub...) 
+
+100%  63 B              227 B/s 0s
+                                  
+ok
+(recording state in git...)
+{"argv": ["git", "-c", "credential.helper=", "-c", "core.askPass=/usr/bin/false", "-c", "user.name=Anonymous retrieval probe", "-c", "user.email=codex@openai.com", "annex", "lookupkey", "logs/paired/run_stdout"], "cwd": "/var/folders/dh/6x04w9891gx_4x1t649nc42w0000gn/T/stamped-online-blind-mh1vb5g0/recipient"}
+SHA256E-s1269--bbd9f4cbef977cf9540aedfa5a8c13f8ca2cd1003cd85706f7e3ef73e1c23ba3
+{"argv": ["git", "-c", "credential.helper=", "-c", "core.askPass=/usr/bin/false", "-c", "user.name=Anonymous retrieval probe", "-c", "user.email=codex@openai.com", "annex", "get", "--from", "con-hub", "logs/paired/run_stdout"], "cwd": "/var/folders/dh/6x04w9891gx_4x1t649nc42w0000gn/T/stamped-online-blind-mh1vb5g0/recipient"}
+get logs/paired/run_stdout (from con-hub...) 
+
+100%  1.24 KiB          4 KiB/s 0s
+                                  
+ok
+(recording state in git...)
+{"argv": ["git", "-c", "credential.helper=", "-c", "core.askPass=/usr/bin/false", "-c", "user.name=Anonymous retrieval probe", "-c", "user.email=codex@openai.com", "annex", "lookupkey", "logs/paired/run_usage.jsonl"], "cwd": "/var/folders/dh/6x04w9891gx_4x1t649nc42w0000gn/T/stamped-online-blind-mh1vb5g0/recipient"}
+SHA256E-s17435--1820233b71c435ca62348f0f043ec63106598ac27183988bae39b6c47dc2fec6
+{"argv": ["git", "-c", "credential.helper=", "-c", "core.askPass=/usr/bin/false", "-c", "user.name=Anonymous retrieval probe", "-c", "user.email=codex@openai.com", "annex", "get", "--from", "con-hub", "logs/paired/run_usage.jsonl"], "cwd": "/var/folders/dh/6x04w9891gx_4x1t649nc42w0000gn/T/stamped-online-blind-mh1vb5g0/recipient"}
+get logs/paired/run_usage.jsonl (from con-hub...) 
+
+22%   3.74 KiB         14 KiB/s 0s
+100%  17.03 KiB       331 KiB/s 0s
+                                  
+ok
+(recording state in git...)
+{"argv": ["git", "-c", "credential.helper=", "-c", "core.askPass=/usr/bin/false", "-c", "user.name=Anonymous retrieval probe", "-c", "user.email=codex@openai.com", "annex", "lookupkey", "results/changes.csv"], "cwd": "/var/folders/dh/6x04w9891gx_4x1t649nc42w0000gn/T/stamped-online-blind-mh1vb5g0/recipient"}
+SHA256E-s82--47de2ad336f89af39e6d999dc942f945a19b5b32f8358ae2c8dfddf8e3e79e2d.csv
+{"argv": ["git", "-c", "credential.helper=", "-c", "core.askPass=/usr/bin/false", "-c", "user.name=Anonymous retrieval probe", "-c", "user.email=codex@openai.com", "annex", "get", "--from", "con-hub", "results/changes.csv"], "cwd": "/var/folders/dh/6x04w9891gx_4x1t649nc42w0000gn/T/stamped-online-blind-mh1vb5g0/recipient"}
+get results/changes.csv (from con-hub...) 
+
+100%  82 B              298 B/s 0s
+                                  
+ok
+(recording state in git...)
+{"argv": ["git", "-c", "credential.helper=", "-c", "core.askPass=/usr/bin/false", "-c", "user.name=Anonymous retrieval probe", "-c", "user.email=codex@openai.com", "annex", "lookupkey", "results/paired-change.png"], "cwd": "/var/folders/dh/6x04w9891gx_4x1t649nc42w0000gn/T/stamped-online-blind-mh1vb5g0/recipient"}
+SHA256E-s39747--b0d69c9ba95b615293696542dbbd981080d113365e18dde8130608ae536be956.png
+{"argv": ["git", "-c", "credential.helper=", "-c", "core.askPass=/usr/bin/false", "-c", "user.name=Anonymous retrieval probe", "-c", "user.email=codex@openai.com", "annex", "get", "--from", "con-hub", "results/paired-change.png"], "cwd": "/var/folders/dh/6x04w9891gx_4x1t649nc42w0000gn/T/stamped-online-blind-mh1vb5g0/recipient"}
+get results/paired-change.png (from con-hub...) 
+
+10%   3.74 KiB         14 KiB/s 2s
+100%  38.82 KiB       617 KiB/s 0s
+                                  
+ok
+(recording state in git...)
+{"argv": ["git", "-c", "credential.helper=", "-c", "core.askPass=/usr/bin/false", "-c", "user.name=Anonymous retrieval probe", "-c", "user.email=codex@openai.com", "annex", "lookupkey", "results/paired-change.svg"], "cwd": "/var/folders/dh/6x04w9891gx_4x1t649nc42w0000gn/T/stamped-online-blind-mh1vb5g0/recipient"}
+SHA256E-s44949--1a2b8fba14c297e062e517516e9aebb87ec8e46dff35d719deebbbe1c85c992d.svg
+{"argv": ["git", "-c", "credential.helper=", "-c", "core.askPass=/usr/bin/false", "-c", "user.name=Anonymous retrieval probe", "-c", "user.email=codex@openai.com", "annex", "get", "--from", "con-hub", "results/paired-change.svg"], "cwd": "/var/folders/dh/6x04w9891gx_4x1t649nc42w0000gn/T/stamped-online-blind-mh1vb5g0/recipient"}
+get results/paired-change.svg (from con-hub...) 
+
+18%   7.7 KiB          28 KiB/s 1s
+100%  43.9 KiB        569 KiB/s 0s
+                                  
+ok
+(recording state in git...)
+{"argv": ["git", "-c", "credential.helper=", "-c", "core.askPass=/usr/bin/false", "-c", "user.name=Anonymous retrieval probe", "-c", "user.email=codex@openai.com", "annex", "lookupkey", "results/summary.json"], "cwd": "/var/folders/dh/6x04w9891gx_4x1t649nc42w0000gn/T/stamped-online-blind-mh1vb5g0/recipient"}
+SHA256E-s450--45abadd8be3dcd443bcc14e98a6915330445f7497a9eb2f0d68a33c4fa97cd9d.json
+{"argv": ["git", "-c", "credential.helper=", "-c", "core.askPass=/usr/bin/false", "-c", "user.name=Anonymous retrieval probe", "-c", "user.email=codex@openai.com", "annex", "get", "--from", "con-hub", "results/summary.json"], "cwd": "/var/folders/dh/6x04w9891gx_4x1t649nc42w0000gn/T/stamped-online-blind-mh1vb5g0/recipient"}
+get results/summary.json (from con-hub...) 
+
+100%  450 B             1 KiB/s 0s
+                                  
+ok
+(recording state in git...)
+{"argv": ["git", "-c", "credential.helper=", "-c", "core.askPass=/usr/bin/false", "-c", "user.name=Anonymous retrieval probe", "-c", "user.email=codex@openai.com", "annex", "lookupkey", "results/validation.json"], "cwd": "/var/folders/dh/6x04w9891gx_4x1t649nc42w0000gn/T/stamped-online-blind-mh1vb5g0/recipient"}
+SHA256E-s737--70adb6e38df8fff08c752db2a59b5ab48fa23c10817515005b8afede54fa49f0.json
+{"argv": ["git", "-c", "credential.helper=", "-c", "core.askPass=/usr/bin/false", "-c", "user.name=Anonymous retrieval probe", "-c", "user.email=codex@openai.com", "annex", "get", "--from", "con-hub", "results/validation.json"], "cwd": "/var/folders/dh/6x04w9891gx_4x1t649nc42w0000gn/T/stamped-online-blind-mh1vb5g0/recipient"}
+get results/validation.json (from con-hub...) 
+
+100%  737 B             2 KiB/s 0s
+                                  
+ok
+(recording state in git...)
+{
+  "status": "passed",
+  "source": "https://github.com/leej3/stamped-ai-research-next.git",
+  "branch": "codex/proof-skill-followability",
+  "expected_revision": "9c15dfe23eb8ad03ac6420f381ca645a6c3dddda",
+  "recipient": "/var/folders/dh/6x04w9891gx_4x1t649nc42w0000gn/T/stamped-online-blind-mh1vb5g0/recipient",
+  "metadata_source": "https://hub.centerforopenneuroscience.org/leej3/stamped-ai-research-next.git",
+  "files": [
+    {
+      "path": "logs/paired/outer-summary.txt",
+      "key": "SHA256E-s2060--12a487f5f428db4be2153b802edc401e2b11fed8775da95e53daa117ceead340.txt",
+      "expected_sha256": "12a487f5f428db4be2153b802edc401e2b11fed8775da95e53daa117ceead340",
+      "actual_sha256": "12a487f5f428db4be2153b802edc401e2b11fed8775da95e53daa117ceead340",
+      "match": true
+    },
+    {
+      "path": "logs/paired/run_info.json",
+      "key": "SHA256E-s1550--53111d1d510dac89416a9a896bc4835ce82ba3a8382ba74760e63a0803169c66.json",
+      "expected_sha256": "53111d1d510dac89416a9a896bc4835ce82ba3a8382ba74760e63a0803169c66",
+      "actual_sha256": "53111d1d510dac89416a9a896bc4835ce82ba3a8382ba74760e63a0803169c66",
+      "match": true
+    },
+    {
+      "path": "logs/paired/run_stderr",
+      "key": "SHA256E-s63--cace1071573ef725e762e8856427937617c8c67e5d0784c45c0e854e56a803a8",
+      "expected_sha256": "cace1071573ef725e762e8856427937617c8c67e5d0784c45c0e854e56a803a8",
+      "actual_sha256": "cace1071573ef725e762e8856427937617c8c67e5d0784c45c0e854e56a803a8",
+      "match": true
+    },
+    {
+      "path": "logs/paired/run_stdout",
+      "key": "SHA256E-s1269--bbd9f4cbef977cf9540aedfa5a8c13f8ca2cd1003cd85706f7e3ef73e1c23ba3",
+      "expected_sha256": "bbd9f4cbef977cf9540aedfa5a8c13f8ca2cd1003cd85706f7e3ef73e1c23ba3",
+      "actual_sha256": "bbd9f4cbef977cf9540aedfa5a8c13f8ca2cd1003cd85706f7e3ef73e1c23ba3",
+      "match": true
+    },
+    {
+      "path": "logs/paired/run_usage.jsonl",
+      "key": "SHA256E-s17435--1820233b71c435ca62348f0f043ec63106598ac27183988bae39b6c47dc2fec6",
+      "expected_sha256": "1820233b71c435ca62348f0f043ec63106598ac27183988bae39b6c47dc2fec6",
+      "actual_sha256": "1820233b71c435ca62348f0f043ec63106598ac27183988bae39b6c47dc2fec6",
+      "match": true
+    },
+    {
+      "path": "results/changes.csv",
+      "key": "SHA256E-s82--47de2ad336f89af39e6d999dc942f945a19b5b32f8358ae2c8dfddf8e3e79e2d.csv",
+      "expected_sha256": "47de2ad336f89af39e6d999dc942f945a19b5b32f8358ae2c8dfddf8e3e79e2d",
+      "actual_sha256": "47de2ad336f89af39e6d999dc942f945a19b5b32f8358ae2c8dfddf8e3e79e2d",
+      "match": true
+    },
+    {
+      "path": "results/paired-change.png",
+      "key": "SHA256E-s39747--b0d69c9ba95b615293696542dbbd981080d113365e18dde8130608ae536be956.png",
+      "expected_sha256": "b0d69c9ba95b615293696542dbbd981080d113365e18dde8130608ae536be956",
+      "actual_sha256": "b0d69c9ba95b615293696542dbbd981080d113365e18dde8130608ae536be956",
+      "match": true
+    },
+    {
+      "path": "results/paired-change.svg",
+      "key": "SHA256E-s44949--1a2b8fba14c297e062e517516e9aebb87ec8e46dff35d719deebbbe1c85c992d.svg",
+      "expected_sha256": "1a2b8fba14c297e062e517516e9aebb87ec8e46dff35d719deebbbe1c85c992d",
+      "actual_sha256": "1a2b8fba14c297e062e517516e9aebb87ec8e46dff35d719deebbbe1c85c992d",
+      "match": true
+    },
+    {
+      "path": "results/summary.json",
+      "key": "SHA256E-s450--45abadd8be3dcd443bcc14e98a6915330445f7497a9eb2f0d68a33c4fa97cd9d.json",
+      "expected_sha256": "45abadd8be3dcd443bcc14e98a6915330445f7497a9eb2f0d68a33c4fa97cd9d",
+      "actual_sha256": "45abadd8be3dcd443bcc14e98a6915330445f7497a9eb2f0d68a33c4fa97cd9d",
+      "match": true
+    },
+    {
+      "path": "results/validation.json",
+      "key": "SHA256E-s737--70adb6e38df8fff08c752db2a59b5ab48fa23c10817515005b8afede54fa49f0.json",
+      "expected_sha256": "70adb6e38df8fff08c752db2a59b5ab48fa23c10817515005b8afede54fa49f0",
+      "actual_sha256": "70adb6e38df8fff08c752db2a59b5ab48fa23c10817515005b8afede54fa49f0",
+      "match": true
+    }
+  ],
+  "authentication": "Global and system Git configuration disabled; credential helpers empty; terminal/askpass prompts disabled",
+  "scope": "Online GitHub clone, online CON Hub annex metadata and anonymous payload retrieval; no science rerun",
+  "revision": "9c15dfe23eb8ad03ac6420f381ca645a6c3dddda",
+  "annex_metadata_revision": "a514d6e55a837c9eeda2484763362279e7e9c169",
+  "absent_before_get": {
+    "logs/paired/outer-summary.txt": true,
+    "logs/paired/run_info.json": true,
+    "logs/paired/run_stderr": true,
+    "logs/paired/run_stdout": true,
+    "logs/paired/run_usage.jsonl": true,
+    "results/changes.csv": true,
+    "results/paired-change.png": true,
+    "results/paired-change.svg": true,
+    "results/summary.json": true,
+    "results/validation.json": true
+  },
+  "verified_payloads": 10
+}

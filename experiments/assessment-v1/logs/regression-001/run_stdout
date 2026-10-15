@@ -1,0 +1,78 @@
+.........................ssssssssssssssssssssssssss..................... [ 51%]
+.F...........................................................F......     [100%]
+=================================== FAILURES ===================================
+___________________ test_run_probes_writes_a_valid_response ____________________
+
+clean = PosixPath('/private/var/folders/dh/6x04w9891gx_4x1t649nc42w0000gn/T/pytest-of-johnlee/pytest-100/fixture0/clean')
+tmp_path = PosixPath('/private/var/folders/dh/6x04w9891gx_4x1t649nc42w0000gn/T/pytest-of-johnlee/pytest-100/test_run_probes_writes_a_valid0')
+
+    def test_run_probes_writes_a_valid_response(clean, tmp_path):
+        response = tmp_path / "response.json"
+        subprocess.run(
+            [sys.executable, str(ASSESS / "scripts" / "run_probes.py"), str(clean),
+             "--kind", "study", "--response", str(response), "--quiet"],
+            check=True, capture_output=True,
+        )
+        payload = json.loads(response.read_text())
+        checklist = Checklist()
+        assert set(payload["responses"]) == set(checklist.by_id)
+        problems = validate(payload, checklist)
+        # A draft is not a finished response: validate() must refuse it, and the
+        # only reasons it refuses are the two a draft legitimately has — items no
+        # probe answered still carrying the placeholder, and probe verdicts whose
+        # evidence the assessor has not yet cited.
+        assert problems, "validate() accepted a probe draft as a finished response"
+        unexpected = [
+            p for p in problems
+            if "placeholder" not in p and "needs at least one evidence" not in p
+        ]
+>       assert unexpected == [], unexpected
+E       AssertionError: ["assessor: 'dependencies' is a required property", "assessor/harness: None is not of type 'string'", "assessor/model: None is not of type 'string'"]
+E       assert ["assessor: '...ype 'string'"] == []
+E         
+E         Left contains 3 more items, first extra item: "assessor: 'dependencies' is a required property"
+E         Use -v to get more diff
+
+evals/stamped/tests/test_probes.py:169: AssertionError
+_____________ test_the_harness_gives_every_run_a_publishing_target _____________
+
+tmp_path = PosixPath('/private/var/folders/dh/6x04w9891gx_4x1t649nc42w0000gn/T/pytest-of-johnlee/pytest-100/test_the_harness_gives_every_r0')
+
+    def test_the_harness_gives_every_run_a_publishing_target(tmp_path):
+        """must/016 was `unmet` in every repeat on every tier, whatever the run did.
+    
+        An item that no behaviour can change measures the harness. `run.py` now
+        initialises a bare repository beside the sandbox and names it in the
+        prompt — as a fact about the host, in identical wording in every arm,
+        because what a run *does* with it is the thing being measured.
+        """
+        run_py = EVALS / "harness" / "run.py"
+        workdir = tmp_path / "wd"
+        done = subprocess.run(
+            [sys.executable, str(run_py), "--use-case", str(EVALS / "use-cases" / "r0-freesurfer-plot"),
+             "--condition", "skill-explicit", "--workdir", str(workdir), "--model", "sonnet",
+             "--inner-prompt"],
+            capture_output=True, text=True,
+        )
+>       assert done.returncode == 0, done.stderr
+E       AssertionError: Traceback (most recent call last):
+E           File "/Users/johnlee/.local/share/wt-utils/worktrees/3dd6/skills/evals/stamped/harness/run.py", line 373, in <module>
+E             sys.exit(main())
+E                      ~~~~^^
+E           File "/Users/johnlee/.local/share/wt-utils/worktrees/3dd6/skills/evals/stamped/harness/run.py", line 239, in main
+E             sh(["datalad", "create", "-c", "text2git", str(sandbox)])
+E             ~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           File "/Users/johnlee/.local/share/wt-utils/worktrees/3dd6/skills/evals/stamped/harness/run.py", line 148, in sh
+E             raise RuntimeError(f"{' '.join(cmd[:4])}… failed: {(proc.stderr or proc.stdout).strip()[:600]}")
+E         RuntimeError: datalad create -c text2git… failed: [INFO] Running procedure cfg_text2git 
+E         [INFO] == Command start (output follows) ===== 
+E         [WARNING] Received an exception datalad.runner.exception.CommandError(CommandError: 'git -c diff.ignoreSubmodules=none -c core.quotepath=false annex add --json --json-error-messages -c annex.dotfiles=true -- .gitattributes' failed with exitcode 1 under /private/var/folders/dh/6x04w9891gx_4x1t649nc42w0000gn/T/pytest-of-johnlee/pytest-100/test_the_harness_gives_every_r0/wd/r0-freesurfer-plot--skill-explicit--sonnet--r1 [info keys: stdout_json] [err: 'git-annex: bad annex.largefiles configuration in gitattribut
+E         
+E       assert 1 == 0
+E        +  where 1 = CompletedProcess(args=['/Users/johnlee/code/CON/stamped-ai-research-next/.pixi/envs/default/bin/python', '/Users/johnl...-explicit--sonnet--r1 [info keys: stdout_json] [err: \'git-annex: bad annex.largefiles configuration in gitattribut\n').returncode
+
+evals/stamped/tests/test_probes.py:1130: AssertionError
+=========================== short test summary info ============================
+FAILED evals/stamped/tests/test_probes.py::test_run_probes_writes_a_valid_response
+FAILED evals/stamped/tests/test_probes.py::test_the_harness_gives_every_run_a_publishing_target
+2 failed, 112 passed, 26 skipped in 25.53s

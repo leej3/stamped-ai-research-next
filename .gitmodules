@@ -2,3 +2,7 @@
 	path = skills
 	url = https://github.com/con/skills.git
 	branch = codex/pr26-stamped-next
+[submodule "assessment"]
+	path = assessment
+	url = https://github.com/con/skills.git
+	branch = codex/assessor-freeze-v1

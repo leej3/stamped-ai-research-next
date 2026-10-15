@@ -1,0 +1,36 @@
+[
+  {
+    "command": [
+      "pixi",
+      "run",
+      "datalad",
+      "clone",
+      "/tmp/stamped-paired-independent-ZWuYEl",
+      "/private/tmp/stamped-paired-independent-ZWuYEl-recipient"
+    ],
+    "cwd": null,
+    "exit_code": 0,
+    "output": "[INFO] Attempting a clone into /private/tmp/stamped-paired-independent-ZWuYEl-recipient \n[INFO] Attempting to clone from /tmp/stamped-paired-independent-ZWuYEl to /private/tmp/stamped-paired-independent-ZWuYEl-recipient \n[INFO] Completed clone attempts for Dataset(/private/tmp/stamped-paired-independent-ZWuYEl-recipient) \ninstall(ok): /private/tmp/stamped-paired-independent-ZWuYEl-recipient (dataset)\n"
+  },
+  {
+    "command": [
+      "git",
+      "rev-parse",
+      "HEAD"
+    ],
+    "cwd": "/private/tmp/stamped-paired-independent-ZWuYEl-recipient",
+    "exit_code": 0,
+    "output": "9c15dfe23eb8ad03ac6420f381ca645a6c3dddda\n"
+  },
+  {
+    "command": [
+      "git",
+      "fetch",
+      "origin",
+      "472fbcf"
+    ],
+    "cwd": "/private/tmp/stamped-paired-independent-ZWuYEl-recipient",
+    "exit_code": 128,
+    "output": "fatal: couldn't find remote ref 472fbcf\n"
+  }
+]
