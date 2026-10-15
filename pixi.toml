@@ -23,6 +23,7 @@ rfc3339-validator = "*"
 analysis = "python scripts/analyze.py"
 pilot = "python scripts/analyze.py --pilot"
 validate = "python scripts/validate_results.py"
+recorded-analysis = "bash scripts/run_recorded_analysis.sh"
 
 [pypi-dependencies]
 datalad = "*"
