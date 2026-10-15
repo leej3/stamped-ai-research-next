@@ -56,8 +56,32 @@ def study_pin(repo, base, study):
     return path, ref
 
 
+def annex_locations(study, key):
+    result = subprocess.run(
+        ["git", "-C", str(study), "annex", "whereis", "--json", "--key", key],
+        capture_output=True, text=True)
+    try:
+        locations = json.loads(result.stdout)
+    except json.JSONDecodeError:
+        result.check_returncode()
+        raise
+    # A valid key without published location history has no known copies.
+    # git-annex reports that metadata result with exit 1, not a command error.
+    empty_locations = (isinstance(locations, dict) and result.returncode == 1
+                       and locations.get("command") == "whereis"
+                       and locations.get("key") == key
+                       and locations.get("note") == "0 copies"
+                       and locations.get("success") is False
+                       and locations.get("whereis") == []
+                       and locations.get("error-messages") == [])
+    if not empty_locations:
+        result.check_returncode()
+    return locations
+
+
 def export_inputs(study, ref, checkout):
     inventory = []
+    annex_ready = False
     for mode, kind, oid, path in entries(study, ref, "input"):
         name = PurePosixPath(path)
         if name.parts[0] != "input" or any(part in ("..", ".git") for part in name.parts):
@@ -77,13 +101,20 @@ def export_inputs(study, ref, checkout):
             key = parts[-1]
             if not key or "/" in key or key in (".", ".."):
                 raise SystemExit("Invalid input annex key")
+            if not annex_ready:
+                # A Git-only study clone may lack both an annex UUID and a
+                # published metadata branch. Initialize only this repository;
+                # this neither retrieves payloads nor initializes submodules.
+                if not git(study, "config", "--get", "--default", "", "annex.uuid"):
+                    git(study, "annex", "init", "coordinator-study-inputs")
+                annex_ready = True
             # Original links may encode a different worktree depth; rebuild the
             # relative link for this independent repository, keeping the key.
             object_path = git(study, "annex", "examinekey", "--format=${hashdirmixed}${key}/${key}", key)
             annex_target = checkout / ".git/annex/objects" / object_path
             target.symlink_to(os.path.relpath(annex_target, target.parent))
             record["annex_key"] = key
-            locations = json.loads(git(study, "annex", "whereis", "--json", "--key", key))
+            locations = annex_locations(study, key)
             record["urls"] = sorted(set(locations.get("urls", [])) |
                                     {url for location in locations.get("whereis", [])
                                      for url in location.get("urls", [])})

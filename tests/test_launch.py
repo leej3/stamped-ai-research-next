@@ -426,6 +426,85 @@ def test_fixture_launch_retains_evidence_and_judges_without_worker_assessor(
         assert not Path(record["codex_home"]).is_relative_to(output)
 
 
+@pytest.mark.parametrize("change", ["command-error", "wrong-key", "partial-result", "exit-code", "invalid-json"])
+def test_annex_locations_does_not_hide_query_failures(tmp_path, monkeypatch, change):
+    key = "SHA256E-s4--" + "0" * 64
+    record = {"command": "whereis", "key": key, "note": "0 copies",
+              "success": False, "whereis": [], "error-messages": []}
+    if change == "command-error":
+        record["error-messages"] = ["annex metadata unavailable"]
+    elif change == "wrong-key":
+        record["key"] = "different-key"
+    elif change == "partial-result":
+        record["whereis"] = [{"uuid": "partial-location"}]
+    result = subprocess.CompletedProcess(
+        ["git", "annex", "whereis"], 2 if change == "exit-code" else 1,
+        stdout="invalid" if change == "invalid-json" else json.dumps(record),
+        stderr="query failed")
+    monkeypatch.setattr(seed.subprocess, "run", lambda *args, **kwargs: result)
+    with pytest.raises(subprocess.CalledProcessError):
+        seed.annex_locations(tmp_path, key)
+
+
+@pytest.mark.parametrize("publish_annex_metadata", [False, True])
+def test_fresh_selected_study_initializes_only_annex_metadata_for_export(
+        tmp_path, source_repositories, publish_annex_metadata):
+    coordinator, study, _, resolver, key, *_ = source_repositories
+    urls = ["https://example.invalid/primary/observations.bin",
+            "https://example.invalid/mirror/observations.bin"]
+    for url in urls:
+        git(study, "annex", "registerurl", key, url)
+    # An experiment gitlink must remain uninitialized throughout study export.
+    experiment = init(tmp_path / "historical-experiment")
+    (experiment / "result.txt").write_text("Historical output, never worker input")
+    experiment_ref = commit(experiment, "test: retain historical experiment fixture")
+    (study / ".gitmodules").write_text(
+        '[submodule "results/nested"]\n\tpath = results/nested\n\turl = ' + str(experiment) + '\n')
+    git(study, "update-index", "--add", "--cacheinfo", f"160000,{experiment_ref},results/nested")
+    # Git add would remove an absent gitlink, so keep its empty working directory.
+    (study / "results/nested").mkdir()
+    commit(study, "test: pin optional historical experiment")
+    published = tmp_path / "published-study.git"
+    git(tmp_path, "clone", "--bare", "--single-branch", "--branch", "main", study, published)
+    if publish_annex_metadata:
+        git(published, "fetch", study, "refs/heads/git-annex:refs/heads/git-annex")
+    git(coordinator, "config", "-f", ".gitmodules", "submodule.studies/example.url", published)
+    base = commit(coordinator, "test: pin study with annex metadata and experiment")
+
+    fresh = tmp_path / "cold-coordinator"
+    git(tmp_path, "clone", "--no-local", coordinator, fresh)
+    git(fresh, "remote", "set-url", "--push", "origin", "git@github.com:example/coordinator.git")
+    git(fresh, "submodule", "update", "--init", "--", "studies/example")
+    selected = fresh / "studies/example"
+    absent = subprocess.run(["git", "-C", str(selected), "config", "--get", "annex.uuid"],
+                            capture_output=True, text=True)
+    assert absent.returncode == 1 and not absent.stdout
+    before = {"head": git(selected, "rev-parse", "HEAD"),
+              "tree": git(selected, "rev-parse", "HEAD:input"),
+              "status": git(selected, "status", "--porcelain"),
+              "submodules": git(selected, "submodule", "status", "--recursive")}
+    assert before["submodules"].startswith("-")
+    assert not (selected / "input/data/annexed.bin").exists()
+
+    worker = tmp_path / "cold-worker"
+    receipt = seed.make_seed(fresh, base, selected, worker, "codex/cold-fixture", "baseline", resolver)
+
+    assert git(selected, "config", "--get", "annex.uuid")
+    item = next(item for item in receipt["inputs"] if item.get("annex_key") == key)
+    assert item["urls"] == (sorted(urls) if publish_annex_metadata else [])
+    assert receipt["study_commit"] == before["head"]
+    assert receipt["study_input_tree"] == before["tree"]
+    assert git(selected, "rev-parse", "HEAD") == before["head"]
+    assert git(selected, "status", "--porcelain") == before["status"]
+    assert git(selected, "submodule", "status", "--recursive") == before["submodules"]
+    assert not (selected / "input/data/annexed.bin").exists()
+    assert not (worker / "input/data/annexed.bin").exists()
+    assert not (selected / "results/nested/.git").exists()
+    assert not (fresh / "skills/.git").exists()
+    assert not git(fresh, "config", "--get", "--default", "", "annex.uuid")
+    assert not git(worker, "config", "--get", "--default", "", "annex.uuid")
+
+
 def test_public_annex_urls_survive_export_and_retrieve_without_source_history(tmp_path, source_repositories):
     study = source_repositories[1]
     key = source_repositories[4]
