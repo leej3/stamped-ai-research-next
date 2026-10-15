@@ -158,7 +158,7 @@ def make_seed(repo, base, study, checkout, branch, condition, provenance):
     # Never fetch other experiment branches through a default wildcard refspec.
     git(checkout, "config", "remote.origin.fetch", f"+refs/heads/{branch}:refs/remotes/origin/{branch}")
     if condition == "skills":
-        git(checkout, "submodule", "update", "--init", "--recursive", "--depth", "1", "--", "skills")
+        git(checkout, "submodule", "update", "--init", "--depth", "1", "--", "skills")
     audit_seed(checkout)
     return receipt
 
@@ -188,14 +188,16 @@ def audit_seed(checkout):
     return receipt
 
 
-def research_prompt(checkout):
+def research_prompt(checkout, capture_execution=False):
     """Scientific input plus the same concise execution resources for both arms."""
-    receipt = json.loads((checkout / "worker-input.json").read_text())
-    destination = "results/" + receipt["run"]
+    capture = (
+        "For substantive analyses, capture complete command metadata, stdout/stderr, "
+        "resource usage and run summaries with duct under `logs/`. "
+        if capture_execution else ""
+    )
     return (checkout / "input/study-task.md").read_bytes() + (
         "\nCommon execution resources\n\n"
         "Use the root Pixi environment; add dependencies as needed. "
-        "Keep your work under `" + destination + "/`. "
-        "For substantive analyses, capture complete command metadata, stdout/stderr, "
-        "resource usage and run summaries with duct under `" + destination + "/logs/`. "
+        "Keep analysis outputs under `results/` in this experiment repository. "
+        + capture +
         "Retain failed attempts and annex large outputs/logs.\n").encode()

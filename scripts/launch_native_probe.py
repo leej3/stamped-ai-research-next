@@ -111,6 +111,7 @@ def main():
                         default=Path(__file__).resolve().parents[1] / "assessment")
     parser.add_argument("--condition", choices=["baseline", "skills"], default="baseline")
     parser.add_argument("--preflight-only", action="store_true")
+    parser.add_argument("--capture-execution", action="store_true")
     args = parser.parse_args()
     if args.seconds < 0 or args.review_seconds < 0:
         parser.error("Time settings must be nonnegative")
@@ -119,7 +120,7 @@ def main():
         seed = audit_seed(args.checkout.resolve())
         if seed["condition"] != args.condition:
             raise SystemExit("Requested condition differs from the worker seed")
-        if args.prompt.read_bytes() != research_prompt(args.checkout):
+        if args.prompt.read_bytes() != research_prompt(args.checkout, args.capture_execution):
             raise SystemExit("Research prompt differs from committed input and common execution guidance")
     output = args.output.resolve()
     output.mkdir(parents=True, exist_ok=False)

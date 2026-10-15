@@ -1,7 +1,7 @@
 # Improving STAMPED research skills
 
 This repository is a workshop for improving STAMPED research skills.
-It runs scientific studies with and without the evolving skills, evaluates the resulting research objects using a frozen assessment, and uses that evidence to revise the skills.
+It runs scientific studies with and without the evolving skills, evaluates the resulting research objects using a versioned assessment, and uses that evidence to revise the skills.
 The question is whether the guidance helps agents do sound science with more thorough, efficient and consistent reproducibility.
 
 Each iteration tests a pinned skill revision on selected studies: run matched agents, assess their work independently, compare outcomes and effort, then improve and compress the reusable guidance.
@@ -10,6 +10,9 @@ Study inputs and scientific outputs belong to study submodules; root iteration r
 The broader hypothesis concerns both humans and agents; this experiment tests agents.
 Repeated baseline runs help distinguish improvements from ordinary variability.
 Results from one study do not establish transfer to other studies.
+
+During preparation, the assessor and its runtime can improve alongside the other skills.
+Formal runs begin from a fresh clone with shallow history and keep their assessment version fixed.
 
 To start a coordinator, give it this repository and a request such as:
 
@@ -23,9 +26,12 @@ To start a coordinator, give it this repository and a request such as:
 | `studies/<study>/` | A versioned study submodule |
 | `studies/<study>/input/` | The scientific prompt and verified data supplied to research workers |
 | `studies/<study>/coordinator-guidance/` | Evaluation guidance and reference material for the coordinator and judges |
-| `studies/<study>/results/` | Workers' efforts, returned outputs, assessments and execution records |
+| `studies/<study>/results/<run>/` | An experiment submodule containing the worker's research object, assessments and execution records |
 | `skills/` | Evolving `con/skills`, pinned to [our development branch](https://github.com/con/skills/tree/codex/pr26-harmonized) |
-| `assessment/` | The frozen assessor, identified by `assessment-version.json` |
+| `assessment/` | The selected assessor version, identified by `assessment-version.json` |
+
+Keep study and experiment submodules uninitialized until needed.
+Open selected paths and retrieve their required annex content; the coordinator tree retains their exact commits without expanding every experiment.
 
 The products are improved shareable skills, evidence about their impact, and a STAMPED research object documenting the whole workshop.
 Figures summarize scientific outcomes, reproducibility, effort and variability.

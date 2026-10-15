@@ -6,23 +6,30 @@ Credentials stay with host providers.
 
 ## Research workers
 
+Initialize only the selected study, leaving its experiment submodules absent:
+
+```sh
+pixi run git submodule update --init -- studies/CHOSEN_STUDY
+```
+
 ```sh
 pixi run launch --study studies/CHOSEN_STUDY \
   --base COORDINATOR_COMMIT --branch codex/run-001 \
-  --evidence studies/CHOSEN_STUDY/results/run-001/launch \
+  --evidence /path/to/run-evidence/run-001/launch \
   --condition baseline
 ```
 
 Use `--condition skills` for the treatment.
+Add `--capture-execution` when duct logging is requested, including runs explicitly following the workshop prompt.
 The explicit coordinator revision selects the study and skill gitlinks and common Pixi manifest.
 A study marked unavailable in its pinned `coordinator-guidance/readiness.json` stops before worker creation and reports the missing prerequisite.
 The launcher copies only committed study inputs and shared environment declarations into a parentless, independent repository.
 It records source revisions, blob identities and annex keys without importing coordinator or study history.
-Baseline repositories contain no research skill files; treatment repositories install the pinned skills submodule.
+Baseline repositories contain no research skill files; treatment repositories install the pinned skills submodule without its optional evaluation fixtures.
 
 Both conditions receive the same scientific prompt and common resources.
 Coordinator-only Pixi tasks are removed from the worker manifest.
-Workers can add dependencies and actionable tasks; the coordinator integrates differing requirements as named environments in the study.
+Workers can add dependencies and actionable tasks; each experiment retains its own root manifest.
 Keep the evidence directory outside the worker checkout.
 `--clone-path ABS` chooses its location; research launches reject `--kind worktree` because it would share excluded Git objects.
 
@@ -33,7 +40,7 @@ pixi run judge --repo /absolute/path/to/worker-repository \
   --base RESULT_COMMIT --branch codex/judge-001 \
   --study studies/CHOSEN_STUDY \
   --reference studies/CHOSEN_STUDY/coordinator-guidance/judging.md \
-  --evidence studies/CHOSEN_STUDY/results/run-001/judgment-01
+  --evidence /path/to/run-evidence/run-001/judgment-01
 ```
 
 Use the same study revision and evaluation guidance for matched judgments.
@@ -43,6 +50,25 @@ A separate host profile makes the frozen judging skills discoverable without add
 The clone retains the result commit and its annex metadata, without other trial branches.
 They inspect and replay the object's declared environment without repairing it first.
 Keep duplicate judgments independently and use neutral result identifiers where practical.
+
+## Retaining experiments
+
+Preserve the exact scientific `RESULT_COMMIT` used for judging.
+After research and judging, add launch and judging receipts to the experiment repository in a later commit that records that result identity.
+Publish its branch and annex payloads, then register the final commit as `results/<run>` in the study's `.gitmodules` and Git index.
+Registration does not require a checkout:
+
+```sh
+mkdir -p studies/CHOSEN_STUDY/results/run-001
+pixi run git -C studies/CHOSEN_STUDY config -f .gitmodules submodule.results/run-001.path results/run-001
+pixi run git -C studies/CHOSEN_STUDY config -f .gitmodules submodule.results/run-001.url PUBLISHED_REPOSITORY_URL
+pixi run git -C studies/CHOSEN_STUDY update-index --add --cacheinfo 160000,PUBLISHED_COMMIT,results/run-001
+pixi run git -C studies/CHOSEN_STUDY add .gitmodules
+```
+
+Commit and publish the study before updating its coordinator gitlink.
+Initialize individual experiments when inspecting or replaying them; leave other experiments absent.
+Fetch annex content separately as needed.
 
 ## Timing and checks
 

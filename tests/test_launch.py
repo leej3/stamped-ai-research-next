@@ -89,7 +89,17 @@ assessment = "python private-coordinator.py"
         path = skills / "skills" / name / "SKILL.md"
         path.parent.mkdir(parents=True)
         path.write_text(f"---\nname: {name}\ndescription: Fixture guidance.\n---\nSkill text.\n")
+    evaluations = init(tmp_path / "evals-source")
+    (evaluations / "calibration.txt").write_text("Optional development fixtures.\n")
+    eval_ref = commit(evaluations, "test: retain optional evaluation fixtures")
+    (skills / ".gitmodules").write_text(
+        '[submodule "evals"]\n\tpath = evals\n\turl = ' + str(evaluations) + '\n')
+    (skills / "evals").mkdir()
+    git(skills, "add", "--all")
+    git(skills, "update-index", "--add", "--cacheinfo", f"160000,{eval_ref},evals")
     skill_ref = commit(skills, "test: pin fixture skills")
+    # The frozen-judge fixture needs this dependency; research clones do not.
+    git(skills, "submodule", "update", "--init", "--", "evals")
     (coordinator / ".gitmodules").write_text(
         '[submodule "studies/example"]\n\tpath = studies/example\n\turl = ' + str(study) +
         '\n[submodule "skills"]\n\tpath = skills\n\turl = ' + str(skills) + '\n')
@@ -139,6 +149,8 @@ def test_input_boundary_excludes_tree_history_objects_and_unassigned_skills(tmp_
         assert not (worker / ".agents").exists()
     else:
         assert (worker / "skills/.git").is_file()
+        assert not (worker / "skills/evals/calibration.txt").exists()
+        assert git(worker / "skills", "submodule", "status", "evals").startswith("-")
         assert {p.name for p in (worker / ".agents/skills").iterdir()} == set(seed.RESEARCH_SKILLS)
     manifest = seed.tomlkit.loads((worker / "pixi.toml").read_text())
     assert "tasks" not in manifest
@@ -166,6 +178,17 @@ def test_baseline_rejects_readable_skills_even_without_catalog_entry(tmp_path, s
     (worker / "skills/leak.md").write_text("STAMPED guidance")
     with pytest.raises(SystemExit, match="readable study skills"):
         seed.audit_seed(worker)
+
+
+def test_execution_logging_requires_explicit_request(tmp_path):
+    (tmp_path / "input").mkdir()
+    (tmp_path / "input/study-task.md").write_text("Investigate the question.\n")
+    ordinary = seed.research_prompt(tmp_path).decode()
+    requested = seed.research_prompt(tmp_path, capture_execution=True).decode()
+    assert "duct" not in ordinary
+    assert "duct under `logs/`" in requested
+    assert ordinary.startswith("Investigate the question.")
+    assert "`results/`" in ordinary
 
 
 def test_input_boundary_rejects_links_to_coordinator_material(tmp_path, source_repositories):
@@ -277,13 +300,16 @@ else:
     return cli, profile
 
 
-@pytest.mark.parametrize("role,condition", [("research", "baseline"), ("research", "skills"), ("judge", "baseline")])
+@pytest.mark.parametrize("role,condition,capture_execution", [
+    ("research", "baseline", False), ("research", "skills", False),
+    ("research", "baseline", True), ("judge", "baseline", False),
+])
 def test_fixture_launch_retains_evidence_and_judges_without_worker_assessor(
-        tmp_path, fake_cli, source_repositories, role, condition):
+        tmp_path, fake_cli, source_repositories, role, condition, capture_execution):
     cli, profile = fake_cli
     worker, _ = make_worker(tmp_path, source_repositories, condition)
     prompt = tmp_path / "research-prompt.md"
-    prompt.write_bytes(seed.research_prompt(worker))
+    prompt.write_bytes(seed.research_prompt(worker, capture_execution))
     output = tmp_path / "evidence"
     assessor = source_repositories[-1]
     pin = tmp_path / "pin.json"
@@ -294,7 +320,8 @@ def test_fixture_launch_retains_evidence_and_judges_without_worker_assessor(
         "--checkout", str(worker), "--prompt", str(prompt), "--output", str(output),
         "--cli", str(cli), "--role", role, "--condition", condition,
         "--assessment-source", str(assessor), "--assessment-pin", str(pin),
-        "--review-seconds", "0"], env=environment, capture_output=True, text=True)
+        "--review-seconds", "0"] + (["--capture-execution"] if capture_execution else []),
+        env=environment, capture_output=True, text=True)
     assert result.returncode == 0, result.stderr
     preflight = json.loads((output / "prompt-preflight.json").read_text())
     assert set(preflight["visible_study_skills"]) == launch.selected_skills(role, condition)

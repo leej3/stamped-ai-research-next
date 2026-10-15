@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 """Create, prepare and launch a fresh native session using existing host tools.
 
-Run once under the requested outer duct capture. Never pushes. All generated
-evidence belongs outside the new worker checkout.
+Never pushes. All generated evidence belongs outside the new worker checkout.
 """
 import argparse
 import hashlib
@@ -114,6 +113,8 @@ def main():
     parser.add_argument("--codex-home", type=Path,
                         help="Prepared isolated public profile, without private global instructions")
     parser.add_argument("--prepare-only", action="store_true")
+    parser.add_argument("--capture-execution", action="store_true",
+                        help="Request duct execution records in the worker; use only when authorized")
     parser.add_argument("--condition", choices=["baseline", "skills"], default="baseline")
     # Paths/resources are host choices; the coordinator is this checkout, not
     # an old absolute repository path retained in a host configuration.
@@ -152,7 +153,7 @@ def main():
         seed = make_seed(repo, base_commit, args.study, checkout, args.branch,
                          args.condition, args.resolver)
         args.prompt = evidence / "research-prompt.md"
-        args.prompt.write_bytes(research_prompt(checkout))
+        args.prompt.write_bytes(research_prompt(checkout, args.capture_execution))
         (evidence / "input-boundary.json").write_text(json.dumps(seed, indent=2) + "\n")
     else:
         # Fetch only the exact research-object revision. It must itself descend
@@ -258,6 +259,7 @@ def main():
          "--assessment-pin", scripts.parent / "assessment-version.json",
          "--assessment-source", scripts.parent / "assessment",
          "--model", args.model, "--effort", args.effort] +
+         (["--capture-execution"] if args.capture_execution else []) +
          (["--preflight-only"] if args.prepare_only else []), repo)
 
 

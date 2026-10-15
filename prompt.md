@@ -1,5 +1,6 @@
 # Improve research skills through repeated use
 
+Use this process for a formal run from the prepared repository in a fresh clone with shallow history.
 Run this workshop to improve reusable STAMPED research skills through evidence from scientific work.
 Use the selected study submodules as inputs to the same repeated process; ask which studies to use if none are selected.
 Each iteration tests one pinned skill revision with fresh agents, independently assesses their research objects, and uses the findings to improve the next revision.
@@ -38,6 +39,7 @@ The whole workshop must itself become a STAMPED research object.
 
 Duct logging is requested for scientific execution.
 Retain every attempt, input, output, assessment, intervention and execution record, including failures and partial results, under their study's `results/`.
+Register each experiment there as a pinned submodule; keep it uninitialized until needed.
 Use annex for large artifacts, preserve relevant environment snapshots, and verify independent retrieval and replay.
 When reassessing results, state what stays fixed and what changes across data, code, dependencies and host, according to the question being tested.
 
