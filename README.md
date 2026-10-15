@@ -24,7 +24,7 @@ To start a coordinator, give it this repository and a request such as:
 | `studies/<study>/input/` | The scientific prompt and verified data supplied to research workers |
 | `studies/<study>/coordinator-guidance/` | Evaluation guidance and reference material for the coordinator and judges |
 | `studies/<study>/results/` | Workers' efforts, returned outputs, assessments and execution records |
-| `skills/` | Evolving `con/skills`, pinned to [our development branch](https://github.com/con/skills/tree/codex/pr26-stamped-next) |
+| `skills/` | Evolving `con/skills`, pinned to [our development branch](https://github.com/con/skills/tree/codex/pr26-harmonized) |
 | `assessment/` | The frozen assessor, identified by `assessment-version.json` |
 
 The products are improved shareable skills, evidence about their impact, and a STAMPED research object documenting the whole workshop.
