@@ -1,0 +1,664 @@
+{
+  "verified_at": "2026-10-15T19:02:27.537908+00:00",
+  "command": "pixi exec --spec nibabel --spec pandas --spec openpyxl python studies/narps-figure2/verify.py",
+  "versions": {
+    "python": "3.15.0",
+    "nibabel": "5.4.2",
+    "numpy": "2.5.4",
+    "pandas": "3.0.6",
+    "openpyxl": "3.1.5"
+  },
+  "payloads": {
+    "narps_origdata_1.0.tgz": {
+      "bytes": 993792840,
+      "checksum": "md5:ea72d6ebd269c6ac4f8cb061be477d38",
+      "match": true
+    },
+    "results.tgz": {
+      "bytes": 52319949,
+      "checksum": "md5:a3ae1b9311996a758afd5cc5180a9e45",
+      "match": true
+    },
+    "MNI152_T1_2mm.nii.gz": {
+      "bytes": 1406977,
+      "checksum": "sha256:0585cd056bf5ccfb8bf97a5f6a66082d4e7caad525718fc11e40d80a827fcb92",
+      "match": true
+    },
+    "MNI152_T1_2mm_brain_mask.nii.gz": {
+      "bytes": 12480,
+      "checksum": "sha256:b71a9f2015bd10262c37e51b4d17a655d0eb0a0dec4ba48322fb5af55c86b97c",
+      "match": true
+    }
+  },
+  "reference_members": 421,
+  "reference": {
+    "matrix_shape": [
+      64,
+      64
+    ],
+    "cluster_sizes": {
+      "1": 50,
+      "2": 7,
+      "3": 7
+    },
+    "mean_maps_readable": 3
+  },
+  "input_members": 1314,
+  "inputs": {
+    "hypothesis1_maps": 64,
+    "missing_reference_teams": [],
+    "metadata": {
+      "./orig/narps_neurovault_images_details_responses_corrected.csv": [
+        71,
+        10
+      ],
+      "./orig/narps_results.xlsx": {
+        "all_results": [
+          71,
+          29
+        ],
+        "fundamentals": [
+          13,
+          9
+        ]
+      },
+      "./orig/analysis_pipelines_for_analysis.xlsx": {
+        "Sheet1": [
+          71,
+          50
+        ]
+      }
+    },
+    "maps": {
+      "X1Y5": {
+        "path": "./orig/4898_X1Y5/hypo1_unthresh.nii.gz",
+        "shape": [
+          97,
+          115,
+          81
+        ],
+        "nonfinite_voxels": 0
+      },
+      "P5F3": {
+        "path": "./orig/4967_P5F3/hypo1_unthresh.nii.gz",
+        "shape": [
+          91,
+          109,
+          91
+        ],
+        "nonfinite_voxels": 0
+      },
+      "Q6O0": {
+        "path": "./orig/4968_Q6O0/hypo1_unthresh.nii.gz",
+        "shape": [
+          97,
+          115,
+          81
+        ],
+        "nonfinite_voxels": 0
+      },
+      "B5I6": {
+        "path": "./orig/4941_B5I6/hypo1_unthresh.nii.gz",
+        "shape": [
+          97,
+          115,
+          81
+        ],
+        "nonfinite_voxels": 0
+      },
+      "R5K7": {
+        "path": "./orig/4950_R5K7/hypo1_unthresh.nii.gz",
+        "shape": [
+          91,
+          109,
+          91
+        ],
+        "nonfinite_voxels": 0
+      },
+      "1P0Y": {
+        "path": "./orig/5649_1P0Y/hypo1_unthresh.nii.gz",
+        "shape": [
+          91,
+          109,
+          91
+        ],
+        "nonfinite_voxels": 0
+      },
+      "08MQ": {
+        "path": "./orig/4953_08MQ/hypo1_unthresh.nii.gz",
+        "shape": [
+          91,
+          109,
+          91
+        ],
+        "nonfinite_voxels": 0
+      },
+      "J7F9": {
+        "path": "./orig/4949_J7F9/hypo1_unthresh.nii.gz",
+        "shape": [
+          97,
+          115,
+          81
+        ],
+        "nonfinite_voxels": 0
+      },
+      "O21U": {
+        "path": "./orig/4779_O21U/hypo1_unthresh.nii.gz",
+        "shape": [
+          97,
+          115,
+          81
+        ],
+        "nonfinite_voxels": 0
+      },
+      "L7J7": {
+        "path": "./orig/4866_L7J7/hypo1_unthresh.nii.gz",
+        "shape": [
+          97,
+          115,
+          81
+        ],
+        "nonfinite_voxels": 0
+      },
+      "R9K3": {
+        "path": "./orig/4802_R9K3/hypo1_unthresh.nii.gz",
+        "shape": [
+          97,
+          115,
+          81
+        ],
+        "nonfinite_voxels": 0
+      },
+      "Q58J": {
+        "path": "./orig/5164_Q58J/hypo1_unthresh.nii.gz",
+        "shape": [
+          182,
+          218,
+          182
+        ],
+        "nonfinite_voxels": 0
+      },
+      "46CD": {
+        "path": "./orig/5637_46CD/hypo1_unthresh.nii.gz",
+        "shape": [
+          91,
+          109,
+          91
+        ],
+        "nonfinite_voxels": 0
+      },
+      "C22U": {
+        "path": "./orig/5653_C22U/hypo1_unthresh.nii.gz",
+        "shape": [
+          91,
+          109,
+          91
+        ],
+        "nonfinite_voxels": 0
+      },
+      "C88N": {
+        "path": "./orig/4812_C88N/hypo1_unthresh.nii.gz",
+        "shape": [
+          97,
+          115,
+          81
+        ],
+        "nonfinite_voxels": 0
+      },
+      "T54A": {
+        "path": "./orig/4876_T54A/hypo1_unthresh.nii.gz",
+        "shape": [
+          97,
+          115,
+          81
+        ],
+        "nonfinite_voxels": 0
+      },
+      "4TQ6": {
+        "path": "./orig/4869_4TQ6/hypo1_unthresh.nii.gz",
+        "shape": [
+          91,
+          109,
+          91
+        ],
+        "nonfinite_voxels": 0
+      },
+      "L3V8": {
+        "path": "./orig/4888_L3V8/hypo1_unthresh.nii.gz",
+        "shape": [
+          79,
+          95,
+          79
+        ],
+        "nonfinite_voxels": 0
+      },
+      "51PW": {
+        "path": "./orig/5167_51PW/hypo1_unthresh.nii.gz",
+        "shape": [
+          91,
+          109,
+          91
+        ],
+        "nonfinite_voxels": 0
+      },
+      "6VV2": {
+        "path": "./orig/4883_6VV2/hypo1_unthresh.nii.gz",
+        "shape": [
+          96,
+          114,
+          96
+        ],
+        "nonfinite_voxels": 0
+      },
+      "27SS": {
+        "path": "./orig/4975_27SS/hypo1_unthresh.nii.gz",
+        "shape": [
+          96,
+          114,
+          96
+        ],
+        "nonfinite_voxels": 0
+      },
+      "0ED6": {
+        "path": "./orig/4994_0ED6/hypo1_unthresh.nii.gz",
+        "shape": [
+          91,
+          109,
+          91
+        ],
+        "nonfinite_voxels": 0
+      },
+      "I9D6": {
+        "path": "./orig/4978_I9D6/hypo1_unthresh.nii.gz",
+        "shape": [
+          96,
+          114,
+          96
+        ],
+        "nonfinite_voxels": 0
+      },
+      "AO86": {
+        "path": "./orig/4932_AO86/hypo1_unthresh.nii.gz",
+        "shape": [
+          97,
+          115,
+          81
+        ],
+        "nonfinite_voxels": 0
+      },
+      "UK24": {
+        "path": "./orig/4908_UK24/hypo1_unthresh.nii.gz",
+        "shape": [
+          79,
+          95,
+          79
+        ],
+        "nonfinite_voxels": 0
+      },
+      "U26C": {
+        "path": "./orig/4820_U26C/hypo1_unthresh.nii.gz",
+        "shape": [
+          97,
+          115,
+          81
+        ],
+        "nonfinite_voxels": 0
+      },
+      "XU70": {
+        "path": "./orig/4990_XU70/hypo1_unthresh.nii.gz",
+        "shape": [
+          91,
+          109,
+          91
+        ],
+        "nonfinite_voxels": 0
+      },
+      "I52Y": {
+        "path": "./orig/4933_I52Y/hypo1_unthresh.nii.gz",
+        "shape": [
+          91,
+          109,
+          91
+        ],
+        "nonfinite_voxels": 0
+      },
+      "98BT": {
+        "path": "./orig/4988_98BT/hypo1_unthresh.nii.gz",
+        "shape": [
+          79,
+          95,
+          84
+        ],
+        "nonfinite_voxels": 0
+      },
+      "4SZ2": {
+        "path": "./orig/5665_4SZ2/hypo1_unthresh.nii.gz",
+        "shape": [
+          193,
+          229,
+          193
+        ],
+        "nonfinite_voxels": 0
+      },
+      "9T8E": {
+        "path": "./orig/4870_9T8E/hypo1_unthresh.nii.gz",
+        "shape": [
+          97,
+          115,
+          81
+        ],
+        "nonfinite_voxels": 0
+      },
+      "2T6S": {
+        "path": "./orig/4881_2T6S/hypo1_unthresh.nii.gz",
+        "shape": [
+          97,
+          115,
+          81
+        ],
+        "nonfinite_voxels": 0
+      },
+      "O03M": {
+        "path": "./orig/4972_O03M/hypo1_unthresh.nii.gz",
+        "shape": [
+          97,
+          115,
+          81
+        ],
+        "nonfinite_voxels": 0
+      },
+      "R42Q": {
+        "path": "./orig/5619_R42Q/hypo1_unthresh.nii.gz",
+        "shape": [
+          193,
+          229,
+          193
+        ],
+        "nonfinite_voxels": 0
+      },
+      "0H5E": {
+        "path": "./orig/4936_0H5E/hypo1_unthresh.nii.gz",
+        "shape": [
+          63,
+          76,
+          55
+        ],
+        "nonfinite_voxels": 0
+      },
+      "0C7Q": {
+        "path": "./orig/5652_0C7Q/hypo1_unthresh.nii.gz",
+        "shape": [
+          96,
+          114,
+          80
+        ],
+        "nonfinite_voxels": 0
+      },
+      "SM54": {
+        "path": "./orig/5675_SM54/hypo1_unthresh.nii.gz",
+        "shape": [
+          97,
+          115,
+          81
+        ],
+        "nonfinite_voxels": 0
+      },
+      "R7D1": {
+        "path": "./orig/4954_R7D1/hypo1_unthresh.nii.gz",
+        "shape": [
+          97,
+          115,
+          81
+        ],
+        "nonfinite_voxels": 0
+      },
+      "2T7P": {
+        "path": "./orig/4917_2T7P/hypo1_unthresh.nii.gz",
+        "shape": [
+          91,
+          109,
+          91
+        ],
+        "nonfinite_voxels": 0
+      },
+      "O6R6": {
+        "path": "./orig/4907_O6R6/hypo1_unthresh.nii.gz",
+        "shape": [
+          193,
+          229,
+          193
+        ],
+        "nonfinite_voxels": 0
+      },
+      "80GC": {
+        "path": "./orig/4891_80GC/hypo1_unthresh.nii.gz",
+        "shape": [
+          97,
+          115,
+          81
+        ],
+        "nonfinite_voxels": 0
+      },
+      "V55J": {
+        "path": "./orig/4919_V55J/hypo1_unthresh.nii.gz",
+        "shape": [
+          79,
+          95,
+          65
+        ],
+        "nonfinite_voxels": 0
+      },
+      "0JO0": {
+        "path": "./orig/4807_0JO0/hypo1_unthresh.nii.gz",
+        "shape": [
+          97,
+          115,
+          81
+        ],
+        "nonfinite_voxels": 0
+      },
+      "9U7M": {
+        "path": "./orig/4965_9U7M/hypo1_unthresh.nii.gz",
+        "shape": [
+          91,
+          109,
+          91
+        ],
+        "nonfinite_voxels": 0
+      },
+      "E3B6": {
+        "path": "./orig/4782_E3B6/hypo1_unthresh.nii.gz",
+        "shape": [
+          97,
+          115,
+          81
+        ],
+        "nonfinite_voxels": 0
+      },
+      "3C6G": {
+        "path": "./orig/4772_3C6G/hypo1_unthresh.nii.gz",
+        "shape": [
+          79,
+          95,
+          79
+        ],
+        "nonfinite_voxels": 0
+      },
+      "3PQ2": {
+        "path": "./orig/4904_3PQ2/hypo1_unthresh.nii.gz",
+        "shape": [
+          97,
+          115,
+          97
+        ],
+        "nonfinite_voxels": 0
+      },
+      "6FH5": {
+        "path": "./orig/5663_6FH5/hypo1_unthresh.nii.gz",
+        "shape": [
+          79,
+          95,
+          69
+        ],
+        "nonfinite_voxels": 0
+      },
+      "43FJ": {
+        "path": "./orig/4824_43FJ/hypo1_unthresh.nii.gz",
+        "shape": [
+          91,
+          109,
+          91
+        ],
+        "nonfinite_voxels": 0
+      },
+      "1KB2": {
+        "path": "./orig/4945_1KB2/hypo1_unthresh.nii.gz",
+        "shape": [
+          91,
+          109,
+          91
+        ],
+        "nonfinite_voxels": 0
+      },
+      "B23O": {
+        "path": "./orig/4984_B23O/hypo1_unthresh.nii.gz",
+        "shape": [
+          97,
+          115,
+          81
+        ],
+        "nonfinite_voxels": 0
+      },
+      "3TR7": {
+        "path": "./orig/4966_3TR7/hypo1_unthresh.nii.gz",
+        "shape": [
+          97,
+          115,
+          81
+        ],
+        "nonfinite_voxels": 0
+      },
+      "X19V": {
+        "path": "./orig/4947_X19V/hypo1_unthresh.nii.gz",
+        "shape": [
+          97,
+          115,
+          81
+        ],
+        "nonfinite_voxels": 0
+      },
+      "UI76": {
+        "path": "./orig/4821_UI76/hypo1_unthresh.nii.gz",
+        "shape": [
+          97,
+          115,
+          81
+        ],
+        "nonfinite_voxels": 0
+      },
+      "E6R3": {
+        "path": "./orig/4959_E6R3/hypo1_unthresh.nii.gz",
+        "shape": [
+          97,
+          115,
+          81
+        ],
+        "nonfinite_voxels": 0
+      },
+      "IZ20": {
+        "path": "./orig/4979_IZ20/hypo1_unthresh.nii.gz",
+        "shape": [
+          61,
+          73,
+          61
+        ],
+        "nonfinite_voxels": 0
+      },
+      "94GU": {
+        "path": "./orig/5626_94GU/hypo1_unthresh.nii.gz",
+        "shape": [
+          91,
+          109,
+          91
+        ],
+        "nonfinite_voxels": 0
+      },
+      "I07H": {
+        "path": "./orig/5001_I07H/hypo1_unthresh.nii.gz",
+        "shape": [
+          97,
+          115,
+          81
+        ],
+        "nonfinite_voxels": 0
+      },
+      "K9P0": {
+        "path": "./orig/4961_K9P0/hypo1_unthresh.nii.gz",
+        "shape": [
+          97,
+          115,
+          81
+        ],
+        "nonfinite_voxels": 0
+      },
+      "9Q6R": {
+        "path": "./orig/4765_9Q6R/hypo1_unthresh.nii.gz",
+        "shape": [
+          97,
+          115,
+          81
+        ],
+        "nonfinite_voxels": 0
+      },
+      "0I4U": {
+        "path": "./orig/4938_0I4U/hypo1_unthresh.nii.gz",
+        "shape": [
+          121,
+          145,
+          121
+        ],
+        "nonfinite_voxels": 0
+      },
+      "DC61": {
+        "path": "./orig/4963_DC61/hypo1_unthresh.nii.gz",
+        "shape": [
+          97,
+          115,
+          81
+        ],
+        "nonfinite_voxels": 0
+      },
+      "50GV": {
+        "path": "./orig/4735_50GV/hypo1_unthresh.nii.gz",
+        "shape": [
+          97,
+          115,
+          81
+        ],
+        "nonfinite_voxels": 0
+      },
+      "L9G5": {
+        "path": "./orig/5173_L9G5/hypo1_unthresh.nii.gz",
+        "shape": [
+          91,
+          109,
+          91
+        ],
+        "nonfinite_voxels": 0
+      }
+    }
+  },
+  "templates": {
+    "MNI152_T1_2mm.nii.gz": [
+      91,
+      109,
+      91
+    ],
+    "MNI152_T1_2mm_brain_mask.nii.gz": [
+      91,
+      109,
+      91
+    ]
+  },
+  "analysis_executed": false
+}

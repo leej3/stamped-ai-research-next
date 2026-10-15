@@ -1,0 +1,291 @@
+{
+  "remote": "https://hub.centerforopenneuroscience.org/leej3/stamped-ai-research-next.git",
+  "remote_uuid": "6215ce45-8f0f-4062-9bc0-d04781b4cd11",
+  "all_payloads_recorded_on_remote": true,
+  "files": [
+    {
+      "path": "input/data/observations/pipeline_metadata.tsv",
+      "key": "MD5E-s256107--50c51d42f5b89ddcd866ae93509e4037.tsv"
+    },
+    {
+      "path": "input/data/orig/4735_50GV/hypo1_unthresh.nii.gz",
+      "key": "MD5E-s839783--27bf0a7e7448051bf93cdbbfc4771c09.nii.gz"
+    },
+    {
+      "path": "input/data/orig/4765_9Q6R/hypo1_unthresh.nii.gz",
+      "key": "MD5E-s792662--cecf5f0df4ac60e4d355b2387b5d1c61.nii.gz"
+    },
+    {
+      "path": "input/data/orig/4772_3C6G/hypo1_unthresh.nii.gz",
+      "key": "MD5E-s868198--3e627ef13655c91d68a844a9d9b0224b.nii.gz"
+    },
+    {
+      "path": "input/data/orig/4779_O21U/hypo1_unthresh.nii.gz",
+      "key": "MD5E-s757445--63f1d00b6239bdac4de04947b9a251fd.nii.gz"
+    },
+    {
+      "path": "input/data/orig/4782_E3B6/hypo1_unthresh.nii.gz",
+      "key": "MD5E-s790232--4559209f8b19db7a5050b526dff8589b.nii.gz"
+    },
+    {
+      "path": "input/data/orig/4802_R9K3/hypo1_unthresh.nii.gz",
+      "key": "MD5E-s745705--5e1384e0bfd3c9c4c1f2ffbbf3931bbb.nii.gz"
+    },
+    {
+      "path": "input/data/orig/4807_0JO0/hypo1_unthresh.nii.gz",
+      "key": "MD5E-s1806799--5599033d8472b0c4575731938280acf1.nii.gz"
+    },
+    {
+      "path": "input/data/orig/4812_C88N/hypo1_unthresh.nii.gz",
+      "key": "MD5E-s678946--778537972dc856b907d059c83f092333.nii.gz"
+    },
+    {
+      "path": "input/data/orig/4820_U26C/hypo1_unthresh.nii.gz",
+      "key": "MD5E-s721892--2355bbc6d942c695aa9f1446cbfdd6e4.nii.gz"
+    },
+    {
+      "path": "input/data/orig/4821_UI76/hypo1_unthresh.nii.gz",
+      "key": "MD5E-s731846--a14ca61bddbd1d1188e31731efb7daa3.nii.gz"
+    },
+    {
+      "path": "input/data/orig/4824_43FJ/hypo1_unthresh.nii.gz",
+      "key": "MD5E-s872568--86e56bf898c2e362f4aa087e92b95f97.nii.gz"
+    },
+    {
+      "path": "input/data/orig/4866_L7J7/hypo1_unthresh.nii.gz",
+      "key": "MD5E-s683380--347b7540ad023bcc073b6c97db271517.nii.gz"
+    },
+    {
+      "path": "input/data/orig/4869_4TQ6/hypo1_unthresh.nii.gz",
+      "key": "MD5E-s953559--a7e3b609913a9413803d3b3134667783.nii.gz"
+    },
+    {
+      "path": "input/data/orig/4870_9T8E/hypo1_unthresh.nii.gz",
+      "key": "MD5E-s1608565--3a3fe34c571fdfd8ebba19d9fe0d59cc.nii.gz"
+    },
+    {
+      "path": "input/data/orig/4876_T54A/hypo1_unthresh.nii.gz",
+      "key": "MD5E-s824366--dcdac21b5d294f790ad5f9e8c954502b.nii.gz"
+    },
+    {
+      "path": "input/data/orig/4881_2T6S/hypo1_unthresh.nii.gz",
+      "key": "MD5E-s782921--307d9950df70114ca25d22f45a0da0ca.nii.gz"
+    },
+    {
+      "path": "input/data/orig/4883_6VV2/hypo1_unthresh.nii.gz",
+      "key": "MD5E-s773327--9761d8a29fc873cc3fe6b0bd7eeb4d8b.nii.gz"
+    },
+    {
+      "path": "input/data/orig/4888_L3V8/hypo1_unthresh.nii.gz",
+      "key": "MD5E-s917149--5c27904c0e90e4ae5208ef0dbaa6c7dc.nii.gz"
+    },
+    {
+      "path": "input/data/orig/4891_80GC/hypo1_unthresh.nii.gz",
+      "key": "MD5E-s883775--34f70c2086d03c334b2b30bfe78af997.nii.gz"
+    },
+    {
+      "path": "input/data/orig/4898_X1Y5/hypo1_unthresh.nii.gz",
+      "key": "MD5E-s831975--ab74d4f14093da1aad2594b8b40d1f5a.nii.gz"
+    },
+    {
+      "path": "input/data/orig/4904_3PQ2/hypo1_unthresh.nii.gz",
+      "key": "MD5E-s874763--96c8f44014c6f371173eb36664c6e196.nii.gz"
+    },
+    {
+      "path": "input/data/orig/4907_O6R6/hypo1_unthresh.nii.gz",
+      "key": "MD5E-s6566634--964e44ba2edc07b0427ef723b491cb09.nii.gz"
+    },
+    {
+      "path": "input/data/orig/4908_UK24/hypo1_unthresh.nii.gz",
+      "key": "MD5E-s1913494--419a1f5805a950ba4e517efc254fdca1.nii.gz"
+    },
+    {
+      "path": "input/data/orig/4917_2T7P/hypo1_unthresh.nii.gz",
+      "key": "MD5E-s885112--8f972b9f676f34e73571b09098224f80.nii.gz"
+    },
+    {
+      "path": "input/data/orig/4919_V55J/hypo1_unthresh.nii.gz",
+      "key": "MD5E-s706142--1e4baf64f69e37e9f622568799a0e07d.nii.gz"
+    },
+    {
+      "path": "input/data/orig/4932_AO86/hypo1_unthresh.nii.gz",
+      "key": "MD5E-s973808--9d38a5a8fc87d6ea2c5d8695455b8a44.nii.gz"
+    },
+    {
+      "path": "input/data/orig/4933_I52Y/hypo1_unthresh.nii.gz",
+      "key": "MD5E-s875628--8123a5cdce909656684052c2ebce90cb.nii.gz"
+    },
+    {
+      "path": "input/data/orig/4936_0H5E/hypo1_unthresh.nii.gz",
+      "key": "MD5E-s344146--882390787b7b487998ffe4e6ce4fba16.nii.gz"
+    },
+    {
+      "path": "input/data/orig/4938_0I4U/hypo1_unthresh.nii.gz",
+      "key": "MD5E-s1625916--e78817cfe77db8a8e245461a77924588.nii.gz"
+    },
+    {
+      "path": "input/data/orig/4941_B5I6/hypo1_unthresh.nii.gz",
+      "key": "MD5E-s809551--c50b8243e8e8ac7aabcda30df9578910.nii.gz"
+    },
+    {
+      "path": "input/data/orig/4945_1KB2/hypo1_unthresh.nii.gz",
+      "key": "MD5E-s884661--dc24aeab0cbf58f4dd34bbdba002015c.nii.gz"
+    },
+    {
+      "path": "input/data/orig/4947_X19V/hypo1_unthresh.nii.gz",
+      "key": "MD5E-s745280--ce507ba4277715372c0a56f7d6c8b836.nii.gz"
+    },
+    {
+      "path": "input/data/orig/4949_J7F9/hypo1_unthresh.nii.gz",
+      "key": "MD5E-s782044--08a813ec53b50faedf739f4deae949ba.nii.gz"
+    },
+    {
+      "path": "input/data/orig/4950_R5K7/hypo1_unthresh.nii.gz",
+      "key": "MD5E-s772691--a5e98a9a609ac886ab255cd0a98330ad.nii.gz"
+    },
+    {
+      "path": "input/data/orig/4953_08MQ/hypo1_unthresh.nii.gz",
+      "key": "MD5E-s944250--61d057be46c7999642df4a78a2b07dc0.nii.gz"
+    },
+    {
+      "path": "input/data/orig/4954_R7D1/hypo1_unthresh.nii.gz",
+      "key": "MD5E-s748027--9aabd36109e55f37d8de20139640328e.nii.gz"
+    },
+    {
+      "path": "input/data/orig/4959_E6R3/hypo1_unthresh.nii.gz",
+      "key": "MD5E-s1539502--b99d34831df0935efede354c4ed7616c.nii.gz"
+    },
+    {
+      "path": "input/data/orig/4961_K9P0/hypo1_unthresh.nii.gz",
+      "key": "MD5E-s547045--5c65341d73270d3f67e51b65569eaa1a.nii.gz"
+    },
+    {
+      "path": "input/data/orig/4963_DC61/hypo1_unthresh.nii.gz",
+      "key": "MD5E-s722525--534eadc9cad365458efa408fee292427.nii.gz"
+    },
+    {
+      "path": "input/data/orig/4965_9U7M/hypo1_unthresh.nii.gz",
+      "key": "MD5E-s1836678--55fe09ce098cce0e220f7a52704445c5.nii.gz"
+    },
+    {
+      "path": "input/data/orig/4966_3TR7/hypo1_unthresh.nii.gz",
+      "key": "MD5E-s2936242--1c74d645f8403673b903b9629e6b2c07.nii.gz"
+    },
+    {
+      "path": "input/data/orig/4967_P5F3/hypo1_unthresh.nii.gz",
+      "key": "MD5E-s904127--4b4636e82d59398f4832cb05967c57a4.nii.gz"
+    },
+    {
+      "path": "input/data/orig/4968_Q6O0/hypo1_unthresh.nii.gz",
+      "key": "MD5E-s781564--8817d04b7b05dda9d4603cf566cb1a25.nii.gz"
+    },
+    {
+      "path": "input/data/orig/4972_O03M/hypo1_unthresh.nii.gz",
+      "key": "MD5E-s508008--3ea996cbe31859ec316e0be39469334e.nii.gz"
+    },
+    {
+      "path": "input/data/orig/4975_27SS/hypo1_unthresh.nii.gz",
+      "key": "MD5E-s1066477--17eddc69bc1975dbb6601e29aec2c97d.nii.gz"
+    },
+    {
+      "path": "input/data/orig/4978_I9D6/hypo1_unthresh.nii.gz",
+      "key": "MD5E-s784947--b7a98e476cf5d1c40f0461ff6e8a5247.nii.gz"
+    },
+    {
+      "path": "input/data/orig/4979_IZ20/hypo1_unthresh.nii.gz",
+      "key": "MD5E-s285463--8058fd65e8824848d09386ebe9d3e2d3.nii.gz"
+    },
+    {
+      "path": "input/data/orig/4984_B23O/hypo1_unthresh.nii.gz",
+      "key": "MD5E-s792094--e8b7673d4660577fa369c9e30e341192.nii.gz"
+    },
+    {
+      "path": "input/data/orig/4988_98BT/hypo1_unthresh.nii.gz",
+      "key": "MD5E-s799188--4e1e0ea6dc245b6281611e68ce205220.nii.gz"
+    },
+    {
+      "path": "input/data/orig/4990_XU70/hypo1_unthresh.nii.gz",
+      "key": "MD5E-s1411756--fe7b30b95cb113714c3e48bdc4f875cf.nii.gz"
+    },
+    {
+      "path": "input/data/orig/4994_0ED6/hypo1_unthresh.nii.gz",
+      "key": "MD5E-s731289--c05a232f7b583d89ca2f143a36a841a2.nii.gz"
+    },
+    {
+      "path": "input/data/orig/5001_I07H/hypo1_unthresh.nii.gz",
+      "key": "MD5E-s508721--a2ccc33dc10e597cac9cd9e3b3f93376.nii.gz"
+    },
+    {
+      "path": "input/data/orig/5164_Q58J/hypo1_unthresh.nii.gz",
+      "key": "MD5E-s15393960--ccd8b9660ad411cccb60d4ed1df85c8c.nii.gz"
+    },
+    {
+      "path": "input/data/orig/5167_51PW/hypo1_unthresh.nii.gz",
+      "key": "MD5E-s948538--bcbc102465e657af4b9d7ac3223ebb13.nii.gz"
+    },
+    {
+      "path": "input/data/orig/5173_L9G5/hypo1_unthresh.nii.gz",
+      "key": "MD5E-s879136--54ed5f69ae7db2a7f3544cf5bfd74d17.nii.gz"
+    },
+    {
+      "path": "input/data/orig/5619_R42Q/hypo1_unthresh.nii.gz",
+      "key": "MD5E-s19271086--c279aa4629b7f40d0b2207fc21d812b7.nii.gz"
+    },
+    {
+      "path": "input/data/orig/5626_94GU/hypo1_unthresh.nii.gz",
+      "key": "MD5E-s793509--a7eb377d8ab8e2db77996e3f14c8984f.nii.gz"
+    },
+    {
+      "path": "input/data/orig/5637_46CD/hypo1_unthresh.nii.gz",
+      "key": "MD5E-s798826--90550b1205686eaf13f3900a7b675b45.nii.gz"
+    },
+    {
+      "path": "input/data/orig/5649_1P0Y/hypo1_unthresh.nii.gz",
+      "key": "MD5E-s744487--440c61318ab3c3f7e539e3482b50da4e.nii.gz"
+    },
+    {
+      "path": "input/data/orig/5652_0C7Q/hypo1_unthresh.nii.gz",
+      "key": "MD5E-s809175--7980c66b59ffe05db3b7c8f231dde670.nii.gz"
+    },
+    {
+      "path": "input/data/orig/5653_C22U/hypo1_unthresh.nii.gz",
+      "key": "MD5E-s925657--c911ac746e2191d05961cd78b60d6141.nii.gz"
+    },
+    {
+      "path": "input/data/orig/5663_6FH5/hypo1_unthresh.nii.gz",
+      "key": "MD5E-s830566--d7f56eeb22f2cbc4677d61abbfa97e89.nii.gz"
+    },
+    {
+      "path": "input/data/orig/5665_4SZ2/hypo1_unthresh.nii.gz",
+      "key": "MD5E-s2204995--2c3c8e883a8162bc5685b086b0ee6ba3.nii.gz"
+    },
+    {
+      "path": "input/data/orig/5675_SM54/hypo1_unthresh.nii.gz",
+      "key": "MD5E-s1792271--3c8610bf518c343e4400033876e85a72.nii.gz"
+    },
+    {
+      "path": "input/data/templates/MNI152_T1_2mm.nii.gz",
+      "key": "MD5E-s1406977--457b2df45e806b35f64f11a98e6b459b.nii.gz"
+    },
+    {
+      "path": "input/data/templates/MNI152_T1_2mm_brain_mask.nii.gz",
+      "key": "MD5E-s12480--84cd8269e63867f77249c4a8967adaf6.nii.gz"
+    },
+    {
+      "path": "reference/published/MNI152_T1_2mm.nii.gz",
+      "key": "MD5E-s1406977--457b2df45e806b35f64f11a98e6b459b.nii.gz"
+    },
+    {
+      "path": "reference/published/MNI152_T1_2mm_brain_mask.nii.gz",
+      "key": "MD5E-s12480--84cd8269e63867f77249c4a8967adaf6.nii.gz"
+    },
+    {
+      "path": "reference/published/narps_origdata_1.0.tgz",
+      "key": "MD5E-s993792840--ea72d6ebd269c6ac4f8cb061be477d38.0.tgz"
+    },
+    {
+      "path": "reference/published/results.tgz",
+      "key": "MD5E-s52319949--a3ae1b9311996a758afd5cc5180a9e45.tgz"
+    }
+  ]
+}

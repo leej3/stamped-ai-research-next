@@ -1,0 +1,68 @@
+source_timestamp	team_id	software	statistic_type	reported_template	image_comments	source_csv_row
+6/2/2019 8:41:50	08MQ	FSL	t values	MNI152_T1_2mm.nii.gz		23
+6/2/2019 21:05:07	0C7Q	FSL	t values	mni_icbm152_t1_tal_nlin_asym_09c.nii		28
+6/6/2019 17:40:16	0ED6	SPM	t values	in SPM12, avg152T1.nii		55
+6/23/2019 5:47:51	0H5E	SPM	t values	spm8/templates/T1.nii  [2mm MNI template with skull intact + 8mm FWHM Gaussian smoothing, according to the SPM team]	Apologies for the delay!	72
+6/3/2019 16:35:30	0I4U	SPM	t values	TPM.nii		39
+6/17/2019 12:07:01	0JO0	nistats	z values	We used the preprocessed images from fmriprep	Please note that the image for hypothesis 9 contains t values and not z values as all the other images.	64
+5/31/2019 12:13:40	1KB2	FSL	z values	FSL, MNI152_T1_2mm_brain.nii.gz		6
+6/3/2019 0:26:04	1P0Y	SPM	t values	MNI152_T1_1mm.nii.gz		29
+6/3/2019 14:55:35	27SS	AFNI	t values	MNI152_T1_2009c+tlrc.BRIK		36
+5/31/2019 18:36:27	2T6S	SPM	t values	FMIRPREP, MNI152NLin2009cAsym (we used the provided preprocessed data) 		18
+6/4/2019 8:15:14	2T7P	FSL	z values	MNI152_T1_2mm_brain		42
+6/4/2019 22:20:10	3C6G	SPM	t values	Unified segmentation in SPM = MNI-space tissue probability maps		51
+5/31/2019 15:53:43	3PQ2	FSL	z values	in fMRIprep, ICBM 152 Nonlinear Asymmetrical template version 2009c		14
+6/4/2019 15:07:00	3TR7	SPM	t values	We used the provided fmriprep preprocessed data. According to the documentation, the default template is MNI152NLin2009cAsym		48
+6/15/2019 18:07:08	43FJ	FSL	z values	MNI152_T1_2mm.nii.gz		61
+6/17/2019 20:31:07	46CD	SPM	t values	SPM - segmentation performed using TPM.nii (MNI space)		65
+6/4/2019 9:10:29	4SZ2	FSL	z values	No further warping was done, the data was already aligned in common space with fmriprep.		43
+6/3/2019 16:12:53	4TQ6	FSL	z values	in FSL, mni_icbm152_t2_tal_nlin_asym_09c_2mm.nii.gz		38
+6/1/2019 20:24:35	50GV	FSL	z values	Data was analyzed in NARPS-provided fMRIprep derivatives standard space (MNI152NLin2009cAsym)		22
+6/2/2019 15:30:04	51PW	FSL	z values	FSL's MNI152lin_T1_1mm.nii.gz		26
+6/5/2019 23:26:12	6FH5	SPM	t values	Template_1_IXI550_MNI152.nii		53
+5/31/2019 14:19:48	6VV2	AFNI	z values	MNI152_T1_2009c		11
+6/6/2019 19:03:48	80GC	AFNI	z values	AFNI MNI_avg152T1+tlrc	We used one-tailed tests for thresholding, so, for example, the thresholded image for hypothesis #1 has only positive clusters, and the thresholded image for hypothesis #5 has only negative clusters.	57
+6/5/2019 12:05:46	94GU	SPM	t values	avg152T1.nii (SPM: ICBM space template - European brains)		52
+6/6/2019 20:25:57	98BT	SPM	t values	MNI152		58
+5/31/2019 14:35:44	9Q6R	FSL	z values	MNI152NLin2009cAsym		12
+6/3/2019 11:33:15	9T8E	SPM with SnPM (permutation tests)	t values (based on permutation statistics, no variance smoothing)	MNI152NLin2009cAsym (using the fmriprep preprocessing)		33
+6/10/2019 17:00:34	9U7M	nistats	z values	MNI152_T1_2mm_brain.nii.gz		60
+6/21/2019 13:28:41	AO86	FSL	t values	MNI152NLin2009cAsym.nii.gz		70
+6/3/2019 18:57:42	B23O	FSL	t values	I used the fmriprep derived files, I delete the files but I think they were in MNI2009?		40
+5/31/2019 13:48:26	B5I6	FSL	t values	MNI152NLin2009cAsym (from fmriprep files provided)		9
+5/31/2019 16:38:53	C22U	FSL	z values	MNI152_T1_2mm_brain.nii.gz		17
+6/4/2019 7:35:15	C88N	SPM	t values	we used the fully pre-processes data you provided		41
+6/17/2019 8:01:36	DC61	SPM	T and F values	We used fmriprep.		63
+5/31/2019 11:00:25	E3B6	the pTCFE toolbox for SPM	threshold free cluster enhanced t values using the pTCFE toolbox 	used the fMRIprep data provided: MNI152NLin2009cAsym		4
+6/4/2019 15:26:13	E6R3	Sorry for being a bit difficult but just want to make sure I give you the right answer. For preprocessing, we used the NARPs fMRIprep data and FSL (5.0.11, FEAT version 6.0). Then for analysis we used AFNI (16.2.01) and in-house software based around R and the lme4 package.	t values	MNI152NLin2009cAsym	Thanks for all your hard work :)!	49
+6/2/2019 12:50:33	I07H	AFNI	z values	We used fmriprep-ed data. The reference template is  MNI152NLin2009cAsym.		25
+6/1/2019 20:19:06	I52Y	FSL	t values	MNI152lin_T1_2mm.nii.gz		21
+6/21/2019 17:46:01	I9D6	AFNI	z values	MNI152_2009_template_SSW.nii.gz 	"AFNI's MNI152_2009_template_SSW.nii.gz  template is built from mni_icbm152_t1_tal_nlin_asym_09a.nii.gz. 
+
+Significance was determined using AFNI's ETAC method, and there was neither a single threshold nor a single blur applied, as such significance is not determined by a single blur or voxel level threshold. The z-value maps uploaded are blurred at 4mm, but we ran ETAC with blurring at 0mm, 4mm, 6mm, and 8mm. "	71
+6/6/2019 18:42:27	IZ20	SPM	t values	SPM MNI152		56
+6/4/2019 11:52:06	J7F9	SPM	t values	MNI152NLin2009cAsym - We used the fmriprepped data	Again, the question is a bit weird, as the parametric modulator does not test for overall level of activation. We do not know whether activity is positive of negative versus baseline, rather we know whether activity is higher or lower as a function of the values of the parametric modulators.	46
+6/4/2019 21:22:39	K9P0	AFNI	t values	MNI152NLin2009cAsym		50
+6/4/2019 10:05:39	L3V8	SPM	t values	in SPM 12, TPM.nii (i.e., ICBM452)		44
+5/31/2019 14:57:42	L3V8	SPM	t values	ICBM452 (default template in the TPM folder in SPM 12)		13
+6/19/2019 21:18:58	L7J7	SPM	t values	MNI152lin_T1_1mm.nii.gz		67
+5/31/2019 11:22:16	L9G5	FSL	z values	MNI152_T1_2mm_brain.nii.gz		5
+6/8/2019 14:30:38	O03M	AFNI	z values	AFNI's  MNI152_T1_2009c+tlrc		59
+6/3/2019 10:30:18	O21U	FSL	z values	in fMRIprep, MNI152NLin2009cAsym	Thanks again for organizing such a cool study!	32
+6/2/2019 19:29:49	O6R6	FSL	t values	in fmriprep, MNI152NLin2009cAsym.nii.gz		27
+5/31/2019 16:24:40	P5F3	FSL	z values	in FSL, MNI152_T1_2mm_brain.nii.gz		15
+5/31/2019 9:27:52	Q58J	FSL	z values	MNI152_T1_1mm_brain.nii.gz		2
+5/31/2019 9:51:42	Q6O0	SPM	t values	fmriprep data		3
+6/2/2019 11:04:39	R42Q	fmriflows (https://github.com/miykael/fmriflows)	z values	mni_icbm152_nlin_asym_09c		24
+6/6/2019 17:39:43	R5K7	SPM	t values	in SPM, avg152T1.nii		54
+6/4/2019 10:24:19	R7D1	FSL Randomise	t values	T1w ICBM 152 Nonlinear Asymmetrical template version 2009c as provided by the fMRIprep		45
+5/31/2019 18:58:07	R9K3	SPM	t values	The images were registered to the MNI152NLin2009cAsym space using fmriprep v1.1.4 as provided by the NARPS group. 		19
+6/17/2019 6:52:47	SM54	nistats	z values	Used the provided registered images		62
+5/31/2019 22:52:59	T54A	FSL	z values	ICBM 152 Nonlinear Asymmetrical template version 2009c	"We uploaded Z images (raw output from FEAT) and also 1-p image (based on randomise and TFCE). We also uploaded group-level varcope and cope images. These are labeled clearly and tagged in NeuroVault. We also included subject-level images (placed in the ""single subject"" tab and named in a BIDS-like format)."	20
+6/3/2019 6:39:03	U26C	SPM	t values	MNI152NLin2009cAsym (fmriprep template)		30
+6/4/2019 14:49:58	UI76	AFNI	z values	mni_icbm152_nlin_asym_09c		47
+6/18/2019 6:21:04	UK24	SPM	t values	In SPM12, we used the unified segmentation procedure with the TPM.nii file, which implicitly normalizes the functional space images to the MNI space of the TPM.nii immages.		66
+6/3/2019 9:25:41	V55J	SPM	t values	In SPM, spatial normalisation is no longer based on minimizing the mean squared difference between a template and a warped version of the image. Instead, it is now done via segmentation. The tissue probability maps used for the segmentation are provided by the MNI  as part of the ICBM, NIH P-20 project, and derived from scans of 152 young healthy subjects. (source: SPM12 manual chapt5 p4)	We made a mistake in uploading the unthresholded images for all hypotheses. We uploaded the contrasts maps (con images in SPM) instead of the Tmaps. Please let us know if we should re-upload the files with T-maps. The thresholded maps fine, they are Tmaps	31
+6/3/2019 16:02:46	X19V	FSL	z values	FSL MNI152_T1_2mm_brain		37
+5/31/2019 13:47:09	X1Y5	FSL	t values	MNI152NLin2009cAsym (from fMRIprep data)		8
+6/20/2019 21:15:35	XU70	FSL	z values	MNI152_T1_2mm_brain		68

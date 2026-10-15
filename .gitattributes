@@ -1,2 +1,11 @@
 * annex.backend=MD5E
+* annex.largefiles=(largerthan=100kb)
+*.nii.gz annex.largefiles=anything
+*.tgz annex.largefiles=anything
+*.md annex.largefiles=nothing
+*.py annex.largefiles=nothing
+*.json annex.largefiles=nothing
+*.yaml annex.largefiles=nothing
+*.tsv annex.largefiles=(largerthan=100kb)
 **/.git* annex.largefiles=nothing
+input/data/** -whitespace

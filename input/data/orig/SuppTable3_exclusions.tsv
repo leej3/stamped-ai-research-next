@@ -1,0 +1,8 @@
+Team ID	Exclusion reason	Unthresholded maps excluded	Thresholded maps excluded
+1K0E	Used surface-based analysis (only provided data for cortical ribbon)	X	X
+L1A8	Not in MNI standard space	X	X
+VG39	Performed small volume corrected instead of whole-brain analysis	X	X
+X1Z4	Used surface-based analysis (only provided data for cortical ribbon)	X	X
+16IN	Values in the unthresholded images are not z / t stats	X	
+5G9K	Values in the unthresholded images are not z / t stats	X	
+2T7P	Used a method which does not create thresholded images (and are therefore not included in the analyses of the thresholded images)		X
