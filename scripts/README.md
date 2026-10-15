@@ -1,7 +1,7 @@
 # Prepared native launches
 
 The coordinator calls `prepare_launch.py` once per fresh worker.
-Prerequisites are Python 3.11+, Git, wt-utils, Pixi, Entire and the bundled Codex CLI, plus a working source manifest/lock and an already approved native hooks file.
+Prerequisites are Python 3.11+, Git, Pixi, Entire and the bundled Codex CLI, plus a working source manifest/lock and an already approved native hooks file.
 Credentials remain with the existing host providers.
 
 One-time host defaults live outside the project at `~/.config/stamped-ai-research-next/launch.json` (override with `--host-config`).
@@ -24,6 +24,7 @@ pixi run launch --branch codex/my-task \
 ```
 
 The default time bound is 240 seconds; use `--seconds` for the authorized task.
+Worktrees are created with Git at `<repo-parent>/<repo-name>-worktrees/<branch>`; use a fresh branch for each worker.
 The worker gets its own locked Pixi environment and initialized annex remote; setup does not download all artifacts.
 `--prepare-only` verifies effective skill exposure and stops before native execution.
 A new clone additionally needs `--kind clone --clone-path ABS`.
