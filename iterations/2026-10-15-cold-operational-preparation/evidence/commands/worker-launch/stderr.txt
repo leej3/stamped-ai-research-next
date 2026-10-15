@@ -1,0 +1,27 @@
+✨ Pixi task (launch): python scripts/prepare_launch.py --model gpt-6-luna --effort high --host-config ../cold-operational-evidence/launch.json --run-mode formal --study studies/narps --base b32483d05c16696329d40627b56608bb921d9c9a --branch codex/preparation-cold-worker-20261015 --condition baseline --capture-execution --procedure iterations/2026-10-15-cold-operational-preparation/procedure.json --procedure-sha256 6fe3722172fa6a35a45b00bae1871f7b16e0b9e52d7ea54b079e27405a93f529 --resource-readiness ../readiness-01/result.json --evidence ../cold-operational-evidence/worker-01/launch --clone-path /Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-operational-worker-01: (Launch one fresh research worker from selected study inputs)
+git-annex: First run: git-annex init
+
+Traceback (most recent call last):
+  File "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-operational-coordinator/scripts/prepare_launch.py", line 334, in <module>
+    main()
+    ~~~~^^
+  File "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-operational-coordinator/scripts/prepare_launch.py", line 189, in main
+    seed = make_seed(repo, base_commit, args.study, checkout, args.branch,
+                     args.condition, args.resolver)
+  File "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-operational-coordinator/scripts/study_seed.py", line 125, in make_seed
+    inventory = export_inputs(study, ref, checkout)
+  File "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-operational-coordinator/scripts/study_seed.py", line 86, in export_inputs
+    locations = json.loads(git(study, "annex", "whereis", "--json", "--key", key))
+                           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-operational-coordinator/scripts/study_seed.py", line 14, in git
+    return subprocess.check_output(["git", "-C", str(repo), *map(str, args)], text=text).strip() if text else subprocess.check_output(["git", "-C", str(repo), *map(str, args)])
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-operational-coordinator/.pixi/envs/default/lib/python3.13/subprocess.py", line 473, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+               **kwargs).stdout
+               ^^^^^^^^^
+  File "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-operational-coordinator/.pixi/envs/default/lib/python3.13/subprocess.py", line 578, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['git', '-C', 'studies/narps', 'annex', 'whereis', '--json', '--key', 'MD5E-s1794522--2a6f64556ba73c42049c33979409bb66.nii.gz']' returned non-zero exit status 1.

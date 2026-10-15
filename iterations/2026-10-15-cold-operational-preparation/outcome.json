@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "status": "blocked-before-research",
+  "formal_result_eligible": false,
+  "source_commit": "37aae006a140fec3b50363501be3cfdc1b08259f",
+  "registration_commit": "b32483d05c16696329d40627b56608bb921d9c9a",
+  "procedure_sha256": "6fe3722172fa6a35a45b00bae1871f7b16e0b9e52d7ea54b079e27405a93f529",
+  "native_research_sessions_started": 0,
+  "native_judge_sessions_started": 0,
+  "launch_attempts": 1,
+  "retry_attempts": 0,
+  "study_commit": "a58e822761acfe35724d3557404fc55a297e1a19",
+  "blocker": {
+    "stage": "Committed input export before native worker creation",
+    "source": "scripts/study_seed.py:86",
+    "error": "git-annex: First run: git-annex init",
+    "returncode": 1,
+    "cause": "The documented shallow clone and git submodule update --init sequence leaves the source study without annex initialization; export_inputs calls annex whereis before preparing it.",
+    "source_changed": false,
+    "checks_weakened": false,
+    "dependent_judging": "not launched because no scientific result or worker-stop receipt exists"
+  },
+  "failure_command": "evidence/commands/worker-launch/command.json",
+  "stdout": "evidence/commands/worker-launch/stdout.txt",
+  "stderr": "evidence/commands/worker-launch/stderr.txt",
+  "partial_seed": {
+    "original_directory": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-operational-worker-01",
+    "archive": "evidence/partial-worker-seed.tar.gz",
+    "sha256": "ddea89824b055aa3ffe78c3bb07aab6f4822943ae0b2d5baa35fe066fedf3ee1"
+  },
+  "host_configuration": "Retained only at external host evidence path; credentials and host launch configuration are excluded from published records."
+}

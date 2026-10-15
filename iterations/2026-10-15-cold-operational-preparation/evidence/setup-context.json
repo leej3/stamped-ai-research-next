@@ -1,0 +1,77 @@
+{
+  "initial_coordinator_commit": "477eb869ba68c330eb7a9f8a6254b46379664667",
+  "starting_environment_commit": "986333ad17125dff5b22c5321b18a476e84560e2",
+  "preparation_only": true,
+  "formal_result_eligible": false,
+  "worker_budget": 1,
+  "judge_budget": 1,
+  "pending_source_message": "Parent requested waiting for final source SHA before sealing or launching; macOS timeout process cleanup fix is finishing.",
+  "context_access_caveat": "Documented study readiness.json read along with allowed judging.md; it contained prior pilot durations and rehearsal-path metadata. No paths followed and no prior scientific artifacts or judgments read.",
+  "initial_setup_commands": [
+    {
+      "argv": [
+        "git",
+        "clone",
+        "--depth",
+        "1",
+        "--branch",
+        "main",
+        "git@github.com:leej3/stamped-ai-research-next.git",
+        "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-operational-coordinator"
+      ],
+      "returncode": 0
+    },
+    {
+      "argv": [
+        "git",
+        "fetch",
+        "--depth",
+        "1",
+        "origin",
+        "codex/env-coordinator-preparation-20261015"
+      ],
+      "returncode": 0
+    },
+    {
+      "argv": [
+        "git",
+        "show",
+        "986333ad17125dff5b22c5321b18a476e84560e2:pixi.lock"
+      ],
+      "stdout_destination": "pixi.lock",
+      "returncode": 0
+    },
+    {
+      "argv": [
+        "git",
+        "submodule",
+        "update",
+        "--init",
+        "--depth",
+        "1",
+        "--",
+        "studies/narps",
+        "assessment",
+        "skills"
+      ],
+      "returncode": 0
+    },
+    {
+      "argv": [
+        "pixi",
+        "install",
+        "--locked"
+      ],
+      "returncode": 0
+    },
+    {
+      "argv": [
+        "pixi",
+        "run",
+        "assessment-check"
+      ],
+      "returncode": 0
+    }
+  ],
+  "initial_setup_retention_limit": "These initial commands are reconstructed from this coordinator tool transcript; durable complete command stream capture starts at commands/assessment-check. Native scientific launch evidence will be complete."
+}

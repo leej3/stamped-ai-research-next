@@ -1,0 +1,12 @@
+{
+  "coordinator": "477eb869ba68c330eb7a9f8a6254b46379664667",
+  "submodules": {
+    "studies/narps": "6758fe683b447834d29df954b6be6ea07f6b20f1",
+    "assessment": "0208f82504f15b82b7582f34143ab889dd52c68d",
+    "skills": "0208f82504f15b82b7582f34143ab889dd52c68d"
+  },
+  "common_environment": {
+    "pixi.toml": "4d22a0c3e3c47289f62bfe1710a287a0271162767040d03f5dd1880f6cddb48a",
+    "pixi.lock": "f8fff1394fbeaa2ab1c4993fceb0dd6463fe0c08c81fcda397f3e752a72c4249"
+  }
+}

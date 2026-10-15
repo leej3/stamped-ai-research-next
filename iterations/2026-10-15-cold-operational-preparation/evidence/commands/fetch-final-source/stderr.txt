@@ -1,0 +1,2 @@
+From github.com:leej3/stamped-ai-research-next
+ * branch            37aae006a140fec3b50363501be3cfdc1b08259f -> FETCH_HEAD

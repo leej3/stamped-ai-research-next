@@ -1,0 +1,25 @@
+{
+  "argv": [
+    "pixi",
+    "run",
+    "assessment-procedure",
+    "check",
+    "--host-config",
+    "../cold-operational-evidence/launch.json",
+    "--base",
+    "HEAD",
+    "--study",
+    "studies/narps",
+    "--procedure",
+    "iterations/2026-10-15-cold-operational-preparation/procedure.json",
+    "--procedure-sha256",
+    "6fe3722172fa6a35a45b00bae1871f7b16e0b9e52d7ea54b079e27405a93f529"
+  ],
+  "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-operational-coordinator",
+  "started_at": "2026-10-15T22:31:42.227285+00:00",
+  "complete": true,
+  "pid": 12827,
+  "returncode": 0,
+  "elapsed_seconds": 0.49791079096030444,
+  "finished_at": "2026-10-15T22:31:42.725637+00:00"
+}

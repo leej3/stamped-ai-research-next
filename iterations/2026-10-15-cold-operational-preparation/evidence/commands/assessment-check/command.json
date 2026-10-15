@@ -1,0 +1,14 @@
+{
+  "argv": [
+    "pixi",
+    "run",
+    "assessment-check"
+  ],
+  "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-operational-coordinator",
+  "started_at": "2026-10-15T22:28:12.399931+00:00",
+  "complete": true,
+  "pid": 5420,
+  "returncode": 0,
+  "elapsed_seconds": 0.19242808397393674,
+  "finished_at": "2026-10-15T22:28:12.592624+00:00"
+}

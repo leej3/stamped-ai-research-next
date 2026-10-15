@@ -1,0 +1,147 @@
+[
+  {
+    "path": "commands/assessment-check/command.json",
+    "bytes": 382,
+    "sha256": "969b64cf5223fe70b2e33ce578037224bf221919ef0209cc8090491dd0548954"
+  },
+  {
+    "path": "commands/assessment-check/stderr.txt",
+    "bytes": 180,
+    "sha256": "65e51fca58cec0dfe1d6e67faa22d6a7a02618ac7d363253089f6f6e51c6faa6"
+  },
+  {
+    "path": "commands/assessment-check/stdout.txt",
+    "bytes": 423,
+    "sha256": "ecee40bea1179ec83e6d3227023123f7ef2b0272d9be7c51c2bd80d95fdd5d4c"
+  },
+  {
+    "path": "commands/fetch-final-source/command.json",
+    "bytes": 445,
+    "sha256": "d4ca174171a0d20663c07b1e43381e9f23669d80b6c23c2467442514d907ba0d"
+  },
+  {
+    "path": "commands/fetch-final-source/stderr.txt",
+    "bytes": 123,
+    "sha256": "f86dfaeea7c06325088ce367813dc766338a136679243662014dcc8c25a3f0c9"
+  },
+  {
+    "path": "commands/fetch-final-source/stdout.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "commands/procedure-check/command.json",
+    "bytes": 721,
+    "sha256": "2f67b5204043e92593dd4aeb75bca9b620b7fa72fc4d945a5469c2b7b44d681a"
+  },
+  {
+    "path": "commands/procedure-check/stderr.txt",
+    "bytes": 381,
+    "sha256": "0917641e435e9f68fa5a4315eac981ea2bfe5238acf87089db7b2ddfa837149c"
+  },
+  {
+    "path": "commands/procedure-check/stdout.txt",
+    "bytes": 118,
+    "sha256": "ef95843f3efd00e70da376dc37f796f0f3e2a8a5ada721bf2cea351b09f4164c"
+  },
+  {
+    "path": "commands/seal/command.json",
+    "bytes": 970,
+    "sha256": "b676be7b746b21724ec5ff38530043db49ac8b189ec709a1188ce7dbe43b7f0f"
+  },
+  {
+    "path": "commands/seal/stderr.txt",
+    "bytes": 582,
+    "sha256": "7c5ef710b5cc327a926c753df800d6f9042b1e3f182769f6bf98f8cbc4847344"
+  },
+  {
+    "path": "commands/seal/stdout.txt",
+    "bytes": 167,
+    "sha256": "aa8fc4826d527fb8275218bd2a8c9f7c3f2f9639f161612740576cadcebaa26e"
+  },
+  {
+    "path": "commands/update-final-submodules/command.json",
+    "bytes": 478,
+    "sha256": "b029addef31bbd60320b47e4bffe3131080b9b776e1839b6d0b9da5ebe48b678"
+  },
+  {
+    "path": "commands/update-final-submodules/stderr.txt",
+    "bytes": 250,
+    "sha256": "9ddc12e1639d32ef252b1225fcdfdcebb707a6781c691791e34a4600c6d5f7d5"
+  },
+  {
+    "path": "commands/update-final-submodules/stdout.txt",
+    "bytes": 87,
+    "sha256": "37d62e86213e942c33c66c16c23c3850dd50871aea567703d2e3e8c8dbce7415"
+  },
+  {
+    "path": "commands/worker-launch/command.json",
+    "bytes": 1144,
+    "sha256": "b4322b22ea16352109aa28792dd9ed0c2b8fd4a1aca8827760f4089041453090"
+  },
+  {
+    "path": "commands/worker-launch/stderr.txt",
+    "bytes": 3133,
+    "sha256": "126d7745ac660803fa704d2fa1dcf5f8cd26c99d84749a76066bf3b762fd0291"
+  },
+  {
+    "path": "commands/worker-launch/stdout.txt",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "partial-worker-seed.tar.gz",
+    "bytes": 11863,
+    "sha256": "ddea89824b055aa3ffe78c3bb07aab6f4822943ae0b2d5baa35fe066fedf3ee1"
+  },
+  {
+    "path": "prepared-sources.json",
+    "bytes": 471,
+    "sha256": "fa5483c9231cc5b5c1eefa0aa6d9e691cc952982501037ead64e65f6a9884bc5"
+  },
+  {
+    "path": "readiness-verification.json",
+    "bytes": 558,
+    "sha256": "6ca2817ea399a69dfae7f0efeb54e8eb245efb0a0333e2c836583764eb455dec"
+  },
+  {
+    "path": "run-record.py",
+    "bytes": 1186,
+    "sha256": "17e669d0aae72af25666e87b21b3a3043156054dd2b7f6df5115cc1d6948fa7e"
+  },
+  {
+    "path": "setup-context.json",
+    "bytes": 2126,
+    "sha256": "34593371381073d59f0b1c6169dbb1e54e133989cea48719ac51dad37b786199"
+  },
+  {
+    "path": "worker-01/launch/frozen-inputs/assessment-version.json",
+    "bytes": 423,
+    "sha256": "ecee40bea1179ec83e6d3227023123f7ef2b0272d9be7c51c2bd80d95fdd5d4c"
+  },
+  {
+    "path": "worker-01/launch/frozen-inputs/coordinator-guidance/judging.md",
+    "bytes": 3601,
+    "sha256": "5215114f8c2c4d099e2ef069fc31e9a9c586ff30c826096de52535f9db3b10b3"
+  },
+  {
+    "path": "worker-01/launch/frozen-inputs/judge-prompt.md",
+    "bytes": 3866,
+    "sha256": "aaba0a83e56ebedf20e7710ed7f93fd77d1713ffbc8a6a13603247425405ed7a"
+  },
+  {
+    "path": "worker-01/launch/procedure-status.json",
+    "bytes": 200,
+    "sha256": "929b4a2d666c619336e06671e72b511d4ad11ba9e4a2f4db533ab3de640b7e30"
+  },
+  {
+    "path": "worker-01/launch/procedure.json",
+    "bytes": 5073,
+    "sha256": "6fe3722172fa6a35a45b00bae1871f7b16e0b9e52d7ea54b079e27405a93f529"
+  },
+  {
+    "path": "worker-01/launch/resource-readiness.json",
+    "bytes": 6968,
+    "sha256": "90bcf01edf3bb864bbdb5cce0b11f916239d458660ee35993f1ec815f43035e6"
+  }
+]

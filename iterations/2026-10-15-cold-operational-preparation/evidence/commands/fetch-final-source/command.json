@@ -1,0 +1,17 @@
+{
+  "argv": [
+    "git",
+    "fetch",
+    "--depth",
+    "1",
+    "origin",
+    "37aae006a140fec3b50363501be3cfdc1b08259f"
+  ],
+  "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-operational-coordinator",
+  "started_at": "2026-10-15T22:30:59.829989+00:00",
+  "complete": true,
+  "pid": 11636,
+  "returncode": 0,
+  "elapsed_seconds": 0.9844035829883069,
+  "finished_at": "2026-10-15T22:31:00.814679+00:00"
+}

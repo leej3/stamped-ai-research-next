@@ -1,0 +1,1 @@
+✨ Pixi task (assessment-procedure): python scripts/assessment_procedure.py check --host-config ../cold-operational-evidence/launch.json --base HEAD --study studies/narps --procedure iterations/2026-10-15-cold-operational-preparation/procedure.json --procedure-sha256 6fe3722172fa6a35a45b00bae1871f7b16e0b9e52d7ea54b079e27405a93f529: (Seal or check a formal comparison procedure)
