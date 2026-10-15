@@ -72,10 +72,16 @@ def save_json(obj, path: Path):
 
 
 def vmPFC_atlas_mask(reference):
-    atlas = datasets.fetch_atlas_harvard_oxford(
-        "cort-maxprob-thr25-2mm", data_dir=str(OUT / "atlas-cache"))
-    atlas_img = atlas.maps if hasattr(atlas.maps, "get_fdata") else nib.load(atlas.maps)
-    labels = list(atlas.labels)
+    atlas_copy = OUT / "harvard_oxford_cort_maxprob_thr25_2mm.nii.gz"
+    labels_copy = OUT / "harvard_oxford_cort_maxprob_thr25_2mm_labels.json"
+    if atlas_copy.exists() and labels_copy.exists():
+        atlas_img = nib.load(str(atlas_copy))
+        labels = json.loads(labels_copy.read_text())
+    else:
+        atlas = datasets.fetch_atlas_harvard_oxford(
+            "cort-maxprob-thr25-2mm", data_dir=str(OUT / "atlas-cache"))
+        atlas_img = atlas.maps if hasattr(atlas.maps, "get_fdata") else nib.load(atlas.maps)
+        labels = list(atlas.labels)
     wanted = {"Frontal Medial Cortex", "Subcallosal Cortex"}
     absent = wanted.difference(labels)
     if absent:
@@ -85,9 +91,10 @@ def vmPFC_atlas_mask(reference):
     ids = [labels.index(label) for label in wanted]
     mask = np.isin(atlas_values, ids)
     OUT.mkdir(parents=True, exist_ok=True)
-    atlas_copy = OUT / "harvard_oxford_cort_maxprob_thr25_2mm.nii.gz"
     if not atlas_copy.exists():
         nib.save(atlas_img, str(atlas_copy))
+    if not labels_copy.exists():
+        labels_copy.write_text(json.dumps(labels, indent=2) + "\n")
     return mask, sorted(wanted), labels, atlas_copy
 
 
@@ -214,15 +221,23 @@ def main():
     pd.DataFrame({"participant_id": participants.participant_id, "mean_vmPFC_cope": roi_values}).to_csv(
         OUT / "vmPFC-participant-values.tsv", sep="\t", index=False)
 
-    # Atlas surface/volumetric visualization: corrected t map over the
-    # predeclared vmPFC anatomical mask; include unthresholded mean separately.
-    sig_img = nib.Nifti1Image(np.where(brain_sig & roi_mask, tmap, 0).astype(np.float32), affine, imgs[0].header)
+    # Separate the corrected whole-brain discovery map from the uncorrected
+    # vmPFC localization view; never imply that the latter is confirmatory.
+    sig_img = nib.Nifti1Image(np.where(brain_sig, tmap, 0).astype(np.float32), affine, imgs[0].header)
     display = plotting.plot_stat_map(sig_img, bg_img=None, display_mode="z",
                                      cut_coords=[-20, -10, 0, 10, 20],
-                                     title="Positive group effect in predefined vmPFC\n(whole-brain max-T FWE p ≤ .05)",
+                                     title="Positive whole-brain findings\n(max-T FWE p ≤ .05)",
                                      threshold=0.01, cmap="cold_hot", colorbar=True,
-                                     output_file=str(OUT / "vmPFC-corrected-slices.png"))
-    plotting.close()
+                                     output_file=str(OUT / "whole-brain-fwe-slices.png"))
+    display.close()
+    vm_t = np.where(roi_mask & mask, tmap, 0).astype(np.float32)
+    vm_title = ("Predefined vmPFC ROI: uncorrected positive t statistics\n"
+                f"No vmPFC voxel survived whole-brain FWE; peak FWE p={float(roi_p.min()):.3f}")
+    display = plotting.plot_stat_map(nib.Nifti1Image(vm_t, affine, imgs[0].header), bg_img=None,
+                                     display_mode="z", cut_coords=[-20, -10, 0, 10, 20],
+                                     title=vm_title, threshold=0.01, cmap="cold_hot", colorbar=True,
+                                     output_file=str(OUT / "vmPFC-unthresholded-slices.png"))
+    display.close()
     import matplotlib.pyplot as plt
     fig, ax = plt.subplots(figsize=(7.2, 4.2), constrained_layout=True)
     jitter = np.random.default_rng(SEED).normal(0, 0.045, size=n)
