@@ -136,6 +136,8 @@ pixi run launch --host-config /private/path/launch.json \
 At worker exit, retain `launch/native/worker-end-state.json` outside its checkout.
 If coordinator retention is needed, preserve the recorded artifacts unchanged in a clean `RESULT_COMMIT` descended from the worker's final commit.
 Keep launch/judgment receipts outside that commit until judging is complete. The judge validates the retained artifact inventory and grades worker versioning/publication practices at worker stop; later coordinator retention receives separate attribution.
+Publish that exact result commit and its required annex payloads before launching the judge; otherwise deferred coordinator publication can prevent a valid retrieval or replay check.
+Record the publisher and timing separately from worker-stop evidence.
 
 ```sh
 pixi run judge --host-config /private/path/launch.json \
@@ -156,6 +158,7 @@ Formal launches refuse missing or changed procedure inputs and retain `formal-ve
 ## Retaining experiments
 
 Preserve the exact scientific `RESULT_COMMIT` used for judging.
+The scientific result and its annex payloads must already be published for judging.
 After research and judging, add launch and judging receipts to the experiment repository in a later commit that records that result identity.
 Publish its branch and annex payloads, then register the final commit as `results/<run>` in the study's `.gitmodules` and Git index.
 Registration does not require a checkout:
