@@ -247,6 +247,31 @@ def test_model_cache_refresh_and_other_model_changes_do_not_change_selected_cont
     procedure.check_native(manifest, args.cli, args.codex_home)
 
 
+def test_fresh_checkout_project_trust_does_not_change_formal_profile(comparison):
+    args, manifest = comparison
+    config = args.codex_home / "config.toml"
+    for path in ("/fresh/clone", "/another/fresh/clone"):
+        with config.open("a") as stream:
+            stream.write(f'\n[projects."{path}"]\ntrust_level="trusted"\n')
+        procedure.check_host(manifest, args)
+        procedure.check_native(manifest, args.cli, args.codex_home)
+
+
+@pytest.mark.parametrize("project", [
+    '[projects."/fresh/clone"]\ntrust_level="untrusted"\n',
+    '[projects."/fresh/clone"]\ntrust_level="trusted"\nmodel="other"\n',
+    '[projects."relative/clone"]\ntrust_level="trusted"\n',
+])
+def test_project_denial_or_other_settings_cannot_bypass_profile_freeze(comparison, project):
+    args, manifest = comparison
+    with (args.codex_home / "config.toml").open("a") as stream:
+        stream.write("\n" + project)
+    with pytest.raises(SystemExit, match="native runtime/profile"):
+        procedure.check_host(manifest, args)
+    with pytest.raises(SystemExit, match="native profile settings"):
+        procedure.check_native(manifest, args.cli, args.codex_home)
+
+
 @pytest.mark.parametrize("field,value", [("context_window", 2000), ("shell_type", "new_shell"),
     ("model_messages", {"persistent_instructions": "Changed instructions"}),
     ("supported_reasoning_levels", [{"effort": "low", "description": "New UI text"}])])

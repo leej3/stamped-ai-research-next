@@ -27,9 +27,12 @@ Coordinator evidence belongs outside the judged scientific result commit and may
 Preservation can commit previously untracked output or move regular output into annex without changing its bytes.
 Available annex payloads are compared by content hash and size.
 Unavailable SHA256/SHA256E payloads can establish content identity by key digest and size; `annex_identity_without_local_payload` explicitly records this weaker check.
+For other backends such as MD5E, an unchanged exact annex key and symlink target can establish retained reference identity when either payload is unavailable; `annex_reference_identity_without_local_payload` records this separately.
+That reference check establishes neither content verification nor retrieval, and never overrides a detectable SHA256 mismatch.
+Both available payloads still require matching SHA-256 content hashes; converting a regular file to a non-SHA256 annex key requires available payload bytes for verification.
 Clean unchanged submodules can match by commit without initialization; those checks appear in `submodule_identity_without_checkout`.
 Dirty nested results require a retained, materialized matching snapshot.
-Neither identity check demonstrates independent retrieval or remote availability.
+None of these identity checks demonstrates independent retrieval or remote availability.
 
 Judges assess scientific artifacts in the exact result commit, but attribute Git/versioning/publication behavior to the worker stop receipt and execution evidence.
 A coordinator preservation commit, annex conversion or later push earns no worker credit for those actions.

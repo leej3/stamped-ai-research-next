@@ -135,10 +135,14 @@ def profile_digest(profile):
     # Exact-path trust and disabled host-skill paths vary across fresh clones.
     # Hook bytes are pinned separately; the native preflight checks visibility.
     config.get("hooks", {}).pop("state", None)
+    projects = config.get("projects", {})
+    for path, settings in list(projects.items()):
+        if Path(path).is_absolute() and settings == {"trust_level": "trusted"}:
+            del projects[path]
     overrides = config.get("skills", {}).pop("config", [])
     if any(item.get("enabled") is not False for item in overrides):
         raise SystemExit("Formal profile may only disable host skill overrides")
-    for section in ("hooks", "skills"):
+    for section in ("hooks", "skills", "projects"):
         if config.get(section) == {}:
             config.pop(section)
     return sha256(json.dumps(config, sort_keys=True, separators=(",", ":")).encode())

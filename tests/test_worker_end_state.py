@@ -309,6 +309,98 @@ def test_sha256_annex_identity_without_payload_is_explicit_and_checks_size(tmp_p
         state.validate_retained_artifacts(receipt, repo)
 
 
+def annex_worker_and_empty_clone(tmp_path, backend="MD5E"):
+    repo = init(tmp_path / "worker")
+    payload = b"synthetic NARPS input"
+    digest = (hashlib.md5(payload).hexdigest() if backend == "MD5E"
+              else hashlib.sha256(payload).hexdigest())
+    key = f"{backend}-s{len(payload)}--{digest}.nii.gz"
+    relative = Path(".git/annex/objects/ab/cd") / key / key
+    obj = repo / relative
+    obj.parent.mkdir(parents=True)
+    obj.write_bytes(payload)
+    (repo / "input").mkdir()
+    (repo / "input/observations.nii.gz").symlink_to("../" + str(relative))
+    commit(repo)
+    receipt = state.capture_worker_end_state(repo)
+    clone = tmp_path / "judge"
+    git(tmp_path, "clone", "--no-local", repo, clone)
+    git(clone, "config", "user.name", "Worker receipt fixture")
+    git(clone, "config", "user.email", "fixture@example.invalid")
+    git(clone, "config", "core.hooksPath", clone / ".git/empty-hooks")
+    assert not (clone / relative).exists()
+    return repo, clone, receipt, relative, payload
+
+
+def test_md5e_input_matches_absent_clone_payload_as_reference_only(tmp_path):
+    _, clone, receipt, _, _ = annex_worker_and_empty_clone(tmp_path)
+    report = state.validate_retained_artifacts(receipt, clone)
+    assert report["artifacts_match"] is True
+    assert report["annex_reference_identity_without_local_payload"] == ["input/observations.nii.gz"]
+    assert "annex_identity_without_local_payload" not in report
+
+
+@pytest.mark.parametrize("worker_available,judge_available", [(False, False), (False, True), (True, True)])
+def test_md5e_availability_records_reference_or_checks_full_content(tmp_path, worker_available, judge_available):
+    repo, clone, receipt, relative, payload = annex_worker_and_empty_clone(tmp_path)
+    if not worker_available:
+        (repo / relative).unlink()
+        receipt = state.capture_worker_end_state(repo)
+    if judge_available:
+        (clone / relative).parent.mkdir(parents=True)
+        (clone / relative).write_bytes(payload)
+    report = state.validate_retained_artifacts(receipt, clone)
+    if not (worker_available and judge_available):
+        assert report["annex_reference_identity_without_local_payload"] == ["input/observations.nii.gz"]
+    else:
+        assert "annex_reference_identity_without_local_payload" not in report
+        (clone / relative).write_bytes(b"changed bytes behind the exact same MD5E reference")
+        with pytest.raises(ValueError, match="artifacts differ"):
+            state.validate_retained_artifacts(receipt, clone)
+
+
+@pytest.mark.parametrize("change", ["key", "link"])
+def test_absent_md5e_payload_cannot_hide_a_changed_reference(tmp_path, change):
+    _, clone, receipt, relative, _ = annex_worker_and_empty_clone(tmp_path)
+    target = "../" + str(relative)
+    if change == "key":
+        target = target.replace(relative.name, "MD5E-s99--" + "0" * 32 + ".nii.gz")
+    else:
+        target = target.replace("/ab/cd/", "/ef/gh/")
+    (clone / "input/observations.nii.gz").unlink()
+    (clone / "input/observations.nii.gz").symlink_to(target)
+    commit(clone)
+    with pytest.raises(ValueError, match="artifacts differ"):
+        state.validate_retained_artifacts(receipt, clone)
+
+
+def test_regular_to_md5e_conversion_still_requires_payload_verification(tmp_path):
+    repo = init(tmp_path / "worker")
+    payload = b"new output requires content verification"
+    (repo / "output.bin").write_bytes(payload)
+    receipt = state.capture_worker_end_state(repo)
+    key = f"MD5E-s{len(payload)}--{hashlib.md5(payload).hexdigest()}.bin"
+    relative = Path(".git/annex/objects/ab/cd") / key / key
+    (repo / "output.bin").unlink()
+    (repo / "output.bin").symlink_to(str(relative))
+    commit(repo)
+    with pytest.raises(ValueError, match="artifacts differ"):
+        state.validate_retained_artifacts(receipt, repo)
+    (repo / relative).parent.mkdir(parents=True)
+    (repo / relative).write_bytes(payload)
+    report = state.validate_retained_artifacts(receipt, repo)
+    assert report["artifacts_match"] is True
+    assert "annex_reference_identity_without_local_payload" not in report
+
+
+def test_reference_fallback_cannot_override_a_sha256_content_mismatch(tmp_path):
+    repo, clone, _, relative, _ = annex_worker_and_empty_clone(tmp_path, "SHA256E")
+    (repo / relative).write_bytes(b"corrupt payload contradicts its content-addressed SHA256 key")
+    receipt = state.capture_worker_end_state(repo)
+    with pytest.raises(ValueError, match="artifacts differ"):
+        state.validate_retained_artifacts(receipt, clone)
+
+
 def test_interrupt_retains_receipt_before_propagating(tmp_path, monkeypatch):
     repo = init(tmp_path / "worker")
     output = tmp_path / "evidence"

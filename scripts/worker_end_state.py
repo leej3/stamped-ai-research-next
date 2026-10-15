@@ -229,7 +229,7 @@ def validate_retained_artifacts(receipt, result_checkout):
     if observed["capture_status"] != "complete":
         raise ValueError("Result checkout could not be completely inventoried")
 
-    via_key, via_commit = [], []
+    via_key, via_reference, via_commit = [], [], []
 
     def content(row, path):
         annex = row.get("annex_content", {})
@@ -258,7 +258,20 @@ def validate_retained_artifacts(receipt, result_checkout):
         for path, row in before.items():
             name = prefix + path
             if row["kind"] != "repository":
-                if content(row, name) != content(after[path], name):
+                other = after[path]
+                old_content, new_content = content(row, name), content(other, name)
+                if (row["kind"] == other["kind"] == "symlink" and row.get("annex_key") and
+                        row["annex_key"] == other.get("annex_key") and
+                        row["link_target"] == other.get("link_target") and
+                        not (row.get("annex_content", {}).get("available") and
+                             other.get("annex_content", {}).get("available")) and
+                        not (old_content["kind"] == new_content["kind"] == "file")):
+                    # Unchanged MD5E/other backend pointers survive a fresh
+                    # clone before annex materialization. This proves only the
+                    # retained reference, and cannot override a SHA256 mismatch.
+                    via_reference.append(name)
+                    continue
+                if old_content != new_content:
                     return False
                 continue
             if path not in after_nested:
@@ -295,6 +308,8 @@ def validate_retained_artifacts(receipt, result_checkout):
               "result_commit": observed["head_commit"], "artifacts_match": True}
     if via_key:
         report["annex_identity_without_local_payload"] = sorted(set(via_key))
+    if via_reference:
+        report["annex_reference_identity_without_local_payload"] = sorted(set(via_reference))
     if via_commit:
         report["submodule_identity_without_checkout"] = sorted(set(via_commit))
     return report

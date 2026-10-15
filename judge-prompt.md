@@ -21,6 +21,9 @@ Record recipient, route, required artifact coverage and host scope.
 Metadata alone does not establish access; verified access to only part of the required object remains partial.
 A separate clone verifies its recorded retrieval route, not cross-host portability.
 Assess whether the methods and evidence answer the supplied scientific question, separately from STAMPED object quality.
+Classify scientific adequacy as supported, qualified, not supported, or unable to assess, citing the reasoning and evidence.
+These categories concern support for the reported conclusion, including defensible absence of a positive finding.
+Use not supported for material inference errors and unable to assess for missing evidence; retain the scientific conclusion separately.
 Coordinator reference material, if supplied, informs checks; matching a published pipeline or answer is not required.
 Accept scientifically defensible alternative analyses and examine uncertainty, assumptions and limitations.
 
