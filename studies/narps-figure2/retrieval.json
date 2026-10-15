@@ -1,0 +1,39 @@
+{
+  "verified_at": "2026-10-15T19:03:29.978437+00:00",
+  "method": "Fresh clone with no local annex content; git annex get --from con-hub --key KEY; independently hash retrieved bytes.",
+  "remote": "https://hub.centerforopenneuroscience.org/leej3/stamped-ai-research-next.git",
+  "payloads": {
+    "narps_origdata_1.0.tgz": {
+      "annex_key": "MD5E-s993792840--ea72d6ebd269c6ac4f8cb061be477d38.0.tgz",
+      "initially_absent": true,
+      "retrieved_from": "con-hub",
+      "checksum": "md5:ea72d6ebd269c6ac4f8cb061be477d38",
+      "bytes": 993792840,
+      "match": true
+    },
+    "results.tgz": {
+      "annex_key": "MD5E-s52319949--a3ae1b9311996a758afd5cc5180a9e45.tgz",
+      "initially_absent": true,
+      "retrieved_from": "con-hub",
+      "checksum": "md5:a3ae1b9311996a758afd5cc5180a9e45",
+      "bytes": 52319949,
+      "match": true
+    },
+    "MNI152_T1_2mm.nii.gz": {
+      "annex_key": "MD5E-s1406977--457b2df45e806b35f64f11a98e6b459b.nii.gz",
+      "initially_absent": true,
+      "retrieved_from": "con-hub",
+      "checksum": "sha256:0585cd056bf5ccfb8bf97a5f6a66082d4e7caad525718fc11e40d80a827fcb92",
+      "bytes": 1406977,
+      "match": true
+    },
+    "MNI152_T1_2mm_brain_mask.nii.gz": {
+      "annex_key": "MD5E-s12480--84cd8269e63867f77249c4a8967adaf6.nii.gz",
+      "initially_absent": true,
+      "retrieved_from": "con-hub",
+      "checksum": "sha256:b71a9f2015bd10262c37e51b4d17a655d0eb0a0dec4ba48322fb5af55c86b97c",
+      "bytes": 12480,
+      "match": true
+    }
+  }
+}

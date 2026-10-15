@@ -1,24 +1,25 @@
-# STAMPED research with agents
+# Improving STAMPED research skills
 
-A prepared repository for comparing research agents with and without STAMPED guidance.
-[prompt.md](prompt.md) defines the study; [AGENTS.md](AGENTS.md) defines the project conventions.
+This repository studies whether improving reusable STAMPED skills helps research agents produce sound scientific results and better documented, reproducible research objects.
+Fresh agents repeat the same study with and without the skills.
+Independent judges assess both scientific results and STAMPED evidence using a frozen assessor; the coordinator uses their findings to improve the research skills between rounds.
 
-Add experiments under `experiments/`; each owns its Pixi environment and evolves its worktree's root `pixi.toml` as needed.
-The coordinator preserves requirements that differ from the default as named environments on merge.
-Concurrent agents use prepared external worktrees with installed submodules.
-Git stores source and metadata; git-annex stores larger artifacts and execution records on [CON Hub](https://hub.centerforopenneuroscience.org/leej3/stamped-ai-research-next).
+We expect improved skills to reduce recurring failures and variation between agents.
+Repeated baseline runs provide a reference for ordinary variability; improvements on one study do not establish transfer to other studies.
 
-Run `pixi task list` for available commands.
-`pixi run launch --help` describes worker launches; [host configuration](scripts/README.md) supplies the existing machine-specific paths.
-Working locks stay ignored; preserve the exact validated lock on a separate snapshot commit above the final task commit.
+To start a coordinator, give it this repository and a request such as:
 
-`skills/` blends [PR26](https://github.com/con/skills/pull/26) with lessons from the first trial on [our own branch](https://github.com/con/skills/tree/codex/pr26-stamped-next).
-The core STAMPED workflows are tool-neutral.
-Project-specific environment guidance is in [pixi-with-stamped](skills/skills/pixi-with-stamped/SKILL.md).
-[assessment-version.json](assessment-version.json) pins the assessor and its environment independently.
-`pixi run assessment-check` verifies both; `assessment-probes` collects a draft and `assessment-validate` checks the completed response.
+> Follow `prompt.md` using `studies/study-narps-figure2.md`.
 
-Execution trials and their complete records are retained under `experiments/`.
-They establish the tested execution routes, not scientific or skill efficacy.
+| Location | Purpose |
+| --- | --- |
+| `prompt.md` | The repeated research, assessment and skill-improvement process |
+| `studies/study-*.md` | A chosen scientific task, shared inputs, expected results and checks |
+| `AGENTS.md` | Instructions for the coordinator working through that process |
+| `skills/` | The evolving `con/skills` submodule, currently pinned to [our development branch](https://github.com/con/skills/tree/codex/pr26-stamped-next) |
+| `assessment/` | The independently frozen assessor, identified by `assessment-version.json` |
+| `experiments/` | Research workers' efforts, with their outputs, assessments and execution records |
 
-Execution evidence: [DataLad reassessment and replay](experiments/datalad-native/README.md), [independent workflow trial](experiments/skill-bundle/blind-001/README.md), and [frozen assessment](experiments/assessment-v1/README.md).
+The products are improved shareable skills, examples of assessment applied to real studies, and a complete STAMPED research object with figures showing outcomes, costs and limitations.
+Poster production is a separate task.
+Contributed study briefs can reuse the same process to test whether improvements generalize.

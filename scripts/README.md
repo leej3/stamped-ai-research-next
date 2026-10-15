@@ -1,47 +1,53 @@
-# Prepared native launches
+# Launch research workers and judges
 
-The coordinator calls `prepare_launch.py` once per fresh worker.
-Prerequisites are Python 3.11+, Git, wt-utils, Pixi, Entire and the bundled Codex CLI, plus a working source manifest/lock and an already approved native hooks file.
-Credentials remain with the existing host providers.
+Use the prepared native Codex profile and host settings in `~/.config/stamped-ai-research-next/launch.json` (`--host-config` overrides that path).
+The settings identify the repository, source environment, CLI, approved hooks, provenance resolver and annex remote; credentials stay with host providers.
+The launcher uses Git directly to create a fresh branch/worktree, initializes submodules and annex, and checks hook trust and the effective prompt before execution.
 
-One-time host defaults live outside the project at `~/.config/stamped-ai-research-next/launch.json` (override with `--host-config`).
-The JSON keys are `repo`, `env_manifest`, `approved_hooks`, `trust_sync`, `resolver`, `checkpoint_repo`, `cli`, `codex_home`, `model`, `effort`, `annex_remote`, `annex_git_url` and `annex_url`.
-Paths are absolute.
-The resolver is the approved fresh per-turn provenance command; the trust helper must reject changed hooks and explicit denials.
-For this project, `checkpoint_repo` is `leej3/stamped-ai-research-next`, remote name is `con-hub`, Git URL is `https://hub.centerforopenneuroscience.org/leej3/stamped-ai-research-next.git` and annex URL is `annex+https://hub.centerforopenneuroscience.org:443/git-annex-p2phttp`.
-No tokens or credential contents belong in this file or project.
-
-Create an isolated profile once with `create_public_profile.py --profile ABS --source-home ABS --approved-hooks ABS --receipt ABS`.
-It references the existing host auth file through a symlink without reading it, copies only already approved source-hook records, and excludes discovered host skills.
-The launcher additionally audits effective prompt visibility before executing.
-Both study conditions share this profile; only the declared STAMPED entrypoints differ.
-Common project resource skills remain available.
+## Research workers
 
 ```sh
-pixi run launch --branch codex/my-task \
-  --prompt /absolute/task.txt --evidence experiments/my-task/launch \
-  --condition baseline
+pixi run launch --branch codex/run-001 --base WORKER_START_REF \
+  --prompt studies/study-narps-figure2.md \
+  --evidence experiments/run-001/launch --condition baseline
 ```
 
-The default time bound is 240 seconds; use `--seconds` for the authorized task.
-The worker gets its own Pixi installation with the initial matched manifest and lock, plus an initialized annex remote; setup does not download all artifacts.
-The experiment may evolve its requirements afterward; the coordinator preserves differences as a named environment on merge.
-`--prepare-only` verifies effective skill exposure and stops before native execution.
-A new clone additionally needs `--kind clone --clone-path ABS`.
-Unknown hook changes or mismatched manifests, locks or remotes stop setup.
+Use `--condition skills` for the treatment, with the selected skills pinned in its starting ref.
+Both conditions receive the same scientific brief and common resource guidance.
+Workers have separate Pixi installations with the initial matched manifest and lock; their requirements may evolve during research.
+The coordinator integrates differences as named environments on merge.
 
-`prepare_checkout.py --provenance-only` installs only the fresh commit hook in an existing replay fixture.
-It requires `--checkout`, `--resolver`, and a new `--receipt` path.
-DataLad run commits retain their native `[DATALAD RUNCMD]` subject and record, with fresh provenance appended.
-Ordinary authored commits use Conventional Commits; native `datalad rerun` needs no adapter for new runs.
+The explicit starting ref must contain the common study inputs and operational resources without earlier experiments, judgments or coordinator instructions.
+Worktrees share Git objects and refs; this layout is not a security boundary against reading other history.
+Automatic `AGENTS.md` loading is disabled for workers and judges, and effective-prompt checks reject injected project instructions.
+For the control setting, see [Codex project instruction discovery](https://learn.chatgpt.com/docs/config-file/config-advanced#project-instructions-discovery).
 
-Git hooks prefer `scripts/commit_provenance_hook.py` from the current checkout, falling back to the stable checkout that installed them.
-After integrating these scripts, rerun preparation from the stable main checkout so fallback paths do not depend on a temporary implementation worktree.
-Hook trust does not automatically follow branches, clones or paths: native preparation and a real capture check are required before work.
-Bulk checkpoint pushing remains disabled; review and publish exact refs separately.
+## Independent judges
 
-The stable root's seven byte-identical native hooks were trusted separately in both the normal Desktop profile and the isolated worker profile.
-A fresh Desktop coordinator session can therefore load those approvals; an existing session must not be assumed to reload them.
-Normal Desktop global instructions are unchanged.
-Only isolated worker launches were tested for the clean public prompt boundary.
-Capture checks and publication remain distinct operations.
+```sh
+pixi run judge --branch codex/judge-001 --base RESULT_COMMIT \
+  --study studies/study-narps-figure2.md \
+  --evidence experiments/run-001/judgment-01
+```
+
+Supply the same frozen scientific brief used for the workers from the coordinator's checkout, independently of the target being judged.
+The launcher retains its exact bytes and hash and includes it in the fixed judging prompt.
+Judge sessions expose the frozen assessor and conventions; assessment helpers run outside the target in their recorded environment.
+They inspect the object's environment through authorized replay without repairing its declarations first.
+Reports and execution records stay outside the target under the supplied evidence directory.
+Keep duplicate judgments independently and use neutral result identifiers where practical.
+
+## Timing and records
+
+The Pixi tasks select Luna with high reasoning effort; keep any deliberate override fixed across the comparison.
+There is no hard cutoff by default (`--seconds 0`).
+At 90 minutes, `--review-seconds 5400` emits a review receipt without terminating the worker.
+Use a nonzero `--seconds` only for an explicitly bounded run.
+
+The launcher retains the prompt, starting commit, environment identity, hook preparation and native session streams, including stderr.
+When duct is requested, capture the launch once and keep its complete records with the run.
+`--prepare-only` checks setup and effective skill exposure without executing the task.
+`--kind clone --clone-path ABS` prepares an independent checkout; it does not itself remove shared history from the clone.
+
+`pixi run launcher-tests` checks role separation, judging inputs and timing with fixtures.
+Prompt previews check instruction exposure; a live judge and scientific replay remain separate checks before scored rounds.

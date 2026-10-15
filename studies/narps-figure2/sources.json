@@ -1,0 +1,51 @@
+{
+  "study": "NARPS Figure 2, Hypothesis 1",
+  "paper_doi": "10.1038/s41586-020-2314-9",
+  "analysis_repository": "https://github.com/poldrack/narps",
+  "analysis_release": "2.0.3",
+  "analysis_commit": "0a9d71a5ab435b40dcd50fea82d2961a43f0a3fc",
+  "input_archive": {
+    "url": "https://zenodo.org/records/3528329/files/narps_origdata_1.0.tgz",
+    "bytes": 993792840,
+    "checksum": "md5:ea72d6ebd269c6ac4f8cb061be477d38",
+    "path": "narps_origdata_1.0.tgz",
+    "license": "CC-BY-4.0",
+    "annex_key": "MD5E-s993792840--ea72d6ebd269c6ac4f8cb061be477d38.0.tgz"
+  },
+  "reference_archive": {
+    "url": "https://zenodo.org/records/3709275/files/results.tgz",
+    "bytes": 52319949,
+    "checksum": "md5:a3ae1b9311996a758afd5cc5180a9e45",
+    "path": "results.tgz",
+    "license": "CC-BY-4.0",
+    "annex_key": "MD5E-s52319949--a3ae1b9311996a758afd5cc5180a9e45.tgz"
+  },
+  "metadata_verified_on": "2026-10-15",
+  "payloads_verified": true,
+  "rehearsal_completed": false,
+  "templates": [
+    {
+      "path": "MNI152_T1_2mm.nii.gz",
+      "url": "https://git.fmrib.ox.ac.uk/fsl/data_standard/-/raw/af2512ec969b8b4d45b9f52885ce7a90626c152e/MNI152_T1_2mm.nii.gz",
+      "bytes": 1406977,
+      "checksum": "sha256:0585cd056bf5ccfb8bf97a5f6a66082d4e7caad525718fc11e40d80a827fcb92",
+      "source_release": "fsl-5_0_7",
+      "source_commit": "af2512ec969b8b4d45b9f52885ce7a90626c152e",
+      "checksum_source": "Git LFS pointer at source commit",
+      "annex_key": "MD5E-s1406977--457b2df45e806b35f64f11a98e6b459b.nii.gz"
+    },
+    {
+      "path": "MNI152_T1_2mm_brain_mask.nii.gz",
+      "url": "https://git.fmrib.ox.ac.uk/fsl/data_standard/-/raw/af2512ec969b8b4d45b9f52885ce7a90626c152e/MNI152_T1_2mm_brain_mask.nii.gz",
+      "bytes": 12480,
+      "checksum": "sha256:b71a9f2015bd10262c37e51b4d17a655d0eb0a0dec4ba48322fb5af55c86b97c",
+      "source_release": "fsl-5_0_7",
+      "source_commit": "af2512ec969b8b4d45b9f52885ce7a90626c152e",
+      "checksum_source": "Git LFS pointer at source commit",
+      "annex_key": "MD5E-s12480--84cd8269e63867f77249c4a8967adaf6.nii.gz"
+    }
+  ],
+  "template_provenance": "The NARPS 2.0.3 Dockerfile specifies fsl-mni152-templates 5.0.7-2; these are the upstream fsl-5_0_7 files.",
+  "verification": "verification.json",
+  "retrieval": "retrieval.json"
+}

@@ -26,7 +26,9 @@ pytest-evals = "==0.3.4"
 tox = "*"
 
 [tasks]
-launch = { cmd = "python scripts/prepare_launch.py", description = "Prepare and launch one isolated research worker" }
+launch = { cmd = "python scripts/prepare_launch.py --model gpt-6-luna --effort high", description = "Launch one fresh research worker from an explicit starting ref" }
+judge = { cmd = "python scripts/prepare_launch.py --role judge --model gpt-6-luna --effort high", description = "Judge one committed research object in a fresh session" }
+launcher-tests = { cmd = "python -m pytest -q tests/test_launch.py", description = "Check role separation, frozen judging, and completion-aware timing" }
 datalad-report = { cmd = "datalad -f json rerun --report", description = "Inspect a native DataLad run record" }
 datalad-replay = { cmd = "datalad rerun", description = "Replay a native DataLad run" }
 assessment-check = { cmd = "python scripts/assessment.py check", description = "Verify the frozen assessor and install its recorded runtime" }
