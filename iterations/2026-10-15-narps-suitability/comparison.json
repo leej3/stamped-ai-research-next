@@ -1,0 +1,321 @@
+{
+  "purpose": "Descriptive preparation suitability sample; no efficacy or stable variance claim.",
+  "common_prompt_sha256": [
+    "b9e9589b9459fa320accb1dda4361df9b27c53550d59f87eac8a0fb5631d4b52",
+    "b9e9589b9459fa320accb1dda4361df9b27c53550d59f87eac8a0fb5631d4b52",
+    "b9e9589b9459fa320accb1dda4361df9b27c53550d59f87eac8a0fb5631d4b52"
+  ],
+  "measurement_limits": [
+    "Setup/launcher overhead is outer wall time minus native-agent wall time; includes small launcher teardown overhead.",
+    "CPU and maximum process RSS cover setup, native CLI and descendants, not analysis alone.",
+    "All three ran concurrently on a 10-logical-CPU Apple M4 with 32 GiB memory.",
+    "Scientific agreement is not independent validation; analyses differ and run02 has a coverage-handling caveat."
+  ],
+  "runs": [
+    {
+      "run": "narps-suitability-20261015-01",
+      "condition": "baseline",
+      "model": "gpt-6-luna",
+      "reasoning_effort": "high",
+      "study_commit": "a36fb101295b111bb2d98259d7c14de7e28d8c59",
+      "coordinator_commit": "945f6e7972e3ce5ab8e142dfcfe0ac3f91504091",
+      "scientific_result_commit": "510a685426804385a8c80f6347002ee47ce606e9",
+      "scientific_result_url": "https://github.com/leej3/stamped-ai-research-next/tree/510a685426804385a8c80f6347002ee47ce606e9",
+      "branch": "codex/narps-suitability-20261015-01",
+      "native_session_id": "01a14142-7c06-7a81-bb22-93c1ef9a4db7",
+      "agent_wall_seconds": 299.8404735410586,
+      "setup_and_launcher_overhead_seconds": 65.60952645894139,
+      "aggregate_wall_seconds": 365.45,
+      "aggregate_user_cpu_seconds": 44.24,
+      "aggregate_system_cpu_seconds": 18.59,
+      "aggregate_cpu_seconds": 62.83,
+      "maximum_process_rss_bytes": 1102643200,
+      "analysis_only_wall_seconds": null,
+      "analysis_only_cpu_seconds": null,
+      "analysis_only_peak_rss_bytes": null,
+      "completed_command_records": 39,
+      "nonzero_command_records": 6,
+      "worker_returncode": 0,
+      "worker_committed_research": false,
+      "participants": 54,
+      "whole_brain_method": "Bonferroni one-sided one-sample t",
+      "vmPFC_definition": "Harvard\u2013Oxford Frontal Medial Cortex atlas proxy",
+      "mask_voxels": 198029,
+      "positive_FWE_voxels_whole_brain": 11,
+      "positive_FWE_voxels_vmPFC": 0,
+      "figures": 3,
+      "declared_reproduction_command": "pixi run python scripts/group_analysis.py",
+      "science_caveat": "Common nonzero support; anatomical ROI remains an approximation.",
+      "packaged_commit": "699deea221a88c49543288d7e6533fee9a929f4a",
+      "packaged_url": "https://github.com/leej3/stamped-ai-research-next/tree/699deea221a88c49543288d7e6533fee9a929f4a",
+      "environment_commit": "af1409b596fc58d120cd2a7f5d73d4adb3696c7f",
+      "environment_branch": "codex/env-narps-suitability-20261015-01",
+      "environment_parent": "699deea221a88c49543288d7e6533fee9a929f4a",
+      "lock_sha256": "5884bb53a343659adce7759c1b48477e2cdffb71b4838e49d14810e75dc75f21",
+      "lock_storage": "annex on one-commit environment snapshot branch; independently retrieved from CON Hub",
+      "lock_retrieved_and_identical": true,
+      "assessment_index_url": "https://github.com/leej3/stamped-ai-research-next/blob/699deea221a88c49543288d7e6533fee9a929f4a/execution/assessment/README.md",
+      "reviewed_assessment_url": "https://github.com/leej3/stamped-ai-research-next/blob/699deea221a88c49543288d7e6533fee9a929f4a/execution/assessment/reviewed/2026-10-15-2-assessment.md",
+      "original_assessment_url": "https://github.com/leej3/stamped-ai-research-next/blob/699deea221a88c49543288d7e6533fee9a929f4a/execution/assessment/native/judgment/2026-10-15-assessment.md",
+      "final_tracked_files_verified": 174,
+      "annex_verification_url": "https://github.com/leej3/stamped-ai-research-next/blob/699deea221a88c49543288d7e6533fee9a929f4a/execution/publication/assessment-delta-retrieval.json",
+      "independent_assessment_counts": {
+        "must": {
+          "met": 11,
+          "unmet": 3,
+          "partial": 3
+        },
+        "should": {
+          "met": 2,
+          "unmet": 5,
+          "not-applicable": 1,
+          "not-checked": 1
+        },
+        "may": {
+          "unmet": 1,
+          "met": 3,
+          "partial": 1
+        }
+      },
+      "coordinator_reviewed_assessment_counts": {
+        "must": {
+          "partial": 4,
+          "met": 10,
+          "unmet": 3
+        },
+        "should": {
+          "met": 2,
+          "unmet": 5,
+          "not-applicable": 1,
+          "not-checked": 1
+        },
+        "may": {
+          "unmet": 1,
+          "met": 3,
+          "partial": 1
+        }
+      },
+      "annex_current_and_historical_keys_verified": 64,
+      "entire_checkpoint_id": "01M50MJGFQBZ2TT3WHYK3FMTRD",
+      "entire_hosted_verified": true,
+      "entire_hosted_receipt_url": "https://github.com/leej3/stamped-ai-research-next/blob/699deea221a88c49543288d7e6533fee9a929f4a/execution/publication/entire-checkpoint-hosted.json",
+      "entire_project_url": "https://entire.io/gh/leej3/stamped-ai-research-next",
+      "entire_hosted_verification_command": [
+        "entire",
+        "checkpoint",
+        "explain",
+        "01M50MJGFQBZ2TT3WHYK3FMTRD",
+        "--repo",
+        "gh/leej3/stamped-ai-research-next",
+        "--json"
+      ],
+      "judge_native_session_id": "01a14150-c536-7c70-b099-e7df67476aa6",
+      "judge_wall_seconds": 450.8107237080112
+    },
+    {
+      "run": "narps-suitability-20261015-02",
+      "condition": "baseline",
+      "model": "gpt-6-luna",
+      "reasoning_effort": "high",
+      "study_commit": "a36fb101295b111bb2d98259d7c14de7e28d8c59",
+      "coordinator_commit": "945f6e7972e3ce5ab8e142dfcfe0ac3f91504091",
+      "scientific_result_commit": "466d43f39dc3d40ac64038ff03066b483b6d9457",
+      "scientific_result_url": "https://github.com/leej3/stamped-ai-research-next/tree/466d43f39dc3d40ac64038ff03066b483b6d9457",
+      "branch": "codex/narps-suitability-20261015-02",
+      "native_session_id": "01a14142-7bf9-7fc0-9fbe-851f22fddb0f",
+      "agent_wall_seconds": 350.11595220898744,
+      "setup_and_launcher_overhead_seconds": 65.62404779101257,
+      "aggregate_wall_seconds": 415.74,
+      "aggregate_user_cpu_seconds": 125.27,
+      "aggregate_system_cpu_seconds": 81.67,
+      "aggregate_cpu_seconds": 206.94,
+      "maximum_process_rss_bytes": 5707857920,
+      "analysis_only_wall_seconds": null,
+      "analysis_only_cpu_seconds": null,
+      "analysis_only_peak_rss_bytes": null,
+      "completed_command_records": 23,
+      "nonzero_command_records": 2,
+      "worker_returncode": 0,
+      "worker_committed_research": false,
+      "participants": 54,
+      "whole_brain_method": "10000 positive max-t sign flips",
+      "vmPFC_definition": "15 mm sphere at MNI (0,40,-10)",
+      "mask_voxels": 210968,
+      "positive_FWE_voxels_whole_brain": 24,
+      "positive_FWE_voxels_vmPFC": 0,
+      "figures": 3,
+      "declared_reproduction_command": "pixi run python results/analysis.py",
+      "science_caveat": "The >=90% coverage mask retains zero-valued absent observations in n=54 mean/SD calculations; not repaired.",
+      "packaged_commit": "46f2e86cd228bb05118c37c57560495d41cde114",
+      "packaged_url": "https://github.com/leej3/stamped-ai-research-next/tree/46f2e86cd228bb05118c37c57560495d41cde114",
+      "environment_commit": "96ba1be3fcecc51f5715757ce398c45709da277a",
+      "environment_branch": "codex/env-narps-suitability-20261015-02",
+      "environment_parent": "46f2e86cd228bb05118c37c57560495d41cde114",
+      "lock_sha256": "9ec8b60dd356b9b80a2697e94974fd4e8c06cb10c665fdbd43dcdc2b5b0d857a",
+      "lock_storage": "annex on one-commit environment snapshot branch; independently retrieved from CON Hub",
+      "lock_retrieved_and_identical": true,
+      "assessment_index_url": "https://github.com/leej3/stamped-ai-research-next/blob/46f2e86cd228bb05118c37c57560495d41cde114/execution/assessment/README.md",
+      "reviewed_assessment_url": "https://github.com/leej3/stamped-ai-research-next/blob/46f2e86cd228bb05118c37c57560495d41cde114/execution/assessment/reviewed/2026-10-15-2-assessment.md",
+      "original_assessment_url": "https://github.com/leej3/stamped-ai-research-next/blob/46f2e86cd228bb05118c37c57560495d41cde114/execution/assessment/native/judgment/2026-10-15-assessment.md",
+      "final_tracked_files_verified": 165,
+      "annex_verification_url": "https://github.com/leej3/stamped-ai-research-next/blob/46f2e86cd228bb05118c37c57560495d41cde114/execution/publication/assessment-delta-retrieval.json",
+      "independent_assessment_counts": {
+        "must": {
+          "met": 10,
+          "unmet": 6,
+          "partial": 1
+        },
+        "should": {
+          "met": 2,
+          "unmet": 5,
+          "not-applicable": 1,
+          "not-checked": 1
+        },
+        "may": {
+          "unmet": 1,
+          "met": 4
+        }
+      },
+      "coordinator_reviewed_assessment_counts": {
+        "must": {
+          "met": 10,
+          "unmet": 5,
+          "partial": 2
+        },
+        "should": {
+          "met": 2,
+          "unmet": 5,
+          "not-applicable": 1,
+          "not-checked": 1
+        },
+        "may": {
+          "unmet": 1,
+          "met": 4
+        }
+      },
+      "annex_current_and_historical_keys_verified": 61,
+      "entire_checkpoint_id": "01M50MMBVZTZ55KSW6ASYJZEXN",
+      "entire_hosted_verified": true,
+      "entire_hosted_receipt_url": "https://github.com/leej3/stamped-ai-research-next/blob/46f2e86cd228bb05118c37c57560495d41cde114/execution/publication/entire-checkpoint-hosted.json",
+      "entire_project_url": "https://entire.io/gh/leej3/stamped-ai-research-next",
+      "entire_hosted_verification_command": [
+        "entire",
+        "checkpoint",
+        "explain",
+        "01M50MMBVZTZ55KSW6ASYJZEXN",
+        "--repo",
+        "gh/leej3/stamped-ai-research-next",
+        "--json"
+      ],
+      "judge_native_session_id": "01a14150-c504-7533-a363-605e40d5e559",
+      "judge_wall_seconds": 362.56320700002834
+    },
+    {
+      "run": "narps-suitability-20261015-03",
+      "condition": "baseline",
+      "model": "gpt-6-luna",
+      "reasoning_effort": "high",
+      "study_commit": "a36fb101295b111bb2d98259d7c14de7e28d8c59",
+      "coordinator_commit": "945f6e7972e3ce5ab8e142dfcfe0ac3f91504091",
+      "scientific_result_commit": "f711558b2e29c376410e0e622b2f2a992f77bb41",
+      "scientific_result_url": "https://github.com/leej3/stamped-ai-research-next/tree/f711558b2e29c376410e0e622b2f2a992f77bb41",
+      "branch": "codex/narps-suitability-20261015-03",
+      "native_session_id": "01a14142-7b56-7782-8c3b-e9eab291311a",
+      "agent_wall_seconds": 300.86351862503216,
+      "setup_and_launcher_overhead_seconds": 65.42648137496786,
+      "aggregate_wall_seconds": 366.29,
+      "aggregate_user_cpu_seconds": 123.01,
+      "aggregate_system_cpu_seconds": 38.39,
+      "aggregate_cpu_seconds": 161.4,
+      "maximum_process_rss_bytes": 1697185792,
+      "analysis_only_wall_seconds": null,
+      "analysis_only_cpu_seconds": null,
+      "analysis_only_peak_rss_bytes": null,
+      "completed_command_records": 18,
+      "nonzero_command_records": 2,
+      "worker_returncode": 0,
+      "worker_committed_research": false,
+      "participants": 54,
+      "whole_brain_method": "9999 positive max-t sign flips",
+      "vmPFC_definition": "MNI box x[-15,15] y[25,65] z[-25,5]",
+      "mask_voxels": 198029,
+      "positive_FWE_voxels_whole_brain": 24,
+      "positive_FWE_voxels_vmPFC": 0,
+      "figures": 3,
+      "declared_reproduction_command": "pixi run python results/code/group_analysis.py",
+      "science_caveat": "Common nonzero support; anatomical ROI remains an approximation.",
+      "packaged_commit": "f20351ddd4c0af7c1166c3ef93d693af9eeda723",
+      "packaged_url": "https://github.com/leej3/stamped-ai-research-next/tree/f20351ddd4c0af7c1166c3ef93d693af9eeda723",
+      "environment_commit": "b17927f61cc4a798540ca2432e38361b4fed70f9",
+      "environment_branch": "codex/env-narps-suitability-20261015-03",
+      "environment_parent": "f20351ddd4c0af7c1166c3ef93d693af9eeda723",
+      "lock_sha256": "ca93973a5f20f4561dbfdbd2c36f45c5134027081cad660d074869227f9d1a7c",
+      "lock_storage": "annex on one-commit environment snapshot branch; independently retrieved from CON Hub",
+      "lock_retrieved_and_identical": true,
+      "assessment_index_url": "https://github.com/leej3/stamped-ai-research-next/blob/f20351ddd4c0af7c1166c3ef93d693af9eeda723/execution/assessment/README.md",
+      "reviewed_assessment_url": "https://github.com/leej3/stamped-ai-research-next/blob/f20351ddd4c0af7c1166c3ef93d693af9eeda723/execution/assessment/reviewed/2026-10-15-2-assessment.md",
+      "original_assessment_url": "https://github.com/leej3/stamped-ai-research-next/blob/f20351ddd4c0af7c1166c3ef93d693af9eeda723/execution/assessment/native/judgment/2026-10-15-assessment.md",
+      "final_tracked_files_verified": 168,
+      "annex_verification_url": "https://github.com/leej3/stamped-ai-research-next/blob/f20351ddd4c0af7c1166c3ef93d693af9eeda723/execution/publication/assessment-delta-retrieval.json",
+      "independent_assessment_counts": {
+        "must": {
+          "met": 8,
+          "unmet": 4,
+          "partial": 5
+        },
+        "should": {
+          "met": 2,
+          "unmet": 5,
+          "not-applicable": 1,
+          "not-checked": 1
+        },
+        "may": {
+          "unmet": 1,
+          "partial": 2,
+          "met": 2
+        }
+      },
+      "coordinator_reviewed_assessment_counts": {
+        "must": {
+          "met": 10,
+          "unmet": 4,
+          "partial": 3
+        },
+        "should": {
+          "met": 2,
+          "unmet": 5,
+          "not-applicable": 1,
+          "not-checked": 1
+        },
+        "may": {
+          "unmet": 1,
+          "partial": 2,
+          "met": 2
+        }
+      },
+      "annex_current_and_historical_keys_verified": 61,
+      "entire_checkpoint_id": "01M50MJSEC3XWRR7B21ZJM52K8",
+      "entire_hosted_verified": true,
+      "entire_hosted_receipt_url": "https://github.com/leej3/stamped-ai-research-next/blob/f20351ddd4c0af7c1166c3ef93d693af9eeda723/execution/publication/entire-checkpoint-hosted.json",
+      "entire_project_url": "https://entire.io/gh/leej3/stamped-ai-research-next",
+      "entire_hosted_verification_command": [
+        "entire",
+        "checkpoint",
+        "explain",
+        "01M50MJSEC3XWRR7B21ZJM52K8",
+        "--repo",
+        "gh/leej3/stamped-ai-research-next",
+        "--json"
+      ],
+      "judge_native_session_id": "01a14150-c4f7-7332-b642-2ace0688bfec",
+      "judge_wall_seconds": 334.1209681669716
+    }
+  ],
+  "assessment_scope": "Initial independent Luna/high judgments preserved; reviewed derivatives correct factual/mapping errors and identify their coordinator author. No scientific replay. Later preservation/publication/locks are excluded from worker credit.",
+  "entire_scope": "Verified original945 fresh native independent research repositories with prepared shared profile; not a universal claim for arbitrary worktrees or future profiles.",
+  "publication_receipts": [
+    "/Users/johnlee/.local/state/stamped-ai-research-next/pilots/narps-suitability-20261015-01/final-publication.json",
+    "/Users/johnlee/.local/state/stamped-ai-research-next/pilots/narps-suitability-20261015-02/final-publication.json",
+    "/Users/johnlee/.local/state/stamped-ai-research-next/pilots/narps-suitability-20261015-03/final-publication.json"
+  ]
+}

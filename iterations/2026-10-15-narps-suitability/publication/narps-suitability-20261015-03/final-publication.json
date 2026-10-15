@@ -1,0 +1,17 @@
+{
+  "run_id": "narps-suitability-20261015-03",
+  "science_commit": "f711558b2e29c376410e0e622b2f2a992f77bb41",
+  "packaged_commit": "f20351ddd4c0af7c1166c3ef93d693af9eeda723",
+  "branch": "codex/narps-suitability-20261015-03",
+  "environment_commit": "b17927f61cc4a798540ca2432e38361b4fed70f9",
+  "environment_branch": "codex/env-narps-suitability-20261015-03",
+  "environment_parent": "f20351ddd4c0af7c1166c3ef93d693af9eeda723",
+  "lock_sha256": "ca93973a5f20f4561dbfdbd2c36f45c5134027081cad660d074869227f9d1a7c",
+  "lock_retrieved_and_identical": true,
+  "final_git_files_verified": 168,
+  "annex_verification": "execution/publication/assessment-delta-retrieval.json",
+  "assessment_index": "execution/assessment/README.md",
+  "reviewed_report": "execution/assessment/reviewed/2026-10-15-2-assessment.md",
+  "original_report": "execution/assessment/native/judgment/2026-10-15-assessment.md",
+  "verified_at": "2026-10-15T21:06:26.917546+00:00"
+}
