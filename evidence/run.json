@@ -1,0 +1,35 @@
+{
+  "execution": {
+    "average_pcpu": 35.248275862068965,
+    "average_pmem": 0.42068965517241386,
+    "average_rss": 148799487.99999997,
+    "average_vsz": 804185833472.0001,
+    "command": "python code/compute.py",
+    "end_time": 1792086020.534792,
+    "exit_code": 0,
+    "logs_prefix": "logs/paired/run_",
+    "num_reports": 30,
+    "num_samples": 29,
+    "peak_pcpu": 100.6,
+    "peak_pmem": 0.8,
+    "peak_rss": 286310400,
+    "peak_vsz": 1479958757376,
+    "start_time": 1792085991.16651,
+    "wall_clock_time": 29.368281841278076,
+    "working_directory": "/private/tmp/stamped-paired-independent-ZWuYEl"
+  },
+  "figure_review": {
+    "checks": [
+      "A\u2013E changes at 1,1,2,2,3",
+      "mean 1.8 with interval approximately [0.761,2.839]",
+      "zero reference present",
+      "no clipped labels or misleading units"
+    ],
+    "method": "view_image on rendered PNG at 1050 x 616 pixels",
+    "status": "passed"
+  },
+  "input_commit": "03f521c9dc8894a6c86da598086530b8e3b6931b",
+  "input_sha256": "2b59e14716137369e17054e4fc5c34085c381743a4f389bdc331a0c5e4319775",
+  "lock_sha256": "e43a68666185ccd60162fda9e0fdb0a06ffe810bec373702a13479a09593a935",
+  "run_commit": "00103044a25dddb01aabda261fef06754ca5987a"
+}
