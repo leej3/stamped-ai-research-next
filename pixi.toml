@@ -8,6 +8,8 @@ python = ">=3.11,<3.14"
 git = "*"
 numpy = "*"
 scipy = "*"
+nibabel = "*"
+nilearn = "*"
 pandas = "*"
 matplotlib-base = "*"
 pyyaml = "*"
@@ -16,6 +18,12 @@ pre-commit = "*"
 tomlkit = "*"
 pytest = "*"
 rfc3339-validator = "*"
+
+[tasks]
+analysis = "python scripts/analyze.py"
+pilot = "python scripts/analyze.py --pilot"
+nibabel = ">=5.4.2,<6"
+nilearn = ">=0.14.1,<0.15"
 
 [pypi-dependencies]
 datalad = "*"
