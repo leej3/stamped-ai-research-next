@@ -1,0 +1,110 @@
+{
+  "assessment": {
+    "environment_commit": "3552d5003a2485b6405805236d5c54e7ed42f097",
+    "environment_repository": "https://github.com/leej3/stamped-ai-research-next.git",
+    "sha256": {
+      "pixi.lock": "f8fff1394fbeaa2ab1c4993fceb0dd6463fe0c08c81fcda397f3e752a72c4249",
+      "pixi.toml": "131fc78549d9fe54a3e6c055e59ef753b1794df77507777b21c9529a611e7b89"
+    },
+    "source_commit": "0208f82504f15b82b7582f34143ab889dd52c68d",
+    "version": 1
+  },
+  "comparison_id": "preparation-e2e-20261015",
+  "conditions": [
+    "baseline",
+    "discover-general",
+    "discover-science",
+    "stamped-explicit"
+  ],
+  "coordinator_commit": "181dc103758052347fea0d5d85aee7fcb08601f8",
+  "fixed_files": {
+    "assessment-version.json": "ecee40bea1179ec83e6d3227023123f7ef2b0272d9be7c51c2bd80d95fdd5d4c",
+    "comparison-plan.md": "9ac5920768d56757569b738b2b7297234ca5e6bd7f8bb0168612e63adc6eab02",
+    "conditions.json": "2d41f2690f427f468ddec46c8d40944d28a21f2013315dde8c1e4618b29d79c5",
+    "iterations/2026-10-15-coordinator-preparation/requirements.json": "93aed9fb12d4af0ae19bf0e5dc686625076ac021c3dc47e7f7484779a73a558f",
+    "judge-prompt.md": "f523a53d9522fa3f8a01d236ce9fcdc21f274ce769212c76cb2810ae547ed8f0",
+    "pixi.toml": "4d22a0c3e3c47289f62bfe1710a287a0271162767040d03f5dd1880f6cddb48a",
+    "prompt.md": "3d4a5a4470651d4a838475e23ebdcf3579a610384e21ed710b1b8c6a5fb872f5",
+    "scripts/assessment.py": "f37bb4984b10ef0db32812817e90cbb88bc9c10b8f660e2df4f4f641283daf9c",
+    "scripts/assessment_procedure.py": "94d838c37e68432c89dcaa0250f377a6c27d66cd0b64f9faf4c72304080a28f8",
+    "scripts/commit_provenance_hook.py": "3b7b0265e1525df78e0fb2c318c1a8cea481cd0ab1947bd562a918581b6cc4a4",
+    "scripts/launch_native_probe.py": "0e4068d86ee9e616d7c65bccbaf2dc9f3b04d216245d103e12cda2b26a780e53",
+    "scripts/prepare_checkout.py": "a6a195afe621a6abf7df1aa7e202022831f3e3a7a9cb07dd2b7c3e468a79ae95",
+    "scripts/prepare_launch.py": "71f55170c7df4d4b42f82217e98f9de8a50bcd8d8517a04396ef6c70f83030ce",
+    "scripts/readiness.py": "0e8aef2cb58df17be12687ccdf7deb9721fdf58c4f0c94fecdfbec8edd40d4af",
+    "scripts/research_conditions.py": "f706c769726429e276103d4bc15401d4d5e8c19471b7dba548341d204fa6248a",
+    "scripts/study_seed.py": "4a6c632dc6bc03edadcca94d646df4f7a53e795d074967eab09f22e2ba9d0f25",
+    "scripts/worker_end_state.py": "9a030cc4074069c1fe50d9e4365bfb12948d2dc1175ae1cf76a24c1f0b0b274c"
+  },
+  "gitmodules_sha256": "e41107bf0970ce67e679a56a2745addafb546b0c7ab495058bda113781f5afbb",
+  "host_identity": {
+    "approved_hooks_sha256": "d0ed5dd1cf5d2d269abfdb6c00161b406d0233b7a4bf1ff72f288405b4959b10",
+    "cli_sha256": "50ab38ba21d0d9f8346f32f41848382f15b556190f3c7a07e885a4fb73e379c8",
+    "model_contract": {
+      "model": "gpt-6-luna",
+      "sha256": "1c65667ce803469a68604e5731558ea0b461788faeb46ec4f96d5bfa6fd727a0"
+    },
+    "profile_settings_sha256": "db1f0c944b962bc4e1e6b39341fc64c791fe9d209eec832b50a379396fd9b5b8",
+    "resolver_sha256": "7b99c2dbe34bd90cbd5cf2ac54525e7fbf855f081b0c451733755cbfefc55960",
+    "trust_sync_sha256": "04d802a48c5638be4a6b397c97cd77d6885e9432ac3387a199fece3a3366f7fe"
+  },
+  "replay": {
+    "entrypoint": "object-documented",
+    "max_get_gb": 5.0,
+    "maximum_attempts": 1,
+    "remove_shipped_outputs": true,
+    "rtol": 1e-06,
+    "scope": "inspection-remote-retrieval-one-fresh-replay",
+    "source": "exact-local-result-commit",
+    "timeout_seconds": 7200
+  },
+  "resources": {
+    "path": "iterations/2026-10-15-coordinator-preparation/requirements.json",
+    "sha256": "93aed9fb12d4af0ae19bf0e5dc686625076ac021c3dc47e7f7484779a73a558f"
+  },
+  "settings": {
+    "judge": {
+      "capture_execution": false,
+      "effort": "high",
+      "model": "gpt-6-luna",
+      "review_seconds": 5400,
+      "seconds": 0
+    },
+    "research": {
+      "capture_execution": true,
+      "effort": "high",
+      "model": "gpt-6-luna",
+      "review_seconds": 5400,
+      "seconds": 0
+    }
+  },
+  "starting_environment": {
+    "commit": "986333ad17125dff5b22c5321b18a476e84560e2",
+    "sha256": {
+      "pixi.lock": "f8fff1394fbeaa2ab1c4993fceb0dd6463fe0c08c81fcda397f3e752a72c4249",
+      "pixi.toml": "4d22a0c3e3c47289f62bfe1710a287a0271162767040d03f5dd1880f6cddb48a"
+    }
+  },
+  "status": "sealed",
+  "study": {
+    "commit": "6758fe683b447834d29df954b6be6ea07f6b20f1",
+    "guidance_dependencies": [],
+    "guidance_files": {
+      "coordinator-guidance/judging.md": "5215114f8c2c4d099e2ef069fc31e9a9c586ff30c826096de52535f9db3b10b3"
+    },
+    "guidance_objects": {
+      "coordinator-guidance/judging.md": {
+        "git_blob": "e22af444c11f86b8494a4c2a7aadf5ee1e06cdfa",
+        "mode": "100644",
+        "sha256": "5215114f8c2c4d099e2ef069fc31e9a9c586ff30c826096de52535f9db3b10b3",
+        "size": 3601
+      }
+    },
+    "input_tree": "a484f41db2095ef116f08d359f9b95ad41981698",
+    "path": "studies/narps",
+    "reference": null,
+    "rubric": "coordinator-guidance/judging.md",
+    "task_sha256": "e92bf2e0c0db4cc49688cce9f9dfff8a236fc4ec151c09961719f49f31310cc8"
+  },
+  "version": 1
+}

@@ -1,0 +1,9 @@
+{
+  "checkout": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/e2e-worker",
+  "kind": "independent-repository",
+  "branch": "codex/preparation-e2e-worker-20261015",
+  "base": "HEAD",
+  "base_commit": "10954f44af2599d4b1d556836d6922c38303921a",
+  "worker_commit": "5a3fe31b80d33177ab5afd4183083880fe6afa19",
+  "role": "research"
+}

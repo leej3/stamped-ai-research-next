@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "attempt_id": "preparation-e2e-worker-20261015",
+  "attempt_type": "preparation",
+  "status": "failed-before-research",
+  "failed_stage": "native-prelaunch-profile-validation",
+  "failure_message": "Formal procedure drift: native profile settings",
+  "failure_context": "The native profile trust settings differed from the sealed procedure after checkout preparation.",
+  "research_session_started": false,
+  "research_session_id": null,
+  "scientific_result_commit": null,
+  "source_seed_commit": "5a3fe31b80d33177ab5afd4183083880fe6afa19",
+  "source_coordinator_commit": "10954f44af2599d4b1d556836d6922c38303921a",
+  "assigned_condition": "baseline",
+  "sealed_procedure_sha256": "4f4a364de60d537b2957758af333e3f64180358521185e9d741e88b8360a4922",
+  "preservation_scope": "Original seed ancestry, complete launch receipts and console; no research output or assessment was produced.",
+  "original_receipts": "execution/manifest.json",
+  "environment_snapshot_branch": "codex/env-preparation-e2e-worker-20261015",
+  "original_lock_sha256": "f8fff1394fbeaa2ab1c4993fceb0dd6463fe0c08c81fcda397f3e752a72c4249",
+  "classification_note": "The formal-verified intermediate receipts are retained unchanged; they do not indicate a completed native launch or scientific result."
+}

@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "copied_at": "2026-10-15T22:22:38.871755+00:00",
+  "original_files_unchanged": true,
+  "files": [
+    {
+      "path": "execution/launch/annex-remote.json",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/e2e-worker-launch/annex-remote.json",
+      "bytes": 433,
+      "sha256": "e4aa1b3540b3e2ba42f23b46bc8b6023be429dc6b716e6c29beb93acd6f69979"
+    },
+    {
+      "path": "execution/launch/checkout.json",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/e2e-worker-launch/checkout.json",
+      "bytes": 358,
+      "sha256": "e6aa6a94e12b0bd774d52e58676cb8f26ee9c40a6b11fcc2f9e88bf3b0542c62"
+    },
+    {
+      "path": "execution/launch/environment.json",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/e2e-worker-launch/environment.json",
+      "bytes": 562,
+      "sha256": "cdc4f7bf3fe5b37bc6fb998cd692e70dc96dce84eee32cf7837c486f71d9e459"
+    },
+    {
+      "path": "execution/launch/frozen-inputs/assessment-version.json",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/e2e-worker-launch/frozen-inputs/assessment-version.json",
+      "bytes": 423,
+      "sha256": "ecee40bea1179ec83e6d3227023123f7ef2b0272d9be7c51c2bd80d95fdd5d4c"
+    },
+    {
+      "path": "execution/launch/frozen-inputs/coordinator-guidance/judging.md",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/e2e-worker-launch/frozen-inputs/coordinator-guidance/judging.md",
+      "bytes": 3601,
+      "sha256": "5215114f8c2c4d099e2ef069fc31e9a9c586ff30c826096de52535f9db3b10b3"
+    },
+    {
+      "path": "execution/launch/frozen-inputs/judge-prompt.md",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/e2e-worker-launch/frozen-inputs/judge-prompt.md",
+      "bytes": 3491,
+      "sha256": "f523a53d9522fa3f8a01d236ce9fcdc21f274ce769212c76cb2810ae547ed8f0"
+    },
+    {
+      "path": "execution/launch/input-boundary.json",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/e2e-worker-launch/input-boundary.json",
+      "bytes": 15087,
+      "sha256": "af7884876d4f2a645fd48d0347672d3b4286e59a9dd924587e4d97ac02f225f8"
+    },
+    {
+      "path": "execution/launch/native/condition-assignment.json",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/e2e-worker-launch/native/condition-assignment.json",
+      "bytes": 545,
+      "sha256": "5a8598a157f47725e5413bff639e44a74e14928ef1906b4c1502d6e159a3b203"
+    },
+    {
+      "path": "execution/launch/native/procedure-status.json",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/e2e-worker-launch/native/procedure-status.json",
+      "bytes": 187,
+      "sha256": "f24a707e68fe10272a3aab236b26a3861f119d79a65618ada621eb21f1b07609"
+    },
+    {
+      "path": "execution/launch/native/prompt.txt",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/e2e-worker-launch/native/prompt.txt",
+      "bytes": 1939,
+      "sha256": "75f98be93b31f886d06303fefafd401afe8a9e27a3afc483b194a348775c2a0e"
+    },
+    {
+      "path": "execution/launch/preparation.json",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/e2e-worker-launch/preparation.json",
+      "bytes": 1327,
+      "sha256": "7a09c6ada48c9561f8d939ad8f2c3dab305c6f738d6963545b2bf22cb2a1e910"
+    },
+    {
+      "path": "execution/launch/procedure-status.json",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/e2e-worker-launch/procedure-status.json",
+      "bytes": 187,
+      "sha256": "f24a707e68fe10272a3aab236b26a3861f119d79a65618ada621eb21f1b07609"
+    },
+    {
+      "path": "execution/launch/procedure.json",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/e2e-worker-launch/procedure.json",
+      "bytes": 5060,
+      "sha256": "4f4a364de60d537b2957758af333e3f64180358521185e9d741e88b8360a4922"
+    },
+    {
+      "path": "execution/launch/research-prompt.md",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/e2e-worker-launch/research-prompt.md",
+      "bytes": 1939,
+      "sha256": "75f98be93b31f886d06303fefafd401afe8a9e27a3afc483b194a348775c2a0e"
+    },
+    {
+      "path": "execution/launch/resource-readiness.json",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/e2e-worker-launch/resource-readiness.json",
+      "bytes": 6968,
+      "sha256": "90bcf01edf3bb864bbdb5cce0b11f916239d458660ee35993f1ec815f43035e6"
+    },
+    {
+      "path": "execution/console.txt",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/e2e-worker-console.txt",
+      "bytes": 11010,
+      "sha256": "370986abf5be58a3f24b5db86a6af3ad0e79ed427ffd3f595018b201195ddc8c"
+    }
+  ]
+}
