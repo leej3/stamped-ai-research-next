@@ -1,0 +1,54 @@
+[
+  {
+    "argv": [
+      "git",
+      "init",
+      "--template=",
+      "-b",
+      "codex/preparation-stamped-independent-retained",
+      "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-independent-retained"
+    ],
+    "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015",
+    "returncode": 0
+  },
+  {
+    "argv": [
+      "git",
+      "-C",
+      "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-independent-retained",
+      "remote",
+      "add",
+      "origin",
+      "git@github.com:leej3/stamped-ai-research-next.git"
+    ],
+    "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015",
+    "returncode": 0
+  },
+  {
+    "argv": [
+      "git",
+      "-C",
+      "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-independent-retained",
+      "config",
+      "remote.origin.annex-ignore",
+      "true"
+    ],
+    "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015",
+    "returncode": 0
+  },
+  {
+    "argv": [
+      "git",
+      "-C",
+      "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-independent-retained",
+      "fetch",
+      "--depth=2",
+      "--no-tags",
+      "origin",
+      "refs/heads/codex/preparation-stamped-retained-20261015:refs/heads/codex/preparation-stamped-independent-retained",
+      "refs/heads/codex/preparation-stamped-annex-retained-20261015:refs/heads/git-annex"
+    ],
+    "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015",
+    "returncode": 128
+  }
+]

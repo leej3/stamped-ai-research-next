@@ -1,0 +1,6 @@
+{
+  "phase": "Git fetch",
+  "cause": "Attempted to fetch into the checked-out unborn local branch; no scientific execution or payload retrieval occurred.",
+  "retained": true,
+  "recovery": "New independent repository and evidence directory; fetch retained code into remote-tracking ref."
+}

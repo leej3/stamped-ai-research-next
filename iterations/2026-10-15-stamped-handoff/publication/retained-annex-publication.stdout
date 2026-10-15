@@ -1,0 +1,14 @@
+copy coordinator-evidence/coordinator-actions/worker-launch.log (to con-hub...) 
+5%    31.98 KiB        39 MiB/s 0s100%  688.36 KiB        3 MiB/s 0s                                  ok
+copy coordinator-evidence/judgment-01/failed-target.tar.gz (to con-hub...) 
+4%    31.98 KiB        73 MiB/s 0s100%  799.96 KiB      175 MiB/s 0s                                  ok
+copy coordinator-evidence/launch/native/events.jsonl (to con-hub...) 
+5%    31.98 KiB        64 MiB/s 0s100%  678.77 KiB      160 MiB/s 0s                                  ok
+copy coordinator-evidence/launch/native/worker-end-state.json (to con-hub...) 
+21%   31.98 KiB        63 MiB/s 0s100%  151.81 KiB      140 MiB/s 0s                                  ok
+copy coordinator-evidence/worker-external-artifacts/narps-h1-replay-7405a7b.tar.gz (to con-hub...) 
+0%    31.98 KiB        55 MiB/s 2s8%    9 MiB            39 MiB/s 2s15%   17.77 MiB        39 MiB/s 2s21%   25.18 MiB        37 MiB/s 2s29%   34.51 MiB        47 MiB/s 1s37%   43.82 MiB        46 MiB/s 1s45%   52.91 MiB        45 MiB/s 1s53%   62.22 MiB        46 MiB/s 1s59%   69.4 MiB         34 MiB/s 1s65%   76.84 MiB        37 MiB/s 1s73%   86.27 MiB        47 MiB/s 0s81%   95.61 MiB        47 MiB/s 0s89%   104.98 MiB       47 MiB/s 0s97%   114.16 MiB       46 MiB/s 0s100%  118.09 MiB       46 MiB/s 0s                                  ok
+copy coordinator-evidence/worker-stop-original/artifacts.tar.gz (to con-hub...) 
+0%    31.98 KiB        57 MiB/s 1s9%    8.68 MiB         43 MiB/s 1s19%   17.52 MiB        44 MiB/s 1s28%   26.05 MiB        43 MiB/s 1s37%   34.67 MiB        43 MiB/s 1s46%   43.42 MiB        44 MiB/s 1s56%   52.22 MiB        44 MiB/s 0s65%   61.22 MiB        45 MiB/s 0s75%   70.15 MiB        45 MiB/s 0s84%   78.93 MiB        44 MiB/s 0s94%   88.14 MiB        46 MiB/s 0s100%  93.49 MiB        43 MiB/s 0s                                  ok
+copy coordinator-evidence/worker-stop-original/worker-end-state.json ok
+(recording state in git...)

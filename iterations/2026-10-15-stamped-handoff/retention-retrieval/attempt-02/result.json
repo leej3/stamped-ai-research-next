@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "verified_at": "2026-10-15T23:53:12.092665+00:00",
+  "passed": true,
+  "retained_commit": "5e85b7a5118a1c7ff7d7fe0406cf0292fb239726",
+  "annex_metadata_commit": "f8486a1541b76d1c2df664d6fd13e47ece8a0722",
+  "retained_additions_only": 134,
+  "annex_paths": 7,
+  "annex_bytes": 224385277,
+  "payloads": [
+    {
+      "path": "coordinator-evidence/coordinator-actions/worker-launch.log",
+      "key": "SHA256E-s704881--ba735890f34e098edbb8aad1feb569f40d6b782566af853a84e9771d4ad232ff.log",
+      "sha256": "ba735890f34e098edbb8aad1feb569f40d6b782566af853a84e9771d4ad232ff",
+      "bytes": 704881
+    },
+    {
+      "path": "coordinator-evidence/judgment-01/failed-target.tar.gz",
+      "key": "SHA256E-s819154--71cbadab0bb4a7f33beba2f6f35378c4c0b49428287cf6e7e03e52324c7cc694.tar.gz",
+      "sha256": "71cbadab0bb4a7f33beba2f6f35378c4c0b49428287cf6e7e03e52324c7cc694",
+      "bytes": 819154
+    },
+    {
+      "path": "coordinator-evidence/launch/native/events.jsonl",
+      "key": "SHA256E-s695062--d64493f5b39135e0dad2147a12744332f038fbe5562b4541d2649dcd8ed18554",
+      "sha256": "d64493f5b39135e0dad2147a12744332f038fbe5562b4541d2649dcd8ed18554",
+      "bytes": 695062
+    },
+    {
+      "path": "coordinator-evidence/launch/native/worker-end-state.json",
+      "key": "SHA256E-s155453--0c381872b334e7a226479f2595c3e169fcf4dcd45b9906e40cc33d1256797e6d.json",
+      "sha256": "0c381872b334e7a226479f2595c3e169fcf4dcd45b9906e40cc33d1256797e6d",
+      "bytes": 155453
+    },
+    {
+      "path": "coordinator-evidence/worker-external-artifacts/narps-h1-replay-7405a7b.tar.gz",
+      "key": "SHA256E-s123828826--7f4b5bcbbcebe93989353d46fd558e5b2edcd5636e3d759d425d20520e4687d5.tar.gz",
+      "sha256": "7f4b5bcbbcebe93989353d46fd558e5b2edcd5636e3d759d425d20520e4687d5",
+      "bytes": 123828826
+    },
+    {
+      "path": "coordinator-evidence/worker-stop-original/artifacts.tar.gz",
+      "key": "SHA256E-s98026448--d51aa710628e7c4726b96614f38f5bd968cce6cd7502f6febc3385593e47cd6e.tar.gz",
+      "sha256": "d51aa710628e7c4726b96614f38f5bd968cce6cd7502f6febc3385593e47cd6e",
+      "bytes": 98026448
+    },
+    {
+      "path": "coordinator-evidence/worker-stop-original/worker-end-state.json",
+      "key": "SHA256E-s155453--0c381872b334e7a226479f2595c3e169fcf4dcd45b9906e40cc33d1256797e6d.json",
+      "sha256": "0c381872b334e7a226479f2595c3e169fcf4dcd45b9906e40cc33d1256797e6d",
+      "bytes": 155453
+    }
+  ],
+  "result_refs_unchanged": true,
+  "unexpected_gitlinks": false,
+  "scope": "Fresh repository and empty annex object store on same host. Only added coordinator evidence downloaded; exact original research payload retrieval was independently verified earlier. No scientific execution."
+}

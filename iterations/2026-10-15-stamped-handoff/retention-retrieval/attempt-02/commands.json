@@ -1,0 +1,236 @@
+[
+  {
+    "argv": [
+      "git",
+      "init",
+      "--template=",
+      "-b",
+      "codex/preparation-stamped-independent-retained",
+      "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-independent-retained-02"
+    ],
+    "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015",
+    "returncode": 0
+  },
+  {
+    "argv": [
+      "git",
+      "-C",
+      "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-independent-retained-02",
+      "remote",
+      "add",
+      "origin",
+      "git@github.com:leej3/stamped-ai-research-next.git"
+    ],
+    "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015",
+    "returncode": 0
+  },
+  {
+    "argv": [
+      "git",
+      "-C",
+      "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-independent-retained-02",
+      "config",
+      "remote.origin.annex-ignore",
+      "true"
+    ],
+    "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015",
+    "returncode": 0
+  },
+  {
+    "argv": [
+      "git",
+      "-C",
+      "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-independent-retained-02",
+      "fetch",
+      "--depth=2",
+      "--no-tags",
+      "origin",
+      "refs/heads/codex/preparation-stamped-retained-20261015:refs/remotes/origin/retained",
+      "refs/heads/codex/preparation-stamped-annex-retained-20261015:refs/heads/git-annex"
+    ],
+    "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015",
+    "returncode": 0
+  },
+  {
+    "argv": [
+      "git",
+      "-C",
+      "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-independent-retained-02",
+      "reset",
+      "--hard",
+      "refs/remotes/origin/retained"
+    ],
+    "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015",
+    "returncode": 0
+  },
+  {
+    "argv": [
+      "git",
+      "-C",
+      "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-independent-retained-02",
+      "rev-parse",
+      "HEAD"
+    ],
+    "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015",
+    "returncode": 0
+  },
+  {
+    "argv": [
+      "git",
+      "-C",
+      "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-independent-retained-02",
+      "rev-parse",
+      "git-annex"
+    ],
+    "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015",
+    "returncode": 0
+  },
+  {
+    "argv": [
+      "git",
+      "-C",
+      "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-independent-retained-02",
+      "rev-parse",
+      "HEAD^"
+    ],
+    "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015",
+    "returncode": 0
+  },
+  {
+    "argv": [
+      "git",
+      "-C",
+      "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-independent-retained-02",
+      "diff-tree",
+      "--no-commit-id",
+      "--name-status",
+      "-r",
+      "HEAD"
+    ],
+    "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015",
+    "returncode": 0
+  },
+  {
+    "argv": [
+      "git",
+      "-C",
+      "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-independent-retained-02",
+      "ls-files",
+      "--stage"
+    ],
+    "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015",
+    "returncode": 0
+  },
+  {
+    "argv": [
+      "pixi",
+      "run",
+      "--manifest-path",
+      "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-coordinator/pixi.toml",
+      "git",
+      "-C",
+      "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-independent-retained-02",
+      "annex",
+      "init"
+    ],
+    "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015",
+    "returncode": 0
+  },
+  {
+    "argv": [
+      "git",
+      "-C",
+      "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-independent-retained-02",
+      "remote",
+      "add",
+      "con-hub",
+      "https://hub.centerforopenneuroscience.org/leej3/stamped-ai-research-next.git"
+    ],
+    "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015",
+    "returncode": 0
+  },
+  {
+    "argv": [
+      "git",
+      "-C",
+      "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-independent-retained-02",
+      "config",
+      "remote.con-hub.annexurl",
+      "annex+https://hub.centerforopenneuroscience.org:443/git-annex-p2phttp"
+    ],
+    "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015",
+    "returncode": 0
+  },
+  {
+    "argv": [
+      "git",
+      "-C",
+      "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-independent-retained-02",
+      "config",
+      "remote.con-hub.skipFetchAll",
+      "true"
+    ],
+    "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015",
+    "returncode": 0
+  },
+  {
+    "argv": [
+      "pixi",
+      "run",
+      "--manifest-path",
+      "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-coordinator/pixi.toml",
+      "git",
+      "-C",
+      "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-independent-retained-02",
+      "annex",
+      "find",
+      "--anything",
+      "--json",
+      "coordinator-evidence"
+    ],
+    "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015",
+    "returncode": 0
+  },
+  {
+    "argv": [
+      "pixi",
+      "run",
+      "--manifest-path",
+      "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-coordinator/pixi.toml",
+      "git",
+      "-C",
+      "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-independent-retained-02",
+      "annex",
+      "get",
+      "--from=con-hub",
+      "coordinator-evidence"
+    ],
+    "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015",
+    "returncode": 0
+  },
+  {
+    "argv": [
+      "git",
+      "-C",
+      "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-independent-retained-02",
+      "status",
+      "--porcelain"
+    ],
+    "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015",
+    "returncode": 0
+  },
+  {
+    "argv": [
+      "git",
+      "-C",
+      "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-independent-retained-02",
+      "ls-remote",
+      "--refs",
+      "origin",
+      "refs/heads/codex/preparation-stamped-worker-20261015",
+      "refs/heads/codex/preparation-stamped-result-20261015"
+    ],
+    "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015",
+    "returncode": 0
+  }
+]
