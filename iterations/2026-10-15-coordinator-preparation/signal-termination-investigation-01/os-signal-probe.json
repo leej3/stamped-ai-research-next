@@ -1,0 +1,13 @@
+{
+  "observed_at": "2026-10-15T22:28:59.844922+00:00",
+  "process_state_before_reap": "7735  7735 Z",
+  "signal_before_reap": {
+    "type": "PermissionError",
+    "errno": 1
+  },
+  "reaped_returncode": -15,
+  "signal_after_reap": {
+    "type": "ProcessLookupError",
+    "errno": 3
+  }
+}

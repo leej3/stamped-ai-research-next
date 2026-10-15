@@ -1,0 +1,5 @@
+init failed-preparation-independent-recipient 
+
+
+ok
+(recording state in git...)

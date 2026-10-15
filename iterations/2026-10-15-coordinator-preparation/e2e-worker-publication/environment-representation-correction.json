@@ -1,0 +1,8 @@
+{
+  "prior_commit": "ea41bc8f5cbf52ac401564d73df6fd6192a9ee2a",
+  "published_before_correction": false,
+  "cause": "Existing annex clean filter retained its known pointer despite annex.largefiles=nothing; unannex was needed before Git add.",
+  "operation": "git annex unannex -- pixi.lock; git add -f -- pixi.lock; amend unpublished environment commit with fresh provenance",
+  "corrected_commit": "37e630ba1f0c3131efecbb68d8a7918398d0ee2d",
+  "git_show_bytes_verified": true
+}

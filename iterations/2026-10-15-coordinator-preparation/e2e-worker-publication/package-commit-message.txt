@@ -1,0 +1,7 @@
+chore(preparation): retain failed native prelaunch attempt
+
+Preserve the original seed and all launch receipts after profile trust
+validation stopped the attempt before a research session began.
+
+Co-Authored-By: Codex Desktop 26.1007.71326 (runtime codex-cli 0.162.0-alpha.17.2) / gpt-6-astra <codex@openai.com>
+Codex-Reasoning-Effort: ultra

@@ -162,18 +162,31 @@ def wait_for_worker(process, output, hard_limit, review_after):
                 return True
 
 
+def signal_worker_group(process, signum):
+    """Reap an exited leader but still signal any surviving group members."""
+    process.poll()
+    try:
+        os.killpg(process.pid, signum)
+    except ProcessLookupError:
+        pass
+    except PermissionError:
+        # macOS can report EPERM for a group containing only its zombie leader.
+        # The leader may have exited just after poll(); reap and retry once.
+        # Do not suppress denial for a live leader or a still-existing group.
+        if process.poll() is None:
+            raise
+        try:
+            os.killpg(process.pid, signum)
+        except ProcessLookupError:
+            pass
+
+
 def terminate_worker_group(process):
     """Stop a timed-out/interrupted process group before observing its state."""
-    try:
-        os.killpg(process.pid, signal.SIGTERM)
-    except ProcessLookupError:
-        pass
+    signal_worker_group(process, signal.SIGTERM)
     time.sleep(5)
     # The leader may exit before descendants stop writing artifacts.
-    try:
-        os.killpg(process.pid, signal.SIGKILL)
-    except ProcessLookupError:
-        pass
+    signal_worker_group(process, signal.SIGKILL)
     process.wait()
 
 

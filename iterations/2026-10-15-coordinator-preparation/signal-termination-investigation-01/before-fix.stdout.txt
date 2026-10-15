@@ -1,0 +1,103 @@
+FF                                                                       [100%]
+=================================== FAILURES ===================================
+_________ test_failed_and_timed_out_workers_keep_stop_receipt[0-True] __________
+
+tmp_path = PosixPath('/private/var/folders/dh/6x04w9891gx_4x1t649nc42w0000gn/T/pytest-of-johnlee/pytest-174/test_failed_and_timed_out_work0')
+exit_code = 0, timeout = True
+
+    @pytest.mark.parametrize("exit_code,timeout", [(0, False), (7, False), (0, True)])
+    def test_failed_and_timed_out_workers_keep_stop_receipt(tmp_path, exit_code, timeout):
+        repo = init(tmp_path / "worker")
+        output = tmp_path / "evidence"
+        output.mkdir()
+        program = ("import pathlib,sys,time; "
+                   "pathlib.Path('result.txt').write_text('worker output'); "
+                   "print('ready', flush=True); sys.stdin.read(); "
+                   + ("time.sleep(60)" if timeout else f"sys.exit({exit_code})"))
+        process = subprocess.Popen([sys.executable, "-c", program], cwd=repo,
+                                   stdin=subprocess.PIPE, stdout=subprocess.PIPE, process_group=0)
+        record = {}
+        try:
+            assert select.select([process.stdout], [], [], 5)[0], "Worker did not become ready"
+            assert process.stdout.readline() == b"ready\n"
+            # Keep the production signal grace period. Mocking time.sleep globally
+            # also changes subprocess.wait's polling and races SIGTERM/SIGKILL.
+>           assert launch.wait_and_capture_worker(process, b"fixture", output, repo, record,
+                                                  "research", .2 if timeout else 0, 0) == timeout
+
+tests/test_worker_end_state.py:237: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/launch_native_probe.py:195: in wait_and_capture_worker
+    terminate_worker_group(process)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+process = <Popen: returncode: -15 args: ['/Users/johnlee/code/CON/stamped-ai-research-...>
+
+    def terminate_worker_group(process):
+        """Stop a timed-out/interrupted process group before observing its state."""
+        try:
+            os.killpg(process.pid, signal.SIGTERM)
+        except ProcessLookupError:
+            pass
+        time.sleep(5)
+        # The leader may exit before descendants stop writing artifacts.
+        try:
+>           os.killpg(process.pid, signal.SIGKILL)
+E           PermissionError: [Errno 1] Operation not permitted
+
+scripts/launch_native_probe.py:173: PermissionError
+______________ test_interrupt_retains_receipt_before_propagating _______________
+
+args = (<Popen: returncode: -15 args: ['/Users/johnlee/code/CON/stamped-ai-research-...>, PosixPath('/private/var/folders/dh/6x04w9891gx_4x1t649nc42w0000gn/T/pytest-of-johnlee/pytest-174/test_interrupt_retains_receipt0/evidence'), 0, 0)
+
+    def interrupt(*args):
+>       raise KeyboardInterrupt()
+E       KeyboardInterrupt
+
+tests/test_worker_end_state.py:417: KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+tmp_path = PosixPath('/private/var/folders/dh/6x04w9891gx_4x1t649nc42w0000gn/T/pytest-of-johnlee/pytest-174/test_interrupt_retains_receipt0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x11635afd0>
+
+    def test_interrupt_retains_receipt_before_propagating(tmp_path, monkeypatch):
+        repo = init(tmp_path / "worker")
+        output = tmp_path / "evidence"
+        output.mkdir()
+        process = subprocess.Popen([sys.executable, "-c", "import time; print('ready', flush=True); time.sleep(60)"],
+                                   stdin=subprocess.PIPE, stdout=subprocess.PIPE, process_group=0)
+        def interrupt(*args):
+            raise KeyboardInterrupt()
+        monkeypatch.setattr(launch, "wait_for_worker", interrupt)
+        try:
+            assert select.select([process.stdout], [], [], 5)[0], "Worker did not become ready"
+            assert process.stdout.readline() == b"ready\n"
+            with pytest.raises(KeyboardInterrupt):
+>               launch.wait_and_capture_worker(process, b"fixture", output, repo, {}, "research", 0, 0)
+
+tests/test_worker_end_state.py:423: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+scripts/launch_native_probe.py:199: in wait_and_capture_worker
+    terminate_worker_group(process)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+process = <Popen: returncode: -15 args: ['/Users/johnlee/code/CON/stamped-ai-research-...>
+
+    def terminate_worker_group(process):
+        """Stop a timed-out/interrupted process group before observing its state."""
+        try:
+            os.killpg(process.pid, signal.SIGTERM)
+        except ProcessLookupError:
+            pass
+        time.sleep(5)
+        # The leader may exit before descendants stop writing artifacts.
+        try:
+>           os.killpg(process.pid, signal.SIGKILL)
+E           PermissionError: [Errno 1] Operation not permitted
+
+scripts/launch_native_probe.py:173: PermissionError
+=========================== short test summary info ============================
+FAILED tests/test_worker_end_state.py::test_failed_and_timed_out_workers_keep_stop_receipt[0-True]
+FAILED tests/test_worker_end_state.py::test_interrupt_retains_receipt_before_propagating
+2 failed in 10.59s

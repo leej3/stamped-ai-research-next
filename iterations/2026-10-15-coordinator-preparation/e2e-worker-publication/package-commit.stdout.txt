@@ -1,0 +1,20 @@
+[codex/preparation-e2e-worker-20261015 4daf37c] chore(preparation): retain failed native prelaunch attempt
+ 18 files changed, 1133 insertions(+)
+ create mode 100644 attempt.json
+ create mode 100644 execution/console.txt
+ create mode 100644 execution/launch/annex-remote.json
+ create mode 100644 execution/launch/checkout.json
+ create mode 100644 execution/launch/environment.json
+ create mode 100644 execution/launch/frozen-inputs/assessment-version.json
+ create mode 100644 execution/launch/frozen-inputs/coordinator-guidance/judging.md
+ create mode 100644 execution/launch/frozen-inputs/judge-prompt.md
+ create mode 100644 execution/launch/input-boundary.json
+ create mode 100644 execution/launch/native/condition-assignment.json
+ create mode 100644 execution/launch/native/procedure-status.json
+ create mode 100644 execution/launch/native/prompt.txt
+ create mode 100644 execution/launch/preparation.json
+ create mode 100644 execution/launch/procedure-status.json
+ create mode 100644 execution/launch/procedure.json
+ create mode 100644 execution/launch/research-prompt.md
+ create mode 100644 execution/launch/resource-readiness.json
+ create mode 100644 execution/manifest.json

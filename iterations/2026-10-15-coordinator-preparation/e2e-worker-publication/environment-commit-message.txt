@@ -1,0 +1,7 @@
+chore(env): retain failed preparation launch lock
+
+Keep the exact validated lock as Git content on this environment branch,
+one commit above the preserved failed attempt.
+
+Co-Authored-By: Codex Desktop 26.1007.71326 (runtime codex-cli 0.162.0-alpha.17.2) / gpt-6-astra <codex@openai.com>
+Codex-Reasoning-Effort: ultra

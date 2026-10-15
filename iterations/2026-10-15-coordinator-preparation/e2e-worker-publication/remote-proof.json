@@ -1,0 +1,13 @@
+{
+  "verified_at": "2026-10-15T22:26:15.201671+00:00",
+  "remote": "git@github.com:leej3/stamped-ai-research-next.git",
+  "refs": {
+    "refs/heads/codex/env-preparation-e2e-worker-20261015": "37e630ba1f0c3131efecbb68d8a7918398d0ee2d",
+    "refs/heads/codex/preparation-e2e-worker-20261015": "4daf37c70dca92b981861b05794696afe0dbfad7",
+    "refs/heads/git-annex": "3bfbe739cd3de7015eaffb6ae6c39595ae450926"
+  },
+  "push": "atomic, no force; existing git-annex metadata fetched and merged",
+  "source_seed_commit": "5a3fe31b80d33177ab5afd4183083880fe6afa19",
+  "package_commit": "4daf37c70dca92b981861b05794696afe0dbfad7",
+  "environment_commit": "37e630ba1f0c3131efecbb68d8a7918398d0ee2d"
+}

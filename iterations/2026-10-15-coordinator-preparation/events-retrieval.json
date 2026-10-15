@@ -1,0 +1,63 @@
+{
+  "verified": true,
+  "independent_repository": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/annex-recipient",
+  "same_host": true,
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "annex",
+        "lookupkey",
+        "/Users/johnlee/.local/share/wt-utils/worktrees/776c/stamped-ai-research-next/iterations/2026-10-15-coordinator-preparation/cold-coordinator-02/events.jsonl"
+      ],
+      "cwd": "/Users/johnlee/.local/share/wt-utils/worktrees/776c/stamped-ai-research-next",
+      "returncode": 0,
+      "stdout": "MD5E-s344947--7956e14858664b056f0e4f43387d8430\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "annex",
+        "fromkey",
+        "MD5E-s344947--7956e14858664b056f0e4f43387d8430",
+        "coordinator-events.jsonl"
+      ],
+      "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/annex-recipient",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "git-annex: key (MD5E-s344947--7956e14858664b056f0e4f43387d8430) is not present in backend (use --force to override this sanity check)\n\n"
+    },
+    {
+      "argv": [
+        "git",
+        "annex",
+        "fromkey",
+        "--force",
+        "MD5E-s344947--7956e14858664b056f0e4f43387d8430",
+        "coordinator-events.jsonl"
+      ],
+      "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/annex-recipient",
+      "returncode": 0,
+      "stdout": "fromkey coordinator-events.jsonl ok\n(recording state in git...)\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "annex",
+        "transferkey",
+        "MD5E-s344947--7956e14858664b056f0e4f43387d8430",
+        "--from",
+        "con-hub"
+      ],
+      "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/annex-recipient",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "key": "MD5E-s344947--7956e14858664b056f0e4f43387d8430",
+  "sha256": "b8395f8913c679284b40fc6b57c2b60b9f30d99c3e8f01a947d851b0a7409c96",
+  "bytes": 344947
+}

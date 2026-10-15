@@ -1,0 +1,19 @@
+{
+  "argv": [
+    "pixi",
+    "run",
+    "--locked",
+    "--manifest-path",
+    "/Users/johnlee/code/CON/stamped-ai-research-next/pixi.toml",
+    "git",
+    "-C",
+    "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/e2e-worker",
+    "annex",
+    "copy",
+    "--all",
+    "--to",
+    "con-hub",
+    "--json"
+  ],
+  "returncode": 0
+}

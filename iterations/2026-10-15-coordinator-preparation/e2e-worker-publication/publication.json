@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "completed_at": "2026-10-15T22:28:01.589338+00:00",
+  "attempt_status": "failed-before-research",
+  "published": true,
+  "source_seed_commit": "5a3fe31b80d33177ab5afd4183083880fe6afa19",
+  "package_commit": "4daf37c70dca92b981861b05794696afe0dbfad7",
+  "package_branch": "codex/preparation-e2e-worker-20261015",
+  "environment_commit": "37e630ba1f0c3131efecbb68d8a7918398d0ee2d",
+  "environment_branch": "codex/env-preparation-e2e-worker-20261015",
+  "environment_parent": "4daf37c70dca92b981861b05794696afe0dbfad7",
+  "lock_git_content_bytes": 162231,
+  "lock_sha256": "f8fff1394fbeaa2ab1c4993fceb0dd6463fe0c08c81fcda397f3e752a72c4249",
+  "remote_proof": "remote-proof.json",
+  "retrieval_proof": "independent-retrieval.json",
+  "original_receipts_count": 16,
+  "original_receipts_unchanged": true,
+  "source_inputs_verified": 58,
+  "annex_inputs_retrieved": 54,
+  "registration_commands": [
+    [
+      "git",
+      "-C",
+      "studies/narps",
+      "config",
+      "-f",
+      ".gitmodules",
+      "submodule.results/preparation-e2e-worker-20261015.path",
+      "results/preparation-e2e-worker-20261015"
+    ],
+    [
+      "git",
+      "-C",
+      "studies/narps",
+      "config",
+      "-f",
+      ".gitmodules",
+      "submodule.results/preparation-e2e-worker-20261015.url",
+      "git@github.com:leej3/stamped-ai-research-next.git"
+    ],
+    [
+      "git",
+      "-C",
+      "studies/narps",
+      "update-index",
+      "--add",
+      "--cacheinfo",
+      "160000,4daf37c70dca92b981861b05794696afe0dbfad7,results/preparation-e2e-worker-20261015"
+    ],
+    [
+      "git",
+      "-C",
+      "studies/narps",
+      "add",
+      ".gitmodules"
+    ]
+  ],
+  "registration_executed": false,
+  "root_and_study_repositories_edited": false,
+  "final_worker_branch": "codex/preparation-e2e-worker-20261015",
+  "worker_clean": true,
+  "working_lock_ignored": true,
+  "prior_unpublished_environment_representation_retained_in": "commits.json"
+}

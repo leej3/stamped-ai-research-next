@@ -1,0 +1,18 @@
+{
+  "verified_at": "2026-10-15T22:29:28.390890+00:00",
+  "fix_commit": "b418147dc3c76c677925a8de359f1b2d5853d8c1",
+  "classification": "Demonstrated production macOS zombie-process-group behavior, not solely a fixture artifact.",
+  "cause": "After SIGTERM the unreaped group leader is a zombie; killpg can return EPERM until process.poll reaps the leader.",
+  "fix": "Reap before signaling; if leader exits during signal race, reap and retry once. Propagate EPERM for live leaders or still-denied groups. Always send final group signal even after leader exits.",
+  "before_fix": "2 failed in 10.59s with real 5-second grace and worker readiness handshake.",
+  "after_fix": "29 passed, 1 existing macOS non-UTF8 filename skip in 23.25s.",
+  "surviving_descendant_test": "Real forked child ignored SIGTERM and continued writing; final group SIGKILL stopped child and output writes.",
+  "receipt_hashes": {
+    "before-fix.stdout.txt": "3690722f3febfe27d590023cd7df4a6dae12e2477d0d07322856925d4a9756c2",
+    "after-fix.stdout.txt": "df8ea89d954f0072b7d3a092ff84384269960aeeae21c5a1d678fd29d7fb1b23",
+    "os-signal-probe.json": "3d905f70f8667df5bdc6d4aa45e10633d750b070622e48550434ebbd197eac9f",
+    "after-fix.stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "before-fix.stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "launcher_sha256": "8c3cf5e548accd62b8951d6668748c3ba9013dce665607ecd802ecb2d02d3fa3"
+}

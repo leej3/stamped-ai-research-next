@@ -5,8 +5,12 @@ import hashlib
 import json
 import os
 from pathlib import Path
+import select
+import signal
 import subprocess
 import sys
+import time
+from types import SimpleNamespace
 
 import pytest
 
@@ -217,24 +221,29 @@ def test_annex_preservation_compares_available_bytes_and_retains_link_semantics(
 
 
 @pytest.mark.parametrize("exit_code,timeout", [(0, False), (7, False), (0, True)])
-def test_failed_and_timed_out_workers_keep_stop_receipt(tmp_path, monkeypatch, exit_code, timeout):
+def test_failed_and_timed_out_workers_keep_stop_receipt(tmp_path, exit_code, timeout):
     repo = init(tmp_path / "worker")
     output = tmp_path / "evidence"
     output.mkdir()
-    monkeypatch.setattr(launch.time, "sleep", lambda _: None)
-    program = ("import pathlib,sys,time; sys.stdin.read(); "
+    program = ("import pathlib,sys,time; "
                "pathlib.Path('result.txt').write_text('worker output'); "
+               "print('ready', flush=True); sys.stdin.read(); "
                + ("time.sleep(60)" if timeout else f"sys.exit({exit_code})"))
     process = subprocess.Popen([sys.executable, "-c", program], cwd=repo,
-                               stdin=subprocess.PIPE, process_group=0)
+                               stdin=subprocess.PIPE, stdout=subprocess.PIPE, process_group=0)
     record = {}
     try:
+        assert select.select([process.stdout], [], [], 5)[0], "Worker did not become ready"
+        assert process.stdout.readline() == b"ready\n"
+        # Keep the production signal grace period. Mocking time.sleep globally
+        # also changes subprocess.wait's polling and races SIGTERM/SIGKILL.
         assert launch.wait_and_capture_worker(process, b"fixture", output, repo, record,
                                               "research", .2 if timeout else 0, 0) == timeout
     finally:
         if process.poll() is None:
             process.kill()
             process.wait()
+        process.stdout.close()
     receipt = json.loads((output / "worker-end-state.json").read_text())
     assert receipt["worker"]["timed_out"] == timeout
     assert receipt["worker"]["returncode"] == process.returncode
@@ -405,13 +414,93 @@ def test_interrupt_retains_receipt_before_propagating(tmp_path, monkeypatch):
     repo = init(tmp_path / "worker")
     output = tmp_path / "evidence"
     output.mkdir()
-    process = subprocess.Popen([sys.executable, "-c", "import time; time.sleep(60)"],
-                               stdin=subprocess.PIPE, process_group=0)
-    monkeypatch.setattr(launch.time, "sleep", lambda _: None)
+    process = subprocess.Popen([sys.executable, "-c", "import time; print('ready', flush=True); time.sleep(60)"],
+                               stdin=subprocess.PIPE, stdout=subprocess.PIPE, process_group=0)
     def interrupt(*args):
         raise KeyboardInterrupt()
     monkeypatch.setattr(launch, "wait_for_worker", interrupt)
-    with pytest.raises(KeyboardInterrupt):
-        launch.wait_and_capture_worker(process, b"fixture", output, repo, {}, "research", 0, 0)
+    try:
+        assert select.select([process.stdout], [], [], 5)[0], "Worker did not become ready"
+        assert process.stdout.readline() == b"ready\n"
+        with pytest.raises(KeyboardInterrupt):
+            launch.wait_and_capture_worker(process, b"fixture", output, repo, {}, "research", 0, 0)
+    finally:
+        if process.poll() is None:
+            process.kill()
+            process.wait()
+        process.stdout.close()
     assert process.poll() is not None
     assert json.loads((output / "worker-end-state.json").read_text())["worker"]["stop_reason"] == "launcher-interrupted"
+
+
+def test_final_group_kill_stops_descendant_after_leader_exits(tmp_path):
+    program = '''
+import os, pathlib, signal, time
+if os.fork() == 0:
+    signal.signal(signal.SIGTERM, signal.SIG_IGN)
+    artifact = pathlib.Path('descendant-output.txt')
+    artifact.write_text('ready')
+    print('ready ' + str(os.getpid()), flush=True)
+    for number in range(1200):
+        artifact.write_text(str(number))
+        time.sleep(.05)
+else:
+    time.sleep(60)
+'''
+    process = subprocess.Popen([sys.executable, "-c", program], cwd=tmp_path,
+                               stdout=subprocess.PIPE, process_group=0)
+    child_pid = None
+    try:
+        assert select.select([process.stdout], [], [], 5)[0], "Descendant did not become ready"
+        marker = process.stdout.readline().decode().split()
+        assert marker[0] == "ready"
+        child_pid = int(marker[1])
+        launch.terminate_worker_group(process)
+        assert process.returncode == -signal.SIGTERM
+        # A killed descendant may briefly remain a zombie awaiting its new
+        # parent's reap; it must not remain alive or continue writing output.
+        time.sleep(.1)
+        status = subprocess.run(["ps", "-o", "stat=", "-p", str(child_pid)],
+                                capture_output=True, text=True)
+        assert status.returncode == 1 or status.stdout.strip().startswith("Z")
+        artifact = tmp_path / "descendant-output.txt"
+        before = (artifact.read_bytes(), artifact.stat().st_mtime_ns)
+        time.sleep(.2)
+        assert (artifact.read_bytes(), artifact.stat().st_mtime_ns) == before
+    finally:
+        if child_pid is not None:
+            try:
+                os.kill(child_pid, signal.SIGKILL)
+            except ProcessLookupError:
+                pass
+        if process.poll() is None:
+            process.kill()
+        process.wait()
+        process.stdout.close()
+
+
+@pytest.mark.parametrize("leader_alive", [True, False])
+def test_permission_denial_for_remaining_group_is_not_suppressed(monkeypatch, leader_alive):
+    process = SimpleNamespace(pid=12345, poll=lambda: None if leader_alive else -15)
+    calls = []
+    def denied(pid, signum):
+        calls.append((pid, signum))
+        raise PermissionError("Synthetic live group permission denial")
+    monkeypatch.setattr(launch.os, "killpg", denied)
+    with pytest.raises(PermissionError, match="permission denial"):
+        launch.signal_worker_group(process, signal.SIGKILL)
+    assert len(calls) == (1 if leader_alive else 2)
+
+
+def test_exit_between_poll_and_signal_reaps_and_retries_once(monkeypatch):
+    polls = iter([None, -15])
+    process = SimpleNamespace(pid=12345, poll=lambda: next(polls))
+    calls = []
+    def signaled(pid, signum):
+        calls.append((pid, signum))
+        if len(calls) == 1:
+            raise PermissionError("Synthetic zombie leader")
+        raise ProcessLookupError("Group disappeared after reaping")
+    monkeypatch.setattr(launch.os, "killpg", signaled)
+    launch.signal_worker_group(process, signal.SIGKILL)
+    assert len(calls) == 2

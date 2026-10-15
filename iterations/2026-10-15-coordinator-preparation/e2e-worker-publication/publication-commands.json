@@ -1,0 +1,73 @@
+[
+  {
+    "name": "push-url",
+    "argv": [
+      "git",
+      "remote",
+      "get-url",
+      "--push",
+      "origin"
+    ],
+    "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/e2e-worker",
+    "at": "2026-10-15T22:26:10.671287+00:00",
+    "returncode": 0
+  },
+  {
+    "name": "fetch-annex-metadata",
+    "argv": [
+      "git",
+      "fetch",
+      "--no-tags",
+      "origin",
+      "refs/heads/git-annex:refs/remotes/origin/git-annex"
+    ],
+    "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/e2e-worker",
+    "at": "2026-10-15T22:26:11.901570+00:00",
+    "returncode": 0
+  },
+  {
+    "name": "merge-annex-metadata",
+    "argv": [
+      "pixi",
+      "run",
+      "--locked",
+      "--manifest-path",
+      "/Users/johnlee/code/CON/stamped-ai-research-next/pixi.toml",
+      "git",
+      "annex",
+      "merge"
+    ],
+    "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/e2e-worker",
+    "at": "2026-10-15T22:26:12.079365+00:00",
+    "returncode": 0
+  },
+  {
+    "name": "atomic-ssh-push",
+    "argv": [
+      "git",
+      "push",
+      "--atomic",
+      "origin",
+      "refs/heads/codex/preparation-e2e-worker-20261015:refs/heads/codex/preparation-e2e-worker-20261015",
+      "refs/heads/codex/env-preparation-e2e-worker-20261015:refs/heads/codex/env-preparation-e2e-worker-20261015",
+      "refs/heads/git-annex:refs/heads/git-annex"
+    ],
+    "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/e2e-worker",
+    "at": "2026-10-15T22:26:14.337546+00:00",
+    "returncode": 0
+  },
+  {
+    "name": "remote-refs",
+    "argv": [
+      "git",
+      "ls-remote",
+      "origin",
+      "refs/heads/codex/preparation-e2e-worker-20261015",
+      "refs/heads/codex/env-preparation-e2e-worker-20261015",
+      "refs/heads/git-annex"
+    ],
+    "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/e2e-worker",
+    "at": "2026-10-15T22:26:15.201424+00:00",
+    "returncode": 0
+  }
+]

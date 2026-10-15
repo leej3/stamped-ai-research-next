@@ -1,0 +1,14 @@
+{
+  "source_seed_commit": "5a3fe31b80d33177ab5afd4183083880fe6afa19",
+  "package_commit": "4daf37c70dca92b981861b05794696afe0dbfad7",
+  "package_branch": "codex/preparation-e2e-worker-20261015",
+  "environment_commit": "37e630ba1f0c3131efecbb68d8a7918398d0ee2d",
+  "environment_branch": "codex/env-preparation-e2e-worker-20261015",
+  "environment_parent": "4daf37c70dca92b981861b05794696afe0dbfad7",
+  "lock_sha256": "f8fff1394fbeaa2ab1c4993fceb0dd6463fe0c08c81fcda397f3e752a72c4249",
+  "lock_storage": "regular Git content on environment branch only",
+  "publication_remote": "git@github.com:leej3/stamped-ai-research-next.git",
+  "prior_unpublished_environment_commit": "ea41bc8f5cbf52ac401564d73df6fd6192a9ee2a",
+  "prior_unpublished_lock_annex_key": "SHA256E-s162231--f8fff1394fbeaa2ab1c4993fceb0dd6463fe0c08c81fcda397f3e752a72c4249.lock",
+  "lock_bytes": 162231
+}

@@ -14,7 +14,9 @@ NARPS is the selected first formal study.
 
 The native capture verifier initially rejected a valid shell write because it expected a file-edit event; [diagnosis](native-capture-investigation-01/diagnosis.json) retains the distinction and correction.
 The first sealed worker launch stopped before native research because adding exact-path project trust changed the profile digest.
-Preserve that failed attempt separately; do not count it as a scientific run.
+[The failed attempt](https://github.com/leej3/stamped-ai-research-next/tree/4daf37c70dca92b981861b05794696afe0dbfad7) is registered as a lazy study experiment; no scientific session started.
+An independent clone retrieved all 54 maps and verified all 58 input files; see [publication and retrieval](e2e-worker-publication/publication.json).
+A later real-process regression exposed a macOS zombie process-group cleanup failure; [diagnosis and before/after evidence](signal-termination-investigation-01/diagnosis.json) records the production fix.
 
 The working and development assessor now use [0208f825](https://github.com/con/skills/tree/0208f82504f15b82b7582f34143ab889dd52c68d), with [independent assessment evidence](https://github.com/con/skills/tree/5d65d3eff7f9c91d973b63694e0e945d7971eb60/stamped/blind-runs/2026-10-15-assessment-evidence).
 Earlier judgments retain their original assessor identities.
