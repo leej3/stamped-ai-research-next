@@ -1,0 +1,6 @@
+{
+  "fresh_replay": "passed",
+  "artifact_count": 15,
+  "comparison": "byte-identical",
+  "source_commit": "5af5fc123436783abbb2c55b0fe163bf91b373ea"
+}
