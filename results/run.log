@@ -1,0 +1,69 @@
+ WARN Using local manifest /Users/johnlee/.local/share/stamped-ai-research-next/workers/narps-suitability-20261015-02/pixi.toml rather than /Users/johnlee/code/CON/stamped-ai-research-next/pixi.toml from environment variable `PIXI_PROJECT_MANIFEST`
+permutation voxels 12000/210968
+permutation voxels 24000/210968
+permutation voxels 36000/210968
+permutation voxels 48000/210968
+permutation voxels 60000/210968
+permutation voxels 72000/210968
+permutation voxels 84000/210968
+permutation voxels 96000/210968
+permutation voxels 108000/210968
+permutation voxels 120000/210968
+permutation voxels 132000/210968
+permutation voxels 144000/210968
+permutation voxels 156000/210968
+permutation voxels 168000/210968
+permutation voxels 180000/210968
+permutation voxels 192000/210968
+permutation voxels 204000/210968
+permutation voxels 210968/210968
+/Users/johnlee/.local/share/stamped-ai-research-next/workers/narps-suitability-20261015-02/results/analysis.py:181: UserWarning: Non-finite values detected. These values will be replaced with zeros.
+  display = plotting.plot_stat_map(t_img, bg_img=datasets.load_mni152_template(resolution=2),
+{
+  "n_participants": 54,
+  "excluded": [],
+  "analysis_voxels": 210968,
+  "coverage_rule": "nonzero effect estimate in >=90% of participants",
+  "permutations": 10000,
+  "seed": 20261015,
+  "df": 53,
+  "software": {
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "nibabel": "5.4.2",
+    "nilearn": "0.14.1"
+  },
+  "max_t_fwe_0.05_cutoff": 5.370707482037897,
+  "whole_brain_positive_peak": {
+    "t": 6.617173246302241,
+    "p_fwe": 0.0007999200079992001,
+    "xyz_mni_mm": [
+      -26.0,
+      -102.0,
+      -3.599997043609619
+    ]
+  },
+  "whole_brain_significant_voxels_p_fwe_lt_0.05": 24,
+  "vmPFC_roi": {
+    "definition": "sphere radius 15 mm centered at MNI (0.0, 40.0, -10.0); common-coverage voxels",
+    "n_voxels": 1480,
+    "participant_mean_effect_mean": -0.002745715032700185,
+    "participant_mean_effect_sd": 0.07860946342416966,
+    "ci95": [
+      -0.024201968241033697,
+      0.018710538175633326
+    ],
+    "one_sample_t": -0.25667141777500524,
+    "df": 53,
+    "p_one_sided_parametric": 0.6007868979268798,
+    "p_one_sided_signflip": 0.6074392560743925,
+    "highest_voxel_t": 3.1540947035130844,
+    "highest_voxel_p_fwe": 1.0,
+    "highest_voxel_xyz_mni_mm": [
+      -2.0,
+      28.0,
+      -17.99999761581421
+    ]
+  },
+  "map_semantics": "group mean and t summarize supplied first-level gain-modulator coefficients; they are not BOLD change per currency unit or standardized z statistics"
+}
