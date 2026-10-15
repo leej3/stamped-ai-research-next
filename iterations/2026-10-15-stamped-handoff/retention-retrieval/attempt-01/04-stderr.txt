@@ -1,0 +1,1 @@
+fatal: refusing to fetch into branch 'refs/heads/codex/preparation-stamped-independent-retained' checked out at '/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-independent-retained'

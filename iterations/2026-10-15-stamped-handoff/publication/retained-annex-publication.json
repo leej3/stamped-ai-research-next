@@ -1,0 +1,18 @@
+{
+  "started_at": "2026-10-15T23:51:18.936290+00:00",
+  "finished_at": "2026-10-15T23:51:27.893961+00:00",
+  "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-worker",
+  "argv": [
+    "pixi",
+    "run",
+    "--manifest-path",
+    "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-coordinator/pixi.toml",
+    "git",
+    "annex",
+    "copy",
+    "--to",
+    "con-hub",
+    "coordinator-evidence"
+  ],
+  "returncode": 0
+}

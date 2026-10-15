@@ -1,0 +1,130 @@
+{
+  "schema_version": 1,
+  "experiment_class": "preparation-handoff-validation",
+  "excluded_from_formal_scientific_comparisons": true,
+  "comparison_id": "preparation-stamped-handoff-20261015",
+  "procedure_sha256": "a77f16480c94d475b39639a9263853f5d43ea90987dbed67ff6e392b914c06fa",
+  "source_coordinator_commit": "faf25fda791f590bc4c842cfd311749869490f3d",
+  "registration_commit": "2c046d9",
+  "worker_result_commit": "8b5bcdaa999289a47f066ba829511d450301c573",
+  "worker_native_session": "01a141db-2f2c-70a3-aaa9-5b6a46c89601",
+  "worker_elapsed_seconds": 1485.4044077079743,
+  "worker_exit_code": 0,
+  "worker_stop_receipt_sha256": "0c381872b334e7a226479f2595c3e169fcf4dcd45b9906e40cc33d1256797e6d",
+  "worker_reported_conclusion": "No whole-brain-corrected support for positive vmPFC gain response; 0 of 1422 predefined vmPFC voxels passed correction, best voxel FWE p=.782. This is the worker report, not an independently graded conclusion.",
+  "worker_reported_replay": "15 generated artifacts byte-identical in own separate-checkout replay.",
+  "independent_result_retrieval": {
+    "passed": true,
+    "annex_files": 58,
+    "annex_bytes": 98752182,
+    "regular_git_files": 112,
+    "nonannex_symlinks": 6,
+    "scope": "Fresh repository and empty annex store on same host; skills gitlink verified without installation."
+  },
+  "publication_before_judge": true,
+  "worker_native_verification": {
+    "local": true,
+    "github_refs": true,
+    "hosted": true,
+    "checkpoint_id": "01M50YXJW556KH5SFXDQWFAV2T"
+  },
+  "judge": {
+    "attempts": 1,
+    "native_sessions": 0,
+    "launch_exit_code": 1,
+    "failure_phase": "worker-stop artifact validation in fresh target",
+    "independent_scientific_adequacy": "not assessed",
+    "stamped_item_assessment": "not assessed",
+    "replay": "not attempted",
+    "native_checkpoint": "not created",
+    "github_refs": "not applicable: no native judge output repository",
+    "hosted_metadata": "not applicable: no native judge session"
+  },
+  "handoff_outcome": "blocked by unlocked-annex pointer validation before native judge start",
+  "coordinator_actions": [
+    "Preserved original stop receipt, artifacts and exact final lock before environment operations",
+    "Published unchanged result commit, all annex payloads and exact annex metadata",
+    "Verified native worker capture, GitHub refs, hosted metadata and independent complete retrieval",
+    "Preserved external worker self-assessment and replay; omitted reconstructible .pixi cache only from replay archive",
+    "Created identical-tree environment snapshot one commit above result",
+    "Retained failed judge launch and untouched target archive; no repair or relaunch"
+  ],
+  "scientific_worker_steering": [],
+  "assistance_receipt": "coordinator-actions/coordinator-assistance.json",
+  "limitations": [
+    "This supplied-host limited preparation is excluded from formal scientific comparisons.",
+    "One worker completed; independent scientific adequacy and STAMPED judgments remain unavailable.",
+    "Cross-host replay was not tested.",
+    "Root later identified absent explicit working-lock/publication instructions in the shared worker prompt; those behaviors are not clear worker violations.",
+    "No judge output repository or session was created, so separate judge-output capture route was not exercised."
+  ],
+  "worker_duct_records": {
+    "delivered_duct_info_files": 20,
+    "exit_0": 15,
+    "exit_1": 5
+  },
+  "retained_experiment_commit": "5e85b7a5118a1c7ff7d7fe0406cf0292fb239726",
+  "retained_experiment_branch": "codex/preparation-stamped-retained-20261015",
+  "retained_annex_metadata_commit": "f8486a1541b76d1c2df664d6fd13e47ece8a0722",
+  "retained_annex_metadata_branch": "codex/preparation-stamped-annex-retained-20261015",
+  "environment_snapshot_commit": "51766371ebba9eba67c8bbf943619710768621c2",
+  "study_registration_commit": "9b9f4c777bed9180e16a2b96429980fb0f03d142",
+  "study_registration_path": "results/preparation-stamped-handoff-20261015",
+  "retention_retrieval": {
+    "schema_version": 1,
+    "verified_at": "2026-10-15T23:53:12.092665+00:00",
+    "passed": true,
+    "retained_commit": "5e85b7a5118a1c7ff7d7fe0406cf0292fb239726",
+    "annex_metadata_commit": "f8486a1541b76d1c2df664d6fd13e47ece8a0722",
+    "retained_additions_only": 134,
+    "annex_paths": 7,
+    "annex_bytes": 224385277,
+    "payloads": [
+      {
+        "path": "coordinator-evidence/coordinator-actions/worker-launch.log",
+        "key": "SHA256E-s704881--ba735890f34e098edbb8aad1feb569f40d6b782566af853a84e9771d4ad232ff.log",
+        "sha256": "ba735890f34e098edbb8aad1feb569f40d6b782566af853a84e9771d4ad232ff",
+        "bytes": 704881
+      },
+      {
+        "path": "coordinator-evidence/judgment-01/failed-target.tar.gz",
+        "key": "SHA256E-s819154--71cbadab0bb4a7f33beba2f6f35378c4c0b49428287cf6e7e03e52324c7cc694.tar.gz",
+        "sha256": "71cbadab0bb4a7f33beba2f6f35378c4c0b49428287cf6e7e03e52324c7cc694",
+        "bytes": 819154
+      },
+      {
+        "path": "coordinator-evidence/launch/native/events.jsonl",
+        "key": "SHA256E-s695062--d64493f5b39135e0dad2147a12744332f038fbe5562b4541d2649dcd8ed18554",
+        "sha256": "d64493f5b39135e0dad2147a12744332f038fbe5562b4541d2649dcd8ed18554",
+        "bytes": 695062
+      },
+      {
+        "path": "coordinator-evidence/launch/native/worker-end-state.json",
+        "key": "SHA256E-s155453--0c381872b334e7a226479f2595c3e169fcf4dcd45b9906e40cc33d1256797e6d.json",
+        "sha256": "0c381872b334e7a226479f2595c3e169fcf4dcd45b9906e40cc33d1256797e6d",
+        "bytes": 155453
+      },
+      {
+        "path": "coordinator-evidence/worker-external-artifacts/narps-h1-replay-7405a7b.tar.gz",
+        "key": "SHA256E-s123828826--7f4b5bcbbcebe93989353d46fd558e5b2edcd5636e3d759d425d20520e4687d5.tar.gz",
+        "sha256": "7f4b5bcbbcebe93989353d46fd558e5b2edcd5636e3d759d425d20520e4687d5",
+        "bytes": 123828826
+      },
+      {
+        "path": "coordinator-evidence/worker-stop-original/artifacts.tar.gz",
+        "key": "SHA256E-s98026448--d51aa710628e7c4726b96614f38f5bd968cce6cd7502f6febc3385593e47cd6e.tar.gz",
+        "sha256": "d51aa710628e7c4726b96614f38f5bd968cce6cd7502f6febc3385593e47cd6e",
+        "bytes": 98026448
+      },
+      {
+        "path": "coordinator-evidence/worker-stop-original/worker-end-state.json",
+        "key": "SHA256E-s155453--0c381872b334e7a226479f2595c3e169fcf4dcd45b9906e40cc33d1256797e6d.json",
+        "sha256": "0c381872b334e7a226479f2595c3e169fcf4dcd45b9906e40cc33d1256797e6d",
+        "bytes": 155453
+      }
+    ],
+    "result_refs_unchanged": true,
+    "unexpected_gitlinks": false,
+    "scope": "Fresh repository and empty annex object store on same host. Only added coordinator evidence downloaded; exact original research payload retrieval was independently verified earlier. No scientific execution."
+  }
+}
