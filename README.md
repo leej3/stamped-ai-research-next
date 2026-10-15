@@ -29,4 +29,3 @@ To start a coordinator, give it this repository and a request such as:
 
 The products are improved shareable skills, evidence about their impact, and a STAMPED research object documenting the whole workshop.
 Figures summarize scientific outcomes, reproducibility, effort and variability.
-A later poster will explain the iterative process, link the complete research object and invite others to contribute study examples.

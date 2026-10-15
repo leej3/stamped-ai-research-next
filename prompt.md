@@ -45,4 +45,3 @@ Include clear figures of scientific outcomes, checklist attainment, recurring fa
 Keep scientific validity separate from STAMPED evidence, retain `not-checked`, and do not invent an overall assessor score.
 Have a fresh judge assess the complete effort.
 Limit conclusions to the evaluated studies and exploratory sample; further studies can test transfer.
-After collecting the evidence, prepare a poster explaining the iterative honing process, linking the complete STAMPED research object and inviting contributed study examples.
