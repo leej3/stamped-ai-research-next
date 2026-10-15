@@ -71,6 +71,20 @@ def committed_file(repo, revision, name):
     return blob(repo, revision, name)
 
 
+def ensure_commit(repo, revision, repository="origin"):
+    """Retrieve an exact pinned object without expanding the source history."""
+    if not isinstance(revision, str) or not re.fullmatch(r"[0-9a-f]{40}|[0-9a-f]{64}", revision):
+        raise SystemExit("Expected a full pinned commit identity")
+    if not isinstance(repository, str) or not repository.strip():
+        raise SystemExit("Pinned commit repository must name a Git repository or remote")
+    command = ["git", "cat-file", "-e", revision + "^{commit}"]
+    if subprocess.run(command, cwd=repo, capture_output=True).returncode == 0:
+        return
+    subprocess.run(["git", "fetch", "--no-tags", "--depth", "1", "--", repository, revision],
+                   cwd=repo, check=True)
+    subprocess.run(command, cwd=repo, check=True)
+
+
 def gitmodules_digest(content):
     """The working skills branch hint does not select its pinned Git revision."""
     parsed = subprocess.check_output(["git", "config", "--null", "--file", "-", "--list"],
@@ -201,6 +215,12 @@ def load_procedure(path, expected_sha256):
 
 def check_sources(manifest, coordinator, study, base=None):
     """Read committed identities; reject changed executing code or configuration."""
+    ensure_commit(coordinator, manifest["coordinator_commit"])
+    environment = manifest["starting_environment"]
+    ensure_commit(coordinator, environment["commit"], environment.get("repository", "origin"))
+    pin = manifest["assessment"]
+    ensure_commit(coordinator, pin["environment_commit"], pin.get("environment_repository", "origin"))
+    ensure_commit(study, manifest["study"]["commit"])
     for name, digest in manifest["fixed_files"].items():
         require_equal(sha256(committed_file(coordinator, manifest["coordinator_commit"], name)),
                       digest, "sealed source " + name)
@@ -220,16 +240,19 @@ def check_sources(manifest, coordinator, study, base=None):
     if base:
         path, selected = study_pin(coordinator, base, study)
         require_equal(path, manifest["study"]["path"], "study identity")
+        ensure_commit(study, selected)
     require_equal(git(study, "rev-parse", selected + ":input"), manifest["study"]["input_tree"],
                   "scientific inputs")
     # Unrelated preparation artifacts and old judgments are outside this set.
     for name, expected in manifest["study"]["guidance_objects"].items():
         for revision in {selected, manifest["study"]["commit"]}:
             require_equal(guidance_object(study, revision, name), expected, "scientific guidance " + name)
-    environment = manifest["starting_environment"]
     for name, digest in environment["sha256"].items():
         require_equal(sha256(committed_file(coordinator, environment["commit"], name)), digest,
                       "immutable starting environment " + name)
+    for name, digest in pin["sha256"].items():
+        require_equal(sha256(committed_file(coordinator, pin["environment_commit"], name)), digest,
+                      "assessor environment " + name)
 
 
 def check_host(manifest, args):
@@ -323,6 +346,9 @@ def seal(args):
         assignment(blob(coordinator, base, "conditions.json"), condition)
     selected_guidance = {name for name in (args.rubric, args.reference, *args.guidance_dependency) if name}
     guidance = {name: guidance_object(args.study, study_commit, name) for name in sorted(selected_guidance)}
+    environment_repository = getattr(args, "environment_repository", "origin")
+    if re.fullmatch(r"[0-9a-f]{40}|[0-9a-f]{64}", args.environment_commit):
+        ensure_commit(coordinator, args.environment_commit, environment_repository)
     environment_commit = git(coordinator, "rev-parse", args.environment_commit + "^{commit}")
     environment = {name: sha256(committed_file(coordinator, environment_commit, name))
                    for name in ("pixi.toml", "pixi.lock")}
@@ -330,6 +356,7 @@ def seal(args):
     pin = json.loads(blob(coordinator, base, "assessment-version.json"))
     require_equal(git(coordinator, "rev-parse", base + ":assessment"), pin["source_commit"],
                   "assessor gitlink")
+    ensure_commit(coordinator, pin["environment_commit"], pin.get("environment_repository", "origin"))
     for name, digest in pin["sha256"].items():
         require_equal(sha256(committed_file(coordinator, pin["environment_commit"], name)), digest,
                       "assessor environment " + name)
@@ -345,7 +372,8 @@ def seal(args):
                   "guidance_objects": guidance, "guidance_dependencies": sorted(args.guidance_dependency),
                   "rubric": args.rubric, "reference": args.reference},
         "resources": {"path": resources, "sha256": files[resources]},
-        "starting_environment": {"commit": environment_commit, "sha256": environment},
+        "starting_environment": {"commit": environment_commit, "repository": environment_repository,
+                                 "sha256": environment},
         "host_identity": host_identity(args), "conditions": list(CONDITIONS),
         "settings": {"research": settings, "judge": dict(settings, capture_execution=False)},
         "replay": REPLAY,
@@ -411,6 +439,8 @@ def main():
     parser.add_argument("--guidance-dependency", action="append", default=[],
                         help="Explicit study-relative rubric/reference dependency; repeat as needed")
     parser.add_argument("--environment-commit")
+    parser.add_argument("--environment-repository", default="origin",
+                        help="Repository containing the starting snapshot; defaults to origin")
     parser.add_argument("--output", type=Path)
     for name in ("env-manifest", "cli", "codex-home", "approved-hooks", "trust-sync", "resolver"):
         parser.add_argument("--" + name, type=Path)

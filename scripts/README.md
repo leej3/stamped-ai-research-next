@@ -70,6 +70,9 @@ When scientific execution logging is requested, including by this workshop promp
 
 The common starting environment needs an immutable commit containing the exact coordinator `pixi.toml` and validated `pixi.lock`.
 Use its commit as `STARTING_ENV_COMMIT`; a mutable working lock is not a version record.
+Shallow clones fetch missing sealed coordinator and study commits from their respective `origin` remotes, and fetch the assessor runtime from its declared repository.
+Starting snapshots use the coordinator's `origin`; pass `--environment-repository REPOSITORY` when sealing a snapshot hosted elsewhere.
+Each fetch requests only the exact pinned commit with depth one, and content checks still apply.
 Workers may subsequently evolve their own environments, and judges replay those recorded environments.
 
 Run the committed public requirements against separately prepared host checks:

@@ -112,6 +112,60 @@ def test_seal_is_portable_and_covers_complete_fixed_procedure(comparison):
         procedure.load_procedure(args.output, "0" * 64)
 
 
+def test_depth_one_clone_fetches_only_pinned_procedure_and_runtime_objects(comparison, tmp_path):
+    args, _ = comparison
+    runtime = init(tmp_path / "external-runtime")
+    for name in ("pixi.toml", "pixi.lock"):
+        (runtime / name).write_bytes((args.repo / name).read_bytes())
+    runtime_commit = commit(runtime, "test: publish external runtime")
+    pin_path = args.repo / "assessment-version.json"
+    pin = json.loads(pin_path.read_text())
+    pin.update(environment_commit=runtime_commit, environment_repository=runtime.as_uri())
+    pin_path.write_text(json.dumps(pin))
+    args.base = commit(args.repo, "test: declare externally hosted runtime")
+    args.output = tmp_path / "external-procedure.json"
+    # Sealing itself retrieves the separately hosted assessor object.
+    procedure.seal(args)
+    manifest = procedure.load_procedure(args.output, procedure.sha256(args.output.read_bytes()))
+    (args.study / "later-registration.json").write_text("{}\n")
+    commit(args.study, "test: retain later study registration")
+    (args.repo / "procedure.json").write_bytes(args.output.read_bytes())
+    commit(args.repo, "test: register the sealed procedure")
+    shallow = tmp_path / "shallow"
+    subprocess.run(["git", "clone", "--depth", "1", args.repo.as_uri(), str(shallow)], check=True)
+    selected_study = shallow / manifest["study"]["path"]
+    subprocess.run(["git", "clone", "--depth", "1", args.study.as_uri(), str(selected_study)], check=True)
+    for repo, revision in ((shallow, manifest["coordinator_commit"]),
+                           (shallow, manifest["starting_environment"]["commit"]),
+                           (shallow, runtime_commit),
+                           (selected_study, manifest["study"]["commit"])):
+        assert subprocess.run(["git", "cat-file", "-e", revision], cwd=repo,
+                              capture_output=True).returncode != 0
+    procedure.check_sources(manifest, shallow, selected_study, "HEAD")
+    assert git(shallow, "rev-parse", "--is-shallow-repository") == "true"
+    for repo, revision in ((shallow, manifest["coordinator_commit"]),
+                           (shallow, manifest["starting_environment"]["commit"]),
+                           (shallow, runtime_commit),
+                           (selected_study, manifest["study"]["commit"])):
+        assert git(repo, "rev-list", "--count", revision) == "1"
+    assert git(shallow, "status", "--porcelain") == ""
+
+
+def test_external_starting_snapshot_can_be_selected_without_local_history(comparison, tmp_path):
+    args, _ = comparison
+    runtime = init(tmp_path / "starting-runtime")
+    for name in ("pixi.toml", "pixi.lock"):
+        (runtime / name).write_bytes((args.repo / name).read_bytes())
+    args.environment_commit = commit(runtime, "test: publish external starting snapshot")
+    args.environment_repository = runtime.as_uri()
+    args.output = tmp_path / "external-starting-procedure.json"
+    procedure.seal(args)
+    manifest = procedure.load_procedure(args.output, procedure.sha256(args.output.read_bytes()))
+    assert manifest["starting_environment"]["repository"] == runtime.as_uri()
+    assert manifest["starting_environment"]["commit"] == args.environment_commit
+    procedure.check_sources(manifest, args.repo, args.study, args.base)
+
+
 @pytest.mark.parametrize("name", ["judge-prompt.md", "assessment-version.json", "conditions.json",
                                  "scripts/assessment.py", "scripts/study_seed.py", "requirements.json"])
 def test_dirty_control_or_assessment_bytes_cannot_enter_formal_run(comparison, name):
