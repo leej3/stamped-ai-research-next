@@ -1,18 +1,0 @@
-copy experiments/datalad-annex/logs/adapter-check-001/run_usage.jsonl (to con-hub...) 
-100%  977 B           871 KiB/s 0s                                  ok
-copy experiments/datalad-annex/logs/install-001/run_usage.jsonl (to con-hub...) 
-100%  1.55 KiB          2 MiB/s 0s                                  ok
-copy experiments/datalad-annex/logs/skill-check-001/run_usage.jsonl (to con-hub...) 
-ok
-copy experiments/datalad-annex/logs/toy-001/run_usage.jsonl (to con-hub...) 
-98%   31.98 KiB        34 MiB/s 0s100%  32.79 KiB         1 MiB/s 0s                                  ok
-copy experiments/datalad-annex/outputs/figure.png (to con-hub...) 
-95%   31.98 KiB        36 MiB/s 0s100%  33.51 KiB         3 MiB/s 0s                                  ok
-copy experiments/datalad-annex/outputs/statistics.tsv (to con-hub...) 
-100%  110 B            82 KiB/s 0s                                  ok
-copy experiments/access/annex-probe.bin ok
-copy experiments/access/logs/annex-upload-001/run_usage.jsonl (to con-hub...) 
-100%  1.25 KiB          2 MiB/s 0s                                  ok
-copy experiments/access/logs/cluster-environment-001/run_usage.jsonl (to con-hub...) 
-100%  1.15 KiB          1 MiB/s 0s                                  ok
-(recording state in git...)

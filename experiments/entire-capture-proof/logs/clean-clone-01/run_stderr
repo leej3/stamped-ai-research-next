@@ -1,8 +1,0 @@
-Cloning into '/Users/johnlee/.local/share/stamped-ai-research-next/clones/capture-clean-clone'...
-done.
-Switched to a new branch 'codex/capture-clean-clone'
-Submodule 'skills' (https://github.com/con/skills.git) registered for path 'skills'
-Cloning into '/Users/johnlee/.local/share/stamped-ai-research-next/clones/capture-clean-clone/skills'...
-From https://github.com/con/skills
- * branch            15da761f63a5a45c507e6596a549720bd43a1e84 -> FETCH_HEAD
-✔ The default environment has been installed.

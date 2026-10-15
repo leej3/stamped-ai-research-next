@@ -1,3 +1,0 @@
-copy experiments/access/annex-probe.bin (to con-hub...) 
-100%  16 KiB           19 MiB/s 0s                                  ok
-(recording state in git...)

@@ -1,9 +1,0 @@
-{
-  "ok": true,
-  "remote": "con-hub",
-  "tracked_annex_paths": 37,
-  "unique_keys": 35,
-  "missing_remote_paths": [],
-  "remote_fsck": "passed (fast: remote presence/size; anonymous hash retrieval tested separately)",
-  "lock_sha256": "a4ae3328c4df725aeb2529c0b25d43e0ad5f57fc5ec7c7eb6b82d45806a626ef"
-}
