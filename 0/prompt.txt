@@ -1,0 +1,15 @@
+This is only a synthetic native Entire capture proof in this prepared worktree.
+Do not analyze data, inspect other checkouts or prior conversations, run Workshop,
+modify hooks/configuration/credentials, spawn agents, or push. The outer process
+already captures duct logs; do not nest wrappers. Only current-turn metadata for
+commit provenance may be inspected. Read the commit-provenance skill at
+/Users/johnlee/.agents/skills/commit-provenance/SKILL.md.
+
+Use native apply_patch to create capture-probes/worktree.txt with exactly:
+Native capture proof in a separately prepared linked worktree.
+
+Include a final newline. Stage only this file and make a normal commit with
+subject `chore: verify capture in a linked worktree`. Preserve the prepared
+prepare-commit-msg hook; it invokes the required fresh provenance resolver
+during every commit. Report commit and Entire checkpoint IDs and stop.
+If anything fails, retain evidence and stop; do not repair or retry.
