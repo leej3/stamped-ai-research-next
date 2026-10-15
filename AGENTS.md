@@ -3,6 +3,9 @@
 Follow `prompt.md` to iterate on reusable skills using the study submodules selected by the user.
 The unit of iteration is a pinned skill revision; study-specific preparation and findings stay in their submodules.
 
+- Derive resource requirements from the user prompt, applicable system skills and memory.
+  Use [programmatic readiness checks](scripts/READINESS.md) with user-provided host configuration; retain evidence before research and ask only for missing access or decisions.
+  Do not assume a universal service list or treat executable availability as proof of access.
 - Record each iteration under `iterations/<iteration>/`: skill revision, exact study/input revisions, linked worker branches and judgments, comparisons, and the rationale and outcome of skill changes.
   Keep these coordinator records outside worker inputs.
 - Give research workers only the study's committed `input/`, common resources and their assigned skills.

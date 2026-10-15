@@ -3,6 +3,7 @@
 The native launcher uses host settings from `~/.config/stamped-ai-research-next/launch.json`; `--host-config` selects another file.
 These identify the CLI, source environment, approved hooks, provenance resolver and annex remote.
 Credentials stay with host providers.
+Use [resource readiness checks](READINESS.md) for the requirements supplied by this user; retain their result before launching research.
 
 ## Research workers
 

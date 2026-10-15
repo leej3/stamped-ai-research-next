@@ -47,5 +47,6 @@ To start a coordinator, give it this repository and a request such as:
 Keep study and experiment submodules uninitialized until needed.
 Open selected paths and retrieve their required annex content; the coordinator tree retains their exact commits without expanding every experiment.
 
+The intended result is transferable guidance: an independent agent can use these skills with a researcher's own data and hypothesis to produce scientifically useful, rigorous and convenient research.
 The products are improved shareable skills, evidence about their impact, and a STAMPED research object documenting the whole workshop.
 Figures summarize scientific outcomes, reproducibility, effort and variability.
