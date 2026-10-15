@@ -1,0 +1,55 @@
+{
+  "analysis": "one-sample group model of participant-level gain contrast estimates; positive one-sided t test",
+  "n_included": 54,
+  "n_excluded": 0,
+  "grid_shape": [
+    97,
+    115,
+    81
+  ],
+  "voxel_sizes_mm": [
+    2.0,
+    2.0,
+    2.4000000953674316
+  ],
+  "analysis_mask": "intersection of nonzero voxels across all 54 participant effect maps (fallback >=90% only if intersection <1000 voxels)",
+  "mask_voxels": 198029,
+  "mask_volume_ml": 1901.0784912109375,
+  "effect_units": "upstream contrast-parameter units; gain regressor centered and variance-normalized before HRF convolution, so not per currency unit",
+  "whole_brain_correction": "Bonferroni over all voxels in the fixed group mask; directional positive test, familywise alpha=.05",
+  "whole_brain_positive_voxels_p_fwe_lt_0_05": 11,
+  "whole_brain_minimum_p_fwe": 0.0018439596476901487,
+  "whole_brain_peak_t": 6.617173255858673,
+  "whole_brain_peak_mni_mm": [
+    -26.0,
+    -102.0,
+    -3.599997043609619
+  ],
+  "vmPFC_operationalization": {
+    "atlas": "Harvard-Oxford cortical atlas, max-probability threshold 25%, Frontal Medial Cortex label; resampled nearest neighbor to supplied grid",
+    "voxels": 769,
+    "volume_ml": 7.382400293350219,
+    "mean_effect": -0.009139069356024265,
+    "sd_between_participants": 0.11267783492803574,
+    "se": 0.015333511160846648,
+    "t": -0.5960193500468712,
+    "df": 53,
+    "one_sided_p_uncorrected_descriptive_only": 0.7231503234780605,
+    "ci95_t": [
+      -0.03989419796105427,
+      0.021616059249005743
+    ],
+    "criterion": "support requires at least one positive whole-brain FWE-significant voxel inside this independent anatomical approximation"
+  },
+  "support_for_hypothesis": false,
+  "mean_voxelwise_effect_in_roi": -0.009139063768088818,
+  "checks": {
+    "all_maps_same_grid": true,
+    "all_maps_finite": true,
+    "all_map_checksums_match": true,
+    "participants": 54,
+    "nonzero_fraction_median": 0.24836285560923244,
+    "nonzero_fraction_min": 0.24085418153847857,
+    "max_abs_roi_z": 2.510366678237915
+  }
+}
