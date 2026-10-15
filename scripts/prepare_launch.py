@@ -69,9 +69,8 @@ def main():
     if not args.branch.startswith("codex/"):
         parser.error("Use a codex/ branch")
     if args.kind == "worktree":
-        # wt is the interactive shell facade; wt-utils is its installed executable.
-        checkout = Path(json.loads(run(["wt-utils", "new", args.branch, "--repo", repo,
-                        "--base", args.base, "--no-interactive", "--json"], repo, True)))
+        checkout = repo.parent / (repo.name + "-worktrees") / args.branch
+        run(["git", "worktree", "add", "-b", args.branch, checkout, args.base], repo)
     else:
         if not args.clone_path or args.clone_path.exists():
             parser.error("Clone requires an absent --clone-path")
