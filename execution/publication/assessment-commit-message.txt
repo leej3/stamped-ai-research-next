@@ -1,0 +1,8 @@
+chore(pilot): retain assessments and verified publication evidence
+
+Preserve the original independent checklist judgments and explicitly reviewed
+corrections. Retain public native judge execution, retrieval receipts and
+confirmed hosted research-session linkage. Scientific artifacts are unchanged.
+
+Co-Authored-By: Codex Desktop 26.1007.71326 (runtime codex-cli 0.162.0-alpha.17.2) / gpt-6-astra <codex@openai.com>
+Codex-Reasoning-Effort: ultra
