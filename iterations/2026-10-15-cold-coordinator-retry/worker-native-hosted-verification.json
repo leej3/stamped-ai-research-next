@@ -1,0 +1,50 @@
+{
+  "verified_at": "2026-10-15T23:03:14.096876+00:00",
+  "checkout": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-retry-worker-01",
+  "commit": "1b95e0986da9f298eed2b16f73b48a703fe3b1fd",
+  "code_ref": "refs/heads/codex/preparation-cold-retry-worker-01",
+  "checkpoint_id": "01M50WA7M7BXX498YBX999D7FQ",
+  "code_ref_oid": "1b95e0986da9f298eed2b16f73b48a703fe3b1fd",
+  "child_task_id": null,
+  "event_checkout": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-retry-worker-01",
+  "event_commit": null,
+  "checkpoint_ref": "refs/entire/checkpoints/FQ/01M50WA7M7BXX498YBX999D7FQ",
+  "checkpoint_oid": "9990fa1aecf19f8ef441ecd23d91297db84f6c44",
+  "branch": "codex/preparation-cold-retry-worker-01",
+  "session_id": "01a141bf-36a9-72e2-bad0-135953ae9187",
+  "all_checkpoint_session_ids": [
+    "01a141bf-36a9-72e2-bad0-135953ae9187"
+  ],
+  "native_capture_verified": true,
+  "identities": [
+    {
+      "session_id": "01a141bf-36a9-72e2-bad0-135953ae9187",
+      "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-retry-worker-01",
+      "source": "exec"
+    }
+  ],
+  "file_events": [
+    {
+      "line": 302,
+      "item_id": "exec-812a6dfe-eac3-494f-963a-fae0b09124e4",
+      "file": "results/report.md",
+      "evidence_kind": "completed-file-change"
+    },
+    {
+      "line": 316,
+      "item_id": "exec-7c4ebc37-eb03-422b-a6a1-bfeea4336732",
+      "file": "results/report.md",
+      "evidence_kind": "completed-file-change"
+    }
+  ],
+  "committed_file_sha256": "a45725d2b455a70936888c0611220d7392d0eb9934b5fed642b556b0311272b4",
+  "transcript_sha256": "e8b58a06d5bea36c64a4642cdbe46f9ec81cb5bb934467abf5fe266f9cbaeb2f",
+  "transcript_bytes": 1499394,
+  "private_guidance_marker_hits": [],
+  "raw_transcript_saved": false,
+  "uploaded_refs_verified": true,
+  "hosted_verified": true,
+  "hosted_session_ids": [
+    "01a141bf-36a9-72e2-bad0-135953ae9187"
+  ]
+}
