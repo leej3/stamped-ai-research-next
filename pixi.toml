@@ -22,6 +22,7 @@ rfc3339-validator = "*"
 [tasks]
 analysis = "python scripts/analyze.py"
 pilot = "python scripts/analyze.py --pilot"
+validate = "python scripts/validate_results.py"
 
 [pypi-dependencies]
 datalad = "*"
