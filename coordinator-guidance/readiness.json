@@ -1,0 +1,22 @@
+{
+  "ready": false,
+  "reason": "Participant-level preprocessed fMRI, events, confounds and metadata have not been staged and verified in input/. The retained team-level results cannot substitute for these observations.",
+  "source": {
+    "dataset": "ds001734",
+    "version": "1.0.4",
+    "git_commit": "64ec117560ab58ed0fe1273f3e90887b1768b268",
+    "url": "https://openneuro.org/datasets/ds001734/versions/1.0.4",
+    "group": "equalIndifference",
+    "participants": 54
+  },
+  "availability_check": {
+    "date": "2026-10-15",
+    "inventory_url": "https://s3.amazonaws.com/openneuro.org?list-type=2&prefix=ds001734%2Fderivatives%2Ffmriprep%2F",
+    "preprocessed_bold_runs": 216,
+    "compressed_bold_bytes": 263550623893,
+    "scope": "Current public S3 object listing; cohort taken from the pinned participant table. Payload identity against that version remains to be verified.",
+    "payloads_downloaded": false,
+    "payloads_verified": false
+  },
+  "timing_rehearsal_completed": false
+}

@@ -8,4 +8,4 @@
 *.yaml annex.largefiles=nothing
 *.tsv annex.largefiles=(largerthan=100kb)
 **/.git* annex.largefiles=nothing
-input/data/** -whitespace
+coordinator-guidance/team-results/data/** -whitespace

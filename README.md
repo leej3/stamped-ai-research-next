@@ -1,14 +1,17 @@
-# NARPS gain consistency
+# NARPS
 
-A study of agreement between independent teams' gain-related fMRI maps and its relationship to their reported conclusions.
+Investigate the original NARPS hypothesis that increasing potential monetary gain produces a greater fMRI response in ventromedial prefrontal cortex in the equal-indifference group.
 
-- `input/` is the complete worker package: scientific prompt, original observations, templates and source manifest.
-- `reference/` retains the source archives, published analyses, preparation code and verification evidence for coordinators and assessors.
-- `experiments/<run>/` will hold returned research objects and independent assessments.
+- `input/study-task.md` describes the scientific task; `input/` holds only material supplied to workers.
+- `coordinator-guidance/` holds evaluation guidance, published reference results and preparation evidence.
+- `results/<run>/` holds returned research objects, assessments and execution records.
 
-Launch workers from an input-only snapshot with the assigned skills and common environment.
-Do not give them this dataset's reference files or other runs' history.
-The parent project pins this dataset as a submodule and controls the research/assessment/skill-improvement loop.
+The workshop pins this study as a submodule and supplies its skill-improvement process.
+Workers receive only `input/`, their assigned skills and common resources.
 
-The input package was curated from the original archive without consulting computed reference results to select teams.
-Scientific analysis and workload timing have not yet been tested.
+**Not ready to launch:** participant-level inputs have not been staged or verified.
+OpenNeuro provides preprocessed scans, events and confounds for the 54 participants in the relevant group.
+The public inventory contains 216 preprocessed scans totaling about 264 GB compressed; the intended working time needs a rehearsal after input preparation.
+See [readiness](coordinator-guidance/readiness.json).
+
+The existing team-level maps and decisions are retained in `coordinator-guidance/team-results/` as prior answers, not worker inputs for this hypothesis.
