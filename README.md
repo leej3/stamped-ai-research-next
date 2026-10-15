@@ -18,3 +18,5 @@ pixi run git annex get --from con-hub .
 
 The retrieval receipt in `execution/` records the independently checked payloads.
 This preparation pilot was not a formal skills comparison or an independently graded scientific result.
+
+[Reviewed STAMPED assessment](execution/assessment/reviewed/2026-10-15-2-assessment.md) · [Original independent assessment](execution/assessment/native/judgment/2026-10-15-assessment.md).

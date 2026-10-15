@@ -1,0 +1,5 @@
+From /Users/johnlee/.local/share/stamped-ai-research-next/workers/narps-suitability-20261015-03
+ * branch            f711558b2e29c376410e0e622b2f2a992f77bb41 -> FETCH_HEAD
+From /Users/johnlee/.local/share/stamped-ai-research-next/workers/narps-suitability-20261015-03
+ * [new ref]         3be82677147a263cda3e22a9b20b0fcd28c864b8 -> git-annex
+✔ The default environment has been installed.

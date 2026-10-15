@@ -1,0 +1,9 @@
+Read-only retrieval checks recorded 2026-10-15 (target commit f711558b2e29c376410e0e622b2f2a992f77bb41)
+
+- `git ls-remote https://github.com/leej3/stamped-ai-research-next.git HEAD refs/heads/main`: repository reachable; both refs returned 87f38a710e57e1546091601c5382b9123a173914.
+- GitHub API `GET /repos/leej3/stamped-ai-research-next/commits/f711558b2e29c376410e0e622b2f2a992f77bb41`: HTTP 422, `No commit found for SHA`.
+- `GIT_TERMINAL_PROMPT=0 git ls-remote https://hub.centerforopenneuroscience.org/leej3/stamped-ai-research-next.git HEAD refs/heads/main`: repository reachable; both refs returned 441946a0d2687fb227f179b94cfacc843fff2348.
+- HEAD request to `https://neurovault.org/media/images/4932/sub-001_hypo1_cope.nii.gz`: HTTP 200.
+- HEAD request to the pinned OpenNeuro `participants.tsv` URL at commit 64ec117560ab58ed0fe1273f3e90887b1768b268: HTTP 200.
+
+These checks establish current endpoint responses only. Later remote heads are not evidence that the worker supplied this exact commit; no earlier publication state is inferred. The NeuroVault check is one sample URL, not an exhaustive check of all files or annex remotes. No scientific data were downloaded by these HEAD requests.

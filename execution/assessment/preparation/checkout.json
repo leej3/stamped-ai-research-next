@@ -1,0 +1,9 @@
+{
+  "checkout": "/Users/johnlee/.local/share/stamped-ai-research-next/judges/narps-suitability-20261015-03",
+  "kind": "independent-repository",
+  "branch": "codex/narps-stamped-judge-20261015-03",
+  "base": "f711558b2e29c376410e0e622b2f2a992f77bb41",
+  "base_commit": "f711558b2e29c376410e0e622b2f2a992f77bb41",
+  "worker_commit": "f711558b2e29c376410e0e622b2f2a992f77bb41",
+  "role": "judge"
+}

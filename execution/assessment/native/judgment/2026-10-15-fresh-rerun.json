@@ -1,0 +1,7 @@
+{
+  "status": "not-checked",
+  "target_commit": "f711558b2e29c376410e0e622b2f2a992f77bb41",
+  "action": "fresh-rerun",
+  "reason": "Scientific rerun was outside the authorized inspection and remote-retrieval scope. No clone, pipeline, or output comparison was run.",
+  "settles_with": "A separately authorized fresh-clone rerun from a retrievable publication of this exact commit, after the documented environment and entry point are made available."
+}

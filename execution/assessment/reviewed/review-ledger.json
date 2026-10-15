@@ -1,0 +1,224 @@
+{
+  "reviewed_at": "2026-10-15T21:01:00.454018+00:00",
+  "kind": "coordinator-reviewed revision, not an independent repeat",
+  "original_response_sha256": "a57357d9e9aa898804fe8b08e4efd49ee780887f75834122fed9fdeecb4921f3",
+  "original_judge": {
+    "model": "gpt-6-luna",
+    "effort": "high",
+    "runtime": "codex-cli 0.162.0-alpha.17.2",
+    "evidence": "../native/launch.json and native-session/session metadata"
+  },
+  "assessor_source_commit": "d867c1d04bbb58b3b0f64122ebd5f76bd8e5a7ca",
+  "assessor_environment_commit": "3552d5003a2485b6405805236d5c54e7ed42f097",
+  "changes": {
+    "stamped-checklist:must/006": {
+      "before": {
+        "status": "unmet",
+        "reason": "Committed results lack a run record tying them to an exact environment; the release log also shows an external Pixi manifest override.",
+        "source": "probe:derived-have-records+judgement",
+        "evidence": [
+          {
+            "uri": "results/logs/group_analysis_release.log",
+            "description": "PIXI_PROJECT_MANIFEST points outside target",
+            "sha256": null
+          },
+          {
+            "uri": "pixi.toml",
+            "description": "unlocked environment spec",
+            "sha256": null
+          }
+        ]
+      },
+      "after": {
+        "status": "unmet",
+        "reason": "Committed results lack a run record tying them to an exact environment. The logged warning confirms use of the worker-local Pixi manifest.",
+        "source": "judgement",
+        "evidence": [
+          {
+            "uri": "results/logs/group_analysis_release.log#L1",
+            "description": "Using local manifest ... rather than ... from PIXI_PROJECT_MANIFEST; this rejects the inherited override.",
+            "sha256": null
+          }
+        ],
+        "flags": [
+          "coordinator-reviewed",
+          "probe-overridden"
+        ]
+      }
+    },
+    "stamped-checklist:must/010": {
+      "before": {
+        "value": "no",
+        "reason": "pixi.toml lists dependencies but pins no versions (no lockfile or digest).",
+        "status": "partial",
+        "evidence": [
+          {
+            "uri": "pixi.toml",
+            "description": "spec environment specification",
+            "sha256": null
+          }
+        ],
+        "source": "probe:env-spec-tracked",
+        "flags": []
+      },
+      "after": {
+        "status": "met",
+        "reason": "pixi.toml includes the analysis imports and Git/annex tooling. Exact version locking is a separate question from dependency inclusion.",
+        "source": "judgement",
+        "evidence": [
+          {
+            "uri": "pixi.toml",
+            "description": "All third-party analysis imports are declared; the former probe judged locking instead of this item\u2019s dependency-inclusion requirement.",
+            "sha256": null
+          }
+        ],
+        "flags": [
+          "coordinator-reviewed",
+          "mapping-questioned",
+          "probe-overridden"
+        ]
+      }
+    },
+    "stamped-checklist:must/011": {
+      "before": {
+        "status": "partial",
+        "reason": "Pixi records target platforms, but the release log reveals an undocumented external PIXI_PROJECT_MANIFEST dependency.",
+        "source": "probe:platform-assumptions+judgement",
+        "evidence": [
+          {
+            "uri": "pixi.toml",
+            "description": "declared platforms",
+            "sha256": null
+          },
+          {
+            "uri": "results/logs/group_analysis_release.log#L1",
+            "description": "external manifest override",
+            "sha256": null
+          }
+        ],
+        "flags": [
+          "probe-overridden"
+        ]
+      },
+      "after": {
+        "status": "partial",
+        "reason": "Pixi platforms and packages are declared, but obtaining Pixi is undocumented. The release log confirms the local manifest; no external-manifest dependency is established.",
+        "source": "judgement",
+        "evidence": [
+          {
+            "uri": "results/logs/group_analysis_release.log#L1",
+            "description": "The warning states local manifest selected rather than inherited PIXI_PROJECT_MANIFEST; results/report.md omits Pixi installation guidance.",
+            "sha256": null
+          }
+        ],
+        "flags": [
+          "coordinator-reviewed",
+          "probe-overridden"
+        ]
+      }
+    },
+    "stamped-checklist:must/012": {
+      "before": {
+        "status": "partial",
+        "reason": "pixi.toml lists package and platform requirements, but the required Pixi installation/version and host setup are not documented.",
+        "source": "probe:platform-assumptions+judgement",
+        "evidence": [
+          {
+            "uri": "pixi.toml",
+            "description": "dependencies and platforms",
+            "sha256": null
+          },
+          {
+            "uri": "results/report.md",
+            "description": "invokes pixi without installation guidance",
+            "sha256": null
+          }
+        ],
+        "flags": [
+          "probe-overridden"
+        ]
+      },
+      "after": {
+        "status": "partial",
+        "reason": "pixi.toml lists package and platform requirements, but obtaining Pixi is undocumented. The log does not establish any required external manifest.",
+        "source": "judgement",
+        "evidence": [
+          {
+            "uri": "pixi.toml",
+            "description": "Package and platform declarations; results/report.md invokes Pixi without installation guidance.",
+            "sha256": null
+          }
+        ],
+        "flags": [
+          "coordinator-reviewed",
+          "probe-overridden"
+        ]
+      }
+    },
+    "stamped-checklist:must/016": {
+      "before": {
+        "status": "partial",
+        "reason": "The repository resolves, but its current GitHub head is later and the exact assessed SHA returns 422; this does not show the worker version is retrievable.",
+        "source": "probe:env-spec-tracked+judgement",
+        "evidence": [
+          {
+            "uri": "https://api.github.com/repos/leej3/stamped-ai-research-next/commits/f711558b2e29c376410e0e622b2f2a992f77bb41",
+            "description": "HTTP 422: no commit found",
+            "sha256": null
+          },
+          {
+            "uri": "git ls-remote origin",
+            "description": "reachable GitHub HEAD is 87f38a710e57e1546091601c5382b9123a173914",
+            "sha256": null
+          },
+          {
+            "uri": "git ls-remote con-hub",
+            "description": "reachable Hub HEAD is 441946a0d2687fb227f179b94cfacc843fff2348",
+            "sha256": null
+          }
+        ],
+        "flags": [
+          "mapping-questioned"
+        ]
+      },
+      "after": {
+        "status": "met",
+        "reason": "The exact scientific commit and its tracked specification are currently retrievable from GitHub. This reflects later coordinator publication, not original worker credit.",
+        "source": "judgement",
+        "evidence": [
+          {
+            "uri": "/Users/johnlee/.local/state/stamped-ai-research-next/pilots/narps-suitability-20261015-03/assessment/current-exact-fetch.json",
+            "description": "Successful exact-SHA Git fetch; initial HTTP422 is retained as a time-specific observation.",
+            "sha256": null
+          }
+        ],
+        "flags": [
+          "coordinator-reviewed",
+          "probe-overridden"
+        ]
+      }
+    }
+  },
+  "counts": {
+    "must": {
+      "met": 10,
+      "unmet": 4,
+      "partial": 3
+    },
+    "should": {
+      "met": 2,
+      "unmet": 5,
+      "not-applicable": 1,
+      "not-checked": 1
+    },
+    "may": {
+      "unmet": 1,
+      "partial": 2,
+      "met": 2
+    }
+  },
+  "validated": true,
+  "url_roundtrip_values_and_reasons": true,
+  "no_scientific_rerun": true,
+  "public_availability_scope": "Exact commit retrieval now succeeds for all three after coordinator publication. Original worker did not commit or publish its research result; this is not worker credit."
+}

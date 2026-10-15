@@ -1,0 +1,16 @@
+{
+  "session_id": "01a14150-c4f7-7332-b642-2ace0688bfec",
+  "id": "01a14150-c4f7-7332-b642-2ace0688bfec",
+  "timestamp": "2026-10-15T20:46:14.787Z",
+  "cwd": "/Users/johnlee/.local/share/stamped-ai-research-next/judges/narps-suitability-20261015-03",
+  "cli_version": "0.162.0-alpha.17.2",
+  "source": "exec",
+  "model_provider": "openai",
+  "git": {
+    "commit_hash": "f711558b2e29c376410e0e622b2f2a992f77bb41",
+    "branch": "codex/narps-stamped-judge-20261015-03",
+    "repository_url": "git@github.com:leej3/stamped-ai-research-next.git"
+  },
+  "model": "gpt-6-luna",
+  "effort": "high"
+}

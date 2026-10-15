@@ -1,0 +1,8 @@
+{
+  "original_http422_tool_output_at": "2026-10-15T20:47:43.209Z",
+  "publication_completed_by": "2026-10-15T20:48:05.179451+00:00",
+  "publication_time_evidence": "Retained corrected-git-publication.jsonl mtime; command record confirms successful branch creation. Timestamp is filesystem completion bound, not server acknowledgment timestamp.",
+  "second_422_occurrence_at": "2026-10-15T20:50:34.756Z",
+  "second_occurrence_kind": "Rendering the earlier checklist finding, not a second HTTP query.",
+  "later_exact_fetch": "../current-exact-fetch.json"
+}
