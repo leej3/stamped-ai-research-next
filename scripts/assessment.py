@@ -16,7 +16,7 @@ def git(*args, cwd=ROOT):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("action", choices=("check", "probes", "validate", "fresh-rerun"))
+    parser.add_argument("action", choices=("check", "probes", "response", "validate", "fresh-rerun"))
     parser.add_argument("arguments", nargs=argparse.REMAINDER)
     args = parser.parse_args()
     remaining = args.arguments
@@ -50,9 +50,10 @@ def main():
         print(json.dumps(pin, indent=2))
         return
     scripts = source / "skills" / "assess-alignment-with-stamped-principles" / "scripts"
-    if args.action == "validate":
+    if args.action in ("response", "validate"):
         helper = source / "skills" / "stamped-conventions" / "scripts" / "encode_response.py"
-        remaining.insert(0, "validate")
+        if args.action == "validate":
+            remaining.insert(0, "validate")
     else:
         helper = scripts / {"probes": "run_probes.py", "fresh-rerun": "fresh_rerun.py"}[args.action]
     result = subprocess.run(["pixi", "run", "--locked", "--manifest-path", manifest,

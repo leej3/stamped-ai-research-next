@@ -5,9 +5,12 @@ Use the coordinator-supplied runner, outside the target, for the recorded assess
 
 ```sh
 "$STAMPED_ASSESSMENT_PYTHON" "$STAMPED_ASSESSMENT_RUNNER" check
+"$STAMPED_ASSESSMENT_PYTHON" "$STAMPED_ASSESSMENT_RUNNER" response --help
 ```
 
-Use its `probes`, `validate` and `fresh-rerun` actions for subsequent checks, passing the absolute target path from `STAMPED_JUDGE_TARGET` where a path is needed.
+Use its `probes` and `fresh-rerun` actions for checks, passing the absolute target path from `STAMPED_JUDGE_TARGET` where a path is needed.
+Run every checklist-response helper action (`items`, `template`, `set`, `stamp`, `table`, `encode`, `decode`, `validate`) through the runner's `response` action, followed by the helper action and its arguments.
+This keeps response editing and rendering in the frozen runtime; the runner's `validate` shortcut remains available.
 Do not substitute helper scripts from the object being judged.
 
 Scope is identical for every judgment: inspection, remote retrieval checks, and one authorized replay in a separate fresh clone using the object's documented entrypoint.
