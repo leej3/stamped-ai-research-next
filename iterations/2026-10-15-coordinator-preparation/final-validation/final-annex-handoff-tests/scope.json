@@ -1,0 +1,7 @@
+{
+  "tested_commit": "50a96ab58cb0429374bafd4b192a04cf37d53076",
+  "passed": 206,
+  "skipped": 1,
+  "scope": "All repository tests, including real fresh-clone unlocked-annex materialization, strict artifact matching, common worker policy, independent judge workspace, formal seal and native-capture verification.",
+  "additional_change": "The Pixi launcher-tests task now includes the new materialization regression file; dependency constraints are unchanged."
+}
