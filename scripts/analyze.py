@@ -191,7 +191,7 @@ def main():
     def save_map(data, name):
         nib.save(nib.Nifti1Image(data, affine, imgs[0].header), str(OUT / name))
     save_map(mean, "group-mean.nii.gz")
-    save_map(tmap, "group-t-positive.nii.gz")
+    save_map(tmap, "group-t.nii.gz")
     save_map(pmap, "group-fwe-p-positive.nii.gz")
     save_map(mask.astype(np.uint8), "whole-brain-mask.nii.gz")
     save_map(roi_mask.astype(np.uint8), "vmPFC-atlas-mask.nii.gz")
@@ -249,7 +249,7 @@ def main():
                                      output_file=str(OUT / "whole-brain-fwe-slices.png"))
     display.close()
     vm_t = np.where(roi_mask & mask, tmap, 0).astype(np.float32)
-    vm_title = ("Predefined vmPFC ROI: uncorrected positive t statistics\n"
+    vm_title = ("Predefined vmPFC ROI: uncorrected t statistics (both signs)\n"
                 f"No vmPFC voxel survived whole-brain FWE; peak FWE p={float(roi_p.min()):.3f}")
     display = plotting.plot_stat_map(nib.Nifti1Image(vm_t, affine, imgs[0].header), bg_img=str(template_path),
                                      display_mode="z", cut_coords=[-20, -10, 0, 10, 20],

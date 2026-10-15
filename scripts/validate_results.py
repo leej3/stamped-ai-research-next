@@ -21,7 +21,7 @@ def main():
     ])
     roi = nib.load(str(OUT / "vmPFC-atlas-mask.nii.gz")).get_fdata() > 0
     mask = nib.load(str(OUT / "whole-brain-mask.nii.gz")).get_fdata() > 0
-    tmap = nib.load(str(OUT / "group-t-positive.nii.gz")).get_fdata()
+    tmap = nib.load(str(OUT / "group-t.nii.gz")).get_fdata()
     pmap = nib.load(str(OUT / "group-fwe-p-positive.nii.gz")).get_fdata()
     max_null = np.loadtxt(OUT / "permutation-max-t.tsv", skiprows=1)
 
