@@ -6,5 +6,5 @@ repos:
         entry: snapper --in-place
         language: system
         types: [markdown]
-        # Preserve exact experiment prompts, snapshots and execution records.
-        exclude: ^experiments/
+        # Preserve captured prompts, snapshots and execution records.
+        exclude: ^(experiments|setup-records)/
