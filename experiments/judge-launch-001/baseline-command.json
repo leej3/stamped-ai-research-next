@@ -1,0 +1,23 @@
+{
+  "command": [
+    "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "/Users/johnlee/.local/share/wt-utils/worktrees/82db/stamped-ai-research-next/scripts/launch_native_probe.py",
+    "--checkout",
+    "/Users/johnlee/.local/share/wt-utils/worktrees/82db/stamped-ai-research-next",
+    "--prompt",
+    "/Users/johnlee/.local/share/wt-utils/worktrees/82db/stamped-ai-research-next/experiments/judge-launch-001/preflight-prompt.txt",
+    "--output",
+    "/Users/johnlee/.local/share/wt-utils/worktrees/82db/stamped-ai-research-next/experiments/judge-launch-001/baseline",
+    "--cli",
+    "/Applications/ChatGPT.app/Contents/Resources/codex-cli/bin/codex",
+    "--role",
+    "research",
+    "--condition",
+    "baseline",
+    "--preflight-only"
+  ],
+  "returncode": 0,
+  "stdout": "{\"effective_prompt_sha256\": \"faa2157e5c2c11282a0c7aa89009c5c8287804743857d11f6ea9ba190540ee58\", \"private_marker_count\": 0, \"condition\": \"baseline\", \"role\": \"research\", \"visible_study_skills\": []}\n",
+  "stderr": "",
+  "live_agent_started": false
+}

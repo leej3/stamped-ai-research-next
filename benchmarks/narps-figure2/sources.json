@@ -1,0 +1,21 @@
+{
+  "study": "NARPS Figure 2, Hypothesis 1",
+  "paper_doi": "10.1038/s41586-020-2314-9",
+  "analysis_repository": "https://github.com/poldrack/narps",
+  "analysis_release": "2.0.3",
+  "analysis_commit": "0a9d71a5ab435b40dcd50fea82d2961a43f0a3fc",
+  "input_archive": {
+    "url": "https://zenodo.org/records/3528329/files/narps_origdata_1.0.tgz",
+    "bytes": 993792840,
+    "checksum": "md5:ea72d6ebd269c6ac4f8cb061be477d38"
+  },
+  "reference_archive": {
+    "url": "https://zenodo.org/records/3709275/files/results.tgz",
+    "bytes": 52319949,
+    "checksum": "md5:a3ae1b9311996a758afd5cc5180a9e45"
+  },
+  "metadata_verified_on": "2026-10-15",
+  "payloads_verified": false,
+  "container_digest": null,
+  "rehearsal_completed": false
+}

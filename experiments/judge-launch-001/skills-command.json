@@ -1,0 +1,23 @@
+{
+  "command": [
+    "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "/Users/johnlee/.local/share/wt-utils/worktrees/82db/stamped-ai-research-next/scripts/launch_native_probe.py",
+    "--checkout",
+    "/Users/johnlee/.local/share/wt-utils/worktrees/82db/stamped-ai-research-next",
+    "--prompt",
+    "/Users/johnlee/.local/share/wt-utils/worktrees/82db/stamped-ai-research-next/experiments/judge-launch-001/preflight-prompt.txt",
+    "--output",
+    "/Users/johnlee/.local/share/wt-utils/worktrees/82db/stamped-ai-research-next/experiments/judge-launch-001/skills",
+    "--cli",
+    "/Applications/ChatGPT.app/Contents/Resources/codex-cli/bin/codex",
+    "--role",
+    "research",
+    "--condition",
+    "skills",
+    "--preflight-only"
+  ],
+  "returncode": 0,
+  "stdout": "{\"effective_prompt_sha256\": \"d541e5abd9a9800354b692346287a8929d96224bf508956d173259d65620208e\", \"private_marker_count\": 0, \"condition\": \"skills\", \"role\": \"research\", \"visible_study_skills\": [\"align-with-stamped-principles\", \"stamped-conventions\", \"create-stamped-project\", \"create-repronim-stamped-project\", \"do-full-research-loop\", \"pixi-with-stamped\"]}\n",
+  "stderr": "",
+  "live_agent_started": false
+}

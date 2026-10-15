@@ -19,11 +19,15 @@ Common project resource skills remain available.
 
 ```sh
 pixi run launch --branch codex/my-task \
+  --base WORKER_START_REF \
   --prompt /absolute/task.txt --evidence experiments/my-task/launch \
   --condition baseline
 ```
 
-The default time bound is 240 seconds; use `--seconds` for the authorized task.
+Launch tasks explicitly select `gpt-6-luna` with high effort; record any deliberate override and keep it fixed across the comparison.
+There is no hard cutoff by default (`--seconds 0`).
+At 90 minutes, `--review-seconds 5400` emits `review.json` for the supervisor without stopping productive work.
+An explicit nonzero `--seconds` remains available for bounded setup probes.
 The worker gets its own locked Pixi environment and initialized annex remote; setup does not download all artifacts.
 `--prepare-only` verifies effective skill exposure and stops before native execution.
 A new clone additionally needs `--kind clone --clone-path ABS`.
@@ -44,3 +48,30 @@ A fresh Desktop coordinator session can therefore load those approvals; an exist
 Normal Desktop global instructions are unchanged.
 Only isolated worker launches were tested for the clean public prompt boundary.
 Capture checks and publication remain distinct operations.
+
+## Independent judges
+
+```sh
+pixi run judge --branch codex/judge-001 --base RESULT_COMMIT \
+  --evidence experiments/judgments/001
+```
+
+The coordinator resolves the target to a commit and renders `judge-prompt.md`; only that commit varies in the template.
+Do not pass an arm label or custom prompt.
+Use neutral result refs where practical and document residual identifiers that reveal condition.
+Each invocation starts a fresh session and advertises only the frozen assessor and conventions from the STAMPED bundle, plus common resource guidance.
+Assessment source checks use the coordinator's pin, and assessment helpers run outside the target in their recorded environment.
+The target's environment is evaluated through replay, without changing its dependency declarations or lock before inspection.
+Reports are written outside the target to `native/judgment/` beside `prompt.txt`, `events.jsonl`, `stderr.txt`, `launch.json` and `result.json`.
+Preserve duplicate judgments independently; never select the more favorable result.
+
+`pixi run launcher-tests` exercises role separation, pin failures and timing with fake subprocesses; it does not demonstrate a real judge session.
+Before scored rounds, verify one real judge capture and its complete assessment outputs.
+
+## Worker visibility
+
+Prepare a minimal starting ref containing the common task, data pointers and execution resources; update only treatment skill pins between rounds.
+An explicit `--base` prevents accidentally choosing the accumulating default branch, but does not itself prove isolation.
+Worktrees share repository objects/refs, and a container can still expose other runs through mounted Git directories.
+For stronger separation, the existing YOLO worker-container approach can mount a single-branch clone, inputs and narrowly scoped host services with separate writable session state.
+Verify that layout before adopting it; containerized scientific software alone does not isolate the research agent.

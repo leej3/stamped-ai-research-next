@@ -1,27 +1,44 @@
-Use this prepared repository for a small series of increasingly demanding analyses of real public data, comparing agents with and without the selected STAMPED guidance.
-Choose a feasible scientific question; check source meanings, units, missingness and access before freezing the task.
-Preserve source revisions and attribution.
+# Improve research skills through repeated use
 
-Use established scientific software and the root Pixi manifest.
-Add missing dependencies as needed; record changes and their cost.
-Keep working locks ignored.
-Preserve the exact final-validation lock on a snapshot branch one commit above the final task commit; do not re-solve or merge that snapshot into normal history.
+Test whether iterative improvements to STAMPED skills increase checklist attainment and scientific reproduction success, reduce recurring failures, and reduce variation between independent agents performing the same MRI study.
+Fresh baseline agents provide a contemporaneous reference for ordinary variability and drift.
+The complete development study must itself become a STAMPED research object; poster production follows separately.
 
-Launch matched baseline/skills arms through the prepared launcher, with fresh contexts and the same initial inputs, references, model, tools, permissions and budgets.
-Vary execution order and verify actual loaded skills.
-Both arms share resource guidance; only the declared STAMPED workflows differ.
-Record the treatment revision for each pair and change it only between pairs.
-Use the separately pinned assessment version throughout; distinguish scientific correctness from STAMPED evidence.
+Use the single, fixed task in [study.md](study.md).
+Run three rounds, each with three independent baseline workers and three independent workers using the current research skills.
+Use Luna with high reasoning effort, recording the exact model and settings.
+Keep the scientific task, data, common resources and settings identical across conditions and rounds; vary launch order.
+Record the skill revision for every run and change skills only between rounds.
 
-Predeclare independent numerical, edge-case, replay and research-object checks.
-Retain every attempt, failure and intervention; distinguish worker work from later curation.
-Include useful result figures, uncertainty where appropriate, editable sources and a rendered visual check.
-Reserve time for verification and collection.
-Increase compute only after a local pair completes and replays; use MechaBABS for BIDS Apps.
+Each worker starts in a prepared worktree containing only the common scientific task, inputs, operational resources and selected skills.
+Exclude coordinator instructions, earlier experiments and assessment results from worker context.
+Start each baseline from the same minimal starting state; a treatment start differs only in its declared skill revision and exposure.
+Do not start research workers from the accumulating coordinator branch.
+Worktrees share Git objects and refs: separate directories alone do not prove information isolation.
+If containerizing workers, expose only their checkout, inputs and required host services; verify actual file and skill visibility.
 
-Duct logging is requested for scientific execution.
-Retain complete module-local command logs, native capture and DataLad records, linked but distinguishable.
-Collect code, inputs, outputs, figures and evidence; verify Git and annex retrieval, relaying cluster results through the local host when needed.
+The task should normally fit within 45 minutes after preparation.
+Allow completion, review progress around 90 minutes, and extend productive work.
+Record elapsed time, interruptions and assistance; retain failures and partial outputs.
+Do not discard an attempt because it runs long or scores poorly.
 
-Deliver the complete research object and a concise comparison separating scientific correctness, STAMPED evidence, costs and untested claims.
-Do not infer general skill efficacy from a few exploratory pairs.
+Use `pixi run judge` for a fresh judgment of each committed research object.
+Freeze the assessor, its runtime, judge model/settings, [judging prompt](judge-prompt.md) and replay scope before round one.
+The coordinator never supplies grades, condition labels or prior-round history to judges.
+Independently judge one randomly selected object per condition per round twice; retain both judgments and report disagreement separately from worker variability.
+Blinding is partial and must be described honestly.
+
+After each of the first two rounds, improve the research skills from observed problems and useful practices.
+Record the evidence motivating each change; compress and modularize guidance without embedding this study's answers.
+Keep the assessment frozen.
+If a defect prevents valid assessment, document it and pause comparisons rather than silently changing the measuring instrument.
+
+Retain all inputs, code, outputs, figures, assessments, skill revisions, native capture, DataLad records and requested module-local duct logs.
+Use annex for large files and verify independent retrieval and replay.
+Distinguish original worker products from later curation.
+
+Deliver the improved skills, assessment examples and complete research object, with figures showing per-item attainment, scientific reproduction outcomes, recurring failure frequencies, costs and variation across rounds.
+Keep `not-checked` visible; use the frozen checklist's verdicts without inventing an overall assessor score.
+Three replicates give exploratory evidence, not a precise variance estimate.
+Have a fresh judge assess the final research object.
+Limit conclusions to this task; future contributed studies can test transfer using the same process.

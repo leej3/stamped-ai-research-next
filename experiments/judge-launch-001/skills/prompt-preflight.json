@@ -1,0 +1,14 @@
+{
+  "effective_prompt_sha256": "d541e5abd9a9800354b692346287a8929d96224bf508956d173259d65620208e",
+  "private_marker_count": 0,
+  "condition": "skills",
+  "role": "research",
+  "visible_study_skills": [
+    "align-with-stamped-principles",
+    "stamped-conventions",
+    "create-stamped-project",
+    "create-repronim-stamped-project",
+    "do-full-research-loop",
+    "pixi-with-stamped"
+  ]
+}

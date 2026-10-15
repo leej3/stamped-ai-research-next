@@ -17,9 +17,10 @@
 - Use Conventional Commits for authored messages and freshly resolved commit-provenance trailers.
   Preserve native DataLad subjects and run records; append attribution without rewriting them.
   Run Snapper on prose.
-- The coordinator grades with the pinned `assessment/` skill and `pixi run assessment-*` helpers.
-  Keep its source and runtime fixed while iterating the workflows in `skills/`.
+- The coordinator dispatches fresh judges with `pixi run judge`; it does not grade its workers.
+  Keep the pinned `assessment/` source, runtime, judging prompt and scope fixed while iterating `skills/`.
 - Adapt reusable skills when a recurring tool problem is demonstrated.
   Keep skill entrypoints concise, route substantial conditional detail to references, and verify behavior after compression.
 
-Launch workers with `pixi run launch`.
+Use an explicit clean starting ref for research workers and an exact result commit for judges.
+Research workers receive the common task in `study.md`, without other workers' experiments or coordinator instructions.
