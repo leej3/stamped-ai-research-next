@@ -1,5 +1,7 @@
 # Improving STAMPED research skills
 
+<img src="assets/workbench.png" alt="STAMPED workbench" width="280">
+
 This repository is a workshop for improving STAMPED research skills.
 It compares four ways of assisting agents with scientific studies, evaluates the resulting research objects using a versioned assessment, and uses that evidence to revise the skills.
 The question is whether the guidance helps agents do sound science with more thorough, efficient and consistent reproducibility.

@@ -13,3 +13,4 @@ pixi.lock annex.largefiles=nothing
 *.tsv annex.largefiles=(largerthan=100kb)
 * annex.backend=MD5E
 **/.git* annex.largefiles=nothing
+assets/workbench.png annex.largefiles=nothing
