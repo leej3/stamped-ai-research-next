@@ -19,6 +19,7 @@ from pathlib import Path
 from study_seed import audit_seed, research_prompt
 from research_conditions import CONDITION_CHOICES, RESEARCH_SKILLS, canonical_condition
 import assessment_procedure as procedure
+import judge_workspace
 from worker_end_state import save_worker_end_state, validate_retained_artifacts
 
 STUDY_SKILLS = ("assess-alignment-with-stamped-principles",) + RESEARCH_SKILLS
@@ -230,6 +231,8 @@ def wait_and_capture_worker(process, prompt, output, checkout, record, role,
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--checkout", type=Path, required=True)
+    parser.add_argument("--judge-workspace", type=Path,
+                        help="Prepared independent judge session/output repository")
     parser.add_argument("--prompt", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--cli", type=Path, required=True)
@@ -256,6 +259,15 @@ def main():
     args = parser.parse_args()
     if args.seconds < 0 or args.review_seconds < 0:
         parser.error("Time settings must be nonnegative")
+    session_checkout = args.checkout.resolve()
+    workspace = None
+    if args.role == "judge":
+        if not args.judge_workspace:
+            parser.error("Judges require a separate --judge-workspace")
+        session_checkout = args.judge_workspace.resolve()
+        workspace = judge_workspace.validate(session_checkout, args.checkout.resolve())
+    elif args.judge_workspace:
+        parser.error("--judge-workspace is for judges only")
     pin = check_assessment(args.assessment_source.resolve(), args.assessment_pin) if args.role == "judge" else None
     if args.role == "research":
         seed = audit_seed(args.checkout.resolve())
@@ -318,8 +330,11 @@ def main():
     elif args.procedure or args.procedure_sha256 or args.procedure_study or args.resource_readiness:
         parser.error("Procedure flags require --run-mode formal")
     output = args.output.resolve()
-    if args.role == "research" and output.is_relative_to(args.checkout.resolve()):
-        parser.error("Research launch evidence must be outside the worker checkout")
+    if output.is_relative_to(args.checkout.resolve()):
+        parser.error("Launch evidence must be outside the assessed or research checkout")
+    if args.role == "judge" and (output.is_relative_to(session_checkout) or
+                                 session_checkout.is_relative_to(output)):
+        parser.error("Native evidence and judge workspace must be separate directories")
     output.mkdir(parents=True, exist_ok=False)
     if args.worker_end_state:
         status["worker_end_state_sha256"] = procedure.sha256(args.worker_end_state.read_bytes())
@@ -365,14 +380,12 @@ def main():
     command = [str(args.cli), "--no-daemon", "-a", "never", "-s", "danger-full-access",
                "-m", args.model, "-c", 'model_reasoning_effort="' + args.effort + '"',
                "-c", skill_config, "-c", "project_doc_max_bytes=0",
-               "exec", "--json", "--color", "never", "-C", str(args.checkout.resolve()),
+               "exec", "--json", "--color", "never", "-C", str(session_checkout),
                "-o", str(output / "final.txt"), "-"]
     environment = os.environ.copy()
     environment["CODEX_HOME"] = str(profile)
     if args.role == "judge":
-        report_dir = output / "judgment"
-        report_dir.mkdir()
-        environment["STAMPED_JUDGE_OUTPUT"] = str(report_dir)
+        environment["STAMPED_JUDGE_OUTPUT"] = str(session_checkout)
         environment["STAMPED_JUDGE_TARGET"] = str(args.checkout.resolve())
         environment["STAMPED_ASSESSMENT_RUNNER"] = str(Path(__file__).resolve().with_name("assessment.py"))
         environment["STAMPED_ASSESSMENT_PYTHON"] = sys.executable
@@ -388,9 +401,9 @@ def main():
                     "PIXI_PROJECT_NAME", "PIXI_PROJECT_VERSION", "PIXI_ENVIRONMENT_NAME",
                     "PIXI_ENVIRONMENT_PLATFORMS", "PIXI_PROMPT")
                     if environment.pop(key, None) is not None]
-    preview_command = command[:command.index("exec")] + ["-C", str(args.checkout.resolve()),
+    preview_command = command[:command.index("exec")] + ["-C", str(session_checkout),
                       "debug", "prompt-input", prompt.decode()]
-    preview = subprocess.run(preview_command, cwd=args.checkout, env=environment,
+    preview = subprocess.run(preview_command, cwd=session_checkout, env=environment,
                              capture_output=True, check=True)
     forbidden = [marker for marker in (b"memory/transport.json", b"sensitive transport configuration",
                 b"Hub token file", b"- private-workshop-memory:", b"- workshop-feedback:")
@@ -415,7 +428,7 @@ def main():
     if args.preflight_only:
         print(json.dumps(preflight))
         return
-    record = {"command": command, "cwd": str(args.checkout.resolve()),
+    record = {"command": command, "cwd": str(session_checkout),
               "prompt_sha256": hashlib.sha256(prompt).hexdigest(),
               "inherited_session_variables_removed": removed,
               "inherited_pixi_variables_removed": pixi_removed,
@@ -427,12 +440,14 @@ def main():
     record["codex_home"] = str(profile)
     record["study_skill_paths"] = [str(p) for p in study_skills]
     record["starting_commit"] = subprocess.check_output(
-        ["git", "-C", str(args.checkout), "rev-parse", "HEAD"], text=True).strip()
+        ["git", "-C", str(session_checkout), "rev-parse", "HEAD"], text=True).strip()
     if args.role == "judge":
+        record["judge_workspace"] = str(session_checkout)
+        record["target"] = workspace
         runner = Path(environment["STAMPED_ASSESSMENT_RUNNER"])
         record["assessment_runner_sha256"] = hashlib.sha256(runner.read_bytes()).hexdigest()
     (output / "launch.json").write_text(json.dumps(record, indent=2) + "\n")
-    process = subprocess.Popen(command, cwd=args.checkout, env=environment,
+    process = subprocess.Popen(command, cwd=session_checkout, env=environment,
                                stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
                                process_group=0)
     def relay():
@@ -468,10 +483,21 @@ def main():
         if item.get("type") == "thread.started":
             sessions.append(item.get("thread_id"))
     record["native_session_ids"] = sessions
+    target_error = None
+    if args.role == "judge":
+        try:
+            judge_workspace.validate_target(args.checkout.resolve(), workspace)
+            record["target_unchanged"] = True
+        except (ValueError, SystemExit, subprocess.CalledProcessError) as error:
+            record["target_unchanged"] = False
+            target_error = str(error)
+            record["target_validation_error"] = target_error
     (output / "result.json").write_text(json.dumps(record, indent=2) + "\n")
     if args.role == "research":
         (output / "skill-observations.json").write_text(json.dumps(
             skill_observations(args.checkout.resolve(), profile), indent=2) + "\n")
+    if target_error:
+        raise SystemExit("Judge changed the assessed target: " + target_error)
     raise SystemExit(124 if timed_out else process.returncode)
 
 

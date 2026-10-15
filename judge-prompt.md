@@ -1,5 +1,6 @@
-Assess the committed research object at `$TARGET_COMMIT` in the current checkout.
-Verify the commit before starting.
+Assess the committed research object at `$TARGET_COMMIT` in the absolute target directory named by `STAMPED_JUDGE_TARGET`.
+Verify it with `git -C "$STAMPED_JUDGE_TARGET" rev-parse HEAD` before starting.
+Your current directory is a separate Git repository for this judgment, also named by `STAMPED_JUDGE_OUTPUT`.
 Use the frozen `assess-alignment-with-stamped-principles` skill and its pinned conventions.
 Use the coordinator-supplied runner, outside the target, for the recorded assessor runtime:
 

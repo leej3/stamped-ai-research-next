@@ -16,6 +16,7 @@ import launch_native_probe as launch
 import prepare_launch as prepare
 import study_seed as seed
 import research_conditions as conditions
+import judge_workspace
 
 
 def git(path, *args):
@@ -352,6 +353,14 @@ else:
         pin = json.loads(pathlib.Path(os.environ["STAMPED_ASSESSMENT_PIN"]).read_text())
         assert (source / "skills/assess-alignment-with-stamped-principles/SKILL.md").is_file()
         assert pin["source_commit"]
+        workspace = pathlib.Path(os.environ["STAMPED_JUDGE_OUTPUT"])
+        target = pathlib.Path(os.environ["STAMPED_JUDGE_TARGET"])
+        assert workspace == pathlib.Path.cwd() != target
+        assert pathlib.Path(args[args.index("-C") + 1]) == workspace
+        assert (workspace / ".git").is_dir()
+        (workspace / "assessment.txt").write_text("Fixture assessment artifact.\\n")
+        if os.environ.get("FAKE_CHANGE_TARGET"):
+            (target / "input/study-task.md").write_text("Unauthorized target edit.\\n")
     sys.stdin.read()
     pathlib.Path(args[args.index("-o") + 1]).write_text("Fixture report, not a live judgment.\\n")
     print(json.dumps({"type": "thread.started", "thread_id": "fake-test-session"}))
@@ -382,12 +391,17 @@ def test_fixture_launch_retains_evidence_and_judges_without_worker_assessor(
     pin.write_text(json.dumps({"source_commit": git(assessor, "rev-parse", "HEAD")}))
     environment = dict(os.environ, CODEX_HOME=str(profile), CODEX_THREAD_ID="must-be-removed",
                        PIXI_PROJECT_MANIFEST="/wrong/coordinator/pixi.toml", PIXI_IN_SHELL="1")
+    workspace = tmp_path / "judgment"
+    target_before = (git(worker, "rev-parse", "HEAD"), git(worker, "status", "--porcelain"))
+    if role == "judge":
+        judge_workspace.initialize(workspace, worker, source_repositories[3])
     result = subprocess.run([
         sys.executable, str(ROOT / "scripts/launch_native_probe.py"),
         "--checkout", str(worker), "--prompt", str(prompt), "--output", str(output),
         "--cli", str(cli), "--role", role, "--condition", condition,
         "--assessment-source", str(assessor), "--assessment-pin", str(pin),
-        "--review-seconds", "0"] + (["--capture-execution"] if capture_execution else []),
+        "--review-seconds", "0"] + (["--capture-execution"] if capture_execution else []) +
+        (["--judge-workspace", str(workspace)] if role == "judge" else []),
         env=environment, capture_output=True, text=True)
     assert result.returncode == 0, result.stderr
     preflight = json.loads((output / "prompt-preflight.json").read_text())
@@ -418,12 +432,47 @@ def test_fixture_launch_retains_evidence_and_judges_without_worker_assessor(
     if role == "judge":
         assert record["condition"] is None
         assert record["assessment_pin"]["source_commit"]
-        assert (output / "judgment").is_dir()
+        assert Path(record["cwd"]) == workspace
+        assert Path(record["judge_workspace"]) == workspace
+        assert record["starting_commit"] == git(workspace, "rev-parse", "HEAD")
+        assert record["target"]["target_commit"] == target_before[0]
+        assert record["target_unchanged"] is True
+        assert (workspace / "assessment.txt").read_text() == "Fixture assessment artifact.\n"
+        assert "assessment.txt" in git(workspace, "status", "--porcelain")
+        assert (git(worker, "rev-parse", "HEAD"), git(worker, "status", "--porcelain")) == target_before
+        assert not (worker / ".codex").exists()
+        assert not (worker / ".entire").exists()
         assert all(Path(p).resolve().is_relative_to(assessor) for p in record["study_skill_paths"])
         assert Path(record["codex_home"]).parent == profile.parent
         assert Path(record["codex_home"]) != profile
         assert not Path(record["codex_home"]).is_relative_to(worker)
         assert not Path(record["codex_home"]).is_relative_to(output)
+
+
+def test_native_judge_retains_failure_when_target_is_modified(tmp_path, fake_cli, source_repositories):
+    cli, profile = fake_cli
+    target, _ = make_worker(tmp_path, source_repositories)
+    workspace = tmp_path / "judgment"
+    judge_workspace.initialize(workspace, target, source_repositories[3])
+    prompt = tmp_path / "prompt.md"
+    prompt.write_text("Synthetic target mutation regression.\n")
+    pin = tmp_path / "pin.json"
+    assessor = source_repositories[-1]
+    pin.write_text(json.dumps({"source_commit": git(assessor, "rev-parse", "HEAD")}))
+    output = tmp_path / "native"
+    result = subprocess.run([
+        sys.executable, str(ROOT / "scripts/launch_native_probe.py"),
+        "--checkout", str(target), "--judge-workspace", str(workspace),
+        "--prompt", str(prompt), "--output", str(output), "--cli", str(cli),
+        "--role", "judge", "--assessment-source", str(assessor), "--assessment-pin", str(pin),
+        "--review-seconds", "0"], env=dict(os.environ, CODEX_HOME=str(profile), FAKE_CHANGE_TARGET="1"),
+        capture_output=True, text=True)
+    assert result.returncode != 0
+    assert "Judge changed the assessed target" in result.stderr
+    receipt = json.loads((output / "result.json").read_text())
+    assert receipt["target_unchanged"] is False
+    assert receipt["native_session_ids"] == ["fake-test-session"]
+    assert (workspace / "assessment.txt").is_file()
 
 
 @pytest.mark.parametrize("change", ["command-error", "wrong-key", "partial-result", "exit-code", "invalid-json"])

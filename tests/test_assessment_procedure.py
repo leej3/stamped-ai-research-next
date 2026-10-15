@@ -13,6 +13,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 import assessment_procedure as procedure
 import prepare_launch as prepare
 import study_seed as seed
+import judge_workspace
 from test_launch import fake_cli, git, init, commit
 from test_assessment_runner import frozen_runner
 
@@ -167,7 +168,8 @@ def test_external_starting_snapshot_can_be_selected_without_local_history(compar
 
 
 @pytest.mark.parametrize("name", ["judge-prompt.md", "assessment-version.json", "conditions.json",
-                                 "scripts/assessment.py", "scripts/study_seed.py", "requirements.json"])
+                                 "scripts/assessment.py", "scripts/study_seed.py",
+                                 "scripts/judge_workspace.py", "requirements.json"])
 def test_dirty_control_or_assessment_bytes_cannot_enter_formal_run(comparison, name):
     args, manifest = comparison
     with (args.repo / name).open("a") as stream:
@@ -392,7 +394,9 @@ def test_formal_native_launch_checks_frozen_inputs_and_records_status(comparison
         "--procedure-sha256", args.procedure_sha256, "--procedure-study", str(args.study),
         "--resource-readiness", str(args.resource_readiness)]
     if role == "judge":
-        command += ["--worker-end-state", str(stop_receipt)]
+        workspace = tmp_path / "judgment"
+        judge_workspace.initialize(workspace, worker, args.resolver)
+        command += ["--worker-end-state", str(stop_receipt), "--judge-workspace", str(workspace)]
     result = subprocess.run(command, env=dict(os.environ, CODEX_HOME=str(args.codex_home)),
                             capture_output=True, text=True)
     assert result.returncode == 0, result.stderr
@@ -400,6 +404,12 @@ def test_formal_native_launch_checks_frozen_inputs_and_records_status(comparison
     assert receipt["procedure"]["status"] == "formal-verified"
     assert receipt["procedure"]["procedure_sha256"] == args.procedure_sha256
     if role == "judge":
+        assert receipt["cwd"] == str(workspace)
+        assert receipt["target_unchanged"] is True
+        # A second attempt receives a fresh session repository.
+        workspace = tmp_path / "changed-judgment"
+        judge_workspace.initialize(workspace, worker, args.resolver)
+        command[command.index("--judge-workspace") + 1] = str(workspace)
         prompt.write_text(prompt.read_text() + "\nChanged judging instruction\n")
         command[command.index("--output") + 1] = str(tmp_path / "changed-native")
         result = subprocess.run(command, env=dict(os.environ, CODEX_HOME=str(args.codex_home)),
@@ -424,6 +434,59 @@ def test_replay_is_exact_target_single_attempt_and_uses_fixed_comparison_setting
     with pytest.raises(SystemExit, match="already consumed"):
         procedure.replay_arguments(manifest, arguments, args.study, output)
     assert procedure.replay_arguments(manifest, ["--help"], args.study, output) == ["--help"]
+
+
+def test_prepare_routes_judge_setup_and_execution_to_separate_repository(comparison, tmp_path, monkeypatch):
+    args, _ = comparison
+    result_repo = tmp_path / "submitted-result"
+    seed.make_seed(args.repo, args.base, args.study, result_repo, "codex/result", "baseline", args.resolver)
+    target_commit = git(result_repo, "rev-parse", "HEAD")
+    target = tmp_path / "exact-target"
+    evidence = tmp_path / "judge-evidence"
+    prepared = []
+    actual_run = prepare.run
+
+    def host_run(argv, cwd, capture=False):
+        command = [str(value) for value in argv]
+        if command[0] == "pixi":
+            # The host runtime/annex transport is orthogonal to session routing.
+            return "{}" if capture else None
+        if len(command) > 1 and command[1].endswith("/prepare_checkout.py"):
+            prepared.append(Path(command[command.index("--checkout") + 1]))
+            return None
+        return actual_run(argv, cwd, capture)
+
+    monkeypatch.setattr(prepare, "run", host_run)
+    monkeypatch.setattr(prepare, "__file__", str(args.repo / "scripts/prepare_launch.py"))
+    coordinator_profile = tmp_path / "coordinator-profile"
+    coordinator_profile.mkdir()
+    monkeypatch.setenv("CODEX_HOME", str(coordinator_profile))
+    args.resolver.write_text(f"#!{sys.executable}\nimport os\n"
+        f"assert os.environ['CODEX_HOME'] == {str(coordinator_profile)!r}\n"
+        "print('Co-Authored-By: Synthetic fixture <fixture@example.invalid>')\n")
+    monkeypatch.setattr(sys, "argv", ["prepare_launch.py", "--role", "judge",
+        "--host-config", str(tmp_path / "no-defaults.json"), "--repo", str(result_repo),
+        "--base", target_commit, "--branch", "codex/judge-fixture", "--clone-path", str(target),
+        "--evidence", str(evidence), "--study", str(args.study), "--env-manifest", str(args.env_manifest),
+        "--approved-hooks", str(args.approved_hooks), "--trust-sync", str(args.trust_sync),
+        "--resolver", str(args.resolver), "--checkpoint-repo", "example/checkpoints",
+        "--annex-git-url", str(args.study), "--annex-url", "fixture://annex",
+        "--cli", str(args.cli), "--codex-home", str(args.codex_home), "--review-seconds", "0"])
+    prepare.main()
+
+    workspace = evidence / "judgment"
+    assert prepared == [workspace]
+    native = json.loads((evidence / "native/result.json").read_text())
+    assert native["cwd"] == str(workspace)
+    assert native["target"]["target_path"] == str(target)
+    assert native["target"]["target_commit"] == target_commit
+    assert native["target_unchanged"] is True
+    assert git(target, "rev-parse", "HEAD") == target_commit
+    assert git(target, "status", "--porcelain") == ""
+    assert (workspace / "assessment.txt").is_file()
+    assert not (target / "assessment.txt").exists()
+    assert not (target / ".codex").exists()
+    assert not (target / ".entire").exists()
 
 
 @pytest.mark.parametrize("extra", [["--keep-outputs"], ["--url", "https://example.invalid/object"]])

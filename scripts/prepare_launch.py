@@ -15,6 +15,7 @@ from pathlib import Path
 from study_seed import audit_seed, blob, make_seed, research_prompt, worker_manifest
 from research_conditions import CONDITION_CHOICES
 import assessment_procedure as procedure
+import judge_workspace
 
 
 def run(argv, cwd, capture=False):
@@ -95,6 +96,8 @@ def main():
                         help="Coordinator revision pinning study/resources/skills; result revision for judges")
     parser.add_argument("--kind", choices=["worktree", "clone"], default="clone")
     parser.add_argument("--clone-path", type=Path)
+    parser.add_argument("--judge-workspace", type=Path,
+                        help="Separate judge session/output repository; default: EVIDENCE/judgment")
     parser.add_argument("--evidence", type=Path, required=True)
     parser.add_argument("--env-manifest", type=Path)
     parser.add_argument("--approved-hooks", type=Path)
@@ -141,6 +144,8 @@ def main():
         parser.error("Reference guidance is for judges only")
     if args.role == "research" and args.worker_end_state:
         parser.error("--worker-end-state is for judges only")
+    if args.role == "research" and args.judge_workspace:
+        parser.error("--judge-workspace is for judges only")
     if args.role == "judge" and args.condition != "baseline":
         parser.error("Judges use the fixed template; omit --condition")
     for name in ("repo", "env_manifest", "approved_hooks", "trust_sync", "resolver", "cli", "codex_home"):
@@ -309,9 +314,18 @@ def main():
         "worker_environment_installed": True,
         "manifest_sha256": hashlib.sha256(args.env_manifest.read_bytes()).hexdigest(),
         "lock_sha256": hashlib.sha256(lock.read_bytes()).hexdigest()}, indent=2) + "\n")
-    os.environ["CODEX_HOME"] = str(args.codex_home.resolve())
     scripts = Path(__file__).resolve().parent
-    run([sys.executable, scripts / "prepare_checkout.py", "--checkout", checkout,
+    session_checkout = checkout
+    if args.role == "judge":
+        session_checkout = (args.judge_workspace.resolve() if args.judge_workspace else
+                            evidence / "judgment")
+        workspace = judge_workspace.initialize(session_checkout, checkout, args.resolver)
+        (evidence / "judge-workspace.json").write_text(json.dumps(
+            {"workspace": str(session_checkout), "target": workspace}, indent=2) + "\n")
+    # Seed attribution belongs to the active coordinator; native setup and
+    # execution use the isolated public profile only after that commit exists.
+    os.environ["CODEX_HOME"] = str(args.codex_home.resolve())
+    run([sys.executable, scripts / "prepare_checkout.py", "--checkout", session_checkout,
          "--approved-hooks", args.approved_hooks, "--trust-sync", args.trust_sync,
          "--resolver", args.resolver, "--checkpoint-repo", args.checkpoint_repo,
          "--receipt", evidence / "preparation.json"], repo)
@@ -326,6 +340,7 @@ def main():
            "--procedure-sha256", args.procedure_sha256, "--procedure-study", args.study.resolve(),
            "--resource-readiness", evidence / "resource-readiness.json"] if frozen else []) +
          (["--worker-end-state", args.worker_end_state] if args.worker_end_state else []) +
+         (["--judge-workspace", session_checkout] if args.role == "judge" else []) +
          (["--capture-execution"] if args.capture_execution else []) +
          (["--preflight-only"] if args.prepare_only else []), repo)
 

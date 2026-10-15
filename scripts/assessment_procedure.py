@@ -24,7 +24,7 @@ FIXED_FILES = (
     "scripts/prepare_launch.py", "scripts/launch_native_probe.py",
     "scripts/study_seed.py", "scripts/research_conditions.py",
     "scripts/prepare_checkout.py", "scripts/commit_provenance_hook.py", "scripts/readiness.py",
-    "scripts/worker_end_state.py",
+    "scripts/worker_end_state.py", "scripts/judge_workspace.py",
 )
 REPLAY = {"scope": "inspection-remote-retrieval-one-fresh-replay",
           "maximum_attempts": 1, "source": "exact-local-result-commit",
