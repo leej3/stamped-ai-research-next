@@ -1,0 +1,54 @@
+{
+  "id": "annex-round-trip",
+  "description": "Upload a new task artifact to the selected annex store and independently retrieve identical bytes.",
+  "source": "User: confirm annex push access and keep complete artifacts without Git bloat.",
+  "started_at": "2026-10-15T22:17:45.386861+00:00",
+  "status": "passed",
+  "argv": [
+    "/Users/johnlee/code/CON/stamped-ai-research-next/.pixi/envs/default/bin/python",
+    "/Users/johnlee/.config/stamped-ai-research-next/readiness_probe.py",
+    "annex-round-trip"
+  ],
+  "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015",
+  "returncode": 0,
+  "artifacts": [
+    {
+      "path": "annex-round-trip/artifacts/verification.json",
+      "sha256": "10f119c713d58c48a2b477df12f9dcdbe705e920fe639b49c80548cf6c463789",
+      "bytes": 2080,
+      "status": "retained"
+    },
+    {
+      "path": "annex-round-trip/artifacts/commands.json",
+      "sha256": "965be4758135608029b41ecf3c6789c537e67d25a5b06937540b980d67e95b8a",
+      "bytes": 18259,
+      "status": "retained"
+    },
+    {
+      "path": "annex-round-trip/artifacts/probe.py",
+      "sha256": "bc346ff008e3a3bfbcd4145560f4327e965e64fb700c57e109974a389a23c262",
+      "bytes": 14992,
+      "status": "retained"
+    },
+    {
+      "path": "annex-round-trip/artifacts/payload.json",
+      "sha256": "c9a23b77fb449ffaf7aeb2ad7ee6bffe75c78b28a59798dd3e6e0604d8a6cea9",
+      "bytes": 143,
+      "status": "retained"
+    }
+  ],
+  "timeout_seconds": 300,
+  "artifact_directory": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/readiness-01/annex-round-trip/artifacts",
+  "stdout": {
+    "path": "annex-round-trip/stdout.txt",
+    "sha256": "d01e0bffc9df4beb0b3a6fce367d7b59afa1f8e1ba22c0371205cbb356c503c5",
+    "bytes": 212
+  },
+  "stderr": {
+    "path": "annex-round-trip/stderr.txt",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "bytes": 0
+  },
+  "finished_at": "2026-10-15T22:17:48.152196+00:00",
+  "elapsed_seconds": 2.765327165951021
+}

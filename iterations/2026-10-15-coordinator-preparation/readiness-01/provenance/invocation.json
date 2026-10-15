@@ -1,0 +1,45 @@
+{
+  "recorded_at": "2026-10-15T22:18:23.111479+00:00",
+  "argv": [
+    "/Users/johnlee/code/CON/stamped-ai-research-next/.pixi/envs/default/bin/python",
+    "scripts/readiness.py",
+    "--requirements",
+    "iterations/2026-10-15-coordinator-preparation/requirements.json",
+    "--host-config",
+    "/Users/johnlee/.config/stamped-ai-research-next/readiness.json",
+    "--evidence",
+    "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/readiness-01"
+  ],
+  "cwd": "/Users/johnlee/.local/share/wt-utils/worktrees/776c/stamped-ai-research-next",
+  "returncode": 0,
+  "sources": [
+    {
+      "source": "/Users/johnlee/.config/stamped-ai-research-next/readiness.json",
+      "retained_path": "provenance/host-readiness.json",
+      "sha256": "7d1dde7a0622218992ea3427fbebf4decad10544f4cbadeb551b6ad9ff65bc9c",
+      "bytes": 1381
+    },
+    {
+      "source": "/Users/johnlee/.config/stamped-ai-research-next/readiness_probe.py",
+      "retained_path": "provenance/host-readiness-probe.py",
+      "sha256": "bc346ff008e3a3bfbcd4145560f4327e965e64fb700c57e109974a389a23c262",
+      "bytes": 14992
+    },
+    {
+      "source": "/Users/johnlee/.local/share/wt-utils/worktrees/776c/stamped-ai-research-next/scripts/readiness.py",
+      "retained_path": "provenance/runner.py",
+      "sha256": "0e8aef2cb58df17be12687ccdf7deb9721fdf58c4f0c94fecdfbec8edd40d4af",
+      "bytes": 9839
+    }
+  ],
+  "supplemental_native_verifier": {
+    "path": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/native-capture-investigation-01/verified-native-capture.json",
+    "sha256": "322e7824237e8649a250affadfca1ad107910a4fcc6198c70af2f944d26d66c4",
+    "native_capture_verified": true,
+    "uploaded_refs_verified": true,
+    "hosted_verified": true,
+    "scope": "Independent corrected verifier receipt, supplemental to fresh readiness probe; not blindly used as a readiness flag."
+  },
+  "authorization_scope": "Fresh tiny annex donor/upload/independent-recipient round trip authorized after original receipt lacked upload evidence. Existing HPC job and native checkpoint reverified read-only. No new scheduler job or code/checkpoint publication.",
+  "host_source_review": "Probe and configuration contain paths, public service URLs and nonsecret identifiers; no credentials, token values or environment dump."
+}

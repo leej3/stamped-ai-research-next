@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "checks": {
+    "native-capture": {
+      "argv": [
+        "/Users/johnlee/code/CON/stamped-ai-research-next/.pixi/envs/default/bin/python",
+        "/Users/johnlee/.config/stamped-ai-research-next/readiness_probe.py",
+        "native-capture"
+      ],
+      "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015",
+      "timeout_seconds": 180,
+      "artifacts": ["verification.json", "commands.json", "probe.py"]
+    },
+    "annex-round-trip": {
+      "argv": [
+        "/Users/johnlee/code/CON/stamped-ai-research-next/.pixi/envs/default/bin/python",
+        "/Users/johnlee/.config/stamped-ai-research-next/readiness_probe.py",
+        "annex-round-trip"
+      ],
+      "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015",
+      "timeout_seconds": 300,
+      "artifacts": ["verification.json", "commands.json", "probe.py", "payload.json"]
+    },
+    "hpc-round-trip": {
+      "argv": [
+        "/Users/johnlee/code/CON/stamped-ai-research-next/.pixi/envs/default/bin/python",
+        "/Users/johnlee/.config/stamped-ai-research-next/readiness_probe.py",
+        "hpc-round-trip"
+      ],
+      "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015",
+      "timeout_seconds": 180,
+      "artifacts": ["verification.json", "commands.json", "probe.py"]
+    }
+  }
+}

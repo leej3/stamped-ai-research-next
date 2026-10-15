@@ -1,0 +1,54 @@
+{
+  "verified_at": "2026-10-15T22:15:55.368004+00:00",
+  "checkout": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/coordinator-trial-02",
+  "commit": "baa6cf9bb823db2068453db71d822afc6e013667",
+  "code_ref": "refs/heads/codex/coordinator-trial-20261015",
+  "checkpoint_id": "01M50SK1726HDTHJHVPPS8WED8",
+  "code_ref_oid": "baa6cf9bb823db2068453db71d822afc6e013667",
+  "child_task_id": null,
+  "event_checkout": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/coordinator-trial-02",
+  "event_commit": null,
+  "checkpoint_ref": "refs/entire/checkpoints/D8/01M50SK1726HDTHJHVPPS8WED8",
+  "checkpoint_oid": "3b189d6a1b6fc47159b80ab4900a00d3b1c8ae34",
+  "branch": "codex/coordinator-trial-20261015",
+  "session_id": "01a14197-3860-72f0-8fbd-7f5bcec167cf",
+  "all_checkpoint_session_ids": [
+    "01a14197-3860-72f0-8fbd-7f5bcec167cf"
+  ],
+  "native_capture_verified": true,
+  "identities": [
+    {
+      "session_id": "01a14197-3860-72f0-8fbd-7f5bcec167cf",
+      "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/coordinator-trial-02",
+      "source": "exec"
+    }
+  ],
+  "file_events": [
+    {
+      "line": 115,
+      "item_id": "exec-044005a5-f83f-419a-b3b5-895e4dc48b17",
+      "file": "coordinator-trial.md",
+      "evidence_kind": "completed-literal-heredoc-write",
+      "command_cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/coordinator-trial-02",
+      "following_git_status_verified": true,
+      "command_sha256": "531c81c1772eb20583b6576a1d57d311bc7b394c022e7db23ec6553b2a718995",
+      "written_content_sha256": "a27a5fed206e11ed7265f3f36c4942442753bf167321b16ca11ffbb5f91c53d3",
+      "written_content_bytes": 12107
+    }
+  ],
+  "committed_file_sha256": "7d5e6326226a6ecce7f770788880f0417260fb3684b0c16fb89e5997af241d46",
+  "transcript_sha256": "d6300f4ddb52adb7765aace281b74b46d1b66048cc602089d343a1794124a35e",
+  "transcript_bytes": 656110,
+  "private_guidance_marker_hits": [
+    "memory/transport.json",
+    "sensitive transport configuration",
+    "private overlay",
+    "Hub token file"
+  ],
+  "raw_transcript_saved": false,
+  "uploaded_refs_verified": true,
+  "hosted_verified": true,
+  "hosted_session_ids": [
+    "01a14197-3860-72f0-8fbd-7f5bcec167cf"
+  ]
+}

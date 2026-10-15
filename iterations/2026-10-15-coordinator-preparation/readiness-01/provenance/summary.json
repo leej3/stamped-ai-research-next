@@ -1,0 +1,82 @@
+{
+  "ready": true,
+  "started_at": "2026-10-15T22:17:44.104968+00:00",
+  "finished_at": "2026-10-15T22:17:51.524014+00:00",
+  "elapsed_seconds": 7.419014832936227,
+  "checks": [
+    {
+      "id": "native-capture",
+      "status": "passed",
+      "elapsed_seconds": 1.2808023329125717,
+      "observations": {
+        "checkout": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/coordinator-trial-02",
+        "code_commit": "baa6cf9bb823db2068453db71d822afc6e013667",
+        "checkpoint_id": "01M50SK1726HDTHJHVPPS8WED8",
+        "checkpoint_ref": "refs/entire/checkpoints/D8/01M50SK1726HDTHJHVPPS8WED8",
+        "checkpoint_commit": "3b189d6a1b6fc47159b80ab4900a00d3b1c8ae34",
+        "session_id": "01a14197-3860-72f0-8fbd-7f5bcec167cf",
+        "remote_refs": {
+          "refs/entire/checkpoints/D8/01M50SK1726HDTHJHVPPS8WED8": "3b189d6a1b6fc47159b80ab4900a00d3b1c8ae34",
+          "refs/heads/codex/coordinator-trial-20261015": "baa6cf9bb823db2068453db71d822afc6e013667"
+        },
+        "native_turn_completed": true,
+        "hosted_metadata_matches": true
+      },
+      "limitations": [
+        "Re-verifies the existing coordinator-trial native session, not a new scientific worker or every future checkout.",
+        "Current remote reads establish availability and matching identities now; no new code/checkpoint publication is attempted."
+      ]
+    },
+    {
+      "id": "annex-round-trip",
+      "status": "passed",
+      "elapsed_seconds": 2.765327165951021,
+      "observations": {
+        "old_receipt_bytes_reverified": 82,
+        "old_receipt_sha256": "4cfe060694ff5a15bf07a6e0a4222810498636f1ce7e0b76e2b7c11552e07d5a",
+        "new_payload_bytes": 143,
+        "new_payload_sha256": "c9a23b77fb449ffaf7aeb2ad7ee6bffe75c78b28a59798dd3e6e0604d8a6cea9",
+        "annex_key": "SHA256E-s143--c9a23b77fb449ffaf7aeb2ad7ee6bffe75c78b28a59798dd3e6e0604d8a6cea9.json",
+        "donor": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/annex-readiness-60b28a5d392d4d9492d1b24199a7091a/donor",
+        "recipient": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/annex-readiness-60b28a5d392d4d9492d1b24199a7091a/recipient",
+        "donor_uuid": "a863de12-f1ed-44cc-a538-b98d4b510087",
+        "recipient_uuid": "21cb4c80-2689-44dd-8e63-c3e6cc2a6c7b",
+        "recipient_payload": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/annex-readiness-60b28a5d392d4d9492d1b24199a7091a/recipient/.git/annex/objects/3Z/mf/SHA256E-s143--c9a23b77fb449ffaf7aeb2ad7ee6bffe75c78b28a59798dd3e6e0604d8a6cea9.json/SHA256E-s143--c9a23b77fb449ffaf7aeb2ad7ee6bffe75c78b28a59798dd3e6e0604d8a6cea9.json",
+        "new_upload_command_succeeded": true,
+        "remote_presence_rechecked": true,
+        "recipient_absent_before_transfer": true,
+        "independent_bytes_identical": true
+      },
+      "limitations": [
+        "Tests a tiny new synthetic artifact on the configured CON Hub store; does not establish capacity, throughput, or all study inputs.",
+        "Retains original and new artifacts and repositories. No remote Git branch publication is needed for content transfer."
+      ]
+    },
+    {
+      "id": "hpc-round-trip",
+      "status": "passed",
+      "elapsed_seconds": 3.3703644999768585,
+      "observations": {
+        "job_id": "65726805",
+        "scheduler_record": [
+          "65726805",
+          "COMPLETED",
+          "0:0",
+          "00:00:01",
+          "uri-cpu079"
+        ],
+        "remote_directory": "/work/pi_d31548v_dartmouth_edu/stamped/readiness-20261015-1755",
+        "output": [
+          "uri-cpu079",
+          "stamped-readiness-ok"
+        ],
+        "stderr_empty": true,
+        "new_jobs_submitted": 0
+      },
+      "limitations": [
+        "Re-verifies existing job 65726805; submits no new job and writes no remote files.",
+        "Demonstrates this small CPU scheduler/output path, not scientific workload performance, queue time, or dependency readiness."
+      ]
+    }
+  ]
+}

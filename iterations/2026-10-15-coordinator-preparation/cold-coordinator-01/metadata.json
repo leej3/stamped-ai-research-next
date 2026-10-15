@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "trial": "cold-coordinator-01",
+  "repository": "/Users/johnlee/.local/share/wt-utils/worktrees/776c/stamped-ai-research-next",
+  "scope": "Read-only limited-context coordinator trial. No scientific worker, test, analysis, job, mutation, commit, or publication was run. Post-trial evidence writing was separately authorized.",
+  "coordinator_commit": "589ebf7d29a03775ed8101a3bffe661d95f97d7f",
+  "study_commit": "af60b4cf3d28319a0a676eb19270ea9c7dcbb3e7",
+  "study_input_tree": "a484f41db2095ef116f08d359f9b95ad41981698",
+  "pins_read_without_inspecting_submodule_contents": {
+    "skills": "fdf31feecb4ee37a8487188447d61c006b11099f",
+    "assessment_source": "d867c1d04bbb58b3b0f64122ebd5f76bd8e5a7ca",
+    "assessment_environment": "3552d5003a2485b6405805236d5c54e7ed42f097"
+  },
+  "files_read_in_full": [
+    "AGENTS.md",
+    "prompt.md",
+    "README.md",
+    "judge-prompt.md",
+    "conditions.json",
+    "scripts/README.md",
+    "pixi.toml",
+    ".gitmodules",
+    "assessment-version.json",
+    "scripts/study_seed.py",
+    "studies/narps/README.md",
+    "studies/narps/input/study-task.md",
+    "studies/narps/input/upstream-methods.md",
+    "studies/narps/coordinator-guidance/readiness.json",
+    "studies/narps/coordinator-guidance/judging.md",
+    "studies/narps/pixi.toml"
+  ],
+  "files_partially_read_or_searched": [
+    "scripts/prepare_launch.py",
+    "scripts/prepare_checkout.py",
+    "scripts/research_conditions.py",
+    "scripts/launch_native_probe.py",
+    "scripts/create_public_profile.py",
+    "scripts/assessment.py"
+  ],
+  "inventory_and_verification": "Listed tracked paths in coordinator and study; inspected current HEAD and gitlink identities; verified inspected coordinator and selected study files had no differences from the cited revisions. No earlier commit contents were read.",
+  "exclusions": "No prior chats, archived history, iteration contents, experiment-result contents, rehearsal outputs, or personal-file contents were inspected. Selected study README/readiness/judging guidance contains preparation and pilot summaries; these were encountered as guidance and were not treated as prior scientific conclusions.",
+  "execution_note": "The first inventory command used the default login shell, which emitted shell-startup sourced notices. Subsequent commands used login=false. No shell-startup file contents were opened.",
+  "delegation_note": "A read-only guidance cross-check was attempted but could not start because the agent thread limit was reached.",
+  "artifacts": {
+    "prompt": "prompt.txt",
+    "report": "result.md",
+    "metadata": "metadata.json"
+  },
+  "report_retention": "The original task prompt and final report are retained verbatim, with terminal newlines. Conclusions were not revised."
+}

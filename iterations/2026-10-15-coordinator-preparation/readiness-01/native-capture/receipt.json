@@ -1,0 +1,48 @@
+{
+  "id": "native-capture",
+  "description": "A real native session in the intended checkout creates a checkpoint, its code/checkpoint refs are published, and hosted metadata matches the session.",
+  "source": "User: establish Entire access before the coordinator launches research.",
+  "started_at": "2026-10-15T22:17:44.105258+00:00",
+  "status": "passed",
+  "argv": [
+    "/Users/johnlee/code/CON/stamped-ai-research-next/.pixi/envs/default/bin/python",
+    "/Users/johnlee/.config/stamped-ai-research-next/readiness_probe.py",
+    "native-capture"
+  ],
+  "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015",
+  "returncode": 0,
+  "artifacts": [
+    {
+      "path": "native-capture/artifacts/verification.json",
+      "sha256": "d93e7df86d078be7becbbd29eee50c02820f49d0faac573cff61b8c5d3fb528d",
+      "bytes": 2524,
+      "status": "retained"
+    },
+    {
+      "path": "native-capture/artifacts/commands.json",
+      "sha256": "cb6ade12ef67645c9c12c0202feff43f5b09e9df2724c0496f84333aad337800",
+      "bytes": 5002,
+      "status": "retained"
+    },
+    {
+      "path": "native-capture/artifacts/probe.py",
+      "sha256": "bc346ff008e3a3bfbcd4145560f4327e965e64fb700c57e109974a389a23c262",
+      "bytes": 14992,
+      "status": "retained"
+    }
+  ],
+  "timeout_seconds": 180,
+  "artifact_directory": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/readiness-01/native-capture/artifacts",
+  "stdout": {
+    "path": "native-capture/stdout.txt",
+    "sha256": "f83f191dad1d711adb2962df52cf640deb694f404f8db38d90835ec954198441",
+    "bytes": 208
+  },
+  "stderr": {
+    "path": "native-capture/stderr.txt",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "bytes": 0
+  },
+  "finished_at": "2026-10-15T22:17:45.386053+00:00",
+  "elapsed_seconds": 1.2808023329125717
+}

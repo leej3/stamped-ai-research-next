@@ -1,0 +1,127 @@
+[
+  {
+    "argv": [
+      "git",
+      "-C",
+      "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/coordinator-trial-02",
+      "rev-parse",
+      "HEAD"
+    ],
+    "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/readiness-01/native-capture/artifacts",
+    "started_at": "2026-10-15T22:17:44.133417+00:00",
+    "stdout": "commands/001.stdout.txt",
+    "stderr": "commands/001.stderr.txt",
+    "returncode": 0,
+    "stdout_sha256": "5ef093bd7cecdd97bc86b6c0304eee130f67b574f321fad4b5566016b39eba57",
+    "stdout_bytes": 41,
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_bytes": 0,
+    "finished_at": "2026-10-15T22:17:44.139365+00:00",
+    "elapsed_seconds": 0.0058669159188866615
+  },
+  {
+    "argv": [
+      "git",
+      "-C",
+      "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/coordinator-trial-02",
+      "show",
+      "-s",
+      "--format=%B",
+      "baa6cf9bb823db2068453db71d822afc6e013667"
+    ],
+    "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/readiness-01/native-capture/artifacts",
+    "started_at": "2026-10-15T22:17:44.139523+00:00",
+    "stdout": "commands/002.stdout.txt",
+    "stderr": "commands/002.stderr.txt",
+    "returncode": 0,
+    "stdout_sha256": "fd503696ff4d3973c675c62deae57f940ccaf08b6ec4dd0f04cd2a199a7fda7d",
+    "stdout_bytes": 231,
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_bytes": 0,
+    "finished_at": "2026-10-15T22:17:44.145989+00:00",
+    "elapsed_seconds": 0.006410332978703082
+  },
+  {
+    "argv": [
+      "git",
+      "-C",
+      "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/coordinator-trial-02",
+      "cat-file",
+      "-e",
+      "baa6cf9bb823db2068453db71d822afc6e013667:coordinator-trial.md"
+    ],
+    "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/readiness-01/native-capture/artifacts",
+    "started_at": "2026-10-15T22:17:44.146156+00:00",
+    "stdout": "commands/003.stdout.txt",
+    "stderr": "commands/003.stderr.txt",
+    "returncode": 0,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stdout_bytes": 0,
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_bytes": 0,
+    "finished_at": "2026-10-15T22:17:44.151778+00:00",
+    "elapsed_seconds": 0.005564584047533572
+  },
+  {
+    "argv": [
+      "git",
+      "-C",
+      "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/coordinator-trial-02",
+      "rev-parse",
+      "refs/entire/checkpoints/D8/01M50SK1726HDTHJHVPPS8WED8"
+    ],
+    "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/readiness-01/native-capture/artifacts",
+    "started_at": "2026-10-15T22:17:44.151952+00:00",
+    "stdout": "commands/004.stdout.txt",
+    "stderr": "commands/004.stderr.txt",
+    "returncode": 0,
+    "stdout_sha256": "3390243e972df4dbd30b9aeac8467c512770a3e4ff507da5d68cef212d2e7ff9",
+    "stdout_bytes": 41,
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_bytes": 0,
+    "finished_at": "2026-10-15T22:17:44.156684+00:00",
+    "elapsed_seconds": 0.004671375034376979
+  },
+  {
+    "argv": [
+      "git",
+      "ls-remote",
+      "git@github.com:leej3/stamped-ai-research-next.git",
+      "refs/heads/codex/coordinator-trial-20261015",
+      "refs/entire/checkpoints/D8/01M50SK1726HDTHJHVPPS8WED8"
+    ],
+    "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/coordinator-trial-02",
+    "started_at": "2026-10-15T22:17:44.156852+00:00",
+    "stdout": "commands/005.stdout.txt",
+    "stderr": "commands/005.stderr.txt",
+    "returncode": 0,
+    "stdout_sha256": "b3d1c4f7ef64c6b08b71662a3551e475272d95458f00703804bf24a9c5ea177c",
+    "stdout_bytes": 180,
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_bytes": 0,
+    "finished_at": "2026-10-15T22:17:44.989233+00:00",
+    "elapsed_seconds": 0.8323103750590235
+  },
+  {
+    "argv": [
+      "/opt/homebrew/bin/entire",
+      "checkpoint",
+      "explain",
+      "01M50SK1726HDTHJHVPPS8WED8",
+      "--repo",
+      "gh/leej3/stamped-ai-research-next",
+      "--json"
+    ],
+    "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/coordinator-trial-02",
+    "started_at": "2026-10-15T22:17:44.989448+00:00",
+    "stdout": "commands/006.stdout.txt",
+    "stderr": "commands/006.stderr.txt",
+    "returncode": 0,
+    "stdout_sha256": "5440e29ece4f2287f6365dd5eca5e1b17574dea5ffb17cfce8c20eafe19232b1",
+    "stdout_bytes": 753,
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_bytes": 0,
+    "finished_at": "2026-10-15T22:17:45.362787+00:00",
+    "elapsed_seconds": 0.3732771659269929
+  }
+]

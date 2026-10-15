@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "check": "native-capture",
+  "started_at": "2026-10-15T22:17:44.130571+00:00",
+  "passed": true,
+  "observations": {
+    "checkout": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/coordinator-trial-02",
+    "code_commit": "baa6cf9bb823db2068453db71d822afc6e013667",
+    "checkpoint_id": "01M50SK1726HDTHJHVPPS8WED8",
+    "checkpoint_ref": "refs/entire/checkpoints/D8/01M50SK1726HDTHJHVPPS8WED8",
+    "checkpoint_commit": "3b189d6a1b6fc47159b80ab4900a00d3b1c8ae34",
+    "session_id": "01a14197-3860-72f0-8fbd-7f5bcec167cf",
+    "remote_refs": {
+      "refs/entire/checkpoints/D8/01M50SK1726HDTHJHVPPS8WED8": "3b189d6a1b6fc47159b80ab4900a00d3b1c8ae34",
+      "refs/heads/codex/coordinator-trial-20261015": "baa6cf9bb823db2068453db71d822afc6e013667"
+    },
+    "native_turn_completed": true,
+    "hosted_metadata_matches": true
+  },
+  "sources": [
+    {
+      "path": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/native-capture-investigation-01/local-checkpoint.json",
+      "sha256": "5440e29ece4f2287f6365dd5eca5e1b17574dea5ffb17cfce8c20eafe19232b1",
+      "bytes": 753
+    },
+    {
+      "path": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-coordinator-02/launch.json",
+      "sha256": "351119c0cfa8d2798e0d77b9dcbdddf8024ef1925e739fdd7375e803b50bb94c",
+      "bytes": 2873
+    },
+    {
+      "path": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-coordinator-02/result.json",
+      "sha256": "bfe6af1fd19992b218f7d4736b125adc57000ba5dd23d803ef676f63ed85fe93",
+      "bytes": 2933
+    },
+    {
+      "path": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/native-capture-investigation-01/native-event-inventory.json",
+      "sha256": "a152636ffadbbeffc164413fc0fcfa14afa9409545dc6f12696a13eb88577801",
+      "bytes": 51414
+    },
+    {
+      "path": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-coordinator-02/events.jsonl",
+      "sha256": "b8395f8913c679284b40fc6b57c2b60b9f30d99c3e8f01a947d851b0a7409c96",
+      "bytes": 344947
+    }
+  ],
+  "limitations": [
+    "Re-verifies the existing coordinator-trial native session, not a new scientific worker or every future checkout.",
+    "Current remote reads establish availability and matching identities now; no new code/checkpoint publication is attempted."
+  ],
+  "finished_at": "2026-10-15T22:17:45.363226+00:00",
+  "elapsed_seconds": 1.2326544160023332
+}

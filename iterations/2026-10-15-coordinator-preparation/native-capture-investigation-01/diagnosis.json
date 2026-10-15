@@ -1,0 +1,29 @@
+{
+  "verified_at": "2026-10-15T22:18:02.361226+00:00",
+  "cause": "Verifier required completed FileChange, but actual file write was a completed CommandExecution. Native session identity and working directory matched.",
+  "native_event_line": 115,
+  "native_event_id": "exec-044005a5-f83f-419a-b3b5-895e4dc48b17",
+  "write_kind": "literal quoted heredoc followed by Snapper and git status",
+  "captured_git_status": "?? coordinator-trial.md",
+  "native_command_cwd_representation": "file URL",
+  "original_write_bytes_equal_final_commit": false,
+  "write_vs_final_explanation": "Subsequent native edits and formatting changed the file; receipt keeps write and final commit hashes separately.",
+  "fix_commit": "72a2c3baa5aeec117635bb2eab0472b8db5a1543",
+  "verifier_sha256": "19b89daf64d0150bbe24661583474aa087e30c238e7ae27a295441a482c3defa",
+  "tests": {
+    "command": "pixi run --manifest-path /Users/johnlee/code/CON/stamped-ai-research-next/pixi.toml python -m pytest -q tests/test_native_capture_verification.py",
+    "passed": 18,
+    "failed": 0
+  },
+  "native_capture_verified": true,
+  "uploaded_refs_verified": true,
+  "hosted_verified": true,
+  "raw_transcript_saved": false,
+  "private_guidance_marker_hits": [
+    "memory/transport.json",
+    "sensitive transport configuration",
+    "private overlay",
+    "Hub token file"
+  ],
+  "receipt_sha256": "322e7824237e8649a250affadfca1ad107910a4fcc6198c70af2f944d26d66c4"
+}

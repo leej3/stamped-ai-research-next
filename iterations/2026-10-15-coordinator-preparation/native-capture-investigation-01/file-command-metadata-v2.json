@@ -1,0 +1,333 @@
+[
+  {
+    "line": 17,
+    "item_id": "exec-0b436e8c-7dc3-476b-93ea-68224c4fe79d",
+    "command_type": "list",
+    "command_sha256": "4f18882c11d8c04c204809a7b100759e4b32e3462e667ce8eecf830e190a564a",
+    "target_mentioned": false,
+    "cwd": "file:///Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/coordinator-trial-02",
+    "exit_code": 0,
+    "prefix_argv": [
+      "/opt/homebrew/bin/bash",
+      "-lc"
+    ],
+    "argc": 3,
+    "script_first_line": "pwd && rg --files -g 'README.md' -g 'AGENTS.md' -g 'prompt.md' -g '.gitmodules' -g 'launch.json' -g '!iterations/**' -g ",
+    "method_markers": []
+  },
+  {
+    "line": 24,
+    "item_id": "exec-516c0962-ab48-49df-b2ac-4b429ab821ca",
+    "command_type": "list",
+    "command_sha256": "f9b39c121e8aa96ef57988dd564e65d3717ae1b1fbc1488f5977213903112500",
+    "target_mentioned": false,
+    "cwd": "file:///Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/coordinator-trial-02",
+    "exit_code": 0,
+    "prefix_argv": [
+      "/opt/homebrew/bin/bash",
+      "-lc"
+    ],
+    "argc": 3,
+    "script_first_line": "cat README.md && printf '\\n--- AGENTS.md ---\\n' && cat AGENTS.md && printf '\\n--- prompt.md ---\\n' && cat prompt.md && p",
+    "method_markers": [
+      "printf"
+    ]
+  },
+  {
+    "line": 33,
+    "item_id": "exec-3d650c19-a0dd-4cad-b240-6f550964dce5",
+    "command_type": "list",
+    "command_sha256": "c6d3e108950d718910b722195413b82ef07bb772f30b39eac7a658999a3ce094",
+    "target_mentioned": false,
+    "cwd": "file:///Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/coordinator-trial-02",
+    "exit_code": 0,
+    "prefix_argv": [
+      "/opt/homebrew/bin/bash",
+      "-lc"
+    ],
+    "argc": 3,
+    "script_first_line": "cat scripts/READINESS.md && printf '\\n--- launch documentation ---\\n' && cat scripts/README.md && printf '\\n--- readines",
+    "method_markers": [
+      "printf"
+    ]
+  },
+  {
+    "line": 40,
+    "item_id": "exec-778d29dc-bb48-4b84-af94-27602d8aa553",
+    "command_type": "list",
+    "command_sha256": "51fc078cd27a24eb4ec63a318450c02b8b0e1ae93168cb44869769f9670b8523",
+    "target_mentioned": false,
+    "cwd": "file:///Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/coordinator-trial-02",
+    "exit_code": 0,
+    "prefix_argv": [
+      "/opt/homebrew/bin/bash",
+      "-lc"
+    ],
+    "argc": 3,
+    "script_first_line": "git submodule update --init -- studies/narps",
+    "method_markers": []
+  },
+  {
+    "line": 49,
+    "item_id": "exec-4a091cc5-cd82-4897-afa4-5d30d7f2c152",
+    "command_type": "list",
+    "command_sha256": "52e4190d6e6aacef70ef7730720743c7b79791993626998a3f01d1f6540972e9",
+    "target_mentioned": false,
+    "cwd": "file:///Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/coordinator-trial-02",
+    "exit_code": 0,
+    "prefix_argv": [
+      "/opt/homebrew/bin/bash",
+      "-lc"
+    ],
+    "argc": 3,
+    "script_first_line": "printf '%s\\n' '--- selected study files ---' && find studies/narps -maxdepth 3 -type f ! -path '*/iterations/*' ! -path ",
+    "method_markers": [
+      "printf"
+    ]
+  },
+  {
+    "line": 58,
+    "item_id": "exec-8785a676-60ad-4a1c-bf0b-547fbbce06d1",
+    "command_type": "list",
+    "command_sha256": "2f2d7e70b2431b68bca2ce63d79dfeb73a5257f68bcf2ab36db941015305bc0f",
+    "target_mentioned": false,
+    "cwd": "file:///Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/coordinator-trial-02",
+    "exit_code": 0,
+    "prefix_argv": [
+      "/opt/homebrew/bin/bash",
+      "-lc"
+    ],
+    "argc": 3,
+    "script_first_line": "for f in studies/narps/README.md studies/narps/input/study-task.md studies/narps/input/upstream-methods.md studies/narps",
+    "method_markers": [
+      "printf"
+    ]
+  },
+  {
+    "line": 65,
+    "item_id": "exec-0a66fcc4-9854-4fc2-b94f-65f7209ce532",
+    "command_type": "list",
+    "command_sha256": "542e19b884447ce283bbe2a73672525a512d9f4f489229af0b45504d3861c2df",
+    "target_mentioned": false,
+    "cwd": "file:///Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/coordinator-trial-02",
+    "exit_code": 0,
+    "prefix_argv": [
+      "/opt/homebrew/bin/bash",
+      "-lc"
+    ],
+    "argc": 3,
+    "script_first_line": "printf '%s\\n' '--- study pixi task declarations ---' && cat studies/narps/pixi.toml && printf '\\n--- selected input anne",
+    "method_markers": [
+      "printf"
+    ]
+  },
+  {
+    "line": 76,
+    "item_id": "exec-3c107931-3a62-4694-986b-7655c75539d9",
+    "command_type": "list",
+    "command_sha256": "8c20ec069b7ee36ce1b0c2f9fb868f3121f53554e4f8d17ed0cc94d1a0187c05",
+    "target_mentioned": false,
+    "cwd": "file:///Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/coordinator-trial-02",
+    "exit_code": 0,
+    "prefix_argv": [
+      "/opt/homebrew/bin/bash",
+      "-lc"
+    ],
+    "argc": 3,
+    "script_first_line": "sed -n '1,260p' studies/narps/coordinator-guidance/prepare_subject_inputs.py && printf '\\n--- annex write receipt summar",
+    "method_markers": [
+      "printf"
+    ]
+  },
+  {
+    "line": 85,
+    "item_id": "exec-6ecb9222-68db-4d93-8e5e-22678c97d865",
+    "command_type": "list",
+    "command_sha256": "7c5990fa11d62489a77f6044df425bb387a3d22b8db2967db88772e21f5aaee9",
+    "target_mentioned": false,
+    "cwd": "file:///Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/coordinator-trial-02",
+    "exit_code": 0,
+    "prefix_argv": [
+      "/opt/homebrew/bin/bash",
+      "-lc"
+    ],
+    "argc": 3,
+    "script_first_line": "rg -n \"model|effort|capture-execution|prepare-only|host-config|entire|annex|scheduler|HPC\" scripts/prepare_launch.py scr",
+    "method_markers": []
+  },
+  {
+    "line": 115,
+    "item_id": "exec-044005a5-f83f-419a-b3b5-895e4dc48b17",
+    "command_type": "list",
+    "command_sha256": "4ed3315c81b5c8083539d1b8b0725da73192348d206a33c270e8994027368eff",
+    "target_mentioned": true,
+    "cwd": "file:///Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/coordinator-trial-02",
+    "exit_code": 0,
+    "prefix_argv": [
+      "/opt/homebrew/bin/bash",
+      "-lc"
+    ],
+    "argc": 3,
+    "script_first_line": "cat > coordinator-trial.md <<'EOF'",
+    "method_markers": [
+      "cat >"
+    ]
+  },
+  {
+    "line": 123,
+    "item_id": "exec-9b9cdea5-ec92-45c6-884e-4f6ff04b4d93",
+    "command_type": "list",
+    "command_sha256": "d6d7af3e9043f6554a2699cc799aefbeec6a6a5bcd2cb433e800690bb19621b6",
+    "target_mentioned": false,
+    "cwd": "file:///Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/coordinator-trial-02",
+    "exit_code": 0,
+    "prefix_argv": [
+      "/opt/homebrew/bin/bash",
+      "-lc"
+    ],
+    "argc": 3,
+    "script_first_line": "git diff --check && git status --short && sed -n '1,220p' /Users/johnlee/.agents/skills/commit-provenance/scripts/resolv",
+    "method_markers": []
+  },
+  {
+    "line": 134,
+    "item_id": "exec-c6032463-ed93-4720-a85a-7419e1f219fc",
+    "command_type": "list",
+    "command_sha256": "9c4ce5ea0447196e61a80db8cded3fd5c2a1f732f16c057b7b6466de2496a340",
+    "target_mentioned": true,
+    "cwd": "file:///Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/coordinator-trial-02",
+    "exit_code": 0,
+    "prefix_argv": [
+      "/opt/homebrew/bin/bash",
+      "-lc"
+    ],
+    "argc": 3,
+    "script_first_line": "git add coordinator-trial.md && trailers=$(/Users/johnlee/.agents/skills/commit-provenance/scripts/resolve.sh) && git co",
+    "method_markers": [
+      "git add",
+      "git commit"
+    ]
+  },
+  {
+    "line": 145,
+    "item_id": "exec-58f49118-beca-4dd6-b3ab-567a949bd3e5",
+    "command_type": "list",
+    "command_sha256": "493ee5684a946c6b3ade1848be1c0834e52a528e8d59fcf802bde571f66084e3",
+    "target_mentioned": false,
+    "cwd": "file:///Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/coordinator-trial-02",
+    "exit_code": 0,
+    "prefix_argv": [
+      "/opt/homebrew/bin/bash",
+      "-lc"
+    ],
+    "argc": 3,
+    "script_first_line": "git status --short && git show -s --format='%H%n%B' HEAD && if command -v entire >/dev/null 2>&1; then entire checkpoint",
+    "method_markers": [
+      "printf"
+    ]
+  },
+  {
+    "line": 158,
+    "item_id": "exec-b26f2687-a154-4b02-a81b-181fed34c7f0",
+    "command_type": "list",
+    "command_sha256": "7f61a3689492e68ab16b58c6b89750c4d2ee2a736aefe1ec2ec67aaa9cfe846a",
+    "target_mentioned": true,
+    "cwd": "file:///Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/coordinator-trial-02",
+    "exit_code": 0,
+    "prefix_argv": [
+      "/opt/homebrew/bin/bash",
+      "-lc"
+    ],
+    "argc": 3,
+    "script_first_line": "python - <<'PY'",
+    "method_markers": [
+      "write_text",
+      "git add",
+      "git commit"
+    ]
+  },
+  {
+    "line": 165,
+    "item_id": "exec-8b4e0911-8750-468e-a3e4-fc7de9fceacc",
+    "command_type": "list",
+    "command_sha256": "a63aa19a9bfe2ddbec33d0cd91d0ad467eaabc02eb8b90416de04e3efe2c7a34",
+    "target_mentioned": true,
+    "cwd": "file:///Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/coordinator-trial-02",
+    "exit_code": 0,
+    "prefix_argv": [
+      "/opt/homebrew/bin/bash",
+      "-lc"
+    ],
+    "argc": 3,
+    "script_first_line": "tail -n 12 coordinator-trial.md && git status --short && git show -s --format='%H%n%B' HEAD && entire checkpoint explain",
+    "method_markers": []
+  },
+  {
+    "line": 171,
+    "item_id": "exec-b8eb5458-706c-4251-a49b-35454572ae4e",
+    "command_type": "list",
+    "command_sha256": "ffbb6977ffdc8320abe30eca522b92ddaa6b87e4b9613c92cf053122cb516c00",
+    "target_mentioned": true,
+    "cwd": "file:///Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/coordinator-trial-02",
+    "exit_code": 0,
+    "prefix_argv": [
+      "/opt/homebrew/bin/bash",
+      "-lc"
+    ],
+    "argc": 3,
+    "script_first_line": "rg -n 'No worker|Entire capture|What this trial|live readiness|checkpoint explain' coordinator-trial.md && git status --",
+    "method_markers": []
+  },
+  {
+    "line": 178,
+    "item_id": "exec-76101de9-832d-47a8-bc6b-3eb51a53c9af",
+    "command_type": "list",
+    "command_sha256": "eee959248911fb89b75b0f1a052425b3939041ceb44fd02be2158472eb7bdb79",
+    "target_mentioned": true,
+    "cwd": "file:///Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/coordinator-trial-02",
+    "exit_code": 0,
+    "prefix_argv": [
+      "/opt/homebrew/bin/bash",
+      "-lc"
+    ],
+    "argc": 3,
+    "script_first_line": "sed -n '18,70p' coordinator-trial.md && sed -n '160,170p' coordinator-trial.md",
+    "method_markers": []
+  },
+  {
+    "line": 186,
+    "item_id": "exec-5fc9adaa-f6e7-4be2-9501-98b0f5d15fbf",
+    "command_type": "list",
+    "command_sha256": "0ba0cf158c42c51b2a44f112fb202363d12b6beb40e272571c77b4b9446e8d80",
+    "target_mentioned": true,
+    "cwd": "file:///Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/coordinator-trial-02",
+    "exit_code": 0,
+    "prefix_argv": [
+      "/opt/homebrew/bin/bash",
+      "-lc"
+    ],
+    "argc": 3,
+    "script_first_line": "python - <<'PY'",
+    "method_markers": [
+      "write_text",
+      "git add",
+      "git commit"
+    ]
+  },
+  {
+    "line": 193,
+    "item_id": "exec-5e8853c2-5016-4233-b763-1f43b59abd95",
+    "command_type": "list",
+    "command_sha256": "1c383ec548e5ed226f2414f65802fb9d5ef0df6a0d6b4c2e29afb609446f3840",
+    "target_mentioned": true,
+    "cwd": "file:///Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/coordinator-trial-02",
+    "exit_code": 0,
+    "prefix_argv": [
+      "/opt/homebrew/bin/bash",
+      "-lc"
+    ],
+    "argc": 3,
+    "script_first_line": "rg -n 'checkpoint explain|Entire capture|worker-profile|What this trial|were not performed|remain unperformed' coordinat",
+    "method_markers": []
+  }
+]

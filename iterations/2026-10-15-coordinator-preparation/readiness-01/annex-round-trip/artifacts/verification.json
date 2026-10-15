@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "check": "annex-round-trip",
+  "started_at": "2026-10-15T22:17:45.414259+00:00",
+  "passed": true,
+  "observations": {
+    "old_receipt_bytes_reverified": 82,
+    "old_receipt_sha256": "4cfe060694ff5a15bf07a6e0a4222810498636f1ce7e0b76e2b7c11552e07d5a",
+    "new_payload_bytes": 143,
+    "new_payload_sha256": "c9a23b77fb449ffaf7aeb2ad7ee6bffe75c78b28a59798dd3e6e0604d8a6cea9",
+    "annex_key": "SHA256E-s143--c9a23b77fb449ffaf7aeb2ad7ee6bffe75c78b28a59798dd3e6e0604d8a6cea9.json",
+    "donor": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/annex-readiness-60b28a5d392d4d9492d1b24199a7091a/donor",
+    "recipient": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/annex-readiness-60b28a5d392d4d9492d1b24199a7091a/recipient",
+    "donor_uuid": "a863de12-f1ed-44cc-a538-b98d4b510087",
+    "recipient_uuid": "21cb4c80-2689-44dd-8e63-c3e6cc2a6c7b",
+    "recipient_payload": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/annex-readiness-60b28a5d392d4d9492d1b24199a7091a/recipient/.git/annex/objects/3Z/mf/SHA256E-s143--c9a23b77fb449ffaf7aeb2ad7ee6bffe75c78b28a59798dd3e6e0604d8a6cea9.json/SHA256E-s143--c9a23b77fb449ffaf7aeb2ad7ee6bffe75c78b28a59798dd3e6e0604d8a6cea9.json",
+    "new_upload_command_succeeded": true,
+    "remote_presence_rechecked": true,
+    "recipient_absent_before_transfer": true,
+    "independent_bytes_identical": true
+  },
+  "sources": [
+    {
+      "path": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/annex-roundtrip.json",
+      "sha256": "533ad11a74307e6d38422a4a5af3b097feda55ca53980e70af710ee4d11f85ec",
+      "bytes": 3811
+    }
+  ],
+  "limitations": [
+    "Tests a tiny new synthetic artifact on the configured CON Hub store; does not establish capacity, throughput, or all study inputs.",
+    "Retains original and new artifacts and repositories. No remote Git branch publication is needed for content transfer."
+  ],
+  "finished_at": "2026-10-15T22:17:48.113569+00:00",
+  "elapsed_seconds": 2.699298374936916
+}

@@ -1,0 +1,3 @@
+Prepared and committed [coordinator-trial.md](/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/coordinator-trial-02/coordinator-trial.md) as `baa6cf9` (`docs: prepare NARPS coordinator trial`). The commit contains only that file, includes the resolved provenance trailers, and has a local Entire checkpoint.
+
+The plan records the first-round workflow, fixed comparison settings, and open prerequisites. Current input verification, worker-profile capture, annex upload/retrieval, and HPC access remain unchecked; the host readiness configuration is missing. No scientific workers or judges were launched, no jobs were submitted, and nothing was published.

@@ -1,0 +1,139 @@
+{
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/annex-recipient",
+        "init",
+        "--quiet"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "pixi",
+        "run",
+        "--manifest-path",
+        "/Users/johnlee/code/CON/stamped-ai-research-next/pixi.toml",
+        "git",
+        "-C",
+        "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/annex-recipient",
+        "annex",
+        "init",
+        "independent-readiness-recipient"
+      ],
+      "returncode": 0,
+      "stdout": "init independent-readiness-recipient ok\n(recording state in git...)\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/annex-recipient",
+        "remote",
+        "add",
+        "con-hub",
+        "https://hub.centerforopenneuroscience.org/leej3/stamped-ai-research-next.git"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/annex-recipient",
+        "config",
+        "remote.con-hub.annexurl",
+        "annex+https://hub.centerforopenneuroscience.org:443/git-annex-p2phttp"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/annex-recipient",
+        "config",
+        "remote.con-hub.annex-uuid",
+        "6215ce45-8f0f-4062-9bc0-d04781b4cd11"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "pixi",
+        "run",
+        "--manifest-path",
+        "/Users/johnlee/code/CON/stamped-ai-research-next/pixi.toml",
+        "git",
+        "-C",
+        "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/annex-recipient",
+        "annex",
+        "fromkey",
+        "--force",
+        "MD5E-s82--2bd31e7772de0127d10e05ab6f772848.txt",
+        "annex-roundtrip.txt"
+      ],
+      "returncode": 0,
+      "stdout": "fromkey annex-roundtrip.txt ok\n(recording state in git...)\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "pixi",
+        "run",
+        "--manifest-path",
+        "/Users/johnlee/code/CON/stamped-ai-research-next/pixi.toml",
+        "git",
+        "-C",
+        "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/annex-recipient",
+        "annex",
+        "get",
+        "--from",
+        "con-hub",
+        "--",
+        "annex-roundtrip.txt"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "pixi",
+        "run",
+        "--manifest-path",
+        "/Users/johnlee/code/CON/stamped-ai-research-next/pixi.toml",
+        "git",
+        "-C",
+        "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/annex-recipient",
+        "annex",
+        "transferkey",
+        "MD5E-s82--2bd31e7772de0127d10e05ab6f772848.txt",
+        "--from",
+        "con-hub"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "complete": true,
+  "initial_path_get_outcome": "Exit zero but no payload: independent repository had no location history. Checked bytes before declaring success.",
+  "passed": true,
+  "bytes": 82,
+  "sha256": "4cfe060694ff5a15bf07a6e0a4222810498636f1ce7e0b76e2b7c11552e07d5a",
+  "verified_at": "2026-10-15T22:05:01.067646+00:00",
+  "independent_repository": true,
+  "annex_key": "MD5E-s82--2bd31e7772de0127d10e05ab6f772848.txt"
+}

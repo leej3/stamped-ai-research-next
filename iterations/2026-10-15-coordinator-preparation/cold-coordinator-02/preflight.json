@@ -1,0 +1,26 @@
+{
+  "catalog": [
+    {
+      "name": "imagegen",
+      "path": "/Users/johnlee/.local/state/stamped-ai-research-next/stamped-research-k1_lu5xt/skills/.system/imagegen/SKILL.md",
+      "sha256": "681ddb4ad6d06a2acc78a3535b583f8d0c1ea800ecda3d56370d3310fd2cd4ba"
+    },
+    {
+      "name": "openai-docs",
+      "path": "/Users/johnlee/.local/state/stamped-ai-research-next/stamped-research-k1_lu5xt/skills/.system/openai-docs/SKILL.md",
+      "sha256": "aa6829e21df2223167c85d2e49b6337a7345c84c1033f1ec10182c7882b36d45"
+    },
+    {
+      "name": "skill-creator",
+      "path": "/Users/johnlee/.local/state/stamped-ai-research-next/stamped-research-k1_lu5xt/skills/.system/skill-creator/SKILL.md",
+      "sha256": "6656e54755638e8efcf275a472b9672eaa8a9a1b9e59dc210e275b03b59e1e66"
+    },
+    {
+      "name": "skill-installer",
+      "path": "/Users/johnlee/.local/state/stamped-ai-research-next/stamped-research-k1_lu5xt/skills/.system/skill-installer/SKILL.md",
+      "sha256": "d68b77e5bbb34dedab89d134da52855f140fc4b4299b80104f534e3b9e98f8ee"
+    }
+  ],
+  "unexpected": [],
+  "prompt_preview_sha256": "6df797ae8d183f9459c5b780b0844975df43d13272c88b091d4d8ffb2130597f"
+}

@@ -1,0 +1,2 @@
+init readiness-donor ok
+(recording state in git...)

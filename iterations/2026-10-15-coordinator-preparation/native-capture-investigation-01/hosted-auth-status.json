@@ -1,0 +1,13 @@
+{
+  "logged_in": true,
+  "server": "us.auth.entire.io",
+  "context": "us.auth.entire.io",
+  "user": "github:leej3",
+  "display_name": "John lee",
+  "jurisdiction": "us",
+  "token_source": "macOS Keychain",
+  "current_session_id": "01M4VVV757EB59T09AGDE4BFH8",
+  "expires_at": "2026-11-14T21:24:00Z",
+  "active_sessions": 3,
+  "available_contexts": 1
+}

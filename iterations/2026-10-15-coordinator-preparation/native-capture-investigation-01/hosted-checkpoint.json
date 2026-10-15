@@ -1,0 +1,31 @@
+{
+  "checkpoint_id": "01M50SK1726HDTHJHVPPS8WED8",
+  "strategy": "manual-commit",
+  "branch": "codex/coordinator-trial-20261015",
+  "checkpoints_count": 1,
+  "files_touched": [
+    "coordinator-trial.md"
+  ],
+  "session_count": 1,
+  "sessions": [
+    {
+      "index": 0,
+      "session_id": "01a14197-3860-72f0-8fbd-7f5bcec167cf",
+      "agent": "Codex",
+      "model": "gpt-6-luna",
+      "created_at": "2026-10-15T22:05:43.311309Z",
+      "turn_id": "852d8063b2a0",
+      "files_touched": [
+        "coordinator-trial.md"
+      ],
+      "token_usage": {
+        "input_tokens": 5936,
+        "cache_creation_tokens": 0,
+        "cache_read_tokens": 305152,
+        "output_tokens": 1996,
+        "api_call_count": 4
+      }
+    }
+  ],
+  "tasks": []
+}
