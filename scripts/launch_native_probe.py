@@ -29,6 +29,7 @@ def main():
     output = args.output.resolve()
     output.mkdir(parents=True, exist_ok=False)
     prompt = args.prompt.read_bytes()
+    (output / "prompt.txt").write_bytes(prompt)
     profile = Path(os.environ.get("CODEX_HOME", str(Path.home() / ".codex")))
     config = tomllib.loads((profile / "config.toml").read_text())
     overrides = list(config.get("skills", {}).get("config", []))
