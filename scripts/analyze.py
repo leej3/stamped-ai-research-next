@@ -155,6 +155,10 @@ def main():
         return
 
     roi_mask, roi_labels, atlas_labels, atlas_path = vmPFC_atlas_mask(imgs[0])
+    template_path = OUT / "mni152_template_2mm.nii.gz"
+    if not template_path.exists():
+        nib.save(datasets.load_mni152_template(resolution=2), str(template_path))
+    template_hash = sha256(template_path)
     mask, mean, tmap, pmap, max_null, observed = group_test(arrays, imgs[0])
     voxel_volume = abs(np.linalg.det(imgs[0].affine[:3, :3]))
     n = len(participants)
@@ -200,6 +204,8 @@ def main():
         "whole_brain_mask_voxels": int(mask.sum()), "whole_brain_mask_volume_mm3": float(mask.sum() * voxel_volume),
         "vmPFC_definition": "Harvard-Oxford cortical max-probability atlas threshold 25%; union of Frontal Medial Cortex and Subcallosal Cortex",
         "vmPFC_atlas_labels": roi_labels, "vmPFC_atlas_sha256": sha256(atlas_path),
+        "display_template": "Nilearn MNI152 2-mm template; used for visualization only",
+        "display_template_sha256": template_hash,
         "vmPFC_intersection_voxels": int(roi.sum()),
         "vmPFC_mean_across_voxels": roi_mean,
         "vmPFC_mean_t_CI95": [float(v) for v in roi_ci],
@@ -224,7 +230,7 @@ def main():
     # Separate the corrected whole-brain discovery map from the uncorrected
     # vmPFC localization view; never imply that the latter is confirmatory.
     sig_img = nib.Nifti1Image(np.where(brain_sig, tmap, 0).astype(np.float32), affine, imgs[0].header)
-    display = plotting.plot_stat_map(sig_img, bg_img=None, display_mode="z",
+    display = plotting.plot_stat_map(sig_img, bg_img=str(template_path), display_mode="z",
                                      cut_coords=[-20, -10, 0, 10, 20],
                                      title="Positive whole-brain findings\n(max-T FWE p ≤ .05)",
                                      threshold=0.01, cmap="cold_hot", colorbar=True,
@@ -233,7 +239,7 @@ def main():
     vm_t = np.where(roi_mask & mask, tmap, 0).astype(np.float32)
     vm_title = ("Predefined vmPFC ROI: uncorrected positive t statistics\n"
                 f"No vmPFC voxel survived whole-brain FWE; peak FWE p={float(roi_p.min()):.3f}")
-    display = plotting.plot_stat_map(nib.Nifti1Image(vm_t, affine, imgs[0].header), bg_img=None,
+    display = plotting.plot_stat_map(nib.Nifti1Image(vm_t, affine, imgs[0].header), bg_img=str(template_path),
                                      display_mode="z", cut_coords=[-20, -10, 0, 10, 20],
                                      title=vm_title, threshold=0.01, cmap="cold_hot", colorbar=True,
                                      output_file=str(OUT / "vmPFC-unthresholded-slices.png"))
