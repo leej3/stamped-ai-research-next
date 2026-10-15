@@ -13,3 +13,7 @@
 [submodule "results/preparation-e2e-worker-20261015"]
 	path = results/preparation-e2e-worker-20261015
 	url = https://github.com/leej3/stamped-ai-research-next.git
+[submodule "results/preparation-cold-retry-01"]
+	path = results/preparation-cold-retry-01
+	url = https://github.com/leej3/stamped-ai-research-next.git
+	branch = codex/preparation-cold-retry-worker-01
