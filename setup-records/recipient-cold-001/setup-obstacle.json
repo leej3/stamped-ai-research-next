@@ -1,8 +1,0 @@
-{
-  "status": "failed",
-  "cause": "Main recursive clone retained skills submodule ff3e41179ece36cb800f72d579461440bec9d1cf after base checkout expects 15da761f63a5a45c507e6596a549720bd43a1e84. DataLad refused dirty dataset.",
-  "native_failure_qualification": "Native exit 1 was a dirty-dataset failure, so does not demonstrate intended native parser incompatibility.",
-  "needed_setup_step": "After checking out recorded base, run git submodule update --init --recursive to restore the recorded skills revision before DataLad.",
-  "published_code_modified": false,
-  "next_attempt": "recipient-cold-002"
-}

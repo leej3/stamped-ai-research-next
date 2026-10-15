@@ -22,12 +22,10 @@ To start a coordinator, give it this repository and a request such as:
 | `iterations/<iteration>/` | Skill revisions, linked trials and assessments, comparisons and reasons for changes |
 | `studies/<study>/` | A versioned study submodule |
 | `studies/<study>/input/` | The scientific prompt and verified data supplied to research workers |
-| `studies/<study>/reference/` | Evaluation guidance and reference material for the coordinator and judges |
-| `studies/<study>/experiments/` | Workers' efforts, returned outputs, assessments and execution records |
+| `studies/<study>/coordinator-guidance/` | Evaluation guidance and reference material for the coordinator and judges |
+| `studies/<study>/results/` | Workers' efforts, returned outputs, assessments and execution records |
 | `skills/` | Evolving `con/skills`, pinned to [our development branch](https://github.com/con/skills/tree/codex/pr26-stamped-next) |
 | `assessment/` | The frozen assessor, identified by `assessment-version.json` |
-
-[NARPS gain consistency](studies/narps-gain-consistency) is the first installed study; other studies use the same coordinator process.
 
 The products are improved shareable skills, evidence about their impact, and a STAMPED research object documenting the whole workshop.
 Figures summarize scientific outcomes, reproducibility, effort and variability.

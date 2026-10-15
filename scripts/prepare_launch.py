@@ -182,8 +182,8 @@ def main():
              f"+refs/heads/{args.branch}:refs/remotes/origin/{args.branch}"], checkout)
         origin_seed = json.loads(blob(checkout, roots[0], "worker-input.json"))
         study_commit = origin_seed["study_commit"]
-        original_brief = blob(args.study, study_commit, "input/prompt.md")
-        if original_brief != blob(checkout, roots[0], "input/prompt.md"):
+        original_brief = blob(args.study, study_commit, "input/study-task.md")
+        if original_brief != blob(checkout, roots[0], "input/study-task.md"):
             raise SystemExit("Selected study does not match the worker's original scientific brief")
         (evidence / "study-source.json").write_text(json.dumps({
             "path": str(args.study.resolve()), "commit": study_commit,
@@ -193,7 +193,7 @@ def main():
         # Recover the exact brief from the worker's immutable starting commit;
         # later worker edits do not redefine the task.
         study = evidence / "original-study-prompt.md"
-        study.write_bytes(blob(checkout, roots[0], "input/prompt.md"))
+        study.write_bytes(blob(checkout, roots[0], "input/study-task.md"))
         args.prompt = render_judge_prompt(template, study, base_commit, evidence, args.reference)
     (evidence / "checkout.json").write_text(json.dumps({"checkout": str(checkout),
         "kind": "independent-repository", "branch": args.branch, "base": args.base,

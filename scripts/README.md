@@ -7,14 +7,15 @@ Credentials stay with host providers.
 ## Research workers
 
 ```sh
-pixi run launch --study studies/narps-gain-consistency \
+pixi run launch --study studies/CHOSEN_STUDY \
   --base COORDINATOR_COMMIT --branch codex/run-001 \
-  --evidence studies/narps-gain-consistency/experiments/run-001/launch \
+  --evidence studies/CHOSEN_STUDY/results/run-001/launch \
   --condition baseline
 ```
 
 Use `--condition skills` for the treatment.
 The explicit coordinator revision selects the study and skill gitlinks and common Pixi manifest.
+A study marked unavailable in its pinned `coordinator-guidance/readiness.json` stops before worker creation and reports the missing prerequisite.
 The launcher copies only committed study inputs and shared environment declarations into a parentless, independent repository.
 It records source revisions, blob identities and annex keys without importing coordinator or study history.
 Baseline repositories contain no research skill files; treatment repositories install the pinned skills submodule.
@@ -30,9 +31,9 @@ Keep the evidence directory outside the worker checkout.
 ```sh
 pixi run judge --repo /absolute/path/to/worker-repository \
   --base RESULT_COMMIT --branch codex/judge-001 \
-  --study studies/narps-gain-consistency \
-  --reference studies/narps-gain-consistency/reference/judging.md \
-  --evidence studies/narps-gain-consistency/experiments/run-001/judgment-01
+  --study studies/CHOSEN_STUDY \
+  --reference studies/CHOSEN_STUDY/coordinator-guidance/judging.md \
+  --evidence studies/CHOSEN_STUDY/results/run-001/judgment-01
 ```
 
 Use the same study revision and evaluation guidance for matched judgments.

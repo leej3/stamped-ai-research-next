@@ -7,8 +7,8 @@ Compare scientific validity, STAMPED evidence, effort and variability.
 The whole workshop must itself become a STAMPED research object.
 
 1. Fix the study set, each scientific question and input package, evaluation criteria, common resources, model/settings, repetitions and total budget before starting.
-   Each study's `input/prompt.md` asks its question and defines its scope; workers choose defensible methods, software, figures and reproducibility practices.
-   Keep reference answers and evaluation guidance in `reference/`, outside worker inputs.
+   Each study's `input/study-task.md` asks its question and defines its scope; workers choose defensible methods, software, figures and reproducibility practices.
+   Keep reference answers and evaluation guidance in `coordinator-guidance/`, outside worker inputs.
    Use three iterations with three independent workers per condition per study unless the user specifies otherwise.
    Use Luna with high reasoning effort and record its exact identifier.
    Aim for a task that fits about 45 minutes; review progress around 90 minutes and allow productive work to finish.
@@ -35,7 +35,7 @@ The whole workshop must itself become a STAMPED research object.
    Finish with an iteration using the final skills without further tuning on its results.
 
 Duct logging is requested for scientific execution.
-Retain every attempt, input, output, assessment, intervention and execution record, including failures and partial results, with their study's experiments.
+Retain every attempt, input, output, assessment, intervention and execution record, including failures and partial results, under their study's `results/`.
 Use annex for large artifacts, preserve relevant environment snapshots, and verify independent retrieval and replay.
 When reassessing results, state what stays fixed and what changes across data, code, dependencies and host, according to the question being tested.
 

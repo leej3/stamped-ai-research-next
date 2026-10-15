@@ -1,2 +1,0 @@
-✨ Pixi task (assessment-probes): python scripts/assessment.py probes assessment --kind skill --only tree-clean -o /Users/johnlee/code/CON/stamped-ai-research-next/experiments/assessment-v1/runtime-checks/probe.json: (Collect evidence using the frozen assessor)
-✔ The default environment has been installed.

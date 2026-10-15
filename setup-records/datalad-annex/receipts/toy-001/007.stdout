@@ -1,6 +1,0 @@
-{"python": "/Users/johnlee/.local/share/wt-utils/worktrees/29f5/stamped-ai-research-next/.pixi/envs/default/bin/python", "numpy": "2.5.4", "scipy": "1.18.1", "pandas": "3.0.6", "matplotlib": "3.11.2", "output": "/Users/johnlee/.local/share/wt-utils/worktrees/29f5/stamped-ai-research-next/experiments/datalad-annex/outputs", "scope": "synthetic integration fixture"}
-run(ok): /Users/johnlee/.local/share/wt-utils/worktrees/29f5/stamped-ai-research-next (dataset) [python experiments/datalad-annex/compute...]
-add(ok): experiments/datalad-annex/outputs/figure.png (file)
-add(ok): experiments/datalad-annex/outputs/figure.svg (file)
-add(ok): experiments/datalad-annex/outputs/statistics.tsv (file)
-save(ok): . (dataset)

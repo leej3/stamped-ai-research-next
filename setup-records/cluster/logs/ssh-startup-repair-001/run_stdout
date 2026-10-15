@@ -1,2 +1,0 @@
-Sourcing .bashrc
-{"status": "repaired", "path": "/home/f008q9c_dartmouth_edu/.bashrc", "backup": "/home/f008q9c_dartmouth_edu/.bashrc.stamped-ai-backup-20261015T164246", "changed_line": 4, "before_sha256": "49c050ba615d05e76efa54f3d8a18d2895132fa7493b9db28c26c6ee666e3136", "after_sha256": "46ae14ee19f077032782808245dbd98158928a08b1fd89abde55c42d26fde279", "scope": "Gate only startup diagnostic to interactive shells"}

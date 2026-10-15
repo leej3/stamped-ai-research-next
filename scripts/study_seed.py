@@ -51,6 +51,11 @@ def study_pin(repo, base, study):
     if git(study, "rev-parse", "--show-toplevel") != str(study):
         raise SystemExit("Install the selected study submodule before launch")
     git(study, "cat-file", "-e", ref + "^{commit}")
+    readiness = "coordinator-guidance/readiness.json"
+    if list(entries(study, ref, readiness)):
+        status = json.loads(blob(study, ref, readiness))
+        if status.get("ready") is not True:
+            raise SystemExit("Study is not ready: " + status.get("reason", readiness))
     return path, ref
 
 
@@ -94,9 +99,9 @@ def export_inputs(study, ref, checkout):
         else:
             raise SystemExit("Unsupported study input mode")
         inventory.append(record)
-    prompt = checkout / "input/prompt.md"
+    prompt = checkout / "input/study-task.md"
     if not prompt.is_file() or prompt.is_symlink():
-        raise SystemExit("Study input/prompt.md must be a committed text file")
+        raise SystemExit("Study input/study-task.md must be a committed text file")
     if not (checkout / "input/sources.json").is_file():
         raise SystemExit("Study input/sources.json is required for source provenance")
     return inventory
@@ -186,8 +191,8 @@ def audit_seed(checkout):
 def research_prompt(checkout):
     """Scientific input plus the same concise execution resources for both arms."""
     receipt = json.loads((checkout / "worker-input.json").read_text())
-    destination = "experiments/" + receipt["run"]
-    return (checkout / "input/prompt.md").read_bytes() + (
+    destination = "results/" + receipt["run"]
+    return (checkout / "input/study-task.md").read_bytes() + (
         "\nCommon execution resources\n\n"
         "Use the root Pixi environment; add dependencies as needed. "
         "Keep your work under `" + destination + "/`. "

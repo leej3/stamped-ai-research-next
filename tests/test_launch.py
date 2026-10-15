@@ -66,13 +66,13 @@ assessment = "python private-coordinator.py"
     commit(coordinator, "test: remove answer from current tree")
     study = init(coordinator / "studies/example")
     (study / "input/data").mkdir(parents=True)
-    (study / "input/prompt.md").write_text("Answer the scientific question with these observations.\n")
+    (study / "input/study-task.md").write_text("Answer the scientific question with these observations.\n")
     (study / "input/sources.json").write_text('{"source": "synthetic fixture"}\n')
     (study / "input/data/observations.csv").write_text("x,y\n1,2\n2,3\n")
-    (study / "reference").mkdir()
-    (study / "reference/answer.txt").write_text("STUDY_REFERENCE_SENTINEL")
-    (study / "experiments/previous").mkdir(parents=True)
-    (study / "experiments/previous/output.txt").write_text("STUDY_PREVIOUS_OUTPUT_SENTINEL")
+    (study / "coordinator-guidance").mkdir()
+    (study / "coordinator-guidance/answer.txt").write_text("STUDY_REFERENCE_SENTINEL")
+    (study / "results/previous").mkdir(parents=True)
+    (study / "results/previous/output.txt").write_text("STUDY_PREVIOUS_OUTPUT_SENTINEL")
     (study / "removed-answer.txt").write_text("REMOVED_STUDY_ANSWER_SENTINEL")
     study_old = commit(study, "test: retain previous study evidence")
     (study / "removed-answer.txt").unlink()
@@ -103,8 +103,8 @@ assessment = "python private-coordinator.py"
     resolver.chmod(0o755)
     forbidden = [git(coordinator, "rev-parse", old + ":reference.txt"),
                  git(coordinator, "rev-parse", base + ":previous-output.txt"),
-                 git(study, "rev-parse", study_ref + ":reference/answer.txt"),
-                 git(study, "rev-parse", study_ref + ":experiments/previous/output.txt"),
+                 git(study, "rev-parse", study_ref + ":coordinator-guidance/answer.txt"),
+                 git(study, "rev-parse", study_ref + ":results/previous/output.txt"),
                  git(study, "rev-parse", study_old + ":removed-answer.txt")]
     return coordinator, study, base, resolver, key, forbidden, skills
 
@@ -126,8 +126,8 @@ def test_input_boundary_excludes_tree_history_objects_and_unassigned_skills(tmp_
     assert len(git(worker, "rev-list", "--parents", "HEAD").split()) == 1
     assert not (worker / ".git/objects/info/alternates").exists()
     assert not (worker / "assessment").exists()
-    assert not (worker / "reference").exists()
-    assert not (worker / "experiments").exists()
+    assert not (worker / "coordinator-guidance").exists()
+    assert not (worker / "results").exists()
     assert not (worker / "AGENTS.md").exists()
     for oid in forbidden:
         assert subprocess.run(["git", "-C", str(worker), "cat-file", "-e", oid],
@@ -170,7 +170,7 @@ def test_baseline_rejects_readable_skills_even_without_catalog_entry(tmp_path, s
 
 def test_input_boundary_rejects_links_to_coordinator_material(tmp_path, source_repositories):
     coordinator, study, base, resolver, *_ = source_repositories
-    (study / "input/answer-link").symlink_to("../reference/answer.txt")
+    (study / "input/answer-link").symlink_to("../coordinator-guidance/answer.txt")
     commit(study, "test: add forbidden source link")
     base = commit(coordinator, "test: update fixture study pin")
     with pytest.raises(SystemExit, match="Only annex payload links"):
@@ -351,7 +351,7 @@ def test_public_annex_urls_survive_export_and_retrieve_without_source_history(tm
 def test_boundary_rejects_changes_after_seed(tmp_path, source_repositories, change):
     worker, _ = make_worker(tmp_path, source_repositories)
     if change == "tracked-input":
-        (worker / "input/prompt.md").write_text("Answer supplied by a later edit.")
+        (worker / "input/study-task.md").write_text("Answer supplied by a later edit.")
         message = "changed after the committed seed"
     else:
         (worker / "input/reference.txt").write_text("Uncommitted reference answer.")
@@ -415,3 +415,17 @@ def test_judge_catalog_preserves_existing_trust_and_links_host_auth_outside_targ
     assert all((isolated / "skills" / name).resolve() == assessor / "skills" / name
                for name in launch.JUDGE_SKILLS)
     assert not (profile / "skills").exists()
+
+
+def test_pinned_unready_study_stops_before_worker_creation(tmp_path, source_repositories):
+    coordinator, study, _, resolver, *_ = source_repositories
+    readiness = study / "coordinator-guidance/readiness.json"
+    readiness.write_text(json.dumps({"ready": False, "reason": "Participant inputs are missing"}))
+    commit(study, "test: record missing scientific inputs")
+    base = commit(coordinator, "test: pin blocked study")
+    # An uncommitted status change cannot override the selected study revision.
+    readiness.write_text(json.dumps({"ready": True}))
+    checkout = tmp_path / "blocked-worker"
+    with pytest.raises(SystemExit, match="Participant inputs are missing"):
+        seed.make_seed(coordinator, base, study, checkout, "codex/blocked", "baseline", resolver)
+    assert not checkout.exists()

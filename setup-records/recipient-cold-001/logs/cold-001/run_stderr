@@ -1,7 +1,0 @@
-Cloning into '/private/tmp/stamped-recipient-cold-l4HlRFSj/replay'...
-Submodule 'skills' (https://github.com/con/skills.git) registered for path 'skills'
-Cloning into '/private/tmp/stamped-recipient-cold-l4HlRFSj/replay/skills'...
-HEAD is now at de6d5f8 feat: exercise DataLad replay with community analysis tools
-✔ The default environment has been installed.
-  Remote origin not usable by git-annex; setting annex-ignore
-  https://github.com/leej3/stamped-ai-research-next.git/config download failed: Not Found
