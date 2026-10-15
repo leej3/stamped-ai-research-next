@@ -1,7 +1,7 @@
 [submodule "skills"]
 	path = skills
 	url = https://github.com/con/skills.git
-	branch = codex/pr26-annex-initialization
+	branch = codex/pr26-operational-environment
 [submodule "assessment"]
 	path = assessment
 	url = https://github.com/con/skills.git

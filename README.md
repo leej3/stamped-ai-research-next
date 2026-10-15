@@ -41,7 +41,7 @@ To start a coordinator, give it this repository and a request such as:
 | `studies/<study>/input/` | The scientific prompt and verified data supplied to research workers |
 | `studies/<study>/coordinator-guidance/` | Evaluation guidance and reference material for the coordinator and judges |
 | `studies/<study>/results/<run>/` | An experiment submodule containing the worker's research object, assessments and execution records |
-| `skills/` | Evolving `con/skills`, pinned to [our development branch](https://github.com/con/skills/tree/codex/pr26-annex-initialization) |
+| `skills/` | Evolving `con/skills`, pinned to [our development branch](https://github.com/con/skills/tree/codex/pr26-operational-environment) |
 | `assessment/` | The selected assessor version, identified by `assessment-version.json` |
 
 Keep study and experiment submodules uninitialized until needed.

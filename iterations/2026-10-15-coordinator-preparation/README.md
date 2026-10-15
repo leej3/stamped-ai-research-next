@@ -18,7 +18,8 @@ The first sealed worker launch stopped before native research because adding exa
 An independent clone retrieved all 54 maps and verified all 58 input files; see [publication and retrieval](e2e-worker-publication/publication.json).
 A later real-process regression exposed a macOS zombie process-group cleanup failure; [diagnosis and before/after evidence](signal-termination-investigation-01/diagnosis.json) records the production fix.
 
-The working and development assessor now use [0208f825](https://github.com/con/skills/tree/0208f82504f15b82b7582f34143ab889dd52c68d), with [independent assessment evidence](https://github.com/con/skills/tree/5d65d3eff7f9c91d973b63694e0e945d7971eb60/stamped/blind-runs/2026-10-15-assessment-evidence).
+The development assessor uses [0208f825](https://github.com/con/skills/tree/0208f82504f15b82b7582f34143ab889dd52c68d), with [independent assessment evidence](https://github.com/con/skills/tree/5d65d3eff7f9c91d973b63694e0e945d7971eb60/stamped/blind-runs/2026-10-15-assessment-evidence).
+Working skills additionally include the tested annex initialization and [operational environment guidance](https://github.com/con/skills/commit/c90252a7b9072a4828e9c0b1fa6e5f48409a9cfa).
 Earlier judgments retain their original assessor identities.
 The formal recipient scope accepts a declared authorized retrieval route, records artifact coverage, and does not equate metadata with access or same-host retrieval with portability.
 
