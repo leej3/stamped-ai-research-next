@@ -195,6 +195,24 @@ def test_execution_logging_requires_explicit_request(tmp_path):
     assert "`results/`" in ordinary
 
 
+def test_all_conditions_receive_the_same_environment_and_publication_policy(tmp_path):
+    (tmp_path / "input").mkdir()
+    (tmp_path / "input/study-task.md").write_text("Investigate the question.\n")
+    policy_prompts = []
+    for condition in ("baseline", "discover-general", "discover-science", "stamped-explicit"):
+        assigned = conditions.assignment((ROOT / "conditions.json").read_bytes(), condition)
+        (tmp_path / "worker-input.json").write_text(json.dumps({"assignment": assigned}))
+        prompt = seed.research_prompt(tmp_path).decode()
+        addition = assigned["additional_prompt"]
+        common = prompt.removesuffix("\n" + addition + "\n") if addition else prompt
+        policy_prompts.append(common)
+    assert len(set(policy_prompts)) == 1
+    assert "Keep the working `pixi.lock` ignored" in common
+    assert "one commit above the final task commit" in common
+    assert "return to the task branch" in common
+    assert "artifacts through the configured remotes is authorized" in common
+
+
 def test_condition_is_pinned_and_observations_are_not_invented(tmp_path, source_repositories):
     coordinator = source_repositories[0]
     original = (coordinator / "conditions.json").read_bytes()

@@ -236,9 +236,19 @@ def research_prompt(checkout, capture_execution=False):
         "resource usage and run summaries with duct under `logs/`. "
         if capture_execution else ""
     )
+    environment_policy = (
+        "Keep the working `pixi.lock` ignored. Retain the exact final validated lock "
+        "as ordinary Git on a separate `codex/env-<run>` branch, one commit above "
+        "the final task commit; return to the task branch before finishing and "
+        "report both commit IDs. "
+        "Publishing your assigned task branch, its environment snapshot and annex "
+        "artifacts through the configured remotes is authorized. "
+        if selected else ""
+    )
     common = (
         "\nCommon execution resources\n\n"
         "Use the root Pixi environment; add dependencies as needed. "
+        + environment_policy +
         "Keep analysis outputs under `results/` in this experiment repository. "
         + capture +
         "Retain failed attempts and annex large outputs/logs.\n").encode()
