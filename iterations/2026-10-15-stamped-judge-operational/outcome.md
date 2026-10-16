@@ -44,6 +44,10 @@ The evidence is registered lazily as a separate study result.
 
 All three native capture checks passed.
 A fresh Git retrieval verified the final retained evidence commit and its ordinary files.
-Three archive payloads remain local and unavailable through the published annex route: the credential session was locked, and one announced native unlock attempt failed or was canceled.
-Their upload and independent retrieval remain blocked on the user's physical unlock.
-The failure and exact pending artifacts are retained; Git and checkpoint publication are complete.
+Following the user's credential unlock, all three archive payloads were uploaded to CON Hub and independently retrieved from an empty local annex store at retained commit `d87c492f8acc0d7193914032bb099d359310dc77`.
+The 27,136,844 retrieved bytes match all three recorded SHA-256 keys, and the receiver remains clean.
+The first retrieval command skipped the files because the receiver held old annex location metadata; its byte-check failure is retained.
+Publishing and fetching the updated location metadata resolved that infrastructure issue.
+The earlier credential failure, both retrieval attempts, command metadata, stdout/stderr and hash proof remain in `publication/` and the original failure receipts.
+This coordinator publication step leaves the scientific target, delivered judgment, retained judgment commit and study gitlink unchanged.
+It adds no scientific replay or worker credit.

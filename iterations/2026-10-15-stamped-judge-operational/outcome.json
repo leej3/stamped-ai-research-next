@@ -70,12 +70,13 @@
     "native_capture": "verified independently against stored native command/cwd/model and exact committed bytes",
     "github_refs": "verified exact code and checkpoint OIDs",
     "hosted": "verified matching actual hosted session/checkpoint through fresh empty Git context, with no local metadata fallback",
-    "annex_payloads": "three archives local; upload failed because vault locked and one native unlock returned failure/canceled",
+    "annex_payloads": "All three retained archives uploaded to CON Hub; copy succeeded and exact bytes independently retrieved.",
     "fresh_git_retrieval": "verified exact retention5c2ab777,72 regular Git files,3 annex pointer paths,clean,zero nested gitlinks",
-    "fresh_annex_retrieval": "pending upload/unlock",
+    "fresh_annex_retrieval": "verified three archives, 27136844 bytes, matching SHA-256 keys from an empty local annex store at d87c492",
     "native_capture_receipt": "coordinator-actions/independent-native-audit/final-result.json",
     "checkpoint_ref": "refs/entire/checkpoints/04/01M510JADWN8W7J9GF1T3BQB04",
-    "checkpoint_oid": "8827b6eeaa95a0a7f5e8cca1d4da18377515c2ff"
+    "checkpoint_oid": "8827b6eeaa95a0a7f5e8cca1d4da18377515c2ff",
+    "annex_publication_receipt": "publication/annex-publication-resume-20261016-02/result.json"
   },
   "final_retention_commit": "d87c492f8acc0d7193914032bb099d359310dc77",
   "study_commit": "881533f9265a51eedc17dd7667be2ecd95da0422",
@@ -83,15 +84,29 @@
   "final_git_retrieval": {
     "receipt": "final-git-retrieval.json",
     "regular_files": 91,
-    "annex_payloads": "three archive payloads not uploaded or independently retrieved; credential unlock required"
+    "annex_payloads": "All three archive payloads independently retrieved and hash-verified; see annex_publication."
   },
   "published_refs": {
     "codex/preparation-stamped-judgment-op-20261015": "e1b0ee05ad3406aede91ce1f62a092b48f30b40f",
     "refs/entire/checkpoints/04/01M510JADWN8W7J9GF1T3BQB04": "8827b6eeaa95a0a7f5e8cca1d4da18377515c2ff",
     "codex/preparation-stamped-judge-retained-20261015": "d87c492f8acc0d7193914032bb099d359310dc77",
-    "codex/preparation-stamped-judgment-op-annex-20261015": "6e642fd30c8c6dd2178863c318bf428e4449c697",
+    "codex/preparation-stamped-judgment-op-annex-20261015": "25cc4fbabbcb54d014817c6101fe1e69799668d2",
     "codex/preparation-stamped-judge-study-op-20261015": "881533f9265a51eedc17dd7667be2ecd95da0422",
     "codex/preparation-stamped-judge-env-20261015": "e5dfb2c3aa7d626abbf5aabaa300d0c452d5e343"
   },
-  "completion_status": "native capture infrastructure verified; scientific replay unsuccessful; annex publication blocked awaiting physical credential unlock"
+  "completion_status": "native capture infrastructure and annex publication verified; scientific replay unsuccessful; preparation evidence fully retained",
+  "annex_publication": {
+    "completed_at": "2026-10-16T01:36:02.419501+00:00",
+    "retention_commit": "d87c492f8acc0d7193914032bb099d359310dc77",
+    "receipt": "publication/annex-publication-resume-20261016-02/result.json",
+    "bytes": 27136844,
+    "archive_count": 3,
+    "empty_annex_store_before": true,
+    "clean_after": true,
+    "first_retrieval_failure_retained": "publication/annex-publication-resume-20261016/failure.json",
+    "metadata_correction": "Published updated annex location metadata over SSH, fetched and merged it in the independent receiver, then retrieved all three archives.",
+    "earlier_credential_failure_retained": "credential-publication-boundary.json",
+    "coordinator_action_only": true,
+    "study_gitlink_unchanged": true
+  }
 }

@@ -1,0 +1,120 @@
+[
+  {
+    "label": "source-head",
+    "argv": [
+      "git",
+      "rev-parse",
+      "HEAD"
+    ],
+    "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-op-evidence/judgment-01/judgment",
+    "started_at": "2026-10-16T01:34:50.392010+00:00",
+    "elapsed_seconds": 0.005880124983377755,
+    "timeout_seconds": 300,
+    "returncode": 0,
+    "error": null,
+    "stdout": "source-head.stdout.txt",
+    "stderr": "source-head.stderr.txt"
+  },
+  {
+    "label": "source-status-before",
+    "argv": [
+      "git",
+      "status",
+      "--porcelain"
+    ],
+    "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-op-evidence/judgment-01/judgment",
+    "started_at": "2026-10-16T01:34:50.398118+00:00",
+    "elapsed_seconds": 0.007965874974615872,
+    "timeout_seconds": 300,
+    "returncode": 0,
+    "error": null,
+    "stdout": "source-status-before.stdout.txt",
+    "stderr": "source-status-before.stderr.txt"
+  },
+  {
+    "label": "receiver-head",
+    "argv": [
+      "git",
+      "rev-parse",
+      "HEAD"
+    ],
+    "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-op-retention-retrieval",
+    "started_at": "2026-10-16T01:34:50.406254+00:00",
+    "elapsed_seconds": 0.0051376670598983765,
+    "timeout_seconds": 300,
+    "returncode": 0,
+    "error": null,
+    "stdout": "receiver-head.stdout.txt",
+    "stderr": "receiver-head.stderr.txt"
+  },
+  {
+    "label": "receiver-status-before",
+    "argv": [
+      "git",
+      "status",
+      "--porcelain"
+    ],
+    "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-op-retention-retrieval",
+    "started_at": "2026-10-16T01:34:50.411534+00:00",
+    "elapsed_seconds": 0.00779529195278883,
+    "timeout_seconds": 300,
+    "returncode": 0,
+    "error": null,
+    "stdout": "receiver-status-before.stdout.txt",
+    "stderr": "receiver-status-before.stderr.txt"
+  },
+  {
+    "label": "copy-three-archives",
+    "argv": [
+      "pixi",
+      "run",
+      "--manifest-path",
+      "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-op-coordinator/pixi.toml",
+      "git",
+      "annex",
+      "copy",
+      "--to",
+      "con-hub",
+      "--json",
+      "--",
+      "archived-workspaces/fresh-clone.tar.gz",
+      "archived-workspaces/replay-local.tar.gz",
+      "coordinator-retention/judge-stop-original/artifacts.tar.gz"
+    ],
+    "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-op-evidence/judgment-01/judgment",
+    "started_at": "2026-10-16T01:34:50.438489+00:00",
+    "elapsed_seconds": 6.913605583016761,
+    "timeout_seconds": 300,
+    "returncode": 0,
+    "error": null,
+    "stdout": "copy-three-archives.stdout.txt",
+    "stderr": "copy-three-archives.stderr.txt"
+  },
+  {
+    "label": "get-three-archives",
+    "argv": [
+      "pixi",
+      "run",
+      "--manifest-path",
+      "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-op-coordinator/pixi.toml",
+      "git",
+      "annex",
+      "get",
+      "--from",
+      "con-hub",
+      "--json",
+      "--",
+      "archived-workspaces/fresh-clone.tar.gz",
+      "archived-workspaces/replay-local.tar.gz",
+      "coordinator-retention/judge-stop-original/artifacts.tar.gz"
+    ],
+    "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-op-retention-retrieval",
+    "started_at": "2026-10-16T01:34:57.352278+00:00",
+    "elapsed_seconds": 0.38446754100732505,
+    "timeout_seconds": 300,
+    "returncode": 0,
+    "error": null,
+    "stdout": "get-three-archives.stdout.txt",
+    "stderr": "get-three-archives.stderr.txt"
+  }
+]

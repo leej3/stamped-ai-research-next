@@ -1,0 +1,7 @@
+{
+  "classification": "stale_receiver_annex_location_metadata",
+  "publication": "All three explicit-file copy results succeeded.",
+  "retrieval": "get --from con-hub returned success without transferring files because receiver metadata did not yet record their CON Hub location. The subsequent exact-byte check failed.",
+  "correction": "Publish source git-annex metadata over SSH, fetch and merge into the still-empty independent receiver, then repeat get and hash validation.",
+  "science_executed": false
+}

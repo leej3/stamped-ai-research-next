@@ -1,0 +1,29 @@
+{
+  "recorded_at": "2026-10-16T01:35:56.933809+00:00",
+  "source_head": "d87c492f8acc0d7193914032bb099d359310dc77",
+  "receiver_head": "d87c492f8acc0d7193914032bb099d359310dc77",
+  "empty_annex_store_before": true,
+  "receiver_annex_object_files_before": [],
+  "git_alternates": false,
+  "files": [
+    {
+      "path": "archived-workspaces/fresh-clone.tar.gz",
+      "key": "SHA256E-s2977948--4bedba1bac749badf0d03caef6f3b901de803f3db8bb7bdffa4956c5cb5d6e50.tar.gz",
+      "bytes": 2977948,
+      "sha256": "4bedba1bac749badf0d03caef6f3b901de803f3db8bb7bdffa4956c5cb5d6e50"
+    },
+    {
+      "path": "archived-workspaces/replay-local.tar.gz",
+      "key": "SHA256E-s10581076--780f31ce8c5c3f99fc36f5bed75f5836dedd36d00b5bbbad62b859a87c5313c4.tar.gz",
+      "bytes": 10581076,
+      "sha256": "780f31ce8c5c3f99fc36f5bed75f5836dedd36d00b5bbbad62b859a87c5313c4"
+    },
+    {
+      "path": "coordinator-retention/judge-stop-original/artifacts.tar.gz",
+      "key": "SHA256E-s13577820--1b3088cb8aa441963fa236651c71b94f4f3ff9aaba502d3da98e60cb5cc2f6aa.tar.gz",
+      "bytes": 13577820,
+      "sha256": "1b3088cb8aa441963fa236651c71b94f4f3ff9aaba502d3da98e60cb5cc2f6aa"
+    }
+  ],
+  "scope": "Publication and retrieval only; no worker, judge or scientific replay execution."
+}
