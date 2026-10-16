@@ -1,0 +1,517 @@
+{
+  "head": "d87c492f8acc0d7193914032bb099d359310dc77",
+  "source": "GitHub SSH published retention branch",
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "fetch",
+        "origin",
+        "refs/heads/codex/preparation-stamped-judge-retained-20261015:refs/remotes/origin/retained"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "From github.com:leej3/stamped-ai-research-next\n   5c2ab77..d87c492  codex/preparation-stamped-judge-retained-20261015 -> origin/retained\n   5c2ab77..d87c492  codex/preparation-stamped-judge-retained-20261015 -> origin/codex/preparation-stamped-judge-retained-20261015\n"
+    },
+    {
+      "argv": [
+        "git",
+        "checkout",
+        "--detach",
+        "refs/remotes/origin/retained"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "Previous HEAD position was 5c2ab77 chore(preparation): retain operational attempts and stop evidence\nHEAD is now at d87c492 chore(preparation): retain independent native capture proof\n"
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "returncode": 0,
+      "stdout": "d87c492f8acc0d7193914032bb099d359310dc77\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "ls-files",
+        "--stage"
+      ],
+      "returncode": 0,
+      "stdout": "100644 ad4de0e79d71fb1f2d4a251552e548531ad78be0 0\t.gitignore\n100644 c5f6bc3bb2467f772393f42046ba75bc558c85a7 0\t2026-10-16-assessment.md\n100644 e3d56c7d32bf0ed74ce2b590ea067f80f2d144cf 0\t2026-10-16-fresh-rerun.json\n100644 e83d1336696db91e775ce6d3e36b302688c7ee5f 0\t2026-10-16-probes.json\n100644 c6117f9514450cc03e835fece8d331803eeb93ba 0\t2026-10-16-remote-check.txt\n100644 da2c93e81414f11b05d3d1dd588af65b0092307e 0\t2026-10-16-response.json\n100644 23b52c8a6d39e1b75340f69db52cabd676072116 0\t2026-10-16-runtime-check.txt\n100644 664809b34778aacf4006927628cac4b990493e1c 0\t2026-10-16-url.txt\n120000 10f65901c5ed7496b6777aa66228877df0b4f604 0\tarchived-workspaces/fresh-clone.tar.gz\n100644 b6fdc1894a802a10fa2baa52729855d769b0d6f6 0\tarchived-workspaces/manifest.json\n120000 d494e2680f30fd129441b704873f81d0cdbcb77a 0\tarchived-workspaces/replay-local.tar.gz\n100644 eb56ab1950f8a7a81dbadeb4ce035987a982ba03 0\tcoordinator-retention/README.md\n100644 ee525e3e90e1242c63c8e078a8461fd113d08f6f 0\tcoordinator-retention/coordinator-actions/action.py\n100644 0d5ae085743469c25cad8533da6edac13e14df6b 0\tcoordinator-retention/coordinator-actions/configure-annex/command.json\n100644 e69de29bb2d1d6434b8b29ae775ad8c2e48c5391 0\tcoordinator-retention/coordinator-actions/configure-annex/stderr.txt\n100644 e69de29bb2d1d6434b8b29ae775ad8c2e48c5391 0\tcoordinator-retention/coordinator-actions/configure-annex/stdout.txt\n100644 2b10199b22488f62fbca2c5134f245d8264435df 0\tcoordinator-retention/coordinator-actions/credential-unlock-status.json\n100644 baab6f25c583a78291cd8ea59e2d699fa2a0647b 0\tcoordinator-retention/coordinator-actions/delivered-files-preservation.json\n100644 3372b933cc947546b469ae149b36490a9e4bc381 0\tcoordinator-retention/coordinator-actions/independent-native-audit/attempt-01-precondition-failure.json\n100644 fc1d0c8c2df07d16fd55080c78f7ebfe56fa044a 0\tcoordinator-retention/coordinator-actions/independent-native-audit/audit.py\n100644 3f16efa4ed5df7510036fcff79308af196b5e67b 0\tcoordinator-retention/coordinator-actions/independent-native-audit/commands.json\n100644 cba1d54d69abfdda7163b0af6db7aa0082f785c6 0\tcoordinator-retention/coordinator-actions/independent-native-audit/final-result.json\n100644 b09e61de698d649a9f52c3cd98220e6fc074a0fe 0\tcoordinator-retention/coordinator-actions/independent-native-audit/hosted-ambiguous-inside-repository.json\n100644 1a4b311ffa4d7d5b3a18a36ea764fd0117ce6785 0\tcoordinator-retention/coordinator-actions/independent-native-audit/hosted-empty-repository.json\n100644 e2b33c338cc9b49e6b2339a9678b5216a031916e 0\tcoordinator-retention/coordinator-actions/independent-native-audit/hosted-outside-repository.json\n100644 1b5a72dae9909ba501064bbebb6c84cdf37a4e8b 0\tcoordinator-retention/coordinator-actions/independent-native-audit/hosted-repository-view.json\n100644 416b85cc684bba79ab3deaf909218a4482d4569f 0\tcoordinator-retention/coordinator-actions/independent-native-audit/hosted-short-outside-repository.json\n100644 38e38f92129f8db75d11f8f98afd140d500fbca1 0\tcoordinator-retention/coordinator-actions/independent-native-audit/hosted_empty_repo_audit.py\n100644 45ee8534089c63fa18d8e12755699b9bc8fbd21f 0\tcoordinator-retention/coordinator-actions/independent-native-audit/local-checkpoint.json\n100644 fa414c2c5f283746b4630b4d3e43c60ca7cd993c 0\tcoordinator-retention/coordinator-actions/independent-native-audit/remote-refs.json\n100644 11b7c9086ca4bdadbf6482a2c493efd78d2a51e8 0\tcoordinator-retention/coordinator-actions/independent-native-audit/result.json\n100644 0607e48a0021da41546bbe05150392cf1df9af53 0\tcoordinator-retention/coordinator-actions/independent-native-audit/selected-native-evidence.json\n100644 e597457553236c1e3837f352575ff1fdbfd77da8 0\tcoordinator-retention/coordinator-actions/independent-retention-retrieval/commands.json\n100644 c93e8d9e8bdd99337d314eef40f786944f28910d 0\tcoordinator-retention/coordinator-actions/independent-retention-retrieval/result.json\n100644 8d3d302adcd3a7f32145f00ba8676f167c9d5098 0\tcoordinator-retention/coordinator-actions/judge-cleanup-failure.json\n100644 4b992b10e6bb623466ef790b213ddecfca4e6d71 0\tcoordinator-retention/coordinator-actions/judge-launch.log\n100644 c8b69354432d75dbe2dd17527925c2475d0e40b5 0\tcoordinator-retention/coordinator-actions/judge-preservation.json\n100644 ecefa13876de06b28169654a80b4f4efe1a3c535 0\tcoordinator-retention/coordinator-actions/launch-gate.json\n100644 47254ffd9c569289c894f2018fb2764ef34c6b2a 0\tcoordinator-retention/coordinator-actions/preserve_judge.py\n100644 ebea271dcf17c7ad1092dab3fa6ab5232704e3de 0\tcoordinator-retention/coordinator-actions/publish-initial-annex/command.json\n100644 9545a780f2e7d1f4f9bcd29f7a3256433efe8ace 0\tcoordinator-retention/coordinator-actions/publish-initial-annex/stderr.txt\n100644 0783fe718fff9826d751555e99e28ebea7a750e3 0\tcoordinator-retention/coordinator-actions/publish-initial-annex/stdout.txt\n100644 6e2254d576c76f9197ba5e9693dbc757b53c5e89 0\tcoordinator-retention/coordinator-actions/replay-attempts/event-017-item_8.json\n100644 04c8cbdbb44d7c56174465bca2ca5fcd2ba64f9d 0\tcoordinator-retention/coordinator-actions/replay-attempts/event-049-item_21.json\n100644 b2e808592a0923731afa3646f884d157a63ad9a2 0\tcoordinator-retention/coordinator-actions/replay-attempts/event-052-item_26.json\n100644 438dbc2609fcb3f9c2fe1f7bff798330cd38d8f3 0\tcoordinator-retention/coordinator-actions/replay-attempts/event-052-recovered-receipt.json\n100644 90e73ba3f1951e5d9cb23edea5637f101542754f 0\tcoordinator-retention/coordinator-actions/replay-attempts/event-059-item_28.json\n100644 cbe2607008324fdd209e2d1955224807b983d2fe 0\tcoordinator-retention/coordinator-actions/replay-attempts/event-061-item_31.json\n100644 51725813dfebd4b82a64f90ed6fa133d556a072e 0\tcoordinator-retention/coordinator-actions/replay-attempts/event-063-item_32.json\n100644 ccbb046ec85d640b9cca191a548471576601025b 0\tcoordinator-retention/coordinator-actions/replay-attempts/event-063-recovered-receipt.json\n100644 f15065e39c1c8e504477a3db3e7bb01e1e89fcb6 0\tcoordinator-retention/coordinator-actions/replay-attempts/event-075-item_36.json\n100644 69050ff30b7948883a11d1065e0a1dd03b4cbd8e 0\tcoordinator-retention/coordinator-actions/replay-attempts/event-084-item_43.json\n100644 bceeb95ee5902f8ab671f0a66fd50807e1f184cd 0\tcoordinator-retention/coordinator-actions/replay-attempts/event-094-item_48.json\n100644 c26d20d7642588fb7474ec17172ed4d9ba41cd09 0\tcoordinator-retention/coordinator-actions/replay-attempts/event-102-item_52.json\n100644 4dcf82d5b98ea5182ebf8344fd89f08a1c51d7b7 0\tcoordinator-retention/coordinator-actions/replay-attempts/event-114-item_58.json\n100644 9784672297624247d074e4a0ef02e13528c7ad9d 0\tcoordinator-retention/coordinator-actions/replay-attempts/manifest.json\n100644 f60f8859df55dcb963f2abbed8e8570ae92edf89 0\tcoordinator-retention/coordinator-actions/retrieve_payloads.py\n100644 d7b560ad34caa14144e3bb34cf12f4a6e5179b09 0\tcoordinator-retention/coordinator-actions/retrieve_retention.py\n100644 5d9532508e790c3f4239309408b51481910c1c96 0\tcoordinator-retention/coordinator-actions/source-regression-command.json\n100644 e774ecfc8604dd611ec85f3dbce2bcb01472deb7 0\tcoordinator-retention/coordinator-actions/stock-native-verification-failure.json\n120000 1bc07c757e18b4803fae997f2d3b1ed180782b3f 0\tcoordinator-retention/judge-stop-original/artifacts.tar.gz\n100644 7cc73ce9fe35afd3d866455409284e6211e72344 0\tcoordinator-retention/judge-stop-original/preservation.json\n100644 f511856db4f0c5c33993233470d7c7a763dc2ad9 0\tcoordinator-retention/judge-stop-original/stop-state.json\n100644 3d59ac88230e89fde40a5091b11e60ac7655b70e 0\tcoordinator-retention/judgment-01/annex-remote.json\n100644 d5b9a6d1ac9e2285e1a987ce16fa4df4fbcf4740 0\tcoordinator-retention/judgment-01/annex-source.json\n100644 aae3ff1ff706fc6c98b04ebd30e55c7bd66642e1 0\tcoordinator-retention/judgment-01/checkout.json\n100644 47da880cbb9da1542118d0eaaf7494ff67977699 0\tcoordinator-retention/judgment-01/environment.json\n100644 ff212ca8ecfef32f68e771e92246ed83e4a5f87e 0\tcoordinator-retention/judgment-01/judge-annex-materialization.json\n100644 b06c2d404f1b169c115620bf3bf92ba384487d20 0\tcoordinator-retention/judgment-01/judge-prompt.md\n100644 faba775f800cc9d3dd5c5cc723be7e28149808fa 0\tcoordinator-retention/judgment-01/judge-workspace.json\n100644 6dcb074016aa54d1606e07d7da56250da6c4ae75 0\tcoordinator-retention/judgment-01/native/events.jsonl\n100644 59d1845b8f88c763fe223c8a4f9efad7b4f94a50 0\tcoordinator-retention/judgment-01/native/final.txt\n100644 38acb3c5a8e6630f93c819502395426c53c7ee91 0\tcoordinator-retention/judgment-01/native/launch.json\n100644 877b98560c41413845c3b0647e0e5f65d6e1d8bd 0\tcoordinator-retention/judgment-01/native/procedure-status.json\n100644 e702cff7d74e9e6f7dc0df3e992bc943f006106d 0\tcoordinator-retention/judgment-01/native/prompt-preflight.json\n100644 b06c2d404f1b169c115620bf3bf92ba384487d20 0\tcoordinator-retention/judgment-01/native/prompt.txt\n100644 3ddd09f4529e08148022898dd655dc6470853a28 0\tcoordinator-retention/judgment-01/native/result.json\n100644 7d5a8996b5f9d57d8463a2d50c75507eca715165 0\tcoordinator-retention/judgment-01/native/stderr.txt\n100644 9214d70aa5a11a8fdd7311127df7e16132069f9f 0\tcoordinator-retention/judgment-01/native/worker-artifact-validation.json\n100644 146224326068867391f68811613b9320c67b0a54 0\tcoordinator-retention/judgment-01/native/worker-end-state.json\n100644 8dd89ecab97a46f4862d68bb9ca6fd455fd171ca 0\tcoordinator-retention/judgment-01/original-study-prompt.md\n100644 f1b50cb15d2599aa28e37b678617751f71282039 0\tcoordinator-retention/judgment-01/preparation.json\n100644 c212ed30fc4ee8b9bcee937cb513994d4ecc5f11 0\tcoordinator-retention/judgment-01/procedure-status.json\n100644 64ecb910fa96f5835ceb4d1d6420ac9325289136 0\tcoordinator-retention/judgment-01/reference.json\n100644 e22af444c11f86b8494a4c2a7aadf5ee1e06cdfa 0\tcoordinator-retention/judgment-01/reference.md\n100644 29167b7abc497fe9c73266d8c115b0fbf67caf24 0\tcoordinator-retention/judgment-01/study-source.json\n100644 a922d982816f7e51155e89ade7e05709197b84ed 0\tcoordinator-retention/judgment-01/study.json\n100644 8dd89ecab97a46f4862d68bb9ca6fd455fd171ca 0\tcoordinator-retention/judgment-01/study.md\n100644 146224326068867391f68811613b9320c67b0a54 0\tcoordinator-retention/judgment-01/worker-end-state.json\n100644 fef0023173616de6d3a340b61d5a3a0cb45864d4 0\tcoordinator-retention/judgment-01/worker-retention-check.json\n100644 df5065ad039078468045651f70499d636bcf15ed 0\tcoordinator-retention/operational-manifest.json\n100644 f8578086ac42550a8b25f95174b010725e158de9 0\tcoordinator-retention/operational-outcome.json\n100644 a648b663cb0ea83d9ec18df4ab0533d9446f1dff 0\tcoordinator-retention/registration.json\n100644 9566d7b1c3bc25f41a7fc74932db7295165c80ef 0\tjudge-target.json\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "status",
+        "--porcelain"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "regular_files": [
+    {
+      "path": ".gitignore",
+      "bytes": 37,
+      "sha256": "e900c44bdee024c2f28a7e7ddc4793a9569489026ee1c08f534d4de6b490f726"
+    },
+    {
+      "path": "2026-10-16-assessment.md",
+      "bytes": 14497,
+      "sha256": "98218f1db4d5623127024816a8afd83bab9245aca4fa907d12bf0f165f6bbdc6"
+    },
+    {
+      "path": "2026-10-16-fresh-rerun.json",
+      "bytes": 15929,
+      "sha256": "eb6b5b3e917436665879fd6c78ce8f4f2c3ac0c764174032277b7c065fb2f373"
+    },
+    {
+      "path": "2026-10-16-probes.json",
+      "bytes": 17117,
+      "sha256": "c64428cd0c3e708aff73ed3cd03b5587dae079551fa38e6c5e35c021103b520c"
+    },
+    {
+      "path": "2026-10-16-remote-check.txt",
+      "bytes": 433,
+      "sha256": "8c653a58a164ca0e17771fcfbc40e287faf637314b7ba873372ed77809221062"
+    },
+    {
+      "path": "2026-10-16-response.json",
+      "bytes": 18528,
+      "sha256": "7c1bd8b56b737188af4d8a90dc6eabbc9ccd898c604e33abec5c4d8625ba4b4f"
+    },
+    {
+      "path": "2026-10-16-runtime-check.txt",
+      "bytes": 423,
+      "sha256": "ecee40bea1179ec83e6d3227023123f7ef2b0272d9be7c51c2bd80d95fdd5d4c"
+    },
+    {
+      "path": "2026-10-16-url.txt",
+      "bytes": 7093,
+      "sha256": "b4be8460c3e8cecc53578c61082762a1f4207ef7c7ff046156a6a46e72f0c234"
+    },
+    {
+      "path": "archived-workspaces/manifest.json",
+      "bytes": 1079,
+      "sha256": "7db8d2f4db12e7b455090ad20e3702d4825384beb0cbbe06bab872684caa398f"
+    },
+    {
+      "path": "coordinator-retention/README.md",
+      "bytes": 2497,
+      "sha256": "9397c3ea3a31ed12581c2870e460405e1852be8db94ae2a1cb6faad39fc379df"
+    },
+    {
+      "path": "coordinator-retention/coordinator-actions/action.py",
+      "bytes": 798,
+      "sha256": "806eb561a1f55985616c7a529f6a3dc3716f01c9c050ad0cb38d83ce3146bb56"
+    },
+    {
+      "path": "coordinator-retention/coordinator-actions/configure-annex/command.json",
+      "bytes": 694,
+      "sha256": "4c7329935165250b8733399e219b4d8a7cecb1000acf6ba8e4b66b1ed17372aa"
+    },
+    {
+      "path": "coordinator-retention/coordinator-actions/configure-annex/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "coordinator-retention/coordinator-actions/configure-annex/stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "coordinator-retention/coordinator-actions/credential-unlock-status.json",
+      "bytes": 232,
+      "sha256": "d1e4506ef451e229c5aebd88e9ef3522a5a120fd04aeb2fc7442cf519a750e79"
+    },
+    {
+      "path": "coordinator-retention/coordinator-actions/delivered-files-preservation.json",
+      "bytes": 1785,
+      "sha256": "20efd60003240422d5e50c63de8c754ad40ede1b011cfdf80000689fc0e7fd23"
+    },
+    {
+      "path": "coordinator-retention/coordinator-actions/independent-native-audit/attempt-01-precondition-failure.json",
+      "bytes": 588,
+      "sha256": "dbd9c2b992dd5a719a8978af7d504666c10e95479d9772b1457fb4afadf9de74"
+    },
+    {
+      "path": "coordinator-retention/coordinator-actions/independent-native-audit/audit.py",
+      "bytes": 12922,
+      "sha256": "400788aa24737463a1c8a013d9e5de9d35f573ecf5f1b8963102a1f3b91ffc51"
+    },
+    {
+      "path": "coordinator-retention/coordinator-actions/independent-native-audit/commands.json",
+      "bytes": 10574,
+      "sha256": "27ca66327d569d3ae9c89656060af4630dec85e85a4c5aa2150c47a0c032214d"
+    },
+    {
+      "path": "coordinator-retention/coordinator-actions/independent-native-audit/final-result.json",
+      "bytes": 2962,
+      "sha256": "50f380f422e58d18579bf43959d3b45579848d75145357b02f0dad803eb61c97"
+    },
+    {
+      "path": "coordinator-retention/coordinator-actions/independent-native-audit/hosted-ambiguous-inside-repository.json",
+      "bytes": 1737,
+      "sha256": "d7cea1d2b5b6fc6470b47587d9653535b80b85fb3b3718c66c5fe1cb1224384d"
+    },
+    {
+      "path": "coordinator-retention/coordinator-actions/independent-native-audit/hosted-empty-repository.json",
+      "bytes": 6828,
+      "sha256": "abdcd00fb071db65477ae3a84dc45a4be119917c1382b44b4755a831f82dc515"
+    },
+    {
+      "path": "coordinator-retention/coordinator-actions/independent-native-audit/hosted-outside-repository.json",
+      "bytes": 435,
+      "sha256": "72270348c12ea2da9aa36eb185f8a3f8eed468ad74ce65a63bad6bdf00ce1bfd"
+    },
+    {
+      "path": "coordinator-retention/coordinator-actions/independent-native-audit/hosted-repository-view.json",
+      "bytes": 636,
+      "sha256": "59e2a68fd9e13e1c0c58dbe9afd2b3345a9f0537e94dc1180b1590d26aaf531b"
+    },
+    {
+      "path": "coordinator-retention/coordinator-actions/independent-native-audit/hosted-short-outside-repository.json",
+      "bytes": 338,
+      "sha256": "2f2a6a0d417fa2209bdac0063bb16d2d1c36f5d760ab34cdd998f69b7bb3f125"
+    },
+    {
+      "path": "coordinator-retention/coordinator-actions/independent-native-audit/hosted_empty_repo_audit.py",
+      "bytes": 3894,
+      "sha256": "f22a678587f826113d6e85524edff1052d84c3cd21a60c7d38c9f7816a8250d9"
+    },
+    {
+      "path": "coordinator-retention/coordinator-actions/independent-native-audit/local-checkpoint.json",
+      "bytes": 1202,
+      "sha256": "001be44a38e444a04e730cee05d84aece6621236727dfb9b05ffc2560d6f3d9c"
+    },
+    {
+      "path": "coordinator-retention/coordinator-actions/independent-native-audit/remote-refs.json",
+      "bytes": 536,
+      "sha256": "5e196c267a84fc98e9e58ea9ea115d6334bc24add71724f75204d1918a3e389f"
+    },
+    {
+      "path": "coordinator-retention/coordinator-actions/independent-native-audit/result.json",
+      "bytes": 3388,
+      "sha256": "874a768580a1f1c09c4c3cfaffd1275fd8e880851fe071c6f485520227d3262e"
+    },
+    {
+      "path": "coordinator-retention/coordinator-actions/independent-native-audit/selected-native-evidence.json",
+      "bytes": 4461,
+      "sha256": "581f905b2e5150ba775c6bdbefc092b2a0447ac13694945171668cf2f07f5fbf"
+    },
+    {
+      "path": "coordinator-retention/coordinator-actions/independent-retention-retrieval/commands.json",
+      "bytes": 13055,
+      "sha256": "bf9674e4eeed804decccb74e39cd3b16ca90f68e1ea156875a9b8f7bb257675b"
+    },
+    {
+      "path": "coordinator-retention/coordinator-actions/independent-retention-retrieval/result.json",
+      "bytes": 15577,
+      "sha256": "1e80787f3fca0731687d39f1f5d71de564840230091bc23123e674eab992d178"
+    },
+    {
+      "path": "coordinator-retention/coordinator-actions/judge-cleanup-failure.json",
+      "bytes": 4174,
+      "sha256": "9bb35c6f34445f6d4af221d576a8fb37b2f5026b455a997438db34d3790a3588"
+    },
+    {
+      "path": "coordinator-retention/coordinator-actions/judge-launch.log",
+      "bytes": 665482,
+      "sha256": "b5cbb75bc5ada87787310d7c3e9813bd9170339a9d4ef5241c0c064dce2e111e"
+    },
+    {
+      "path": "coordinator-retention/coordinator-actions/judge-preservation.json",
+      "bytes": 7640,
+      "sha256": "beaa02f0d8f8ec817d643431a64357b1e519110c4035fff10b1f322fcf3dd53f"
+    },
+    {
+      "path": "coordinator-retention/coordinator-actions/launch-gate.json",
+      "bytes": 253,
+      "sha256": "68ef1733c1ae0a10b11ec926343a14b463cb6ae2153413d9e612f2932e093bf0"
+    },
+    {
+      "path": "coordinator-retention/coordinator-actions/preserve_judge.py",
+      "bytes": 3410,
+      "sha256": "99abfbfa56cc223743ba3cef31ce145707eef22aa817c6eb2f9f925b86f65ad7"
+    },
+    {
+      "path": "coordinator-retention/coordinator-actions/publish-initial-annex/command.json",
+      "bytes": 494,
+      "sha256": "99fcef348348071f8d7623ed08cc1a22dbd4e10e26c97853f41e9ad2e572f3ba"
+    },
+    {
+      "path": "coordinator-retention/coordinator-actions/publish-initial-annex/stderr.txt",
+      "bytes": 567,
+      "sha256": "4f3cc30c9490f7412adc72df17ea62fe99947f30929d37cad4a983cc840617a9"
+    },
+    {
+      "path": "coordinator-retention/coordinator-actions/publish-initial-annex/stdout.txt",
+      "bytes": 239,
+      "sha256": "2642c03ebef892dfb6dd9c5a63d8b5ca79ca1ef92e648f1370dbd6d4b4704672"
+    },
+    {
+      "path": "coordinator-retention/coordinator-actions/replay-attempts/event-017-item_8.json",
+      "bytes": 7673,
+      "sha256": "7f353849d48eaacd0617b09bf5bcbbd3e2571c3d79b82afc61df4bbf91cae72c"
+    },
+    {
+      "path": "coordinator-retention/coordinator-actions/replay-attempts/event-049-item_21.json",
+      "bytes": 963,
+      "sha256": "fc12516918df6ca394b8acf05697576f8f4313e66f59921f7155157333ceb6a2"
+    },
+    {
+      "path": "coordinator-retention/coordinator-actions/replay-attempts/event-052-item_26.json",
+      "bytes": 8267,
+      "sha256": "3e50d15aafc3b7a5d52923e0aa0d96c17a5fe132d03f8d738e88a7303bfb2cad"
+    },
+    {
+      "path": "coordinator-retention/coordinator-actions/replay-attempts/event-052-recovered-receipt.json",
+      "bytes": 7603,
+      "sha256": "0a87ca6784ac20473edfd078edd5d0b86e3d7ae6a07a152d1f20ef3ba9cda21b"
+    },
+    {
+      "path": "coordinator-retention/coordinator-actions/replay-attempts/event-059-item_28.json",
+      "bytes": 960,
+      "sha256": "fdaff8eba849e1616e1c289beda536fd0ce82d9b4c52ee3d6153516b93092269"
+    },
+    {
+      "path": "coordinator-retention/coordinator-actions/replay-attempts/event-061-item_31.json",
+      "bytes": 621,
+      "sha256": "87d1bed9fb48ff7eff7fe1b0c4afcfb57045efffdca57156bb61dcd4a426febb"
+    },
+    {
+      "path": "coordinator-retention/coordinator-actions/replay-attempts/event-063-item_32.json",
+      "bytes": 16222,
+      "sha256": "38244e2e009c7eb8e364d5acc14a604dee038f9900e6dea3dead3e255feca059"
+    },
+    {
+      "path": "coordinator-retention/coordinator-actions/replay-attempts/event-063-recovered-receipt.json",
+      "bytes": 15441,
+      "sha256": "c45dc2241aa1e4693d7a0be79b0d9a369432623cb1f38cb50763e22248db6a62"
+    },
+    {
+      "path": "coordinator-retention/coordinator-actions/replay-attempts/event-075-item_36.json",
+      "bytes": 16275,
+      "sha256": "194a09740eda4224cbf0cad9946d5071ba3fddff7ebe395dde2a66b10c38dff5"
+    },
+    {
+      "path": "coordinator-retention/coordinator-actions/replay-attempts/event-084-item_43.json",
+      "bytes": 9786,
+      "sha256": "0656e028d9f80dbe1f7e5d4626d41d6eb3fcd71209bc20c900b874facc55675c"
+    },
+    {
+      "path": "coordinator-retention/coordinator-actions/replay-attempts/event-094-item_48.json",
+      "bytes": 8569,
+      "sha256": "eaf202a72626a0de618eba145fb9af8ca700c70698e0ec3af80b06d9d60237fd"
+    },
+    {
+      "path": "coordinator-retention/coordinator-actions/replay-attempts/event-102-item_52.json",
+      "bytes": 2907,
+      "sha256": "1fd960ab61cbbc3a2afce278e7836a5d09e48203a0259dc586bbb327f2da2b7d"
+    },
+    {
+      "path": "coordinator-retention/coordinator-actions/replay-attempts/event-114-item_58.json",
+      "bytes": 937,
+      "sha256": "91491e66e7df5a377d453fb7661aa726dec446aa7e327f5934bbf94d728a5860"
+    },
+    {
+      "path": "coordinator-retention/coordinator-actions/replay-attempts/manifest.json",
+      "bytes": 28314,
+      "sha256": "b866798973f510dfeaee73d133338e33f8a58289ff23667d8ed9d34061060299"
+    },
+    {
+      "path": "coordinator-retention/coordinator-actions/retrieve_payloads.py",
+      "bytes": 1705,
+      "sha256": "5ba72838d1ee832c1c8cd2c07e990bc20bc473d67ce816eeb4f0a7c234b7841d"
+    },
+    {
+      "path": "coordinator-retention/coordinator-actions/retrieve_retention.py",
+      "bytes": 2551,
+      "sha256": "41c83d6bba1f084b90dee36982ab90c96c9ce99861c4bc06b02f96c124123f62"
+    },
+    {
+      "path": "coordinator-retention/coordinator-actions/source-regression-command.json",
+      "bytes": 435,
+      "sha256": "cda883744a74968ae27331bcd78818d5a2755657c949696795baae48ac1ceac9"
+    },
+    {
+      "path": "coordinator-retention/coordinator-actions/stock-native-verification-failure.json",
+      "bytes": 522,
+      "sha256": "209532cc60b31505e641472af7026d0bb08f24e5c13482f2c9f4ec6888ee7478"
+    },
+    {
+      "path": "coordinator-retention/judge-stop-original/preservation.json",
+      "bytes": 533,
+      "sha256": "9dd98906920acbf5aed693f068290667597dc77ebbc61dd6bdac09908136ca13"
+    },
+    {
+      "path": "coordinator-retention/judge-stop-original/stop-state.json",
+      "bytes": 597159,
+      "sha256": "7caf497640148c5a1f55f876484ca13e238c6f1bf1e0514dc6c45c1f24ea72f6"
+    },
+    {
+      "path": "coordinator-retention/judgment-01/annex-remote.json",
+      "bytes": 442,
+      "sha256": "8d0c1b3accdab0ca28a8cd2e2135837c9b02fe6f33bfaddf0844d09679f3db9c"
+    },
+    {
+      "path": "coordinator-retention/judgment-01/annex-source.json",
+      "bytes": 182,
+      "sha256": "00ecc6c350014d0104e9fb4a7278a11c3d942c19dc162b49ee289cfdd3627401"
+    },
+    {
+      "path": "coordinator-retention/judgment-01/checkout.json",
+      "bytes": 422,
+      "sha256": "3c0adbb140b0c033e6c6989d69b42eea9a3a17b10bda2da650cd9f8f16435032"
+    },
+    {
+      "path": "coordinator-retention/judgment-01/environment.json",
+      "bytes": 621,
+      "sha256": "e0dfe77c41ae24e4f8a3c84e05d29de17cd20b9542f78a03061ff2620823d3af"
+    },
+    {
+      "path": "coordinator-retention/judgment-01/judge-annex-materialization.json",
+      "bytes": 22958,
+      "sha256": "9e4db8254f25c40b825fd2babfdfd83d894e0e3b59653b40f87bfa78ab63e82e"
+    },
+    {
+      "path": "coordinator-retention/judgment-01/judge-prompt.md",
+      "bytes": 10301,
+      "sha256": "273eab76e31ee582262c30e768b24463102b3b8bddef60d30c177ffdb377a4e2"
+    },
+    {
+      "path": "coordinator-retention/judgment-01/judge-workspace.json",
+      "bytes": 437,
+      "sha256": "fcf003f8aad4e7c1e56476304198957b7d958d32cecca4f314510c1286c476bc"
+    },
+    {
+      "path": "coordinator-retention/judgment-01/native/events.jsonl",
+      "bytes": 659391,
+      "sha256": "05a65c0675856fe673d6ac31d24a379cf3542e7f97c1d72224eabd39bfaf691d"
+    },
+    {
+      "path": "coordinator-retention/judgment-01/native/final.txt",
+      "bytes": 1810,
+      "sha256": "0cfa27656132aa29474e31f4340ad0541d69639d51cd4c0a0b0266e6fc82d3b8"
+    },
+    {
+      "path": "coordinator-retention/judgment-01/native/launch.json",
+      "bytes": 5189,
+      "sha256": "38187eed35aedcc58f2fb34fef429bd4d94bb83c0128918b609cf11f76a2480b"
+    },
+    {
+      "path": "coordinator-retention/judgment-01/native/procedure-status.json",
+      "bytes": 152,
+      "sha256": "d3ca8955b8282972b2d0dbdd18566240916b3a09216475f4648b0ed816c146eb"
+    },
+    {
+      "path": "coordinator-retention/judgment-01/native/prompt-preflight.json",
+      "bytes": 2499,
+      "sha256": "45d67dc344116800ec16fb233f4b5c90258c4d2b5748e4eb8d7c77f0776a711b"
+    },
+    {
+      "path": "coordinator-retention/judgment-01/native/prompt.txt",
+      "bytes": 10301,
+      "sha256": "273eab76e31ee582262c30e768b24463102b3b8bddef60d30c177ffdb377a4e2"
+    },
+    {
+      "path": "coordinator-retention/judgment-01/native/result.json",
+      "bytes": 5520,
+      "sha256": "2e721aa8dc97b3e4f74c0008a5c3c38180495a38a54107c96922a2547b7d13f5"
+    },
+    {
+      "path": "coordinator-retention/judgment-01/native/stderr.txt",
+      "bytes": 1100,
+      "sha256": "bb443defc1605f2bac8eb07bcd8979f81561b7b8f2128384497a43b3a7756490"
+    },
+    {
+      "path": "coordinator-retention/judgment-01/native/worker-artifact-validation.json",
+      "bytes": 2656,
+      "sha256": "5d7992ff510ed95e6e1a67ff77b77b74a121a205562eac09b2b2e4b37a94ba1c"
+    },
+    {
+      "path": "coordinator-retention/judgment-01/native/worker-end-state.json",
+      "bytes": 155453,
+      "sha256": "0c381872b334e7a226479f2595c3e169fcf4dcd45b9906e40cc33d1256797e6d"
+    },
+    {
+      "path": "coordinator-retention/judgment-01/original-study-prompt.md",
+      "bytes": 1483,
+      "sha256": "e92bf2e0c0db4cc49688cce9f9dfff8a236fc4ec151c09961719f49f31310cc8"
+    },
+    {
+      "path": "coordinator-retention/judgment-01/preparation.json",
+      "bytes": 1248,
+      "sha256": "30d3eff61ba7a82d3321f4263f53bc44a124cb004a4c28b6a5a9b40fd7350d96"
+    },
+    {
+      "path": "coordinator-retention/judgment-01/procedure-status.json",
+      "bytes": 55,
+      "sha256": "51f65811b3f487eafbc9ec89e2d80379829cb4da99a0bbdb2269a767bc51a085"
+    },
+    {
+      "path": "coordinator-retention/judgment-01/reference.json",
+      "bytes": 246,
+      "sha256": "ae95cb8d6ad10fdcdae2e751e6dde3895291ed72193e6aa217b73c0693250684"
+    },
+    {
+      "path": "coordinator-retention/judgment-01/reference.md",
+      "bytes": 3601,
+      "sha256": "5215114f8c2c4d099e2ef069fc31e9a9c586ff30c826096de52535f9db3b10b3"
+    },
+    {
+      "path": "coordinator-retention/judgment-01/study-source.json",
+      "bytes": 248,
+      "sha256": "9eacf71e0f08979ae34dbc3fa0c34dd0f2beda36b008b77c10d100ce96828e0c"
+    },
+    {
+      "path": "coordinator-retention/judgment-01/study.json",
+      "bytes": 234,
+      "sha256": "7ff9bc72b8e785686977b9049e679837d20cb526abb681f571202be2f705c9cd"
+    },
+    {
+      "path": "coordinator-retention/judgment-01/study.md",
+      "bytes": 1483,
+      "sha256": "e92bf2e0c0db4cc49688cce9f9dfff8a236fc4ec151c09961719f49f31310cc8"
+    },
+    {
+      "path": "coordinator-retention/judgment-01/worker-end-state.json",
+      "bytes": 155453,
+      "sha256": "0c381872b334e7a226479f2595c3e169fcf4dcd45b9906e40cc33d1256797e6d"
+    },
+    {
+      "path": "coordinator-retention/judgment-01/worker-retention-check.json",
+      "bytes": 2837,
+      "sha256": "e3d56996cbdf11c487c94108dfb37a6c5418e0e3b2337ad5e548da4626a37116"
+    },
+    {
+      "path": "coordinator-retention/operational-manifest.json",
+      "bytes": 6404,
+      "sha256": "172807b7b4306e3753bc6dce8cac153defd3a4a7b157f7a29f0647d5b6093f71"
+    },
+    {
+      "path": "coordinator-retention/operational-outcome.json",
+      "bytes": 4491,
+      "sha256": "749ad018f95ef5fe4d5de50cb36d880820c46505330ad444ea1a2f0742b7cc9f"
+    },
+    {
+      "path": "coordinator-retention/registration.json",
+      "bytes": 280,
+      "sha256": "8b18debb4e5930f4db36558df05f7593a7958ba34de4411912c40969a125897b"
+    },
+    {
+      "path": "judge-target.json",
+      "bytes": 273,
+      "sha256": "a670294d92778f5beab61d3f90ed32673a82275673429c697a10bb242a7b921f"
+    }
+  ],
+  "annex_payloads": "pending; absent, not attempted",
+  "clean": true
+}

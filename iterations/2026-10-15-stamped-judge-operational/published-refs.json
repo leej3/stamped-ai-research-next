@@ -1,0 +1,31 @@
+{
+  "argv": [
+    "git",
+    "ls-remote",
+    "--refs",
+    "git@github.com:leej3/stamped-ai-research-next.git",
+    "refs/heads/codex/preparation-stamped-judgment-op-20261015",
+    "refs/entire/checkpoints/04/01M510JADWN8W7J9GF1T3BQB04",
+    "refs/heads/codex/preparation-stamped-judge-retained-20261015",
+    "refs/heads/codex/preparation-stamped-judgment-op-annex-20261015",
+    "refs/heads/codex/preparation-stamped-judge-study-op-20261015",
+    "refs/heads/codex/preparation-stamped-judge-env-20261015"
+  ],
+  "expected": {
+    "refs/heads/codex/preparation-stamped-judgment-op-20261015": "e1b0ee05ad3406aede91ce1f62a092b48f30b40f",
+    "refs/entire/checkpoints/04/01M510JADWN8W7J9GF1T3BQB04": "8827b6eeaa95a0a7f5e8cca1d4da18377515c2ff",
+    "refs/heads/codex/preparation-stamped-judge-retained-20261015": "d87c492f8acc0d7193914032bb099d359310dc77",
+    "refs/heads/codex/preparation-stamped-judgment-op-annex-20261015": "6e642fd30c8c6dd2178863c318bf428e4449c697",
+    "refs/heads/codex/preparation-stamped-judge-study-op-20261015": "881533f9265a51eedc17dd7667be2ecd95da0422",
+    "refs/heads/codex/preparation-stamped-judge-env-20261015": "e5dfb2c3aa7d626abbf5aabaa300d0c452d5e343"
+  },
+  "actual": {
+    "refs/entire/checkpoints/04/01M510JADWN8W7J9GF1T3BQB04": "8827b6eeaa95a0a7f5e8cca1d4da18377515c2ff",
+    "refs/heads/codex/preparation-stamped-judge-env-20261015": "e5dfb2c3aa7d626abbf5aabaa300d0c452d5e343",
+    "refs/heads/codex/preparation-stamped-judge-retained-20261015": "d87c492f8acc0d7193914032bb099d359310dc77",
+    "refs/heads/codex/preparation-stamped-judge-study-op-20261015": "881533f9265a51eedc17dd7667be2ecd95da0422",
+    "refs/heads/codex/preparation-stamped-judgment-op-20261015": "e1b0ee05ad3406aede91ce1f62a092b48f30b40f",
+    "refs/heads/codex/preparation-stamped-judgment-op-annex-20261015": "6e642fd30c8c6dd2178863c318bf428e4449c697"
+  },
+  "verified": true
+}

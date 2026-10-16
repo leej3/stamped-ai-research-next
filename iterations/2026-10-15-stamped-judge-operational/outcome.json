@@ -1,0 +1,97 @@
+{
+  "classification": "operational-only; excluded from formal scientific comparisons",
+  "launcher_status": "development-unsealed",
+  "source_commit": "50a96ab58cb0429374bafd4b192a04cf37d53076",
+  "registration_commit": "42da88c044cc0515da3181063fff4af62422b9a3",
+  "manifest_sha256": "172807b7b4306e3753bc6dce8cac153defd3a4a7b157f7a29f0647d5b6093f71",
+  "new_scientific_workers": 0,
+  "native_judges": 1,
+  "native_session": "01a14201-b7c3-7281-bcc6-cfe90c4b16a9",
+  "native_returncode": 0,
+  "native_elapsed_seconds": 361.53825120907277,
+  "exact_target_commit": "8b5bcdaa999289a47f066ba829511d450301c573",
+  "target_unchanged": true,
+  "original_worker_stop_sha256": "0c381872b334e7a226479f2595c3e169fcf4dcd45b9906e40cc33d1256797e6d",
+  "starting_environment_commit": "e5dfb2c3aa7d626abbf5aabaa300d0c452d5e343",
+  "judgment_preservation_commit": "e1b0ee05ad3406aede91ce1f62a092b48f30b40f",
+  "checkpoint_id": "01M510JADWN8W7J9GF1T3BQB04",
+  "judge_reported_scientific_classification": "supported for lack of corrected positive vmPFC evidence; not evidence of zero effect",
+  "judge_checklist": {
+    "must": {
+      "met": 16,
+      "unmet": 1
+    },
+    "should": {
+      "met": 3,
+      "partial": 1,
+      "unmet": 4,
+      "not-applicable": 1
+    },
+    "may": {
+      "met": 5
+    }
+  },
+  "scientific_replay_success": false,
+  "replay_attempts_authorized": 1,
+  "replay_invocations_observed": 2,
+  "protocol_compliance": false,
+  "attempts": [
+    {
+      "order": 1,
+      "source": "con-hub default main",
+      "status": "not-checked",
+      "reason": "No matching outputs; default main was not exact scientific target.",
+      "receipt": "coordinator-actions/replay-attempts/event-052-recovered-receipt.json"
+    },
+    {
+      "order": 2,
+      "source": "exact target local path",
+      "status": "unmet",
+      "reason": "54 input map retrieval failures; scientific entrypoint short-circuited. Existing results not evidence of a replay.",
+      "receipt": "judgment-01/judgment/2026-10-16-fresh-rerun.json"
+    }
+  ],
+  "retention_limitations": [
+    "Both runner invocations wrote same receipt path. First complete receipt recovered from native command output; original overwritten file unavailable.",
+    "Judge deleted intermediate JSON/table outputs and partly deleted first retrieval workspace before a PermissionError. Surviving stop-state files and both workspaces archived; transcript retains failed cleanup.",
+    "Reconstructible .pixi and __pycache__ caches omitted from archives, with paths recorded.",
+    "Judgment prose says exact model unavailable; native receipt/checkpoint identify gpt-6-luna/high. Original prose preserved unchanged."
+  ],
+  "coordinator_assistance": [
+    "Parent supplied limited host context, source/test gates and original stop receipt.",
+    "Parent specified unique judgment remote ref and operational-only development launch after original sealed failure.",
+    "Parent reported default-main retrieval distinction; no message was sent to active scientific judge.",
+    "Read-only coordinator preservation, publication and independent infrastructure audits add no worker credit."
+  ],
+  "original_policy": "Original worker prompt differs from current common publication/environment policy. No retrospective compliance reassessment.",
+  "original_sealed_failure_unchanged": true,
+  "later_retrieval_context": "Coordinator previously retrieved all58 exact-result annex paths through configured GitHub ref and con-hub payload endpoint. Judge tested its own different declared route; original judgment retained, not scientifically repaired.",
+  "infrastructure": {
+    "native_capture": "verified independently against stored native command/cwd/model and exact committed bytes",
+    "github_refs": "verified exact code and checkpoint OIDs",
+    "hosted": "verified matching actual hosted session/checkpoint through fresh empty Git context, with no local metadata fallback",
+    "annex_payloads": "three archives local; upload failed because vault locked and one native unlock returned failure/canceled",
+    "fresh_git_retrieval": "verified exact retention5c2ab777,72 regular Git files,3 annex pointer paths,clean,zero nested gitlinks",
+    "fresh_annex_retrieval": "pending upload/unlock",
+    "native_capture_receipt": "coordinator-actions/independent-native-audit/final-result.json",
+    "checkpoint_ref": "refs/entire/checkpoints/04/01M510JADWN8W7J9GF1T3BQB04",
+    "checkpoint_oid": "8827b6eeaa95a0a7f5e8cca1d4da18377515c2ff"
+  },
+  "final_retention_commit": "d87c492f8acc0d7193914032bb099d359310dc77",
+  "study_commit": "881533f9265a51eedc17dd7667be2ecd95da0422",
+  "study_result_path": "results/preparation-stamped-judge-operational-20261015",
+  "final_git_retrieval": {
+    "receipt": "final-git-retrieval.json",
+    "regular_files": 91,
+    "annex_payloads": "three archive payloads not uploaded or independently retrieved; credential unlock required"
+  },
+  "published_refs": {
+    "codex/preparation-stamped-judgment-op-20261015": "e1b0ee05ad3406aede91ce1f62a092b48f30b40f",
+    "refs/entire/checkpoints/04/01M510JADWN8W7J9GF1T3BQB04": "8827b6eeaa95a0a7f5e8cca1d4da18377515c2ff",
+    "codex/preparation-stamped-judge-retained-20261015": "d87c492f8acc0d7193914032bb099d359310dc77",
+    "codex/preparation-stamped-judgment-op-annex-20261015": "6e642fd30c8c6dd2178863c318bf428e4449c697",
+    "codex/preparation-stamped-judge-study-op-20261015": "881533f9265a51eedc17dd7667be2ecd95da0422",
+    "codex/preparation-stamped-judge-env-20261015": "e5dfb2c3aa7d626abbf5aabaa300d0c452d5e343"
+  },
+  "completion_status": "native capture infrastructure verified; scientific replay unsuccessful; annex publication blocked awaiting physical credential unlock"
+}
