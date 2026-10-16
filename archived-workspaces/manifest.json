@@ -1,0 +1,25 @@
+{
+  "coordinator_action": "Archive nested replay/retrieval workspaces before staging; no scientific changes.",
+  "workspaces": [
+    {
+      "original_relative_path": "fresh-clone",
+      "archive": "archived-workspaces/fresh-clone.tar.gz",
+      "bytes": 2977948,
+      "sha256": "4bedba1bac749badf0d03caef6f3b901de803f3db8bb7bdffa4956c5cb5d6e50",
+      "tar_members": 1108,
+      "omitted_reconstructible_caches": [],
+      "original_preserved_at": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-op-replay-originals/fresh-clone"
+    },
+    {
+      "original_relative_path": "replay-local",
+      "archive": "archived-workspaces/replay-local.tar.gz",
+      "bytes": 10581076,
+      "sha256": "780f31ce8c5c3f99fc36f5bed75f5836dedd36d00b5bbbad62b859a87c5313c4",
+      "tar_members": 940,
+      "omitted_reconstructible_caches": [
+        "replay-local/clone/.pixi"
+      ],
+      "original_preserved_at": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-op-replay-originals/replay-local"
+    }
+  ]
+}

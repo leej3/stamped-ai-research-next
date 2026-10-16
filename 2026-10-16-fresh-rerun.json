@@ -1,0 +1,82 @@
+{
+  "probe": "fresh-rerun",
+  "items": [
+    "stamped-checklist:must/007",
+    "stamped-checklist:must/008",
+    "stamped-checklist:must/015",
+    "stamped-checklist:must/017",
+    "stamped-checklist:should/004",
+    "stamped-checklist:should/006"
+  ],
+  "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-op-judge-target",
+  "started_at": "2026-10-16T00:01:03+00:00",
+  "host": {
+    "uname": "Darwin vpn-two-factor-general-229-133-11.dartmouth.edu 27.0.0 Darwin Kernel Version",
+    "datalad": true,
+    "container_runtime": null
+  },
+  "steps": [
+    {
+      "step": "datalad clone",
+      "returncode": 0,
+      "log": "install(ok): /Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-op-evidence/judgment-01/judgment/replay-local/clone (dataset)\n[INFO] Attempting a clone into /Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-op-evidence/judgment-01/judgment/replay-local/clone \n[INFO] Attempting to clone from /Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-op-judge-target to /Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-op-evidence/judgment-01/judgment/replay-local/clone \n[INFO] Start enumerating objects \n[INFO] Start counting objects \n[INFO] Start compressing objects \n[INFO] Start receiving objects \n[INFO] Start resolving deltas \n[INFO] Completed clone attempts for Dataset(/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-op-evidence/judgment-01/judgment/replay-local/clone) \n"
+    },
+    {
+      "step": "datalad get -n -r .",
+      "returncode": 0,
+      "log": "install(ok): /Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-op-evidence/judgment-01/judgment/replay-local/clone/skills (dataset)\ninstall(ok): /Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-op-evidence/judgment-01/judgment/replay-local/clone/skills/evals (dataset)\naction summary:\n  install (ok: 2)\n[INFO] Ensuring presence of Dataset(/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-op-evidence/judgment-01/judgment/replay-local/clone) to get /Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-op-evidence/judgment-01/judgment/replay-local/clone \n[INFO] Attempting a clone into /Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-op-evidence/judgment-01/judgment/replay-local/clone/skills \n[INFO] Attempting to clone from https://github.com/con/skills.git to /Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-op-evidence/judgment-01/judgment/replay-local/clone/skills \n[INFO] Start enumerating objects \n[INFO] Start counting objects \n[INFO] Start compressing objects \n[INFO] Start receiving objects \n[INFO] Start resolving deltas \n[INFO] Completed clone attempts for Dataset(/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-op-evidence/judgment-01/judgment/replay-local/clone/skills) \n[WARNING] GitRepo(/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-op-evidence/judgment-01/judgment/replay-local/clone/skills) has a detached HEAD, because the target commit c90252a7 has no unique ancestor with branch 'master' \n[INFO] Attempting a clone into /Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-op-evidence/judgment-01/judgment/replay-local/clone/skills/evals \n[INFO] Attempting to clone from https://github.com/con/skills.git to /Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-op-evidence/judgment-01/judgment/replay-local/clone/skills/evals \n[INFO] Start enumerating objects \n[INFO] Start counting objects \n[INFO] Start compressing objects \n[INFO] Start receiving objects \n[INFO] Start resolving deltas \n[INFO] Completed clone attempts for Dataset(/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-op-evidence/judgment-01/judgment/replay-local/clone/skills/evals) \n[WARNING] GitRepo(/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-op-evidence/judgment-01/judgment/replay-local/clone/skills/evals) has a detached HEAD, because the target commit df8f8861 has no unique ancestor with branch 'master' \n"
+    },
+    {
+      "step": "datalad get -r . (0.1 GiB)",
+      "returncode": 1,
+      "log": "able]\nget(error): input/data/sub-043_hypo1_cope.nii.gz (file) [not available]\nget(error): input/data/sub-003_hypo1_cope.nii.gz (file) [not available]\nget(error): input/data/sub-037_hypo1_cope.nii.gz (file) [not available]\nget(error): input/data/sub-047_hypo1_cope.nii.gz (file) [not available]\nget(error): input/data/sub-035_hypo1_cope.nii.gz (file) [not available]\nget(error): input/data/sub-049_hypo1_cope.nii.gz (file) [not available]\nget(error): input/data/sub-053_hypo1_cope.nii.gz (file) [not available]\nget(error): input/data/sub-017_hypo1_cope.nii.gz (file) [not available]\nget(error): input/data/sub-067_hypo1_cope.nii.gz (file) [not available]\nget(error): input/data/sub-055_hypo1_cope.nii.gz (file) [not available]\nget(error): input/data/sub-071_hypo1_cope.nii.gz (file) [not available]\nget(error): input/data/sub-019_hypo1_cope.nii.gz (file) [not available]\nget(error): input/data/sub-073_hypo1_cope.nii.gz (file) [not available]\nget(error): input/data/sub-011_hypo1_cope.nii.gz (file) [not available]\nget(error): input/data/sub-015_hypo1_cope.nii.gz (file) [not available]\nget(error): input/data/sub-059_hypo1_cope.nii.gz (file) [not available]\nget(error): input/data/sub-075_hypo1_cope.nii.gz (file) [not available]\nget(error): input/data/sub-057_hypo1_cope.nii.gz (file) [not available]\nget(error): input/data/sub-077_hypo1_cope.nii.gz (file) [not available]\nget(error): input/data/sub-081_hypo1_cope.nii.gz (file) [not available]\nget(error): input/data/sub-069_hypo1_cope.nii.gz (file) [not available]\nget(error): input/data/sub-045_hypo1_cope.nii.gz (file) [not available]\nget(error): input/data/sub-051_hypo1_cope.nii.gz (file) [not available]\nget(error): input/data/sub-029_hypo1_cope.nii.gz (file) [not available]\nget(error): input/data/sub-089_hypo1_cope.nii.gz (file) [not available]\nget(error): input/data/sub-039_hypo1_cope.nii.gz (file) [not available]\nget(error): input/data/sub-087_hypo1_cope.nii.gz (file) [not available]\nget(error): input/data/sub-063_hypo1_cope.nii.gz (file) [not available]\nget(error): input/data/sub-107_hypo1_cope.nii.gz (file) [not available]\nget(error): input/data/sub-099_hypo1_cope.nii.gz (file) [not available]\nget(error): input/data/sub-115_hypo1_cope.nii.gz (file) [not available]\nget(error): input/data/sub-117_hypo1_cope.nii.gz (file) [not available]\nget(error): input/data/sub-095_hypo1_cope.nii.gz (file) [not available]\nget(error): input/data/sub-103_hypo1_cope.nii.gz (file) [not available]\nget(error): input/data/sub-061_hypo1_cope.nii.gz (file) [not available]\nget(error): input/data/sub-093_hypo1_cope.nii.gz (file) [not available]\nget(error): input/data/sub-079_hypo1_cope.nii.gz (file) [not available]\nget(error): input/data/sub-109_hypo1_cope.nii.gz (file) [not available]\nget(error): input/data/sub-085_hypo1_cope.nii.gz (file) [not available]\nget(error): input/data/sub-119_hypo1_cope.nii.gz (file) [not available]\nget(error): input/data/sub-013_hypo1_cope.nii.gz (file) [not available]\nget(error): input/data/sub-105_hypo1_cope.nii.gz (file) [not available]\nget(error): input/data/sub-025_hypo1_cope.nii.gz (file) [not available]\nget(error): input/data/sub-083_hypo1_cope.nii.gz (file) [not available]\nget(ok): results/permutation-max-t.tsv (file) [from origin...]\nget(error): input/data/sub-121_hypo1_cope.nii.gz (file) [not available]\nget(error): input/data/sub-123_hypo1_cope.nii.gz (file) [not available]\nget(ok): results/group-mean.nii.gz (file) [from origin...]\nget(error): input/data/sub-113_hypo1_cope.nii.gz (file) [not available]\nget(ok): results/group-t.nii.gz (file) [from origin...]\nget(ok): results/mni152_template_2mm.nii.gz (file) [from origin...]\naction summary:\n  get (error: 54, ok: 4)\n[INFO] Ensuring presence of Dataset(/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-op-evidence/judgment-01/judgment/replay-local/clone) to get /Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-op-evidence/judgment-01/judgment/replay-local/clone \n"
+    },
+    {
+      "step": "input modules excluded from --outputs",
+      "returncode": 0,
+      "log": "skills/"
+    },
+    {
+      "step": "fetched 16 output candidate(s) for comparison",
+      "returncode": 0,
+      "log": "action summary:\n  get (notneeded: 16)\n"
+    },
+    {
+      "step": "removed 16 shipped output(s) before the rerun",
+      "returncode": 0,
+      "log": "results/group-fwe-p-positive.nii.gz\nresults/group-mean.nii.gz\nresults/group-t.nii.gz\nresults/harvard_oxford_cort_maxprob_thr25_2mm.nii.gz\nresults/mni152_template_2mm.nii.gz\nresults/vmPFC-atlas-mask.nii.gz\nresults/whole-brain-mask.nii.gz\nresults/permutation-max-t.tsv\nresults/vmPFC-participant-values.tsv\nresults/harvard_oxford_cort_maxprob_thr25_2mm_labels.json\nresults/pilot-qc.json\nresults/results.json\nresults/vmPFC-participant-distribution.png\nresults/vmPFC-unthresholded-slices.png\nresults/whole-brain-fwe-slices.png\nresults/report.md"
+    },
+    {
+      "step": "committed output removal",
+      "returncode": 0,
+      "log": ""
+    },
+    {
+      "step": "entry: pixi run git annex get input/data && pixi run recorded-analysis",
+      "returncode": 1,
+      "log": "neral-229-133-11.dartmouth.edu:~/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-worker\nfailed\nget input/data/sub-103_hypo1_cope.nii.gz (not available) \n  Maybe add some of these git remotes (git remote add ...):\n  \t6215ce45-8f0f-4062-9bc0-d04781b4cd11\n  \t79c64a78-16e7-40b3-83f0-9b86831d52b8 -- johnlee@vpn-two-factor-general-229-133-11.dartmouth.edu:~/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-worker\nfailed\nget input/data/sub-105_hypo1_cope.nii.gz (not available) \n  Maybe add some of these git remotes (git remote add ...):\n  \t6215ce45-8f0f-4062-9bc0-d04781b4cd11\n  \t79c64a78-16e7-40b3-83f0-9b86831d52b8 -- johnlee@vpn-two-factor-general-229-133-11.dartmouth.edu:~/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-worker\nfailed\nget input/data/sub-107_hypo1_cope.nii.gz (not available) \n  Maybe add some of these git remotes (git remote add ...):\n  \t6215ce45-8f0f-4062-9bc0-d04781b4cd11\n  \t79c64a78-16e7-40b3-83f0-9b86831d52b8 -- johnlee@vpn-two-factor-general-229-133-11.dartmouth.edu:~/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-worker\nfailed\nget input/data/sub-109_hypo1_cope.nii.gz (not available) \n  Maybe add some of these git remotes (git remote add ...):\n  \t6215ce45-8f0f-4062-9bc0-d04781b4cd11\n  \t79c64a78-16e7-40b3-83f0-9b86831d52b8 -- johnlee@vpn-two-factor-general-229-133-11.dartmouth.edu:~/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-worker\nfailed\nget input/data/sub-113_hypo1_cope.nii.gz (not available) \n  Maybe add some of these git remotes (git remote add ...):\n  \t6215ce45-8f0f-4062-9bc0-d04781b4cd11\n  \t79c64a78-16e7-40b3-83f0-9b86831d52b8 -- johnlee@vpn-two-factor-general-229-133-11.dartmouth.edu:~/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-worker\nfailed\nget input/data/sub-115_hypo1_cope.nii.gz (not available) \n  Maybe add some of these git remotes (git remote add ...):\n  \t6215ce45-8f0f-4062-9bc0-d04781b4cd11\n  \t79c64a78-16e7-40b3-83f0-9b86831d52b8 -- johnlee@vpn-two-factor-general-229-133-11.dartmouth.edu:~/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-worker\nfailed\nget input/data/sub-117_hypo1_cope.nii.gz (not available) \n  Maybe add some of these git remotes (git remote add ...):\n  \t6215ce45-8f0f-4062-9bc0-d04781b4cd11\n  \t79c64a78-16e7-40b3-83f0-9b86831d52b8 -- johnlee@vpn-two-factor-general-229-133-11.dartmouth.edu:~/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-worker\nfailed\nget input/data/sub-119_hypo1_cope.nii.gz (not available) \n  Maybe add some of these git remotes (git remote add ...):\n  \t6215ce45-8f0f-4062-9bc0-d04781b4cd11\n  \t79c64a78-16e7-40b3-83f0-9b86831d52b8 -- johnlee@vpn-two-factor-general-229-133-11.dartmouth.edu:~/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-worker\nfailed\nget input/data/sub-121_hypo1_cope.nii.gz (not available) \n  Maybe add some of these git remotes (git remote add ...):\n  \t6215ce45-8f0f-4062-9bc0-d04781b4cd11\n  \t79c64a78-16e7-40b3-83f0-9b86831d52b8 -- johnlee@vpn-two-factor-general-229-133-11.dartmouth.edu:~/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-worker\nfailed\nget input/data/sub-123_hypo1_cope.nii.gz (not available) \n  Maybe add some of these git remotes (git remote add ...):\n  \t6215ce45-8f0f-4062-9bc0-d04781b4cd11\n  \t79c64a78-16e7-40b3-83f0-9b86831d52b8 -- johnlee@vpn-two-factor-general-229-133-11.dartmouth.edu:~/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-worker\nfailed\n WARN Using local manifest /Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-op-evidence/judgment-01/judgment/replay-local/clone/pixi.toml rather than /Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-op-coordinator/.pixi/assessment-runtime/3552d5003a2485b6405805236d5c54e7ed42f097/pixi.toml from environment variable `PIXI_PROJECT_MANIFEST`\nget: 54 failed\n"
+    }
+  ],
+  "content_to_fetch_bytes": 98752182,
+  "outputs_shipped": {
+    "results/group-fwe-p-positive.nii.gz": "0dc53b373881373896818ff62dc3199b6ba06e544ca9c54d6c8941444e415fa2",
+    "results/group-mean.nii.gz": "efae119d23c1aa9338c965ecf23658584cb3c7b37a379bc956ba3512e575b723",
+    "results/group-t.nii.gz": "818262bf4481df4ae3d73d41033953eb844772f9df8291ca7ebcc5a4bd088d1e",
+    "results/harvard_oxford_cort_maxprob_thr25_2mm.nii.gz": "73941b4e7680abae9887e12f9670159708b739c00a18733179f9cd489bf8af31",
+    "results/mni152_template_2mm.nii.gz": "0d8b8f9574a88657bad490d7f64d804cb11ab77a339882990e8a3786e141c9f3",
+    "results/vmPFC-atlas-mask.nii.gz": "8dd8de51837004c13ef0a63ecbe07fcf9d1d7fa486dd4af11a999974beb7e6b8",
+    "results/whole-brain-mask.nii.gz": "0de1b9e5607e91c3dc7bdcf084ec4c305aa9cb6b29a0eb23f59d23b174e72f36",
+    "results/permutation-max-t.tsv": "30aa30f802c46ae062550aa8a1faa472f6a66c05c638e440124f197f3726c45a",
+    "results/vmPFC-participant-values.tsv": "56cc99a6f187714bdebfa91036dfdcee8dd70523a208b24414b2d9c193486d3d",
+    "results/harvard_oxford_cort_maxprob_thr25_2mm_labels.json": "e98549f3ea94820302bb53a82fe2e582f1dab760081d956be6906cbc953f46a4",
+    "results/pilot-qc.json": "fe85ba8695225258834342ba76e0c8ed9121644448c126972c321d819edc7172",
+    "results/results.json": "375a4ffef437f8851254b1acf3d18f8d737999b0feacf7c1d4684f3bfcbe70b8",
+    "results/vmPFC-participant-distribution.png": "a72d819af60fdb01a40460545c43cf6312f4d48cbfcd50d9bdbf26aa9cc50df5",
+    "results/vmPFC-unthresholded-slices.png": "444edc1be496088c364fcdcb41c33dbf3d549f09fbd0b368a6314787f7f8035d",
+    "results/whole-brain-fwe-slices.png": "111080f4c7e1789b15ce111646a5e54fdb2b0bf10581c92d0a4b76e84f44de54",
+    "results/report.md": "edc5108a1dd1001ed9795f8937a8c58209db0730534b2019dd76b4bb71c5b9ea"
+  },
+  "status": "unmet",
+  "reason": "The documented entry point failed in a fresh clone: `pixi run git annex get input/data && pixi run recorded-analysis` exited 1.",
+  "finished_at": "2026-10-16T00:01:14+00:00"
+}

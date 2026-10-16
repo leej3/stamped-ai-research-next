@@ -1,0 +1,577 @@
+{
+  "checklist_version": "0.3.1",
+  "responses": {
+    "stamped-checklist:must/001": {
+      "status": "met",
+      "reason": "All study inputs, code, environment, results and run logs are under one root; the skills dependency is a pinned submodule.",
+      "source": "judgement",
+      "evidence": [
+        {
+          "uri": "README.md",
+          "description": "describes the repository product and layout",
+          "sha256": null
+        },
+        {
+          "uri": ".gitmodules",
+          "description": "skills submodule is bounded under root",
+          "sha256": null
+        }
+      ]
+    },
+    "stamped-checklist:must/002": {
+      "status": "met",
+      "reason": "The skills submodule URL resolves; study maps are under input/data as annex content.",
+      "source": "probe:subdatasets-resolvable",
+      "evidence": [
+        {
+          "uri": ".gitmodules",
+          "description": "skills URL resolved by remote probe",
+          "sha256": null
+        },
+        {
+          "uri": "input/sources.json",
+          "description": "map source and participant manifest",
+          "sha256": null
+        }
+      ]
+    },
+    "stamped-checklist:must/003": {
+      "status": "met",
+      "reason": "Scientific packages, git-annex and duct are in the Pixi environment; README documents Git and Pixi setup.",
+      "source": "judgement",
+      "evidence": [
+        {
+          "uri": "pixi.toml",
+          "description": "runtime and analysis dependencies",
+          "sha256": null
+        },
+        {
+          "uri": "README.md",
+          "description": "installation prerequisites",
+          "sha256": null
+        }
+      ]
+    },
+    "stamped-checklist:must/004": {
+      "status": "met",
+      "reason": "Git tracks code, text and configuration; the worker-stop receipt records this exact commit with a clean tree.",
+      "source": "probe:tree-clean",
+      "evidence": [
+        {
+          "uri": "git status --porcelain",
+          "description": "empty at target commit 8b5bcdaa",
+          "sha256": null
+        },
+        {
+          "uri": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-op-evidence/judgment-01/worker-end-state.json",
+          "description": "clean worker stop at requested HEAD",
+          "sha256": null
+        }
+      ]
+    },
+    "stamped-checklist:must/005": {
+      "status": "met",
+      "reason": "Git-annex tracks the 54 participant maps and other large content; no oversized binary blobs are in Git.",
+      "source": "probe:large-in-annex",
+      "evidence": [
+        {
+          "uri": "input/data",
+          "description": "60 annex pointers per large-in-annex probe",
+          "sha256": null
+        },
+        {
+          "uri": ".datalad/config",
+          "description": "git-annex configuration",
+          "sha256": null
+        }
+      ]
+    },
+    "stamped-checklist:must/006": {
+      "status": "met",
+      "reason": "The final run record hashes code, Pixi manifest/lock, inputs and 14 outputs; the path probe missed this linked record.",
+      "source": "probe:derived-have-records+judgement",
+      "evidence": [
+        {
+          "uri": "logs/20261015T233701Z-provenance.json",
+          "description": "run id, code revision, lock hashes and output hashes",
+          "sha256": null
+        },
+        {
+          "uri": "scripts/write_run_record.py",
+          "description": "creates the linked provenance manifest",
+          "sha256": null
+        }
+      ],
+      "flags": [
+        "probe-overridden"
+      ]
+    },
+    "stamped-checklist:must/007": {
+      "status": "met",
+      "reason": "README gives locked Pixi installation, annex retrieval and run instructions.",
+      "source": "probe:entry-point",
+      "evidence": [
+        {
+          "uri": "README.md",
+          "description": "Prerequisites and setup; Run and validate",
+          "sha256": null
+        }
+      ]
+    },
+    "stamped-checklist:must/008": {
+      "status": "met",
+      "reason": "The README identifies pixi run recorded-analysis and the tracked run wrapper as the starting point.",
+      "source": "probe:entry-point",
+      "evidence": [
+        {
+          "uri": "README.md",
+          "description": "Run and validate",
+          "sha256": null
+        },
+        {
+          "uri": "scripts/run_recorded_analysis.sh",
+          "description": "documented entrypoint",
+          "sha256": null
+        }
+      ]
+    },
+    "stamped-checklist:must/009": {
+      "status": "met",
+      "reason": "The probe found no host-specific absolute paths in tracked text.",
+      "source": "probe:no-abs-paths",
+      "evidence": [
+        {
+          "uri": "probe:no-abs-paths",
+          "description": "177 tracked paths scanned, zero hits",
+          "sha256": null
+        }
+      ]
+    },
+    "stamped-checklist:must/010": {
+      "status": "met",
+      "reason": "Imports and invoked tools are declared in Pixi, including neuroimaging packages, Git-annex and duct; no missing runtime dependency was found.",
+      "source": "probe:env-spec-tracked+judgement",
+      "evidence": [
+        {
+          "uri": "pixi.toml",
+          "description": "declared dependencies and tasks",
+          "sha256": null
+        },
+        {
+          "uri": "scripts/analyze.py",
+          "description": "imports and invoked code",
+          "sha256": null
+        },
+        {
+          "uri": "scripts/run_recorded_analysis.sh",
+          "description": "execution route",
+          "sha256": null
+        }
+      ],
+      "flags": [
+        "probe-overridden"
+      ]
+    },
+    "stamped-checklist:must/011": {
+      "status": "met",
+      "reason": "README states macOS 14+ ARM64 and Linux x86-64; the documented route names Git, Pixi and annex retrieval.",
+      "source": "judgement",
+      "evidence": [
+        {
+          "uri": "README.md",
+          "description": "Prerequisites and setup",
+          "sha256": null
+        }
+      ]
+    },
+    "stamped-checklist:must/012": {
+      "status": "met",
+      "reason": "README lists Git, Pixi, supported platforms and the locked environment installation.",
+      "source": "judgement",
+      "evidence": [
+        {
+          "uri": "README.md",
+          "description": "Prerequisites and setup",
+          "sha256": null
+        },
+        {
+          "uri": "pixi.toml",
+          "description": "platform and dependency declarations",
+          "sha256": null
+        }
+      ]
+    },
+    "stamped-checklist:must/013": {
+      "status": "met",
+      "reason": "pixi.toml and pixi.lock are tracked at the assessed commit; an uninitialized skills submodule does not hold the analysis environment.",
+      "source": "probe:env-spec-tracked+judgement",
+      "evidence": [
+        {
+          "uri": "pixi.toml",
+          "description": "tracked environment declaration",
+          "sha256": null
+        },
+        {
+          "uri": "pixi.lock",
+          "description": "tracked lock",
+          "sha256": null
+        }
+      ],
+      "flags": [
+        "probe-overridden"
+      ]
+    },
+    "stamped-checklist:must/014": {
+      "status": "met",
+      "reason": "README gives pixi add/remove and requires reviewing and committing manifest plus lock; history shows dependency changes and tracked lock updates.",
+      "source": "judgement",
+      "evidence": [
+        {
+          "uri": "README.md",
+          "description": "Update the environment",
+          "sha256": null
+        },
+        {
+          "uri": "git log -- pixi.toml pixi.lock",
+          "description": "dependency/environment changes tracked",
+          "sha256": null
+        }
+      ],
+      "flags": [
+        "upstream-duplicate"
+      ]
+    },
+    "stamped-checklist:must/015": {
+      "status": "met",
+      "reason": "The object carries the committed Pixi lock and run-specific manifest/lock hashes, enabling an exact environment attempt.",
+      "source": "judgement",
+      "evidence": [
+        {
+          "uri": "pixi.lock",
+          "description": "tracked frozen package resolution",
+          "sha256": null
+        },
+        {
+          "uri": "logs/20261015T233701Z-provenance.json",
+          "description": "run-specific environment hashes",
+          "sha256": null
+        }
+      ]
+    },
+    "stamped-checklist:must/016": {
+      "status": "unmet",
+      "reason": "The authorized hub route exposes no ref for this commit; a fresh clone cannot retrieve its 54 required participant maps from the annex remote.",
+      "source": "probe:env-spec-tracked+judgement",
+      "evidence": [
+        {
+          "uri": "2026-10-16-remote-check.txt",
+          "description": "only parent main and git-annex refs; target commit absent",
+          "sha256": null
+        },
+        {
+          "uri": "2026-10-16-fresh-rerun.json",
+          "description": "54 map retrieval errors in a fresh local clone; no replay",
+          "sha256": null
+        },
+        {
+          "uri": "README.md",
+          "description": "annex route requires an accessible remote but gives no remote setup",
+          "sha256": null
+        }
+      ],
+      "flags": [
+        "probe-overridden"
+      ]
+    },
+    "stamped-checklist:must/017": {
+      "status": "met",
+      "reason": "README explains Pixi installation, locked environment restoration, input retrieval and both analysis and validation commands.",
+      "source": "judgement",
+      "evidence": [
+        {
+          "uri": "README.md",
+          "description": "Prerequisites and setup; Run and validate",
+          "sha256": null
+        }
+      ]
+    },
+    "stamped-checklist:should/001": {
+      "status": "met",
+      "reason": "Git tracks project text, code and environment; git-annex handles large files and the skills module is a Git submodule.",
+      "source": "judgement",
+      "evidence": [
+        {
+          "uri": ".gitmodules",
+          "description": "skills Git submodule",
+          "sha256": null
+        },
+        {
+          "uri": "input/data",
+          "description": "git-annex content",
+          "sha256": null
+        }
+      ]
+    },
+    "stamped-checklist:should/002": {
+      "status": "unmet",
+      "reason": "No CI workflow or recurring test route was found to check that README instructions remain accurate.",
+      "source": "probe:ci-present",
+      "evidence": [
+        {
+          "uri": "probe:ci-present",
+          "description": "configs empty",
+          "sha256": null
+        },
+        {
+          "uri": "README.md",
+          "description": "manual run instructions only",
+          "sha256": null
+        }
+      ]
+    },
+    "stamped-checklist:should/003": {
+      "status": "met",
+      "reason": "Inputs, analysis code, results and environment files occupy distinct named project areas.",
+      "source": "probe:modules-separated",
+      "evidence": [
+        {
+          "uri": "input/, scripts/, results/, pixi.toml, pixi.lock",
+          "description": "separated components",
+          "sha256": null
+        }
+      ]
+    },
+    "stamped-checklist:should/009": {
+      "status": "not-applicable",
+      "reason": "N/A: all supplied maps and software components are public; there is no restricted component to isolate.",
+      "source": "judgement",
+      "evidence": [
+        {
+          "uri": "input/sources.json",
+          "description": "public NeuroVault sources",
+          "sha256": null
+        }
+      ]
+    },
+    "stamped-checklist:should/004": {
+      "status": "unmet",
+      "reason": "No clean VM, container or cloud run is recorded; the authorized fresh clone stopped when 54 maps could not be retrieved.",
+      "source": "judgement",
+      "evidence": [
+        {
+          "uri": "2026-10-16-fresh-rerun.json",
+          "description": "local clone replay blocked at annex retrieval",
+          "sha256": null
+        },
+        {
+          "uri": "logs/replay-compare-final-20261015-stdout",
+          "description": "earlier same-host replay, not isolated host",
+          "sha256": null
+        }
+      ]
+    },
+    "stamped-checklist:should/005": {
+      "status": "unmet",
+      "reason": "The README runs analyses in a persistent Pixi project environment; no disposable environment is spawned for each run.",
+      "source": "judgement",
+      "evidence": [
+        {
+          "uri": "README.md",
+          "description": "pixi install then pixi run",
+          "sha256": null
+        },
+        {
+          "uri": "pixi.toml",
+          "description": "local task definitions",
+          "sha256": null
+        }
+      ]
+    },
+    "stamped-checklist:should/006": {
+      "status": "partial",
+      "reason": "One same-host replay tested the lock once, but no recurring exact-environment CI or periodic reconstitution test is recorded.",
+      "source": "probe:ci-present+judgement",
+      "evidence": [
+        {
+          "uri": "logs/replay-compare-final-20261015-stdout",
+          "description": "one byte-identical replay of 15 artifacts",
+          "sha256": null
+        },
+        {
+          "uri": "probe:ci-present",
+          "description": "no CI configurations found",
+          "sha256": null
+        }
+      ],
+      "flags": [
+        "probe-overridden"
+      ]
+    },
+    "stamped-checklist:should/007": {
+      "status": "unmet",
+      "reason": "The lock and manifest are archived, but executable environment artifacts or binaries are not stored with the object.",
+      "source": "judgement",
+      "evidence": [
+        {
+          "uri": "pixi.toml; pixi.lock",
+          "description": "specifications only",
+          "sha256": null
+        }
+      ]
+    },
+    "stamped-checklist:should/008": {
+      "status": "met",
+      "reason": "Same documented update procedure and history as must/014: Pixi changes are reviewed and committed with the lock.",
+      "source": "judgement",
+      "evidence": [
+        {
+          "uri": "README.md",
+          "description": "Update the environment",
+          "sha256": null
+        },
+        {
+          "uri": "git log -- pixi.toml pixi.lock",
+          "description": "tracked dependency updates",
+          "sha256": null
+        }
+      ],
+      "flags": [
+        "upstream-duplicate"
+      ]
+    },
+    "stamped-checklist:may/001": {
+      "status": "met",
+      "reason": "The pinned skills dependency is a resolvable Git submodule; participant maps are separately linked by git-annex.",
+      "source": "probe:subdatasets-resolvable",
+      "evidence": [
+        {
+          "uri": ".gitmodules",
+          "description": "skills URL and commit",
+          "sha256": null
+        },
+        {
+          "uri": "input/data",
+          "description": "annex pointers",
+          "sha256": null
+        }
+      ]
+    },
+    "stamped-checklist:may/002": {
+      "status": "met",
+      "reason": "README describes the inputs, code, results and environment areas and how to run the analysis.",
+      "source": "judgement",
+      "evidence": [
+        {
+          "uri": "README.md",
+          "description": "layout and reproduction instructions",
+          "sha256": null
+        }
+      ]
+    },
+    "stamped-checklist:may/003": {
+      "status": "met",
+      "reason": "Code, source inputs, result outputs and environment specs can be updated independently in their named areas.",
+      "source": "judgement",
+      "evidence": [
+        {
+          "uri": "input/, scripts/, results/, pixi.toml, pixi.lock",
+          "description": "separate paths",
+          "sha256": null
+        }
+      ]
+    },
+    "stamped-checklist:may/004": {
+      "status": "met",
+      "reason": "README composes annex retrieval, locked Pixi setup and the recorded-analysis task into a reproducible sequence.",
+      "source": "judgement",
+      "evidence": [
+        {
+          "uri": "README.md",
+          "description": "setup and run sequence",
+          "sha256": null
+        },
+        {
+          "uri": "pixi.toml",
+          "description": "recorded-analysis task",
+          "sha256": null
+        }
+      ]
+    },
+    "stamped-checklist:may/005": {
+      "status": "met",
+      "reason": "README names component locations and the commands for restoring inputs, running analysis and validating results.",
+      "source": "judgement",
+      "evidence": [
+        {
+          "uri": "README.md",
+          "description": "repository navigation and commands",
+          "sha256": null
+        }
+      ]
+    }
+  },
+  "schema_version": "0.2.0",
+  "principles_version": "0.2.0",
+  "checklist_source": {
+    "repo": "https://github.com/stamped-principles/stamped-checklist-schema",
+    "tag": "v0.3.1",
+    "commit": "af259bad237fa57b856417db8dba45a1b283a527"
+  },
+  "extra_items": [
+    {
+      "key": "clone-weight",
+      "status": "met",
+      "reason": "No text blob in git exceeds 10 MiB.",
+      "evidence": [
+        {
+          "uri": "git ls-tree -r -l HEAD",
+          "description": "largest text blob under 10485760 bytes",
+          "sha256": null
+        }
+      ]
+    },
+    {
+      "key": "inputs-untouched",
+      "status": "not-checked",
+      "reason": "1 of 1 module(s) are not installed here, so their state cannot be read: skills",
+      "evidence": [
+        {
+          "uri": "git submodule status",
+          "description": "skills not initialized",
+          "sha256": null
+        }
+      ]
+    },
+    {
+      "key": "license-declared",
+      "status": "unmet",
+      "reason": "No LICENSE, LICENSES/, REUSE.toml or BIDS License field: reuse terms are unstated.",
+      "evidence": [
+        {
+          "uri": "probe:license-declared",
+          "description": "no licence file among 177 tracked paths, and no License field in any dataset_description.json",
+          "sha256": null
+        }
+      ]
+    }
+  ],
+  "object": {
+    "url": "git@github.com:leej3/stamped-ai-research-next.git",
+    "commit": "8b5bcdaa999289a47f066ba829511d450301c573",
+    "captured_at": "2026-10-15T23:59:58+00:00",
+    "kind": "study"
+  },
+  "assessor": {
+    "skill": "assess-alignment-with-stamped-principles",
+    "version": "0.1.0",
+    "harness": "Codex API",
+    "model": "GPT-6 (exact deployment unavailable)",
+    "date": "2026-10-16",
+    "drafted_by": "scripts/run_probes.py",
+    "dependencies": [
+      "stamped-conventions@0.1.0",
+      "assessment-runner (coordinator-pinned; see runner check output)"
+    ]
+  },
+  "scope": "Commit 8b5bcdaa; worker-stop receipt verified. Hub URL resolves to parent main, not this commit; local fresh clone failed retrieving 54 annex maps, so replay was blocked. Scientific review used retained artifacts."
+}

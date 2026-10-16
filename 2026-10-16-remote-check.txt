@@ -1,0 +1,6 @@
+27911caeaeebf401170a4cd9035fcad02f5398ca	refs/heads/git-annex
+441946a0d2687fb227f179b94cfacc843fff2348	refs/heads/main
+con-hub	https://hub.centerforopenneuroscience.org/leej3/stamped-ai-research-next.git (fetch)
+con-hub	https://hub.centerforopenneuroscience.org/leej3/stamped-ai-research-next.git (push)
+origin	git@github.com:leej3/stamped-ai-research-next.git (fetch)
+origin	git@github.com:leej3/stamped-ai-research-next.git (push)
