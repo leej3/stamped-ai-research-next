@@ -20,3 +20,7 @@
 [submodule "results/preparation-stamped-handoff-20261015"]
 	path = results/preparation-stamped-handoff-20261015
 	url = https://github.com/leej3/stamped-ai-research-next.git
+[submodule "results/preparation-stamped-judge-operational-20261015"]
+	path = results/preparation-stamped-judge-operational-20261015
+	url = https://github.com/leej3/stamped-ai-research-next.git
+	branch = codex/preparation-stamped-judge-retained-20261015
