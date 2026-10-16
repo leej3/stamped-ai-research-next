@@ -54,3 +54,6 @@ Figures summarize scientific outcomes, reproducibility, effort and variability.
 Preparation evidence is retained in the [coordinator trials](iterations/2026-10-15-coordinator-preparation/README.md) and [cold-start trial](iterations/2026-10-15-cold-operational-preparation/outcome.json).
 These include verified Entire, annex and cluster access, independently retrieved inputs, and setup failures found before scientific work.
 They are excluded from the formal comparison.
+
+The prepared formal repository is [stamped-in-practice](https://github.com/leej3/stamped-in-practice), starting with NARPS.
+This repository retains the development history, trials and failures that informed it.
