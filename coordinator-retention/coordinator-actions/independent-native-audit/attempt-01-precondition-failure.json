@@ -1,0 +1,9 @@
+{
+  "status": "failed-audit-precondition",
+  "audit_script_sha256": "8a78f92f1a6c1b8f06872cd4fe2c45c1c7f9f83174bd205d90836d7e74cadd48",
+  "failure": "assert before[head] == COMMIT",
+  "expected_commit": "e1b0ee05ad3406aede91ce1f62a092b48f30b40f",
+  "observed_current_head_after_failure": "5c2ab777351f882a1c5ff717e84544c94c38b999",
+  "code_ref_still_exact": true,
+  "interpretation": "Parent concurrently extended judgment HEAD; audit should inspect specified immutable commit without requiring it to remain HEAD. No native, remote, or hosted proof was emitted by this failed attempt."
+}

@@ -1,0 +1,11 @@
+{
+  "remote": "git@github.com:leej3/stamped-ai-research-next.git",
+  "expected": {
+    "refs/heads/codex/preparation-stamped-judgment-op-20261015": "e1b0ee05ad3406aede91ce1f62a092b48f30b40f",
+    "refs/entire/checkpoints/04/01M510JADWN8W7J9GF1T3BQB04": "8827b6eeaa95a0a7f5e8cca1d4da18377515c2ff"
+  },
+  "observed": {
+    "refs/entire/checkpoints/04/01M510JADWN8W7J9GF1T3BQB04": "8827b6eeaa95a0a7f5e8cca1d4da18377515c2ff",
+    "refs/heads/codex/preparation-stamped-judgment-op-20261015": "e1b0ee05ad3406aede91ce1f62a092b48f30b40f"
+  }
+}

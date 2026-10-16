@@ -1,0 +1,8 @@
+from pathlib import Path
+import subprocess,json,hashlib
+b=Path('/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015');c=b/'cold-stamped-op-coordinator';e=b/'cold-stamped-op-evidence/coordinator-actions/independent-retention-retrieval';d=b/'cold-stamped-op-retention-retrieval';p=e/'payload-retrieval';p.mkdir();px=['pixi','run','--manifest-path',str(c/'pixi.toml'),'git'];before=json.loads((e/'result.json').read_text());rows=before['annex_keys'];assert all(not (d/x['file']).exists() for x in rows)
+r=subprocess.run(px+['annex','get','--from','con-hub','--']+[x['file'] for x in rows],cwd=d,capture_output=True,text=True);(p/'stdout.txt').write_text(r.stdout);(p/'stderr.txt').write_text(r.stderr);(p/'command.json').write_text(json.dumps({'argv':px+['annex','get','--from','con-hub','--']+[x['file'] for x in rows],'cwd':str(d),'returncode':r.returncode},indent=2)+'\n');assert r.returncode==0
+files=[]
+for row in rows:
+ path=d/row['file'];data=path.read_bytes();key=row['key'];digest=hashlib.sha256(data).hexdigest();assert key.split('--')[1].startswith(digest);files.append({'path':row['file'],'key':key,'bytes':len(data),'sha256':digest})
+result={'retrieval_success':True,'empty_annex_store_before':True,'files':files,'bytes':sum(x['bytes'] for x in files),'head':subprocess.check_output(['git','rev-parse','HEAD'],cwd=d,text=True).strip(),'clean':not subprocess.check_output(['git','status','--porcelain'],cwd=d,text=True).strip(),'scope':'Fresh empty annex store on same host, GitHub code and configured con-hub payload endpoint. No science or replay execution.'};assert result['clean'];(p/'result.json').write_text(json.dumps(result,indent=2)+'\n');print(json.dumps(result))

@@ -1,0 +1,58 @@
+{
+  "status": "ambiguous-not-proof",
+  "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-op-evidence/judgment-01/judgment",
+  "argv": [
+    "entire",
+    "checkpoint",
+    "explain",
+    "01M510JADWN8W7J9GF1T3BQB04",
+    "--repo",
+    "gh/leej3/stamped-ai-research-next",
+    "--json"
+  ],
+  "reason": "The CLI can return local checkpoint metadata inside a Git checkout despite --repo.",
+  "metadata": {
+    "checkpoint_id": "01M510JADWN8W7J9GF1T3BQB04",
+    "strategy": "manual-commit",
+    "branch": "codex/judgment",
+    "checkpoints_count": 1,
+    "files_touched": [
+      "2026-10-16-assessment.md",
+      "2026-10-16-fresh-rerun.json",
+      "2026-10-16-probes.json",
+      "2026-10-16-remote-check.txt",
+      "2026-10-16-response.json",
+      "2026-10-16-runtime-check.txt",
+      "2026-10-16-url.txt"
+    ],
+    "session_count": 1,
+    "sessions": [
+      {
+        "index": 0,
+        "session_id": "01a14201-b7c3-7281-bcc6-cfe90c4b16a9",
+        "agent": "Codex",
+        "model": "gpt-6-luna",
+        "created_at": "2026-10-16T00:07:39.947186Z",
+        "turn_id": "7708ef0583aa",
+        "files_touched": [
+          "2026-10-16-assessment.md",
+          "2026-10-16-fresh-rerun.json",
+          "2026-10-16-probes.json",
+          "2026-10-16-remote-check.txt",
+          "2026-10-16-response.json",
+          "2026-10-16-runtime-check.txt",
+          "2026-10-16-url.txt"
+        ],
+        "token_usage": {
+          "input_tokens": 148858,
+          "cache_creation_tokens": 0,
+          "cache_read_tokens": 3955712,
+          "output_tokens": 40263,
+          "api_call_count": 44,
+          "subagent_tokens_complete": true
+        }
+      }
+    ],
+    "tasks": []
+  }
+}

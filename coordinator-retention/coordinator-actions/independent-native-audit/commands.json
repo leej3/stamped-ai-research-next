@@ -1,0 +1,307 @@
+[
+  {
+    "argv": [
+      "git",
+      "rev-parse",
+      "HEAD"
+    ],
+    "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-op-evidence/judgment-01/judgment",
+    "exit_code": 0,
+    "stdout_bytes": 41,
+    "stdout_sha256": "1709040fc53cd67adbbc74748694d1b0daf4a60e8667cd3288ae329bd9eb807e",
+    "stderr_bytes": 0,
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "git",
+      "symbolic-ref",
+      "HEAD"
+    ],
+    "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-op-evidence/judgment-01/judgment",
+    "exit_code": 0,
+    "stdout_bytes": 26,
+    "stdout_sha256": "e722aff157c5dd1ecf31685c54cfc519b2f0e65b1c0126b2f229bca024026274",
+    "stderr_bytes": 0,
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "git",
+      "status",
+      "--porcelain=v1",
+      "-z"
+    ],
+    "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-op-evidence/judgment-01/judgment",
+    "exit_code": 0,
+    "stdout_bytes": 0,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_bytes": 0,
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "git",
+      "for-each-ref",
+      "--format=%(refname) %(objectname)"
+    ],
+    "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-op-evidence/judgment-01/judgment",
+    "exit_code": 0,
+    "stdout_bytes": 719,
+    "stdout_sha256": "c03e5537811398173159fc6a6305c819dd64b5907994453e4c5f00271a8e8e2b",
+    "stderr_bytes": 0,
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "git",
+      "merge-base",
+      "--is-ancestor",
+      "e1b0ee05ad3406aede91ce1f62a092b48f30b40f",
+      "5c2ab777351f882a1c5ff717e84544c94c38b999"
+    ],
+    "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-op-evidence/judgment-01/judgment",
+    "exit_code": 0,
+    "stdout_bytes": 0,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_bytes": 0,
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "entire",
+      "checkpoint",
+      "explain",
+      "--commit",
+      "e1b0ee05ad3406aede91ce1f62a092b48f30b40f",
+      "--json"
+    ],
+    "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-op-evidence/judgment-01/judgment",
+    "exit_code": 0,
+    "stdout_bytes": 1202,
+    "stdout_sha256": "001be44a38e444a04e730cee05d84aece6621236727dfb9b05ffc2560d6f3d9c",
+    "stderr_bytes": 0,
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "entire",
+      "checkpoint",
+      "explain",
+      "--commit",
+      "e1b0ee05ad3406aede91ce1f62a092b48f30b40f",
+      "--transcript",
+      "--session-index",
+      "0"
+    ],
+    "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-op-evidence/judgment-01/judgment",
+    "exit_code": 0,
+    "stdout_bytes": 1142409,
+    "stdout_sha256": "bb04c63a6812fcc655f84ac3db4a60c30d3a97d0d7ad044b4bdebcf807445c54",
+    "stderr_bytes": 0,
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "git",
+      "show",
+      "e1b0ee05ad3406aede91ce1f62a092b48f30b40f:2026-10-16-remote-check.txt"
+    ],
+    "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-op-evidence/judgment-01/judgment",
+    "exit_code": 0,
+    "stdout_bytes": 433,
+    "stdout_sha256": "8c653a58a164ca0e17771fcfbc40e287faf637314b7ba873372ed77809221062",
+    "stderr_bytes": 0,
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "git",
+      "diff-tree",
+      "--root",
+      "--no-commit-id",
+      "--name-only",
+      "-z",
+      "-r",
+      "e1b0ee05ad3406aede91ce1f62a092b48f30b40f"
+    ],
+    "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-op-evidence/judgment-01/judgment",
+    "exit_code": 0,
+    "stdout_bytes": 290,
+    "stdout_sha256": "39c2b3e8213e6d18e059652c48fe2a64b07896b0f7f485305adf177c1dd81875",
+    "stderr_bytes": 0,
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "git",
+      "show",
+      "-s",
+      "--format=%B",
+      "e1b0ee05ad3406aede91ce1f62a092b48f30b40f"
+    ],
+    "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-op-evidence/judgment-01/judgment",
+    "exit_code": 0,
+    "stdout_bytes": 473,
+    "stdout_sha256": "bf299842ae75104fc1024174fec11dc7e866d8006fb9300612772fc1babb4b1a",
+    "stderr_bytes": 0,
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "git",
+      "rev-parse",
+      "refs/heads/codex/preparation-stamped-judgment-op-20261015"
+    ],
+    "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-op-evidence/judgment-01/judgment",
+    "exit_code": 0,
+    "stdout_bytes": 41,
+    "stdout_sha256": "d26dd5844d581076bcba7cd7f5b3491e2ec55fb85cf44fe117f50bb40cd4839c",
+    "stderr_bytes": 0,
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "git",
+      "rev-parse",
+      "refs/entire/checkpoints/04/01M510JADWN8W7J9GF1T3BQB04"
+    ],
+    "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-op-evidence/judgment-01/judgment",
+    "exit_code": 0,
+    "stdout_bytes": 41,
+    "stdout_sha256": "62c18e08a2dcfd9f354904f1eb5a71c30dbaef4280da659a13706bc63608fec3",
+    "stderr_bytes": 0,
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "git",
+      "remote",
+      "get-url",
+      "--push",
+      "origin"
+    ],
+    "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-op-evidence/judgment-01/judgment",
+    "exit_code": 0,
+    "stdout_bytes": 50,
+    "stdout_sha256": "7dd5052efa89236a5ed03ba7cf59aec9d08410e71d70a9a829e817d6d5f5883a",
+    "stderr_bytes": 0,
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "git",
+      "ls-remote",
+      "--refs",
+      "git@github.com:leej3/stamped-ai-research-next.git",
+      "refs/heads/codex/preparation-stamped-judgment-op-20261015",
+      "refs/entire/checkpoints/04/01M510JADWN8W7J9GF1T3BQB04"
+    ],
+    "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-op-evidence/judgment-01/judgment",
+    "exit_code": 0,
+    "stdout_bytes": 194,
+    "stdout_sha256": "f0fe69e564f81c6b4ce53dec875a62dccc9581349aabe7fcfca1f2c62f20919b",
+    "stderr_bytes": 0,
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "entire",
+      "checkpoint",
+      "explain",
+      "01M510JADWN8W7J9GF1T3BQB04",
+      "--repo",
+      "gh/leej3/stamped-ai-research-next",
+      "--json"
+    ],
+    "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-op-evidence/judgment-01/judgment",
+    "exit_code": 0,
+    "stdout_bytes": 1202,
+    "stdout_sha256": "001be44a38e444a04e730cee05d84aece6621236727dfb9b05ffc2560d6f3d9c",
+    "stderr_bytes": 0,
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "git",
+      "rev-parse",
+      "--show-toplevel"
+    ],
+    "cwd": "/private/tmp",
+    "exit_code": 128,
+    "stdout_bytes": 0,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_bytes": 69,
+    "stderr_sha256": "d2b35cacadc66b7fad8dedd1be5244e17150a6625978c9330f831bd7a9cd6b1e"
+  },
+  {
+    "argv": [
+      "entire",
+      "checkpoint",
+      "explain",
+      "01M510JADWN8W7J9GF1T3BQB04",
+      "--repo",
+      "gh/leej3/stamped-ai-research-next",
+      "--json"
+    ],
+    "cwd": "/private/tmp",
+    "exit_code": 1,
+    "stdout_bytes": 0,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_bytes": 21,
+    "stderr_sha256": "80c14815b4f8d8b2ff52e13375db0278e9ab9b2cf9a1cf771a6ac423cc3a6c07"
+  },
+  {
+    "argv": [
+      "git",
+      "rev-parse",
+      "HEAD"
+    ],
+    "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-op-evidence/judgment-01/judgment",
+    "exit_code": 0,
+    "stdout_bytes": 41,
+    "stdout_sha256": "1709040fc53cd67adbbc74748694d1b0daf4a60e8667cd3288ae329bd9eb807e",
+    "stderr_bytes": 0,
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "git",
+      "symbolic-ref",
+      "HEAD"
+    ],
+    "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-op-evidence/judgment-01/judgment",
+    "exit_code": 0,
+    "stdout_bytes": 26,
+    "stdout_sha256": "e722aff157c5dd1ecf31685c54cfc519b2f0e65b1c0126b2f229bca024026274",
+    "stderr_bytes": 0,
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "git",
+      "status",
+      "--porcelain=v1",
+      "-z"
+    ],
+    "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-op-evidence/judgment-01/judgment",
+    "exit_code": 0,
+    "stdout_bytes": 0,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_bytes": 0,
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "git",
+      "for-each-ref",
+      "--format=%(refname) %(objectname)"
+    ],
+    "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-op-evidence/judgment-01/judgment",
+    "exit_code": 0,
+    "stdout_bytes": 719,
+    "stdout_sha256": "c03e5537811398173159fc6a6305c819dd64b5907994453e4c5f00271a8e8e2b",
+    "stderr_bytes": 0,
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+]

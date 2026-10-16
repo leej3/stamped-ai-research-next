@@ -1,0 +1,14 @@
+{
+  "observed_at": "2026-10-16T00:12:52.438751+00:00",
+  "cwd": "/private/tmp",
+  "argv": [
+    "entire",
+    "repo",
+    "view",
+    "/gh/leej3/stamped-ai-research-next",
+    "--json"
+  ],
+  "exit_code": 0,
+  "stdout": "{\n  \"repo\": \"/gh/leej3/stamped-ai-research-next\",\n  \"private\": false,\n  \"status\": \"ready\",\n  \"placements\": [\n    {\n      \"cluster\": \"aws-us-east-2.entire.io\",\n      \"clusterSlug\": \"aws-us-east-2\",\n      \"jurisdiction\": \"us\",\n      \"status\": \"ready\",\n      \"cloneUrl\": \"entire://aws-us-east-2.entire.io/gh/leej3/stamped-ai-research-next\"\n    }\n  ]\n}\n",
+  "stderr": ""
+}

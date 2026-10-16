@@ -65,5 +65,16 @@
   ],
   "original_policy": "Original worker prompt differs from current common publication/environment policy. No retrospective compliance reassessment.",
   "original_sealed_failure_unchanged": true,
-  "later_retrieval_context": "Coordinator previously retrieved all58 exact-result annex paths through configured GitHub ref and con-hub payload endpoint. Judge tested its own different declared route; original judgment retained, not scientifically repaired."
+  "later_retrieval_context": "Coordinator previously retrieved all58 exact-result annex paths through configured GitHub ref and con-hub payload endpoint. Judge tested its own different declared route; original judgment retained, not scientifically repaired.",
+  "infrastructure": {
+    "native_capture": "verified independently against stored native command/cwd/model and exact committed bytes",
+    "github_refs": "verified exact code and checkpoint OIDs",
+    "hosted": "verified matching actual hosted session/checkpoint through fresh empty Git context, with no local metadata fallback",
+    "annex_payloads": "three archives local; upload failed because vault locked and one native unlock returned failure/canceled",
+    "fresh_git_retrieval": "verified exact retention5c2ab777,72 regular Git files,3 annex pointer paths,clean,zero nested gitlinks",
+    "fresh_annex_retrieval": "pending upload/unlock",
+    "native_capture_receipt": "coordinator-actions/independent-native-audit/final-result.json",
+    "checkpoint_ref": "refs/entire/checkpoints/04/01M510JADWN8W7J9GF1T3BQB04",
+    "checkpoint_oid": "8827b6eeaa95a0a7f5e8cca1d4da18377515c2ff"
+  }
 }

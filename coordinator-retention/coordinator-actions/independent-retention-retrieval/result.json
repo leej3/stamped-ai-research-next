@@ -1,0 +1,407 @@
+{
+  "source": "GitHub SSH refs",
+  "head": "5c2ab777351f882a1c5ff717e84544c94c38b999",
+  "ordinary_git_files_verified": [
+    {
+      "path": ".gitignore",
+      "sha256": "e900c44bdee024c2f28a7e7ddc4793a9569489026ee1c08f534d4de6b490f726",
+      "bytes": 37
+    },
+    {
+      "path": "2026-10-16-assessment.md",
+      "sha256": "98218f1db4d5623127024816a8afd83bab9245aca4fa907d12bf0f165f6bbdc6",
+      "bytes": 14497
+    },
+    {
+      "path": "2026-10-16-fresh-rerun.json",
+      "sha256": "eb6b5b3e917436665879fd6c78ce8f4f2c3ac0c764174032277b7c065fb2f373",
+      "bytes": 15929
+    },
+    {
+      "path": "2026-10-16-probes.json",
+      "sha256": "c64428cd0c3e708aff73ed3cd03b5587dae079551fa38e6c5e35c021103b520c",
+      "bytes": 17117
+    },
+    {
+      "path": "2026-10-16-remote-check.txt",
+      "sha256": "8c653a58a164ca0e17771fcfbc40e287faf637314b7ba873372ed77809221062",
+      "bytes": 433
+    },
+    {
+      "path": "2026-10-16-response.json",
+      "sha256": "7c1bd8b56b737188af4d8a90dc6eabbc9ccd898c604e33abec5c4d8625ba4b4f",
+      "bytes": 18528
+    },
+    {
+      "path": "2026-10-16-runtime-check.txt",
+      "sha256": "ecee40bea1179ec83e6d3227023123f7ef2b0272d9be7c51c2bd80d95fdd5d4c",
+      "bytes": 423
+    },
+    {
+      "path": "2026-10-16-url.txt",
+      "sha256": "b4be8460c3e8cecc53578c61082762a1f4207ef7c7ff046156a6a46e72f0c234",
+      "bytes": 7093
+    },
+    {
+      "path": "archived-workspaces/manifest.json",
+      "sha256": "7db8d2f4db12e7b455090ad20e3702d4825384beb0cbbe06bab872684caa398f",
+      "bytes": 1079
+    },
+    {
+      "path": "coordinator-retention/README.md",
+      "sha256": "6e78ea6fe23636f669337885dbcb7d559bcec69c9cd3ebf0617f5667160b1f65",
+      "bytes": 1883
+    },
+    {
+      "path": "coordinator-retention/coordinator-actions/action.py",
+      "sha256": "806eb561a1f55985616c7a529f6a3dc3716f01c9c050ad0cb38d83ce3146bb56",
+      "bytes": 798
+    },
+    {
+      "path": "coordinator-retention/coordinator-actions/configure-annex/command.json",
+      "sha256": "4c7329935165250b8733399e219b4d8a7cecb1000acf6ba8e4b66b1ed17372aa",
+      "bytes": 694
+    },
+    {
+      "path": "coordinator-retention/coordinator-actions/configure-annex/stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "coordinator-retention/coordinator-actions/configure-annex/stdout.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "coordinator-retention/coordinator-actions/credential-unlock-status.json",
+      "sha256": "d1e4506ef451e229c5aebd88e9ef3522a5a120fd04aeb2fc7442cf519a750e79",
+      "bytes": 232
+    },
+    {
+      "path": "coordinator-retention/coordinator-actions/judge-cleanup-failure.json",
+      "sha256": "9bb35c6f34445f6d4af221d576a8fb37b2f5026b455a997438db34d3790a3588",
+      "bytes": 4174
+    },
+    {
+      "path": "coordinator-retention/coordinator-actions/judge-launch.log",
+      "sha256": "b5cbb75bc5ada87787310d7c3e9813bd9170339a9d4ef5241c0c064dce2e111e",
+      "bytes": 665482
+    },
+    {
+      "path": "coordinator-retention/coordinator-actions/judge-preservation.json",
+      "sha256": "beaa02f0d8f8ec817d643431a64357b1e519110c4035fff10b1f322fcf3dd53f",
+      "bytes": 7640
+    },
+    {
+      "path": "coordinator-retention/coordinator-actions/launch-gate.json",
+      "sha256": "68ef1733c1ae0a10b11ec926343a14b463cb6ae2153413d9e612f2932e093bf0",
+      "bytes": 253
+    },
+    {
+      "path": "coordinator-retention/coordinator-actions/preserve_judge.py",
+      "sha256": "99abfbfa56cc223743ba3cef31ce145707eef22aa817c6eb2f9f925b86f65ad7",
+      "bytes": 3410
+    },
+    {
+      "path": "coordinator-retention/coordinator-actions/publish-initial-annex/command.json",
+      "sha256": "99fcef348348071f8d7623ed08cc1a22dbd4e10e26c97853f41e9ad2e572f3ba",
+      "bytes": 494
+    },
+    {
+      "path": "coordinator-retention/coordinator-actions/publish-initial-annex/stderr.txt",
+      "sha256": "4f3cc30c9490f7412adc72df17ea62fe99947f30929d37cad4a983cc840617a9",
+      "bytes": 567
+    },
+    {
+      "path": "coordinator-retention/coordinator-actions/publish-initial-annex/stdout.txt",
+      "sha256": "2642c03ebef892dfb6dd9c5a63d8b5ca79ca1ef92e648f1370dbd6d4b4704672",
+      "bytes": 239
+    },
+    {
+      "path": "coordinator-retention/coordinator-actions/replay-attempts/event-017-item_8.json",
+      "sha256": "7f353849d48eaacd0617b09bf5bcbbd3e2571c3d79b82afc61df4bbf91cae72c",
+      "bytes": 7673
+    },
+    {
+      "path": "coordinator-retention/coordinator-actions/replay-attempts/event-049-item_21.json",
+      "sha256": "fc12516918df6ca394b8acf05697576f8f4313e66f59921f7155157333ceb6a2",
+      "bytes": 963
+    },
+    {
+      "path": "coordinator-retention/coordinator-actions/replay-attempts/event-052-item_26.json",
+      "sha256": "3e50d15aafc3b7a5d52923e0aa0d96c17a5fe132d03f8d738e88a7303bfb2cad",
+      "bytes": 8267
+    },
+    {
+      "path": "coordinator-retention/coordinator-actions/replay-attempts/event-052-recovered-receipt.json",
+      "sha256": "0a87ca6784ac20473edfd078edd5d0b86e3d7ae6a07a152d1f20ef3ba9cda21b",
+      "bytes": 7603
+    },
+    {
+      "path": "coordinator-retention/coordinator-actions/replay-attempts/event-059-item_28.json",
+      "sha256": "fdaff8eba849e1616e1c289beda536fd0ce82d9b4c52ee3d6153516b93092269",
+      "bytes": 960
+    },
+    {
+      "path": "coordinator-retention/coordinator-actions/replay-attempts/event-061-item_31.json",
+      "sha256": "87d1bed9fb48ff7eff7fe1b0c4afcfb57045efffdca57156bb61dcd4a426febb",
+      "bytes": 621
+    },
+    {
+      "path": "coordinator-retention/coordinator-actions/replay-attempts/event-063-item_32.json",
+      "sha256": "38244e2e009c7eb8e364d5acc14a604dee038f9900e6dea3dead3e255feca059",
+      "bytes": 16222
+    },
+    {
+      "path": "coordinator-retention/coordinator-actions/replay-attempts/event-063-recovered-receipt.json",
+      "sha256": "c45dc2241aa1e4693d7a0be79b0d9a369432623cb1f38cb50763e22248db6a62",
+      "bytes": 15441
+    },
+    {
+      "path": "coordinator-retention/coordinator-actions/replay-attempts/event-075-item_36.json",
+      "sha256": "194a09740eda4224cbf0cad9946d5071ba3fddff7ebe395dde2a66b10c38dff5",
+      "bytes": 16275
+    },
+    {
+      "path": "coordinator-retention/coordinator-actions/replay-attempts/event-084-item_43.json",
+      "sha256": "0656e028d9f80dbe1f7e5d4626d41d6eb3fcd71209bc20c900b874facc55675c",
+      "bytes": 9786
+    },
+    {
+      "path": "coordinator-retention/coordinator-actions/replay-attempts/event-094-item_48.json",
+      "sha256": "eaf202a72626a0de618eba145fb9af8ca700c70698e0ec3af80b06d9d60237fd",
+      "bytes": 8569
+    },
+    {
+      "path": "coordinator-retention/coordinator-actions/replay-attempts/event-102-item_52.json",
+      "sha256": "1fd960ab61cbbc3a2afce278e7836a5d09e48203a0259dc586bbb327f2da2b7d",
+      "bytes": 2907
+    },
+    {
+      "path": "coordinator-retention/coordinator-actions/replay-attempts/event-114-item_58.json",
+      "sha256": "91491e66e7df5a377d453fb7661aa726dec446aa7e327f5934bbf94d728a5860",
+      "bytes": 937
+    },
+    {
+      "path": "coordinator-retention/coordinator-actions/replay-attempts/manifest.json",
+      "sha256": "b866798973f510dfeaee73d133338e33f8a58289ff23667d8ed9d34061060299",
+      "bytes": 28314
+    },
+    {
+      "path": "coordinator-retention/coordinator-actions/source-regression-command.json",
+      "sha256": "cda883744a74968ae27331bcd78818d5a2755657c949696795baae48ac1ceac9",
+      "bytes": 435
+    },
+    {
+      "path": "coordinator-retention/coordinator-actions/stock-native-verification-failure.json",
+      "sha256": "209532cc60b31505e641472af7026d0bb08f24e5c13482f2c9f4ec6888ee7478",
+      "bytes": 522
+    },
+    {
+      "path": "coordinator-retention/judge-stop-original/preservation.json",
+      "sha256": "9dd98906920acbf5aed693f068290667597dc77ebbc61dd6bdac09908136ca13",
+      "bytes": 533
+    },
+    {
+      "path": "coordinator-retention/judge-stop-original/stop-state.json",
+      "sha256": "7caf497640148c5a1f55f876484ca13e238c6f1bf1e0514dc6c45c1f24ea72f6",
+      "bytes": 597159
+    },
+    {
+      "path": "coordinator-retention/judgment-01/annex-remote.json",
+      "sha256": "8d0c1b3accdab0ca28a8cd2e2135837c9b02fe6f33bfaddf0844d09679f3db9c",
+      "bytes": 442
+    },
+    {
+      "path": "coordinator-retention/judgment-01/annex-source.json",
+      "sha256": "00ecc6c350014d0104e9fb4a7278a11c3d942c19dc162b49ee289cfdd3627401",
+      "bytes": 182
+    },
+    {
+      "path": "coordinator-retention/judgment-01/checkout.json",
+      "sha256": "3c0adbb140b0c033e6c6989d69b42eea9a3a17b10bda2da650cd9f8f16435032",
+      "bytes": 422
+    },
+    {
+      "path": "coordinator-retention/judgment-01/environment.json",
+      "sha256": "e0dfe77c41ae24e4f8a3c84e05d29de17cd20b9542f78a03061ff2620823d3af",
+      "bytes": 621
+    },
+    {
+      "path": "coordinator-retention/judgment-01/judge-annex-materialization.json",
+      "sha256": "9e4db8254f25c40b825fd2babfdfd83d894e0e3b59653b40f87bfa78ab63e82e",
+      "bytes": 22958
+    },
+    {
+      "path": "coordinator-retention/judgment-01/judge-prompt.md",
+      "sha256": "273eab76e31ee582262c30e768b24463102b3b8bddef60d30c177ffdb377a4e2",
+      "bytes": 10301
+    },
+    {
+      "path": "coordinator-retention/judgment-01/judge-workspace.json",
+      "sha256": "fcf003f8aad4e7c1e56476304198957b7d958d32cecca4f314510c1286c476bc",
+      "bytes": 437
+    },
+    {
+      "path": "coordinator-retention/judgment-01/native/events.jsonl",
+      "sha256": "05a65c0675856fe673d6ac31d24a379cf3542e7f97c1d72224eabd39bfaf691d",
+      "bytes": 659391
+    },
+    {
+      "path": "coordinator-retention/judgment-01/native/final.txt",
+      "sha256": "0cfa27656132aa29474e31f4340ad0541d69639d51cd4c0a0b0266e6fc82d3b8",
+      "bytes": 1810
+    },
+    {
+      "path": "coordinator-retention/judgment-01/native/launch.json",
+      "sha256": "38187eed35aedcc58f2fb34fef429bd4d94bb83c0128918b609cf11f76a2480b",
+      "bytes": 5189
+    },
+    {
+      "path": "coordinator-retention/judgment-01/native/procedure-status.json",
+      "sha256": "d3ca8955b8282972b2d0dbdd18566240916b3a09216475f4648b0ed816c146eb",
+      "bytes": 152
+    },
+    {
+      "path": "coordinator-retention/judgment-01/native/prompt-preflight.json",
+      "sha256": "45d67dc344116800ec16fb233f4b5c90258c4d2b5748e4eb8d7c77f0776a711b",
+      "bytes": 2499
+    },
+    {
+      "path": "coordinator-retention/judgment-01/native/prompt.txt",
+      "sha256": "273eab76e31ee582262c30e768b24463102b3b8bddef60d30c177ffdb377a4e2",
+      "bytes": 10301
+    },
+    {
+      "path": "coordinator-retention/judgment-01/native/result.json",
+      "sha256": "2e721aa8dc97b3e4f74c0008a5c3c38180495a38a54107c96922a2547b7d13f5",
+      "bytes": 5520
+    },
+    {
+      "path": "coordinator-retention/judgment-01/native/stderr.txt",
+      "sha256": "bb443defc1605f2bac8eb07bcd8979f81561b7b8f2128384497a43b3a7756490",
+      "bytes": 1100
+    },
+    {
+      "path": "coordinator-retention/judgment-01/native/worker-artifact-validation.json",
+      "sha256": "5d7992ff510ed95e6e1a67ff77b77b74a121a205562eac09b2b2e4b37a94ba1c",
+      "bytes": 2656
+    },
+    {
+      "path": "coordinator-retention/judgment-01/native/worker-end-state.json",
+      "sha256": "0c381872b334e7a226479f2595c3e169fcf4dcd45b9906e40cc33d1256797e6d",
+      "bytes": 155453
+    },
+    {
+      "path": "coordinator-retention/judgment-01/original-study-prompt.md",
+      "sha256": "e92bf2e0c0db4cc49688cce9f9dfff8a236fc4ec151c09961719f49f31310cc8",
+      "bytes": 1483
+    },
+    {
+      "path": "coordinator-retention/judgment-01/preparation.json",
+      "sha256": "30d3eff61ba7a82d3321f4263f53bc44a124cb004a4c28b6a5a9b40fd7350d96",
+      "bytes": 1248
+    },
+    {
+      "path": "coordinator-retention/judgment-01/procedure-status.json",
+      "sha256": "51f65811b3f487eafbc9ec89e2d80379829cb4da99a0bbdb2269a767bc51a085",
+      "bytes": 55
+    },
+    {
+      "path": "coordinator-retention/judgment-01/reference.json",
+      "sha256": "ae95cb8d6ad10fdcdae2e751e6dde3895291ed72193e6aa217b73c0693250684",
+      "bytes": 246
+    },
+    {
+      "path": "coordinator-retention/judgment-01/reference.md",
+      "sha256": "5215114f8c2c4d099e2ef069fc31e9a9c586ff30c826096de52535f9db3b10b3",
+      "bytes": 3601
+    },
+    {
+      "path": "coordinator-retention/judgment-01/study-source.json",
+      "sha256": "9eacf71e0f08979ae34dbc3fa0c34dd0f2beda36b008b77c10d100ce96828e0c",
+      "bytes": 248
+    },
+    {
+      "path": "coordinator-retention/judgment-01/study.json",
+      "sha256": "7ff9bc72b8e785686977b9049e679837d20cb526abb681f571202be2f705c9cd",
+      "bytes": 234
+    },
+    {
+      "path": "coordinator-retention/judgment-01/study.md",
+      "sha256": "e92bf2e0c0db4cc49688cce9f9dfff8a236fc4ec151c09961719f49f31310cc8",
+      "bytes": 1483
+    },
+    {
+      "path": "coordinator-retention/judgment-01/worker-end-state.json",
+      "sha256": "0c381872b334e7a226479f2595c3e169fcf4dcd45b9906e40cc33d1256797e6d",
+      "bytes": 155453
+    },
+    {
+      "path": "coordinator-retention/judgment-01/worker-retention-check.json",
+      "sha256": "e3d56996cbdf11c487c94108dfb37a6c5418e0e3b2337ad5e548da4626a37116",
+      "bytes": 2837
+    },
+    {
+      "path": "coordinator-retention/operational-manifest.json",
+      "sha256": "172807b7b4306e3753bc6dce8cac153defd3a4a7b157f7a29f0647d5b6093f71",
+      "bytes": 6404
+    },
+    {
+      "path": "coordinator-retention/operational-outcome.json",
+      "sha256": "a9180149c6c29339ca3c43eaadaae43e11a44251709395f65cbd97fa4f306dc2",
+      "bytes": 3598
+    },
+    {
+      "path": "coordinator-retention/registration.json",
+      "sha256": "8b18debb4e5930f4db36558df05f7593a7958ba34de4411912c40969a125897b",
+      "bytes": 280
+    },
+    {
+      "path": "judge-target.json",
+      "sha256": "a670294d92778f5beab61d3f90ed32673a82275673429c697a10bb242a7b921f",
+      "bytes": 273
+    }
+  ],
+  "annex_keys": [
+    {
+      "backend": "SHA256E",
+      "bytesize": "2977948",
+      "error-messages": [],
+      "file": "archived-workspaces/fresh-clone.tar.gz",
+      "hashdirlower": "c53/88e/",
+      "hashdirmixed": "35/33/",
+      "humansize": "2.98 MB",
+      "key": "SHA256E-s2977948--4bedba1bac749badf0d03caef6f3b901de803f3db8bb7bdffa4956c5cb5d6e50.tar.gz",
+      "keyname": "4bedba1bac749badf0d03caef6f3b901de803f3db8bb7bdffa4956c5cb5d6e50.tar.gz",
+      "mtime": "unknown"
+    },
+    {
+      "backend": "SHA256E",
+      "bytesize": "10581076",
+      "error-messages": [],
+      "file": "archived-workspaces/replay-local.tar.gz",
+      "hashdirlower": "b1f/b73/",
+      "hashdirmixed": "kw/WF/",
+      "humansize": "10.58 MB",
+      "key": "SHA256E-s10581076--780f31ce8c5c3f99fc36f5bed75f5836dedd36d00b5bbbad62b859a87c5313c4.tar.gz",
+      "keyname": "780f31ce8c5c3f99fc36f5bed75f5836dedd36d00b5bbbad62b859a87c5313c4.tar.gz",
+      "mtime": "unknown"
+    },
+    {
+      "backend": "SHA256E",
+      "bytesize": "13577820",
+      "error-messages": [],
+      "file": "coordinator-retention/judge-stop-original/artifacts.tar.gz",
+      "hashdirlower": "6ce/6e7/",
+      "hashdirmixed": "Kj/KP/",
+      "humansize": "13.58 MB",
+      "key": "SHA256E-s13577820--1b3088cb8aa441963fa236651c71b94f4f3ff9aaba502d3da98e60cb5cc2f6aa.tar.gz",
+      "keyname": "1b3088cb8aa441963fa236651c71b94f4f3ff9aaba502d3da98e60cb5cc2f6aa.tar.gz",
+      "mtime": "unknown"
+    }
+  ],
+  "annex_payload_retrieval": "pending publication and credential unlock; not attempted",
+  "scope": "Fresh Git/annex repository on same host; no science executed.",
+  "clean": true
+}

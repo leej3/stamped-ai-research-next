@@ -1,0 +1,17 @@
+{
+  "observed_at": "2026-10-16T00:12:36.445076+00:00",
+  "cwd": "/private/tmp",
+  "argv": [
+    "entire",
+    "checkpoint",
+    "explain",
+    "01M510JADWN8W7J9GF1T3BQB04",
+    "--repo",
+    "gh/leej3/stamped-ai-research-next",
+    "--short",
+    "--no-pager"
+  ],
+  "exit_code": 1,
+  "stdout": "",
+  "stderr": "not a git repository\n"
+}

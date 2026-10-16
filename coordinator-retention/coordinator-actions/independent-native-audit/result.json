@@ -1,0 +1,55 @@
+{
+  "started_at": "2026-10-16T00:12:04.074922+00:00",
+  "verified_at": "2026-10-16T00:12:07.699125+00:00",
+  "audit_method": "Independent specific-command inspection and byte comparison; no transcript command replay",
+  "checkout": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-op-evidence/judgment-01/judgment",
+  "commit": "e1b0ee05ad3406aede91ce1f62a092b48f30b40f",
+  "session_id": "01a14201-b7c3-7281-bcc6-cfe90c4b16a9",
+  "checkpoint_id": "01M510JADWN8W7J9GF1T3BQB04",
+  "checkpoint_ref": "refs/entire/checkpoints/04/01M510JADWN8W7J9GF1T3BQB04",
+  "checkpoint_oid": "8827b6eeaa95a0a7f5e8cca1d4da18377515c2ff",
+  "code_ref": "refs/heads/codex/preparation-stamped-judgment-op-20261015",
+  "native_capture_verified": true,
+  "uploaded_refs_verified": true,
+  "hosted_verified": false,
+  "statuses": {
+    "local_native_capture": "verified",
+    "github_checkpoint_sync": "verified",
+    "entire_hosted_visibility": "blocked"
+  },
+  "native_model": "gpt-6-luna",
+  "native_reasoning_effort": "high",
+  "file": "2026-10-16-remote-check.txt",
+  "file_bytes": 433,
+  "file_sha256": "8c653a58a164ca0e17771fcfbc40e287faf637314b7ba873372ed77809221062",
+  "completed_readback_equals_committed_blob": true,
+  "working_file_equals_committed_blob": true,
+  "file_present_in_commit_diff": true,
+  "environment_observation_line": 17,
+  "completed_write_and_read_line": 341,
+  "transcript_bytes": 1142409,
+  "transcript_sha256": "bb04c63a6812fcc655f84ac3db4a60c30d3a97d0d7ad044b4bdebcf807445c54",
+  "raw_transcript_saved": false,
+  "reasoning_saved": false,
+  "repository_before": {
+    "head": "5c2ab777351f882a1c5ff717e84544c94c38b999",
+    "branch": "refs/heads/codex/judgment",
+    "status": "",
+    "refs_sha256": "c03e5537811398173159fc6a6305c819dd64b5907994453e4c5f00271a8e8e2b"
+  },
+  "repository_after": {
+    "head": "5c2ab777351f882a1c5ff717e84544c94c38b999",
+    "branch": "refs/heads/codex/judgment",
+    "status": "",
+    "refs_sha256": "c03e5537811398173159fc6a6305c819dd64b5907994453e4c5f00271a8e8e2b"
+  },
+  "repository_head_branch_status_refs_unchanged": true,
+  "limitations": [
+    "The stock verifier did not recognize this variable-based compound shell command. Its rejection remains unchanged; this is a separate specific-command audit, not a stock-verifier success.",
+    "The output directory variable was observed at session startup. The write event records cwd and the literal variable-based command, not a separate environment snapshot. Matching the successful cat output byte-for-byte to the committed file corroborates that mapping.",
+    "The compound command lacks errexit: exit 0 proves the final cat succeeded, not each preceding Git subcommand independently. The exact recorded six-line readback is preserved and equals the committed file.",
+    "This confirms native capture and publication of the remote-check artifact. It does not establish scientific correctness, successful replay, data availability, or compliance with the replay-attempt limit.",
+    "The inside-repository --repo lookup is ambiguous and excluded from hosted proof. Hosted visibility is evaluated separately through Entire checkpoint explain from a verified non-Git /tmp context; no hosted raw-transcript or visual dashboard retrieval was performed."
+  ],
+  "audit_script_sha256": "400788aa24737463a1c8a013d9e5de9d35f573ecf5f1b8963102a1f3b91ffc51"
+}

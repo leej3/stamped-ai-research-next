@@ -27,3 +27,10 @@ This directory contains coordinator actions and grants no additional worker cred
 The common worker policy has since changed.
 This validation does not retroactively impose it on the original worker.
 Native launch metadata identifies Luna with high reasoning effort; the judge's own model stamp is preserved as delivered.
+
+Local native capture, exact GitHub code/checkpoint synchronization, and actual hosted Entire metadata are independently verified. Hosted lookup used a fresh empty Git repository with no objects, commits, refs or remotes and no inherited Git environment. Earlier ambiguous/failed checks remain in the audit directory.
+
+A separate fresh clone verified 72 retained Git files and three archive pointers.
+The archive payload upload is pending: the credential session was locked and one native unlock attempt failed or was canceled.
+All three archives remain locally retained.
+No successful annex retrieval is claimed.

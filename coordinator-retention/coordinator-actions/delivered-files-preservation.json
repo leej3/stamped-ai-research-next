@@ -1,0 +1,55 @@
+{
+  "files": [
+    {
+      "path": "2026-10-16-assessment.md",
+      "sha256": "98218f1db4d5623127024816a8afd83bab9245aca4fa907d12bf0f165f6bbdc6",
+      "bytes": 14497,
+      "committed_bytes_equal": true,
+      "original_stop_bytes_equal": true
+    },
+    {
+      "path": "2026-10-16-fresh-rerun.json",
+      "sha256": "eb6b5b3e917436665879fd6c78ce8f4f2c3ac0c764174032277b7c065fb2f373",
+      "bytes": 15929,
+      "committed_bytes_equal": true,
+      "original_stop_bytes_equal": true
+    },
+    {
+      "path": "2026-10-16-probes.json",
+      "sha256": "c64428cd0c3e708aff73ed3cd03b5587dae079551fa38e6c5e35c021103b520c",
+      "bytes": 17117,
+      "committed_bytes_equal": true,
+      "original_stop_bytes_equal": true
+    },
+    {
+      "path": "2026-10-16-remote-check.txt",
+      "sha256": "8c653a58a164ca0e17771fcfbc40e287faf637314b7ba873372ed77809221062",
+      "bytes": 433,
+      "committed_bytes_equal": true,
+      "original_stop_bytes_equal": true
+    },
+    {
+      "path": "2026-10-16-response.json",
+      "sha256": "7c1bd8b56b737188af4d8a90dc6eabbc9ccd898c604e33abec5c4d8625ba4b4f",
+      "bytes": 18528,
+      "committed_bytes_equal": true,
+      "original_stop_bytes_equal": true
+    },
+    {
+      "path": "2026-10-16-runtime-check.txt",
+      "sha256": "ecee40bea1179ec83e6d3227023123f7ef2b0272d9be7c51c2bd80d95fdd5d4c",
+      "bytes": 423,
+      "committed_bytes_equal": true,
+      "original_stop_bytes_equal": true
+    },
+    {
+      "path": "2026-10-16-url.txt",
+      "sha256": "b4be8460c3e8cecc53578c61082762a1f4207ef7c7ff046156a6a46e72f0c234",
+      "bytes": 7093,
+      "committed_bytes_equal": true,
+      "original_stop_bytes_equal": true
+    }
+  ],
+  "no_scientific_edits": true,
+  "native_capture_commit": "e1b0ee05ad3406aede91ce1f62a092b48f30b40f"
+}

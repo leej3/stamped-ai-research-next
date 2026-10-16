@@ -1,0 +1,45 @@
+{
+  "verified_at": "2026-10-16T00:13:54.138666+00:00",
+  "status": "all-three-checks-verified",
+  "native_capture_verified": true,
+  "uploaded_refs_verified": true,
+  "hosted_verified": true,
+  "commit": "e1b0ee05ad3406aede91ce1f62a092b48f30b40f",
+  "code_ref": "refs/heads/codex/preparation-stamped-judgment-op-20261015",
+  "checkpoint_id": "01M510JADWN8W7J9GF1T3BQB04",
+  "checkpoint_ref": "refs/entire/checkpoints/04/01M510JADWN8W7J9GF1T3BQB04",
+  "checkpoint_oid": "8827b6eeaa95a0a7f5e8cca1d4da18377515c2ff",
+  "session_id": "01a14201-b7c3-7281-bcc6-cfe90c4b16a9",
+  "native_model": "gpt-6-luna",
+  "native_reasoning_effort": "high",
+  "native_file": "2026-10-16-remote-check.txt",
+  "native_file_bytes": 433,
+  "native_file_sha256": "8c653a58a164ca0e17771fcfbc40e287faf637314b7ba873372ed77809221062",
+  "transcript_sha256": "bb04c63a6812fcc655f84ac3db4a60c30d3a97d0d7ad044b4bdebcf807445c54",
+  "local_and_github_receipt": "result.json",
+  "hosted_receipt": "hosted-empty-repository.json",
+  "receipt_sha256": {
+    "result.json": "874a768580a1f1c09c4c3cfaffd1275fd8e880851fe071c6f485520227d3262e",
+    "hosted-empty-repository.json": "abdcd00fb071db65477ae3a84dc45a4be119917c1382b44b4755a831f82dc515"
+  },
+  "supersedes_only_hosted_status_of": "result.json",
+  "failed_or_ambiguous_attempts_preserved": [
+    "attempt-01-precondition-failure.json",
+    "hosted-ambiguous-inside-repository.json",
+    "hosted-outside-repository.json",
+    "hosted-short-outside-repository.json"
+  ],
+  "hosted_context_had_no_local_entire_data": true,
+  "hosted_remote_read_explicit": true,
+  "limitations": [
+    "The stock verifier did not recognize this variable-based compound shell command. Its rejection remains unchanged; this is a separate specific-command audit, not a stock-verifier success.",
+    "The output directory variable was observed at session startup. The write event records cwd and the literal variable-based command, not a separate environment snapshot. Matching the successful cat output byte-for-byte to the committed file corroborates that mapping.",
+    "The compound command lacks errexit: exit 0 proves the final cat succeeded, not each preceding Git subcommand independently. The exact recorded six-line readback is preserved and equals the committed file.",
+    "This confirms native capture and publication of the remote-check artifact. It does not establish scientific correctness, successful replay, data availability, or compliance with the replay-attempt limit.",
+    "Hosted verification uses metadata retrieved through Entire API from an empty Git context; no visual dashboard or hosted raw transcript was requested. Entire 0.11.4 rejects non-Git cwd even with --repo, so the failed /tmp calls were retained and then replaced by the empty Git context proof."
+  ],
+  "judgment_repository_mutated_by_auditor": false,
+  "study_or_source_mutated_by_auditor": false,
+  "raw_transcript_or_reasoning_saved": false,
+  "git_commits_authored": 0
+}
