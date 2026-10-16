@@ -1,0 +1,11 @@
+{
+  "type": "item.completed",
+  "item": {
+    "id": "item_21",
+    "type": "command_execution",
+    "command": "/opt/homebrew/bin/bash -lc '\"$STAMPED_ASSESSMENT_PYTHON\" \"$STAMPED_ASSESSMENT_RUNNER\" fresh-rerun --url https://hub.centerforopenneuroscience.org/leej3/stamped-ai-research-next.git --entry '\"'pixi run git annex get input/data && pixi run recorded-analysis' --outputs 'results/*.nii.gz' 'results/*.tsv' 'results/*.json' 'results/*.png' 'results/report.md' --workdir \\\"\"'$STAMPED_JUDGE_OUTPUT/fresh-clone\" -o \"$STAMPED_JUDGE_OUTPUT/2026-10-16-fresh-rerun.json\"'",
+    "aggregated_output": "\u2714 The default environment has been installed.\nnot-checked: The clone ships no file matching --outputs, so there is nothing to compare.\nwrote /Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-op-evidence/judgment-01/judgment/2026-10-16-fresh-rerun.json\n",
+    "exit_code": 0,
+    "status": "completed"
+  }
+}

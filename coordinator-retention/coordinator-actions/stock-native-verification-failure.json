@@ -1,0 +1,9 @@
+{
+  "commit": "e1b0ee05ad3406aede91ce1f62a092b48f30b40f",
+  "session": "01a14201-b7c3-7281-bcc6-cfe90c4b16a9",
+  "script": "scripts/verify_native_capture.py at source50a96ab",
+  "file": "2026-10-16-assessment.md",
+  "exit_code": 1,
+  "stderr": "Stored native session/cwd/completed file-write evidence missing",
+  "reason": "Helper accepts file-change or restricted literal heredoc; actual judge wrote via environment-variable paths and Python shell commands. Source/helper unchanged. Separate read-only audit retained."
+}

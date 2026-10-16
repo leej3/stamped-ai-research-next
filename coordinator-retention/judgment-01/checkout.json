@@ -1,0 +1,9 @@
+{
+  "checkout": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-op-judge-target",
+  "kind": "independent-repository",
+  "branch": "codex/preparation-stamped-judge-op-target-20261015",
+  "base": "8b5bcdaa999289a47f066ba829511d450301c573",
+  "base_commit": "8b5bcdaa999289a47f066ba829511d450301c573",
+  "worker_commit": "8b5bcdaa999289a47f066ba829511d450301c573",
+  "role": "judge"
+}

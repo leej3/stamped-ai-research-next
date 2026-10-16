@@ -1,0 +1,11 @@
+{
+  "type": "item.completed",
+  "item": {
+    "id": "item_31",
+    "type": "command_execution",
+    "command": "/opt/homebrew/bin/bash -lc \"ps -Ao pid,ppid,etime,command | rg 'assessment.py fresh-rerun|run_recorded_analysis|pixi run git annex get' | head -20\n\"",
+    "aggregated_output": " 9008  4226       00:00 /opt/homebrew/bin/bash -c ps -Ao pid,ppid,etime,command | rg 'assessment.py fresh-rerun|run_recorded_analysis|pixi run git annex get' | head -20\\012\n 9010  9008       00:00 rg assessment.py fresh-rerun|run_recorded_analysis|pixi run git annex get\n",
+    "exit_code": 0,
+    "status": "completed"
+  }
+}

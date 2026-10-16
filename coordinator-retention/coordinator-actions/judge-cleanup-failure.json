@@ -1,0 +1,32 @@
+{
+  "source": "Stored native checkpoint transcript",
+  "checkpoint": "01M510JADWN8W7J9GF1T3BQB04",
+  "transcript_sha256": "bb04c63a6812fcc655f84ac3db4a60c30d3a97d0d7ad044b4bdebcf807445c54",
+  "line": 376,
+  "event": {
+    "type": "CommandExecution",
+    "id": "exec-c87b068e-58e0-4667-81d1-adde94eb0169",
+    "process_id": "59223",
+    "command": [
+      "/opt/homebrew/bin/bash",
+      "-lc",
+      "\"$STAMPED_ASSESSMENT_PYTHON\" -c 'from pathlib import Path; import shutil; root=Path(\".\"); names=[\"2026-10-16-decoded.json\",\"2026-10-16-table.md\",\"2026-10-16-template.json\",\"date-probe-template.json\",\"fresh-clone\",\"replay-local\"]; [(shutil.rmtree(root/n) if (root/n).is_dir() else (root/n).unlink(missing_ok=True)) for n in names]' \"$STAMPED_JUDGE_OUTPUT\"\ngit -C \"$STAMPED_JUDGE_TARGET\" status --short --branch\ngit -C \"$STAMPED_JUDGE_OUTPUT\" status --short\n"
+    ],
+    "cwd": "file:///Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-op-evidence/judgment-01/judgment",
+    "parsed_cmd": [
+      {
+        "type": "unknown",
+        "cmd": "\"$STAMPED_ASSESSMENT_PYTHON\" -c 'from pathlib import Path; import shutil; root=Path(\".\"); names=[\"2026-10-16-decoded.json\",\"2026-10-16-table.md\",\"2026-10-16-template.json\",\"date-probe-template.json\",\"fresh-clone\",\"replay-local\"]; [(shutil.rmtree(root/n) if (root/n).is_dir() else (root/n).unlink(missing_ok=True)) for n in names]' \"$STAMPED_JUDGE_OUTPUT\"\ngit -C \"$STAMPED_JUDGE_TARGET\" status --short --branch\ngit -C \"$STAMPED_JUDGE_OUTPUT\" status --short\n"
+      }
+    ],
+    "source": "unified_exec_startup",
+    "status": "completed",
+    "aggregated_output": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n    from pathlib import Path; import shutil; root=Path(\".\"); names=[\"2026-10-16-decoded.json\",\"2026-10-16-table.md\",\"2026-10-16-template.json\",\"date-probe-template.json\",\"fresh-clone\",\"replay-local\"]; [(shutil.rmtree(root/n) if (root/n).is_dir() else (root/n).unlink(missing_ok=True)) for n in names]\n                                                                                                                                                                                                           ~~~~~~~~~~~~~^^^^^^^^\n  File \"/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-op-coordinator/.pixi/envs/default/lib/python3.13/shutil.py\", line 763, in rmtree\n    _rmtree_safe_fd(stack, onexc)\n    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^\n  File \"/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-op-coordinator/.pixi/envs/default/lib/python3.13/shutil.py\", line 707, in _rmtree_safe_fd\n    onexc(func, path, err)\n    ~~~~~^^^^^^^^^^^^^^^^^\n  File \"/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-op-coordinator/.pixi/envs/default/lib/python3.13/shutil.py\", line 700, in _rmtree_safe_fd\n    onexc(os.unlink, fullname, err)\n    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-op-coordinator/.pixi/envs/default/lib/python3.13/shutil.py\", line 696, in _rmtree_safe_fd\n    os.unlink(entry.name, dir_fd=topfd)\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^\nPermissionError: [Errno 13] Permission denied: 'fresh-clone/clone/.git/annex/objects/1X/2p/MD5E-s12887--c274be33ee8fbe2353b2213894e9411e'\n## codex/preparation-stamped-judge-op-target-20261015\n?? 2026-10-16-assessment.md\n?? 2026-10-16-fresh-rerun.json\n?? 2026-10-16-probes.json\n?? 2026-10-16-remote-check.txt\n?? 2026-10-16-response.json\n?? 2026-10-16-runtime-check.txt\n?? 2026-10-16-url.txt\n?? fresh-clone/\n?? replay-local/\n",
+    "exit_code": 0,
+    "duration": {
+      "secs": 0,
+      "nanos": 1792
+    }
+  },
+  "limitation": "Judge deleted intermediate response/table files then partially removed first fresh-clone workspace before PermissionError. Compound command exit0 masks Python failure. Stop archive preserves surviving output, not pristine first-attempt workspace. No coordinator deletions or scientific repair."
+}

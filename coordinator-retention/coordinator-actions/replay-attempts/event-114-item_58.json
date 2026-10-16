@@ -1,0 +1,11 @@
+{
+  "type": "item.completed",
+  "item": {
+    "id": "item_58",
+    "type": "command_execution",
+    "command": "/opt/homebrew/bin/bash -lc 'shasum -a 256 /Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-op-evidence/judgment-01/worker-end-state.json\ngit -C \"$STAMPED_JUDGE_TARGET\" rev-parse HEAD\ngit -C \"$STAMPED_JUDGE_TARGET\" status --short\njq -r '\"'.status, .reason' \\\"\"'$STAMPED_JUDGE_OUTPUT/2026-10-16-fresh-rerun.json\"\n'",
+    "aggregated_output": "0c381872b334e7a226479f2595c3e169fcf4dcd45b9906e40cc33d1256797e6d  /Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-op-evidence/judgment-01/worker-end-state.json\n8b5bcdaa999289a47f066ba829511d450301c573\nunmet\nThe documented entry point failed in a fresh clone: `pixi run git annex get input/data && pixi run recorded-analysis` exited 1.\n",
+    "exit_code": 0,
+    "status": "completed"
+  }
+}

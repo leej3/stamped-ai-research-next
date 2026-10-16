@@ -1,0 +1,6 @@
+{
+  "schema_version": 1,
+  "operational_manifest_sha256": "172807b7b4306e3753bc6dce8cac153defd3a4a7b157f7a29f0647d5b6093f71",
+  "classification": "operational-only, excluded from formal comparisons",
+  "full_suite_launch_gate": "Await parent confirmation before native launch."
+}

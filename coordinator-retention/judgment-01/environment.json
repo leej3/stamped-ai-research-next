@@ -1,0 +1,8 @@
+{
+  "source_manifest": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-op-coordinator/pixi.toml",
+  "worker_manifest": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-op-coordinator/pixi.toml",
+  "worker_lock": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-op-coordinator/pixi.lock",
+  "worker_environment_installed": true,
+  "manifest_sha256": "8fbdc76956ca963e9424a93ae87aa851b1f12cbc0f6ab5c0e153fdd828a04d31",
+  "lock_sha256": "f8fff1394fbeaa2ab1c4993fceb0dd6463fe0c08c81fcda397f3e752a72c4249"
+}

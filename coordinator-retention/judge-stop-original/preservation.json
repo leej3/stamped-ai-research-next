@@ -1,0 +1,14 @@
+{
+  "preserved_at": "2026-10-16T00:06:54.692421+00:00",
+  "archive": "artifacts.tar.gz",
+  "bytes": 13577820,
+  "sha256": "1b3088cb8aa441963fa236651c71b94f4f3ff9aaba502d3da98e60cb5cc2f6aa",
+  "omitted": [
+    "judgment/.codex",
+    "judgment/.entire",
+    "judgment/.git",
+    "judgment/replay-local/clone/.pixi"
+  ],
+  "omission_reason": "Reconstructible Pixi/Python caches, and own seed Git/native configuration represented by seed and launch receipts; nested replay Git metadata retained.",
+  "original_stop_status": "complete"
+}

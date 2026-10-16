@@ -1,0 +1,11 @@
+{
+  "argv": [
+    "python",
+    "-c",
+    "import subprocess; subprocess.run([\"git\",\"remote\",\"add\",\"con-hub\",\"https://hub.centerforopenneuroscience.org/leej3/stamped-ai-research-next.git\"],check=True);subprocess.run([\"git\",\"config\",\"remote.con-hub.annexurl\",\"annex+https://hub.centerforopenneuroscience.org:443/git-annex-p2phttp\"],check=True);subprocess.run([\"git\",\"config\",\"remote.con-hub.skipFetchAll\",\"true\"],check=True)"
+  ],
+  "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-op-evidence/judgment-01/judgment",
+  "started_at": "2026-10-16T00:09:07.497472+00:00",
+  "elapsed_seconds": 0.032828417,
+  "returncode": 0
+}

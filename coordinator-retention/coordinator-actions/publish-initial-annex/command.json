@@ -1,0 +1,18 @@
+{
+  "argv": [
+    "pixi",
+    "run",
+    "--manifest-path",
+    "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-op-coordinator/pixi.toml",
+    "git",
+    "annex",
+    "copy",
+    "--to",
+    "con-hub",
+    "--all"
+  ],
+  "cwd": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/cold-stamped-op-evidence/judgment-01/judgment",
+  "started_at": "2026-10-16T00:09:22.215976+00:00",
+  "elapsed_seconds": 1.085836,
+  "returncode": 1
+}
