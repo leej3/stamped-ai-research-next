@@ -1,0 +1,158 @@
+[
+  {
+    "argv": [
+      "git",
+      "init",
+      "--quiet"
+    ],
+    "cwd": "/private/tmp/stamped-hosted-claim-pxamo3pg",
+    "started_at": "2026-10-16T00:16:33.531022+00:00",
+    "finished_at": "2026-10-16T00:16:33.538755+00:00",
+    "exit_code": 0,
+    "stdout_file": "git-init.stdout",
+    "stderr_file": "git-init.stderr",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "git",
+      "for-each-ref",
+      "--format=%(refname) %(objectname)"
+    ],
+    "cwd": "/private/tmp/stamped-hosted-claim-pxamo3pg",
+    "started_at": "2026-10-16T00:16:33.538788+00:00",
+    "finished_at": "2026-10-16T00:16:33.543560+00:00",
+    "exit_code": 0,
+    "stdout_file": "before-refs.stdout",
+    "stderr_file": "before-refs.stderr",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "git",
+      "remote",
+      "-v"
+    ],
+    "cwd": "/private/tmp/stamped-hosted-claim-pxamo3pg",
+    "started_at": "2026-10-16T00:16:33.543583+00:00",
+    "finished_at": "2026-10-16T00:16:33.547881+00:00",
+    "exit_code": 0,
+    "stdout_file": "before-remotes.stdout",
+    "stderr_file": "before-remotes.stderr",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "git",
+      "count-objects",
+      "-v"
+    ],
+    "cwd": "/private/tmp/stamped-hosted-claim-pxamo3pg",
+    "started_at": "2026-10-16T00:16:33.547906+00:00",
+    "finished_at": "2026-10-16T00:16:33.553011+00:00",
+    "exit_code": 0,
+    "stdout_file": "before-objects.stdout",
+    "stderr_file": "before-objects.stderr",
+    "stdout_sha256": "d3794c65db3e693f8b1f4a5f4b1dbdf18f0928e94cb75907b12bd1246ca16fe6",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "git",
+      "rev-parse",
+      "--verify",
+      "HEAD"
+    ],
+    "cwd": "/private/tmp/stamped-hosted-claim-pxamo3pg",
+    "started_at": "2026-10-16T00:16:33.553033+00:00",
+    "finished_at": "2026-10-16T00:16:33.557523+00:00",
+    "exit_code": 128,
+    "stdout_file": "before-head.stdout",
+    "stderr_file": "before-head.stderr",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "9b3fab22fc89a33cf7f4e9d08072e43f29c2999ed2af63b6e8417b2ce9d534b4"
+  },
+  {
+    "argv": [
+      "entire",
+      "checkpoint",
+      "explain",
+      "01M4Y7KZHMVXRTV3TF20RH58V3",
+      "--repo",
+      "gh/leej3/stamped-ai-research",
+      "--json"
+    ],
+    "cwd": "/private/tmp/stamped-hosted-claim-pxamo3pg",
+    "started_at": "2026-10-16T00:16:33.557576+00:00",
+    "finished_at": "2026-10-16T00:16:34.340635+00:00",
+    "exit_code": 0,
+    "stdout_file": "hosted.stdout",
+    "stderr_file": "hosted.stderr",
+    "stdout_sha256": "4fbbed907d1b520ff7a041f44fb75deee3afb01c2e48fe5cb84a507890e00f68",
+    "stderr_sha256": "df4c63f6d3f4cf78da5bb80f8f377764c711320b6d593b1997e0627c846aefe3"
+  },
+  {
+    "argv": [
+      "git",
+      "for-each-ref",
+      "--format=%(refname) %(objectname)"
+    ],
+    "cwd": "/private/tmp/stamped-hosted-claim-pxamo3pg",
+    "started_at": "2026-10-16T00:16:34.340670+00:00",
+    "finished_at": "2026-10-16T00:16:34.346114+00:00",
+    "exit_code": 0,
+    "stdout_file": "after-refs.stdout",
+    "stderr_file": "after-refs.stderr",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "git",
+      "remote",
+      "-v"
+    ],
+    "cwd": "/private/tmp/stamped-hosted-claim-pxamo3pg",
+    "started_at": "2026-10-16T00:16:34.346137+00:00",
+    "finished_at": "2026-10-16T00:16:34.350600+00:00",
+    "exit_code": 0,
+    "stdout_file": "after-remotes.stdout",
+    "stderr_file": "after-remotes.stderr",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "git",
+      "count-objects",
+      "-v"
+    ],
+    "cwd": "/private/tmp/stamped-hosted-claim-pxamo3pg",
+    "started_at": "2026-10-16T00:16:34.350630+00:00",
+    "finished_at": "2026-10-16T00:16:34.355533+00:00",
+    "exit_code": 0,
+    "stdout_file": "after-objects.stdout",
+    "stderr_file": "after-objects.stderr",
+    "stdout_sha256": "d3794c65db3e693f8b1f4a5f4b1dbdf18f0928e94cb75907b12bd1246ca16fe6",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "git",
+      "rev-parse",
+      "--verify",
+      "HEAD"
+    ],
+    "cwd": "/private/tmp/stamped-hosted-claim-pxamo3pg",
+    "started_at": "2026-10-16T00:16:34.355554+00:00",
+    "finished_at": "2026-10-16T00:16:34.360091+00:00",
+    "exit_code": 128,
+    "stdout_file": "after-head.stdout",
+    "stderr_file": "after-head.stderr",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "9b3fab22fc89a33cf7f4e9d08072e43f29c2999ed2af63b6e8417b2ce9d534b4"
+  }
+]

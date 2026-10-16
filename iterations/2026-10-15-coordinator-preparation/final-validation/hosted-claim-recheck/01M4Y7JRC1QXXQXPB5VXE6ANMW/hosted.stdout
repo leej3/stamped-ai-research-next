@@ -1,0 +1,28 @@
+{
+  "checkpoint_id": "01M4Y7JRC1QXXQXPB5VXE6ANMW",
+  "strategy": "manual-commit",
+  "checkpoints_count": 1,
+  "files_touched": [
+    ".setup/native-capture-probe.txt"
+  ],
+  "session_count": 1,
+  "sessions": [
+    {
+      "index": 0,
+      "session_id": "01a13c79-14b4-7d50-888a-1224403c3a6b",
+      "agent": "Codex",
+      "model": "gpt-6-astra",
+      "created_at": "2026-10-14T22:12:30.611816Z",
+      "files_touched": [
+        ".setup/native-capture-probe.txt"
+      ],
+      "token_usage": {
+        "input_tokens": 8294,
+        "cache_creation_tokens": 0,
+        "cache_read_tokens": 32768,
+        "output_tokens": 150,
+        "api_call_count": 2
+      }
+    }
+  ]
+}

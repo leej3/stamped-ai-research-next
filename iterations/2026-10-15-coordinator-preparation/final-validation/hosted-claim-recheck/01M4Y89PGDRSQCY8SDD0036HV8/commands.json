@@ -1,0 +1,158 @@
+[
+  {
+    "argv": [
+      "git",
+      "init",
+      "--quiet"
+    ],
+    "cwd": "/private/tmp/stamped-hosted-claim-mg5fxw8l",
+    "started_at": "2026-10-16T00:16:34.360549+00:00",
+    "finished_at": "2026-10-16T00:16:34.368159+00:00",
+    "exit_code": 0,
+    "stdout_file": "git-init.stdout",
+    "stderr_file": "git-init.stderr",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "git",
+      "for-each-ref",
+      "--format=%(refname) %(objectname)"
+    ],
+    "cwd": "/private/tmp/stamped-hosted-claim-mg5fxw8l",
+    "started_at": "2026-10-16T00:16:34.368183+00:00",
+    "finished_at": "2026-10-16T00:16:34.372949+00:00",
+    "exit_code": 0,
+    "stdout_file": "before-refs.stdout",
+    "stderr_file": "before-refs.stderr",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "git",
+      "remote",
+      "-v"
+    ],
+    "cwd": "/private/tmp/stamped-hosted-claim-mg5fxw8l",
+    "started_at": "2026-10-16T00:16:34.372979+00:00",
+    "finished_at": "2026-10-16T00:16:34.377117+00:00",
+    "exit_code": 0,
+    "stdout_file": "before-remotes.stdout",
+    "stderr_file": "before-remotes.stderr",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "git",
+      "count-objects",
+      "-v"
+    ],
+    "cwd": "/private/tmp/stamped-hosted-claim-mg5fxw8l",
+    "started_at": "2026-10-16T00:16:34.377153+00:00",
+    "finished_at": "2026-10-16T00:16:34.382218+00:00",
+    "exit_code": 0,
+    "stdout_file": "before-objects.stdout",
+    "stderr_file": "before-objects.stderr",
+    "stdout_sha256": "d3794c65db3e693f8b1f4a5f4b1dbdf18f0928e94cb75907b12bd1246ca16fe6",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "git",
+      "rev-parse",
+      "--verify",
+      "HEAD"
+    ],
+    "cwd": "/private/tmp/stamped-hosted-claim-mg5fxw8l",
+    "started_at": "2026-10-16T00:16:34.382236+00:00",
+    "finished_at": "2026-10-16T00:16:34.386462+00:00",
+    "exit_code": 128,
+    "stdout_file": "before-head.stdout",
+    "stderr_file": "before-head.stderr",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "9b3fab22fc89a33cf7f4e9d08072e43f29c2999ed2af63b6e8417b2ce9d534b4"
+  },
+  {
+    "argv": [
+      "entire",
+      "checkpoint",
+      "explain",
+      "01M4Y89PGDRSQCY8SDD0036HV8",
+      "--repo",
+      "gh/leej3/stamped-ai-research",
+      "--json"
+    ],
+    "cwd": "/private/tmp/stamped-hosted-claim-mg5fxw8l",
+    "started_at": "2026-10-16T00:16:34.386510+00:00",
+    "finished_at": "2026-10-16T00:16:35.136724+00:00",
+    "exit_code": 0,
+    "stdout_file": "hosted.stdout",
+    "stderr_file": "hosted.stderr",
+    "stdout_sha256": "21d9f329f117595d76b61f031182dcd4a1b1e454b3405da0b17c9be0691d1531",
+    "stderr_sha256": "1532fb877d4e4e99227762e310f404b274dba4e5e1824ba4d736750d1d5a5ef6"
+  },
+  {
+    "argv": [
+      "git",
+      "for-each-ref",
+      "--format=%(refname) %(objectname)"
+    ],
+    "cwd": "/private/tmp/stamped-hosted-claim-mg5fxw8l",
+    "started_at": "2026-10-16T00:16:35.136755+00:00",
+    "finished_at": "2026-10-16T00:16:35.142333+00:00",
+    "exit_code": 0,
+    "stdout_file": "after-refs.stdout",
+    "stderr_file": "after-refs.stderr",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "git",
+      "remote",
+      "-v"
+    ],
+    "cwd": "/private/tmp/stamped-hosted-claim-mg5fxw8l",
+    "started_at": "2026-10-16T00:16:35.142358+00:00",
+    "finished_at": "2026-10-16T00:16:35.146684+00:00",
+    "exit_code": 0,
+    "stdout_file": "after-remotes.stdout",
+    "stderr_file": "after-remotes.stderr",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "git",
+      "count-objects",
+      "-v"
+    ],
+    "cwd": "/private/tmp/stamped-hosted-claim-mg5fxw8l",
+    "started_at": "2026-10-16T00:16:35.146714+00:00",
+    "finished_at": "2026-10-16T00:16:35.151869+00:00",
+    "exit_code": 0,
+    "stdout_file": "after-objects.stdout",
+    "stderr_file": "after-objects.stderr",
+    "stdout_sha256": "d3794c65db3e693f8b1f4a5f4b1dbdf18f0928e94cb75907b12bd1246ca16fe6",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "argv": [
+      "git",
+      "rev-parse",
+      "--verify",
+      "HEAD"
+    ],
+    "cwd": "/private/tmp/stamped-hosted-claim-mg5fxw8l",
+    "started_at": "2026-10-16T00:16:35.151888+00:00",
+    "finished_at": "2026-10-16T00:16:35.156321+00:00",
+    "exit_code": 128,
+    "stdout_file": "after-head.stdout",
+    "stderr_file": "after-head.stderr",
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "9b3fab22fc89a33cf7f4e9d08072e43f29c2999ed2af63b6e8417b2ce9d534b4"
+  }
+]

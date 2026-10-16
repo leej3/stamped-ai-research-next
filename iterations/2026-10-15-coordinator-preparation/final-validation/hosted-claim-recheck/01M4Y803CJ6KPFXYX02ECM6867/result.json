@@ -1,0 +1,124 @@
+{
+  "group": "old-pilot-research",
+  "source": "/Users/johnlee/code/CON/stamped-ai-research/experiments/01-participant-rt/capture/treatment.json",
+  "source_sha256": "e8887a90a940c098ced40fb97cdef434b0b365e86062375bcd089e7ee37c7e77",
+  "checkpoint_id": "01M4Y803CJ6KPFXYX02ECM6867",
+  "expected_session_id": "01a13c7b-a74a-7fc1-a920-d48d135aaeb9",
+  "requested_hosted_repository": "gh/leej3/stamped-ai-research",
+  "verified_at": "2026-10-16T00:16:35.790963+00:00",
+  "hosted_verified": true,
+  "command_exit_code": 0,
+  "returned_checkpoint_id": "01M4Y803CJ6KPFXYX02ECM6867",
+  "returned_session_ids": [
+    "01a13c7b-a74a-7fc1-a920-d48d135aaeb9"
+  ],
+  "metadata": {
+    "checkpoint_id": "01M4Y803CJ6KPFXYX02ECM6867",
+    "strategy": "manual-commit",
+    "checkpoints_count": 1,
+    "files_touched": [
+      "derivatives/gambling-rt/environment.json",
+      "derivatives/gambling-rt/median-rt.svg",
+      "derivatives/gambling-rt/results.json",
+      "derivatives/gambling-rt/run-summary.tsv",
+      "derivatives/gambling-rt/trial-audit.tsv",
+      "reports/assessment.json",
+      "reports/checklist-answers.json",
+      "reports/checklist-responses.json",
+      "reports/datalad-run-message.txt",
+      "reports/datalad-transformation.json",
+      "reports/object-manifest.json",
+      "reports/report.md",
+      "reports/run.json",
+      "reports/skill-use.json",
+      "reports/verification.json"
+    ],
+    "session_count": 1,
+    "sessions": [
+      {
+        "index": 0,
+        "session_id": "01a13c7b-a74a-7fc1-a920-d48d135aaeb9",
+        "agent": "Codex",
+        "model": "gpt-6-astra",
+        "created_at": "2026-10-14T22:20:44.895859Z",
+        "files_touched": [
+          "derivatives/gambling-rt/environment.json",
+          "derivatives/gambling-rt/median-rt.svg",
+          "derivatives/gambling-rt/results.json",
+          "derivatives/gambling-rt/run-summary.tsv",
+          "derivatives/gambling-rt/trial-audit.tsv",
+          "reports/assessment.json",
+          "reports/checklist-answers.json",
+          "reports/checklist-responses.json",
+          "reports/datalad-run-message.txt",
+          "reports/datalad-transformation.json",
+          "reports/object-manifest.json",
+          "reports/report.md",
+          "reports/run.json",
+          "reports/skill-use.json",
+          "reports/verification.json"
+        ],
+        "token_usage": {
+          "input_tokens": 6554,
+          "cache_creation_tokens": 0,
+          "cache_read_tokens": 280576,
+          "output_tokens": 2323,
+          "api_call_count": 4
+        }
+      }
+    ]
+  },
+  "empty_git_context": "/private/tmp/stamped-hosted-claim-1xhoew8h",
+  "before": {
+    "refs": {
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    "remotes": {
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    "objects": {
+      "exit_code": 0,
+      "stdout": "count: 0\nsize: 0\nin-pack: 0\npacks: 0\nsize-pack: 0\nprune-packable: 0\ngarbage: 0\nsize-garbage: 0\n",
+      "stderr": ""
+    },
+    "head": {
+      "exit_code": 128,
+      "stdout": "",
+      "stderr": "fatal: Needed a single revision\n"
+    },
+    "empty_git_context": true
+  },
+  "after": {
+    "refs": {
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    "remotes": {
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    "objects": {
+      "exit_code": 0,
+      "stdout": "count: 0\nsize: 0\nin-pack: 0\npacks: 0\nsize-pack: 0\nprune-packable: 0\ngarbage: 0\nsize-garbage: 0\n",
+      "stderr": ""
+    },
+    "head": {
+      "exit_code": 128,
+      "stdout": "",
+      "stderr": "fatal: Needed a single revision\n"
+    },
+    "empty_git_context": true
+  },
+  "removed_git_environment_variable_names": [
+    "GIT_PAGER"
+  ],
+  "local_metadata_fallback_excluded": true,
+  "raw_transcript_requested": false,
+  "url_available_in_metadata": false
+}

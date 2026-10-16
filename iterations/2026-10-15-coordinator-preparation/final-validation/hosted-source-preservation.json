@@ -1,0 +1,2037 @@
+{
+  "preserved_at": "2026-10-16T00:21:48.223011+00:00",
+  "method": "Byte-for-byte copies of existing external audit and formal source-creation evidence; exporters were not executed.",
+  "files": [
+    {
+      "path": "hosted-claim-recheck/01M4Y7JQJ96V75PYA4767KT6B4/after-head.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7JQJ96V75PYA4767KT6B4/after-head.stderr",
+      "sha256": "9b3fab22fc89a33cf7f4e9d08072e43f29c2999ed2af63b6e8417b2ce9d534b4",
+      "bytes": 32
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7JQJ96V75PYA4767KT6B4/after-head.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7JQJ96V75PYA4767KT6B4/after-head.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7JQJ96V75PYA4767KT6B4/after-objects.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7JQJ96V75PYA4767KT6B4/after-objects.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7JQJ96V75PYA4767KT6B4/after-objects.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7JQJ96V75PYA4767KT6B4/after-objects.stdout",
+      "sha256": "d3794c65db3e693f8b1f4a5f4b1dbdf18f0928e94cb75907b12bd1246ca16fe6",
+      "bytes": 95
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7JQJ96V75PYA4767KT6B4/after-refs.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7JQJ96V75PYA4767KT6B4/after-refs.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7JQJ96V75PYA4767KT6B4/after-refs.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7JQJ96V75PYA4767KT6B4/after-refs.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7JQJ96V75PYA4767KT6B4/after-remotes.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7JQJ96V75PYA4767KT6B4/after-remotes.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7JQJ96V75PYA4767KT6B4/after-remotes.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7JQJ96V75PYA4767KT6B4/after-remotes.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7JQJ96V75PYA4767KT6B4/before-head.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7JQJ96V75PYA4767KT6B4/before-head.stderr",
+      "sha256": "9b3fab22fc89a33cf7f4e9d08072e43f29c2999ed2af63b6e8417b2ce9d534b4",
+      "bytes": 32
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7JQJ96V75PYA4767KT6B4/before-head.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7JQJ96V75PYA4767KT6B4/before-head.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7JQJ96V75PYA4767KT6B4/before-objects.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7JQJ96V75PYA4767KT6B4/before-objects.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7JQJ96V75PYA4767KT6B4/before-objects.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7JQJ96V75PYA4767KT6B4/before-objects.stdout",
+      "sha256": "d3794c65db3e693f8b1f4a5f4b1dbdf18f0928e94cb75907b12bd1246ca16fe6",
+      "bytes": 95
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7JQJ96V75PYA4767KT6B4/before-refs.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7JQJ96V75PYA4767KT6B4/before-refs.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7JQJ96V75PYA4767KT6B4/before-refs.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7JQJ96V75PYA4767KT6B4/before-refs.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7JQJ96V75PYA4767KT6B4/before-remotes.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7JQJ96V75PYA4767KT6B4/before-remotes.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7JQJ96V75PYA4767KT6B4/before-remotes.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7JQJ96V75PYA4767KT6B4/before-remotes.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7JQJ96V75PYA4767KT6B4/commands.json",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7JQJ96V75PYA4767KT6B4/commands.json",
+      "sha256": "036657095b7d45f60757fb1712592f3c6b2395649829c268a4e0c5d39610bdaa",
+      "bytes": 5412
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7JQJ96V75PYA4767KT6B4/git-init.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7JQJ96V75PYA4767KT6B4/git-init.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7JQJ96V75PYA4767KT6B4/git-init.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7JQJ96V75PYA4767KT6B4/git-init.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7JQJ96V75PYA4767KT6B4/hosted.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7JQJ96V75PYA4767KT6B4/hosted.stderr",
+      "sha256": "ede0b98960aec07dda063777a8ca8a68ef8204013bd017894d1b734831966478",
+      "bytes": 84
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7JQJ96V75PYA4767KT6B4/hosted.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7JQJ96V75PYA4767KT6B4/hosted.stdout",
+      "sha256": "63e2be24c7a58fd2c420fb476b9bb8108418bb42304e12792092108c305be432",
+      "bytes": 678
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7JQJ96V75PYA4767KT6B4/result.json",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7JQJ96V75PYA4767KT6B4/result.json",
+      "sha256": "aa30bb48639ca3057cc1f4ea4236098b9cc54fc97aad063057209f39b34a2e39",
+      "bytes": 2687
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7JRC1QXXQXPB5VXE6ANMW/after-head.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7JRC1QXXQXPB5VXE6ANMW/after-head.stderr",
+      "sha256": "9b3fab22fc89a33cf7f4e9d08072e43f29c2999ed2af63b6e8417b2ce9d534b4",
+      "bytes": 32
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7JRC1QXXQXPB5VXE6ANMW/after-head.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7JRC1QXXQXPB5VXE6ANMW/after-head.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7JRC1QXXQXPB5VXE6ANMW/after-objects.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7JRC1QXXQXPB5VXE6ANMW/after-objects.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7JRC1QXXQXPB5VXE6ANMW/after-objects.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7JRC1QXXQXPB5VXE6ANMW/after-objects.stdout",
+      "sha256": "d3794c65db3e693f8b1f4a5f4b1dbdf18f0928e94cb75907b12bd1246ca16fe6",
+      "bytes": 95
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7JRC1QXXQXPB5VXE6ANMW/after-refs.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7JRC1QXXQXPB5VXE6ANMW/after-refs.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7JRC1QXXQXPB5VXE6ANMW/after-refs.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7JRC1QXXQXPB5VXE6ANMW/after-refs.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7JRC1QXXQXPB5VXE6ANMW/after-remotes.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7JRC1QXXQXPB5VXE6ANMW/after-remotes.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7JRC1QXXQXPB5VXE6ANMW/after-remotes.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7JRC1QXXQXPB5VXE6ANMW/after-remotes.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7JRC1QXXQXPB5VXE6ANMW/before-head.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7JRC1QXXQXPB5VXE6ANMW/before-head.stderr",
+      "sha256": "9b3fab22fc89a33cf7f4e9d08072e43f29c2999ed2af63b6e8417b2ce9d534b4",
+      "bytes": 32
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7JRC1QXXQXPB5VXE6ANMW/before-head.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7JRC1QXXQXPB5VXE6ANMW/before-head.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7JRC1QXXQXPB5VXE6ANMW/before-objects.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7JRC1QXXQXPB5VXE6ANMW/before-objects.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7JRC1QXXQXPB5VXE6ANMW/before-objects.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7JRC1QXXQXPB5VXE6ANMW/before-objects.stdout",
+      "sha256": "d3794c65db3e693f8b1f4a5f4b1dbdf18f0928e94cb75907b12bd1246ca16fe6",
+      "bytes": 95
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7JRC1QXXQXPB5VXE6ANMW/before-refs.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7JRC1QXXQXPB5VXE6ANMW/before-refs.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7JRC1QXXQXPB5VXE6ANMW/before-refs.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7JRC1QXXQXPB5VXE6ANMW/before-refs.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7JRC1QXXQXPB5VXE6ANMW/before-remotes.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7JRC1QXXQXPB5VXE6ANMW/before-remotes.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7JRC1QXXQXPB5VXE6ANMW/before-remotes.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7JRC1QXXQXPB5VXE6ANMW/before-remotes.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7JRC1QXXQXPB5VXE6ANMW/commands.json",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7JRC1QXXQXPB5VXE6ANMW/commands.json",
+      "sha256": "ad4c756404ab98661f43df6b07192468bf8aa501a885c2e553cd2b8d7fd0f914",
+      "bytes": 5412
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7JRC1QXXQXPB5VXE6ANMW/git-init.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7JRC1QXXQXPB5VXE6ANMW/git-init.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7JRC1QXXQXPB5VXE6ANMW/git-init.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7JRC1QXXQXPB5VXE6ANMW/git-init.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7JRC1QXXQXPB5VXE6ANMW/hosted.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7JRC1QXXQXPB5VXE6ANMW/hosted.stderr",
+      "sha256": "eff535324283ec506d58564e3fb72e1e33894ecf1ccabbe948cd69d94305aa9a",
+      "bytes": 84
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7JRC1QXXQXPB5VXE6ANMW/hosted.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7JRC1QXXQXPB5VXE6ANMW/hosted.stdout",
+      "sha256": "4ed6c876575ce8236e860aa2ce733f35e42f1674ba7460c863551d8b5696965b",
+      "bytes": 678
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7JRC1QXXQXPB5VXE6ANMW/result.json",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7JRC1QXXQXPB5VXE6ANMW/result.json",
+      "sha256": "f6012b7eb212020ffd8c56e8ac5968dc6feda87ad4af1726bdfdc473d1d66e01",
+      "bytes": 2686
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7JXYT75D1Q8VNMQEFYTQ7/after-head.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7JXYT75D1Q8VNMQEFYTQ7/after-head.stderr",
+      "sha256": "9b3fab22fc89a33cf7f4e9d08072e43f29c2999ed2af63b6e8417b2ce9d534b4",
+      "bytes": 32
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7JXYT75D1Q8VNMQEFYTQ7/after-head.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7JXYT75D1Q8VNMQEFYTQ7/after-head.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7JXYT75D1Q8VNMQEFYTQ7/after-objects.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7JXYT75D1Q8VNMQEFYTQ7/after-objects.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7JXYT75D1Q8VNMQEFYTQ7/after-objects.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7JXYT75D1Q8VNMQEFYTQ7/after-objects.stdout",
+      "sha256": "d3794c65db3e693f8b1f4a5f4b1dbdf18f0928e94cb75907b12bd1246ca16fe6",
+      "bytes": 95
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7JXYT75D1Q8VNMQEFYTQ7/after-refs.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7JXYT75D1Q8VNMQEFYTQ7/after-refs.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7JXYT75D1Q8VNMQEFYTQ7/after-refs.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7JXYT75D1Q8VNMQEFYTQ7/after-refs.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7JXYT75D1Q8VNMQEFYTQ7/after-remotes.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7JXYT75D1Q8VNMQEFYTQ7/after-remotes.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7JXYT75D1Q8VNMQEFYTQ7/after-remotes.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7JXYT75D1Q8VNMQEFYTQ7/after-remotes.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7JXYT75D1Q8VNMQEFYTQ7/before-head.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7JXYT75D1Q8VNMQEFYTQ7/before-head.stderr",
+      "sha256": "9b3fab22fc89a33cf7f4e9d08072e43f29c2999ed2af63b6e8417b2ce9d534b4",
+      "bytes": 32
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7JXYT75D1Q8VNMQEFYTQ7/before-head.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7JXYT75D1Q8VNMQEFYTQ7/before-head.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7JXYT75D1Q8VNMQEFYTQ7/before-objects.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7JXYT75D1Q8VNMQEFYTQ7/before-objects.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7JXYT75D1Q8VNMQEFYTQ7/before-objects.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7JXYT75D1Q8VNMQEFYTQ7/before-objects.stdout",
+      "sha256": "d3794c65db3e693f8b1f4a5f4b1dbdf18f0928e94cb75907b12bd1246ca16fe6",
+      "bytes": 95
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7JXYT75D1Q8VNMQEFYTQ7/before-refs.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7JXYT75D1Q8VNMQEFYTQ7/before-refs.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7JXYT75D1Q8VNMQEFYTQ7/before-refs.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7JXYT75D1Q8VNMQEFYTQ7/before-refs.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7JXYT75D1Q8VNMQEFYTQ7/before-remotes.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7JXYT75D1Q8VNMQEFYTQ7/before-remotes.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7JXYT75D1Q8VNMQEFYTQ7/before-remotes.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7JXYT75D1Q8VNMQEFYTQ7/before-remotes.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7JXYT75D1Q8VNMQEFYTQ7/commands.json",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7JXYT75D1Q8VNMQEFYTQ7/commands.json",
+      "sha256": "aa3e5019bf2f7b3939739b6657d425b030e31e8f842b726cd6c64c4ff40f9b76",
+      "bytes": 5412
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7JXYT75D1Q8VNMQEFYTQ7/git-init.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7JXYT75D1Q8VNMQEFYTQ7/git-init.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7JXYT75D1Q8VNMQEFYTQ7/git-init.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7JXYT75D1Q8VNMQEFYTQ7/git-init.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7JXYT75D1Q8VNMQEFYTQ7/hosted.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7JXYT75D1Q8VNMQEFYTQ7/hosted.stderr",
+      "sha256": "00a43025c60b213de0849c383b2084140fa9cd3bff801c3066474bac29cd3e46",
+      "bytes": 84
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7JXYT75D1Q8VNMQEFYTQ7/hosted.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7JXYT75D1Q8VNMQEFYTQ7/hosted.stdout",
+      "sha256": "cde841c3dbf45afb2d425b0ad2f726cd969156837ed13b5e3fbf94c4380e3623",
+      "bytes": 678
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7JXYT75D1Q8VNMQEFYTQ7/result.json",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7JXYT75D1Q8VNMQEFYTQ7/result.json",
+      "sha256": "5d6a4a778ac9b69784e0223d82634640f83e66b1b3dd32a60fe6276c358e6bc7",
+      "bytes": 2686
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7KREKZM80CVD524BGEHRA/after-head.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7KREKZM80CVD524BGEHRA/after-head.stderr",
+      "sha256": "9b3fab22fc89a33cf7f4e9d08072e43f29c2999ed2af63b6e8417b2ce9d534b4",
+      "bytes": 32
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7KREKZM80CVD524BGEHRA/after-head.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7KREKZM80CVD524BGEHRA/after-head.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7KREKZM80CVD524BGEHRA/after-objects.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7KREKZM80CVD524BGEHRA/after-objects.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7KREKZM80CVD524BGEHRA/after-objects.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7KREKZM80CVD524BGEHRA/after-objects.stdout",
+      "sha256": "d3794c65db3e693f8b1f4a5f4b1dbdf18f0928e94cb75907b12bd1246ca16fe6",
+      "bytes": 95
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7KREKZM80CVD524BGEHRA/after-refs.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7KREKZM80CVD524BGEHRA/after-refs.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7KREKZM80CVD524BGEHRA/after-refs.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7KREKZM80CVD524BGEHRA/after-refs.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7KREKZM80CVD524BGEHRA/after-remotes.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7KREKZM80CVD524BGEHRA/after-remotes.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7KREKZM80CVD524BGEHRA/after-remotes.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7KREKZM80CVD524BGEHRA/after-remotes.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7KREKZM80CVD524BGEHRA/before-head.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7KREKZM80CVD524BGEHRA/before-head.stderr",
+      "sha256": "9b3fab22fc89a33cf7f4e9d08072e43f29c2999ed2af63b6e8417b2ce9d534b4",
+      "bytes": 32
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7KREKZM80CVD524BGEHRA/before-head.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7KREKZM80CVD524BGEHRA/before-head.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7KREKZM80CVD524BGEHRA/before-objects.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7KREKZM80CVD524BGEHRA/before-objects.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7KREKZM80CVD524BGEHRA/before-objects.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7KREKZM80CVD524BGEHRA/before-objects.stdout",
+      "sha256": "d3794c65db3e693f8b1f4a5f4b1dbdf18f0928e94cb75907b12bd1246ca16fe6",
+      "bytes": 95
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7KREKZM80CVD524BGEHRA/before-refs.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7KREKZM80CVD524BGEHRA/before-refs.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7KREKZM80CVD524BGEHRA/before-refs.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7KREKZM80CVD524BGEHRA/before-refs.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7KREKZM80CVD524BGEHRA/before-remotes.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7KREKZM80CVD524BGEHRA/before-remotes.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7KREKZM80CVD524BGEHRA/before-remotes.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7KREKZM80CVD524BGEHRA/before-remotes.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7KREKZM80CVD524BGEHRA/commands.json",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7KREKZM80CVD524BGEHRA/commands.json",
+      "sha256": "eb9b2d2472bc82f41790b2ae560113913c43fd63e12f28335866f75c279016ee",
+      "bytes": 5412
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7KREKZM80CVD524BGEHRA/git-init.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7KREKZM80CVD524BGEHRA/git-init.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7KREKZM80CVD524BGEHRA/git-init.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7KREKZM80CVD524BGEHRA/git-init.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7KREKZM80CVD524BGEHRA/hosted.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7KREKZM80CVD524BGEHRA/hosted.stderr",
+      "sha256": "07a9d5ef4f54ca23be969cf2eb586ccac4fb6ede7849230d8ee1e690d995d636",
+      "bytes": 84
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7KREKZM80CVD524BGEHRA/hosted.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7KREKZM80CVD524BGEHRA/hosted.stdout",
+      "sha256": "8ae0667490de5e6eda343ad64393b86887f3702c2a73d65efff3f937acd6b33d",
+      "bytes": 678
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7KREKZM80CVD524BGEHRA/result.json",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7KREKZM80CVD524BGEHRA/result.json",
+      "sha256": "081c11f33bae5618eb7cfd0cc52f99e395a553618b5d1d72bf200642124c7898",
+      "bytes": 2687
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7KX2MP1Z2V7Q82HSQZNFY/after-head.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7KX2MP1Z2V7Q82HSQZNFY/after-head.stderr",
+      "sha256": "9b3fab22fc89a33cf7f4e9d08072e43f29c2999ed2af63b6e8417b2ce9d534b4",
+      "bytes": 32
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7KX2MP1Z2V7Q82HSQZNFY/after-head.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7KX2MP1Z2V7Q82HSQZNFY/after-head.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7KX2MP1Z2V7Q82HSQZNFY/after-objects.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7KX2MP1Z2V7Q82HSQZNFY/after-objects.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7KX2MP1Z2V7Q82HSQZNFY/after-objects.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7KX2MP1Z2V7Q82HSQZNFY/after-objects.stdout",
+      "sha256": "d3794c65db3e693f8b1f4a5f4b1dbdf18f0928e94cb75907b12bd1246ca16fe6",
+      "bytes": 95
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7KX2MP1Z2V7Q82HSQZNFY/after-refs.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7KX2MP1Z2V7Q82HSQZNFY/after-refs.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7KX2MP1Z2V7Q82HSQZNFY/after-refs.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7KX2MP1Z2V7Q82HSQZNFY/after-refs.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7KX2MP1Z2V7Q82HSQZNFY/after-remotes.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7KX2MP1Z2V7Q82HSQZNFY/after-remotes.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7KX2MP1Z2V7Q82HSQZNFY/after-remotes.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7KX2MP1Z2V7Q82HSQZNFY/after-remotes.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7KX2MP1Z2V7Q82HSQZNFY/before-head.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7KX2MP1Z2V7Q82HSQZNFY/before-head.stderr",
+      "sha256": "9b3fab22fc89a33cf7f4e9d08072e43f29c2999ed2af63b6e8417b2ce9d534b4",
+      "bytes": 32
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7KX2MP1Z2V7Q82HSQZNFY/before-head.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7KX2MP1Z2V7Q82HSQZNFY/before-head.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7KX2MP1Z2V7Q82HSQZNFY/before-objects.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7KX2MP1Z2V7Q82HSQZNFY/before-objects.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7KX2MP1Z2V7Q82HSQZNFY/before-objects.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7KX2MP1Z2V7Q82HSQZNFY/before-objects.stdout",
+      "sha256": "d3794c65db3e693f8b1f4a5f4b1dbdf18f0928e94cb75907b12bd1246ca16fe6",
+      "bytes": 95
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7KX2MP1Z2V7Q82HSQZNFY/before-refs.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7KX2MP1Z2V7Q82HSQZNFY/before-refs.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7KX2MP1Z2V7Q82HSQZNFY/before-refs.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7KX2MP1Z2V7Q82HSQZNFY/before-refs.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7KX2MP1Z2V7Q82HSQZNFY/before-remotes.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7KX2MP1Z2V7Q82HSQZNFY/before-remotes.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7KX2MP1Z2V7Q82HSQZNFY/before-remotes.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7KX2MP1Z2V7Q82HSQZNFY/before-remotes.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7KX2MP1Z2V7Q82HSQZNFY/commands.json",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7KX2MP1Z2V7Q82HSQZNFY/commands.json",
+      "sha256": "80e9be5b7a9b25390c860529dc453a7cd120680460efb243daa9d08e468dfb41",
+      "bytes": 5412
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7KX2MP1Z2V7Q82HSQZNFY/git-init.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7KX2MP1Z2V7Q82HSQZNFY/git-init.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7KX2MP1Z2V7Q82HSQZNFY/git-init.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7KX2MP1Z2V7Q82HSQZNFY/git-init.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7KX2MP1Z2V7Q82HSQZNFY/hosted.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7KX2MP1Z2V7Q82HSQZNFY/hosted.stderr",
+      "sha256": "cdb43fba84a63f017d90123f91134813689ff9c6874e54aabd02c1c20331a015",
+      "bytes": 84
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7KX2MP1Z2V7Q82HSQZNFY/hosted.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7KX2MP1Z2V7Q82HSQZNFY/hosted.stdout",
+      "sha256": "c82c00e1405bfe8227dde2a28d49fb20a59359b4d40cab6489c6aeef6cb18cf2",
+      "bytes": 678
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7KX2MP1Z2V7Q82HSQZNFY/result.json",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7KX2MP1Z2V7Q82HSQZNFY/result.json",
+      "sha256": "896061c3d048c7b29940e47464bcdbdee1007e680a625c595c18afe98fcd5612",
+      "bytes": 2687
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7KZHMVXRTV3TF20RH58V3/after-head.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7KZHMVXRTV3TF20RH58V3/after-head.stderr",
+      "sha256": "9b3fab22fc89a33cf7f4e9d08072e43f29c2999ed2af63b6e8417b2ce9d534b4",
+      "bytes": 32
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7KZHMVXRTV3TF20RH58V3/after-head.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7KZHMVXRTV3TF20RH58V3/after-head.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7KZHMVXRTV3TF20RH58V3/after-objects.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7KZHMVXRTV3TF20RH58V3/after-objects.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7KZHMVXRTV3TF20RH58V3/after-objects.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7KZHMVXRTV3TF20RH58V3/after-objects.stdout",
+      "sha256": "d3794c65db3e693f8b1f4a5f4b1dbdf18f0928e94cb75907b12bd1246ca16fe6",
+      "bytes": 95
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7KZHMVXRTV3TF20RH58V3/after-refs.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7KZHMVXRTV3TF20RH58V3/after-refs.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7KZHMVXRTV3TF20RH58V3/after-refs.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7KZHMVXRTV3TF20RH58V3/after-refs.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7KZHMVXRTV3TF20RH58V3/after-remotes.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7KZHMVXRTV3TF20RH58V3/after-remotes.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7KZHMVXRTV3TF20RH58V3/after-remotes.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7KZHMVXRTV3TF20RH58V3/after-remotes.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7KZHMVXRTV3TF20RH58V3/before-head.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7KZHMVXRTV3TF20RH58V3/before-head.stderr",
+      "sha256": "9b3fab22fc89a33cf7f4e9d08072e43f29c2999ed2af63b6e8417b2ce9d534b4",
+      "bytes": 32
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7KZHMVXRTV3TF20RH58V3/before-head.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7KZHMVXRTV3TF20RH58V3/before-head.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7KZHMVXRTV3TF20RH58V3/before-objects.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7KZHMVXRTV3TF20RH58V3/before-objects.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7KZHMVXRTV3TF20RH58V3/before-objects.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7KZHMVXRTV3TF20RH58V3/before-objects.stdout",
+      "sha256": "d3794c65db3e693f8b1f4a5f4b1dbdf18f0928e94cb75907b12bd1246ca16fe6",
+      "bytes": 95
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7KZHMVXRTV3TF20RH58V3/before-refs.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7KZHMVXRTV3TF20RH58V3/before-refs.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7KZHMVXRTV3TF20RH58V3/before-refs.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7KZHMVXRTV3TF20RH58V3/before-refs.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7KZHMVXRTV3TF20RH58V3/before-remotes.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7KZHMVXRTV3TF20RH58V3/before-remotes.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7KZHMVXRTV3TF20RH58V3/before-remotes.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7KZHMVXRTV3TF20RH58V3/before-remotes.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7KZHMVXRTV3TF20RH58V3/commands.json",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7KZHMVXRTV3TF20RH58V3/commands.json",
+      "sha256": "8112fe725a9cc47437ce2bd0161471362fe13604f5dfda6871c1a4f7d982b207",
+      "bytes": 5412
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7KZHMVXRTV3TF20RH58V3/git-init.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7KZHMVXRTV3TF20RH58V3/git-init.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7KZHMVXRTV3TF20RH58V3/git-init.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7KZHMVXRTV3TF20RH58V3/git-init.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7KZHMVXRTV3TF20RH58V3/hosted.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7KZHMVXRTV3TF20RH58V3/hosted.stderr",
+      "sha256": "df4c63f6d3f4cf78da5bb80f8f377764c711320b6d593b1997e0627c846aefe3",
+      "bytes": 84
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7KZHMVXRTV3TF20RH58V3/hosted.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7KZHMVXRTV3TF20RH58V3/hosted.stdout",
+      "sha256": "4fbbed907d1b520ff7a041f44fb75deee3afb01c2e48fe5cb84a507890e00f68",
+      "bytes": 678
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y7KZHMVXRTV3TF20RH58V3/result.json",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y7KZHMVXRTV3TF20RH58V3/result.json",
+      "sha256": "37163f136e2f8f31e00eb38aea09a35ab5d9fa0bacf298b88b24253981e7a1f5",
+      "bytes": 2686
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y803CJ6KPFXYX02ECM6867/after-head.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y803CJ6KPFXYX02ECM6867/after-head.stderr",
+      "sha256": "9b3fab22fc89a33cf7f4e9d08072e43f29c2999ed2af63b6e8417b2ce9d534b4",
+      "bytes": 32
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y803CJ6KPFXYX02ECM6867/after-head.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y803CJ6KPFXYX02ECM6867/after-head.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y803CJ6KPFXYX02ECM6867/after-objects.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y803CJ6KPFXYX02ECM6867/after-objects.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y803CJ6KPFXYX02ECM6867/after-objects.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y803CJ6KPFXYX02ECM6867/after-objects.stdout",
+      "sha256": "d3794c65db3e693f8b1f4a5f4b1dbdf18f0928e94cb75907b12bd1246ca16fe6",
+      "bytes": 95
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y803CJ6KPFXYX02ECM6867/after-refs.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y803CJ6KPFXYX02ECM6867/after-refs.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y803CJ6KPFXYX02ECM6867/after-refs.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y803CJ6KPFXYX02ECM6867/after-refs.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y803CJ6KPFXYX02ECM6867/after-remotes.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y803CJ6KPFXYX02ECM6867/after-remotes.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y803CJ6KPFXYX02ECM6867/after-remotes.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y803CJ6KPFXYX02ECM6867/after-remotes.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y803CJ6KPFXYX02ECM6867/before-head.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y803CJ6KPFXYX02ECM6867/before-head.stderr",
+      "sha256": "9b3fab22fc89a33cf7f4e9d08072e43f29c2999ed2af63b6e8417b2ce9d534b4",
+      "bytes": 32
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y803CJ6KPFXYX02ECM6867/before-head.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y803CJ6KPFXYX02ECM6867/before-head.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y803CJ6KPFXYX02ECM6867/before-objects.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y803CJ6KPFXYX02ECM6867/before-objects.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y803CJ6KPFXYX02ECM6867/before-objects.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y803CJ6KPFXYX02ECM6867/before-objects.stdout",
+      "sha256": "d3794c65db3e693f8b1f4a5f4b1dbdf18f0928e94cb75907b12bd1246ca16fe6",
+      "bytes": 95
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y803CJ6KPFXYX02ECM6867/before-refs.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y803CJ6KPFXYX02ECM6867/before-refs.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y803CJ6KPFXYX02ECM6867/before-refs.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y803CJ6KPFXYX02ECM6867/before-refs.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y803CJ6KPFXYX02ECM6867/before-remotes.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y803CJ6KPFXYX02ECM6867/before-remotes.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y803CJ6KPFXYX02ECM6867/before-remotes.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y803CJ6KPFXYX02ECM6867/before-remotes.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y803CJ6KPFXYX02ECM6867/commands.json",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y803CJ6KPFXYX02ECM6867/commands.json",
+      "sha256": "a72858563662307f05b0fc3f0449de15a86d797eeb105e314da791c7d9918841",
+      "bytes": 5412
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y803CJ6KPFXYX02ECM6867/git-init.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y803CJ6KPFXYX02ECM6867/git-init.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y803CJ6KPFXYX02ECM6867/git-init.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y803CJ6KPFXYX02ECM6867/git-init.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y803CJ6KPFXYX02ECM6867/hosted.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y803CJ6KPFXYX02ECM6867/hosted.stderr",
+      "sha256": "7d03d2a7681c4f515d69f11cccc5208b1ee9b7dfcca2ff282b1bdecf085b19ad",
+      "bytes": 84
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y803CJ6KPFXYX02ECM6867/hosted.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y803CJ6KPFXYX02ECM6867/hosted.stdout",
+      "sha256": "d2a2151750c776cdf26d52b0cb49eec2bca7f03fe8c93124ff085dfd8d2bfb59",
+      "bytes": 1798
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y803CJ6KPFXYX02ECM6867/result.json",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y803CJ6KPFXYX02ECM6867/result.json",
+      "sha256": "078201ffd476912c0e231e3b0d49330a19d5c11b7a51347ade8e423a1fb57ed6",
+      "bytes": 3873
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y89PGDRSQCY8SDD0036HV8/after-head.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y89PGDRSQCY8SDD0036HV8/after-head.stderr",
+      "sha256": "9b3fab22fc89a33cf7f4e9d08072e43f29c2999ed2af63b6e8417b2ce9d534b4",
+      "bytes": 32
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y89PGDRSQCY8SDD0036HV8/after-head.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y89PGDRSQCY8SDD0036HV8/after-head.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y89PGDRSQCY8SDD0036HV8/after-objects.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y89PGDRSQCY8SDD0036HV8/after-objects.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y89PGDRSQCY8SDD0036HV8/after-objects.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y89PGDRSQCY8SDD0036HV8/after-objects.stdout",
+      "sha256": "d3794c65db3e693f8b1f4a5f4b1dbdf18f0928e94cb75907b12bd1246ca16fe6",
+      "bytes": 95
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y89PGDRSQCY8SDD0036HV8/after-refs.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y89PGDRSQCY8SDD0036HV8/after-refs.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y89PGDRSQCY8SDD0036HV8/after-refs.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y89PGDRSQCY8SDD0036HV8/after-refs.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y89PGDRSQCY8SDD0036HV8/after-remotes.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y89PGDRSQCY8SDD0036HV8/after-remotes.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y89PGDRSQCY8SDD0036HV8/after-remotes.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y89PGDRSQCY8SDD0036HV8/after-remotes.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y89PGDRSQCY8SDD0036HV8/before-head.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y89PGDRSQCY8SDD0036HV8/before-head.stderr",
+      "sha256": "9b3fab22fc89a33cf7f4e9d08072e43f29c2999ed2af63b6e8417b2ce9d534b4",
+      "bytes": 32
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y89PGDRSQCY8SDD0036HV8/before-head.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y89PGDRSQCY8SDD0036HV8/before-head.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y89PGDRSQCY8SDD0036HV8/before-objects.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y89PGDRSQCY8SDD0036HV8/before-objects.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y89PGDRSQCY8SDD0036HV8/before-objects.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y89PGDRSQCY8SDD0036HV8/before-objects.stdout",
+      "sha256": "d3794c65db3e693f8b1f4a5f4b1dbdf18f0928e94cb75907b12bd1246ca16fe6",
+      "bytes": 95
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y89PGDRSQCY8SDD0036HV8/before-refs.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y89PGDRSQCY8SDD0036HV8/before-refs.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y89PGDRSQCY8SDD0036HV8/before-refs.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y89PGDRSQCY8SDD0036HV8/before-refs.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y89PGDRSQCY8SDD0036HV8/before-remotes.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y89PGDRSQCY8SDD0036HV8/before-remotes.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y89PGDRSQCY8SDD0036HV8/before-remotes.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y89PGDRSQCY8SDD0036HV8/before-remotes.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y89PGDRSQCY8SDD0036HV8/commands.json",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y89PGDRSQCY8SDD0036HV8/commands.json",
+      "sha256": "7179978431d3f1e7d7597d052fbee49bfd3a5f4b039dd935a0ed647c741bba83",
+      "bytes": 5412
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y89PGDRSQCY8SDD0036HV8/git-init.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y89PGDRSQCY8SDD0036HV8/git-init.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y89PGDRSQCY8SDD0036HV8/git-init.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y89PGDRSQCY8SDD0036HV8/git-init.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y89PGDRSQCY8SDD0036HV8/hosted.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y89PGDRSQCY8SDD0036HV8/hosted.stderr",
+      "sha256": "1532fb877d4e4e99227762e310f404b274dba4e5e1824ba4d736750d1d5a5ef6",
+      "bytes": 84
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y89PGDRSQCY8SDD0036HV8/hosted.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y89PGDRSQCY8SDD0036HV8/hosted.stdout",
+      "sha256": "21d9f329f117595d76b61f031182dcd4a1b1e454b3405da0b17c9be0691d1531",
+      "bytes": 759
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y89PGDRSQCY8SDD0036HV8/result.json",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y89PGDRSQCY8SDD0036HV8/result.json",
+      "sha256": "2c2906eefdd9f6a013f41d69a43f556a1cd2da6bcd8f918181fff51a90964f7f",
+      "bytes": 2785
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y97TV8QYMRSJA31E1HQJRW/after-head.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y97TV8QYMRSJA31E1HQJRW/after-head.stderr",
+      "sha256": "9b3fab22fc89a33cf7f4e9d08072e43f29c2999ed2af63b6e8417b2ce9d534b4",
+      "bytes": 32
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y97TV8QYMRSJA31E1HQJRW/after-head.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y97TV8QYMRSJA31E1HQJRW/after-head.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y97TV8QYMRSJA31E1HQJRW/after-objects.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y97TV8QYMRSJA31E1HQJRW/after-objects.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y97TV8QYMRSJA31E1HQJRW/after-objects.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y97TV8QYMRSJA31E1HQJRW/after-objects.stdout",
+      "sha256": "d3794c65db3e693f8b1f4a5f4b1dbdf18f0928e94cb75907b12bd1246ca16fe6",
+      "bytes": 95
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y97TV8QYMRSJA31E1HQJRW/after-refs.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y97TV8QYMRSJA31E1HQJRW/after-refs.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y97TV8QYMRSJA31E1HQJRW/after-refs.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y97TV8QYMRSJA31E1HQJRW/after-refs.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y97TV8QYMRSJA31E1HQJRW/after-remotes.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y97TV8QYMRSJA31E1HQJRW/after-remotes.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y97TV8QYMRSJA31E1HQJRW/after-remotes.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y97TV8QYMRSJA31E1HQJRW/after-remotes.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y97TV8QYMRSJA31E1HQJRW/before-head.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y97TV8QYMRSJA31E1HQJRW/before-head.stderr",
+      "sha256": "9b3fab22fc89a33cf7f4e9d08072e43f29c2999ed2af63b6e8417b2ce9d534b4",
+      "bytes": 32
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y97TV8QYMRSJA31E1HQJRW/before-head.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y97TV8QYMRSJA31E1HQJRW/before-head.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y97TV8QYMRSJA31E1HQJRW/before-objects.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y97TV8QYMRSJA31E1HQJRW/before-objects.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y97TV8QYMRSJA31E1HQJRW/before-objects.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y97TV8QYMRSJA31E1HQJRW/before-objects.stdout",
+      "sha256": "d3794c65db3e693f8b1f4a5f4b1dbdf18f0928e94cb75907b12bd1246ca16fe6",
+      "bytes": 95
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y97TV8QYMRSJA31E1HQJRW/before-refs.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y97TV8QYMRSJA31E1HQJRW/before-refs.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y97TV8QYMRSJA31E1HQJRW/before-refs.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y97TV8QYMRSJA31E1HQJRW/before-refs.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y97TV8QYMRSJA31E1HQJRW/before-remotes.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y97TV8QYMRSJA31E1HQJRW/before-remotes.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y97TV8QYMRSJA31E1HQJRW/before-remotes.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y97TV8QYMRSJA31E1HQJRW/before-remotes.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y97TV8QYMRSJA31E1HQJRW/commands.json",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y97TV8QYMRSJA31E1HQJRW/commands.json",
+      "sha256": "ff2928325a252252169e5c49f4a9b75d0f304e40cde25fdc87b068a0ba8dfecc",
+      "bytes": 5412
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y97TV8QYMRSJA31E1HQJRW/git-init.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y97TV8QYMRSJA31E1HQJRW/git-init.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y97TV8QYMRSJA31E1HQJRW/git-init.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y97TV8QYMRSJA31E1HQJRW/git-init.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y97TV8QYMRSJA31E1HQJRW/hosted.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y97TV8QYMRSJA31E1HQJRW/hosted.stderr",
+      "sha256": "c30c075086e1b029422a31ba0e187379547078ccab811de4afacd5aedb3e9195",
+      "bytes": 84
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y97TV8QYMRSJA31E1HQJRW/hosted.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y97TV8QYMRSJA31E1HQJRW/hosted.stdout",
+      "sha256": "831a6db2d43a0af552f113211fdaacba7d6c5d556929375415bf487d56db081d",
+      "bytes": 3301
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y97TV8QYMRSJA31E1HQJRW/result.json",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y97TV8QYMRSJA31E1HQJRW/result.json",
+      "sha256": "eb16ba908900f3477a28109d70c635017aa81f3662d55f2d909606b0a53dc6dc",
+      "bytes": 5427
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y9KHSR17379GHE3KGM52T8/after-head.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y9KHSR17379GHE3KGM52T8/after-head.stderr",
+      "sha256": "9b3fab22fc89a33cf7f4e9d08072e43f29c2999ed2af63b6e8417b2ce9d534b4",
+      "bytes": 32
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y9KHSR17379GHE3KGM52T8/after-head.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y9KHSR17379GHE3KGM52T8/after-head.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y9KHSR17379GHE3KGM52T8/after-objects.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y9KHSR17379GHE3KGM52T8/after-objects.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y9KHSR17379GHE3KGM52T8/after-objects.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y9KHSR17379GHE3KGM52T8/after-objects.stdout",
+      "sha256": "d3794c65db3e693f8b1f4a5f4b1dbdf18f0928e94cb75907b12bd1246ca16fe6",
+      "bytes": 95
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y9KHSR17379GHE3KGM52T8/after-refs.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y9KHSR17379GHE3KGM52T8/after-refs.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y9KHSR17379GHE3KGM52T8/after-refs.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y9KHSR17379GHE3KGM52T8/after-refs.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y9KHSR17379GHE3KGM52T8/after-remotes.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y9KHSR17379GHE3KGM52T8/after-remotes.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y9KHSR17379GHE3KGM52T8/after-remotes.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y9KHSR17379GHE3KGM52T8/after-remotes.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y9KHSR17379GHE3KGM52T8/before-head.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y9KHSR17379GHE3KGM52T8/before-head.stderr",
+      "sha256": "9b3fab22fc89a33cf7f4e9d08072e43f29c2999ed2af63b6e8417b2ce9d534b4",
+      "bytes": 32
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y9KHSR17379GHE3KGM52T8/before-head.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y9KHSR17379GHE3KGM52T8/before-head.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y9KHSR17379GHE3KGM52T8/before-objects.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y9KHSR17379GHE3KGM52T8/before-objects.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y9KHSR17379GHE3KGM52T8/before-objects.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y9KHSR17379GHE3KGM52T8/before-objects.stdout",
+      "sha256": "d3794c65db3e693f8b1f4a5f4b1dbdf18f0928e94cb75907b12bd1246ca16fe6",
+      "bytes": 95
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y9KHSR17379GHE3KGM52T8/before-refs.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y9KHSR17379GHE3KGM52T8/before-refs.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y9KHSR17379GHE3KGM52T8/before-refs.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y9KHSR17379GHE3KGM52T8/before-refs.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y9KHSR17379GHE3KGM52T8/before-remotes.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y9KHSR17379GHE3KGM52T8/before-remotes.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y9KHSR17379GHE3KGM52T8/before-remotes.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y9KHSR17379GHE3KGM52T8/before-remotes.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y9KHSR17379GHE3KGM52T8/commands.json",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y9KHSR17379GHE3KGM52T8/commands.json",
+      "sha256": "42995752c7f3bd693d3abfa179cfed18f07464e481848d5c874484780603396c",
+      "bytes": 5412
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y9KHSR17379GHE3KGM52T8/git-init.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y9KHSR17379GHE3KGM52T8/git-init.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y9KHSR17379GHE3KGM52T8/git-init.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y9KHSR17379GHE3KGM52T8/git-init.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y9KHSR17379GHE3KGM52T8/hosted.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y9KHSR17379GHE3KGM52T8/hosted.stderr",
+      "sha256": "03bfc7ff82536d4e938fb4e398e94179c53247b6dbd0dbbcbe1256ab61a9dbf7",
+      "bytes": 84
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y9KHSR17379GHE3KGM52T8/hosted.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y9KHSR17379GHE3KGM52T8/hosted.stdout",
+      "sha256": "3477b81c26cb5a0085f57f0bedc35bcc5f7de0161c7a987a7191b4c80c94b9ea",
+      "bytes": 1776
+    },
+    {
+      "path": "hosted-claim-recheck/01M4Y9KHSR17379GHE3KGM52T8/result.json",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4Y9KHSR17379GHE3KGM52T8/result.json",
+      "sha256": "2f507eb532f6362f81729ec75839383e726ae2202bfe53209a976724079c383d",
+      "bytes": 3837
+    },
+    {
+      "path": "hosted-claim-recheck/01M4YA3FY80T4KZ5Z21VZT655Y/after-head.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4YA3FY80T4KZ5Z21VZT655Y/after-head.stderr",
+      "sha256": "9b3fab22fc89a33cf7f4e9d08072e43f29c2999ed2af63b6e8417b2ce9d534b4",
+      "bytes": 32
+    },
+    {
+      "path": "hosted-claim-recheck/01M4YA3FY80T4KZ5Z21VZT655Y/after-head.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4YA3FY80T4KZ5Z21VZT655Y/after-head.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4YA3FY80T4KZ5Z21VZT655Y/after-objects.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4YA3FY80T4KZ5Z21VZT655Y/after-objects.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4YA3FY80T4KZ5Z21VZT655Y/after-objects.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4YA3FY80T4KZ5Z21VZT655Y/after-objects.stdout",
+      "sha256": "d3794c65db3e693f8b1f4a5f4b1dbdf18f0928e94cb75907b12bd1246ca16fe6",
+      "bytes": 95
+    },
+    {
+      "path": "hosted-claim-recheck/01M4YA3FY80T4KZ5Z21VZT655Y/after-refs.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4YA3FY80T4KZ5Z21VZT655Y/after-refs.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4YA3FY80T4KZ5Z21VZT655Y/after-refs.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4YA3FY80T4KZ5Z21VZT655Y/after-refs.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4YA3FY80T4KZ5Z21VZT655Y/after-remotes.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4YA3FY80T4KZ5Z21VZT655Y/after-remotes.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4YA3FY80T4KZ5Z21VZT655Y/after-remotes.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4YA3FY80T4KZ5Z21VZT655Y/after-remotes.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4YA3FY80T4KZ5Z21VZT655Y/before-head.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4YA3FY80T4KZ5Z21VZT655Y/before-head.stderr",
+      "sha256": "9b3fab22fc89a33cf7f4e9d08072e43f29c2999ed2af63b6e8417b2ce9d534b4",
+      "bytes": 32
+    },
+    {
+      "path": "hosted-claim-recheck/01M4YA3FY80T4KZ5Z21VZT655Y/before-head.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4YA3FY80T4KZ5Z21VZT655Y/before-head.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4YA3FY80T4KZ5Z21VZT655Y/before-objects.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4YA3FY80T4KZ5Z21VZT655Y/before-objects.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4YA3FY80T4KZ5Z21VZT655Y/before-objects.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4YA3FY80T4KZ5Z21VZT655Y/before-objects.stdout",
+      "sha256": "d3794c65db3e693f8b1f4a5f4b1dbdf18f0928e94cb75907b12bd1246ca16fe6",
+      "bytes": 95
+    },
+    {
+      "path": "hosted-claim-recheck/01M4YA3FY80T4KZ5Z21VZT655Y/before-refs.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4YA3FY80T4KZ5Z21VZT655Y/before-refs.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4YA3FY80T4KZ5Z21VZT655Y/before-refs.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4YA3FY80T4KZ5Z21VZT655Y/before-refs.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4YA3FY80T4KZ5Z21VZT655Y/before-remotes.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4YA3FY80T4KZ5Z21VZT655Y/before-remotes.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4YA3FY80T4KZ5Z21VZT655Y/before-remotes.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4YA3FY80T4KZ5Z21VZT655Y/before-remotes.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4YA3FY80T4KZ5Z21VZT655Y/commands.json",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4YA3FY80T4KZ5Z21VZT655Y/commands.json",
+      "sha256": "57dd8a1fe473361f639047a19a15def7c167a7d49be15bdbda24919c7dc5fdf7",
+      "bytes": 5412
+    },
+    {
+      "path": "hosted-claim-recheck/01M4YA3FY80T4KZ5Z21VZT655Y/git-init.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4YA3FY80T4KZ5Z21VZT655Y/git-init.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4YA3FY80T4KZ5Z21VZT655Y/git-init.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4YA3FY80T4KZ5Z21VZT655Y/git-init.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4YA3FY80T4KZ5Z21VZT655Y/hosted.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4YA3FY80T4KZ5Z21VZT655Y/hosted.stderr",
+      "sha256": "d5507dfd81863273b0b3ab069845c80dc1e1960e505a99df62a75b97b3741e23",
+      "bytes": 84
+    },
+    {
+      "path": "hosted-claim-recheck/01M4YA3FY80T4KZ5Z21VZT655Y/hosted.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4YA3FY80T4KZ5Z21VZT655Y/hosted.stdout",
+      "sha256": "f8805d971649cbbdb196cce791eb3fe6e1986f10a064fe70229e36aa8fb71d21",
+      "bytes": 1840
+    },
+    {
+      "path": "hosted-claim-recheck/01M4YA3FY80T4KZ5Z21VZT655Y/result.json",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4YA3FY80T4KZ5Z21VZT655Y/result.json",
+      "sha256": "ced7697c3dbe0a728a21139e5df1083e7e7b95a680f994850ce394162371996a",
+      "bytes": 3914
+    },
+    {
+      "path": "hosted-claim-recheck/01M4YAP5VQCVR7DXD3NYWHG6PP/after-head.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4YAP5VQCVR7DXD3NYWHG6PP/after-head.stderr",
+      "sha256": "9b3fab22fc89a33cf7f4e9d08072e43f29c2999ed2af63b6e8417b2ce9d534b4",
+      "bytes": 32
+    },
+    {
+      "path": "hosted-claim-recheck/01M4YAP5VQCVR7DXD3NYWHG6PP/after-head.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4YAP5VQCVR7DXD3NYWHG6PP/after-head.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4YAP5VQCVR7DXD3NYWHG6PP/after-objects.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4YAP5VQCVR7DXD3NYWHG6PP/after-objects.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4YAP5VQCVR7DXD3NYWHG6PP/after-objects.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4YAP5VQCVR7DXD3NYWHG6PP/after-objects.stdout",
+      "sha256": "d3794c65db3e693f8b1f4a5f4b1dbdf18f0928e94cb75907b12bd1246ca16fe6",
+      "bytes": 95
+    },
+    {
+      "path": "hosted-claim-recheck/01M4YAP5VQCVR7DXD3NYWHG6PP/after-refs.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4YAP5VQCVR7DXD3NYWHG6PP/after-refs.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4YAP5VQCVR7DXD3NYWHG6PP/after-refs.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4YAP5VQCVR7DXD3NYWHG6PP/after-refs.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4YAP5VQCVR7DXD3NYWHG6PP/after-remotes.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4YAP5VQCVR7DXD3NYWHG6PP/after-remotes.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4YAP5VQCVR7DXD3NYWHG6PP/after-remotes.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4YAP5VQCVR7DXD3NYWHG6PP/after-remotes.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4YAP5VQCVR7DXD3NYWHG6PP/before-head.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4YAP5VQCVR7DXD3NYWHG6PP/before-head.stderr",
+      "sha256": "9b3fab22fc89a33cf7f4e9d08072e43f29c2999ed2af63b6e8417b2ce9d534b4",
+      "bytes": 32
+    },
+    {
+      "path": "hosted-claim-recheck/01M4YAP5VQCVR7DXD3NYWHG6PP/before-head.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4YAP5VQCVR7DXD3NYWHG6PP/before-head.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4YAP5VQCVR7DXD3NYWHG6PP/before-objects.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4YAP5VQCVR7DXD3NYWHG6PP/before-objects.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4YAP5VQCVR7DXD3NYWHG6PP/before-objects.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4YAP5VQCVR7DXD3NYWHG6PP/before-objects.stdout",
+      "sha256": "d3794c65db3e693f8b1f4a5f4b1dbdf18f0928e94cb75907b12bd1246ca16fe6",
+      "bytes": 95
+    },
+    {
+      "path": "hosted-claim-recheck/01M4YAP5VQCVR7DXD3NYWHG6PP/before-refs.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4YAP5VQCVR7DXD3NYWHG6PP/before-refs.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4YAP5VQCVR7DXD3NYWHG6PP/before-refs.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4YAP5VQCVR7DXD3NYWHG6PP/before-refs.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4YAP5VQCVR7DXD3NYWHG6PP/before-remotes.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4YAP5VQCVR7DXD3NYWHG6PP/before-remotes.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4YAP5VQCVR7DXD3NYWHG6PP/before-remotes.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4YAP5VQCVR7DXD3NYWHG6PP/before-remotes.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4YAP5VQCVR7DXD3NYWHG6PP/commands.json",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4YAP5VQCVR7DXD3NYWHG6PP/commands.json",
+      "sha256": "40b70a2645c0ab29950c3ad6a64968ac5e65039f93914ec1391156f2e99674ab",
+      "bytes": 5412
+    },
+    {
+      "path": "hosted-claim-recheck/01M4YAP5VQCVR7DXD3NYWHG6PP/git-init.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4YAP5VQCVR7DXD3NYWHG6PP/git-init.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4YAP5VQCVR7DXD3NYWHG6PP/git-init.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4YAP5VQCVR7DXD3NYWHG6PP/git-init.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M4YAP5VQCVR7DXD3NYWHG6PP/hosted.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4YAP5VQCVR7DXD3NYWHG6PP/hosted.stderr",
+      "sha256": "8bbbd090ce19e58b3bb40b068cef450b03ebf29cd3e426a8a9db5bd1b61880a2",
+      "bytes": 84
+    },
+    {
+      "path": "hosted-claim-recheck/01M4YAP5VQCVR7DXD3NYWHG6PP/hosted.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4YAP5VQCVR7DXD3NYWHG6PP/hosted.stdout",
+      "sha256": "a296a7758aad3f7195cf0f1c689ba025cb149245a9651536539769099f12de47",
+      "bytes": 787
+    },
+    {
+      "path": "hosted-claim-recheck/01M4YAP5VQCVR7DXD3NYWHG6PP/result.json",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M4YAP5VQCVR7DXD3NYWHG6PP/result.json",
+      "sha256": "41ddb9d4c9bf530dccbc109365b96ebefd345bcd42a6dc717d2faabd4b338128",
+      "bytes": 2814
+    },
+    {
+      "path": "hosted-claim-recheck/01M50SK1726HDTHJHVPPS8WED8/after-head.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M50SK1726HDTHJHVPPS8WED8/after-head.stderr",
+      "sha256": "9b3fab22fc89a33cf7f4e9d08072e43f29c2999ed2af63b6e8417b2ce9d534b4",
+      "bytes": 32
+    },
+    {
+      "path": "hosted-claim-recheck/01M50SK1726HDTHJHVPPS8WED8/after-head.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M50SK1726HDTHJHVPPS8WED8/after-head.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M50SK1726HDTHJHVPPS8WED8/after-objects.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M50SK1726HDTHJHVPPS8WED8/after-objects.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M50SK1726HDTHJHVPPS8WED8/after-objects.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M50SK1726HDTHJHVPPS8WED8/after-objects.stdout",
+      "sha256": "d3794c65db3e693f8b1f4a5f4b1dbdf18f0928e94cb75907b12bd1246ca16fe6",
+      "bytes": 95
+    },
+    {
+      "path": "hosted-claim-recheck/01M50SK1726HDTHJHVPPS8WED8/after-refs.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M50SK1726HDTHJHVPPS8WED8/after-refs.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M50SK1726HDTHJHVPPS8WED8/after-refs.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M50SK1726HDTHJHVPPS8WED8/after-refs.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M50SK1726HDTHJHVPPS8WED8/after-remotes.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M50SK1726HDTHJHVPPS8WED8/after-remotes.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M50SK1726HDTHJHVPPS8WED8/after-remotes.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M50SK1726HDTHJHVPPS8WED8/after-remotes.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M50SK1726HDTHJHVPPS8WED8/before-head.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M50SK1726HDTHJHVPPS8WED8/before-head.stderr",
+      "sha256": "9b3fab22fc89a33cf7f4e9d08072e43f29c2999ed2af63b6e8417b2ce9d534b4",
+      "bytes": 32
+    },
+    {
+      "path": "hosted-claim-recheck/01M50SK1726HDTHJHVPPS8WED8/before-head.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M50SK1726HDTHJHVPPS8WED8/before-head.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M50SK1726HDTHJHVPPS8WED8/before-objects.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M50SK1726HDTHJHVPPS8WED8/before-objects.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M50SK1726HDTHJHVPPS8WED8/before-objects.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M50SK1726HDTHJHVPPS8WED8/before-objects.stdout",
+      "sha256": "d3794c65db3e693f8b1f4a5f4b1dbdf18f0928e94cb75907b12bd1246ca16fe6",
+      "bytes": 95
+    },
+    {
+      "path": "hosted-claim-recheck/01M50SK1726HDTHJHVPPS8WED8/before-refs.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M50SK1726HDTHJHVPPS8WED8/before-refs.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M50SK1726HDTHJHVPPS8WED8/before-refs.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M50SK1726HDTHJHVPPS8WED8/before-refs.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M50SK1726HDTHJHVPPS8WED8/before-remotes.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M50SK1726HDTHJHVPPS8WED8/before-remotes.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M50SK1726HDTHJHVPPS8WED8/before-remotes.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M50SK1726HDTHJHVPPS8WED8/before-remotes.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M50SK1726HDTHJHVPPS8WED8/commands.json",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M50SK1726HDTHJHVPPS8WED8/commands.json",
+      "sha256": "a4d311f51a67c000e76e9f6ac72dffb83b77454edc945094dca4882e13bc0b64",
+      "bytes": 5417
+    },
+    {
+      "path": "hosted-claim-recheck/01M50SK1726HDTHJHVPPS8WED8/git-init.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M50SK1726HDTHJHVPPS8WED8/git-init.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M50SK1726HDTHJHVPPS8WED8/git-init.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M50SK1726HDTHJHVPPS8WED8/git-init.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M50SK1726HDTHJHVPPS8WED8/hosted.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M50SK1726HDTHJHVPPS8WED8/hosted.stderr",
+      "sha256": "82592cacf1580b519dbe2493d7d5c9caed87dfbabbdda247f70af4bfdf9cd394",
+      "bytes": 89
+    },
+    {
+      "path": "hosted-claim-recheck/01M50SK1726HDTHJHVPPS8WED8/hosted.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M50SK1726HDTHJHVPPS8WED8/hosted.stdout",
+      "sha256": "156dd2f0c579f31da3c6a7c9e202ca78c5f62c6ee735a48592ed340ce6f315db",
+      "bytes": 657
+    },
+    {
+      "path": "hosted-claim-recheck/01M50SK1726HDTHJHVPPS8WED8/result.json",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M50SK1726HDTHJHVPPS8WED8/result.json",
+      "sha256": "70ccedd27a86ab96e62a388f0b5d97354f99a45ad36e5eb0bdc2c15910aa7579",
+      "bytes": 2717
+    },
+    {
+      "path": "hosted-claim-recheck/01M50WA7M7BXX498YBX999D7FQ/after-head.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M50WA7M7BXX498YBX999D7FQ/after-head.stderr",
+      "sha256": "9b3fab22fc89a33cf7f4e9d08072e43f29c2999ed2af63b6e8417b2ce9d534b4",
+      "bytes": 32
+    },
+    {
+      "path": "hosted-claim-recheck/01M50WA7M7BXX498YBX999D7FQ/after-head.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M50WA7M7BXX498YBX999D7FQ/after-head.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M50WA7M7BXX498YBX999D7FQ/after-objects.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M50WA7M7BXX498YBX999D7FQ/after-objects.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M50WA7M7BXX498YBX999D7FQ/after-objects.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M50WA7M7BXX498YBX999D7FQ/after-objects.stdout",
+      "sha256": "d3794c65db3e693f8b1f4a5f4b1dbdf18f0928e94cb75907b12bd1246ca16fe6",
+      "bytes": 95
+    },
+    {
+      "path": "hosted-claim-recheck/01M50WA7M7BXX498YBX999D7FQ/after-refs.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M50WA7M7BXX498YBX999D7FQ/after-refs.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M50WA7M7BXX498YBX999D7FQ/after-refs.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M50WA7M7BXX498YBX999D7FQ/after-refs.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M50WA7M7BXX498YBX999D7FQ/after-remotes.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M50WA7M7BXX498YBX999D7FQ/after-remotes.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M50WA7M7BXX498YBX999D7FQ/after-remotes.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M50WA7M7BXX498YBX999D7FQ/after-remotes.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M50WA7M7BXX498YBX999D7FQ/before-head.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M50WA7M7BXX498YBX999D7FQ/before-head.stderr",
+      "sha256": "9b3fab22fc89a33cf7f4e9d08072e43f29c2999ed2af63b6e8417b2ce9d534b4",
+      "bytes": 32
+    },
+    {
+      "path": "hosted-claim-recheck/01M50WA7M7BXX498YBX999D7FQ/before-head.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M50WA7M7BXX498YBX999D7FQ/before-head.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M50WA7M7BXX498YBX999D7FQ/before-objects.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M50WA7M7BXX498YBX999D7FQ/before-objects.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M50WA7M7BXX498YBX999D7FQ/before-objects.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M50WA7M7BXX498YBX999D7FQ/before-objects.stdout",
+      "sha256": "d3794c65db3e693f8b1f4a5f4b1dbdf18f0928e94cb75907b12bd1246ca16fe6",
+      "bytes": 95
+    },
+    {
+      "path": "hosted-claim-recheck/01M50WA7M7BXX498YBX999D7FQ/before-refs.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M50WA7M7BXX498YBX999D7FQ/before-refs.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M50WA7M7BXX498YBX999D7FQ/before-refs.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M50WA7M7BXX498YBX999D7FQ/before-refs.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M50WA7M7BXX498YBX999D7FQ/before-remotes.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M50WA7M7BXX498YBX999D7FQ/before-remotes.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M50WA7M7BXX498YBX999D7FQ/before-remotes.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M50WA7M7BXX498YBX999D7FQ/before-remotes.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M50WA7M7BXX498YBX999D7FQ/commands.json",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M50WA7M7BXX498YBX999D7FQ/commands.json",
+      "sha256": "8586ac8b7063b108091dad6d8779fd68148a0b92564d6e3669ebd99c01853494",
+      "bytes": 5417
+    },
+    {
+      "path": "hosted-claim-recheck/01M50WA7M7BXX498YBX999D7FQ/git-init.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M50WA7M7BXX498YBX999D7FQ/git-init.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M50WA7M7BXX498YBX999D7FQ/git-init.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M50WA7M7BXX498YBX999D7FQ/git-init.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M50WA7M7BXX498YBX999D7FQ/hosted.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M50WA7M7BXX498YBX999D7FQ/hosted.stderr",
+      "sha256": "f3fdd3893263494c06e758afbf2ffdc4f54cc18b0ee772898a62ac3563adcad3",
+      "bytes": 89
+    },
+    {
+      "path": "hosted-claim-recheck/01M50WA7M7BXX498YBX999D7FQ/hosted.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M50WA7M7BXX498YBX999D7FQ/hosted.stdout",
+      "sha256": "3c8346eae0c226546ed06f5961af92ef55c2b76b355fb005114d7c4281788abb",
+      "bytes": 3959
+    },
+    {
+      "path": "hosted-claim-recheck/01M50WA7M7BXX498YBX999D7FQ/result.json",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M50WA7M7BXX498YBX999D7FQ/result.json",
+      "sha256": "4274055c4848f00a8029d5b823c33334a8b40b2fae0fa87694294d2c3bea5aab",
+      "bytes": 6157
+    },
+    {
+      "path": "hosted-claim-recheck/01M50YXJW556KH5SFXDQWFAV2T/after-head.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M50YXJW556KH5SFXDQWFAV2T/after-head.stderr",
+      "sha256": "9b3fab22fc89a33cf7f4e9d08072e43f29c2999ed2af63b6e8417b2ce9d534b4",
+      "bytes": 32
+    },
+    {
+      "path": "hosted-claim-recheck/01M50YXJW556KH5SFXDQWFAV2T/after-head.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M50YXJW556KH5SFXDQWFAV2T/after-head.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M50YXJW556KH5SFXDQWFAV2T/after-objects.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M50YXJW556KH5SFXDQWFAV2T/after-objects.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M50YXJW556KH5SFXDQWFAV2T/after-objects.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M50YXJW556KH5SFXDQWFAV2T/after-objects.stdout",
+      "sha256": "d3794c65db3e693f8b1f4a5f4b1dbdf18f0928e94cb75907b12bd1246ca16fe6",
+      "bytes": 95
+    },
+    {
+      "path": "hosted-claim-recheck/01M50YXJW556KH5SFXDQWFAV2T/after-refs.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M50YXJW556KH5SFXDQWFAV2T/after-refs.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M50YXJW556KH5SFXDQWFAV2T/after-refs.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M50YXJW556KH5SFXDQWFAV2T/after-refs.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M50YXJW556KH5SFXDQWFAV2T/after-remotes.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M50YXJW556KH5SFXDQWFAV2T/after-remotes.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M50YXJW556KH5SFXDQWFAV2T/after-remotes.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M50YXJW556KH5SFXDQWFAV2T/after-remotes.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M50YXJW556KH5SFXDQWFAV2T/before-head.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M50YXJW556KH5SFXDQWFAV2T/before-head.stderr",
+      "sha256": "9b3fab22fc89a33cf7f4e9d08072e43f29c2999ed2af63b6e8417b2ce9d534b4",
+      "bytes": 32
+    },
+    {
+      "path": "hosted-claim-recheck/01M50YXJW556KH5SFXDQWFAV2T/before-head.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M50YXJW556KH5SFXDQWFAV2T/before-head.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M50YXJW556KH5SFXDQWFAV2T/before-objects.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M50YXJW556KH5SFXDQWFAV2T/before-objects.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M50YXJW556KH5SFXDQWFAV2T/before-objects.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M50YXJW556KH5SFXDQWFAV2T/before-objects.stdout",
+      "sha256": "d3794c65db3e693f8b1f4a5f4b1dbdf18f0928e94cb75907b12bd1246ca16fe6",
+      "bytes": 95
+    },
+    {
+      "path": "hosted-claim-recheck/01M50YXJW556KH5SFXDQWFAV2T/before-refs.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M50YXJW556KH5SFXDQWFAV2T/before-refs.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M50YXJW556KH5SFXDQWFAV2T/before-refs.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M50YXJW556KH5SFXDQWFAV2T/before-refs.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M50YXJW556KH5SFXDQWFAV2T/before-remotes.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M50YXJW556KH5SFXDQWFAV2T/before-remotes.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M50YXJW556KH5SFXDQWFAV2T/before-remotes.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M50YXJW556KH5SFXDQWFAV2T/before-remotes.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M50YXJW556KH5SFXDQWFAV2T/commands.json",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M50YXJW556KH5SFXDQWFAV2T/commands.json",
+      "sha256": "6ebc089e976864272337ed8a94582067f567c5805010bd6663d78f36da62b97d",
+      "bytes": 5417
+    },
+    {
+      "path": "hosted-claim-recheck/01M50YXJW556KH5SFXDQWFAV2T/git-init.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M50YXJW556KH5SFXDQWFAV2T/git-init.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M50YXJW556KH5SFXDQWFAV2T/git-init.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M50YXJW556KH5SFXDQWFAV2T/git-init.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "hosted-claim-recheck/01M50YXJW556KH5SFXDQWFAV2T/hosted.stderr",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M50YXJW556KH5SFXDQWFAV2T/hosted.stderr",
+      "sha256": "f3d615ccc8627a5010671a94f8110656e1226ed9154966f0e6c0d6cbcb89a110",
+      "bytes": 89
+    },
+    {
+      "path": "hosted-claim-recheck/01M50YXJW556KH5SFXDQWFAV2T/hosted.stdout",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M50YXJW556KH5SFXDQWFAV2T/hosted.stdout",
+      "sha256": "5d3d44ac3440afffcaec6572709f0bfed4eeda1fcbc61ba21fe1bb6ce5ae5be3",
+      "bytes": 654
+    },
+    {
+      "path": "hosted-claim-recheck/01M50YXJW556KH5SFXDQWFAV2T/result.json",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/01M50YXJW556KH5SFXDQWFAV2T/result.json",
+      "sha256": "a164b8a69aba2b2aaad1950f9c1d3a1576048b36ece3f0ff1288b04836bc2984",
+      "bytes": 2727
+    },
+    {
+      "path": "hosted-claim-recheck/evidence-urls.json",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/evidence-urls.json",
+      "sha256": "9864e3a32330751ad9366d7b15f3140800f61443473e8c76a750950b99e28dab",
+      "bytes": 15609
+    },
+    {
+      "path": "hosted-claim-recheck/expected.json",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/expected.json",
+      "sha256": "9f04cc09ad3a57d9e668f5616309e6f8b0773a2625d9d0909fad5db888d1860d",
+      "bytes": 6526
+    },
+    {
+      "path": "hosted-claim-recheck/recheck.py",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/recheck.py",
+      "sha256": "7bb2c2cb04b5c028753f487465511f1e255947f5559dbd897605b9cd3c8bcd12",
+      "bytes": 6860
+    },
+    {
+      "path": "hosted-claim-recheck/summary.json",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/hosted-claim-recheck/summary.json",
+      "sha256": "16d998a72590787b8facc1841bec57580c33bd4490b1e7aae198f24aff63d178",
+      "bytes": 15896
+    },
+    {
+      "path": "formal-source-creation/export-formal-root.py",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/export-formal-root.py",
+      "sha256": "5ee9013932fe189570a44562ab09cf4de79ed983a32516f6e652f7fe78c5a53b",
+      "bytes": 3657
+    },
+    {
+      "path": "formal-source-creation/formal-root-export.json",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/formal-root-export.json",
+      "sha256": "85687582b6acc33210baba50b02a06b0fc3304d1c3a7726950d20206c83d8f18",
+      "bytes": 8408
+    },
+    {
+      "path": "formal-source-creation/formal-source-tree-verification.json",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/formal-source-tree-verification.json",
+      "sha256": "4d00ac4ae67473b1f0f8efda0767e7540bcbf32fdce98eeedf9064a31bd77fc0",
+      "bytes": 2841
+    },
+    {
+      "path": "formal-source-creation/refresh-formal-root.py",
+      "source": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/refresh-formal-root.py",
+      "sha256": "131f7f08d3cbda525378830d11765ad45a354af0260b5b07b05a3a0813297f4f",
+      "bytes": 2228
+    }
+  ],
+  "all_source_hashes_match": true,
+  "nested_git_directories_copied": false,
+  "empty_contexts": "Original empty Git contexts remain outside this evidence directory. Complete before/after Git state and command output are preserved in the audit."
+}

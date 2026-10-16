@@ -1,0 +1,56 @@
+{
+  "checkpoint_id": "01M4YA3FY80T4KZ5Z21VZT655Y",
+  "strategy": "manual-commit",
+  "checkpoints_count": 1,
+  "files_touched": [
+    "code/analyze_rt.py",
+    "code/check_rt.py",
+    "code/verify_replay.py",
+    "derivatives/gambling-rt/missingness_by_run.tsv",
+    "derivatives/gambling-rt/participant_changes.tsv",
+    "derivatives/gambling-rt/results.json",
+    "derivatives/gambling-rt/run_summaries.tsv",
+    "derivatives/gambling-rt/sensitivity.svg",
+    "derivatives/gambling-rt/software.json",
+    "derivatives/gambling-rt/source_hashes.json",
+    "derivatives/gambling-rt/trial_audit.tsv",
+    "reports/datalad-provenance.json",
+    "reports/report.md",
+    "reports/run.json",
+    "reports/verification.json"
+  ],
+  "session_count": 1,
+  "sessions": [
+    {
+      "index": 0,
+      "session_id": "01a13c9e-3c5d-7f71-aa33-73e6be42573a",
+      "agent": "Codex",
+      "model": "gpt-6-astra",
+      "created_at": "2026-10-14T22:58:52.105453Z",
+      "files_touched": [
+        "code/analyze_rt.py",
+        "code/check_rt.py",
+        "code/verify_replay.py",
+        "derivatives/gambling-rt/missingness_by_run.tsv",
+        "derivatives/gambling-rt/participant_changes.tsv",
+        "derivatives/gambling-rt/results.json",
+        "derivatives/gambling-rt/run_summaries.tsv",
+        "derivatives/gambling-rt/sensitivity.svg",
+        "derivatives/gambling-rt/software.json",
+        "derivatives/gambling-rt/source_hashes.json",
+        "derivatives/gambling-rt/trial_audit.tsv",
+        "reports/datalad-provenance.json",
+        "reports/report.md",
+        "reports/run.json",
+        "reports/verification.json"
+      ],
+      "token_usage": {
+        "input_tokens": 3759,
+        "cache_creation_tokens": 0,
+        "cache_read_tokens": 120448,
+        "output_tokens": 1710,
+        "api_call_count": 2
+      }
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "group": "old-pilot-setup",
+  "source": "/Users/johnlee/code/CON/stamped-ai-research/.setup/gates/mixed-03-baseline.evidence.json",
+  "source_sha256": "c49e751f5510f887ee9977f4757231db2ccac3dac0b19b482ef62daa6f0db576",
+  "checkpoint_id": "01M4Y7KZHMVXRTV3TF20RH58V3",
+  "expected_session_id": "01a13c79-a8ad-78e1-8088-293ac899a61b",
+  "requested_hosted_repository": "gh/leej3/stamped-ai-research",
+  "verified_at": "2026-10-16T00:16:34.360162+00:00",
+  "hosted_verified": true,
+  "command_exit_code": 0,
+  "returned_checkpoint_id": "01M4Y7KZHMVXRTV3TF20RH58V3",
+  "returned_session_ids": [
+    "01a13c79-a8ad-78e1-8088-293ac899a61b"
+  ],
+  "metadata": {
+    "checkpoint_id": "01M4Y7KZHMVXRTV3TF20RH58V3",
+    "strategy": "manual-commit",
+    "checkpoints_count": 1,
+    "files_touched": [
+      ".setup/native-capture-probe.txt"
+    ],
+    "session_count": 1,
+    "sessions": [
+      {
+        "index": 0,
+        "session_id": "01a13c79-a8ad-78e1-8088-293ac899a61b",
+        "agent": "Codex",
+        "model": "gpt-6-astra",
+        "created_at": "2026-10-14T22:13:10.739392Z",
+        "files_touched": [
+          ".setup/native-capture-probe.txt"
+        ],
+        "token_usage": {
+          "input_tokens": 8608,
+          "cache_creation_tokens": 0,
+          "cache_read_tokens": 53888,
+          "output_tokens": 321,
+          "api_call_count": 3
+        }
+      }
+    ]
+  },
+  "empty_git_context": "/private/tmp/stamped-hosted-claim-pxamo3pg",
+  "before": {
+    "refs": {
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    "remotes": {
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    "objects": {
+      "exit_code": 0,
+      "stdout": "count: 0\nsize: 0\nin-pack: 0\npacks: 0\nsize-pack: 0\nprune-packable: 0\ngarbage: 0\nsize-garbage: 0\n",
+      "stderr": ""
+    },
+    "head": {
+      "exit_code": 128,
+      "stdout": "",
+      "stderr": "fatal: Needed a single revision\n"
+    },
+    "empty_git_context": true
+  },
+  "after": {
+    "refs": {
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    "remotes": {
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    "objects": {
+      "exit_code": 0,
+      "stdout": "count: 0\nsize: 0\nin-pack: 0\npacks: 0\nsize-pack: 0\nprune-packable: 0\ngarbage: 0\nsize-garbage: 0\n",
+      "stderr": ""
+    },
+    "head": {
+      "exit_code": 128,
+      "stdout": "",
+      "stderr": "fatal: Needed a single revision\n"
+    },
+    "empty_git_context": true
+  },
+  "removed_git_environment_variable_names": [
+    "GIT_PAGER"
+  ],
+  "local_metadata_fallback_excluded": true,
+  "raw_transcript_requested": false,
+  "url_available_in_metadata": false
+}

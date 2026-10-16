@@ -1,0 +1,120 @@
+{
+  "group": "old-pilot-research",
+  "source": "/Users/johnlee/code/CON/stamped-ai-research/experiments/02-cohort-rt/capture/baseline.json",
+  "source_sha256": "8fdef096eee69ba6131e40ec718349ee8534046acd9eebb28c41863248bcd753",
+  "checkpoint_id": "01M4Y9KHSR17379GHE3KGM52T8",
+  "expected_session_id": "01a13c94-6e35-7462-835f-e9f25fe69d40",
+  "requested_hosted_repository": "gh/leej3/stamped-ai-research",
+  "verified_at": "2026-10-16T00:16:36.006169+00:00",
+  "hosted_verified": true,
+  "command_exit_code": 0,
+  "returned_checkpoint_id": "01M4Y9KHSR17379GHE3KGM52T8",
+  "returned_session_ids": [
+    "01a13c94-6e35-7462-835f-e9f25fe69d40"
+  ],
+  "metadata": {
+    "checkpoint_id": "01M4Y9KHSR17379GHE3KGM52T8",
+    "strategy": "manual-commit",
+    "checkpoints_count": 1,
+    "files_touched": [
+      "code/verify_rt.py",
+      "derivatives/gambling-rt/implementation_hashes.json",
+      "derivatives/gambling-rt/input_hashes.json",
+      "derivatives/gambling-rt/inventory.tsv",
+      "derivatives/gambling-rt/participant_changes.svg",
+      "derivatives/gambling-rt/participant_changes.tsv",
+      "derivatives/gambling-rt/results.json",
+      "derivatives/gambling-rt/run_summaries.tsv",
+      "derivatives/gambling-rt/software_versions.json",
+      "derivatives/gambling-rt/trial_audit.tsv",
+      "reports/report.md",
+      "reports/run.json",
+      "reports/verification.json"
+    ],
+    "session_count": 1,
+    "sessions": [
+      {
+        "index": 0,
+        "session_id": "01a13c94-6e35-7462-835f-e9f25fe69d40",
+        "agent": "Codex",
+        "model": "gpt-6-astra",
+        "created_at": "2026-10-14T22:47:53.748985Z",
+        "files_touched": [
+          "code/verify_rt.py",
+          "derivatives/gambling-rt/implementation_hashes.json",
+          "derivatives/gambling-rt/input_hashes.json",
+          "derivatives/gambling-rt/inventory.tsv",
+          "derivatives/gambling-rt/participant_changes.svg",
+          "derivatives/gambling-rt/participant_changes.tsv",
+          "derivatives/gambling-rt/results.json",
+          "derivatives/gambling-rt/run_summaries.tsv",
+          "derivatives/gambling-rt/software_versions.json",
+          "derivatives/gambling-rt/trial_audit.tsv",
+          "reports/report.md",
+          "reports/run.json",
+          "reports/verification.json"
+        ],
+        "token_usage": {
+          "input_tokens": 7890,
+          "cache_creation_tokens": 0,
+          "cache_read_tokens": 293632,
+          "output_tokens": 3204,
+          "api_call_count": 5
+        }
+      }
+    ]
+  },
+  "empty_git_context": "/private/tmp/stamped-hosted-claim-mhxy1jwb",
+  "before": {
+    "refs": {
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    "remotes": {
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    "objects": {
+      "exit_code": 0,
+      "stdout": "count: 0\nsize: 0\nin-pack: 0\npacks: 0\nsize-pack: 0\nprune-packable: 0\ngarbage: 0\nsize-garbage: 0\n",
+      "stderr": ""
+    },
+    "head": {
+      "exit_code": 128,
+      "stdout": "",
+      "stderr": "fatal: Needed a single revision\n"
+    },
+    "empty_git_context": true
+  },
+  "after": {
+    "refs": {
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    "remotes": {
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    "objects": {
+      "exit_code": 0,
+      "stdout": "count: 0\nsize: 0\nin-pack: 0\npacks: 0\nsize-pack: 0\nprune-packable: 0\ngarbage: 0\nsize-garbage: 0\n",
+      "stderr": ""
+    },
+    "head": {
+      "exit_code": 128,
+      "stdout": "",
+      "stderr": "fatal: Needed a single revision\n"
+    },
+    "empty_git_context": true
+  },
+  "removed_git_environment_variable_names": [
+    "GIT_PAGER"
+  ],
+  "local_metadata_fallback_excluded": true,
+  "raw_transcript_requested": false,
+  "url_available_in_metadata": false
+}

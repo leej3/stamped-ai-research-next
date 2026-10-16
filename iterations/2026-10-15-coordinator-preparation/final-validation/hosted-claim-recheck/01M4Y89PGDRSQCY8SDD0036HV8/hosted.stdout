@@ -1,0 +1,32 @@
+{
+  "checkpoint_id": "01M4Y89PGDRSQCY8SDD0036HV8",
+  "strategy": "manual-commit",
+  "checkpoints_count": 1,
+  "files_touched": [
+    "code/analyze_rt.py",
+    "code/replay.sh",
+    "code/verify_rt.py"
+  ],
+  "session_count": 1,
+  "sessions": [
+    {
+      "index": 0,
+      "session_id": "01a13c81-213f-7541-aa36-fcad874a8642",
+      "agent": "Codex",
+      "model": "gpt-6-astra",
+      "created_at": "2026-10-14T22:25:02.256782Z",
+      "files_touched": [
+        "code/analyze_rt.py",
+        "code/replay.sh",
+        "code/verify_rt.py"
+      ],
+      "token_usage": {
+        "input_tokens": 50381,
+        "cache_creation_tokens": 0,
+        "cache_read_tokens": 431488,
+        "output_tokens": 12672,
+        "api_call_count": 12
+      }
+    }
+  ]
+}

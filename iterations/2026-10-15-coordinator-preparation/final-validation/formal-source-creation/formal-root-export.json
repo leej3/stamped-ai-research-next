@@ -1,0 +1,295 @@
+{
+  "source_commit": "d0e616f1e9571a6701fe869858553c052b39eced",
+  "exported_entries": [
+    {
+      "path": ".agents/skills/align-with-stamped-principles",
+      "mode": "120000",
+      "source_blob": "bba2a2660cfb576c872040740f1542b0ac0e2fec"
+    },
+    {
+      "path": ".agents/skills/assess-alignment-with-stamped-principles",
+      "mode": "120000",
+      "source_blob": "546ce6b93bd54cdae8c87ade955b362928cfa2c4"
+    },
+    {
+      "path": ".agents/skills/create-repronim-stamped-project",
+      "mode": "120000",
+      "source_blob": "973a6747c6efafd4976125e7aed589a984a63623"
+    },
+    {
+      "path": ".agents/skills/create-stamped-project",
+      "mode": "120000",
+      "source_blob": "d371e78a8c059dc8d26d5627643b030f7190c0cc"
+    },
+    {
+      "path": ".agents/skills/datalad-annex",
+      "mode": "120000",
+      "source_blob": "07b02e774a30b2e006b977ba9402fd9f6101baf4"
+    },
+    {
+      "path": ".agents/skills/do-full-research-loop",
+      "mode": "120000",
+      "source_blob": "e53b63d9d8e41adc53f9faaccc03c8ca5ed5e871"
+    },
+    {
+      "path": ".agents/skills/entire-worktrees",
+      "mode": "120000",
+      "source_blob": "3c8a04b2f0dad60001f173a6c52021d90dbdb4f5"
+    },
+    {
+      "path": ".agents/skills/pixi-with-stamped",
+      "mode": "120000",
+      "source_blob": "e65d8d4aefe613c283ddcf50575eeb1a0a1bf0dc"
+    },
+    {
+      "path": ".agents/skills/stamped-conventions",
+      "mode": "120000",
+      "source_blob": "0ba0e13bd5706967ab836a902a56863e2624a64d"
+    },
+    {
+      "path": ".codex/hooks.json",
+      "mode": "100644",
+      "source_blob": "79c5f77d9ec33966bc0341b95865dafd01f8bc62"
+    },
+    {
+      "path": ".datalad/.gitattributes",
+      "mode": "100644",
+      "source_blob": "5928185081410e652fcb8b4446fae9caf43288e5"
+    },
+    {
+      "path": ".datalad/config",
+      "mode": "100644",
+      "source_blob": "32dd6d17a31fbeaec55a8d828eb2b89d79530808"
+    },
+    {
+      "path": ".entire/.gitignore",
+      "mode": "100644",
+      "source_blob": "e66987d2baadec50fc9285426dcb00d81edb7aff"
+    },
+    {
+      "path": ".gitattributes",
+      "mode": "100644",
+      "source_blob": "c461f6b9c4402af7773530032b0480845df3e72b"
+    },
+    {
+      "path": ".gitignore",
+      "mode": "100644",
+      "source_blob": "a30d3c04d00f8c954e758a7ac8629354644ee1bb"
+    },
+    {
+      "path": ".gitmodules",
+      "mode": "100644",
+      "source_blob": "d74f16da8ba0e1a1fb7dc3031e409acd5f7279c1"
+    },
+    {
+      "path": ".pre-commit-config.yaml",
+      "mode": "100644",
+      "source_blob": "0b50eda353ea2567e834e04372a7749537a7556c"
+    },
+    {
+      "path": "AGENTS.md",
+      "mode": "100644",
+      "source_blob": "6f60ac4a7529e723c6d1b97ce62e85b2fba600e9"
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "source_blob": "4ac572fdf1e16a6f56a1111179e3266fc04208b8"
+    },
+    {
+      "path": "assessment",
+      "mode": "160000",
+      "source_blob": "0208f82504f15b82b7582f34143ab889dd52c68d"
+    },
+    {
+      "path": "assessment-version.json",
+      "mode": "100644",
+      "source_blob": "23b52c8a6d39e1b75340f69db52cabd676072116"
+    },
+    {
+      "path": "assets/workbench.json",
+      "mode": "100644",
+      "source_blob": "8fe501ae21e58404e7edd46d0ce5d4a86a25acd2"
+    },
+    {
+      "path": "assets/workbench.pdf",
+      "mode": "120000",
+      "source_blob": "288ea20ea60add9e29d111fc4a7d628e77e5201f"
+    },
+    {
+      "path": "assets/workbench.png",
+      "mode": "100644",
+      "source_blob": "74cb625c23ce40197d3ca2267cc3d9d04c616141"
+    },
+    {
+      "path": "comparison-plan.md",
+      "mode": "100644",
+      "source_blob": "eca3fa0810db0bd18ca47a3828a9aa0b8cee2f84"
+    },
+    {
+      "path": "conditions.json",
+      "mode": "100644",
+      "source_blob": "f6300f22377d4a6fce8686ae214723e5c4d212a0"
+    },
+    {
+      "path": "judge-prompt.md",
+      "mode": "100644",
+      "source_blob": "b3204ea8399632e5c700d9b97fe3455de8767255"
+    },
+    {
+      "path": "pixi.toml",
+      "mode": "100644",
+      "source_blob": "aa87ee571bd93715bacebe1a807c8e3ca47befe2"
+    },
+    {
+      "path": "prompt.md",
+      "mode": "100644",
+      "source_blob": "a4289ef1a921f8aceafc29c0e3c08f12931c90c2"
+    },
+    {
+      "path": "scripts/JUDGE_WORKSPACE.md",
+      "mode": "100644",
+      "source_blob": "6f942649a82eee6a26c6d5ed1389416d920c8149"
+    },
+    {
+      "path": "scripts/READINESS.md",
+      "mode": "100644",
+      "source_blob": "b5514ecd7b5b92d253b92292e3a056483f9c8751"
+    },
+    {
+      "path": "scripts/README.md",
+      "mode": "100644",
+      "source_blob": "89bb98d87f3d66b29dc2170f8e5b91bf3d26dab0"
+    },
+    {
+      "path": "scripts/WORKER-END-STATE.md",
+      "mode": "100644",
+      "source_blob": "cc2f24184e8b4c37b74125c360cd82c92412adab"
+    },
+    {
+      "path": "scripts/assessment.py",
+      "mode": "100644",
+      "source_blob": "143122e59c35991038a32c055ad0094efcc32e0a"
+    },
+    {
+      "path": "scripts/assessment_procedure.py",
+      "mode": "100644",
+      "source_blob": "2d230b5629869cdf81415fbb7c84f3ff89c5016e"
+    },
+    {
+      "path": "scripts/commit_provenance_hook.py",
+      "mode": "100644",
+      "source_blob": "26bffe04978e001707da67ea5d8117eda65197fc"
+    },
+    {
+      "path": "scripts/create_public_profile.py",
+      "mode": "100644",
+      "source_blob": "8529c12da407b618ad3ae023b859bd4f8b66e76c"
+    },
+    {
+      "path": "scripts/judge_workspace.py",
+      "mode": "100644",
+      "source_blob": "81933c0c44fbd014e46b327ff2c09a1a10b6ccdb"
+    },
+    {
+      "path": "scripts/launch_native_probe.py",
+      "mode": "100644",
+      "source_blob": "d30c3f0fd16fa2a670358ad498ca7602b06ef2f9"
+    },
+    {
+      "path": "scripts/prepare_checkout.py",
+      "mode": "100644",
+      "source_blob": "69f409eb9fef219721b2e500b72e6678b4e07edb"
+    },
+    {
+      "path": "scripts/prepare_launch.py",
+      "mode": "100644",
+      "source_blob": "b12d5fb13b5b9d0bd8507b58a07cc0657014e853"
+    },
+    {
+      "path": "scripts/readiness.py",
+      "mode": "100644",
+      "source_blob": "70f3c89326f6342344ecc49672e2bf8019682ab5"
+    },
+    {
+      "path": "scripts/research_conditions.py",
+      "mode": "100644",
+      "source_blob": "db7c1fd8b38882762a6681aea9ff01f08904ad76"
+    },
+    {
+      "path": "scripts/study_seed.py",
+      "mode": "100644",
+      "source_blob": "dcc9f50f5c1b7bb72ce1a93b2ebd7562d20d5614"
+    },
+    {
+      "path": "scripts/verify_native_capture.py",
+      "mode": "100644",
+      "source_blob": "66cfae817c4ddd4455d97546675e25cf74990298"
+    },
+    {
+      "path": "scripts/worker_end_state.py",
+      "mode": "100644",
+      "source_blob": "ad723079eea3f466b96d65534d2c67c5941c245d"
+    },
+    {
+      "path": "skills",
+      "mode": "160000",
+      "source_blob": "c90252a7b9072a4828e9c0b1fa6e5f48409a9cfa"
+    },
+    {
+      "path": "studies/narps",
+      "mode": "160000",
+      "source_blob": "9b9f4c777bed9180e16a2b96429980fb0f03d142"
+    },
+    {
+      "path": "tests/test_assessment_procedure.py",
+      "mode": "100644",
+      "source_blob": "71d74b362aacc6f63e589f61f1a12d930d5af1ce"
+    },
+    {
+      "path": "tests/test_assessment_runner.py",
+      "mode": "100644",
+      "source_blob": "81201d0214e97c8222395fd68de447af3e355b74"
+    },
+    {
+      "path": "tests/test_judge_materialization.py",
+      "mode": "100644",
+      "source_blob": "02f1beb10149e8eff318b1511ff985305b39c5b3"
+    },
+    {
+      "path": "tests/test_judge_workspace.py",
+      "mode": "100644",
+      "source_blob": "79ead5b4add339b0bb1d945036207e9049dc3d25"
+    },
+    {
+      "path": "tests/test_launch.py",
+      "mode": "100644",
+      "source_blob": "76b0c7934f8a8f0df02d07dc185fdf47c47e028b"
+    },
+    {
+      "path": "tests/test_native_capture_verification.py",
+      "mode": "100644",
+      "source_blob": "0a7f7894ccf723443d83d3de1bea6f3344283020"
+    },
+    {
+      "path": "tests/test_readiness.py",
+      "mode": "100644",
+      "source_blob": "bae7b472be925ff8c477a1a69c49bae86d6288a0"
+    },
+    {
+      "path": "tests/test_worker_end_state.py",
+      "mode": "100644",
+      "source_blob": "e5d0d39018dbc44dc2a978d09cd0a7aecb52d68e"
+    }
+  ],
+  "adapted_paths": [
+    ".datalad/config",
+    ".gitattributes",
+    ".gitmodules",
+    "AGENTS.md",
+    "README.md",
+    "pixi.toml",
+    "prompt.md"
+  ],
+  "destination": "/Users/johnlee/.local/state/stamped-ai-research-next/preparation-20261015/formal-root-source/../formal-root-build"
+}

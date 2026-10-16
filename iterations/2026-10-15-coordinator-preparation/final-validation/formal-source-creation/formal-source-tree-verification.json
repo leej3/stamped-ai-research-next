@@ -1,0 +1,112 @@
+{
+  "passed": true,
+  "source_commit": "d0e616f1e9571a6701fe869858553c052b39eced",
+  "formal_commit": "517d4d6957edf93e5f0e99dc3556393ce595f25e",
+  "source_entries": 56,
+  "adapted_entries": {
+    ".datalad/config": {
+      "source": {
+        "mode": "100644",
+        "kind": "blob",
+        "oid": "32dd6d17a31fbeaec55a8d828eb2b89d79530808"
+      },
+      "formal": {
+        "mode": "100644",
+        "kind": "blob",
+        "oid": "989fa9d41a38eb03406feb04bf3cef2ce8e48b23"
+      }
+    },
+    ".gitattributes": {
+      "source": {
+        "mode": "100644",
+        "kind": "blob",
+        "oid": "c461f6b9c4402af7773530032b0480845df3e72b"
+      },
+      "formal": {
+        "mode": "100644",
+        "kind": "blob",
+        "oid": "fa3788096c5f2ced5e4fda75e9f13d6fc0c9d8a3"
+      }
+    },
+    ".gitmodules": {
+      "source": {
+        "mode": "100644",
+        "kind": "blob",
+        "oid": "d74f16da8ba0e1a1fb7dc3031e409acd5f7279c1"
+      },
+      "formal": {
+        "mode": "100644",
+        "kind": "blob",
+        "oid": "5a3215c6295600e86e1af28748e3284e396501e4"
+      }
+    },
+    "AGENTS.md": {
+      "source": {
+        "mode": "100644",
+        "kind": "blob",
+        "oid": "6f60ac4a7529e723c6d1b97ce62e85b2fba600e9"
+      },
+      "formal": {
+        "mode": "100644",
+        "kind": "blob",
+        "oid": "9768b64ae429427b625c809b96b37a41ec5a6b58"
+      }
+    },
+    "README.md": {
+      "source": {
+        "mode": "100644",
+        "kind": "blob",
+        "oid": "4ac572fdf1e16a6f56a1111179e3266fc04208b8"
+      },
+      "formal": {
+        "mode": "100644",
+        "kind": "blob",
+        "oid": "ff7d03ed47b5abfa9e9025bfae3e3b9c58f1b223"
+      }
+    },
+    "pixi.toml": {
+      "source": {
+        "mode": "100644",
+        "kind": "blob",
+        "oid": "aa87ee571bd93715bacebe1a807c8e3ca47befe2"
+      },
+      "formal": {
+        "mode": "100644",
+        "kind": "blob",
+        "oid": "f15d5db0e5c7f2f99de100542ac35ca94fd70e2d"
+      }
+    },
+    "prompt.md": {
+      "source": {
+        "mode": "100644",
+        "kind": "blob",
+        "oid": "a4289ef1a921f8aceafc29c0e3c08f12931c90c2"
+      },
+      "formal": {
+        "mode": "100644",
+        "kind": "blob",
+        "oid": "534a3e1687c7af2602a198138ef95c12eee5ae44"
+      }
+    },
+    "studies/narps": {
+      "source": {
+        "mode": "160000",
+        "kind": "commit",
+        "oid": "9b9f4c777bed9180e16a2b96429980fb0f03d142"
+      },
+      "formal": {
+        "mode": "160000",
+        "kind": "commit",
+        "oid": "c7a135f92f92df15c379f7c2d9231f13981d76e4"
+      }
+    }
+  },
+  "new_formal_records": [
+    "iterations/narps-v1/README.md",
+    "iterations/narps-v1/allocation.json",
+    "iterations/narps-v1/requirements.json",
+    "source-version.json"
+  ],
+  "main_commit_count": 1,
+  "historical_preparation_iterations_present": false
+}

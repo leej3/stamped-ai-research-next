@@ -1,0 +1,56 @@
+{
+  "checkpoint_id": "01M4Y803CJ6KPFXYX02ECM6867",
+  "strategy": "manual-commit",
+  "checkpoints_count": 1,
+  "files_touched": [
+    "derivatives/gambling-rt/environment.json",
+    "derivatives/gambling-rt/median-rt.svg",
+    "derivatives/gambling-rt/results.json",
+    "derivatives/gambling-rt/run-summary.tsv",
+    "derivatives/gambling-rt/trial-audit.tsv",
+    "reports/assessment.json",
+    "reports/checklist-answers.json",
+    "reports/checklist-responses.json",
+    "reports/datalad-run-message.txt",
+    "reports/datalad-transformation.json",
+    "reports/object-manifest.json",
+    "reports/report.md",
+    "reports/run.json",
+    "reports/skill-use.json",
+    "reports/verification.json"
+  ],
+  "session_count": 1,
+  "sessions": [
+    {
+      "index": 0,
+      "session_id": "01a13c7b-a74a-7fc1-a920-d48d135aaeb9",
+      "agent": "Codex",
+      "model": "gpt-6-astra",
+      "created_at": "2026-10-14T22:20:44.895859Z",
+      "files_touched": [
+        "derivatives/gambling-rt/environment.json",
+        "derivatives/gambling-rt/median-rt.svg",
+        "derivatives/gambling-rt/results.json",
+        "derivatives/gambling-rt/run-summary.tsv",
+        "derivatives/gambling-rt/trial-audit.tsv",
+        "reports/assessment.json",
+        "reports/checklist-answers.json",
+        "reports/checklist-responses.json",
+        "reports/datalad-run-message.txt",
+        "reports/datalad-transformation.json",
+        "reports/object-manifest.json",
+        "reports/report.md",
+        "reports/run.json",
+        "reports/skill-use.json",
+        "reports/verification.json"
+      ],
+      "token_usage": {
+        "input_tokens": 6554,
+        "cache_creation_tokens": 0,
+        "cache_read_tokens": 280576,
+        "output_tokens": 2323,
+        "api_call_count": 4
+      }
+    }
+  ]
+}
